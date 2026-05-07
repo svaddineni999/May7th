@@ -1,0 +1,11 @@
+<!--
+ - Created by vkashikar on 10/18/2019.
+ -->
+
+<aura:event type="APPLICATION" description="PC_SelectedDataTableRow">
+    <aura:attribute name="selectedRows" type="Object[]"/>
+    <aura:attribute name="keyField" type="String"/>
+    <aura:attribute name="sourceUniqueId" type="String"/>
+    <aura:attribute name="actionType" type="String" default="ROW_SELECTION"/>
+    <aura:attribute name="actionName" type="String" default="ROW_SELECTION"/>
+</aura:event>

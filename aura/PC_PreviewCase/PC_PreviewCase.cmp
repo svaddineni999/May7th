@@ -1,0 +1,17 @@
+<!--
+Lightning component  : PC_PreviewCase 
+Description          : Component for linking a case to enrollment form and previewing enrollment case
+Parameters           : Document Id, Enrollment Case Id
+Author               : Prachi Nandgaonkar
+Date                 : 10 Feb 2017 
+-->
+<aura:component controller="PC_PreviewCaseLightningController">
+    <!--Attribute declaration -->
+    <aura:attribute name="reqCaseId" type="Id" />
+    <aura:attribute name="docId" type="String" />
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />    
+    <!--Notifier Event to close the calling component-->
+    <aura:registerEvent name="closeEvent" type="c:PC_CloseCmp"/>
+    <!--UI -->
+    <lightning:button variant="brand" label="{!$Label.c.PC_View_and_Link_Doc}" onclick="{!c.linkEnrollDoc}" />
+</aura:component>

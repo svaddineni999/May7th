@@ -1,0 +1,31 @@
+<!--
+ Created by shisbansal on 6/29/2018.
+ -->
+
+<aura:component description="PC_PharmacyFinderV2" controller="PC_PharmacyFinder">
+    <aura:attribute name="showDefaultPharmacyTab" type="Boolean" default="true"/>
+    <aura:attribute name="showSearchPharmacyTab" type="Boolean" default="true"/>
+    <aura:attribute name="prescriptionId" type="Object"/>
+
+    <lightning:tabset aura:id="tabSet">
+        <aura:if isTrue="{!v.showDefaultPharmacyTab}">
+            <lightning:tab label="{!$Label.c.PC_PharmacyFinder_DefaultPharmacy}" id="default" aura:id="defaultTab">
+                <!--{!v.prescriptionId}-->
+                <c:PC_ViewSpecialtyPharmacyNetwork prescriptionId="{!v.prescriptionId}" />
+            </lightning:tab>
+        </aura:if>
+
+        <aura:if isTrue="{! v.showSearchPharmacyTab}">
+
+            <lightning:tab label="{!$Label.c.PC_PharmacyFinder_SearchPharmacy}" id="search" aura:id="searchTab">
+                <!-- Search Pharmacies Loading.........{!v.showSearchPharmacyTab} -->
+                <c:PC_SearchPharmacies />
+            </lightning:tab>
+        </aura:if>
+
+    </lightning:tabset>
+
+
+
+
+</aura:component>

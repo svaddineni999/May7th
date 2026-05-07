@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainto</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnot</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintoni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintoni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintosi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintosi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnon</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintojen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintoni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintojeni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintosi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintojesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnossa</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoissa</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnossani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoissani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnossasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoissasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnosta</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoista</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnostani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoistani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnostasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoistasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintoon</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintoihin</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintooni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintoihini</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintoosi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintoihisi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnolla</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoilla</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnollani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoillani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnollasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoillasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnolta</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoilta</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoltani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoiltani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoltasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoiltasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnolle</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoille</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnolleni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoilleni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnollesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoillesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintona</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintoina</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintonani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintoinani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintonasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintoinasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoksi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havainnoiksi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnokseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havainnoikseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoksesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havainnoiksesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintoa</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Havaintoja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintoani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Havaintojani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintoasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Havaintojasi</value>
+    </caseValues>
+    <fields>
+        <label>Tili</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Havainnot</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Voimassaolon päivämäärä/aika</label>
+        <name>HealthCloudGA__AppliesDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Voimassaoloajan päättymispäivä</label>
+        <name>HealthCloudGA__AppliesPeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Voimassaoloajan alkamispäivä</label>
+        <name>HealthCloudGA__AppliesPeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Kehonosan koodi</label>
+        <name>HealthCloudGA__BodySiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Kehonosan otsikko</label>
+        <name>HealthCloudGA__BodySiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kehonosien järjestelmä</label>
+        <name>HealthCloudGA__BodySiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kommentit</label>
+        <name>HealthCloudGA__Comments__c</name>
+    </fields>
+    <fields>
+        <label>Laite</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>EHR Havainnot</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Tulkinnan koodi</label>
+        <name>HealthCloudGA__InterpretationCode__c</name>
+    </fields>
+    <fields>
+        <label>Tulkinnan otsikko</label>
+        <name>HealthCloudGA__InterpretationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Tulkintajärjestelmä</label>
+        <name>HealthCloudGA__InterpretationSystem__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Julkaisupäivä</label>
+        <name>HealthCloudGA__IssuedDate__c</name>
+    </fields>
+    <fields>
+        <label>Menetelmän koodi</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>Menetelmän otsikko</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>Menetelmäjärjestelmä</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <label>Nimen koodi</label>
+        <name>HealthCloudGA__NameCode__c</name>
+    </fields>
+    <fields>
+        <label>Nimen otsikko</label>
+        <name>HealthCloudGA__NameLabel__c</name>
+    </fields>
+    <fields>
+        <label>Nimijärjestelmä</label>
+        <name>HealthCloudGA__NameSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this is about --></help>
+        <label>Potilas</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Havainnot</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Patient who performed this observation --></help>
+        <label>Suorittava potilas</label>
+        <name>HealthCloudGA__PerformingPatient__c</name>
+        <relationshipLabel>EHR Havainnot (Suorittava potilas)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>Suorittava lääkäri</label>
+        <name>HealthCloudGA__PerformingPractitioner__c</name>
+        <relationshipLabel>EhrObservations (Suorittava lääkäri)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related person who performed the observation --></help>
+        <label>Suorittava asiaan liittyvä henkilö</label>
+        <name>HealthCloudGA__PerformingRelatedPerson__c</name>
+        <relationshipLabel>EHR Havainnot (Suorittava asiaan liittyvä henkilö)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>Lääkäri</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>Havainnot</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Viitteen tarkoituksen otsikko</label>
+        <name>HealthCloudGA__ReferenceMeaningLabel__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Korkea ikä</label>
+        <name>HealthCloudGA__ReferenceRangeAgeHigh__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Matala ikä</label>
+        <name>HealthCloudGA__ReferenceRangeAgeLow__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Korkea yksikkö</label>
+        <name>HealthCloudGA__ReferenceRangeHighUnit__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Korkea arvo</label>
+        <name>HealthCloudGA__ReferenceRangeHighValue__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Matala yksikkö</label>
+        <name>HealthCloudGA__ReferenceRangeLowUnit__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Matala arvo</label>
+        <name>HealthCloudGA__ReferenceRangeLowValue__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Tarkoituksen koodi</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningCode__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Tarkoitusjärjestelmä</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningSystem__c</name>
+    </fields>
+    <fields>
+        <label>Viiteasteikko Yksikkö</label>
+        <name>HealthCloudGA__ReferenceRangeUnit__c</name>
+    </fields>
+    <fields>
+        <label>Luotettavuuden koodi</label>
+        <name>HealthCloudGA__ReliabilityCode__c</name>
+    </fields>
+    <fields>
+        <label>Luotettavuus</label>
+        <name>HealthCloudGA__Reliability__c</name>
+        <picklistValues>
+            <masterLabel>calibrating</masterLabel>
+            <translation><!-- calibrating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>early</masterLabel>
+            <translation><!-- early --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>error</masterLabel>
+            <translation><!-- error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ok</masterLabel>
+            <translation><!-- ok --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ongoing</masterLabel>
+            <translation><!-- ongoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>questionable</masterLabel>
+            <translation><!-- questionable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Näytedata</label>
+        <name>HealthCloudGA__SampledData__c</name>
+    </fields>
+    <fields>
+        <label>Lähdejärjestelmän tunnus</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Lähdejärjestelmää muokattu</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Lähdejärjestelmä</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tilan koodi</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Tila</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>amended</masterLabel>
+            <translation><!-- amended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>final</masterLabel>
+            <translation><!-- final --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>preliminary</masterLabel>
+            <translation><!-- preliminary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>registered</masterLabel>
+            <translation><!-- registered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Arvon liite</label>
+        <name>HealthCloudGA__ValueAttachment__c</name>
+    </fields>
+    <fields>
+        <label>Arvon koodi</label>
+        <name>HealthCloudGA__ValueCode__c</name>
+    </fields>
+    <fields>
+        <label>Arvon otsikko</label>
+        <name>HealthCloudGA__ValueLabel__c</name>
+    </fields>
+    <fields>
+        <label>Arvon ajanjakson päättymispäivä</label>
+        <name>HealthCloudGA__ValuePeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Arvon ajanjakson alkamispäivä</label>
+        <name>HealthCloudGA__ValuePeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Arvon ajanjakso</label>
+        <name>HealthCloudGA__ValuePeriod__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>Arvon määrän yksikkö</label>
+        <name>HealthCloudGA__ValueQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>Arvon määrä</label>
+        <name>HealthCloudGA__ValueQuantity__c</name>
+    </fields>
+    <fields>
+        <label>Arvon suhteen nimittäjä</label>
+        <name>HealthCloudGA__ValueRatioDenominator__c</name>
+    </fields>
+    <fields>
+        <label>Arvon suhteen osoittaja</label>
+        <name>HealthCloudGA__ValueRatioNumerator__c</name>
+    </fields>
+    <fields>
+        <label>Arvon suhde</label>
+        <name>HealthCloudGA__ValueRatio__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen ulottuvuudet</label>
+        <name>HealthCloudGA__ValueSampledDataDimensions__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen kerroin</label>
+        <name>HealthCloudGA__ValueSampledDataFactor__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alaraja</label>
+        <name>HealthCloudGA__ValueSampledDataLowerLimit__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkup. koodin otsikko</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperän koodijärj.</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperän koodi</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCode__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperän vertailija</label>
+        <name>HealthCloudGA__ValueSampledDataOriginComparator__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperien järjestelmä</label>
+        <name>HealthCloudGA__ValueSampledDataOriginSystem__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperien yksiköt</label>
+        <name>HealthCloudGA__ValueSampledDataOriginUnits__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperän arvo</label>
+        <name>HealthCloudGA__ValueSampledDataOriginValue__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen alkuperä</label>
+        <name>HealthCloudGA__ValueSampledDataOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen ajanjakson millisek.</label>
+        <name>HealthCloudGA__ValueSampledDataPeriodMili__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäytteen yläraja</label>
+        <name>HealthCloudGA__ValueSampledDataUpperLimit__c</name>
+    </fields>
+    <fields>
+        <label>Arvo Datanäyte</label>
+        <name>HealthCloudGA__ValueSampledData__c</name>
+    </fields>
+    <fields>
+        <label>Arvojärjestelmä</label>
+        <name>HealthCloudGA__ValueSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR Havainnon nimi</nameFieldLabel>
+</CustomObjectTranslation>

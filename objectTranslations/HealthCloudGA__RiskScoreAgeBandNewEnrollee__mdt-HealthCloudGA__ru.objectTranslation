@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Переходящий новый кандидат с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Переходящие новые кандидаты с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Переходящего нового кандидата с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Переходящих новых кандидатов с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Переходящего нового кандидата с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Переходящих новых кандидатов с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Переходящему новому кандидату с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Переходящим новым кандидатам с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Переходящим новым кандидатом с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Переходящими новыми кандидатами с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Переходящем новом кандидате с возрастным риском</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Переходящих новых кандидатах с возрастным риском</value>
+    </caseValues>
+    <fields>
+        <label>Возрастной диапазон от</label>
+        <name>HealthCloudGA__AgeBandFrom__c</name>
+    </fields>
+    <fields>
+        <label>Возрастной диапазон до</label>
+        <name>HealthCloudGA__AgeBandTo__c</name>
+    </fields>
+    <fields>
+        <label>План особых потребностей хронич.больного</label>
+        <name>HealthCloudGA__CSNP__c</name>
+    </fields>
+    <fields>
+        <label>Пол</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>Активно</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Неизнач. исключ. из программы Медикэйд</label>
+        <name>HealthCloudGA__MedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Изначально исключ. из программы Медикэйд</label>
+        <name>HealthCloudGA__MedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Неизнач. искл. из прогр.беспл.мед.помощи</label>
+        <name>HealthCloudGA__NonMedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Изнач. исключ. из прогр.беспл.мед.помощи</label>
+        <name>HealthCloudGA__NonMedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Годичный диапазон</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>AnimateMasculine</gender>
+</CustomObjectTranslation>

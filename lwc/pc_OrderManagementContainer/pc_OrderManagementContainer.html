@@ -1,0 +1,25 @@
+<template>
+    <lightning-progress-indicator current-step={currentValue} type="base" variant="base">
+        <lightning-progress-step label="Order Details" value="step1" ></lightning-progress-step>
+        <lightning-progress-step label="Shipping Details" value="step2"></lightning-progress-step>
+    </lightning-progress-indicator>
+    <template if:true={step1}>
+        <div class="slds-m-top_small"><c-pc_-record-edit-form tile-label = {label.OrderDetailsTile} namespace-prefix = {namespacePrefix} record-id = {recordId} child-program-id = {programId} field-set= {fsOrderDetails}  onclearproductdata={clearProductData} onclearprescriptiondata={clearPrescriptionData} onselectedprogramcase={handleSelectedProgramCase} onselectedprscription={handleSelectedPrescription} onordercreated={handleOrderItemCreation}></c-pc_-record-edit-form></div>
+        <div class="slds-m-top_small"><c-pc_-data-table namespace-prefix = {namespacePrefix} record-id = {recordId} program-id = {programId} prescription-id = {prescriptionId} fs-product={fsProduct} fs-order-item={fsOrderItem} show-all-product={showAllProduct} onprescriptionunavailable={stopSave} onrefreshparent={refreshLightningParent}></c-pc_-data-table></div>
+    </template>
+    <template if:true={step2}>
+        <div class="slds-m-top_small"><c-pc_-record-edit-form tile-label = {label.ShippingDetailsTile} namespace-prefix = {namespacePrefix} record-id = {recordId} field-set= {fsOrderShipment}></c-pc_-record-edit-form></div>
+    </template>
+    <div>
+        <h1 class="slds-section-title_divider slds-text-align_center slds-m-top_small">{warningMessage}</h1>
+    </div>
+    <div class="slds-text-align_center slds-m-top_large slds-p-bottom_xx-large">
+        <template if:true={step2}>
+            <lightning-button class="slds-m-around_medium" variant="brand" type="button" name="back" label={backbutton} onclick={handleBack} ></lightning-button>
+        </template>
+        <lightning-button class="slds-m-around_medium" variant="brand" type="submit" name="save" label={savebutton} onclick={handleOrderSave} ></lightning-button>
+        <template if:true={step1}>
+            <lightning-button class="slds-m-around_medium" variant="brand" type="submit" name="next" label={nextbutton} onclick={handleNext} ></lightning-button>
+        </template>
+    </div>
+</template>

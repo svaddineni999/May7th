@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Contactpersoon-contactpersoon-relatie</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Contactpersoon-contactpersoon-relaties</value>
+    </caseValues>
+    <fields>
+        <label>Actief</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Contactpersoon</label>
+        <name>HealthCloudGA__Contact__c</name>
+        <relationshipLabel>Gerelateerde contactpersonen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Einddatum</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Externe ID</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>Geïnverteerde relatie</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Contactpersoon-contactpersoonrelaties</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Gerelateerde contactpersoon</label>
+        <name>HealthCloudGA__RelatedContact__c</name>
+        <relationshipLabel><!-- Contact Contact Relations (Related Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Gerelateerde rol</label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Contact Contact Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Begindatum</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam van contactpersoonrelatie</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Een contactpersoon-contactpersoonrelatie kan niet als Niet-actief worden gemaakt.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

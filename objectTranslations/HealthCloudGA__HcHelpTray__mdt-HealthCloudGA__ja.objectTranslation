@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HcHelpTray</value>
+    </caseValues>
+    <fields>
+        <label>有効</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>ContentType</label>
+        <name>HealthCloudGA__ContentType__c</name>
+        <picklistValues>
+            <masterLabel>Help Doc</masterLabel>
+            <translation><!-- Help Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ヘルプ URL</label>
+        <name>HealthCloudGA__HelpUrl__c</name>
+    </fields>
+    <fields>
+        <label>アイコンのパス</label>
+        <name>HealthCloudGA__IconPath__c</name>
+    </fields>
+    <fields>
+        <label>表示ラベル</label>
+        <name>HealthCloudGA__Label__c</name>
+    </fields>
+    <fields>
+        <label>並び替え順</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label>種別</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+</CustomObjectTranslation>

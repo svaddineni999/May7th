@@ -1,0 +1,125 @@
+<!--
+ - Created by vkashikar on 9/11/2017.
+ - Modified by nswami on 9/14/2017.
+ - nswami          10/5/2017       PC-2331     Translation Home Page: Task Labels, Priority, Type
+   Vijay Kashikar  09 Dec 2020     PC-7118     Replaced the usage of c:svgIcon with lightning:icon
+ -->
+<aura:component controller="PC_HomeProgramActivities_CPV_Controller">
+    <aura:attribute name="objTask" type="PC_HomeProgramActivities_CPV_Controller.Object"/>
+    <aura:attribute name="onclick" type="Aura.Action" default="{!c.navigateToRecord}" description="This allows handling onClick events"/>
+    <aura:attribute name="usersContext" type="String" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:registerEvent name="taskUpdated" type="c:PC_UpdateTask"/>
+    <aura:attribute name="dropdownOver" type="Boolean" default="false" />
+    <aura:attribute name="today" type="Date" />
+    <aura:attribute name="successMessage" type="String" default="{!$Label.c.PC_TaskUpdatedSuccessMessage}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />
+    <aura:attribute name="dueDateNotSet" type="String" default="{!$Label.c.PC_DueDateNotSet}" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <div class="slds-card">
+        <div aura:id="main-div-element"  class="{!v.objTask.isOverdue ? ' wrapper-body' : ' hide-wrapper-body'}">
+
+            <div class="slds-grid slds-wrap">
+                <div class="slds-tile slds-tile_board slds-grow-none slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--1-of-1 slds-large-size--1-of-1 slds-hint-parent wrapper-area">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-media__figure task-padding slds-col slds-size_2-of-12" >
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-size_12-of-12">&nbsp;</div>
+                                <div class="slds-col slds-icon_container slds-icon_medium slds-size_12-of-12">
+                                    <a onclick="{!c.navigateToTask}" role="icon" tabindex="-1">
+                                        <lightning:icon variant="{!v.objTask.isOverdue ? 'error' : 'base'}" size="medium" iconName="{! 'utility:' + v.objTask.svgIconName}" />
+                                        <span class="slds-assistive-text">{!$Label.c.PC_Program}</span>
+                                    </a>
+                                </div>
+                                <div class="{!v.objTask.priorityClass + ' priority-heading-text'}">
+                                    <!--  {!v.objTask.priority == 'High' ? 'PC_Priority_Red' : (v.objTask.priority == 'Normal' ? 'PC_Priority_Yellow' : (v.objTask.priority == 'Low' ? 'PC_Priority_Green' : 'PC_Priority'))}">-->
+                                    <span>
+                                            {!v.objTask.priority}
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_12-of-12">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div class="slds-media__body slds-grid slds-col slds-wrap slds-size_9-of-12">
+                            <div class="slds-col slds-grid slds-size--2-of-2">
+                                <div class="slds-col slds-size--1-of-2">
+                                    <p class="slds-truncate card-field">
+                                    <aura:if isTrue="{! !empty(v.objTask.dueDate)}">{!v.objTask.dueDate}
+                                        <aura:set attribute="else">{!v.dueDateNotSet}</aura:set>
+                                    </aura:if>
+                                    </p>
+                                </div>
+                                <div class="slds-text-body--small slds-size--1-of-2 slds-col">
+                                        <div aura:id="main-div"  class="slds-shrink-none slds-dropdown-trigger_click slds-float_right">
+                                            <button class="slds-button slds-button_icon slds-button_icon-border-filled slds-button_icon-x-small" aria-haspopup="true" title="More options" onclick="{!c.handleClick}" onmouseleave="{!c.handleMouseOutButton}">
+                                                <c:svg class="slds-input__icon slds-icon-utility-down dropdownDiv" xlinkHref="{! $Resource.PC_SLDS202 + '/PC_SLDS202/assets/icons/utility-sprite/svg/symbols.svg#down'}" ariaHidden="true"/>
+                                                <span class="slds-assistive-text">More options</span>
+                                            </button>
+                                            <div class="slds-dropdown slds-dropdown_xx-small slds-dropdown_right slds-nubbin_top-right" onmouseenter="{!c.handleMouseEnter}" onmouseleave="{!c.handleMouseLeave}">
+                                                <ul class="slds-dropdown__list" role="menu">
+                                                    <aura:if isTrue="{!v.objTask.isAlert}">
+                                                        <li class="slds-dropdown__item" role="presentation">
+                                                            <a onclick="{!c.markDismissAction}" role="menuitem" tabindex="-1">
+                                                                <span class="slds-truncate">{!$Label.c.PC_Alert}</span>
+                                                            </a>
+                                                        </li>
+                                                        <li class="slds-dropdown__item" role="presentation">
+                                                            <a onclick="{!c.navigateToTask}" role="menuitem" tabindex="-1">
+                                                                <span class="slds-truncate">{!$Label.c.PC_ViewAlert}</span>
+                                                            </a>
+                                                        </li>
+                                                        <aura:set attribute="else">
+                                                            <li class="slds-dropdown__item" role="presentation">
+                                                                <a onclick="{!c.markCompleteAction}" role="menuitem" tabindex="0">
+                                                                    <span class="slds-truncate">{!$Label.c.PC_Task_MarkAsComplete}</span>
+                                                                </a>
+                                                            </li>
+                                                            <aura:if isTrue="{!!v.objTask.highPriority}">
+
+                                                                <li class="slds-dropdown__item" role="presentation">
+                                                                    <a onclick="{!c.markHighPriorityAction}" role="menuitem" tabindex="-1">
+                                                                        <span class="slds-truncate">{!$Label.c.PC_Task_MarkAsHighPriority}</span>
+                                                                    </a>
+                                                                </li>
+                                                            </aura:if>
+                                                            <li class="slds-dropdown__item" role="presentation">
+                                                                <a onclick="{!c.navigateToTask}" role="menuitem" tabindex="-1" >
+                                                                    <span class="slds-truncate">{!$Label.c.PC_Task_ViewAsTask}</span>
+                                                                </a>
+                                                            </li>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="slds-col slds-size--2-of-2 divHeight">
+                                <a onclick="{!c.navigateToTask}">
+                                    <p class="slds-truncate_container_85 card-title" title="{!v.objTask.subject}">
+                                            {!v.objTask.subject}</p>
+                                </a>
+                            </div>
+
+                            <div class="slds-size_2-of-2">
+                                <p class="slds-truncate card-field">
+                                    <aura:if isTrue="{! !empty(v.objTask.relatedToRecordName)}">
+                                        <a onclick="{!c.navigateToRecord}">{!v.objTask.relatedToRecordName}</a>
+                                        <aura:set attribute="else">&nbsp;</aura:set>
+                                    </aura:if>
+                                    <aura:if isTrue="{! !empty(v.objTask.patientName)}">
+                                         | <a onclick="{!c.navigateToAccountRecord}" title="{!v.objTask.patientName}">{!v.objTask.patientName}</a>
+                                        <aura:set attribute="else">&nbsp;</aura:set>
+                                    </aura:if>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interaction</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interactions</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- PC Document Link Interaction --></label>
+        <name>PC_Doc_Link_Interaction</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Meeting Link --></label>
+        <name>ACLS_Meeting_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub Type --></label>
+        <name>ACLS_Sub_Type__c</name>
+        <picklistValues>
+            <masterLabel>First Interaction</masterLabel>
+            <translation><!-- First Interaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subsequent Training</masterLabel>
+            <translation><!-- Subsequent Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Duration (Hrs) --></label>
+        <name>PC_Duration_Hrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- End --></label>
+        <name>PC_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>PC_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>PC_Participant__c</name>
+        <relationshipLabel><!-- Interactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Participants --></label>
+        <name>PC_Participants__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caregiver</masterLabel>
+            <translation><!-- Caregiver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Reimbursement Manager</masterLabel>
+            <translation><!-- Field Reimbursement Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursement Specialist</masterLabel>
+            <translation><!-- Reimbursement Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>PC_Patient_Program__c</name>
+        <relationshipLabel><!-- Interactions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>PC_Patient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start --></label>
+        <name>PC_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>PC_Status__c</name>
+        <picklistValues>
+            <masterLabel>Attended</masterLabel>
+            <translation><!-- Attended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmed</masterLabel>
+            <translation><!-- Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_Type__c</name>
+        <picklistValues>
+            <masterLabel>Infusion Appointment</masterLabel>
+            <translation><!-- Infusion Appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Injection Training</masterLabel>
+            <translation><!-- Injection Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test - Baseline</masterLabel>
+            <translation><!-- Test - Baseline --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training - Live In-Person</masterLabel>
+            <translation><!-- Training - Live In-Person --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training - Live Virtual</masterLabel>
+            <translation><!-- Training - Live Virtual --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Account selected must be of the Record Type Pharmacy, HCO or Field Training Nurse --></errorMessage>
+        <name>Participant_Acc_Record_Type_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case selected must be of the Record Type Program --></errorMessage>
+        <name>Program_Case_Record_Type_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

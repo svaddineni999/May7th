@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This permission set has all the permissions to get started with the Enrollment Wizard.
+Note: If you are adding additional fields in the field set, make sure you add those in this permission set, or the user has access to those fields.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Enrollment Wizard</label>
+</PermissionSet>

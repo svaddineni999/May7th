@@ -1,0 +1,26 @@
+<!--
+ - Created by tusarora on 7/20/2020.
+ -->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" description="PC_LaunchLogACall" controller="PC_LaunchLogACallController">
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="relatedToId" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToObject" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="logACall" type="String" default="{!$Label.c.PC_LogACall}" />
+    <aura:attribute name="logACallRecordTypeId" type="String" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="logACallErrors" type="List"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:if isTrue="{! v.logACallErrors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.logACallErrors}"/>
+        <aura:set attribute="else">
+            <lightning:button variant="brand" iconName="standard:call" label="{!v.logACall}" title="{!v.logACall}" onclick="{!c.openLogACallActionComponent}"/>
+        </aura:set>
+    </aura:if>
+
+
+
+</aura:component>

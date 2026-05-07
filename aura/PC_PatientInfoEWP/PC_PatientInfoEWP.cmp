@@ -1,0 +1,832 @@
+<!--
+Lightning component  : PC_PatientInfoEWP
+Description          : Patient Information Enrollment Wizard Page
+
+Modification Log:
+Satheesh Kumar       21-Oct-2020    [PC-6738] Added new overflow class to fix for Datepicker orientation & Pop-out issue
+Sheela Sathyanarayana  13-Dec-2020
+-->
+
+<aura:component access="public" extends="c:PC_EnrollmentWizardPage" controller="PC_PatientInfoEWP">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!--Attribute used to pass the attribute list that needs to be persisted-->
+    <aura:set attribute="persistentAttributes" value="['persistentAccount','persistentAddress']" />
+    <aura:set attribute="isValid" value="true"/>
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+
+    <aura:attribute name="countPrimary" type="String"/>
+    <aura:attribute name="errorCheck" type="Boolean" default="true"/>
+    <aura:attribute name="picklistEntryMap" type="Map"/>
+    <aura:attribute name="newAddressIndex" type="String"/>
+    <aura:attribute name="existingAddress" type="sObject[]"/><!-- Capture the existing Address for the Account-->
+    <aura:attribute name="existingAccount" type="sObject"/><!-- Capture the existing Account-->
+    <aura:attribute name="button"  type="Boolean" default="true"/>
+    <aura:attribute name="persistentAddress" type="sObject[]"/><!-- Capture the Manually Entered Address-->
+    <aura:attribute name="persistentAccount" type="sObject"/>
+    <aura:attribute name="myFieldLabels" type="String"/><!-- The Labels for the List View of Address-->
+    <aura:attribute name="newAddress" type="sObject"/><!-- Capture the Manually Entered Address-->
+    <aura:attribute name="addressSourceManual" type="String" default="{!$Label.c.PC_Address_SourceManual}" />
+    <aura:attribute name="addressSourceApplicant" type="String" default="{!$Label.c.PC_Address_SourceApplicant}" />
+    <aura:attribute name="addrModalOpen" type="Boolean" default="false"/>
+    <aura:attribute name="addrError" type="Boolean" default="false"/>
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_PatientInfo_Label1}"/>
+    <aura:attribute name="_label2" type="String" default="{!$Label.c.PC_PatientInfo_Label2}"/>
+    <aura:attribute name="_label3" type="String" default="{!$Label.c.PC_PatientInfo_Label3}"/>
+    <aura:attribute name="_label4" type="String" default="{!$Label.c.PC_PatientInfo_Label4}"/>
+    <aura:attribute name="_label5" type="String" default="{!$Label.c.PC_PatientInfo_Address_Reference}"/>
+    <aura:attribute name="showAddressRefTable" type="Boolean" default="false"/>
+    <aura:attribute name="onlineFormAddress" type="sObject[]"/>
+    <aura:attribute name="isValidated" type="Boolean" default="false"/>
+
+    <aura:attribute name="fieldSetName" type="String"/>
+    <aura:attribute name="ignoreFields" type="String[]"/>
+    <aura:attribute name="replaceTarget" type="String"/>
+    <aura:attribute name="replaceText" type="String"/>
+    <aura:attribute name="overrideAddressAutoComplete" type="String"/>
+
+    <aura:attribute name="typeName" type="String" default="Account"/>
+    <aura:attribute name="fieldSetFields" type="Object[]"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+
+    <aura:attribute name="_pageError" type="String" default="{!$Label.c.PC_EWP_PageError}" />
+    <aura:attribute name="_addressPageErrorReplacements" type="Map" default="{'%ObjectName%':'address'}" />
+    <aura:attribute name="_accountPageErrorReplacements" type="Map" default="{'%ObjectName%':'account'}" />
+    <aura:attribute name="_onlineFormWarning" type="String" default="{!$Label.c.PC_EWP_OnlineFormWarning}" />
+
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}" />
+    <aura:attribute name="dobFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_DOB}" />
+    <aura:attribute name="phoneFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Phone}" />
+    <aura:attribute name="emailFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Email}" />
+
+    <aura:attribute name="applicantAddressMessage" type="String" default="{!$Label.c.PC_PageInfo_ApplicantAddress}" />
+    <aura:attribute name="requiredPageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Required_Fields}" />
+    <aura:attribute name="dobPageErrorMessage" type="String" default="{!$Label.c.PC_PageError_DOB}" />
+    <aura:attribute name="phonePageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Phone}" />
+    <aura:attribute name="emailPageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Email}" />
+    <aura:attribute name="primaryAddressLessPageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Primary_Address_Less}" />
+    <aura:attribute name="primaryAddressMorePageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Primary_Address_More}" />
+    <aura:attribute name="onlineAddressErrorMessage" type="String" default="{!$Label.c.PC_PageError_Address}"/>
+
+    <!--Using Attributes-->
+    <aura:attribute name="dependentFieldMap" type="Map" description="store controller(key)--> dependent(values) picklist entry as a map." />
+    <aura:attribute name="isDependentDisable" type="boolean" default="true" description="use for, make disbale depandent field." />
+    <aura:attribute name="noneOptionName" type="String" default="{!$Label.c.PC_Picklist_None}" />
+    <aura:attribute name="noneOptionValue" type="String" />
+    <aura:attribute name="showSpinner" type="Boolean"/>
+
+    <aura:attribute name="addressAutoComplete" type="Boolean"/>
+    <aura:attribute name="streetLwc" type="String"/>
+    <aura:attribute name="cityLwc" type="String"/>
+    <aura:attribute name="stateLwc" type="String"/>
+    <aura:attribute name="countryLwc" type="String"/>
+    <aura:attribute name="zipcodeLwc" type="String"/>
+    <aura:attribute name="allFieldsValidLwc" type="Boolean" />
+    <aura:attribute name="lwcChanged" type="Boolean" default="false"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+    </aura:if>
+    <div class="slds">
+
+        <ul class="pc-overflow-hidden">
+            <li class="slds-item slds-m-bottom--small">
+                <div class="slds-tabs--scoped">
+                    <fieldset class="slds-form--compound">
+                        <div class="slds-tabs--scoped__nav" role="tablist">
+                            <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!v._label1}</legend>
+                        </div>
+                        <div class="slds-form-element__group slds-tabs--scoped__content">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="salutation">{!v.myFieldLabels.salutation}</label>
+                                    <aura:if isTrue="{! and( v.persistentAccount != null, v.picklistEntryMap != null )}">
+                                        <ui:inputSelect aura:id="salutation" class="slds-select" value="{!v.persistentAccount.salutation}">
+                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                            <aura:iteration items="{!v.picklistEntryMap.salutation}" var="entry">
+                                                <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </aura:if>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="firstName">
+                                        <abbr class="slds-required" title="required">*</abbr>{!v.myFieldLabels.firstName}</label>
+                                    <ui:inputText aura:id="firstName"
+                                                  class="slds-input"
+                                                  labelClass="slds-form-element__label"
+                                                  value="{!v.persistentAccount.firstName}"/>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="lastName">
+                                        <abbr class="slds-required" title="required">*</abbr>{!v.myFieldLabels.lastName}</label>
+                                    <ui:inputText aura:id="lastName"
+                                                  class="slds-input"
+                                                  labelClass="slds-form-element__label"
+                                                  value="{!v.persistentAccount.lastName}"/>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <lightning:input aura:id="dob" type="Date" dateStyle="short" label="{!v.myFieldLabels.dob}" name="dob" value="{!v.persistentAccount.dob}" />
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="gender">{!v.myFieldLabels.gender}</label>
+                                    <aura:if isTrue="{! and( v.persistentAccount != null, v.picklistEntryMap != null )}">
+                                        <ui:inputSelect aura:id="gender" class="slds-select" value="{!v.persistentAccount.gender}">
+                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                            <aura:iteration items="{!v.picklistEntryMap.gender}" var="entry">
+                                                <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </li>
+
+            <!--**********************************************Communication Preference*************************************************-->
+
+            <li class="slds-item slds-m-bottom--small">
+                <div class="slds-tabs--scoped">
+                    <fieldset class="slds-form--compound">
+                        <div class="slds-tabs--scoped__nav" role="tablist">
+                            <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!v._label3}</legend>
+                        </div>
+                        <div class="slds-form-element__group slds-tabs--scoped__content">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="communicationLanguage">{!v.myFieldLabels.communicationLanguage}</label>
+                                    <aura:if isTrue="{! and( v.persistentAccount != null, v.picklistEntryMap != null )}">
+                                        <ui:inputSelect aura:id="communicationLanguage" class="slds-select" value="{!v.persistentAccount.communicationLanguage}">
+                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                            <aura:iteration items="{!v.picklistEntryMap.communicationLanguage}" var="entry">
+                                                <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </aura:if>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="phone">{!v.myFieldLabels.phone}</label>
+                                    <ui:inputPhone aura:id="phone"
+                                                   class="slds-input"
+                                                   labelClass="slds-form-element__label"
+                                                   value="{!v.persistentAccount.phone}" maxlength="20"/>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="email">{!v.myFieldLabels.email}</label>
+                                    <ui:inputEmail aura:id="email"
+                                                   class="slds-input"
+                                                   placeholder="test@test.com"
+                                                   labelClass="slds-form-element__label"
+                                                   value="{!v.persistentAccount.email}"/>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="fax">{!v.myFieldLabels.fax}</label>
+                                    <ui:inputText aura:id="fax"
+                                                  class="slds-input"
+                                                  labelClass="slds-form-element__label"
+                                                  value="{!v.persistentAccount.fax}" maxlength="20"/>
+                                </div>
+                            </div>
+
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                    <label class="slds-form-element__label" for="preferredCommunicationChannel">{!v.myFieldLabels.preferredCommunicationChannel}</label>
+                                    <aura:if isTrue="{! and( v.persistentAccount != null, v.picklistEntryMap != null )}">
+                                        <ui:inputSelect aura:id="preferredCommunicationChannel" class="slds-select" value="{!v.persistentAccount.preferredCommunicationChannel}">
+                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                            <aura:iteration items="{!v.picklistEntryMap.communicationChannel}" var="entry">
+                                                <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                            </aura:iteration>
+                                        </ui:inputSelect>
+                                    </aura:if>
+                                </div>
+
+                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1"/>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </li>
+
+            <!--**********************************************Address Section*************************************************-->
+            <aura:if isTrue="{!v.showAddressRefTable}" >
+                <li class="slds-item slds-m-bottom--small">
+                    <div class="slds-tabs--scoped__nav slds-clearfix" role="tablist">
+                        <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!v._label2}</legend>
+                    </div>
+                    <div class="slds-form-element__group slds-tabs--scoped__content">
+                        <!--**********************************************Address Reference Table *************************************************-->
+                <li class="slds-item slds-m-bottom--small">
+                    <div class="refTable slds-tabs--scoped">
+                        <fieldset class="slds-form--compound">
+                            <div class="searchForm">
+                                <div class="slds-tabs--scoped__nav reftableheader" role="tablist">
+                                    <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection " style = "color:#ffffff">{!v._label5}
+                                            </legend>
+                                </div>
+                                <div class="slds-form-element__group slds-tabs--scoped__content">
+                                    <div class="slds-text-body--small message"  >
+                                        <lightning:icon iconName="utility:info"  size="x-small" alternativeText="Information"/> &nbsp;
+                                        <ui:outputText value="{!$Label.c.PC_PageInfo_ApplicantAddress}"  />
+                                    </div>
+                                    <div class="searchResultBlock">
+                                        <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                            <div class="slds-form-element__row">
+                                                <div class="slds-form-element slds-size--1-of-1">
+                                                    <table class="slds-table slds-table--bordered slds-table--cell-buffer1 slds-table--fixed-layout">
+                                                        <thead>
+                                                        <tr class="slds-text-title--caps">
+                                                            <th scope="col" class="actionIcon">
+                                                                <div class="slds-truncate" title="{!$Label.c.PC_Address_AddOrRemove}">&nbsp;</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.myFieldLabels.address1}">{!v.myFieldLabels.address1}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.myFieldLabels.city}">{!v.myFieldLabels.city}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.myFieldLabels.state}">{!v.myFieldLabels.state}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.myFieldLabels.zipCode}">{!v.myFieldLabels.zipCode}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.myFieldLabels.country}">{!v.myFieldLabels.country}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.myFieldLabels.source}">{!v.myFieldLabels.source}</div>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+
+                                                        <tbody>
+                                                        <aura:iteration items="{!v.onlineFormAddress}" var="th" indexVar="i">
+                                                            <tr>
+                                                                <td scope="row" data-label="{! i}">
+                                                                    <div class="{!th.isAddressSelected + ' cbBlock'}" >
+                                                                        <a data-text="{! i}" data-applicantSourceID="{! i}"
+                                                                           onclick="{!c.addNewAddressViaApplicant}">
+                                                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new'}"
+                                                                                   ariaHidden="true"
+                                                                            />
+
+                                                                        </a>
+                                                                    </div>
+                                                                    <div class="{!th.isAddressSelected + ' tickBlock'}">
+                                                                        <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#success'}"
+                                                                               ariaHidden="true"
+                                                                        />
+                                                                    </div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.address1}">
+                                                                    <div class="slds-truncate" data-id="{! i}" title="{!th.address1}">{!th.address1}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.city}">
+                                                                    <div class="slds-truncate" data-id="{! i}" title="{!th.city}">{!th.city}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.state}">
+                                                                    <div class="slds-truncate" data-id="{! i}" title="{!th.state}">{!th.stateLabel}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.zipCode}">
+                                                                    <div class="slds-truncate" data-id="{! i}" title="{!th.zipCode}">{!th.zipCode}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.country}">
+                                                                    <div class="slds-truncate" data-id="{! i}" title="{!th.country}">{!th.countryLabel}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="source">
+                                                                    <div class="slds-truncate" data-id="{! i}" title="{!th.source}">{!th.source}</div>
+                                                                </td>
+                                                            </tr>
+                                                        </aura:iteration>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </li>
+                <!--**********************************************Added Address List*************************************************-->
+                <div class="slds-tabs--scoped">
+                    <fieldset class="slds-form--compound">
+                        <div class="slds-tabs--scoped__nav slds-clearfix" role="tablist">
+                            <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">Selected {!v._label2}</legend>
+                            <button type="button" class="rightMargin slds-button slds-button--neutral slds-button--brand" onclick="{!c.showModalBox}">{!$Label.c.PC_Add_New_Button}</button>
+                        </div>
+                        <div class="slds-form-element__group slds-tabs--scoped__content">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size--1-of-1">
+                                    <table class="slds-table slds-table--bordered slds-table--cell-buffer1 slds-table--fixed-layout addressTable">
+                                        <thead>
+                                        <tr class="slds-text-title--caps">
+                                            <th scope="col" class="actionIcon">
+                                                <div class="slds-truncate" title="Edit"></div>
+                                            </th>
+                                            <th scope="col" class="actionIcon">
+                                                <div class="slds-truncate" title="Remove"></div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.address1}">{!v.myFieldLabels.address1}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.city}">{!v.myFieldLabels.city}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.state}">{!v.myFieldLabels.state}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.zipCode}">{!v.myFieldLabels.zipCode}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.country}">{!v.myFieldLabels.country}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.addrstatus}">{!v.myFieldLabels.addrstatus}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.primary}">{!v.myFieldLabels.primary}</div>
+                                            </th>
+                                            <th scope="col">
+                                                <div class="slds-truncate" title="{!v.myFieldLabels.source}">{!v.myFieldLabels.source}</div>
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <aura:iteration aura:id="addrTableData" items="{!v.persistentAddress}" var="th" indexVar="i">
+                                            <tr>
+                                                <aura:if isTrue="{!v.addressAutoComplete}">
+                                                    <td scope="row" data-label="Edit">
+                                                        <a data-id="{!'ext'+i}" onclick="{!c.editAddressLwc}">
+                                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#edit'}"
+                                                                   ariaHidden="true"
+                                                            />
+
+                                                        </a>
+                                                    </td>
+                                                <aura:set attribute="else">
+                                                    <td scope="row" data-label="Edit">
+                                                        <a data-id="{!'ext'+i}" onclick="{!c.editAddress}">
+                                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#edit'}"
+                                                                   ariaHidden="true"
+                                                            />
+
+                                                        </a>
+                                                    </td>
+                                                </aura:set>
+                                                </aura:if>
+                                                <td scope="row" data-label="Remove">
+                                                    <a data-id="{!'ext'+i}" onclick="{!c.removeAddress}">
+                                                        <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#delete'}"
+                                                               ariaHidden="true"
+                                                        />
+                                                    </a>
+                                                </td>
+                                                <td scope="row" data-label="{!th.address1}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.address1}">{!th.address1}</div>
+                                                </td>
+                                                <td scope="row" data-label="{!th.city}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.city}">{!th.city}</div>
+                                                </td>
+                                                <td scope="row" data-label="{!th.state}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.state}">{!th.stateLabel}</div>
+                                                </td>
+                                                <td scope="row" data-label="{!th.zipCode}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.zipCode}">{!th.zipCode}</div>
+                                                </td>
+                                                <td scope="row" data-label="{!th.country}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.country}">{!th.countryLabel}</div>
+                                                </td>
+                                                <td scope="row" data-label="{!th.status}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.status}">{!th.statusLabel}</div>
+                                                </td>
+                                                <td scope="row" data-label="{!th.primary}">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.primary}">
+                                                        <ui:outputCheckbox value="{!th.primary}"/>
+                                                    </div>
+                                                </td>
+                                                <td scope="row" data-label="source">
+                                                    <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.source}">{!th.source}</div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+    </div> <!---Address section ends-->
+    </li>
+    <!--**************************************Address Section when no online information available**********************************-->
+    <aura:set attribute="else">
+        <li class="slds-item slds-m-bottom--small">
+            <div class="slds-tabs--scoped">
+                <fieldset class="slds-form--compound">
+                    <div class="slds-tabs--scoped__nav slds-clearfix" role="tablist">
+                        <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!v._label2}</legend>
+                        <button type="button" class="rightMargin slds-button slds-button--neutral slds-button--brand" onclick="{!c.showModalBox}">{!$Label.c.PC_Add_New_Button}</button>
+                    </div>
+                    <div class="slds-form-element__group slds-tabs--scoped__content">
+                        <div class="slds-form-element__row">
+                            <div class="slds-form-element slds-size--1-of-1">
+                                <table class="slds-table slds-table--bordered slds-table--cell-buffer1 slds-table--fixed-layout addressTable">
+                                    <thead>
+                                    <tr class="slds-text-title--caps">
+                                        <th scope="col" class="actionIcon">
+                                            <div class="slds-truncate" title="Edit"></div>
+                                        </th>
+                                        <th scope="col" class="actionIcon">
+                                            <div class="slds-truncate" title="Remove"></div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.address1}">{!v.myFieldLabels.address1}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.city}">{!v.myFieldLabels.city}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.state}">{!v.myFieldLabels.state}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.zipCode}">{!v.myFieldLabels.zipCode}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.country}">{!v.myFieldLabels.country}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.addrstatus}">{!v.myFieldLabels.addrstatus}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.primary}">{!v.myFieldLabels.primary}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.myFieldLabels.source}">{!v.myFieldLabels.source}</div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <aura:iteration aura:id="addrTableData" items="{!v.persistentAddress}" var="th" indexVar="i">
+                                        <tr>
+                                            <aura:if isTrue="{!v.addressAutoComplete}">
+                                                <td scope="row" data-label="Edit">
+                                                    <a data-id="{!'ext'+i}" onclick="{!c.editAddressLwc}">
+                                                        <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#edit'}"
+                                                               ariaHidden="true"
+                                                        />
+
+                                                    </a>
+                                                </td>
+                                                <aura:set attribute="else">
+                                                    <td scope="row" data-label="Edit">
+                                                        <a data-id="{!'ext'+i}" onclick="{!c.editAddress}">
+                                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#edit'}"
+                                                                   ariaHidden="true"
+                                                            />
+
+                                                        </a>
+                                                    </td>
+                                                </aura:set>
+                                            </aura:if>
+                                            <td scope="row" data-label="Remove">
+                                                <a data-id="{!'ext'+i}" onclick="{!c.removeAddress}">
+                                                    <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                           xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#delete'}"
+                                                           ariaHidden="true"
+                                                    />
+                                                </a>
+                                            </td>
+                                            <td scope="row" data-label="{!th.address1}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.address1}">{!th.address1}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!th.city}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.city}">{!th.city}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!th.state}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.state}">{!th.stateLabel}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!th.zipCode}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.zipCode}">{!th.zipCode}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!th.country}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.country}">{!th.countryLabel}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!th.status}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.status}">{!th.statusLabel}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!th.primary}">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.primary}">
+                                                    <ui:outputCheckbox value="{!th.primary}"/>
+                                                </div>
+                                            </td>
+                                            <td scope="row" data-label="source">
+                                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.source}">{!th.source}</div>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </li>
+    </aura:set>
+    </aura:if>
+    <!--**********************************************CareGiver Information*************************************************-->
+
+    <li class="slds-item slds-m-bottom--small">
+        <div class="slds-tabs--scoped">
+            <fieldset class="slds-form--compound">
+                <div class="slds-tabs--scoped__nav" role="tablist">
+                    <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!v._label4}</legend>
+                </div>
+                <div class="slds-form-element__group slds-tabs--scoped__content">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                            <label class="slds-form-element__label" for="caregiverSalutation">{!v.myFieldLabels.caregiverSalutation}</label>
+                            <aura:if isTrue="{! and( v.persistentAccount != null, v.picklistEntryMap != null )}">
+                                <ui:inputSelect aura:id="caregiverSalutation" class="slds-select" value="{!v.persistentAccount.caregiverSalutation}">
+                                    <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                    <aura:iteration items="{!v.picklistEntryMap.caregiverSalutation}" var="entry">
+                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                            </aura:if>
+                        </div>
+                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                            <label class="slds-form-element__label" for="caregiverRelation">{!v.myFieldLabels.caregiverRelation}</label>
+                            <aura:if isTrue="{! and( v.persistentAccount != null, v.picklistEntryMap != null )}">
+                                <ui:inputSelect aura:id="caregiverRelation" class="slds-select" value="{!v.persistentAccount.caregiverRelation}">
+                                    <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                    <aura:iteration items="{!v.picklistEntryMap.relationToPatient}" var="entry">
+                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                            </aura:if>
+                        </div>
+                    </div>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                            <label class="slds-form-element__label" for="caregiverFirstName">{!v.myFieldLabels.caregiverFirstName}</label>
+                            <ui:inputText aura:id="caregiverFirstName"
+                                          class="slds-input"
+                                          labelClass="slds-form-element__label"
+                                          value="{!v.persistentAccount.caregiverFirstName}"/>
+                        </div>
+                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                            <label class="slds-form-element__label" for="caregiverLastName">{!v.myFieldLabels.caregiverLastName}</label>
+                            <ui:inputText aura:id="caregiverLastName"
+                                          class="slds-input"
+                                          labelClass="slds-form-element__label"
+                                          value="{!v.persistentAccount.caregiverLastName}"/>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </li>
+
+    <aura:if isTrue="{!v.fieldSetFields.length > 0}">
+        <li class="slds-item">
+            <div class="slds-tabs--scoped">
+                <fieldset class="slds-form--compound">
+                    <div class="slds-tabs--scoped__nav" role="tablist">
+                        <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_EWP_Additional_Info_Header}</legend>
+                    </div>
+                    <div class="slds-form-element__group slds-tabs--scoped__content">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-form-element slds-size--1-of-1 slds-max-small-size_1-of-1">
+                                                        {!v.fieldSetFormBody}
+                                                    </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </li>
+    </aura:if>
+    </ul>
+
+    <!--**********************************************Modal Box to enter the New Address Values*************************************************-->
+    <div aura:id="addressModal">
+        <div aria-hidden="false" aura:id="aura_newAccountSectionId" id="newAccountSectionId" role="dialog" class="slds-modal slds-modal--large slds-fade-in-open" style="display:none;">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <div aura:id="newAddressLabelId"><h2 class="slds-text-heading--medium">{!$Label.c.PC_Address_New}</h2><!--Changed to label - PC-1921--></div>
+                        <div aura:id="closeModalBoxId"><button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.dontModalBox}" type="button">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true"
+                            />
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button></div>
+                    </div>
+                    <div class="slds-modal__content">
+                        <ul>
+                            <li class="slds-item">
+                                <div class="slds-tabs--scoped">
+                                    <fieldset class="slds-form--compound">
+                                        <div class="slds-form-element__group slds-tabs--scoped__content">
+
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <aura:if isTrue="{!and(v.newAddress != '', v.newAddress != null, v.picklistEntryMap != null)}">
+                                                        <label class="slds-form-element__label" for="addressType">{!v.myFieldLabels.addressType}</label>
+                                                        <ui:inputSelect aura:id="addressType" class="slds-select" value="{!v.newAddress.addressType}">
+                                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                                            <aura:iteration items="{!v.picklistEntryMap.addrType}" var="entry">
+                                                                <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                                            </aura:iteration>
+                                                        </ui:inputSelect>
+                                                    </aura:if>
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <aura:if isTrue="{!and(v.newAddress != '', v.newAddress != null, v.picklistEntryMap != null)}">
+                                                        <label class="slds-form-element__label" for="addrstatus">{!v.myFieldLabels.addrstatus}</label>
+                                                        <ui:inputSelect aura:id="addrstatus" class="slds-select" value="{!v.newAddress.status}">
+                                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                                            <aura:iteration items="{!v.picklistEntryMap.addrStatus}" var="entry">
+                                                                <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                                            </aura:iteration>
+                                                        </ui:inputSelect>
+                                                    </aura:if>
+                                                </div>
+                                                <table>
+                                                    <th class= "whiteSpace1">
+                                                        <tr>
+                                                        </tr>
+                                                    </th>
+                                                </table>
+                                            </div>
+
+                                            <aura:if isTrue="{!v.addressAutoComplete}">
+                                                <div class="slds-grid slds-wrap">
+                                                    <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1" aura:id="lwcBody">
+                                                            {!v.body}
+                                                    </div>
+                                                    <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                        <table>
+                                                            <th class= "whiteSpace">
+                                                                <tr>
+                                                                </tr>
+                                                            </th>
+                                                        </table>
+                                                        <label class="slds-form-element__label" for="address2">{!v.myFieldLabels.address2}</label>
+                                                        <ui:inputText aura:id="address2"
+                                                                      class="slds-input"
+                                                                      labelClass="slds-form-element__label"
+                                                                      value="{!v.newAddress.address2}"/>
+
+                                                        <label class="slds-form-element__label" for="address3">{!v.myFieldLabels.address3}</label>
+                                                        <ui:inputText aura:id="address3"
+                                                                      class="slds-input"
+                                                                      labelClass="slds-form-element__label"
+                                                                      value="{!v.newAddress.address3}"/>
+
+                                                        <label class="slds-form-element__label" for="primary">{!v.myFieldLabels.primary}</label>
+                                                        <ui:inputCheckbox aura:id="primary"
+                                                                          class=""
+                                                                          labelClass="slds-form-element__label"
+                                                                          value="{!v.newAddress.primary}"/>
+                                                    </div>
+                                                </div>
+
+                                                <aura:set attribute="else">
+                                                    <div class="slds-grid slds-wrap">
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="address1">
+                                                                <abbr class="slds-required" title="required">*</abbr>{!v.myFieldLabels.address1} </label>
+                                                            <ui:inputText aura:id="address1"
+                                                                          class="slds-input"
+                                                                          errors=""
+                                                                          labelClass="slds-form-element__label"
+                                                                          value="{!v.newAddress.address1}"/>
+                                                        </div>
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="address2">{!v.myFieldLabels.address2}</label>
+                                                            <ui:inputText aura:id="address2"
+                                                                          class="slds-input"
+                                                                          labelClass="slds-form-element__label"
+                                                                          value="{!v.newAddress.address2}"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-grid slds-wrap">
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="address3">{!v.myFieldLabels.address3}</label>
+                                                            <ui:inputText aura:id="address3"
+                                                                          class="slds-input"
+                                                                          labelClass="slds-form-element__label"
+                                                                          value="{!v.newAddress.address3}"/>
+                                                        </div>
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="zipCode">{!v.myFieldLabels.zipCode}</label>
+                                                            <ui:inputText aura:id="zipCode"
+                                                                          class="slds-input"
+                                                                          labelClass="slds-form-element__label"
+                                                                          value="{!v.newAddress.zipCode}"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-grid slds-wrap">
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="city">
+                                                                <abbr class="slds-required" title="required">*</abbr>{!v.myFieldLabels.city}</label>
+                                                            <ui:inputText aura:id="city"
+                                                                          class="slds-input"
+                                                                          labelClass="slds-form-element__label"
+                                                                          value="{!v.newAddress.city}"/>
+                                                        </div>
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <aura:if isTrue="{!and(v.newAddress != '', v.newAddress != null, v.picklistEntryMap != null)}">
+                                                                <label class="slds-form-element__label" for="country">{!v.myFieldLabels.country}</label>
+                                                                <div class="slds-select_container">
+                                                                    <ui:inputSelect aura:id="conCountry"
+                                                                                    class="slds-select" change="{!c.onControllerFieldChange}"
+                                                                                    value="{!v.newAddress.country}">
+                                                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}" text="__none"/>
+                                                                        <aura:iteration items="{!v.picklistEntryMap.countries}" var="entry">
+                                                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}" text="{!entry.value}"/>
+                                                                        </aura:iteration>
+                                                                    </ui:inputSelect>
+                                                                </div>
+                                                            </aura:if>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-grid slds-wrap">
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="state">{!v.myFieldLabels.state}</label>
+                                                            <div class="slds-select_container">
+                                                                <ui:inputSelect aura:id="conState"
+                                                                                disabled="{!v.isDependentDisable}" class="slds-select" change="{!c.onDependentFieldChange}"
+                                                                                value="{!v.newAddress.state}"/>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <label class="slds-form-element__label" for="primary">{!v.myFieldLabels.primary}</label>
+                                                            <ui:inputCheckbox aura:id="primary"
+                                                                              class=""
+                                                                              labelClass="slds-form-element__label"
+                                                                              value="{!v.newAddress.primary}"/>
+                                                        </div>
+                                                    </div>
+                                                </aura:set>
+                                            </aura:if>
+
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div class="slds-x-small-buttons--horizontal">
+                            <button class="slds-button slds-button--neutral " onclick="{!c.dontModalBox}" type="button">{!$Label.c.PC_Button_Label_Cancel}</button>
+                            <aura:if isTrue="{!v.button}">
+                                <aura:if isTrue="{!v.addressAutoComplete}">
+                                    <button class="slds-button slds-button--brand" onclick="{!c.addAddressLwc}" type="button">{!$Label.c.PC_Add_Button}</button>
+                                    <aura:set attribute="else">
+                                        <button class="slds-button slds-button--brand" onclick="{!c.addAddress}" type="button">{!$Label.c.PC_Add_Button}</button>
+                                    </aura:set>
+                                </aura:if>
+                                <aura:set attribute="else">
+                                    <aura:if isTrue="{!v.addressAutoComplete}">
+                                        <button class="slds-button slds-button--brand" onclick="{!c.updateAddressLwc}" type="button">{!$Label.c.PC_Update_Button}</button>
+                                        <aura:set attribute="else">
+                                            <button class="slds-button slds-button--brand" onclick="{!c.updateAddress}" type="button">{!$Label.c.PC_Update_Button}</button>
+                                        </aura:set>
+                                    </aura:if>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open" aura:id="aura_backGroundSectionId" id="backGroundSectionId" style="display:none;"></div>
+    </div>
+    </div>
+</aura:component>

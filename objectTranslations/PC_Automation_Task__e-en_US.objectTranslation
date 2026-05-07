@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Automation Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Automation Task</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Class --></label>
+        <name>PC_ActionClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Automation Task Type --></label>
+        <name>PC_AutomationTaskType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running User --></label>
+        <name>PC_RunningUser__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Id --></label>
+        <name>PC_SourceId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>PC_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Activity Id --></label>
+        <name>PC_SupportPlanActivityId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Runtime Id --></label>
+        <name>PC_SupportPlanRuntimeId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Configuration --></label>
+        <name>PC_TaskConfiguration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Id --></label>
+        <name>PC_TaskId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Id --></label>
+        <name>PC_TransactionId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

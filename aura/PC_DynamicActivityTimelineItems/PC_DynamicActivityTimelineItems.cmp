@@ -1,0 +1,307 @@
+<!--
+*************************************************************************************
+Component Name     : PC_DynamicActivityTimelineItems
+Description         : This component is used for showing activity timeline items dynamically.
+CreatedBy           : Deloitte
+Created Date        : 1 March 2021
+Modification Log    :
+*****************************************************************************************************
+Developer                   Date                   Description
+********************************************************************************************
+Kanteti Kishore            1 March 2021           Initial version[PC-7427]
+*****************************************************************************************
+-->
+<aura:component description="PC_DynamicActivityTimelineItems" access="public">
+    <aura:attribute name="item" type="PC_DynamicActivityTimelineModel"/>
+    <aura:attribute name="isExpanded" type="boolean" default="false"/>
+
+    <aura:attribute name="haveLabel" type="String" default="{!$Label.c.PC_Have}" access="private"/>
+    <aura:attribute name="hasLabel" type="String" default="{!$Label.c.PC_Has}" access="private"/>
+    <aura:attribute name="aboutLabel" type="String" default="{!$Label.c.PC_About}" access="private"/>
+    <aura:attribute name="markLabel" type="String" default="{!$Label.c.PC_Mark}" access="private"/>
+    <aura:attribute name="completeLabel" type="String" default="{!$Label.c.PC_Complete}" access="private"/>
+    <aura:attribute name="otherLabel" type="String" default="{!$Label.c.PC_Other}" access="private"/>
+    <aura:attribute name="othersLabel" type="String" default="{!$Label.c.PC_Others}" access="private"/>
+    <aura:attribute name="descriptionLabel" type="String" default="{!$Label.c.PC_Description}" access="private"/>
+    <aura:attribute name="toggleDetailsLabel" type="String" default="{!$Label.c.PC_ToggleDetails}" access="private"/>
+    <aura:attribute name="toLabel" type="String" default="{!$Label.c.PC_ToLabel}" access="private"/>
+    <aura:attribute name="fromLabel" type="String" default="{!$Label.c.PC_From}" access="private"/>
+    <aura:attribute name="withLabel" type="String" default="{!$Label.c.PC_With}" access="private"/>
+    <aura:attribute name="youLabel" type="String" default="{!$Label.c.PC_You}" access="private"/>
+    <aura:attribute name="andLabel" type="String" default="{!$Label.c.PC_And}" access="private"/>
+    <aura:attribute name="callLabel" type="String" default="{!$Label.c.PC_Call}" access="private"/>
+    <aura:attribute name="taskLabel" type="String" default="{!$Label.c.PC_TaskLabel}" access="private"/>
+    <aura:attribute name="eventLabel" type="String" default="{!$Label.c.PC_Event}" access="private"/>
+    <aura:attribute name="emailLabel" type="String" default="{!$Label.c.PC_Email}" access="private"/>
+    <aura:attribute name="startLabel" type="String" default="{!$Label.c.PC_Start}" access="private"/>
+    <aura:attribute name="endLabel" type="String" default="{!$Label.c.PC_End}" access="private"/>
+    <aura:attribute name="highPriorityLabel" type="String" default="{!$Label.c.PC_HighPriority}" access="private"/>
+    <aura:attribute name="recurringTaskLabel" type="String" default="{!$Label.c.PC_RecurringTask}" access="private"/>
+    <aura:attribute name="attachmentLabel" type="String" default="{!$Label.c.PC_Attachment}" access="private"/>
+    <aura:attribute name="hadTask" type="String" default="{!$Label.c.PC_HadATask}" access="private"/>
+    <aura:attribute name="loggedCall" type="String" default="{!$Label.c.PC_CallLogged}" access="private"/>
+    <aura:attribute name="sentEmail" type="String" default="{!$Label.c.PC_SentEmail}" access="private"/>
+    <aura:attribute name="hadEvent" type="String" default="{!$Label.c.PC_HadAnEvent}" access="private"/>
+    <aura:attribute name="upcomingTask" type="String" default="{!$Label.c.PC_UpcomingTask}" access="private"/>
+    <aura:attribute name="upcomingEvent" type="String" default="{!$Label.c.PC_UpcomingEvent}" access="private"/>
+    <aura:attribute name="upcomingCall" type="String" default="{!$Label.c.PC_UpcomingCall}" access="private"/>
+
+    <li>
+        <div class="{!'slds-timeline__item_expandable slds-p-bottom_x-small ' +
+        if(v.item.activityTimelineType == 'Call', 'slds-timeline__item_call',
+            if(v.item.activityTimelineType == 'Email', 'slds-timeline__item_email',
+                if(v.item.activityTimelineType == 'Event', 'slds-timeline__item_event',
+                'slds-timeline__item_task')
+            )
+        ) + (v.isExpanded ? ' slds-is-open' : '')
+    }" aura:id="activityContainer">
+            <span class="slds-assistive-text">{!v.item.activityTimelineType}</span>
+            <div class="slds-media">
+                <!-- ACTIVITY ICON -->
+                <!-- ============= -->
+                <div class="slds-media__figure">
+                    <!-- Toggle Icon for the details section -->
+                    <button class="slds-button slds-button_icon" title="{! v.toggleDetailsLabel +' ' + v.item.subject}" onclick="{!c.toggleActivityDetail}">
+                        <lightning:icon iconName="utility:switch" size="x-small" class="slds-button__icon slds-timeline__details-action-icon"/>
+                    </button>
+                    <!-- Task -->
+                    <aura:if isTrue="{!v.item.activityTimelineType == 'Task'}">
+                        <div class="slds-icon_container slds-icon-standard-task slds-timeline__icon" title="{!v.taskLabel}">
+                            <lightning:icon iconName="standard:task" size="small"/>
+                        </div>
+                    </aura:if>
+                    <!-- Call -->
+                    <aura:if isTrue="{!v.item.activityTimelineType == 'Call'}">
+                        <div class="slds-icon_container slds-icon-standard-log-a-call slds-timeline__icon" title="{!v.callLabel}">
+                            <lightning:icon iconName="standard:log_a_call" size="small"/>
+                        </div>
+                    </aura:if>
+                    <!-- Email -->
+                    <aura:if isTrue="{!v.item.activityTimelineType == 'Email'}">
+                        <div class="slds-icon_container slds-icon-standard-email slds-timeline__icon" title="{!v.emailLabel}">
+                            <lightning:icon iconName="standard:email" size="small"/>
+                        </div>
+                    </aura:if>
+                    <!-- Event -->
+                    <aura:if isTrue="{!v.item.activityTimelineType == 'Event'}">
+                        <div class="slds-icon_container slds-icon-standard-event slds-timeline__icon" title="{!v.eventLabel}">
+                            <lightning:icon iconName="standard:event" size="small"/>
+                        </div>
+                    </aura:if>
+                </div>
+                <!-- ACTIVITY SUMMARY -->
+                <!-- ================ -->
+                <div class="slds-media__body">
+                    <div class="slds-grid slds-grid_align-spread slds-timeline__trigger">
+                        <div class="slds-grid slds-grid_vertical-align-center slds-truncate_container_75 slds-no-space">
+                            <!-- Mark Task as Complete -->
+                            <aura:if isTrue="{!and(v.item.activityTimelineType == 'Task',not(v.item.isComplete))}">
+                                <div class="slds-checkbox">
+                                    <input type="checkbox" name="options" id="{!v.item.recordId}" value="{!v.item.recordId}" />
+                                    <label class="slds-checkbox__label" for="{!v.item.recordId}">
+                                        <span class="slds-checkbox_faux"></span>
+                                        <span class="slds-form-element__label slds-assistive-text">{!v.markLabel + ' ' + v.item.subject + ' ' + v.completeLabel}</span>
+                                    </label>
+                                </div>
+                            </aura:if>
+                            <h3 class="slds-truncate" title="{!v.item.subject}">
+                                <a class="pq--link pq--link-no-border" data-target = "{!v.item.sobjectName}" data-record-id="{!v.item.recordId}" onclick="{!c.goToRecord}">
+                                    <!--href="{!'/lightning/r/' + v.item.sobjectName + '/' + v.item.recordId + '/view'}"-->
+                                    <strong>{!v.item.subject}</strong>
+                                </a>
+                            </h3>
+                            <!-- High Priority Task -->
+                            <aura:if isTrue="{!v.item.isPriority}">
+                                <div class="slds-no-flex">
+                                <span class="slds-icon_container slds-icon-utility-priority" title="{!v.highPriorityLabel}">
+                                    <lightning:icon iconName="utility:priority" variant="error" size="xx-small" class="slds-m-left_x-small"/>
+                                </span>
+                                </div>
+                            </aura:if>
+                            <!-- Recurring Task -->
+                            <aura:if isTrue="{!v.item.isRecurring}">
+                                <div class="slds-no-flex">
+                                <span class="slds-icon_container slds-icon-utility-rotate" title="{!v.recurringTaskLabel}">
+                                    <lightning:icon iconName="utility:rotate" size="xx-small" class="slds-m-left_x-small"/>
+                                </span>
+                                </div>
+                            </aura:if>
+                            <!-- Has Attachments -->
+                            <aura:if isTrue="{!v.item.hasAttachments}">
+                                <div class="slds-no-flex">
+                                <span class="slds-icon_container slds-icon-utility-attach" title="{!v.attachmentLabel}">
+                                    <lightning:icon iconName="utility:attach" size="xx-small" class="slds-m-left_x-small"/>
+                                </span>
+                                </div>
+                            </aura:if>
+                        </div>
+                        <div class="slds-timeline__actions slds-timeline__actions_inline">
+                            <p class="{!v.item.isOverdue ? 'slds-timeline__date slds-text-color_error' : 'slds-timeline__date'}">
+                                <aura:if isTrue="{!and(v.item.activityTimelineType != 'Task', v.item.activityTimelineType != 'Call')}">
+                                    <lightning:formattedDateTime value="{!v.item.activityDate}" hour="2-digit" minute="2-digit" hour12="false"/> |
+                                </aura:if>
+                                <lightning:formattedDateTime value="{!v.item.activityDate}" day="2-digit" month="short"/>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="slds-m-horizontal_xx-small">
+                        <!-- Assigned To | Sender -->
+                        <aura:if isTrue="{!v.item.assignedTo}">
+                            <aura:if isTrue="{!v.item.assignedTo.isCurrentUser}">
+                                You
+                                <aura:set attribute="else">
+                                    <a class="pq--link" data-target="{!v.item.assignedTo.sobjectName}" data-record-id="{!v.item.assignedTo.recordId}" onclick="{!c.goToRecord}">
+                                        <!--href="{!'/lightning/r/' + v.item.assignedTo.sobjectName + '/' + v.item.assignedTo.recordId + '/view'}"-->
+                                    {!v.item.assignedTo.recordName}
+                                </a>
+                                </aura:set>
+                            </aura:if>
+                            <aura:set attribute="else">
+                                <a class="pq--link" href="{!'mailto:' + v.item.fromEmail.address }">
+                                {!v.item.fromEmail.address}
+                            </a>
+                            </aura:set>
+                        </aura:if>
+
+                        <!-- Tense -->
+                        <aura:if isTrue="{!v.item.isComplete}">
+                            <!-- Past Tense -->
+                            <aura:if isTrue="{!v.item.activityTimelineType == 'Task'}">
+                                &nbsp;{!v.hadTask}
+                            </aura:if>
+                            <aura:if isTrue="{!v.item.activityTimelineType == 'Call'}">
+                                &nbsp;{!v.loggedCall}
+                            </aura:if>
+                            <aura:if isTrue="{!v.item.activityTimelineType == 'Email'}">
+                                &nbsp;{!v.sentEmail}
+                            </aura:if>
+                            <aura:if isTrue="{!v.item.activityTimelineType == 'Event'}">
+                                &nbsp;{!v.hadEvent}
+                            </aura:if>
+
+                            <!-- Future Tense -->
+                            <aura:set attribute="else">
+                                {!v.item.assignedTo.isCurrentUser ? ' ' + v.haveLabel +' ' : ' '+ v.hasLabel +' '}
+                                <aura:if isTrue="{!v.item.activityTimelineType == 'Task'}">
+                                    {!v.upcomingTask}
+                                </aura:if>
+                                <aura:if isTrue="{!v.item.activityTimelineType == 'Call'}">
+                                    {!v.upcomingCall}
+                                </aura:if>
+                                <aura:if isTrue="{!v.item.activityTimelineType == 'Event'}">
+                                    {!v.upcomingEvent}
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+
+                        <!-- Contact or Lead or Recipients -->
+                        <aura:if isTrue="{!v.item.recipients}">
+                            {!v.item.activityTimelineType == 'Email' ? ' '+ v.toLabel +' ' : ' '+ v.withLabel +' '}
+                            <aura:if isTrue="{!v.item.recipients[0].isCurrentUser}">
+                                {!v.youLabel}
+                                <aura:set attribute="else">
+                                    <a class="pq--link" data-target="{!v.item.recipients[0].sobjectName}" data-record-id = "{!v.item.recipients[0].recordId}"  onclick= "{!c.goToRecord}">
+                                        <!--href="{!'/lightning/r/' + v.item.recipients[0].sobjectName + '/' + v.item.recipients[0].recordId + '/view'}"-->
+                                    {!v.item.recipients[0].recordName}
+                                </a>
+                                </aura:set>
+                            </aura:if>
+                            <aura:if isTrue="{!v.item.recipients.length > 1}">
+                                {!v.andLabel} {!v.item.recipients.length - 1} {!v.item.recipients.length == 2 ? ' '+ v.otherLabel+' ' : ' '+ v.othersLabel+' '}
+                            </aura:if>
+                        </aura:if>
+
+                        <!-- to email -->
+                        <aura:if isTrue="{!v.item.toEmail}">
+                            <a class="pq--link" href="{!'mailto:' + v.item.toEmail.address }">
+                            {!v.item.toEmail.address}
+                        </a>
+                        </aura:if>
+
+                        <!-- Related To -->
+                        <aura:if isTrue="{!v.item.relatedTo}">
+                            {!v.aboutLabel}
+                            <a class="pq--link" onclick="{!c.goToRecord}" data-record-id="{!v.item.relatedTo.recordId}" data-target="{!v.item.relatedTo.sobjectName}">
+                                <!--href="{!'/lightning/r/' + v.item.relatedTo.sobjectName + '/' + v.item.relatedTo.recordId + '/view'}"-->
+                            {!v.item.relatedTo.recordName}
+                        </a>
+                        </aura:if>
+                    </p>
+                    <!-- ACTIVITY DETAIL -->
+                    <!-- ================ -->
+                    <article class="slds-box slds-timeline__item_details slds-theme_shade" aria-hidden="true">
+                        <!-- Email -->
+                        <aura:if isTrue="{!v.item.activityTimelineType == 'Email'}">
+                            <ul class="slds-list_horizontal slds-wrap">
+                                <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                    <span class="slds-text-title">{!v.fromLabel}</span>
+                                    <span class="slds-text-body_medium slds-truncate">
+                                    <!-- Assigned To | Sender -->
+                                    <aura:if isTrue="{!v.item.assignedTo}">
+                                        <a class="pq--link" onclick="{!c.goToRecord}" data-record-id="{!v.item.assignedTo.recordId}" data-target="{!v.item.assignedTo.sobjectName}">
+                                            <!--href="{!'/lightning/r/' + v.item.assignedTo.sobjectName + '/' + v.item.assignedTo.recordId + '/view'}"-->
+                                            {!v.item.assignedTo.recordName}
+                                        </a>
+                                        <aura:set attribute="else">
+                                            <a class="pq--link" href="{!'mailto:' + v.item.fromEmail.address }">
+                                                {!v.item.fromEmail.address}
+                                            </a>
+                                        </aura:set>
+                                    </aura:if>
+                                </span>
+                                </li>
+                                <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                    <span class="slds-text-title">{!v.toLabel}</span>
+                                    <span class="slds-text-body_medium slds-truncate">
+                                    <!-- To | Recipient -->
+                                    <aura:if isTrue="{!v.item.recipients}">
+                                        <a class="pq--link" onclick="{!c.goToRecord}" data-record-id="{!v.item.recipients[0].recordId}" data-target="{!v.item.recipients[0].sobjectName}">
+                                            <!--href="{!'/lightning/r/' + v.item.recipients[0].sobjectName + '/' + v.item.recipients[0].recordId + '/view'}"-->
+                                            {!v.item.recipients[0].recordName}
+                                        </a>
+                                        <aura:if isTrue="{!v.item.recipients.length > 1}">
+                                            and {!v.item.recipients.length - 1} {!v.item.recipients.length == 2 ? ' '+ v.otherLabel+' ' : ' '+ v.othersLabel+' '}
+                                        </aura:if>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.item.toEmail}">
+                                        <a class="pq--link" href="{!'mailto:' + v.item.toEmail.address }">
+                                            {!v.item.toEmail.address}
+                                        </a>
+                                    </aura:if>
+                                </span>
+                                </li>
+                            </ul>
+                        </aura:if>
+                        <!-- Event -->
+                        <aura:if isTrue="{!v.item.activityTimelineType == 'Event'}">
+                            <ul class="slds-list_horizontal slds-wrap">
+                                <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                    <span class="slds-text-title">{!v.startLabel}</span>
+                                    <span class="slds-text-body_medium slds-truncate">
+                                    <lightning:formattedDateTime value="{!v.item.startDateTime}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                                 minute="2-digit" hour12="false"/>
+                                </span>
+                                </li>
+                                <li class="slds-grid slds-grid_vertical slds-size_1-of-2 slds-p-bottom_small">
+                                    <span class="slds-text-title">{!v.endLabel}</span>
+                                    <span class="slds-text-body_medium slds-truncate">
+                                    <lightning:formattedDateTime value="{!v.item.endDateTime}" year="numeric" month="numeric" day="numeric" hour="2-digit"
+                                                                 minute="2-digit" hour12="false"/>
+                                </span>
+                                </li>
+                            </ul>
+                        </aura:if>
+                        <!-- Common -->
+                        <div>
+                            <span class="slds-text-title">{!v.descriptionLabel}</span>
+                            <div class="tenLinesScroll">
+                                <p class="slds-p-top_x-small">{!v.item.detail}</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </li>
+</aura:component>

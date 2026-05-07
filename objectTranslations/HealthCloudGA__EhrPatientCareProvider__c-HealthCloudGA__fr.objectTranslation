@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Prestataire de soins patient DME</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Prestataires de soins patient DME</value>
+    </caseValues>
+    <fields>
+        <label>Restreint</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Visible sur la carte du patient</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Organisation 255</label>
+        <name>HealthCloudGA__Organization255__c</name>
+    </fields>
+    <fields>
+        <label>Organisation</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Prestataires de soins patient</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nom du médecin 255</label>
+        <name>HealthCloudGA__PractitionerName255__c</name>
+    </fields>
+    <fields>
+        <label>Nom du médecin</label>
+        <name>HealthCloudGA__PractitionerName__c</name>
+    </fields>
+    <fields>
+        <label>Médecin</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>Prestataires de soins patient</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ID du système source</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Système source modifié</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Système source</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>ID de prestataire de soins patient DME</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

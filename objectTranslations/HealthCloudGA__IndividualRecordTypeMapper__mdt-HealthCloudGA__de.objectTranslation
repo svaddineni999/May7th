@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Datensatztypzuordnung für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Datensatztypzuordnungen für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Datensatztypzuordnung für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Datensatztypzuordnungen für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Datensatztypzuordnung für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Datensatztypzuordnungen für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Datensatztypzuordnung für Einzelpersonen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Datensatztypzuordnungen für Einzelpersonen</value>
+    </caseValues>
+    <fields>
+        <label>Datensatztyp-Namespace (Account)</label>
+        <name>HealthCloudGA__AccountRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Accountdatensatztyp</label>
+        <name>HealthCloudGA__AccountRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Datensatztyp-Namespace (Kontakt)</label>
+        <name>HealthCloudGA__ContactRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Kontakt-Datensatztyp</label>
+        <name>HealthCloudGA__ContactRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Detailseite</label>
+        <name>HealthCloudGA__DetailPage__c</name>
+    </fields>
+    <fields>
+        <label>Account-Untertyp</label>
+        <name>HealthCloudGA__IndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Namespace für Datensatztyp (Lead)</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Lead-Datensatztyp</label>
+        <name>HealthCloudGA__LeadRecordType__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

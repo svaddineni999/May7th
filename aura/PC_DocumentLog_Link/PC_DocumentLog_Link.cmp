@@ -1,0 +1,293 @@
+<aura:component controller="PC_DocumentLogLightningController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="docId" type="String"/>
+    <aura:attribute name="patientId" type="String" />
+    <aura:attribute name="accountRecordType" type="String"/>
+    <aura:attribute name="programIds" type="String[]"/>
+    <aura:attribute name="patientName" type="String" />
+    <aura:attribute name="programList" type="Case[]"/>
+    <aura:attribute name="account" type="AccountWrapper.object"/>
+    <aura:attribute name="accountSelected" type="String[]"/>
+    <aura:attribute name="adverseEventList" type="PC_AdverseEvent__c[]"/>
+    <aura:attribute name="adverseEvent2List" type="PC_AdverseEvent2__c[]"/>
+    <aura:attribute name="adverseEventObjectInUse" type="String" default="PC_AdverseEvent__c"/>
+    <aura:attribute name="selectedAdverseEventList" type="String[]"/>
+    <aura:attribute name="selectedAdverseEvent2List" type="String[]"/>
+    <aura:attribute name="interactionList" type="PC_Interaction__c[]"/>
+    <aura:attribute name="selectedInteractionList" type="String[]"/>
+    <aura:attribute name="coverageList" type="PC_DocumentLogLightningController.object[]"/>
+    <aura:attribute name="programCoverageMap" type="PC_DocumentLogLightningController.object[]"/>
+    <aura:attribute name="selectedProgram" type="Boolean" default="false"/>
+    <aura:attribute name="showMessage" type="Boolean" default="false"/>
+    <aura:attribute name="showCoverageTable" type="Boolean" default="false"/>
+    <aura:attribute name="showAdverseEventTable" type="Boolean" default="false"/>
+    <aura:attribute name="showInteractionTable" type="Boolean" default="false"/>
+    <aura:attribute name="showCaseTable" type="Boolean" default="false"/>
+    <aura:attribute name="adverseEventObjectName" type="String" default="PC_AdverseEvent__c"/>
+    <aura:attribute name="adverseEvent2ObjectName" type="String" default="PC_AdverseEvent2__c"/>
+    
+   	<!--Below attributes are set to allow linking for the related objects[PC-1610]-->
+    <aura:attribute name="includeAccount" type="Boolean" default="true"/>
+    <aura:attribute name="includeAdverseEvents" type="Boolean" default="true"/>
+    <aura:attribute name="includeAdverseEvents2" type="Boolean" default="true"/>
+    <aura:attribute name="includeInteractions" type="Boolean" default="true"/>
+    <aura:attribute name="includeCases" type="Boolean" default="true"/>
+    
+    <aura:attribute name="docEngagementProgId" type="String"/><!--PC-1598 - Customize the options to the Engagement program context, if the document is tagged to one-->
+    
+    <aura:attribute name="namespace" type="String" default="" />  
+    <aura:attribute name="namespacePrefix" type="String" default="" /> 
+	<aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="selectOne" type="String" default="{!$Label.c.PC_selectOne}" />    
+    <aura:dependency resource="force:navigateToSObject" type="EVENT"/>
+    <aura:handler event="c:PC_RefreshChildCmp" action="{!c.doInit}"/>
+    <aura:registerEvent name="refreshLink" type="c:PC_RefreshChildCmp"/>
+    <center>
+        <ui:spinner aura:id="spinner" />
+    </center>
+    <form action="">
+        <div class="pageContent">
+            <aura:if isTrue="{!v.showMessage}">
+            	<ui:message title="" severity="confirm" closable="true" >{!$Label.c.PC_LinkedPatientMessage}</ui:message>
+            </aura:if>
+            <div class="slds-page-header banner" role="banner">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate">
+                        <p class="slds-text-heading--label">{!$Label.c.PC_PatientAcc_LinkDocLog_Title}</p>
+                        <div class="slds-grid">
+                            <div class="slds-grid slds-type-focus slds-no-space">
+                                <h1 class="slds-page-header__title slds-truncate bannerHeader">
+                                    <a id="{!v.patientId}" onclick="{!c.goToSelectedLink}" target="_blank">{!v.patientName}</a>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-no-flex slds-grid slds-align-bottom">
+                        <ui:button class="slds-button slds-button--brand" press="{!c.closeWindow}" label="{!$Label.c.PC_Back_to_Search}" />
+                        <ui:button class="slds-button slds-button--brand" press="{!c.saveDocumentLogs}" label="{!$Label.c.PC_Link}" />
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account-->
+            <p class="slds-page-header pageHeader">{!$Label.c.PC_Account}</p>
+            <table class="slds-table slds-table--bordered">
+                <thead>
+                    <tr class="slds-text-heading--label">
+                        <aura:if isTrue="{!v.includeAccount}">
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Action}</th>
+                        </aura:if>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col1}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col2}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col3}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col4}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col5}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col6}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col7}</th>
+                        <th class="slds-cell-shrink">{!$Label.c.PC_Acc_Col8}</th>
+                    </tr>
+                </thead>
+                <tbody>   
+                    <tr class="slds-hint-parent">
+                        <aura:if isTrue="{!v.includeAccount}">
+                            <td class="slds-truncate" style="width:1%;">
+                                <ui:inputCheckbox value="{!v.account.isSelected}" name="{!v.account.AccId}" aura:id="{!v.account.AccId}" click="{!c.getAcctSelected}"/>
+                            </td>  
+                        </aura:if>
+                        <td class="slds-truncate" >{!v.account.AccName}</td>
+                        <td class="slds-truncate" >{!v.account.AccType}</td>
+                        <td class="slds-truncate" ><ui:outputDate format="YYYY-MM-DD" value="{!v.account.AccDoB}"/></td>
+                        <td class="slds-truncate" >{!v.account.AccStatus}</td>
+                        <td class="slds-truncate" >{!v.account.AccAddr}</td>                        
+                        <td class="slds-truncate" >{!v.account.AccCity}</td>
+                        <td class="slds-truncate" >{!v.account.AccState}</td>
+                        <td class="slds-truncate" >{!v.account.AccZipCode}</td>
+                    </tr>
+                </tbody>
+
+            </table> 
+           
+            <aura:if isTrue="{!!v.showCaseTable}">
+            	<ui:message title="" severity="info" closable="true" >{!$Label.c.PC_No_Records_For_Patient}</ui:message>
+            </aura:if>
+            
+            <!-- CASES -->
+            <aura:renderIf isTrue="{!v.showCaseTable}">
+                <p class="slds-page-header pageHeader">{!$Label.c.PC_Cases}</p>
+                <table class="slds-table slds-table--bordered">
+                    <thead>
+                        <tr class="slds-text-heading--label">
+                            <aura:if isTrue="{!v.includeCases}">
+                                <th class="slds-cell-shrink">{!$Label.c.PC_Action}</th>
+                            </aura:if>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Case}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Record_Type}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Status}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_DateTime_Opened}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_DateTime_Closed}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.programList}" var="program">
+                            <tr class="slds-hint-parent">
+                                <aura:if isTrue="{!v.includeCases}">
+                                    <td class="slds-truncate" style="width:1%;">
+                                        <ui:inputCheckbox value="" name="{!program.Id}" aura:id="{!program.Id}" click="{!c.linkToProgram}"/>
+                                    </td>
+                                </aura:if>
+                                <td class="slds-truncate" >
+                                    <a id="{!program.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!program.CaseNumber}</a>
+                                </td>
+                                <td class="slds-truncate" >{!program.Type}</td> <!--PC-1701 Changed the linking to populate Type instead of record type-->
+                                <td class="slds-truncate" >{!program.Status}</td>
+                                <td class="slds-truncate"><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!program.CreatedDate}" /></td>
+                                <td class="slds-truncate" ><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!program.ClosedDate}" /></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </aura:renderIf>
+            <!-- Adverse Events -->
+            <aura:renderIf isTrue="{!v.showAdverseEventTable}">
+                <aura:if isTrue="{!equals(v.adverseEventObjectInUse,v.adverseEventObjectName)}">
+                    <p class="slds-page-header pageHeader">{!$Label.c.PC_Adverse_Events}</p>
+                </aura:if>
+                <aura:if isTrue="{!equals(v.adverseEventObjectInUse,v.adverseEvent2ObjectName)}">
+                    <p class="slds-page-header pageHeader">{!$Label.c.PC_Adverse_Events2}</p>
+                </aura:if>
+                <table class="slds-table slds-table--bordered">
+                    <thead>
+                        <tr class="slds-text-heading--label">
+                            <aura:if isTrue="{!v.includeAdverseEvents}">
+                                <th class="slds-cell-shrink">{!$Label.c.PC_Action}</th>
+                            </aura:if>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Adverse_Event}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Program}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Event_Onset_Date}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Date_Received_By_Manufacturer}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <aura:if isTrue="{!equals(v.adverseEventObjectInUse,v.adverseEventObjectName)}">
+                        <aura:iteration items="{!v.adverseEventList}" var="ae">
+                            <tr class="slds-hint-parent">
+                                <aura:if isTrue="{!v.includeAdverseEvents}">
+                                    <td class="slds-truncate" style="width:1%;">
+                                        <ui:inputCheckbox value="" name="{!ae.Id}" aura:id="{!ae.Id}" click="{!c.getSelectedAdverseEvents}"/>
+                                    </td>
+                                </aura:if>
+                                <td class="slds-truncate" >
+                                    <a id="{!ae.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!ae.Name}</a>
+                                </td>
+                                <td class="slds-truncate" >
+                                    <a id="{!ae.PC_Care_Program__r.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!ae.PC_Care_Program__r.CaseNumber}</a>
+                                </td>
+                                <td class="slds-truncate" ><ui:outputDate format="YYYY-MM-DD" value="{!ae.PC_Event_Onset_Date__c}" /></td>
+                                <td class="slds-truncate" ><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!ae.PC_Date_Received_By_Manufacturer__c}" /></td>
+                            </tr>
+                        </aura:iteration>
+                    </aura:if>
+                    <aura:if isTrue="{!equals(v.adverseEventObjectInUse,v.adverseEvent2ObjectName)}">
+                        <aura:iteration items="{!v.adverseEvent2List}" var="ae">
+                            <tr class="slds-hint-parent">
+                                <aura:if isTrue="{!v.includeAdverseEvents2}">
+                                    <td class="slds-truncate" style="width:1%;">
+                                        <ui:inputCheckbox value="" name="{!ae.Id}" aura:id="{!ae.Id}" click="{!c.getSelectedAdverseEvents2}"/>
+                                    </td>
+                                </aura:if>
+                                <td class="slds-truncate" >
+                                    <a id="{!ae.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!ae.Name}</a>
+                                </td>
+                                <td class="slds-truncate" >
+                                    <a id="{!ae.PC_Care_Program__r.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!ae.PC_Care_Program__r.CaseNumber}</a>
+                                </td>
+                                <td class="slds-truncate" ><ui:outputDate format="YYYY-MM-DD" value="{!ae.PC_Event_Onset_Date__c}" /></td>
+                                <td class="slds-truncate" ><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!ae.PC_Date_Received_By_Manufacturer__c}" /></td>
+                            </tr>
+                        </aura:iteration>
+                    </aura:if>
+                    </tbody>
+                </table>
+            </aura:renderIf>
+            <!--End Adverse Events -->
+            <!-- Interactions -->
+            <aura:renderIf isTrue="{!v.showInteractionTable}">
+                <p class="slds-page-header pageHeader">{!$Label.c.PC_Interactions}</p>
+                <table class="slds-table slds-table--bordered">
+                    <thead>
+                        <tr class="slds-text-heading--label">
+                            <aura:if isTrue="{!v.includeInteractions}">
+                                <th class="slds-cell-shrink">{!$Label.c.PC_Action}</th>
+                            </aura:if>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Interaction}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Program}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Type}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Status}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Start}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_End}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.interactionList}" var="item">
+                            <tr class="slds-hint-parent">
+                                <aura:if isTrue="{!v.includeInteractions}">
+                                    <td class="slds-truncate" style="width:1%;">
+                                        <ui:inputCheckbox value="" name="{!item.Id}" aura:id="{!item.Id}" click="{!c.getSelectedInteractions}"/>
+                                    </td>
+                                </aura:if>
+                                <td class="slds-truncate" >
+                                    <a id="{!item.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!item.Name}</a>
+                                </td>
+                                <td class="slds-truncate" >
+                                    <a id="{!item.PC_Patient_Program__r.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!item.PC_Patient_Program__r.CaseNumber}</a>
+                                </td>
+                                <td class="slds-truncate" >{!item.PC_Type__c}</td>
+                                <td class="slds-truncate" >{!item.PC_Status__c}</td>
+                                <td class="slds-truncate" ><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!item.PC_Start__c}"/></td>
+                                <td class="slds-truncate" ><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!item.PC_End__c}"/></td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </aura:renderIf>
+            <!--End Interactions -->
+            <!-- Program coverage -->
+            <aura:renderIf isTrue="false"><!--{!v.showCoverageTable} TODO: Functionality will be evaluated in future release-->
+                <p class="slds-page-header pageHeader">{!$Label.c.PC_ProgramCoverage}</p>
+                <table class="slds-table slds-table--bordered" id="coverageListId">
+                    <thead>
+                        <tr class="slds-text-heading--label">
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Action}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Program}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_CoverageName}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_CoverageType}</th>
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Payer}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.programCoverageMap}" var="program">
+                            <aura:iteration items="{!program.coverageList}" var="coverage">
+                                <tr class="slds-hint-parent" >
+                                    <td class="slds-truncate" style="width:12%;" >
+                                        <ui:inputCheckbox value="{!coverage.isChecked}" name="{!coverage.covRec.Id}" aura:id="{!coverage.covRec.Id}"/>
+                                    </td>
+                                	<td class="slds-truncate" style="width:22%;">
+                                        <a id="{!coverage.covRec.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!program.programNumber}</a>
+                                	</td>
+                                    <td class="slds-truncate" style="width:22%;">
+                                        <a id="{!coverage.covRec.Id}" onclick="{!c.goToSelectedLink}" target="_blank">{!coverage.covRec.Name}</a>
+                                    </td>
+                                    <td class="slds-truncate" style="width:22%;">{!coverage.covRec.RecordType.Name}</td>
+                                    <td class="slds-truncate" style="width:22%;">{!coverage.covRec.PC_Payer__c}</td>
+                                </tr>   
+                            </aura:iteration>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+            </aura:renderIf>
+            <!--End Program coverage -->
+        </div>
+    </form>
+</aura:component>

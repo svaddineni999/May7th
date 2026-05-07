@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vervolgkeuzelijst voor kaartweergave</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vervolgkeuzelijst voor kaartweergave</value>
+    </caseValues>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Categorielabel</label>
+        <name>HealthCloudGA__CategoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Naam van categorie</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Standaard subtabblad</label>
+        <name>HealthCloudGA__DefaultSubtab__c</name>
+    </fields>
+    <fields>
+        <label>Parameter voor URL</label>
+        <name>HealthCloudGA__Param_String__c</name>
+    </fields>
+    <fields>
+        <label>Type tabblad</label>
+        <name>HealthCloudGA__Rec_Open_Type__c</name>
+    </fields>
+    <fields>
+        <label>Naam van subcategorie</label>
+        <name>HealthCloudGA__Sub_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Label subcategorie</label>
+        <name>HealthCloudGA__SubcategoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sorteervolgorde subtabblad</label>
+        <name>HealthCloudGA__SubtabSortOrder__c</name>
+    </fields>
+    <fields>
+        <label>Type pagina</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>URL</label>
+        <name>HealthCloudGA__Url__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

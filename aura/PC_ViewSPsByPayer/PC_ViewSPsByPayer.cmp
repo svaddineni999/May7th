@@ -1,0 +1,75 @@
+<!--
+Created by shisbansal on 6/26/2018.
+Lightning component : PC_ViewSPsByPayer
+Description : Component to retrieve data from junction
+object(Preferred Payer PBM) between Account and
+Health Plan
+***************************************************************************
+ Modified Log:
+ -->
+
+<aura:component description="PC_ViewSPsByPayer" controller="PC_ViewSPsByPayerController">
+    <aura:attribute name="records" type="Object[]"/>
+    <aura:attribute name="pageErrors" type="List"/>
+    <aura:attribute name="pageErrorHeader" type="String" default="{!$Label.c.PC_EWP_Error}"/>
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute  name="listEmptyMessage"  type="String" default="{! $Label.c.PC_No_Records_Found}"/>
+    <aura:attribute  name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}"/>
+
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div>
+        <aura:renderIf isTrue="{!not(empty(v.pageErrors))}">
+            <c:PC_ErrorPanel errorHeader="{!v.pageErrorHeader}" errors="{!v.pageErrors}"/>
+        </aura:renderIf>
+
+
+        <aura:if isTrue="{!v.records.length >0 }">
+
+
+            <table class="resultsTable slds-table slds-table_bordered slds-table_cell-buffer slds-no-row-hover slds-table_striped slds-table_col-bordered slds-text-align_center">
+
+                <thead>
+                <tr>
+                    <th scope="col">
+                        <div class="slds-truncate slds-text-align_center">{!$Label.c.PC_Payer}</div>
+                    </th>
+                    <th scope="col">
+                        <div class="slds-truncate slds-text-align_center">{!$Label.c.PC_Specialty_Pharmacy}</div>
+                    </th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+
+
+                <aura:iteration items="{!v.records}" var="r">
+                    <tr>
+                        <th scope="col">
+                            <div class="slds-truncate slds-text-align_center">{!r.payer.name}</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate slds-text-align_center">{!r.sp.name}</div>
+                        </th>
+
+                    </tr>
+
+                </aura:iteration>
+
+
+                </tbody>
+            </table>
+            <aura:set attribute="else">
+                <div class="slds-text-align_center">
+                        {! v.listEmptyMessage}
+                </div>
+            </aura:set>
+        </aura:if>
+
+    </div>
+</aura:component>

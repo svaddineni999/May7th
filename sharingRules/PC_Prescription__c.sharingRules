@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ACLS_Prescription_Read_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Prescription Read Access</label>
+        <sharedTo>
+            <group>ACLS_RO_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ACLS_Engagement_Program_Code__c</field>
+            <operation>equals</operation>
+            <value>ASHF</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ACLS_Prescription_Read_Write_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>To provide Read Write Access to Prescription Records</description>
+        <label>Prescription Read Write Access</label>
+        <sharedTo>
+            <group>ACLS_RW_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ACLS_Engagement_Program_Code__c</field>
+            <operation>equals</operation>
+            <value>ASHF</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

@@ -1,0 +1,64 @@
+<!--
+Lightning component  : PC_PatientStatusIndicators
+Description          : Component for Patient Status Indicators
+
+Modification Log:
+Satheesh Kumar        08-Sep-2020   [PC-6745] Added logic to fix the Patient Journey Label issue
+-->
+
+<aura:component controller="PC_ViewCaseStatusIndicators" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+       
+    <!-- Array of stageWrapper[] generalized to Object[] because inner class cannot be accessed as attribute
+         in lightning component and cannot be made @auraenabled. Alternatively implement
+	     https://balkishankachawa.wordpress.com/2015/05/31/wrapperclass-in-lightning/ if this breaks -->
+    <aura:attribute name="stages" type="PC_ViewCaseStatusIndicators.Object[]" />
+    <aura:attribute name="caseId" type="String"/>
+    <aura:attribute name="hasPreviousStage" type="Boolean" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="statusSet" type="Boolean"/>
+    <aura:attribute name="newObject" type="Object"/>
+    <aura:attribute name="showButton" type="Boolean" default="false"/>
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+
+	<aura:dependency resource="markup://force:editRecord" type="EVENT" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <form action="">
+        <!-- header -->
+        <aura:if isTrue="{!v.hasPreviousStage}">
+            <!-- on hold stage display -->
+            <div class="header slds-grid">
+                <div class="slds-tabs--path" role="application">
+                    <ul class="slds-tabs--path__nav" role="tablist">
+                        <aura:iteration items="{!v.stages}" var="stage">
+                            <li class="{!stage.stageStatus == 'complete' ? 'slds-tabs--path__item slds-is-complete2 custom-completed2' : stage.stageStatus == 'inprogress' ? 'slds-tabs--path__item slds-is-current2 custom-current2' : 'slds-tabs--path__item slds-is-incomplete2'}" role="presentation">
+                                <a class="slds-tabs--path__link" id="tabs-path-1" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                    <span class="slds-tabs--path__stage"></span>
+                                    <span class="slds-tabs--path__title" title="{!stage.stageName}">{!stage.stageName}</span>
+                                </a>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                </div>
+            </div>
+
+            <aura:set attribute="else">
+                <div class="header slds-grid">
+                    <div class="slds-tabs--path" role="application">
+                        <ul class="slds-tabs--path__nav" role="tablist">
+                            <aura:iteration items="{!v.stages}" var="stage">
+                                <li class="{!stage.stageStatus == 'complete' ? 'slds-tabs--path__item slds-is-complete custom-completed' : stage.stageStatus == 'inprogress' ? 'slds-tabs--path__item slds-is-current custom-current' : 'slds-tabs--path__item slds-is-incomplete'}" role="presentation">
+                                    <a class="slds-tabs--path__link" id="tabs-path-1" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive">
+                                        <span class="slds-tabs--path__stage"></span>
+                                        <span class="slds-tabs--path__title" title="{!stage.stageName}">{!stage.stageName}</span>
+                                    </a>
+                                </li>
+                            </aura:iteration>
+                        </ul>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </form>
+</aura:component>

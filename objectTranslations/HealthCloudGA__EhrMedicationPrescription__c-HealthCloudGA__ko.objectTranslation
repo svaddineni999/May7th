@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 약물 처방</value>
+    </caseValues>
+    <fields>
+        <label>계정</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>약물 처방</relationshipLabel>
+    </fields>
+    <fields>
+        <label>작성 날짜</label>
+        <name>HealthCloudGA__DateWritten__c</name>
+    </fields>
+    <fields>
+        <label>예상 투약 기간</label>
+        <name>HealthCloudGA__DispenseExpectedSupplyDuration__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>투약 코드 시스템</label>
+        <name>HealthCloudGA__DispenseMedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>투약 코드</label>
+        <name>HealthCloudGA__DispenseMedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>투약 종결</label>
+        <name>HealthCloudGA__DispenseMedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>상표명이 있는 투약</label>
+        <name>HealthCloudGA__DispenseMedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>투약 종류 코드</label>
+        <name>HealthCloudGA__DispenseMedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>투약 종류 레이블</label>
+        <name>HealthCloudGA__DispenseMedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>투약 종류 시스템</label>
+        <name>HealthCloudGA__DispenseMedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for this medication --></help>
+        <label>투약 레이블</label>
+        <name>HealthCloudGA__DispenseMedicationLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>투약 로트 번호</label>
+        <name>HealthCloudGA__DispenseMedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>투약품 이름</label>
+        <name>HealthCloudGA__DispenseMedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>투약 제품 양식 코드</label>
+        <name>HealthCloudGA__DispenseMedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>투약 제품 양식 레이블</label>
+        <name>HealthCloudGA__DispenseMedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>투약 제품 양식 시스템</label>
+        <name>HealthCloudGA__DispenseMedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>허용된 반복 투약 횟수</label>
+        <name>HealthCloudGA__DispenseNumberOfRepeatAllowed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of medication to supply per dispense unit of measure --></help>
+        <label>투여량 단위</label>
+        <name>HealthCloudGA__DispenseQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of medication to supply per dispense --></help>
+        <label>투여량 값</label>
+        <name>HealthCloudGA__DispenseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <label>투약 유효 기간 종료</label>
+        <name>HealthCloudGA__DispenseValidityPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>투약 유효 기간 시작</label>
+        <name>HealthCloudGA__DispenseValidityPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>엔카운터</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>약물 처방</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for medication code --></help>
+        <label>약물 코드 레이블</label>
+        <name>HealthCloudGA__MedicationCodeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>약물 코드 시스템</label>
+        <name>HealthCloudGA__MedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>약물 코드</label>
+        <name>HealthCloudGA__MedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>약물 치료 종결</label>
+        <name>HealthCloudGA__MedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>상표명이 있는 약물</label>
+        <name>HealthCloudGA__MedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>약물 종류 코드</label>
+        <name>HealthCloudGA__MedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>약물 종류 레이블</label>
+        <name>HealthCloudGA__MedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>약물 종류 시스템</label>
+        <name>HealthCloudGA__MedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>약물 로트 번호</label>
+        <name>HealthCloudGA__MedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>약물 이름</label>
+        <name>HealthCloudGA__MedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>약물 치료 제품 양식 코드</label>
+        <name>HealthCloudGA__MedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>약물 치료 제품 양식 레이블</label>
+        <name>HealthCloudGA__MedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>약물 치료 제품 양식 시스템</label>
+        <name>HealthCloudGA__MedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>환자</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>약물 처방</relationshipLabel>
+    </fields>
+    <fields>
+        <label>처방자 이름</label>
+        <name>HealthCloudGA__PrescriberName__c</name>
+    </fields>
+    <fields>
+        <label>처방자</label>
+        <name>HealthCloudGA__Prescriber__c</name>
+        <relationshipLabel>약물 처방</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reason or indication for writing the prescription --></help>
+        <label>이유 코드</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>이유 조건</label>
+        <name>HealthCloudGA__ReasonCondition__c</name>
+        <relationshipLabel>약물 처방</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Reason code or indication for writing the prescription --></help>
+        <label>이유 레이블</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Coding System ReasonCode or indication for writing the prescription --></help>
+        <label>이유 시스템</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 수정일</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>소스 시스템</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code for: active | on-hold | completed | entered-in-error | stopped | superseded | draft --></help>
+        <label>상태 코드</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Status --></help>
+        <label>상태 레이블</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Status Code --></help>
+        <label>상태 시스템</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>대체 제한 이유 코드</label>
+        <name>HealthCloudGA__SubstituteRestrictReasonCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any restrictions on medication substitution, generic / formulary + friendly name --></help>
+        <label>대체 제한 이유 레이블</label>
+        <name>HealthCloudGA__SubstituteRestrictReasonLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any restrictions on medication substitution? coding system --></help>
+        <label>대체 제한 이유 시스템</label>
+        <name>HealthCloudGA__SubstituteRestrictReasonSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- generic | formulary + code --></help>
+        <label>대체 제한 유형 코드</label>
+        <name>HealthCloudGA__SubstituteRestrictTypeCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- generic | formulary + code friendly name --></help>
+        <label>대체 제한 유형 레이블</label>
+        <name>HealthCloudGA__SubstituteRestrictTypeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- generic | formulary + coding system --></help>
+        <label>대체 제한 유형 시스템</label>
+        <name>HealthCloudGA__SubstituteRestrictTypeSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 약물 처방 ID</nameFieldLabel>
+</CustomObjectTranslation>

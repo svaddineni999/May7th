@@ -1,0 +1,15 @@
+<!--
+Lightning component  : PC_PreviewFile
+Description          : Previews the File
+Parameters           : File Id
+Modification Log:
+Haritha Reddy 		 26-Jun-2019    [PC-4910]Initial Version
+-->
+
+<aura:component description="PC_PreviewFile" implements="force:appHostable,flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="fileId" type="String"/>
+    <lightning:navigation aura:id="previewNavService"/>
+</aura:component>

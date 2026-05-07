@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mappatura stato convertito lead</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mappature stato convertito lead</value>
+    </caseValues>
+    <fields>
+        <label>Attivo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Stato convertito lead</label>
+        <name>HealthCloudGA__LeadConvertedStatus__c</name>
+    </fields>
+    <fields>
+        <label>Nome tipo di record lead</label>
+        <name>HealthCloudGA__LeadRecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label>Spazio dei nomi tipo di record</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

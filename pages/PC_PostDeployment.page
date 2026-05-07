@@ -1,0 +1,81 @@
+<!--
+ - Created by vkashikar on 12/11/2018.
+ -->
+
+<apex:page id="PC_PostDeployment" title="Patient Connect: Post Deployment Instructions" controller="PC_PostDeployment">
+    <style>
+        .sectionTitle {
+            color: #1797c0;
+            font-size : large;
+        }
+        .importantTextRed {
+            color: red;
+            font-weight: bold;
+        }
+        .importantTextItalics {
+            color: black;
+            font-style: italic;
+        }
+        .importantTextBlack {
+            color: black;
+            font-weight: bold;
+        }
+        .codeText {
+            color: gray;
+        }
+    </style>
+
+    <div>
+        <h1 class="sectionTitle">Health Cloud Alignment : Post Installation v7.0 and later</h1>
+        <p>
+            Patient Connect now requires Health Cloud installed as a pre-requisite.
+            Clients without Health Cloud licenses will not be able to use Patient Connect.</p>
+        <p>
+            Patient Connect leverages the capabilities of the Individual Data Model of Salesforce Health Cloud.
+            Since Patient Connect is now aligned to the Salesforce Health Cloud, the existing PC Patient records need
+            to be migrated or updated so that these records are treated as 'individuals' by the Health Cloud.
+        </p>
+        <p>
+            Additionally, v7.1 also introduces PC_Physician contact which will now be exclusively associated with PC_Physician
+            accounts. Hence, there is a need to migrate the older PC_Physician records so that they are now linked with this new contact
+            record type.
+        </p>
+        <p>
+            After you install the Salesforce Health Cloud, you <span class="importantTextRed">MUST</span> implement the following steps:
+            <ol>
+                <li>
+                    Run the following Migration Script as an anonymous script after installing the current version of Patient Connect.
+                    <div class="codeText">
+                        <br/>
+                        <div>PatientConnect.PC_UpdatePatientAsHealthCloudIndividual myBatchObject =
+                        new PatientConnect.PC_UpdatePatientAsHealthCloudIndividual();</div>
+                        <div>Id batchId = Database.executeBatch(myBatchObject, 35);
+                            // second parameter is optional. If not specified, all the eligible records will be taken up
+                            for migration. Second parameter is useful if you anticipate governor limits.
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </p>
+        <p>For more details and to complete the migration successfully, refer to the
+                <span class="importantTextBlack">Aligning to Salesforce Health Cloud </span>
+                section of the <span class="importantTextItalics">Patient Connect Installation Guide.</span>
+        </p>
+        <p>
+            <span class="importantTextRed"><apex:outputText title="" value="">{!v7.patientMigrationMessage}</apex:outputText></span>
+        </p>
+        <p>
+            <span class="importantTextRed"><apex:outputText title="" value="">{!v7.physicianMigrationMessage}</apex:outputText></span>
+        </p>
+    </div>
+
+    <div>
+        <h1 class="sectionTitle">Support Plan Alignment : Post Installation v11.0 and later</h1>
+
+        <p>
+            Patient Connect has enhanced the Support Plan capabilities in v11.0 onwards.
+            If in case, you were using the Support Plan feature in prior releases then you must run the alignment scripts.
+            For more details, please refer to the Patient Connect Installation guide.
+        </p>
+    </div>
+</apex:page>

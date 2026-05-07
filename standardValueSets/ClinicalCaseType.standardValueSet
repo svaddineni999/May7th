@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Acute Stress Disorder</fullName>
+        <default>false</default>
+        <label>Acute Stress Disorder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Adult Asthma</fullName>
+        <default>false</default>
+        <label>Adult Asthma</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Adult Diabetes</fullName>
+        <default>false</default>
+        <label>Adult Diabetes</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Chemical Dependency</fullName>
+        <default>false</default>
+        <label>Chemical Dependency</label>
+    </standardValue>
+    <standardValue>
+        <fullName>CNS Disorders</fullName>
+        <default>false</default>
+        <label>CNS Disorders</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Congestive Heart Failure</fullName>
+        <default>false</default>
+        <label>Congestive Heart Failure</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Coronary Artery Disease</fullName>
+        <default>false</default>
+        <label>Coronary Artery Disease</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hepatitis C</fullName>
+        <default>false</default>
+        <label>Hepatitis C</label>
+    </standardValue>
+    <standardValue>
+        <fullName>High Risk Elderly</fullName>
+        <default>false</default>
+        <label>High Risk Elderly</label>
+    </standardValue>
+    <standardValue>
+        <fullName>High Risk Fall</fullName>
+        <default>false</default>
+        <label>High Risk Fall</label>
+    </standardValue>
+    <standardValue>
+        <fullName>High Risk Infant</fullName>
+        <default>false</default>
+        <label>High Risk Infant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>High Risk Pregnancy</fullName>
+        <default>false</default>
+        <label>High Risk Pregnancy</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hip Fracture</fullName>
+        <default>false</default>
+        <label>Hip Fracture</label>
+    </standardValue>
+    <standardValue>
+        <fullName>HIV/AIDS</fullName>
+        <default>false</default>
+        <label>HIV/AIDS</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Major Depressive Disorder</fullName>
+        <default>false</default>
+        <label>Major Depressive Disorder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Morbid Obesity</fullName>
+        <default>false</default>
+        <label>Morbid Obesity</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Multiple Trauma</fullName>
+        <default>false</default>
+        <label>Multiple Trauma</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Neuromuscular Disease</fullName>
+        <default>false</default>
+        <label>Neuromuscular Disease</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Orthopedic Pain</fullName>
+        <default>false</default>
+        <label>Orthopedic Pain</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Panic Disorder</fullName>
+        <default>false</default>
+        <label>Panic Disorder</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Pediatric Asthma</fullName>
+        <default>false</default>
+        <label>Pediatric Asthma</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Smoker</fullName>
+        <default>false</default>
+        <label>Smoker</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Spinal Cord Injury</fullName>
+        <default>false</default>
+        <label>Spinal Cord Injury</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transplant</fullName>
+        <default>false</default>
+        <label>Transplant</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Traumatic Brain Injury</fullName>
+        <default>false</default>
+        <label>Traumatic Brain Injury</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Very Low Birth Weight</fullName>
+        <default>false</default>
+        <label>Very Low Birth Weight</label>
+    </standardValue>
+</StandardValueSet>

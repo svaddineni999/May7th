@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Service Request Rejected</fullName>
+        <default>false</default>
+        <label>Service Request Rejected</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service Claim Unpaid</fullName>
+        <default>false</default>
+        <label>Service Claim Unpaid</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected - Service Not Required</fullName>
+        <default>false</default>
+        <label>Rejected - Service Not Required</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected - No Coverage Benefit</fullName>
+        <default>false</default>
+        <label>Rejected - No Coverage Benefit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Notification Delayed</fullName>
+        <default>false</default>
+        <label>Notification Delayed</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Specialist Referral Rejected</fullName>
+        <default>false</default>
+        <label>Specialist Referral Rejected</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR デバイス</value>
+    </caseValues>
+    <fields>
+        <label>取引先責任者</label>
+        <name>HealthCloudGA__Contact__c</name>
+    </fields>
+    <fields>
+        <label>デバイス URL</label>
+        <name>HealthCloudGA__DeviceUrl__c</name>
+    </fields>
+    <fields>
+        <label>有効期限</label>
+        <name>HealthCloudGA__Expiry__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>場所 255</label>
+        <name>HealthCloudGA__Location255__c</name>
+    </fields>
+    <fields>
+        <label>場所</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>ロット番号</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>メーカー</label>
+        <name>HealthCloudGA__Manufacturer__c</name>
+    </fields>
+    <fields>
+        <label>モデル</label>
+        <name>HealthCloudGA__Model__c</name>
+    </fields>
+    <fields>
+        <label>所有者 255</label>
+        <name>HealthCloudGA__Owner255__c</name>
+    </fields>
+    <fields>
+        <label>所有者</label>
+        <name>HealthCloudGA__Owner__c</name>
+    </fields>
+    <fields>
+        <label>患者</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>デバイス</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>種別</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>UDI</label>
+        <name>HealthCloudGA__Udi__c</name>
+    </fields>
+    <fields>
+        <label>バージョン</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+    <nameFieldLabel>EHR デバイス ID</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>風險分數 HCCCode</value>
+    </caseValues>
+    <fields>
+        <label>高齡社群 FBDual</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 FBDual</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 NonDual</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 NonDual</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 PBDual</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 PBDual</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>社群</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>條件種類</label>
+        <name>HealthCloudGA__ConditionCategory__c</name>
+    </fields>
+    <fields>
+        <label>說明</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>HCCCode</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <label>機構</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>啟用</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>覆寫的 HCC 代碼</label>
+        <name>HealthCloudGA__OverriddenHCCCodes__c</name>
+    </fields>
+    <fields>
+        <label>年份範圍</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Groupe de tâches</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Groupes de tâches</value>
+    </caseValues>
+    <fields>
+        <label>Actif</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Étiquette Grouper par</label>
+        <name>HealthCloudGA__GroupByLabel__c</name>
+    </fields>
+    <fields>
+        <label>Grouper par</label>
+        <name>HealthCloudGA__GroupBy__c</name>
+    </fields>
+    <fields>
+        <label>Ordre de tri</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

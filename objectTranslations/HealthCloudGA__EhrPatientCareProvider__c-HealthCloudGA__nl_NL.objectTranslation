@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Zorgverlener volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Zorgverleners volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Organisatie (255)</label>
+        <name>HealthCloudGA__Organization255__c</name>
+    </fields>
+    <fields>
+        <label>Organisatie</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Zorgverleners voor patiënt</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Naam van praktiserend arts (255)</label>
+        <name>HealthCloudGA__PractitionerName255__c</name>
+    </fields>
+    <fields>
+        <label>Naam van praktiserend arts</label>
+        <name>HealthCloudGA__PractitionerName__c</name>
+    </fields>
+    <fields>
+        <label>Praktiserend arts</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>Zorgverleners voor patiënt</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID van zorgverlener voor patiënt volgens</nameFieldLabel>
+</CustomObjectTranslation>

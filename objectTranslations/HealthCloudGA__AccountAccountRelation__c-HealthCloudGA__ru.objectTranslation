@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязь между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязи между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязь между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязи между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязи между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязей между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязи между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязям между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязью между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязями между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязи между организациями</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязях между организациями</value>
+    </caseValues>
+    <fields>
+        <label>Организация</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel><!-- Account Account Relations (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Активно</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Дата окончания</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Внешний код</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Связи типа &quot;Организация-организация&quot;</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Связанная организация</label>
+        <name>HealthCloudGA__RelatedAccount__c</name>
+        <relationshipLabel><!-- Account Account Relations (Related Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Связанная роль</label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Account Account Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Дата начала</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Имя связи организации</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Взаимосвязь типа &quot;Организация-организация&quot; не может быть создана со статусом &quot;Неактивно&quot;.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

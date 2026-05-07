@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Measurement</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Measurements</value>
+    </caseValues>
+    <fields>
+        <label><!-- Doesn&apos;t Meet Target --></label>
+        <name>PC_Doesnt_Meet_Target__c</name>
+    </fields>
+    <fields>
+        <label><!-- Measurement Date --></label>
+        <name>PC_Measurement_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>PC_Measurement_Source__c</name>
+        <picklistValues>
+            <masterLabel>Choice 1</masterLabel>
+            <translation><!-- Choice 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CloudDX</masterLabel>
+            <translation><!-- CloudDX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Measurement --></label>
+        <name>PC_Measurement__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>PC_Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Measurements --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source ID --></label>
+        <name>PC_Source_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_Type__c</name>
+        <picklistValues>
+            <masterLabel>ABR</masterLabel>
+            <translation><!-- ABR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DIA</masterLabel>
+            <translation><!-- DIA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fatigue</masterLabel>
+            <translation><!-- Fatigue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glucose</masterLabel>
+            <translation><!-- Glucose --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MAP</masterLabel>
+            <translation><!-- MAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRA</masterLabel>
+            <translation><!-- PRA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRV</masterLabel>
+            <translation><!-- PRV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SYS</masterLabel>
+            <translation><!-- SYS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sleep</masterLabel>
+            <translation><!-- Sleep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SpO2</masterLabel>
+            <translation><!-- SpO2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Temp</masterLabel>
+            <translation><!-- Temp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight</masterLabel>
+            <translation><!-- Weight --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Units --></label>
+        <name>PC_Units__c</name>
+        <picklistValues>
+            <masterLabel>%</masterLabel>
+            <translation><!-- % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>/min</masterLabel>
+            <translation><!-- /min --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level</masterLabel>
+            <translation><!-- Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>hrs</masterLabel>
+            <translation><!-- hrs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>lb</masterLabel>
+            <translation><!-- lb --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mmHg</masterLabel>
+            <translation><!-- mmHg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>mmol/L</masterLabel>
+            <translation><!-- mmol/L --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>°C</masterLabel>
+            <translation><!-- °C --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>교차 개체 관계</value>
+    </caseValues>
+    <fields>
+        <label>원본 개체</label>
+        <name>HealthCloudGA__FromObject__c</name>
+    </fields>
+    <fields>
+        <label>관계</label>
+        <name>HealthCloudGA__Relationship__c</name>
+    </fields>
+    <fields>
+        <label>역관계</label>
+        <name>HealthCloudGA__ReverseRelationship__c</name>
+    </fields>
+    <fields>
+        <label>대상 개체</label>
+        <name>HealthCloudGA__ToObject__c</name>
+    </fields>
+    <nameFieldLabel>교차 개체 관계 이름</nameFieldLabel>
+</CustomObjectTranslation>

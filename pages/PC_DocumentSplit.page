@@ -1,0 +1,47 @@
+<!--*********************************************************************************
+Page Name       : PC_DocumentSplit
+Description     : Document Split page for lightning
+Created By      : Deloitte
+Created Date    : June 08, 2016
+Modification Log:
+---------------------------------------------------------------------------------- 
+Developer                   Date                   Description
+-----------------------------------------------------------------------------------            
+Prachi Nandgaonkar          Jan 11 2016           Initial version
+*********************************************************************************-->
+
+<apex:page showheader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+    <apex:includeLightning />
+    <apex:includeScript value="/support/console/36.0/integration.js"/>
+    <html>
+        <head>
+            <title>Child Document</title>
+        </head>
+        <div id="content" />
+    </html>
+    <apex:include pageName="PC_JSLib"/>
+
+    <script>
+        function runAfterGlobalsLoaded(callback) {
+            $A.run(function() {
+                var labelAction = $A.get("c.aura://ComponentController.loadLabels");
+                labelAction.setCallback(this, function() {
+                    callback();
+                });
+                $A.enqueueAction(labelAction);
+            });
+        }
+    
+    var docId =  "{!JSENCODE($CurrentPage.parameters.documentId)}";
+    var isAppWindow =  "{!JSENCODE($CurrentPage.parameters.isAppWindow)}";
+    
+    var ns = getOrgNamespace();
+    
+    var componentName =  "{!JSENCODE($CurrentPage.parameters.componentName)}";
+        $Lightning.use(ns + ":PC_DocumentManagement", function() {
+            runAfterGlobalsLoaded(function() {
+                $Lightning.createComponent(ns + ':' + componentName, { "recordId" : docId, "isAppWindow" : isAppWindow }, "content");
+            });
+        });
+    </script>
+</apex:page>

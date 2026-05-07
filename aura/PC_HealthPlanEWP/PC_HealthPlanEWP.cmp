@@ -1,0 +1,658 @@
+<!--
+Lightning component  : PC_HealthPlanEWP
+Description          : Enrollment Wizard Health Plan Page
+
+Modification Log:
+Satheesh Kumar       21-Oct-2020    [PC-6738] Removed form tag and modalContentScroll class to fix Datepicker orientation & Pop-out issue
+Vijay Kashikar       30-Aug-2021    [PC-8125] Fixed the misalignment issue between the applicant health plans and its header.
+-->
+
+<aura:component extends="c:PC_EnrollmentWizardPage" controller="PC_HealthPlanEWPLightningController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+	<aura:attribute name="metaDataConfig" type="Object"/>
+    
+    <aura:set attribute="persistentAttributes" value="['lstHealthPlan']" />
+	
+    <aura:attribute name="fieldWrapper" type="Object"/>
+    <aura:attribute name="lstHealthPlan" type="Object[]"/>
+    <aura:attribute name="existingHealthPlan" type="Object[]"/>
+    <aura:attribute name="lstPayers" type="Object[]"/>
+    <aura:attribute name="newHealthPlan" type="Object"/>
+    <aura:attribute name="healthPlanIndex" type="String"/>
+    <aura:attribute name="selectedPayer" type="Object"/>
+    <aura:attribute name="searchString" type="String"/>
+    <aura:attribute name="isSearchPayer" type="Boolean" default="false"/>
+    <aura:attribute name="isValidated" type="Boolean" default="false"/>
+    <aura:attribute name="addHealthPlan" type="Boolean" default="true"/>
+    <aura:attribute name="addHealthPlanButton" type="Boolean" default="true"/>
+    <aura:attribute name="editHealthPlan" type="Boolean" default="false"/>
+    <aura:attribute name="isEdit" type="Boolean" default="false"/>
+    <aura:attribute name="errorCheck" type="Boolean" default="true"/>
+    <aura:attribute name="selfCardHolder" type="Boolean" default="true"/>
+    <aura:attribute name="searchStringErrorMessage" type="String" default="{!$Label.c.PC_FieldError_SearchString}" />
+    
+    <aura:attribute name="fsName" type="String"/>
+    <aura:attribute name="ignoreFields" type="String[]"/>
+    <aura:attribute name="replaceTarget" type="String"/>
+    <aura:attribute name="replaceText" type="String"/>
+    <aura:attribute name="typeName" type="String" default="{! v.namespacePrefix + 'PC_Health_Plan__c'}"/>
+    
+    <aura:attribute name="healthPlanFieldSetFields" type="Object[]"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+    <aura:attribute name="onlineApplicantHealthPlans" type="Object[]"/>
+    
+    <aura:attribute name="_pageError" type="String" default="{!$Label.c.PC_EWP_PageError}" />
+    <aura:attribute name="_pageErrorReplacements" type="Map" default="{'%ObjectName%':'Health Plan'}" />
+    
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}" />
+    <aura:attribute name="effectiveDateFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Effective_Date}" />
+    <aura:attribute name="expirationDateFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Expiration_Date}" />
+    <aura:attribute name="validatePayerErrorMessage" type="String" default="{!$Label.c.PC_FieldError_ValidatePayer}" />
+    <aura:attribute name="dobFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_DOB}" />
+
+    <aura:attribute name="_HealthPlanReferenceTableHeader" type="String" default="{!$Label.c.PC_HealthPlanEWP_RefTable}" />
+   	<aura:attribute name="_HealthPlanReferenceTableMsg" type="String" default="{!$Label.c.PC_HealthPlanEWP_RefTable_Desc}" />
+	<aura:attribute name="showRefTable" type="Boolean" default="false"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="noneOptionName" type="String" default="{!$Label.c.PC_Picklist_None}" />
+    <aura:attribute name="sourceManuallyEntered" type="String" default="{!$Label.c.PC_EWP_Source_ME}" />
+    <aura:attribute name="sourceOnline" type="String" default="{!$Label.c.PC_EWP_Source_Online}" />
+    <aura:attribute name="sourceExistingRecord" type="String" default="{!$Label.c.PC_EWP_Source_Existing}" />
+
+    <aura:attribute name="numWorkers" type="Integer" default="0" />
+    <aura:handler name="change" value="{!v.numWorkers}" action="{!c.numWorkersChanged}"/>
+    <aura:attribute name="showSpinner" type="Boolean"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+    </aura:if>
+    <div class="slds">
+        <!--****************************************Reference table of Health Plan populated from Online Form********************************************-->
+        <aura:if isTrue="{!v.showRefTable}">
+
+            <div class="refTable slds-tabs--scoped">
+                <fieldset class="slds-form--compound">
+
+                    <div class="slds-tabs--scoped__nav reftableheader" role="tablist">
+                        <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection " style = "color:#ffffff">{! v._HealthPlanReferenceTableHeader}
+                        </legend>
+                    </div>
+
+                    <div class="slds-form-element__group slds-tabs--scoped__content">
+
+                        <div class="slds-text-body--small message"  >
+                            <lightning:icon iconName="utility:info"  size="x-small" alternativeText="Information"/> &nbsp;
+                            <ui:outputText value="{! v._HealthPlanReferenceTableMsg}"  />
+                        </div>
+
+                        <div class="searchResultBlock">
+
+                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                <div class="slds-form-element__row">
+                                    <div class="slds-form-element slds-size--1-of-1">
+                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                            <thead>
+                                            <tr class="slds-text-title--caps">
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.referenceTo}">&nbsp;</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer_Name__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer_Name__c.fieldLabel}</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_ID_Policy_No__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_ID_Policy_No__c.fieldLabel}</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.fieldLabel}</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Effective_Date__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Effective_Date__c.fieldLabel}</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Expiration_Date__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Expiration_Date__c.fieldLabel}</div>
+                                                </th>
+                                                <th scope="col">
+                                                    <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.referenceTo}">{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.referenceTo}</div>
+                                                </th>
+
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+                                            <aura:iteration items="{!v.onlineApplicantHealthPlans}" var="th" indexVar="i">
+                                                <tr>
+                                                    <td scope="row" data-label="{! i}">
+                                                        <div class="{!th.isApplicantSelected + ' cbBlock'}" >
+                                                            <a data-text="{! i}" data-applicantSourceID="{!th.applicantSourceId}"
+                                                               onclick="{!c.addNewPlanViaApplicant}">
+                                                                <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new'}"
+                                                                       ariaHidden="true"
+                                                                />
+
+                                                            </a>
+                                                        </div>
+                                                        <div class="{!th.isApplicantSelected + ' tickBlock'}">
+                                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#success'}"
+                                                                   ariaHidden="true"
+                                                            />
+                                                        </div>
+                                                    </td>
+                                                    <td scope="row" data-label="{!th.payerName}">
+                                                        <div class="slds-truncate" data-id="{! i}" title="{!th.payerName}">{!th.payerName}</div>
+                                                    </td>
+                                                    <td scope="row" data-label="{!th.policyNo}">
+                                                        <div class="slds-truncate" data-id="{! i}" title="{!th.policyNo}">{!th.policyNo}</div>
+                                                    </td>
+                                                    <td scope="row" data-label="{!th.healthPlanTypeLabel}">
+                                                        <div class="slds-truncate" data-id="{! i}" title="{!th.healthPlanTypeLabel}">{!th.healthPlanTypeLabel}</div>
+                                                    </td>
+                                                    <td scope="row" data-label="{!th.healthPlanEffectiveDate}">
+                                                        <div class="slds-truncate" data-id="{! i}" title="{!th.healthPlanEffectiveDate}">{!th.healthPlanEffectiveDate}</div>
+                                                    </td>
+                                                    <td scope="row" data-label="{!th.healthPlanExpirationDate}">
+                                                        <div class="slds-truncate" data-id="{! i}" title="{!th.healthPlanExpirationDate}">{!th.healthPlanExpirationDate}</div>
+                                                    </td>
+                                                    <td scope="row" data-label="{!th.recordName}">
+                                                        <div class="slds-truncate" data-id="{! i}" title="{!th.recordNameLabel}">{!th.recordNameLabel}</div>
+                                                    </td>
+
+                                                </tr>
+                                            </aura:iteration>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+            </div>
+
+        </aura:if>
+
+
+            <div class="slds-tabs--scoped">
+                <fieldset class="slds-form--compound">
+                    <div class="slds-tabs--scoped__nav slds-clearfix" role="tablist">
+                        <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_Health_Plan_Label}</legend>
+                        <button type="button" class="rightMargin slds-button slds-button--neutral slds-button--brand" onclick="{!c.addNewPlan}">{!$Label.c.PC_Add_New_Button}</button>
+                    </div>
+                    <div class="slds-form-element__group slds-tabs--scoped__content">
+                        <div class="slds-form-element__row">
+                            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                <thead>
+                                <tr class="slds-text-title--caps">
+                                    <th scope="col"  style="display:none;">
+                                        <div class="slds-truncate" title="">&nbsp;</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title=""></div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title=""></div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer_Name__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer_Name__c.fieldLabel}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_ID_Policy_No__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_ID_Policy_No__c.fieldLabel}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.fieldLabel}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Effective_Date__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Effective_Date__c.fieldLabel}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Expiration_Date__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Expiration_Date__c.fieldLabel}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.referenceTo}">{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.referenceTo}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate" title="{!$Label.c.PC_Wizard_Source}">{!$Label.c.PC_Wizard_Source}</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <aura:iteration items="{!v.lstHealthPlan}" var="th" indexVar="i">
+                                    <tr>
+                                        <td scope="row" data-label="{!th.isValid}" style="display:none;">
+                                            <aura:if isTrue="{!th.isValid}">
+                                                <div class="slds-truncate" data-id="{! i}" title="Validated." style="color:green">
+                                                    <c:svg class="slds-button__icon slds-button__icon--small successIcon_validate"
+                                                           xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#success'}"
+                                                           ariaHidden="true"
+                                                    />
+                                                </div>
+                                                <aura:set attribute="else">
+                                                    <div class="slds-truncate" data-id="{! i}" title="Has validation errors!!">
+                                                        <c:svg class="slds-button__icon slds-button__icon--small warningIcon_validate"
+                                                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#warning'}"
+                                                               ariaHidden="true"
+                                                        />
+                                                    </div>
+                                                </aura:set>
+                                            </aura:if>
+
+                                        </td>
+                                        <td scope="row" data-label="{!th.payerId}" >
+                                            <a data-text="{! i}" data-applicantSourceID="{!th.applicantSourceId}"
+                                               onclick="{!c.editHealthPlan}">
+                                                <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#edit'}"
+                                                       ariaHidden="true"
+                                                />
+
+                                            </a>
+                                        </td>
+                                        <td scope="row" data-label="{!th.payerId}">
+                                            <a data-text="{! i}" data-applicantSourceID="{!th.applicantSourceId}"
+                                               onclick="{!c.removeHealthPlan}" style="{!th.source == 'Existing Record' ? 'display:none;' : ''}">
+                                                <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#delete'}"
+                                                       ariaHidden="true"
+                                                />
+
+                                            </a>
+                                        </td>
+                                        <td scope="row" data-label="{!th.payerName}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.payerName}">{!th.payerName}</div>
+                                        </td>
+                                        <td scope="row" data-label="{!th.policyNo}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.policyNo}">{!th.policyNo}</div>
+                                        </td>
+                                        <td scope="row" data-label="{!th.healthPlanTypeLabel}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.healthPlanTypeLabel}">{!th.healthPlanTypeLabel}</div>
+                                        </td>
+                                        <!--The lightning:formattedDateTime component used for displaying following date fields on the selected healthPlan table
+                                        gives date formats different than the lightning:input component used in the various EWP forms for a few locale values-->
+                                        <td scope="row" data-label="{!th.healthPlanEffectiveDate}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.healthPlanEffectiveDate}">
+                                                <lightning:formattedDateTime value="{!th.healthPlanEffectiveDate}"
+                                                                             year="numeric"
+                                                                             month="numeric"
+                                                                             day="numeric"/>
+                                            </div>
+                                        </td>
+                                        <td scope="row" data-label="{!th.healthPlanExpirationDate}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.healthPlanExpirationDate}">
+                                                <lightning:formattedDateTime value="{!th.healthPlanExpirationDate}"
+                                                                            year="numeric"
+                                                                            month="numeric"
+                                                                             day="numeric"/>
+                                            </div>
+                                        </td>
+                                        <td scope="row" data-label="{!th.recordName}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.recordNameLabel}">{!th.recordNameLabel}</div>
+                                        </td>
+                                        <td scope="row" data-label="{!th.source}">
+                                            <div class="slds-truncate" data-id="{! i}" title="{!th.source}">{!th.source}</div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="slds-form-element slds-x-small-buttons--horizontal" style="display:none;">
+                            <button type="button" class="rightMargin slds-button slds-button--neutral slds-button--brand" onclick="{!c.addNewPlan}">{!$Label.c.PC_Add_New_Button}</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--large slds-fade-in-hide" aura:id="modaldialog" >
+                <div class="slds-modal__container ">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection" style="{!v.isSearchPayer == true ? '' : 'display:none;'}">{!$Label.c.PC_Search_Payer_Label}</h2>
+                        <h2 class="slds-text-heading--medium" style="{!v.addHealthPlanButton == true ? '' : 'display:none;'}">{!$Label.c.PC_New_Health_Plan_Label}</h2>
+                        <h2 class="slds-text-heading--medium" style="{!v.editHealthPlan == true ? '' : 'display:none;'}">{!$Label.c.PC_Update_Health_Plan_Label}</h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.dontModalBox}" type="button">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true"
+                            />
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </div>
+                    <div class="slds-modal__content">
+                        <ul>
+                            <li class="slds-item">
+                                <div class="slds-tabs--scoped">
+                                    <fieldset class="slds-form--compound">
+                                        <div class="slds-tabs--scoped__nav slds-clearfix" style="{!v.isSearchPayer == true ? '' : 'display:none;'}" role="tablist">
+                                            <legend class="slds-form-element__label slds-text-heading--large slds-tabs--scoped__item" />
+                                        </div>
+                                        <div class="slds-form-element__group slds-tabs--scoped__content" style="{!v.isSearchPayer == true ? '' : 'display:none;'}">
+                                            <div class="slds-form-element">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size--1-of-2">
+                                                        <label class="slds-form-element__label slds-text-title--caps">{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer_Name__c.fieldLabel}</label>
+                                                        <ui:inputText aura:id="searchPayerName" class="slds-input validateButton" value="{!v.searchString}" />
+                                                        <button class="slds-button slds-button--neutral slds-button--brand" type="button" onclick="{!c.searchRecord}">{!$Label.c.PC_Search_Button_Label}</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-form-element slds-size--1-of-1">
+                                                <aura:if isTrue="{!v.lstPayers.length > 0}">
+                                                    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                                        <thead>
+                                                        <tr class="slds-text-title--caps">
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title=""></div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer__c.fieldLabel}">{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer__c.fieldLabel}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.fieldWrapper.Account_Type.fieldLabel}">{!v.fieldWrapper.Account_Type.fieldLabel}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.fieldWrapper.Account_PC_Email__c.fieldLabel}">{!v.fieldWrapper.Account_PC_Email__c.fieldLabel}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.fieldWrapper.Account_Phone.fieldlabel}">{!v.fieldWrapper.Account_Phone.fieldLabel}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!v.fieldWrapper.Account_Fax.fieldLabel}">{!v.fieldWrapper.Account_Fax.fieldLabel}</div>
+                                                            </th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <aura:iteration items="{!v.lstPayers}" var="th" indexVar="i">
+                                                            <tr>
+                                                                <td scope="row" data-label="{!th.payerId}">
+                                                                    <ui:inputRadio text="{! i}" name="Payers" change="{!c.onSelect}" value="{!th.isSelected}"/>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.payerName}">
+                                                                    <div class="slds-truncate" title="{!th.payerName}">{!th.payerName}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.payerTypeLabel}">
+                                                                    <div class="slds-truncate" title="{!th.payerTypeLabel}">{!th.payerTypeLabel}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.email}">
+                                                                    <div class="slds-truncate" title="{!th.email}">{!th.email}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.phone}">
+                                                                    <div class="slds-truncate" title="{!th.phone}">{!th.phone}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!th.fax}">
+                                                                    <div class="slds-truncate" title="{!th.fax}">{!th.fax}</div>
+                                                                </td>
+                                                            </tr>
+                                                        </aura:iteration>
+                                                        </tbody>
+                                                    </table>
+                                                    <aura:set attribute="else">
+                                                            {!$Label.c.PC_EWP_No_Results_Found_Msg}
+                                                    </aura:set>
+                                                </aura:if>
+                                            </div>
+                                        </div>
+                                        <!--                                        <div class="slds-form-element__row" style="{!v.isSearchPayer == true ? '' : 'display:none;'}">
+
+                                                                                </div>-->
+                                        <div class="slds-form-element__group slds-tabs--scoped__content" style="{!v.addHealthPlan == true ? '' : 'display:none;'}">
+                                            <div class="slds-form-element__row">
+                                                <div class="slds-lookup slds-is-open" data-select="single">
+                                                    <label class="slds-form-element__label" for="input-01">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Payer__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Payer__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <div class="slds-grid slds-wrap" style="{!v.isValidated == false ? '' : 'display:none;'}" for="tovalidatepayerName">
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <ui:inputText aura:id="tovalidatepayerName" class=" slds-input" value="{!v.searchString}" />
+                                                        </div>
+
+                                                        <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                            <input type="button" class="slds-button slds-button--neutral slds-button--brand" name="Search Payer" value="{!$Label.c.PC_Validate_Payer_Label}" onclick="{!c.openSearch}"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div style="{!v.isValidated == true ? '' : 'display:none;'}" class="slds-form-element" for="payerName">
+                                                        <ui:outputText aura:id="payerName"
+                                                                       class="validateButton slds-input"
+                                                                       value="{!v.newHealthPlan.payerName}"
+                                                        />
+                                                        <input type="button" class="slds-button slds-button--neutral slds-button--brand" name="Search Payer" value="{!$Label.c.PC_Change_Payer_Label}" onclick="{!c.openSearch}"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.referenceTo}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputSelect aura:id="recordName" class="slds-select" value="{!v.newHealthPlan.recordName}">
+                                                        <aura:iteration items="{!v.fieldWrapper.PC_Health_Plan__c_RecordTypeId.lstRecordTypeOptions}" var="option">
+                                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!option.label}" text="{!option.value}"/>
+                                                        </aura:iteration>
+                                                    </ui:inputSelect>
+                                                </div>
+
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputSelect aura:id="healthPlanType" class="slds-select" value="{!v.newHealthPlan.healthPlanType}">
+                                                        <aura:iteration items="{!v.fieldWrapper.PC_Health_Plan__c_PC_Plan_Type__c.lstOptions}" var="option">
+                                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!option.label}" text="{!option.value}"/>
+                                                        </aura:iteration>
+                                                    </ui:inputSelect>
+                                                </div>
+                                            </div>
+
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_Group_No__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_Group_No__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="groupNo"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.groupNo}"
+                                                                  updateOn="keyup"
+                                                    />
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-10">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_ID_Policy_No__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_ID_Policy_No__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="policyNo"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.policyNo}"
+                                                                  updateOn="keyup"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-06">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Effective_Date__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Effective_Date__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <lightning:input aura:id="healthPlanEffectiveDate" type="Date" dateStyle="short" variant="label-hidden" name="healthPlanEffectiveDate" value="{!v.newHealthPlan.healthPlanEffectiveDate}" />
+                                                    <!--<lightning:input aura:id="healthPlanEffectiveDate" type="date" label="Birthday" name="{!v.newHealthPlan.healthPlanEffectiveDate}" />-->
+
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-06">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Expiration_Date__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Expiration_Date__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <lightning:input aura:id="healthPlanExpirationDate" type="Date"  dateStyle="short" variant="label-hidden" name="healthPlanExpirationDate" value="{!v.newHealthPlan.healthPlanExpirationDate}" />
+                                                </div>
+                                            </div>
+                                            <div class="slds-section-title--divider">{!$Label.c.PC_EWP_RxBenefits_Info}</div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Rx_Bin__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Rx_Bin__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="planRxBin"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.planRxBin}"
+                                                                  updateOn="keyup"
+                                                    />
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-10">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Rx_Grp__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Rx_Grp__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="planRxGrp"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.planRxGrp}"
+                                                                  updateOn="keyup"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Rx_PCN__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Rx_PCN__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="planRxPCN"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.planRxPCN}"
+                                                                  updateOn="keyup"
+                                                    />
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1"/>
+                                            </div>
+                                            <div class="slds-section-title--divider">{!$Label.c.PC_EWP_Cardholder_Info}</div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_Relationship_to_Patient__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_Relationship_to_Patient__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputSelect aura:id="cardholderRelationshipToPatient" class="slds-select" value="{!v.newHealthPlan.cardholderRelationshipToPatient}"
+                                                                    change="{!c.cardHolderInfoChange}">
+                                                        <aura:iteration items="{!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_Relationship_to_Patient__c.lstOptions}" var="option">
+                                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!option.label}" text="{!option.value}"/>
+                                                        </aura:iteration>
+                                                    </ui:inputSelect>
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-06">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_s_Date_of_Birth__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_s_Date_of_Birth__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <lightning:input aura:id="cardholdersBirthDate" type="Date" dateStyle="short" variant="label-hidden" name="healthPlanExpirationDate" value="{!v.newHealthPlan.cardholdersBirthDate}" />
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-wrap">
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-09">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Card_Holder_Name__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Card_Holder_Name__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="cardholderName"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.cardholderName}"
+                                                                  updateOn="keyup"
+                                                                  disabled="false"
+                                                    />
+                                                </div>
+                                                <div class="slds-form-element slds-size--1-of-2 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-2 slds-max-small-size_1-of-1">
+                                                    <label class="slds-form-element__label" for="input-10">
+                                                        {!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_Employer__c.fieldLabel}
+                                                        <aura:if isTrue="{!v.fieldWrapper.PC_Health_Plan__c_PC_Cardholder_Employer__c.fieldRequired}">
+                                                            <abbr class="slds-required" title="required">*</abbr>
+                                                        </aura:if>
+                                                    </label>
+                                                    <ui:inputText aura:id="cardholderEmployer"
+                                                                  class="slds-input"
+                                                                  labelClass="slds-form-element__label"
+                                                                  value="{!v.newHealthPlan.cardholderEmployer}"
+                                                                  updateOn="keyup"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <!-- Fields from field set form -->
+                                            <aura:if isTrue="{!v.healthPlanFieldSetFields.length > 0}">
+                                                <div class="slds-section-title--divider">{!$Label.c.PC_EWP_Additional_Info_Header}</div>
+                                                <div class="slds-grid slds-wrap">
+                                                    <div class="slds-form-element slds-size--2-of-2">
+                                                    {!v.fieldSetFormBody}
+                                                        <aura:set attribute="else">
+
+                                                        </aura:set>
+
+                                                    </div>
+
+                                                </div>
+                                            </aura:if>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <aura:if isTrue="{!(v.addHealthPlanButton || v.editHealthPlan)}">
+                        <div class="slds-modal__footer">
+                            <div class="slds-x-small-buttons--horizontal">
+                                <button class="slds-button slds-button--neutral" onclick="{!c.dontModalBox}" type="button">{!$Label.c.PC_Button_Label_Cancel}</button>
+                                <aura:if isTrue="{!v.addHealthPlanButton}">
+                                    <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.addHealthPlan}" type="button">{!$Label.c.PC_Add_Button}</button>
+                                    <aura:set attribute="else">
+                                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.updateHealthPlan}" type="button">{!$Label.c.PC_Update_Button}</button>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </aura:if>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop"></div>
+
+    </div>
+        {!v.body}
+</aura:component>

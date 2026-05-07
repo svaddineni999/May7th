@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Respons Pengkajian Klinis</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Respons Pengkajian Klinis</value>
+    </caseValues>
+    <fields>
+        <label>Nyeri di Perut</label>
+        <name>HealthCloudGA__AbdominalPain__c</name>
+    </fields>
+    <fields>
+        <label>Penyakit Jantung</label>
+        <name>HealthCloudGA__CardiovascularDisease__c</name>
+    </fields>
+    <fields>
+        <label>Menggigil</label>
+        <name>HealthCloudGA__Chills__c</name>
+    </fields>
+    <fields>
+        <label>Penyakit Hati Kronis</label>
+        <name>HealthCloudGA__ChronicLiverDisease__c</name>
+    </fields>
+    <fields>
+        <label>Penyakit Paru-Paru Kronis</label>
+        <name>HealthCloudGA__ChronicLungDisease__c</name>
+    </fields>
+    <fields>
+        <label>Penyakit Ginjal Kronis</label>
+        <name>HealthCloudGA__ChronicRenalDisease__c</name>
+    </fields>
+    <fields>
+        <label>Batuk</label>
+        <name>HealthCloudGA__Cough__c</name>
+    </fields>
+    <fields>
+        <label>Perokok Aktif</label>
+        <name>HealthCloudGA__CurrentSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Penyakit Gula</label>
+        <name>HealthCloudGA__DiabetesMellitus__c</name>
+    </fields>
+    <fields>
+        <label>Diare</label>
+        <name>HealthCloudGA__Diarrhoea__c</name>
+    </fields>
+    <fields>
+        <label>Demam Tinggi</label>
+        <name>HealthCloudGA__FeverOverThreshold__c</name>
+    </fields>
+    <fields>
+        <label>Mantan Perokok</label>
+        <name>HealthCloudGA__FormerSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Sakit Kepala</label>
+        <name>HealthCloudGA__Headache__c</name>
+    </fields>
+    <fields>
+        <label>Suhu Tertinggi yang Diukur</label>
+        <name>HealthCloudGA__HighestRecordedTemperature__c</name>
+    </fields>
+    <fields>
+        <label>Status Hospitalisasi</label>
+        <name>HealthCloudGA__HospitalizationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Admitted</masterLabel>
+            <translation><!-- Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Admitted</masterLabel>
+            <translation><!-- Not Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Kelainan imun</label>
+        <name>HealthCloudGA__Immunocompromised__c</name>
+    </fields>
+    <fields>
+        <label>Nyeri Otot</label>
+        <name>HealthCloudGA__MuscleAches__c</name>
+    </fields>
+    <fields>
+        <label>Mual atau Muntah</label>
+        <name>HealthCloudGA__NauseaOrVomiting__c</name>
+    </fields>
+    <fields>
+        <label>Catatan Disabilitas Neurologis</label>
+        <name>HealthCloudGA__NeurologicalDisablityNotes__c</name>
+    </fields>
+    <fields>
+        <label>Disabilitas Neurologis</label>
+        <name>HealthCloudGA__NeurologicalDisablity__c</name>
+    </fields>
+    <fields>
+        <label>Pekerjaan</label>
+        <name>HealthCloudGA__Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Childcare worker</masterLabel>
+            <translation><!-- Childcare worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical laboratory technologist or technician</masterLabel>
+            <translation><!-- Clinical laboratory technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combined food preparation or serving worker, including fast food</masterLabel>
+            <translation><!-- Combined food preparation or serving worker, including fast food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentist</masterLabel>
+            <translation><!-- Dentist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency management director</masterLabel>
+            <translation><!-- Emergency management director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency medical technician or paramedic</masterLabel>
+            <translation><!-- Emergency medical technician or paramedic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health practitioner support technologist or technician</masterLabel>
+            <translation><!-- Health practitioner support technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare support worker(including medical equipment preparer)</masterLabel>
+            <translation><!-- Healthcare support worker(including medical equipment preparer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Mulainya Gejala</label>
+        <name>HealthCloudGA__OnsetOfSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Catatan Penyakit-Penyakit Kronis Lainnya</label>
+        <name>HealthCloudGA__OtherChronicDiseasesNotes__c</name>
+    </fields>
+    <fields>
+        <label>Penyakit-Penyakit Kronis Lainnya</label>
+        <name>HealthCloudGA__OtherChronicDiseases__c</name>
+    </fields>
+    <fields>
+        <label>Gejala-Gejala Lainnya</label>
+        <name>HealthCloudGA__OtherSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Persetujuan orang tua telah diberikan</label>
+        <name>HealthCloudGA__ParentalConsent__c</name>
+    </fields>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Respons Pengkajian Klinis</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Dokter Perawatan Primer</label>
+        <name>HealthCloudGA__PrimaryCarePhysician__c</name>
+    </fields>
+    <fields>
+        <label>Nama Fasilitas Penyedia</label>
+        <name>HealthCloudGA__ProviderFacilityName__c</name>
+    </fields>
+    <fields>
+        <label>Hidung Berarir</label>
+        <name>HealthCloudGA__RunnyNose__c</name>
+    </fields>
+    <fields>
+        <label>Sesak Napas</label>
+        <name>HealthCloudGA__ShortnessOfBreath__c</name>
+    </fields>
+    <fields>
+        <label>Nyeri Tenggorokan</label>
+        <name>HealthCloudGA__SoreThroat__c</name>
+    </fields>
+    <fields>
+        <label>Rasa Demam Subjektif</label>
+        <name>HealthCloudGA__SubjectiveFever__c</name>
+    </fields>
+    <fields>
+        <label>Nama Fasilitas yang Memberikan Tes</label>
+        <name>HealthCloudGA__TestingFacilityName__c</name>
+    </fields>
+    <nameFieldLabel>Nama Respons Pengkajian Klinis</nameFieldLabel>
+</CustomObjectTranslation>

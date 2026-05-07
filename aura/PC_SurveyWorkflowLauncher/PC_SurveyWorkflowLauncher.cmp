@@ -1,0 +1,43 @@
+<!--
+ - Created by havalakki on 6/11/2021.
+ -->
+
+<aura:component description="PC_SurveyWorkflowLauncher" implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="PC_SurveyEligibilityCheckController">
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="surveyLink" type="String" access="private"/>
+    <aura:attribute name="surveyEligibilityCheckScreenCompName" type="String" default="PC_ParentSurveyWorkflow" access="private"/>
+    <aura:attribute name="surveyEligibilityCheckLabel" type="String" default="{!$Label.c.PC_SurveyEligibilityCheck}" access="private"/>
+    <aura:attribute name="tabIcon" type="String" default="utility:edit_form" access="private"/>
+    <aura:attribute name="accountCaseDetailsTabIcon" type="String" default="utility:engage" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="errors" type="List" access="private" default="[]"/>
+    <aura:attribute name="engagementProgramUrlFieldName" type="String" access="private" default="EngagementProgramId"/>
+    <aura:attribute name="surveyInvitationPageName" type="String" access="private" default="PC_SurveyInvitationAppPage"/>
+    <aura:attribute name="caseRecordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="engProgramIdValue" type="Id" access="PUBLIC"/>
+    <aura:attribute name="accountIdValue" type="Id" access="PUBLIC" />
+    <aura:attribute name="accountFieldSetAPIName" type="String" default="" required="false" access="global"/>
+    <aura:attribute name="caseFieldsetAPIName" type="String" default="" required="false" access="global"/>
+    <aura:attribute name="workflowSurveyContext" type="String" default="PC_PAP" access="global"/>
+    <aura:attribute name="workflowButtonLabel" type="String" default="{!$Label.c.PC_PAPTitle}" access="global"/>
+    <aura:attribute name="workflowButtonLabelValue" type="String" default="" access="private"/>
+    <aura:attribute name="searchObjectAPIName" type="String" default="" access="private"/>
+
+    <aura:handler event="c:PC_SearchParams" action="{!c.handleSearchParams}"/>
+    <aura:handler event="c:PC_SelectedRecord" action="{!c.enableSurveyWorkflowButton}"/>
+    <aura:handler name="selectedDataTableRow" event="c:PC_SelectedDataTableRow"
+                  action="{!c.handleSearchParams}"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+    <div>
+        <lightning:button variant="brand" aura:id="surveyLauncherButtonId" disabled="false" label="{!format($Label.c.PC_SurveyLauncherButtonLabel, v.workflowButtonLabelValue)}" onclick="{!c.openSurveyInvitationPage}"/>
+    </div>
+</aura:component>

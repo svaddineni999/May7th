@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OCR Template Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OCR Template Types</value>
+    </caseValues>
+    <fields>
+        <help><!-- The API Name must be unique. The name must begin with a letter, and use only alphanumeric characters and underscores. The name cannot end with an underscore or have two consecutive underscores. --></help>
+        <label><!-- API Name --></label>
+        <name>PC_APIName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>PC_Category__c</name>
+        <picklistValues>
+            <masterLabel>Consent</masterLabel>
+            <translation><!-- Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment</masterLabel>
+            <translation><!-- Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription</masterLabel>
+            <translation><!-- Prescription --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Specifies whether to create resultant record post OCR completion or not. --></help>
+        <label><!-- Create results post OCR completion --></label>
+        <name>PC_CreateResultsAfterOCRCompletion__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>PC_IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Label --></label>
+        <name>PC_Label__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The OCR Template Type name can only contain alphanumeric characters, must begin with a letter, cannot end with an underscore or contain two consecutive underscore characters, and must be unique across all Template Type names. --></errorMessage>
+        <name>PC_AvoidSpecialCharacters</name>
+    </validationRules>
+</CustomObjectTranslation>

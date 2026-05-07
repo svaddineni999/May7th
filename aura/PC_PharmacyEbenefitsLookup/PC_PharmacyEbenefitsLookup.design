@@ -1,0 +1,7 @@
+<!--
+ - Created by vkashikar on 6/18/2018.
+ -->
+
+<design:component>
+    <design:attribute name="pharmacyFinderCmpName" required="false" default="c:PC_PharmacyFinderUBC"/>
+</design:component>

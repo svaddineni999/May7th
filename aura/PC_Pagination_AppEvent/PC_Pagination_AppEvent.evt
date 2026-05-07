@@ -1,0 +1,7 @@
+<aura:event type="APPLICATION" access="public">
+	 <aura:attribute name="sourceId" required="true" type="String" access="PUBLIC" description="using to store the source of the event fire" />
+     <aura:attribute name="currentPagenumber"  required="true" type="String" access="PUBLIC" description="using to store current page number"/>
+     <aura:attribute name="totalNumberOfPages"  required="true" type="String" access="PUBLIC" description="using to store total number of pages"/>
+
+
+</aura:event>

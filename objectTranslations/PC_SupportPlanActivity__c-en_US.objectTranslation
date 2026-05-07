@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Plan Activity</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Plan Activities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Class --></label>
+        <name>PC_ActionClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Sequence --></label>
+        <name>PC_ActivitySequence__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_ActivityType__c</name>
+        <picklistValues>
+            <masterLabel>Automation Task</masterLabel>
+            <translation><!-- Automation Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create Record</masterLabel>
+            <translation><!-- Create Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publish Platform Event</masterLabel>
+            <translation><!-- Publish Platform Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update Record</masterLabel>
+            <translation><!-- Update Record --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Task</masterLabel>
+            <translation><!-- User Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Alternate Activity --></label>
+        <name>PC_AlternateActivity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apex Class Condition --></label>
+        <name>PC_ApexCondition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assign To Role --></label>
+        <name>PC_Assign_To_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Automation Task JSON --></label>
+        <name>PC_AutomationTaskJSON__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>PC_Category__c</name>
+        <picklistValues>
+            <masterLabel>AE</masterLabel>
+            <translation><!-- AE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alt. Funding</masterLabel>
+            <translation><!-- Alt. Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appeal</masterLabel>
+            <translation><!-- Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay</masterLabel>
+            <translation><!-- Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Activity</masterLabel>
+            <translation><!-- Field Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Information</masterLabel>
+            <translation><!-- Missing Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Enrollment</masterLabel>
+            <translation><!-- Patient Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Referral</masterLabel>
+            <translation><!-- Pharmacy Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support Check-In</masterLabel>
+            <translation><!-- Support Check-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treatment Reminder</masterLabel>
+            <translation><!-- Treatment Reminder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome Gesture</masterLabel>
+            <translation><!-- Welcome Gesture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>PC_Channel__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cloned From --></label>
+        <name>PC_ClonedFrom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Condition Behavior --></label>
+        <name>PC_ConditionBehavior__c</name>
+        <picklistValues>
+            <masterLabel>No Condition</masterLabel>
+            <translation><!-- No Condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skip if False</masterLabel>
+            <translation><!-- Skip if False --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait until True</masterLabel>
+            <translation><!-- Wait until True --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Condition Option --></label>
+        <name>PC_ConditionOption__c</name>
+        <picklistValues>
+            <masterLabel>Apex Class</masterLabel>
+            <translation><!-- Apex Class --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condition Builder</masterLabel>
+            <translation><!-- Condition Builder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Conditional Logic --></label>
+        <name>PC_Conditional_Logic__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Activity Execution --></label>
+        <name>PC_GroupActivityExecution__c</name>
+        <picklistValues>
+            <masterLabel>All at once</masterLabel>
+            <translation><!-- All at once --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In sequence</masterLabel>
+            <translation><!-- In sequence --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Initial Sequence Activity --></label>
+        <name>PC_InitialSequenceActivity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Activity Number --></label>
+        <name>PC_InternalActivityNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internal Activity Type --></label>
+        <name>PC_InternalActivityType__c</name>
+        <picklistValues>
+            <masterLabel>Sequence</masterLabel>
+            <translation><!-- Sequence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sequence Task</masterLabel>
+            <translation><!-- Sequence Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Task</masterLabel>
+            <translation><!-- User Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Next Activity --></label>
+        <name>PC_NextActivityNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operators --></label>
+        <name>PC_Operators__c</name>
+    </fields>
+    <fields>
+        <label><!-- Priority --></label>
+        <name>PC_Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reference Date --></label>
+        <name>PC_ReferenceDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Offset Unit --></label>
+        <name>PC_ReferenceOffsetUnit__c</name>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reference Offset --></label>
+        <name>PC_ReferenceOffset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reference Type --></label>
+        <name>PC_ReferenceType__c</name>
+        <picklistValues>
+            <masterLabel>Activity Creation Date</masterLabel>
+            <translation><!-- Activity Creation Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>After Reference Date</masterLabel>
+            <translation><!-- After Reference Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>After completion of previous activity</masterLabel>
+            <translation><!-- After completion of previous activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Before Reference Date</masterLabel>
+            <translation><!-- Before Reference Date --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sub Type --></label>
+        <name>PC_SubType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>PC_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Plan --></label>
+        <name>PC_SupportPlan__c</name>
+        <relationshipLabel><!-- Support Plan Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Task Fields --></label>
+        <name>PC_UserTask_Fields__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

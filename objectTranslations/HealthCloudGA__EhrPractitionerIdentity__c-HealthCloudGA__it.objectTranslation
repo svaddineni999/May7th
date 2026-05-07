@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Identità medico EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Identità medico EHR</value>
+    </caseValues>
+    <fields>
+        <label>Descrizione</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Medico EHR</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>Identità medico</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Organizzazione</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>Data finale periodo</label>
+        <name>HealthCloudGA__PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Data iniziale periodo</label>
+        <name>HealthCloudGA__PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>SourceSystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Sistema</label>
+        <name>HealthCloudGA__System__c</name>
+    </fields>
+    <fields>
+        <label>Codice tipo</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta tipo</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema tipo</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Uso</label>
+        <name>HealthCloudGA__Use__c</name>
+    </fields>
+    <fields>
+        <label>Valore</label>
+        <name>HealthCloudGA__Value__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nome identità medico EHR</nameFieldLabel>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

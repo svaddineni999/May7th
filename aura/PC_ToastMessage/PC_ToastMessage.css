@@ -1,0 +1,10 @@
+/**
+ * Created by peharitha on 12/3/2020.
+ */
+.THIS .notifyContainer{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+}

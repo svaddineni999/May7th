@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Kontakt-Kontakt-Beziehung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Kontakt-Kontakt-Beziehungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Kontakt-Kontakt-Beziehung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Kontakt-Kontakt-Beziehungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Kontakt-Kontakt-Beziehung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Kontakt-Kontakt-Beziehungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Kontakt-Kontakt-Beziehung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Kontakt-Kontakt-Beziehungen</value>
+    </caseValues>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Kontakt</label>
+        <name>HealthCloudGA__Contact__c</name>
+        <relationshipLabel>Zugehörige Kontakte</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Enddatu</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Externe ID</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>Umkehrbeziehung</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Kontakt-Kontakt-Beziehungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehöriger Kontakt</label>
+        <name>HealthCloudGA__RelatedContact__c</name>
+        <relationshipLabel><!-- Contact Contact Relations (Related Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Verwandte Rolle</label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Contact Contact Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Startdatum</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Name für Kontaktbeziehung</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Eine &quot;Kontakt-Kontakt-Beziehung&quot; kann nicht als &quot;Inaktiv&quot; verwendet werden.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

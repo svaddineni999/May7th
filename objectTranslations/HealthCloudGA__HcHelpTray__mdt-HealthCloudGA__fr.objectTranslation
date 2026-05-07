@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Menu Aide et formation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Menus Aide et formation</value>
+    </caseValues>
+    <fields>
+        <label>Actif</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Type de contenu</label>
+        <name>HealthCloudGA__ContentType__c</name>
+        <picklistValues>
+            <masterLabel>Help Doc</masterLabel>
+            <translation><!-- Help Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>URL de l&apos;aide</label>
+        <name>HealthCloudGA__HelpUrl__c</name>
+    </fields>
+    <fields>
+        <label>Chemin d&apos;accès à l&apos;icône</label>
+        <name>HealthCloudGA__IconPath__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette</label>
+        <name>HealthCloudGA__Label__c</name>
+    </fields>
+    <fields>
+        <label>Ordre de tri</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label>Type</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

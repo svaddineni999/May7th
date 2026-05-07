@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>工作群組</value>
+    </caseValues>
+    <fields>
+        <label>啟用</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>分組依據標籤</label>
+        <name>HealthCloudGA__GroupByLabel__c</name>
+    </fields>
+    <fields>
+        <label>分組依據</label>
+        <name>HealthCloudGA__GroupBy__c</name>
+    </fields>
+    <fields>
+        <label>排序順序</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement Program</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagement Programs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Campaign Name --></label>
+        <name>ACLS_Campaign_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of the Engagement Program --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds Engagement Program Code specified in the Engagement Program object --></help>
+        <label><!-- Engagement Program Code --></label>
+        <name>PC_EngagementProgramCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies whether the Engagement Program is active. Note that making it as inactive may render the associated setting also as inactive. --></help>
+        <label><!-- Is Active --></label>
+        <name>PC_IsActive__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

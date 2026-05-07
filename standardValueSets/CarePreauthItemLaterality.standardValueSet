@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Left Side</fullName>
+        <default>false</default>
+        <label>Left Side</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Right Side</fullName>
+        <default>false</default>
+        <label>Right Side</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Bilateral</fullName>
+        <default>false</default>
+        <label>Bilateral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unspecified</fullName>
+        <default>false</default>
+        <label>Unspecified</label>
+    </standardValue>
+</StandardValueSet>

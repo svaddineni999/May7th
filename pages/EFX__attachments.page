@@ -1,0 +1,128 @@
+<apex:page standardController="EFX__efax__c" extensions="EFX.AttachmentsController" action="{!getAttachments}" standardStylesheets="true" applyBodyTag="true" applyHtmlTag="false" showHeader="false" >    
+    <apex:slds /> 
+    <apex:includeLightning />
+    
+    <script>
+    function reload(){
+        if(isLightningOrClassic()){
+            console.log('Interface is Lightning ? '+isLightningOrClassic());
+            recId = "{!$CurrentPage.parameters.id}"
+            setInterval(function(){window.top.location= '/'+recId;},3000);
+        }
+        else{
+            console.log('Interface is Lightning ? '+isLightningOrClassic());
+            recId = "{!$CurrentPage.parameters.id}"
+            setInterval(function(){window.top.location= '/'+recId;},3000);
+        }
+    }
+     
+    function isLightningOrClassic() {
+        return((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+    }
+    
+    function method1(str1,str2){
+        console.log('val1:'+str1);
+        console.log('val2:'+str2);
+        console.log(' Inside method 1 Interface is Lightning ? '+isLightningOrClassic()); 
+        if(isLightningOrClassic()){
+            if(str1 =='true' && str2 != null){ 
+                sforce.one.showToast({ 
+                    "title": "Success !",
+                    "message": str2,
+                    "type": "Success"
+                });
+            }
+            else{ 
+                sforce.one.showToast({ 
+                    "title": "Error !",
+                    "message": str2,
+                    "type": "Error"
+                });
+            }
+            reload();
+        }
+        else{
+            reload();
+        }
+    } 
+    
+    function TIFFError(str1,str2){
+        console.log('val1:'+str1);
+        console.log('val2:'+str2);
+       
+        if(isLightningOrClassic()){
+             console.log('isLightningOrClassic():'+isLightningOrClassic());
+            if(str1 =='false' && str2 != null){ 
+                
+                 sforce.one.showToast({ 
+                    "title": "Error !",
+                    "message": str2,
+                    "type": "Error"
+                });
+            }
+            
+           
+        }
+        else{
+            reload();
+        }
+    } 
+    
+    </script>
+    
+    <apex:form style="background-color:white">
+        <div class="slds-scope">
+            <apex:pageBlock >
+                
+                <apex:pageMessages id="showmsg" rendered="{!IF(isImgLarge, true, false)}" escape="false"/>
+                <apex:actionFunction name="CallApexMethod" action="{!removeImg}" oncomplete="method1('{!test}','{!toastMsg}')" reRender="showmsg">
+                    <apex:param name="ContentDocId" value="" assignTo="{!ContentDocId}"/>
+                </apex:actionFunction>
+                <apex:outputPanel layout="block" style="overflow:auto;width:1300px;height:180px">
+                    <apex:PageBlockTable value="{!cvList}" var="file" styleClass="slds-table slds-table--bordered slds-table--cell-buffer">
+                        <apex:column headerValue="Name"> 
+                            <apex:outputText value="{!file.title}"/>
+                        </apex:column>
+                        <apex:column headerValue="Size(KB)">
+                            <apex:outputText value="{0,number, ###,##0.00}">
+                                <apex:param value="{!file.ContentSize / 1024}"/>    
+                            </apex:outputText>
+                        </apex:column>  
+                        <apex:column headerValue="Type">
+                            <apex:outputText value="{!file.FileType}"/> 
+                        </apex:column>
+                        <apex:column >
+                            <apex:commandLink rendered="{!IF(isExpLightning, true, false)}">
+									 <apex:outputPanel rendered="{!IF(file.FileType!='TIFF', true, false)}">
+                                
+                                    <a href="/lightning/r/ContentDocument/{!file.ContentDocumentId}/view" target="_blank" >Preview</a>
+                                </apex:outputPanel>
+                                         <apex:outputPanel rendered="{!IF(file.FileType=='TIFF', true, false)}">
+                                             <a  onclick="TIFFError('false','This browser does not support TIFF file')" reRender="showmsg">Preview</a>
+                                </apex:outputPanel>
+                            </apex:commandLink>
+                            <apex:commandLink rendered="{!IF(isExpLightning, false, true)}">
+                              <apex:outputPanel rendered="{!IF(file.FileType!='TIFF', true, false)}">
+                                    <a href="{!'/'+file.ContentDocumentId}" target="_blank">Preview</a>
+                             </apex:outputPanel>
+                                <apex:outputPanel rendered="{!IF(file.FileType=='TIFF', true, false)}">
+                                    <a  onclick="TIFFError('false','This browser does not support TIFF file')" reRender="showmsg">Preview</a>
+                                </apex:outputPanel>
+                                
+                            </apex:commandLink>
+                        </apex:column>
+                        <apex:column >
+                            <apex:commandLink >
+                                <a href="/sfc/servlet.shepherd/document/download/{!file.ContentDocumentId}?operationContext=S1">Download</a>
+                            </apex:commandLink>
+                        </apex:column>
+                        <apex:column >
+                            <apex:commandLink value="Remove" onClick="CallApexMethod('{!file.ContentDocumentId}')" reRender="test,toastMsg"/>
+                        </apex:column>
+                    </apex:PageBlockTable>
+                </apex:outputPanel>
+            </apex:pageBlock>
+        </div>
+    </apex:form> 
+</apex:page>
+<!--a href="{!'/'+file.ContentDocumentId}" target="_blank">View</a--><!--apex:commandLink value="View" onClick="openLink()"/-->

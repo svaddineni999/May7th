@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>HCO</fullName>
+        <default>false</default>
+        <label>HCO</label>
+    </customValue>
+    <customValue>
+        <fullName>Treating Physician</fullName>
+        <default>false</default>
+        <label>Treating Physician</label>
+    </customValue>
+    <customValue>
+        <fullName>Reimbursement Specialist</fullName>
+        <default>false</default>
+        <label>Reimbursement Specialist</label>
+    </customValue>
+    <customValue>
+        <fullName>Care Coordinator</fullName>
+        <default>false</default>
+        <label>Care Coordinator</label>
+    </customValue>
+    <customValue>
+        <fullName>Field Reimbursement Manager</fullName>
+        <default>false</default>
+        <label>Field Reimbursement Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Case Manager</fullName>
+        <default>false</default>
+        <label>Case Manager</label>
+    </customValue>
+    <customValue>
+        <fullName>Caregiver</fullName>
+        <default>false</default>
+        <label>Caregiver</label>
+    </customValue>
+    <masterLabel>Association Role</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

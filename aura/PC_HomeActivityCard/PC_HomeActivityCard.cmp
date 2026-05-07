@@ -1,0 +1,48 @@
+<aura:component controller="PC_HomeProgramActivitiesController">
+    <aura:attribute name="objTask" type="PC_HomeProgramActivitiesController.Object"/>
+    <aura:attribute name="onclick" type="Aura.Action" default="{!c.navigateToRecord}" description="This allows handling onClick events"/>
+    <aura:attribute name="usersContext" type="String" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:registerEvent name="taskUpdated" type="c:PC_UpdateTask"/>
+    
+    <div class="PC_tile slds-tile slds-media slds-card__tile slds-col--padded slds-grow-none slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-hint-parent">
+        <div class="slds-media__figure">
+            <div class="slds-icon_container">
+                <lightning:icon class="slds-icon-standard-contact" iconName="standard:contact" size="small"/>
+                <span class="slds-assistive-text">{!$Label.c.PC_Program}</span>
+            </div>
+            <div class="{!v.objTask.priority == 'High' ? 'PC_Priority_Red' : (v.objTask.priority == 'Normal' ? 'PC_Priority_Yellow' : (v.objTask.priority == 'Low' ? 'PC_Priority_Green' : 'PC_Priority'))}">
+                <span class="pc_priority_text">
+                    {!v.objTask.priority}	
+                </span>
+            </div>
+        </div>
+        <div class="slds-media__body">
+            <div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">                
+                <button class="PC_Button_Link slds-button slds-button--icon-border-filled slds-button--icon-x-small slds-shrink-none" onclick="{!v.onclick}">
+                    <p class="slds-truncate" title="{!v.objTask.navigationText}">{!v.objTask.navigationText}
+                    </p>
+                </button>
+                <button style="" class="PC_Button_Star slds-button slds-button--icon-border-filled slds-button--icon-x-small slds-shrink-none" onclick="{!c.starActivity}">
+                    <aura:if isTrue="{!v.objTask.isStarred}">
+                        <lightning:icon iconName="custom:custom11" size="x-small"/>
+                        <aura:set attribute="else">
+                            <lightning:icon iconName="custom:custom11" size="x-small"/>
+                        </aura:set>
+                    </aura:if>
+                    <span class="slds-assistive-text">{!$Label.c.PC_Star_Activity}</span>
+                </button>           
+            </div>
+            <div class="slds-tile__detail slds-text-body--small">
+                <dl class="slds-dl--horizontal">                  
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                        <p class="slds-truncate" title="Message">{!v.objTask.subject}</p>
+                    </dd>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                        <p class="slds-truncate" title="DueDate">{!v.objTask.dueDate}</p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</aura:component>

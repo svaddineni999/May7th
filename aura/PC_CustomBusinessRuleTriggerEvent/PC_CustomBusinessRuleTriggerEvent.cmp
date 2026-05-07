@@ -1,0 +1,113 @@
+<!--
+ - Created by tusarora on 3/18/2020.
+
+Modifiction Log:
+Tushar Arora     	            Mar 18,2020                     Initial Version
+Tushar Arora     	            Mar 18,2020                     [PC-6040] Added UI attributes for Trigger Event Information UI.
+Tushar Arora                    Mar 18,2020                     [PC-6022] Added logic to select any object on which support plan functionality can be run.
+Tushar Arora                    Mar 18,2020                     [PC-6127] Added logic to select trigger event object from support plan UI.
+Tushar Arora                    Mar 19,2020                     [PC-6050] Added connection with selected trigger event object as well as conditional builder
+Tushar Arora                    Apr 02,2020                     [PC-6040] Added required asterisk over Object and Type Field on UI.
+Tushar Arora                    Apr 02,2020                     [PC-6041][PC-6052] Added gettriggerEventConditions with condition builder conditions method for saving support plan
+Tushar Arora                    Apr 02,2020                     [PC-6042] Added conditions for editing support plan with trigger event object information
+Tushar Arora                    Apr 10,2020                     [PC-6040] Added validate method for required fields on Support Plan UI.
+Tushar Arora                    Apr 10,2020                     [PC-6046] Added Operators for Trigger Event Conditional builder such as Has Changed, Has Not Changed.
+Tushar Arora                    Apr 14,2020                     [PC-6170] Added warning message by default to refrain the user from changing the Trigger Event Object.
+Tushar Arora                    Apr 16,2020                     [PC-6040] Added form validation related to condition builder as well as done code review changes
+Tushar Arora                    Apr 20,2020                     [PC-6170] Added triggerEventObjectDisabled attribute to disable on edit as well as when support plan is active.
+Tushar Arora                    Apr 27,2020                     [PC-6145] Added isTriggerEventConditionBuilderLoading for showing spinner in Trigger Event Information conditional builder when Conditional builder is loading.
+Tushar Arora                    May 11,2020                     [PC-6252] Issue fixed When multiple conditions are added in both Trigger and Rule Condition, AND/OR Condition logic selection is retained at only one place.
+Tushar Arora                    May 12,2020                     [PC-6252] Issue fixed When When selecting trigger event object when we select field  in condition builder either in Trigger or in Rule condition - object name is shown as an API Name rather it should be a label of object.
+Kanteti Kishore                 29-July-2020                    [PC-6592] Changes in helper at line-210,211,221
+Kanteti Kishore                 27-Aug-2020                    [PC-6731] Changes in helper method getTriggerEventConditions to correctly save trigger conditions when blank fields are added.
+Kishore Kanteti                 Sep 30,2020                     [PC-6144] Enhancement of Conditions/Properties builder
+ -->
+
+<aura:component description="PC_CustomBusinessRuleTriggerEvent" access='public'>
+
+    <aura:attribute name="picklistTriggerEventObjectList" type="List" access="PUBLIC"/>
+    <aura:attribute name="recordConditions" type="List"/>
+    <aura:attribute name="selectedTriggerEventObjectLabel" type="String" />
+    <aura:attribute name="picklistTriggerEventTypeList" type="List" access="PUBLIC"/>
+    <aura:attribute name="constantsWrapper" type="Object" access="PUBLIC"/>
+    <aura:attribute name="triggerEventObjectfieldLabel" type="String" access="PUBLIC"/>
+    <aura:attribute name="triggerEventTypefieldLabel" type="String" access="PUBLIC"/>
+    <aura:attribute name="selectedTriggerEventObject" type="String" access="PUBLIC"/>
+    <aura:attribute name="selectedTriggerEventType" type="String" default=""  access="PUBLIC"/>
+    <aura:attribute name="selectedTriggerEventConditions" type="List"  access="PUBLIC"/>
+    <aura:attribute name="conditionalBuilderTriggerEventCount" type="Integer" default="0"/>
+    <aura:attribute name="isAddTriggerEventRow" type="Boolean" default="true"/>
+    <aura:attribute name="isTriggerEventConditionBuilderLoading" type="Boolean" default="false"/>
+    <aura:attribute name="recordId" type="String" access="PUBLIC"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="recordType" type="String" default="Case" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="prevRecordType" type="String"/>
+    <aura:attribute name="tempRecordType" type="String"/>
+    <aura:attribute name="cachedConditionsMap" type="Map"/>
+    <aura:attribute name="currentConditions" type="String" default=""/>
+    <aura:attribute name="initiateCondition" type="boolean" default="false"/>
+    <aura:attribute name="triggerEventFetchedCondition" type="Object"/>
+    <aura:attribute name="triggerEventConditionOptions" type="List" access="PUBLIC"/>
+    <aura:attribute name="triggerEventCondBldrLogic" type="String"  access="PUBLIC"/>
+    <aura:attribute name="isSaving" type="boolean" default="false" access="PUBLIC"/>
+    <aura:attribute name="disabled" type="Boolean" default="false" access="PUBLIC"/>
+    <aura:attribute name="triggerEventObjectDisabled" type="Boolean" default="false" access="PUBLIC"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+    <aura:attribute name="_label2" type="String" default="{!$Label.c.PC_Cond_Condition_AND}" />
+    <aura:attribute name="_label3" type="String" default="{!$Label.c.PC_Cond_Condition_OR}" />
+    <aura:attribute name="setConditionsLabel" type="String" default="{!$Label.c.PC_Cond_Option_Conditional_Builder}" />
+    <aura:attribute name="_button1" type="String" default="{!$Label.c.PC_Add_Row}" />
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Conditions}" />
+    <aura:attribute name="triggerEventComponentName" type="String" default="{!$Label.c.PC_SupportPlan_TriggerEventComponentName}" />
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}" />
+    <aura:attribute name="triggerEventObjectWarningMessageOnEdit" type="String" default="{!$Label.c.PC_SupportPlan_TriggerEventObjectWarningMessage}"/>
+    <aura:method name="getTriggerEventConditions" action="{!c.getTriggerEventConditions}" access='public'/>
+    <aura:method name="initiateConditionBuilderOnEdit" action="{!c.initiateConditionBuilderOnEdit}" access='public'/>
+    <aura:method name="doValidationOnTriggerEventObject" action="{!c.doValidationOnTriggerEventObject}" access='public'/>
+    <aura:method name="validate" action="{!c.validate}" access='public'/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div class="slds-form">
+        <!--<c:PC_EntityDefinition label="{!v.fieldLabels.triggerEventObject}" isPlatformEventContext= "false" selectedRecordAPIName="{!v.selectedRecordAPIName}"/>-->
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <aura:if isTrue="{!v.picklistTriggerEventObjectList!= null}">
+
+                    <lightning:select label="{!v.triggerEventObjectfieldLabel}" aura:id="eventObjectList" disabled="{!v.triggerEventObjectDisabled}" required="true" value="{!v.selectedTriggerEventObject}" onchange ="{!c.onTriggerEventObjectChange}">
+                        <aura:iteration items="{!v.picklistTriggerEventObjectList}" var="entry">
+                            <option text="{!entry.label}" value="{!entry.value}" selected="{!entry.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+
+                </aura:if>
+            </div>
+        </div>
+        <div class="slds-form-element">
+            <div class="slds-form-element__control">
+                <aura:if isTrue="{!v.picklistTriggerEventTypeList!= null}">
+                    <lightning:select label="{!v.triggerEventTypefieldLabel}" aura:id="eventTypeList" disabled="{!v.disabled}" required="true" value="{!v.selectedTriggerEventType}" >
+                        <aura:iteration items="{!v.picklistTriggerEventTypeList}" var="entry">
+                            <option text="{!entry.label}" value="{!entry.value}" selected="{!entry.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </aura:if>
+            </div>
+        </div>
+        <aura:if isTrue="{!and(v.isAddTriggerEventRow,v.selectedTriggerEventObject != '')}">
+            <label class="slds-p-left_xx-small slds-form-element__label">{!v.setConditionsLabel}</label>
+            <c:PC_PropertiesAndConditionsBuilder aura:id = "triggerEventConditions"
+                                                 objectName="{!v.selectedTriggerEventObject}"
+                                                 selectedTriggerEventType = "{!v.selectedTriggerEventType}"
+                                                 isSupportPlanTriggerEventConditions ="true"
+                                                 objectLabel="{!v.selectedTriggerEventObjectLabel}"
+                                                 operatorConstants="{!v.constantsWrapper}"
+                                                 builderContext="ConditionalBuilder"
+                                                 fetchedConditionsOrProperties="{!v.recordConditions}"
+                                                 isDisabled="{!v.disabled}"
+                                                 showDeleteOptionInFirstRow="true"
+                                                 conditionsRequired="true"
+                                                 boxBorderRequired="true"/>
+        </aura:if>
+    </div>
+</aura:component>

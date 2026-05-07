@@ -1,0 +1,8 @@
+<!--
+ - Created by vkashikar on 10/3/2019.
+ -->
+
+<design:component>
+    <design:attribute name="enrollButtonInlineCSS" label="Enrollment Button Inline CSS" default="" description="Inline Style for Enrollment Button"/>
+    <design:attribute name="viewEnrollmentInNewBrowserTab" label="View Enrollment in new tab"  default="false" description="user can see Enrollment in new tab" />
+</design:component>

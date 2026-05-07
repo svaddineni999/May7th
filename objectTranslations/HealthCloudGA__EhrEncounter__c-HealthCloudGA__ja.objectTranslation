@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 接触者</value>
+    </caseValues>
+    <fields>
+        <label>取引先</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EHR 接触</relationshipLabel>
+    </fields>
+    <fields>
+        <label>クラス</label>
+        <name>HealthCloudGA__Class__c</name>
+    </fields>
+    <fields>
+        <label>接触</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>接触歴</relationshipLabel>
+    </fields>
+    <fields>
+        <label>入院ソースの表示ラベル</label>
+        <name>HealthCloudGA__HospitalAdmitSourceLabel__c</name>
+    </fields>
+    <fields>
+        <label>入院紹介元</label>
+        <name>HealthCloudGA__HospitalizationOrigin__c</name>
+    </fields>
+    <fields>
+        <label>入院前 ID</label>
+        <name>HealthCloudGA__HospitalizationPreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>入院ソースコード</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceCode__c</name>
+    </fields>
+    <fields>
+        <label>入院ソースシステム</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>入院先</label>
+        <name>HealthCloudGA__HospitalizeDestination__c</name>
+    </fields>
+    <fields>
+        <label>入院食事コード</label>
+        <name>HealthCloudGA__HospitalizeDietCode__c</name>
+    </fields>
+    <fields>
+        <label>入院食事の表示ラベル</label>
+        <name>HealthCloudGA__HospitalizeDietLabel__c</name>
+    </fields>
+    <fields>
+        <label>入院食事システム</label>
+        <name>HealthCloudGA__HospitalizeDietSystem__c</name>
+    </fields>
+    <fields>
+        <label>退院診断</label>
+        <name>HealthCloudGA__HospitalizeDischargeDiagnosis__c</name>
+    </fields>
+    <fields>
+        <label>退院処置コード</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionCode__c</name>
+    </fields>
+    <fields>
+        <label>退院処置システム</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionSystem__c</name>
+    </fields>
+    <fields>
+        <label>退院処置の表示ラベル</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispostionLabel__c</name>
+    </fields>
+    <fields>
+        <label>入院紹介元</label>
+        <name>HealthCloudGA__HospitalizeOrigin__c</name>
+    </fields>
+    <fields>
+        <label>入院期間の終了</label>
+        <name>HealthCloudGA__HospitalizePeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>入院期間の開始</label>
+        <name>HealthCloudGA__HospitalizePeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>入院前 ID</label>
+        <name>HealthCloudGA__HospitalizePreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>再入院</label>
+        <name>HealthCloudGA__HospitalizeReadmission__c</name>
+    </fields>
+    <fields>
+        <label>入院特別措置コード</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementCode__c</name>
+    </fields>
+    <fields>
+        <label>入院特別措置の表示ラベル</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementLabel__c</name>
+    </fields>
+    <fields>
+        <label>入院特別措置システム</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementSystem__c</name>
+    </fields>
+    <fields>
+        <label>入院特別優待コード</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyCode__c</name>
+    </fields>
+    <fields>
+        <label>入院特別優待の表示ラベル</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyLabel__c</name>
+    </fields>
+    <fields>
+        <label>入院特別優待システム</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesySystem__c</name>
+    </fields>
+    <fields>
+        <label>症状</label>
+        <name>HealthCloudGA__Indication__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>LastEncounter</label>
+        <name>HealthCloudGA__LastEncounter__c</name>
+    </fields>
+    <fields>
+        <label>長さの単位</label>
+        <name>HealthCloudGA__LengthUnit__c</name>
+    </fields>
+    <fields>
+        <label>長さの値</label>
+        <name>HealthCloudGA__LengthValue__c</name>
+    </fields>
+    <fields>
+        <label>市区郡(場所 1)</label>
+        <name>HealthCloudGA__Location1City__c</name>
+    </fields>
+    <fields>
+        <label>国(場所 1)</label>
+        <name>HealthCloudGA__Location1Country__c</name>
+    </fields>
+    <fields>
+        <label>説明(場所 1)</label>
+        <name>HealthCloudGA__Location1Description__c</name>
+    </fields>
+    <fields>
+        <label>終了日(場所 1)</label>
+        <name>HealthCloudGA__Location1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>ID(場所 1)</label>
+        <name>HealthCloudGA__Location1Id__c</name>
+    </fields>
+    <fields>
+        <label>行 1(場所 1)</label>
+        <name>HealthCloudGA__Location1Line1__c</name>
+    </fields>
+    <fields>
+        <label>行 2(場所 1)</label>
+        <name>HealthCloudGA__Location1Line2__c</name>
+    </fields>
+    <fields>
+        <label>名前(場所 1)</label>
+        <name>HealthCloudGA__Location1Name__c</name>
+    </fields>
+    <fields>
+        <label>郵便番号(場所 1)</label>
+        <name>HealthCloudGA__Location1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>開始日(場所 1)</label>
+        <name>HealthCloudGA__Location1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>都道府県(場所 1)</label>
+        <name>HealthCloudGA__Location1State__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の終了(場所 1)</label>
+        <name>HealthCloudGA__Location1TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の開始(場所 1)</label>
+        <name>HealthCloudGA__Location1TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>通信システム(場所 1)</label>
+        <name>HealthCloudGA__Location1TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>通信用途(場所 1)</label>
+        <name>HealthCloudGA__Location1TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>通信の値(場所 1)</label>
+        <name>HealthCloudGA__Location1TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>テキスト(場所 1)</label>
+        <name>HealthCloudGA__Location1Text__c</name>
+    </fields>
+    <fields>
+        <label>種別コード(場所 1)</label>
+        <name>HealthCloudGA__Location1TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>種別の表示ラベル(場所 1)</label>
+        <name>HealthCloudGA__Location1TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>種別システム(場所 1)</label>
+        <name>HealthCloudGA__Location1TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>種別(場所 1)</label>
+        <name>HealthCloudGA__Location1Type__c</name>
+    </fields>
+    <fields>
+        <label>用途(場所 1)</label>
+        <name>HealthCloudGA__Location1Use__c</name>
+    </fields>
+    <fields>
+        <label>市区郡(場所 2)</label>
+        <name>HealthCloudGA__Location2City__c</name>
+    </fields>
+    <fields>
+        <label>国(場所 2)</label>
+        <name>HealthCloudGA__Location2Country__c</name>
+    </fields>
+    <fields>
+        <label>説明(場所 2)</label>
+        <name>HealthCloudGA__Location2Description__c</name>
+    </fields>
+    <fields>
+        <label>終了日(場所 2)</label>
+        <name>HealthCloudGA__Location2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>ID(場所 2)</label>
+        <name>HealthCloudGA__Location2Id__c</name>
+    </fields>
+    <fields>
+        <label>行 1(場所 2)</label>
+        <name>HealthCloudGA__Location2Line1__c</name>
+    </fields>
+    <fields>
+        <label>行 2(場所 2)</label>
+        <name>HealthCloudGA__Location2Line2__c</name>
+    </fields>
+    <fields>
+        <label>名前(場所 2)</label>
+        <name>HealthCloudGA__Location2Name__c</name>
+    </fields>
+    <fields>
+        <label>郵便番号(場所 2)</label>
+        <name>HealthCloudGA__Location2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>開始日(場所 2)</label>
+        <name>HealthCloudGA__Location2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>都道府県(場所 2)</label>
+        <name>HealthCloudGA__Location2State__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の終了(場所 2)</label>
+        <name>HealthCloudGA__Location2TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の開始(場所 2)</label>
+        <name>HealthCloudGA__Location2TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>通信システム(場所 2)</label>
+        <name>HealthCloudGA__Location2TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>通信用途(場所 2)</label>
+        <name>HealthCloudGA__Location2TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>通信の値(場所 2)</label>
+        <name>HealthCloudGA__Location2TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>テキスト(場所 2)</label>
+        <name>HealthCloudGA__Location2Text__c</name>
+    </fields>
+    <fields>
+        <label>種別コード(場所 2)</label>
+        <name>HealthCloudGA__Location2TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>種別の表示ラベル(場所 2)</label>
+        <name>HealthCloudGA__Location2TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>種別システム(場所 2)</label>
+        <name>HealthCloudGA__Location2TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>種別(場所 2)</label>
+        <name>HealthCloudGA__Location2Type__c</name>
+    </fields>
+    <fields>
+        <label>用途(場所 2)</label>
+        <name>HealthCloudGA__Location2Use__c</name>
+    </fields>
+    <fields>
+        <label>市区郡(場所 3)</label>
+        <name>HealthCloudGA__Location3City__c</name>
+    </fields>
+    <fields>
+        <label>国(場所 3)</label>
+        <name>HealthCloudGA__Location3Country__c</name>
+    </fields>
+    <fields>
+        <label>説明(場所 3)</label>
+        <name>HealthCloudGA__Location3Description__c</name>
+    </fields>
+    <fields>
+        <label>終了日(場所 3)</label>
+        <name>HealthCloudGA__Location3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>ID(場所 3)</label>
+        <name>HealthCloudGA__Location3Id__c</name>
+    </fields>
+    <fields>
+        <label>行 1(場所 3)</label>
+        <name>HealthCloudGA__Location3Line1__c</name>
+    </fields>
+    <fields>
+        <label>行 2(場所 3)</label>
+        <name>HealthCloudGA__Location3Line2__c</name>
+    </fields>
+    <fields>
+        <label>名前(場所 3)</label>
+        <name>HealthCloudGA__Location3Name__c</name>
+    </fields>
+    <fields>
+        <label>郵便番号(場所 3)</label>
+        <name>HealthCloudGA__Location3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>開始日(場所 3)</label>
+        <name>HealthCloudGA__Location3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>都道府県(場所 3)</label>
+        <name>HealthCloudGA__Location3State__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の終了(場所 3)</label>
+        <name>HealthCloudGA__Location3TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の開始(場所 3)</label>
+        <name>HealthCloudGA__Location3TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>通信システム(場所 3)</label>
+        <name>HealthCloudGA__Location3TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>通信用途(場所 3)</label>
+        <name>HealthCloudGA__Location3TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>通信の値(場所 3)</label>
+        <name>HealthCloudGA__Location3TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>テキスト(場所 3)</label>
+        <name>HealthCloudGA__Location3Text__c</name>
+    </fields>
+    <fields>
+        <label>種別コード(場所 3)</label>
+        <name>HealthCloudGA__Location3TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>種別の表示ラベル(場所 3)</label>
+        <name>HealthCloudGA__Location3TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>種別システム(場所 3)</label>
+        <name>HealthCloudGA__Location3TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>種別(場所 3)</label>
+        <name>HealthCloudGA__Location3Type__c</name>
+    </fields>
+    <fields>
+        <label>用途(場所 3)</label>
+        <name>HealthCloudGA__Location3Use__c</name>
+    </fields>
+    <fields>
+        <label>市区郡(場所 4)</label>
+        <name>HealthCloudGA__Location4City__c</name>
+    </fields>
+    <fields>
+        <label>国(場所 4)</label>
+        <name>HealthCloudGA__Location4Country__c</name>
+    </fields>
+    <fields>
+        <label>説明(場所 4)</label>
+        <name>HealthCloudGA__Location4Description__c</name>
+    </fields>
+    <fields>
+        <label>終了日(場所 4)</label>
+        <name>HealthCloudGA__Location4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>ID(場所 4)</label>
+        <name>HealthCloudGA__Location4Id__c</name>
+    </fields>
+    <fields>
+        <label>行 1(場所 4)</label>
+        <name>HealthCloudGA__Location4Line1__c</name>
+    </fields>
+    <fields>
+        <label>行 2(場所 4)</label>
+        <name>HealthCloudGA__Location4Line2__c</name>
+    </fields>
+    <fields>
+        <label>名前(場所 4)</label>
+        <name>HealthCloudGA__Location4Name__c</name>
+    </fields>
+    <fields>
+        <label>郵便番号(場所 4)</label>
+        <name>HealthCloudGA__Location4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>開始日(場所 4)</label>
+        <name>HealthCloudGA__Location4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>都道府県(場所 4)</label>
+        <name>HealthCloudGA__Location4State__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の終了(場所 4)</label>
+        <name>HealthCloudGA__Location4TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の開始(場所 4)</label>
+        <name>HealthCloudGA__Location4TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>通信システム(場所 4)</label>
+        <name>HealthCloudGA__Location4TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>通信用途(場所 4)</label>
+        <name>HealthCloudGA__Location4TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>通信の値(場所 4)</label>
+        <name>HealthCloudGA__Location4TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>テキスト(場所 4)</label>
+        <name>HealthCloudGA__Location4Text__c</name>
+    </fields>
+    <fields>
+        <label>種別コード(場所 4)</label>
+        <name>HealthCloudGA__Location4TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>種別の表示ラベル(場所 4)</label>
+        <name>HealthCloudGA__Location4TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>種別システム(場所 4)</label>
+        <name>HealthCloudGA__Location4TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>種別(場所 4)</label>
+        <name>HealthCloudGA__Location4Type__c</name>
+    </fields>
+    <fields>
+        <label>用途(場所 4)</label>
+        <name>HealthCloudGA__Location4Use__c</name>
+    </fields>
+    <fields>
+        <label>市区郡(場所 5)</label>
+        <name>HealthCloudGA__Location5City__c</name>
+    </fields>
+    <fields>
+        <label>国(場所 5)</label>
+        <name>HealthCloudGA__Location5Country__c</name>
+    </fields>
+    <fields>
+        <label>説明(場所 5)</label>
+        <name>HealthCloudGA__Location5Description__c</name>
+    </fields>
+    <fields>
+        <label>終了日(場所 5)</label>
+        <name>HealthCloudGA__Location5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>ID(場所 5)</label>
+        <name>HealthCloudGA__Location5Id__c</name>
+    </fields>
+    <fields>
+        <label>行 1(場所 5)</label>
+        <name>HealthCloudGA__Location5Line1__c</name>
+    </fields>
+    <fields>
+        <label>行 2(場所 5)</label>
+        <name>HealthCloudGA__Location5Line2__c</name>
+    </fields>
+    <fields>
+        <label>名前(場所 5)</label>
+        <name>HealthCloudGA__Location5Name__c</name>
+    </fields>
+    <fields>
+        <label>郵便番号(場所 5)</label>
+        <name>HealthCloudGA__Location5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>開始日(場所 5)</label>
+        <name>HealthCloudGA__Location5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>都道府県(場所 5)</label>
+        <name>HealthCloudGA__Location5State__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の終了(場所 5)</label>
+        <name>HealthCloudGA__Location5TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>通信期間の開始(場所 5)</label>
+        <name>HealthCloudGA__Location5TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>通信システム(場所 5)</label>
+        <name>HealthCloudGA__Location5TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>通信用途(場所 5)</label>
+        <name>HealthCloudGA__Location5TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>通信の値(場所 5)</label>
+        <name>HealthCloudGA__Location5TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>テキスト(場所 5)</label>
+        <name>HealthCloudGA__Location5Text__c</name>
+    </fields>
+    <fields>
+        <label>種別コード(場所 5)</label>
+        <name>HealthCloudGA__Location5TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>種別の表示ラベル(場所 5)</label>
+        <name>HealthCloudGA__Location5TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>種別システム(場所 5)</label>
+        <name>HealthCloudGA__Location5TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>種別(場所 5)</label>
+        <name>HealthCloudGA__Location5Type__c</name>
+    </fields>
+    <fields>
+        <label>用途(場所 5)</label>
+        <name>HealthCloudGA__Location5Use__c</name>
+    </fields>
+    <fields>
+        <label>患者</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>接触歴</relationshipLabel>
+    </fields>
+    <fields>
+        <label>期間の終了</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>期間の開始</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>優先度コード</label>
+        <name>HealthCloudGA__PriorityCode__c</name>
+    </fields>
+    <fields>
+        <label>優先度表示ラベル</label>
+        <name>HealthCloudGA__PriorityLabel__c</name>
+    </fields>
+    <fields>
+        <label>優先度システム</label>
+        <name>HealthCloudGA__PrioritySystem__c</name>
+    </fields>
+    <fields>
+        <label>優先度</label>
+        <name>HealthCloudGA__Priority__c</name>
+    </fields>
+    <fields>
+        <label>理由コード</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>理由の表示ラベル</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>理由システム</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>サービスプロバイダ</label>
+        <name>HealthCloudGA__ServiceProvider__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>状況</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>種別コード</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>種別の表示ラベル</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>種別システム</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 接触 ID</nameFieldLabel>
+</CustomObjectTranslation>

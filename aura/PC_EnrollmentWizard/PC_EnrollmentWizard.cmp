@@ -1,0 +1,210 @@
+<!--
+Lightning component  : PC_EnrollmentWizard
+Description          : Displays Enrollment wizard pages that are configured
+Parameters           : String enrollmentCaseId
+Modification Log:
+Haritha Reddy 		 20-May-2019    PC-4869:replaced legacy code for showing Toast Message with force toast event
+Satheesh Kumar       09-Sep-2020    [PC-6742] Added logic to fix the Enrollment Wizard Page Label Translation issue
+Haritha Reddy        15-Sep-2020    [PC-6790] Added a new attribute isCustomApp to help determine from where enrollment wizard is launched
+Satheesh Kumar       05-Oct-2020    [PC-6829] Added a new attribute isSaveWizardStateCallInProgress to fix missing page state error
+Haritha Reddy 		 20-May-2019    [PC-6795] Added logic to show toast on Save button click of enrollment wizard when launched from custom app
+Haritha Reddy 		 01-Dec-2020    [PC-7030] Modified logic to take default z-index for toast message
+Haritha Reddy 		 03-Dec-2020    [PC-7027] Added custom css without z index(which is making close buttons not clickable) for toast notification container
+-->
+<aura:component controller="PC_EnrollmentWizardLightningController" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:handler name="change" value="{!v.pageReference}" action="{!c.refreshView}" /> <!--Need this to avoid caching in Salesforce1 -->
+    <aura:handler name="change" value="{!v.pageMetadata}" action="{!c.pageMetadataChanged}"/>
+    <aura:handler name="change" value="{!v.currentPageIndex}" action="{!c.currentPageIndexChanged}"/>
+    
+    <aura:attribute name="enrollmentCaseId" type="Id" required="true" default=""/>
+    <aura:attribute name="enrollmentCase" type="Object"/>
+    <aura:attribute name="pageMetadata" type="Object[]"/>
+    <aura:attribute name="pageLabels" type="Object[]"/>
+    <aura:attribute name="pageAttributeMap" type="Map" default="{}"/>
+    <aura:attribute name="currentPage" type="Object"/>
+    <aura:attribute name="currentPageIndex" type="Integer" default="-1"/>
+    <aura:attribute name="prevPageIndex" type="Integer" default="-1"/>
+    <aura:attribute name="enrollmentProcessingResult" type="Object"/>
+    <aura:attribute name="enrollmentErrorHeader" type="String"/>
+    <aura:attribute name="enrollmentErrors" type="List"/>
+    <aura:attribute name="userMessages" type="List"/>
+    <aura:attribute name="enrollmentSuccessful" type="Boolean" default="false"/>
+    <aura:attribute name="toastMessage" type="String" default="{!$Label.c.PC_Save_Toast}"/>
+    <aura:attribute name="programCase" type="String"/>
+    <aura:attribute name="errorComponentName" type="String"/>
+    <aura:attribute name="errorComponentLabel" type="String"/>
+    <aura:attribute name="isErrorComponentVisited" type="Boolean" default="false"/>
+    <aura:attribute name="isSaveWizardStateCallInProgress" type="Boolean" default="false"/>
+    <aura:attribute name="enrollPageErrorEnrollButton" type="String" default="{!$Label.c.PC_EnrollPageErrorEnrollButton}" />
+    <aura:attribute name="enrollmentWizardSetupError" type="String" default="{!$Label.c.PC_EnrollmentWizardSetupError}" />
+
+    <aura:attribute name="enrollConfirmDefaultComponent" type="String" access="private"/>
+    <aura:attribute name="enrollConfirmCustomComponent" type="String" access="private"/>
+    <aura:attribute name="unableToCreateCmpMessage" type="String" access="private" default="{!$Label.c.PC_UnableToCreateComponent}" />
+    <aura:attribute name="genericClientErrorMessage" type="String" access="private" default="{!$Label.c.PC_ClientSideErrorMessage}" />
+    <aura:attribute name="enrollConfirmCmpErrors" type="List" access="private"/>
+
+    <aura:attribute name="transientWizardState" type="Map" default="{}" access="public"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="genericErrors" type="List"/>
+    <aura:attribute name="genericErrorHeader" type="String" default="{!$Label.c.PC_Toast_Title_Error}"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+
+    <aura:attribute name="showSpinner" type="Boolean"/>
+    <aura:attribute name="isCustomApp" type="Boolean" default="false" description="Indicates if this component is launched from custom App"/>
+
+    <aura:dependency resource="markup://c:PC_EnrollConfirm" type="COMPONENT"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+    </aura:if>
+
+    <div class="wizardContainer">
+
+        <lightning:workspaceAPI aura:id="enrollmentWizardWorkspace" />
+        <div class="slds-m-around_x-large">
+            <aura:if isTrue="{! !empty(v.enrollmentCaseId)}">
+                <c:PC_EnrollmentWizardOcrInfoPanel enrollmentCaseId="{!v.enrollmentCaseId}"/>
+            </aura:if>
+            <div class="WHeader slds-m-top_medium slds-m-bottom_medium">
+                <div class="slds-wizard" role="navigation">
+                    <ol class="slds-wizard__list">
+                        <aura:if isTrue="{! not(empty(v.pageLabels))}">
+                            <aura:iteration items="{!v.pageMetadata}" var="item" indexVar="i">
+                                <aura:iteration items="{!v.pageLabels}" var="pLabel" indexVar="j">
+                                    <aura:if isTrue="{! i == j}">
+                                        <aura:if isTrue="{! i == 0}">
+                                            <!--TODO: VIJAY need to remove redundant code(html markup) in the if-else -->
+                                            <li class="{! 'slds-wizard__item slds-is-active slds-wizard__item'+ i + ' ' + pLabel.masterLabel}" id="{! 'slds-wizard__item'+ i }">
+                                                <span class="slds-wizard__marker"></span>
+                                                <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="{! pLabel.masterLabel}">{! pLabel.masterLabel}</span>
+                                            </li>
+                                            <aura:set attribute="else">
+                                                <li class="{! 'slds-wizard__item slds-wizard__item'+ i + ' ' + pLabel.masterLabel}" id="{! 'slds-wizard__item'+ i }">
+                                                    <span class="slds-wizard__marker"></span>
+                                                    <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="{! pLabel.masterLabel}">{!pLabel.masterLabel}</span>
+                                                </li>
+                                            </aura:set>
+                                        </aura:if>
+                                    </aura:if>
+                                </aura:iteration>
+                            </aura:iteration>
+                        </aura:if>
+                        <li class="{! 'slds-wizard__item slds-wizard__item'+ v.pageMetadata.length + ' Enroll'}" id="{!'slds-wizard__item'+ v.pageMetadata.length}">
+                            <span class="slds-wizard__marker"></span>
+                            <span class="slds-wizard__label slds-text-title--caps slds-truncate" title="Enroll">{!$Label.c.PC_Enroll}</span>
+                        </li>
+                    </ol>
+                    <span class="slds-wizard__progress">
+                        <span id="progressBar" aura:id="aura_progressBar" class="slds-wizard__progress-bar" style="width:0%;"></span>
+                    </span>
+                </div>
+                <aura:if isTrue="{!v.genericErrors.length > 0}">
+                    <c:PC_ErrorPanel errorHeader="{!v.genericErrorHeader}" errors="{!v.genericErrors}"/>
+                </aura:if>
+            </div>
+
+            <div aura:id="toast" class="notifyContainer slds-transition-hide" style="z-index:1">
+                <div class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+                    <span class="slds-assistive-text">{!$Label.c.PC_Success}</span>
+                    <button class="slds-button slds-notify__close slds-button--icon-inverse" title="{$Label.c.PC_Close}" onclick="{!c.dismissToast}">
+                        <lightning:icon iconName="utility:close" variant="inverse" size="small"/>
+                        <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                    </button>
+                    <div class="slds-notify__content slds-grid">
+                        <lightning:icon iconName="utility:success" variant="inverse" size="small" class="slds-m-right--small slds-col slds-no-flex"/>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small ">{!v.toastMessage}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aura:renderIf isTrue="{!equals(v.currentPageIndex, v.pageMetadata.length)}">
+                <div class="WBody slds-m-bottom_large">
+                    <aura:renderIf isTrue="{!not(empty(v.enrollmentErrorHeader))}">
+                        <c:PC_ErrorPanel errorHeader="{!v.enrollmentErrorHeader}" errors="{!v.enrollmentErrors}"/>
+                        <div class="slds-grid slds-grid--vertical slds-navigation-list--vertical slds-navigation-list--vertical-inverse">
+                            <h2 class="slds-text-title--caps slds-p-around--medium" id="search-results"> <a onclick="{!c.navigateToComponent}">{!$Label.c.PC_Click_here_msg}&nbsp;<b>{!v.errorComponentLabel}</b></a></h2>
+                        </div>
+                    </aura:renderIf>
+                    <aura:renderIf isTrue="{!equals(v.currentPageIndex, v.pageMetadata.length)}">
+                        <div class="WBody slds-m-bottom_large">
+                            <aura:if isTrue="{!v.pageMetadata.length != 0}">
+                                <fieldset class="slds-form--compound">
+                                    <div class="slds-tabs--scoped__nav slds-clearfix" role="tablist">
+                                        <legend class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_FinalEnrollStep}</legend>
+                                    </div>
+                                    <div class="slds-form-element__group slds-tabs--scoped__content">
+                                        <p>{!$Label.c.PC_FinalEnrollStepMsg}</p>
+                                    </div>
+                                </fieldset>
+                            </aura:if>
+                        </div>
+                    </aura:renderIf>
+                    <div aria-hidden="true" role="dialog" class="slds-modal slds-fade-in-hide" aura:id="modaldialog" >
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_FinalEnrollConfirm_Header}</h2>
+                                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.close}">
+                                    <c:svg class="slds-button__icon slds-button__icon--large"
+                                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                           ariaHidden="true" />
+                                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                                </button>
+                            </div>
+                            <div class="slds-modal__content slds-p-around--medium">
+                                {! v.body}
+                                <aura:if isTrue="{!v.enrollConfirmCmpErrors.length > 0}">
+                                    <c:PC_ErrorPanel errorHeader="{!v.genericErrorHeader}" errors="{!v.enrollConfirmCmpErrors}"/>
+                                </aura:if>
+                                <div>
+                                    <aura:iteration items="{!v.userMessages}" var="item" indexVar="i">
+                                        <ui:message title="" severity="{!item.severity}" closable="true">
+                                                {!item.message}
+                                        </ui:message>
+                                    </aura:iteration>
+                                </div>
+                            </div>
+                            <div class="slds-modal__footer">
+                                <div class="slds-x-small-buttons--horizontal">
+                                    <lightning:button label="{!$Label.c.PC_View_Case}" onclick="{!c.viewcase}" variant="brand" />
+                                    <!--<lightning:button label="{!$Label.c.PC_Close}" onclick="{!c.close}" variant="brand" />-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop"></div>
+
+                </div>
+            </aura:renderIf>
+            <form class="wizardMainForm">
+                <div class="WBody slds-m-bottom_large" aura:id="body"/>
+                <footer class="slds-modal__footer">
+                    <div class="WFooter slds-align_absolute-center" aura:id="aura_wfooter">
+                        <aura:renderIf isTrue="{!not(v.enrollmentSuccessful)}">
+                            <aura:renderIf isTrue="{!true || greaterthan(v.currentPageIndex, 0)}">
+                                <lightning:button label="{!$Label.c.PC_Back}" onclick="{!c.back}" variant="brand" class="{! 'back' + greaterthan(v.currentPageIndex, 0)}" type="button"/>
+                            </aura:renderIf>
+                            <aura:renderIf isTrue="{!true || lessthan(v.currentPageIndex, v.pageMetadata.length)}">
+                                <lightning:button label="{!$Label.c.PC_Save}" onclick="{!c.save}" variant="brand" class="{! 'save' + lessthan(v.currentPageIndex, v.pageMetadata.length)}" type="button"/>
+                            </aura:renderIf>
+                            <aura:renderIf isTrue="{!true || lessthan(v.currentPageIndex, v.pageMetadata.length)}">
+                                <lightning:button label="{!$Label.c.PC_Next}" onclick="{!c.next}" variant="brand" class="{! 'next' + lessthan(v.currentPageIndex, v.pageMetadata.length)}" type="button"/>
+                            </aura:renderIf>
+                            <lightning:button label="{!$Label.c.PC_Close}" onclick="{!c.close}" class="closeButton"  />
+                            <aura:renderIf isTrue="{!true || equals(v.currentPageIndex, v.pageMetadata.length)}">
+                                <lightning:button label="{!$Label.c.PC_Enroll}" onclick="{!c.enroll}" variant="brand" class="{! 'enroll' + and(and(equals(v.currentPageIndex, v.pageMetadata.length),(v.pageMetadata.length != 0)), not(v.isSaveWizardStateCallInProgress))}" type="button"/>
+                            </aura:renderIf>
+                        </aura:renderIf>
+                    </div>
+                </footer>
+            </form>
+       </div>
+    </div>
+</aura:component>

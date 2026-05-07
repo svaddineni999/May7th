@@ -1,0 +1,26 @@
+<!--
+ - Created by sathekumar on 6/25/2021.
+ -->
+
+<aura:component description="PC_EnrollmentWizardOcrInfoPanel" controller="PC_DocumentEnrollmentWithOCR">
+    <aura:attribute name="enrollmentCaseId" type="String" default="" access="public"/>
+    <aura:attribute name="warningMessages" type="List" default="[]" access="private"/>
+    <aura:attribute name="messageState" type="String" default="info" access="private"/>
+    <aura:attribute name="ocrApplicantNotReviewed" type="String" default="{!$Label.c.PC_OcrApplicantNotReviewed}" access="private"/>
+    <aura:attribute name="ocrApplicantReviewed" type="String" default="{!$Label.c.PC_OcrApplicantReviewed}" access="private"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:if isTrue="{! v.warningMessages.length > 0}">
+        <div class="{!('slds-scoped-notification slds-media slds-media_center ' + if(v.messageState == 'info', 'slds-scoped-notification_light', 'slds-theme_warning'))}">
+            <div class="slds-media__figure">
+                <lightning:icon iconName="{!('utility:' + if(v.messageState == 'info', 'info', 'warning'))}" size="small"/>
+            </div>
+            <div class="slds-media__body">
+                <aura:iteration items="{!v.warningMessages}" var="message">
+                    <p>{!message}</p>
+                </aura:iteration>
+            </div>
+        </div>
+    </aura:if>
+</aura:component>

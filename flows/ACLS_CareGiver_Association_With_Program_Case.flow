@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <constants>
+        <name>ACLS_Caregiver</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>ACLS_Caregiver</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>PC_Program</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>PC_Program</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>Check for Caregiver</description>
+        <name>Check_for_Caregiver</name>
+        <label>Check for Caregiver</label>
+        <locationX>380</locationX>
+        <locationY>695</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Care_Giver_Is_Not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_Caregiver_Account.Id</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>get_Association_record</targetReference>
+            </connector>
+            <label>Care Giver Is Not Null</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>check if Association already exist</description>
+        <name>check_if_Association_already_exist</name>
+        <label>check if Association already exist</label>
+        <locationX>182</locationX>
+        <locationY>935</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>if_does_not_exist</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>get_Association_record.Id</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Create_association_for_caregiver</targetReference>
+            </connector>
+            <label>if does not exist</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>check if Program Case?</description>
+        <name>check_Program_Case</name>
+        <label>check Program Case</label>
+        <locationX>611</locationX>
+        <locationY>335</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>if_Program_Case</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>PC_Program</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Caregiver_RecordTypeId</targetReference>
+            </connector>
+            <label>if Program Case</label>
+        </rules>
+    </decisions>
+    <description>Caregiver Association With Program Case</description>
+    <environments>Default</environments>
+    <interviewLabel>CareGiver Association With Program Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Caregiver Association With Program Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create association for caregiver</description>
+        <name>Create_association_for_caregiver</name>
+        <label>Create association for caregiver</label>
+        <locationX>50</locationX>
+        <locationY>1055</locationY>
+        <connector>
+            <targetReference>Update_existing_Associations</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>PC_Account__c</field>
+            <value>
+                <elementReference>get_Caregiver_Account.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PC_AssociationStatus__c</field>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PC_Program__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>PC_Role__c</field>
+            <value>
+                <stringValue>Caregiver</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Association__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <description>Get Association record</description>
+        <name>get_Association_record</name>
+        <label>get Association record</label>
+        <locationX>182</locationX>
+        <locationY>815</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>check_if_Association_already_exist</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>PC_Program__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>PC_Account__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>get_Caregiver_Account.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>PC_Role__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Caregiver</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>PC_AssociationStatus__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Active</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>PC_Association__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>get Caregiver Account on whose parent is parent Account on current record</description>
+        <name>get_Caregiver_Account</name>
+        <label>get Caregiver Account</label>
+        <locationX>380</locationX>
+        <locationY>575</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_for_Caregiver</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Caregiver_RecordTypeId.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>ACLS_Patient__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Desc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <description>Get Caregiver RecordTypeId</description>
+        <name>Get_Caregiver_RecordTypeId</name>
+        <label>Get Caregiver RecordTypeId</label>
+        <locationX>380</locationX>
+        <locationY>455</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>get_Caregiver_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ACLS_Caregiver</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>Update existing Associations</description>
+        <name>Update_existing_Associations</name>
+        <label>Update existing Associations</label>
+        <locationX>50</locationX>
+        <locationY>1175</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>get_Association_record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>PC_AssociationStatus__c</field>
+            <value>
+                <stringValue>Inactive</stringValue>
+            </value>
+        </inputAssignments>
+        <object>PC_Association__c</object>
+    </recordUpdates>
+    <start>
+        <locationX>485</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>check_Program_Case</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

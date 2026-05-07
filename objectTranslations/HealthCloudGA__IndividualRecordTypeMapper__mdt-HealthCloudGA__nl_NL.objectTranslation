@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vastleggende persoon van recordtype Individu</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vastleggende personen van recordtype Individu</value>
+    </caseValues>
+    <fields>
+        <label>Naamruimte voor recordtype (account)</label>
+        <name>HealthCloudGA__AccountRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Accountrecordtype</label>
+        <name>HealthCloudGA__AccountRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Naamruimte voor recordtype (contactpersoon)</label>
+        <name>HealthCloudGA__ContactRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Contactpersoonsrecordtype</label>
+        <name>HealthCloudGA__ContactRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Detailpagina</label>
+        <name>HealthCloudGA__DetailPage__c</name>
+    </fields>
+    <fields>
+        <label>Subtype account</label>
+        <name>HealthCloudGA__IndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Recordtype naamruimte (lead)</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Leadrecordtype</label>
+        <name>HealthCloudGA__LeadRecordType__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

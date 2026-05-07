@@ -1,0 +1,14 @@
+<!--
+ - Created by vkashikar on 10/17/2019.
+ -->
+
+<design:component label="PC_SearchResults - Subscribes to PC_SearchParams.evt">
+    <design:attribute name="searchTitle" label="Search Title"
+                      description="Provide Custom Label name along with namespace or name to show on Search Results Block. Ex:$Label.namespace.PC_SearchResultsTitle, $Label.{orgNamespace}.PC_SearchResultsTitle. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+    <design:attribute name="searchTableHeight" label="Search Result Table Height"
+                      description="Height of results table in px. Eg 250px. Leave it blank if no fixed height is desired." />
+    <design:attribute name="resultClassesString" label="Result Classes"
+                      description="Comma Separated list of search classes. Each search class must implement PatientConnect.PC_SearchResults interface. Ex:PatientConnect.PC_GetSearchResults, {orgNamespace}.PC_GetSearchResults. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+    <design:attribute name="defaultRowActions" label="Row Actions" default="PC_SHOW_DETAILS,PC_LAUNCH_PAP,PC_LAUNCH_COPAY"
+                      description="Comma separated list of row actions. Ex. PC_SHOW_DETAILS, PC_LAUNCH_PAP, ANY_CUSTOM_ACTION. Use this to dynamically add actions on the server side. PC_SHOW_DETAILS &amp; PC_LAUNCH_PAP inserts row level actions through PC_GetSearchResults and the actions are handled through PC_SearchDefaultDataRowActionHandler. PC_SHOW_DETAILS - Opens a record. PC_LAUNCH_PAP - Launches PAP workflow. To handle ANY_CUSTOM_ACTION, add a custom cmp that subscribes to PC_SelectedRecord event." />
+</design:component>

@@ -1,0 +1,62 @@
+.THIS .rightMargin {
+    margin-right:5px;
+    align-self:center; 
+    margin-left: auto
+}
+
+.THIS .validateButton {
+    margin-right:5px;
+    width: 50%;
+}
+
+.THIS .uiInputDate .datePicker-openIcon {
+   position: absolute;
+    left: 97%;
+    top: 25%;
+}
+
+.THIS .blockSection {
+    padding:10px 5px;
+}
+.THIS .warningIcon_validate {
+    color: red;
+}
+.THIS .successIcon_validate {
+    color: green;
+}
+.THIS .reftableheader {
+    background-color: #596d8e;
+}
+.THIS .refTable {
+ 	padding-bottom: 10px;   
+}
+.THIS .true.cbBlock {
+    display:none;
+}
+.THIS .true.tickBlock {
+    display:block;
+}
+.THIS .false.cbBlock {
+    display:block;
+}
+.THIS .false.tickBlock {
+    display:none;
+}
+
+.THIS .selfCardHolder{
+    text-decoration: line-through;
+}
+
+.THIS .modalContentScroll{
+    height:60vh;
+    overflow:auto;
+}
+
+.THIS .slds-form-element {
+    padding-left:4px !important;
+    padding-right:4px !important;
+}
+
+.THIS .slds-section-title--divider {
+    margin-top: 8px !important;
+}

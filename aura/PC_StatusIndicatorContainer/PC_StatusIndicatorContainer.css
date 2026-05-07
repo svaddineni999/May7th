@@ -1,0 +1,16 @@
+/**
+ * Created by vkashikar on 8/2/2018.
+ */
+.THIS .container{
+    display : flex;
+    overflow : auto;
+}
+.THIS .container>div {
+    padding : 0.25rem;
+}
+.THIS .pc_spinner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+}

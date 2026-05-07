@@ -1,0 +1,156 @@
+<!--
+ - Created by shisbansal on 8/28/2018.
+ -->
+
+<aura:component access="global" controller="PC_EngagementTasksController" description="PC_EngagementTasks" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+
+    <aura:handler name = "init" action = "{!c.doInit}" value = "{!this}"/>
+    <aura:attribute name ="upcomingActivity" type="sObject[]" default="false"/>
+    <aura:attribute name ="pastActivity" type="sObject[]" default="false"/>
+    <aura:attribute name="fieldLabels" type="sObject" default="false"/>
+    <aura:attribute name="newEngagementTask" type="String" default="{!$Label.c.PC_New}"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="showCreateEngagementTaskOption" type="Boolean" default="true"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+
+
+    <div>
+        <aura:if isTrue="{!v.isLoading}">
+            <div class="pc_spinner slds-align-middle">
+                <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+            </div>
+            <aura:set attribute="else">
+        <div style="">
+            <!--Start of Header Component-->
+            <aura:if isTrue="{!v.showCreateEngagementTaskOption}" >
+                <div class="slds-tabs--scoped__nav slds-page-header_object-home" style="display:none" >
+                    <div class="slds-col"></div>
+                    <div class="slds-col slds-no-flex">
+                        <div class="slds-m-bottom--x-small"/>
+                        <div class="slds-form-element">
+                            <div class="slds-float--right">
+                                <lightning:button onclick="{!c.createEngagementTask}" variant="brand">{!v.newEngagementTask}</lightning:button>
+                            </div>
+                        </div>
+                        <div class="slds-m-bottom--x-small"  />
+                    </div>
+                </div>
+            </aura:if>
+            <!--Engagement Task  Form Table-->
+
+
+
+            <div class="dataTable" id="modal-content-id-1">
+                <div class="slds-scrollable">
+                    <table class="slds-table  slds-table_cell-buffer slds-table_cell-buffer slds-m-top--medium slds-border_bottom slds-border_left slds-border_right slds-border_top ">
+                        <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col" class="" colspan="2">
+                                {!$Label.c.PC_UpcomingActivity}
+                            </th>
+                        </tr>
+
+                        <aura:if isTrue="{!v.upcomingActivity.length == 0}">
+                            &emsp;&emsp;&emsp;  {!$Label.c.PC_No_Records_Found}
+                        <aura:set attribute="else">
+
+                        <tr class="slds-text-title_caps">
+
+                           <th scope="col" class="" style="width:50%">
+                                <div class="slds-truncate" title="{!v.fieldLabels.upcomingActivity}">{!v.fieldLabels.upcomingActivity}</div>
+                            </th>
+                            <th scope="col" class="" >
+                                <div class="slds-truncate" title="{!v.fieldLabels.dueOn}">{!v.fieldLabels.dueOn}</div>
+                            </th>
+
+                        </tr>
+                            </aura:set>
+                        </aura:if>
+                        </thead>
+
+                       <tbody>
+                        <aura:iteration items ="{!v.upcomingActivity}" var="EngagementTask" indexVar="i">
+                            <tr>
+
+
+                                <td  class="slds-truncate" title="{!EngagementTask.Subject}" style="width:50%">
+                                    <a id ="{!EngagementTask.taskId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                            {!EngagementTask.Subject}
+                                    </a>
+                                </td>
+                                <td class="slds-truncate"  title="{!EngagementTask.dueDate}">
+                                        {!EngagementTask.dueDate}
+                                </td>
+
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+
+                    </table>
+
+
+
+
+                    <table class="slds-table  slds-table_cell-buffer slds-m-top--medium slds-border_bottom slds-border_left slds-border_right slds-border_top">
+                        <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col" class="" colspan="2">
+                                 {!$Label.c.PC_RecentActivity}
+                            </th>
+
+
+                        </tr>
+                        <aura:if isTrue="{!v.pastActivity.length == 0}">
+                            &emsp;&emsp;&emsp;{!$Label.c.PC_No_Records_Found}
+                            <aura:set attribute="else">
+                        <tr class="slds-text-title_caps">
+
+                            <th scope="col" class="" style="width:50%">
+                                <div class="slds-truncate" title="{!v.fieldLabels.upcomingActivity}">{!v.fieldLabels.upcomingActivity}</div>
+                            </th>
+                            <th scope="col" class="">
+                                <div class="slds-truncate" title="{!v.fieldLabels.dueOn}">{!v.fieldLabels.completedon}</div>
+                            </th>
+
+                        </tr>
+                            </aura:set>
+                        </aura:if>
+
+                        </thead>
+
+
+                        <tbody>
+                        <aura:iteration items ="{!v.pastActivity}" var="EngagementTask" indexVar="i">
+                            <tr>
+
+
+                                <td  class="slds-truncate" title="{!EngagementTask.Subject}"  style="width:50%">
+                                    <a id ="{!EngagementTask.taskId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                            {!EngagementTask.Subject}
+                                    </a>
+                                </td>
+                                <td class="slds-truncate"  title="{!EngagementTask.dueDate}" >
+                                        {!EngagementTask.dueDate}
+                                </td>
+
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+            </aura:set>
+        </aura:if>
+
+    </div>
+
+</aura:component>

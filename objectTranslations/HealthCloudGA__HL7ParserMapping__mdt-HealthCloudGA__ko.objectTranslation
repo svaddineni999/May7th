@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HL7 파서 매핑</value>
+    </caseValues>
+    <fields>
+        <label>엔티티 이름</label>
+        <name>HealthCloudGA__EntityName__c</name>
+    </fields>
+    <fields>
+        <label>활성</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apex class name to be used to parse --></help>
+        <label>파서 이름</label>
+        <name>HealthCloudGA__ParserName__c</name>
+    </fields>
+    <fields>
+        <label>수신 응용 프로그램</label>
+        <name>HealthCloudGA__ReceivingApplication__c</name>
+    </fields>
+    <fields>
+        <label>수신 시설</label>
+        <name>HealthCloudGA__ReceivingFacility__c</name>
+    </fields>
+    <fields>
+        <label>발신 응용 프로그램</label>
+        <name>HealthCloudGA__SendingApplication__c</name>
+    </fields>
+    <fields>
+        <label>발신 시설</label>
+        <name>HealthCloudGA__SendingFacility__c</name>
+    </fields>
+    <fields>
+        <label>버전</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+</CustomObjectTranslation>

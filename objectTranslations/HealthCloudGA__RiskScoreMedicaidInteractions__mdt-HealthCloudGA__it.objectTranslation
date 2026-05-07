@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interazione Medicaid per punteggio rischio</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interazioni Medicaid per punteggio rischio</value>
+    </caseValues>
+    <fields>
+        <label>Comunità FBDual Anziano</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Comunità FBDual Disabile</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Comunità NonDual Anziano</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Comunità NonDual Disabile</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Comunità PBDual Anziano</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Comunità PBDual Disabile</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Comunità</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>Disabile</label>
+        <name>HealthCloudGA__Disabled__c</name>
+    </fields>
+    <fields>
+        <label>Sesso</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ricoverato in istituto</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>È attivo</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Medicaid</label>
+        <name>HealthCloudGA__Medicaid__c</name>
+    </fields>
+    <fields>
+        <label>Disabile originariamente</label>
+        <name>HealthCloudGA__OriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Arco di anni</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,528 @@
+<!--
+Lightning component  : PC_SupportPlan_ActivityProperties
+Description          : Component for defining properties of a new Support Plan 
+Created By:
+Sahil Garg            Feb 16 2018           [PC-2751] Initial version
+
+Modification Log
+Tejas Patel				March 15 2018		Created attributes for custom label and attribute to caputure field labels
+Tejas Patel				May 15 2018			PC-2752 Ability to define properties for a group when group is highlighted or selected
+Tejas Patel				Jun 18 2018			Conditional Builder
+Tejas Patel				Jun 18 2018			[PC-4478] Group Activity Execution
+Kishore Kanteti 		Dec 9 2019			[PC-5795] Updated fetchActivity method and handleSave method in helper
+Kishore Kanteti         Mar 19 2020         [PC-6054][PC-6062] UI Changes and behaviour of component in BRE Context
+Tushar Arora            Jun 08,2020         [PC-6333] Added condition on save if value column in builder is disabled then value would be blank.
+Kishore Kanteti         Jun 24 2020         [PC-6450][PC-6447] Modified and added component for Updaing records related trigger event.
+Kishore Kanteti         July 6 2020         [PC-6516] Modified record fields to save in JSON for storing field api name if picklist is to be bounded.
+Kanteti Kishore         29-July-2020        [PC-6592] Changes in helper at lines-787,788,798,855,856,867
+Kanteti Kishore         26-Aug-2020        [PC-6419] Changes in helper to remove component errors.
+Kishore Kanteti         Sep 30,2020         [PC-6144] Enhancement of Conditions/Properties builder
+Kanteti Kishore         13 Apr 2021         [PC-7009] Made changes to support property builder for User Task Activities
+Satheesh Kumar          04 Apr 2022         [PC-8463] Cleared the values in conditonal logic and apex class condition when condition behavior is 'No Condition'
+-->
+<aura:component implements="flexipage:availableForAllPageTypes" controller="PC_ActivityProperties_Controller"
+                access="global">
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="isFirstAct" type="Boolean"/>
+    <aura:attribute name="picklistEntryMap" type="Map"/>
+    <aura:attribute name="actionClassMap" type="Map"/>
+    <aura:attribute name="supportPlanID" type="ID"/>
+    <aura:attribute name="newActivity" type="Object"/>
+    <aura:attribute name="activity" type="Object"/>
+    <aura:attribute name="prevActivity" type="String"/>
+    <aura:attribute name="nextActivity" type="String"/>
+    <aura:attribute name="disabled" type="Boolean" default="false"/>
+    <aura:attribute name="objInfo" type="Object" default="{sobjectType : 'PC_SupportPlanActivity__c'}"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+    <aura:attribute name="fieldLabels" type="String"/>
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}"/>
+    <aura:attribute name="customMetadataErrorMessage" type="String"
+                    default="{!$Label.c.PC_FieldError_Metadata_Config}"/>
+    <aura:attribute name="validateDataErrorMessage" type="String"
+                    default="{!$Label.c.PC_FieldError_ValidateDataMethod}"/>
+    <aura:attribute name="noneOptionName" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+    <aura:attribute name="closeProperties" type="boolean" default="false"/>
+    <aura:attribute name="activityType" type="String" default="Sequence"/>
+    <aura:attribute name="userTaskPropertiesCount" type="Integer" default="0"/>
+    <aura:attribute name="cachedConditionsMap" type="Map"/>
+    <aura:attribute name="recordOptions" type="List"/>
+    <aura:attribute name="recordType" type="String"/>
+    <aura:attribute name="conditionalBuilderRecordType" type="String"/>
+    <aura:attribute name="conditionalBuilderRecordValue" type="String" default="" access="public"/>
+    <aura:attribute name="supportPlanRecordType" type="String"/>
+    <aura:attribute name="prevRecordType" type="String"/>
+    <aura:attribute name="fieldPicklistValuesMap" type="Map"/>
+    <aura:attribute name="tempRecordType" type="String"/>
+    <aura:attribute name="conditionsJson" type="String"/>
+    <aura:attribute name="conBldrLogic" type="String" default=""/>
+    <aura:attribute name="currentConditions" type="String" default=""/>
+    <aura:attribute name="fetchedCondition" type="Object"/>
+    <aura:attribute name="fetchedFieldMap" type="Object"/>
+    <aura:attribute name="recordConditions" type="List" default="[]"/>
+    <aura:attribute name="recordProperties" type="List" default="[]"/>
+    <aura:attribute name="fieldSet" type="String"/>
+    <aura:attribute name="taskField" type="Object"/>
+    <aura:attribute name="taskProperties" type="String"/>
+    <aura:attribute name="objectType" type="String" default="Data Object"/>
+    <aura:attribute name="triggerEventObjectLabel" type="String"/>
+    <aura:attribute name="triggerEventObjectApiName" type="String"/>
+    <aura:attribute name="initiateCondition" type="boolean" default="false"/>
+    <aura:attribute name="isSaving" type="boolean" default="false"/>
+    <aura:attribute name="isAddFieldMapRow" type="Boolean" default="false"/>
+    <aura:attribute name="isANDCondition" type="Boolean" default="true"/>
+    <aura:attribute name="isORCondition" type="Boolean" default="false"/>
+    <aura:attribute name="showTaskFields" type="Boolean" default="false"/>
+    <aura:attribute name="showGroupExecution" type="Boolean" default="false"/>
+    <aura:attribute name="isCriteriaRequired" type="Boolean" default="false"/>
+    <aura:attribute name="isDueDateRequired" type="Boolean" default="false"/>
+    <aura:attribute name="objectsListRequired" type="Boolean" default="false"/>
+    <aura:attribute name="isPlatformContext" type="Boolean" default="false"/>
+    <aura:attribute name="isRecordCreation" type="Boolean" default="false"/>
+    <aura:attribute name="isRecordUpdation" type="Boolean" default="false"/>
+    <aura:attribute name="isDeleteAvailable" type="Boolean" default="false"/>
+    <aura:attribute name="createOutcomeTask" type="Boolean" default="false"/>
+    <aura:attribute name="taskJSON" type="STRING"/>
+
+    <aura:attribute name="saveMsg" type="String" default="{!$Label.c.PC_Save_SupportActivity}"/>
+    <aura:attribute name="saveMsgGrp" type="String" default="{!$Label.c.PC_Save_GroupActivity}"/>
+    <aura:attribute name="deleteMsg" type="String" default="{!$Label.c.PC_Delete_SupportActivity}"/>
+    <aura:attribute name="deleteMsgGrp" type="String" default="{!$Label.c.PC_Delete_SupportGroup}"/>
+
+    <aura:attribute name="refDateMsg" type="String" default="{!$Label.c.PC_RefDate_Msg}"/>
+    <aura:attribute name="custFieldSetMsg" type="String" default="{!$Label.c.PC_CustomFieldset_Msg}"/>
+
+
+    <aura:attribute name="_ref1" type="String" default="{!$Label.c.PC_None}"/>
+    <aura:attribute name="_ref2" type="String" default="{!$Label.c.PC_Before_Reference_Date}"/>
+    <aura:attribute name="_ref3" type="String" default="{!$Label.c.PC_After_Reference_Date}"/>
+    <aura:attribute name="_ref4" type="String" default="{!$Label.c.PC_After_completion_of_previous_activity}"/>
+    <aura:attribute name="_ref5" type="String" default="{!$Label.c.PC_Cond_Option_Apex_Class}"/>
+    <aura:attribute name="_ref6" type="String" default="{!$Label.c.PC_Cond_Behaviour_No_Condition}"/>
+    <aura:attribute name="_ref7" type="String" default="{!$Label.c.PC_Cond_Option_Conditional_Builder}"/>
+    <aura:attribute name="_ref8" type="String" default="{!$Label.c.PC_UserTask_Prop_Title}"/>
+
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_Define_Activity_Properties}"/>
+    <aura:attribute name="_label1_2" type="String" default="{!$Label.c.PC_Define_Sequence_Properties}"/>
+
+    <aura:attribute name="_label2" type="String" default="{!$Label.c.PC_Activity_Details}"/>
+    <aura:attribute name="_label2_2" type="String" default="{!$Label.c.PC_Sequence_Details}"/>
+
+    <aura:attribute name="_label3" type="String" default="{!$Label.c.PC_Milestone}"/>
+    <aura:attribute name="_label4" type="String" default="{!$Label.c.PC_Criteria_Creating_Activity}"/>
+    <aura:attribute name="_label4_2" type="String" default="{!$Label.c.PC_Criteria_Executing_Activity}"/>
+
+    <aura:attribute name="_label5" type="String" default="{!$Label.c.PC_Due_Date_Calculation}"/>
+    <aura:attribute name="_label6" type="String" default="{!$Label.c.PC_Confirmation}"/>
+    <aura:attribute name="_label7" type="String" default="{!$Label.c.PC_ConfirmDelete}"/>
+    <aura:attribute name="_label8" type="String" default="{!$Label.c.PC_Close}"/>
+    <aura:attribute name="_label9" type="String" default="{!$Label.c.PC_Cond_Condition_AND}"/>
+    <aura:attribute name="_label10" type="String" default="{!$Label.c.PC_Cond_Condition_OR}"/>
+    <aura:attribute name="_label11" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Record}"/>
+    <aura:attribute name="_label12" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Case}"/>
+    <aura:attribute name="_label13" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Previous_Task}"/>
+    <aura:attribute name="_label14" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Conditions}"/>
+    <aura:attribute name="_label15" type="String" default="{!$Label.c.PC_GroupActivityExecution}"/>
+    <aura:attribute name="_label16" type="String" default="{!$Label.c.PC_CreateOutcomeTask}"/>
+
+    <aura:attribute name="_message1" type="String" default="{!$Label.c.PC_SPActivity_ReferenceDateMessage}"/>
+
+
+    <aura:attribute name="_button1" type="String" default="{!$Label.c.PC_Delete}"/>
+    <aura:attribute name="_button2" type="String" default="{!$Label.c.PC_Edit_Button}"/>
+    <aura:attribute name="_button3" type="String" default="{!$Label.c.PC_Button_Label_Cancel}"/>
+    <aura:attribute name="_button4" type="String" default="{!$Label.c.PC_Save}"/>
+    <aura:attribute name="_button5" type="String" default="{!$Label.c.PC_Add_Row}"/>
+
+    <aura:attribute name="refDatePicklist" type="List"/>
+    <aura:attribute name="unAlteredpicklistEntryMap" type="Map"/>
+    <aura:attribute name="pickListValWhenRefDateNotBlank" type="List"/>
+    <aura:attribute name="pickListValWhenRefDateIsBlank" type="List"/>
+    <aura:attribute name="pickListValWhenRefDateIsBlankFirstAct" type="List"/>
+    <aura:attribute name="conditionOptionPickListOne" type="List"/>
+    <aura:attribute name="conditionOptionPickListTwo" type="List"/>
+    <aura:attribute name="conditionOptionPickListThree" type="List"/>
+    <aura:attribute name="previousTaskInfoMessage" type="String" default="{!$Label.c.PC_PreviousTaskInfoMessage}"/>
+    <aura:attribute name="noteLabel" type="String" default="{!$Label.c.PC_Note}"/>
+
+    <aura:attribute name="constantsWrapper" type="Object"/>
+    <aura:attribute name="conditionOptions" type="List"/>
+    <aura:attribute name="conditionValue" type="String" default="AND"/>
+    <aura:attribute name="AutomationTaskDisplay" type="Boolean" default="false"/>
+    <aura:attribute name="typeSubtypeMap" type="String[]" default=""/>
+    <aura:attribute name="storedObjectApiName" type="String"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}"/>
+    <!-- Events -->
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:registerEvent name="refresh" type="c:PC_Refresh_SupportPlan_Builder"/>
+    <aura:handler name="deleteConditionEvent" event="c:PC_Delete_Condition" action="{!c.removeConditionRow}"/>
+
+    <aura:attribute name="selectedRecord" type="Object" default="{}" access="public"/>
+    <aura:handler name="change" value="{!v.selectedRecord}" action="{!c.onChangeSelectedRecord}"/>
+
+    <div id="PC_SupportPlan_ActivityProperties" class="slds">
+        <div class="slds-page-header banner" role="banner">
+            <div class="slds-grid">
+                <div class="slds-col slds-has-flexi-truncate">
+                    <p class="slds-text-heading_medium"
+                       style="{!v.newActivity.internalactivitytype == v.activityType ? 'display:none' : ''}">
+                        {!v._label1}:</p>
+                    <p class="slds-text-heading_medium"
+                       style="{!v.newActivity.internalactivitytype == v.activityType ? '' : 'display:none'}">
+                        {!v._label1_2}:</p>
+                </div>
+            </div>
+        </div>
+
+        <form id="form">
+            <div class="slds-page-header banner" role="banner">
+                <div class="slds-grid">
+                    <div class="slds-col slds-has-flexi-truncate">
+                        <p class=""
+                           style="{!v.newActivity.internalactivitytype == v.activityType ? 'display:none' : ''}">{!v._label2}</p>
+                        <p class=""
+                           style="{!v.newActivity.internalactivitytype == v.activityType ? '' : 'display:none'}">{!v._label2_2}</p>
+                    </div>
+                </div>
+            </div>
+            <fieldset class="slds-form--compound leftMargin">
+                <div class="slds-box inputBoxPadding hideBorder slds-theme_default">
+                    <div class="box">
+                        <label class="labelAdjust">
+                            <abbr class="slds-required" title="required">*</abbr>
+                            {!v.fieldLabels.activityName}:
+                        </label>
+                        <ui:inputText maxlength="80" aura:id="activityname" disabled="{!v.disabled}"
+                                      value="{!v.newActivity.activityname}" updateOn="change"
+                                      class="widthAdjust slds-input "/>
+                    </div>
+                    <div class="box"
+                         style="{!v.newActivity.internalactivitytype == v.activityType ? 'display:none' : ''}">
+                        <label class="topPadding labelAdjust ">
+                            <abbr class="slds-required" title="required">*</abbr>{!v.fieldLabels.activityType}:</label>
+                        <aura:if isTrue="{! and( v.newActivity != null, v.picklistEntryMap != null )}">
+                            <ui:inputSelect aura:id="activityType" disabled="{!v.disabled}"
+                                            class="slds-select widthAdjust" change="{!c.onSingleSelectChange}">
+                                <ui:inputSelectOption class="uiInputSelectOption" label="{!v.noneOptionName}"
+                                                      text="__none"/>
+                                <aura:iteration items="{!v.picklistEntryMap.activityType}" var="entry">
+                                    <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}"
+                                                          text="{!entry.value}"/>
+                                </aura:iteration>
+                            </ui:inputSelect>
+                        </aura:if>
+                        <aura:if isTrue="{!v.isRecordUpdation}">
+                            <c:PC_CreateOrUpdateAutomationTask aura:id="createUpdateAutomationTask"
+                                                               constantsWrapper="{!v.constantsWrapper}"
+                                                               createUpdateTaskJSON="{!v.taskJSON}"
+                                                               triggerEventObjectLabel="{!v.triggerEventObjectLabel}"
+                                                               triggerEventObjectApiName="{!v.triggerEventObjectApiName}"
+                                                               disabled="{!v.disabled}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!or(v.isRecordCreation,v.AutomationTaskDisplay)}">
+                            <div class="box">
+                                <label class="{!v.isRecordCreation ? 'topPadding slds-m-top_small labelAdjust' : 'topPadding labelAdjust'}">
+                                    <abbr class="slds-required" title="required">*</abbr>
+                                    {!v.fieldLabels.subType}:
+                                </label>
+                                <aura:if isTrue="{!v.isRecordCreation}">
+                                    <div style="float:left;width:80%;margin-left:20%;margin-top:-4%">
+                                        <c:PC_EntityDefinition label="" isPlatformEventContext="{!v.isPlatformContext}"
+                                                               disabled="{!v.disabled}"
+                                                               selectedRecord="{!v.selectedRecord}"/>
+                                    </div>
+                                    <div aura:id="subTypeError" class="slds-hide" style="font-size:12px;color:red">
+                                        {!v.requiredFieldErrorMessage}.
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <ui:inputSelect aura:id="subType" change="{!c.onSubTypeChange}"
+                                                        disabled="{!v.disabled}"
+                                                        class="slds-select widthAdjust  slds-m-top--small">
+
+                                        </ui:inputSelect>
+                                    </aura:set>
+                                </aura:if>
+                                <aura:if isTrue="{!v.AutomationTaskDisplay}">
+                                    <div aura:id="AutomationTaskLightningComponent">
+                                    {!v.body}
+                            </div>
+                                </aura:if>
+                            </div>
+                        </aura:if>
+                    </div>
+
+                    <div>
+                        <label class="{!v.isRecordCreation ? 'topPadding slds-m-top_small labelAdjust' : 'topPadding labelAdjust'}">
+                            <aura:if isTrue="{!or(v.isAddFieldMapRow,v.showTaskFields)}">
+                                {!v._ref8}:
+                                <aura:if isTrue="{!v.showTaskFields}">
+                                    <span class="slds-form-element">
+                                        <div class="slds-form-element__icon slds-align-middle"
+                                             onmouseover="{!c.display}" onmouseout="{!c.displayOut}">
+                                            <lightning:icon iconName="utility:info" size="xx-small"
+                                                            alternativeText="{!v.custFieldSetMsg}"
+                                                            title="{!v.custFieldSetMsg}"/>
+                                        </div>
+						            </span>
+                                </aura:if>
+                            </aura:if>
+                        </label>
+                    </div>
+
+                    <aura:if isTrue="{!and(and(v.isAddFieldMapRow,v.isRecordCreation),v.selectedRecord.QualifiedApiName != '')}">
+                        <c:PC_PropertiesAndConditionsBuilder aura:id="fieldMappingBuilder" boxBorderRequired="true"
+                                                             builderContext="PropertyBuilder"
+                                                             isDisabled="{!v.disabled}"
+                                                             showOperator="false"
+                                                             operatorConstants="{!v.constantsWrapper}"
+                                                             fetchedConditionsOrProperties="{!v.recordProperties}"
+                                                             objectType="{!v.objectType}"
+                                                             objectName="{!v.selectedRecord.QualifiedApiName}"
+                                                             triggerObjectName="{!v.triggerEventObjectApiName}"
+                                                             triggerObjectLabel="{!v.triggerEventObjectLabel}"/>
+                        <lightning:input class="slds-m-around_medium" type="checkbox" disabled="{!v.disabled}"
+                                         label="{!v._label16}" checked="{!v.createOutcomeTask}"/>
+                        <aura:set attribute="else">
+                            <aura:if isTrue="{!not(v.isRecordCreation)}">
+                                <aura:if isTrue="{!v.showTaskFields}">
+                                    <div aura:id="userTaskPropertiesContainer" id="userTaskPropertiesContainer"
+                                         class="box hideBorder slds-form-element">
+                                        <div class="conditionalBuilderBox">
+                                            <c:PC_PropertiesAndConditionsBuilder aura:id="userTaskProperties"
+                                                                                 builderContext="PropertyBuilder"
+                                                                                 isDisabled="{!v.disabled}"
+                                                                                 operatorConstants="{!v.constantsWrapper}"
+                                                                                 showOperator="false"
+                                                                                 fetchedConditionsOrProperties="{!v.taskProperties}"
+                                                                                 objectType="Data Object"
+                                                                                 objectName="Task"
+                                                                                 triggerObjectName="{!v.triggerEventObjectApiName}"
+                                                                                 triggerObjectLabel="{!v.triggerEventObjectLabel}"/>
+                                        </div>
+                                    </div>
+                                </aura:if>
+                            </aura:if>
+                        </aura:set>
+
+                    </aura:if>
+
+                </div>
+                <aura:if isTrue="{!v.showGroupExecution}">
+                    <div class="slds-page-header banner" role="banner">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-has-flexi-truncate">
+                                <p class="">{!v._label15}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-box inputBoxPadding hideBorder slds-theme_default">
+                        <div class="box">
+                            <label class="topPadding labelAdjust"> {!v.fieldLabels.groupAtivityExecution}:
+                            </label>
+                            <aura:if isTrue="{! and( v.newActivity != null, v.picklistEntryMap != null )}">
+                                <ui:inputSelect aura:id="groupAtivityExecution" disabled="{!v.disabled}"
+                                                class="slds-select widthAdjust" change="{!c.onCondBehavChange}">
+                                    <aura:iteration items="{!v.picklistEntryMap.groupAtivityExecution}" var="entry">
+                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}"
+                                                              text="{!entry.value}"/>
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+
+                <aura:if isTrue="{!v.isCriteriaRequired}">
+                    <div class="slds-page-header banner" role="banner">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-has-flexi-truncate">
+                                <p class=""
+                                   style="{!v.newActivity.internalactivitytype == v.activityType ? 'display:none' : ''}">{!v._label4}</p>
+                                <p class=""
+                                   style="{!v.newActivity.internalactivitytype == v.activityType ? '' : 'display:none'}">{!v._label4_2}</p>
+                            </div>
+                        </div>
+                    </div>
+                </aura:if>
+                <div class="slds-box inputBoxPadding hideBorder slds-theme_default">
+                    <aura:if isTrue="{!v.isCriteriaRequired}">
+                        <div class="box">
+                            <label class="topPadding labelAdjust"> {!v.fieldLabels.conditionBehavior}:
+                            </label>
+                            <aura:if isTrue="{! and( v.newActivity != null, v.picklistEntryMap != null )}">
+                                <ui:inputSelect aura:id="behaviorList" disabled="{!v.disabled}"
+                                                class="slds-select widthAdjust" change="{!c.onCondBehavChange}">
+                                    <aura:iteration items="{!v.picklistEntryMap.behaviorList}" var="entry">
+                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}"
+                                                              text="{!entry.value}"/>
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                            </aura:if>
+                        </div>
+
+
+                        <div class="box hideBorder slds-form-element">
+
+                            <label class="topPadding labelAdjust"> {!v.fieldLabels.conditionType}:
+                            </label>
+                            <aura:if isTrue="{! and( v.newActivity != null, v.picklistEntryMap != null )}">
+                                <ui:inputSelect aura:id="setCondition" disabled="{!v.disabled}"
+                                                class="slds-select widthAdjust" change="{!c.showCondition}">
+                                    <aura:iteration items="{!v.picklistEntryMap.setCondition}" var="entry">
+                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}"
+                                                              text="{!entry.value}"/>
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                            </aura:if>
+
+                        </div>
+
+                        <div aura:id="apexClass" class="box hideBorder slds-form-element">
+                            <label class="topPadding labelAdjust">
+                                <span style="color:rgb(194, 57, 52);">*</span>
+                                {!v.fieldLabels.className}:
+                            </label>
+                            <ui:inputText disabled="{!v.disabled}" value="{!v.newActivity.apexcondition}"
+                                          aura:id="className" class="widthAdjust slds-input"/>
+                        </div>
+
+
+                        <div aura:id="conditionalBuilderContainer" id="conditionalBuilderContainer"
+                             class="box hideBorder slds-form-element">
+                            <div>
+                                <label class="topPadding labelAdjust">{!v._ref7}:</label>
+                            </div>
+                            <div class="conditionalBuilderBox">
+                                <div class="box hideBorder slds-form-element" title="{!v.recordType}">
+                                    <ui:inputSelect aura:id="record" label="{!v._label11}" disabled="{!v.disabled}"
+                                                    change="{!c.onRecordChange}" value="{!v.recordType}"
+                                                    class="widthAdjust slds-input"/>
+                                </div>
+                                <aura:if isTrue="{!v.recordType != 'None'}">
+                                    <c:PC_PropertiesAndConditionsBuilder aura:id="conditionalBuilder"
+                                                                         boxBorderRequired="false"
+                                                                         builderContext="ConditionalBuilder"
+                                                                         isDisabled="{!v.disabled}"
+                                                                         showOperator="true"
+                                                                         operatorConstants="{!v.constantsWrapper}"
+                                                                         fetchedConditionsOrProperties="{!v.recordConditions}"
+                                                                         objectType="{!v.objectType}"
+                                                                         objectName="{!v.conditionalBuilderRecordType}"
+                                                                         triggerObjectName="{!v.triggerEventObjectApiName}"
+                                                                         triggerObjectLabel="{!v.triggerEventObjectLabel}"
+                                                                         recordValue="{!v.conditionalBuilderRecordValue}" />
+                                </aura:if>
+                                <div class="slds-form-element slds-hide" aura:id="infoDivId">
+                                    <lightning:icon class="slds-m-left_x-small" size="x-small" title="{!v.noteLabel}"  iconName="utility:info"/>
+                                    <span class="slds-p-left_x-small infoDivStyle">{!v.previousTaskInfoMessage}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:if>
+                </div>
+
+                <aura:if isTrue="{!v.isDueDateRequired}">
+                    <div class="slds-page-header banner" role="banner"
+                         style="{!v.newActivity.internalactivitytype == v.activityType ? 'display:none' : ''}">
+                        <div class="slds-grid">
+                            <div class="slds-col slds-text-heading_small slds-has-flexi-truncate">
+                                <p class="">{!v._label5}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-box inputBoxPadding hideBorder slds-theme_default"
+                         style="{!v.newActivity.internalactivitytype == v.activityType ? 'display:none' : ''}">
+                        <div class="box slds-form-element zeroBottom">
+                            <label class=" topPadding labelAdjust "> {!v.fieldLabels.referenceDate}:
+                                <span class="slds-form-element">
+   						    <div class="slds-form-element__icon slds-align-middle" onmouseover="{!c.display}"
+                                 onmouseout="{!c.displayOut}">
+         						<lightning:icon iconName="utility:info" size="xx-small"
+                                                alternativeText="{!v.refDateMsg}" title="{!v.refDateMsg}"/>
+   							</div>
+						  </span>
+                            </label>
+                            <ui:inputSelect aura:id="refDate" class="slds-select widthAdjust"
+                                            change="{!c.onChangeFunction}" disabled="{!v.disabled}">
+                                <aura:iteration items="{!v.refDatePicklist}" var="refDateObj">
+                                    <ui:inputSelectOption class="uiInputSelectOption" label="{!refDateObj.label}"
+                                                          text="{!refDateObj.value}"/>
+                                </aura:iteration>
+                            </ui:inputSelect>
+                            <span style="font-size:11px ;margin:20%">{!format(v._message1, v.triggerEventObjectLabel)}</span>
+                        </div>
+                        <!--<label class="slds-form-element__label"> {!$Label.c.PC_Reference_Date}:
+                        </label>
+                        <ui:inputText disabled="{!v.disabled}" value="{!v.newActivity.PC_ReferenceDate__c}" aura:id="refDate" class="widthAdjust slds-input "  />-->
+                        <div class="box topPadding slds-form-element__row customBox">
+                            <div class="box slds-form-element threeFieldGroup">
+                                <label class="topPadding labelAdjust firstField">{!v.fieldLabels.referenceOffset}
+                                    :</label>
+                                <ui:inputText disabled="{!v.disabled}" value="{!v.newActivity.referenceoffset}"
+                                              aura:id="refOffset"
+                                              class="widthAdjust slds-input secondField inputFixWidth"/>
+                                <aura:if isTrue="{! and( v.newActivity != null, v.picklistEntryMap != null )}">
+                                    <ui:inputSelect aura:id="refOffsetUnit" disabled="{!v.disabled}"
+                                                    class="slds-select widthAdjust thirdField">
+                                        <aura:iteration items="{!v.picklistEntryMap.refOffsetUnit}" var="entry">
+                                            <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}"
+                                                                  text="{!entry.value}"/>
+                                        </aura:iteration>
+                                    </ui:inputSelect>
+                                </aura:if>
+                            </div>
+
+                        </div>
+                        <div class="box topPadding zeroTop">
+                            <label class=" topPadding labelAdjust ">{!v.fieldLabels.referenceType}:</label>
+                            <aura:if isTrue="{! and( v.newActivity != null, v.picklistEntryMap != null )}">
+                                <ui:inputSelect aura:id="referenceType" disabled="{!v.disabled}"
+                                                class="slds-select widthAdjust">
+
+                                    <aura:iteration items="{!v.picklistEntryMap.referenceType}" var="entry">
+                                        <ui:inputSelectOption class="uiInputSelectOption" label="{!entry.label}"
+                                                              text="{!entry.value}"/>
+                                    </aura:iteration>
+                                </ui:inputSelect>
+                            </aura:if>
+                        </div>
+                    </div>
+                </aura:if>
+                <div aria-hidden="false" aura:id="aura_linkSectionId" id="linkSectionId" role="dialog"
+                     class="slds-modal slds-modal--small slds-fade-in-open" style="display:none;">
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header ">
+                            <h2 class="slds-text-heading--medium">{!v._label6}</h2>
+                            <lightning:button class="slds-button slds-modal__close" onclick="{!c.hideAckModal}">
+                                <lightning:icon iconName="utility:close" size="x-small" variant="inverse"/>
+                                <span class="slds-assistive-text">{!v._label8}</span>
+                            </lightning:button>
+                        </div>
+                        <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                            <p>{!v._label7}</p>
+                        </div>
+                        <div class="slds-modal__footer slds-modal__footer--center">
+                            <div class="slds-x-small-buttons--horizontal" align="center">
+                                <lightning:button class="slds-button slds-button--neutral"
+                                                  onclick="{!c.deleteActivity}">{!$Label.c.PC_Delete}</lightning:button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--open" aura:id="aura_backGroundSectionId"
+                     id="backGroundSectionId" style="display:none;"></div>
+            </fieldset>
+        </form>
+        <div class="slds-box hideBorder slds-theme_default customBox">
+            <lightning:button variant="brand" disabled="{!v.disabled == true}" class="customButton"
+                              label="{!v._button4}" onclick="{!c.saveActivity}"/>
+            <lightning:button variant="neutral" class="customButton" label="{!v._button3}"
+                              onclick="{!c.closeComponent}"/>
+            <aura:if isTrue="{!v.isDeleteAvailable}">
+                <lightning:button variant="neutral" disabled="{!v.disabled == true}" class="noBorder customButton"
+                                  label="{!v._button1}" onclick="{!c.showAckModal}"/>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

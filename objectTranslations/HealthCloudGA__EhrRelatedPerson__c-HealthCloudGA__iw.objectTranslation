@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>האדם הקשור ל-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>אדם קשור ל-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>האנשים הקשורים ל-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>אנשים קשורים ל-EHR</value>
+    </caseValues>
+    <fields>
+        <label>חשבון</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>אנשים קשורים</relationshipLabel>
+    </fields>
+    <fields>
+        <label>עיר כתובת1</label>
+        <name>HealthCloudGA__Address1City__c</name>
+    </fields>
+    <fields>
+        <label>ארץ כתובת1</label>
+        <name>HealthCloudGA__Address1Country__c</name>
+    </fields>
+    <fields>
+        <label>תאריך סיום כתובת1</label>
+        <name>HealthCloudGA__Address1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>שורה1 כתובת1</label>
+        <name>HealthCloudGA__Address1Line1__c</name>
+    </fields>
+    <fields>
+        <label>שורה2 כתובת1</label>
+        <name>HealthCloudGA__Address1Line2__c</name>
+    </fields>
+    <fields>
+        <label>מיקוד כתובת1</label>
+        <name>HealthCloudGA__Address1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה כתובת1</label>
+        <name>HealthCloudGA__Address1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>מדינה כתובת1</label>
+        <name>HealthCloudGA__Address1State__c</name>
+    </fields>
+    <fields>
+        <label>טקסט כתובת1</label>
+        <name>HealthCloudGA__Address1Text__c</name>
+    </fields>
+    <fields>
+        <label>שימוש כתובת1</label>
+        <name>HealthCloudGA__Address1Use__c</name>
+    </fields>
+    <fields>
+        <label>עיר כתובת2</label>
+        <name>HealthCloudGA__Address2City__c</name>
+    </fields>
+    <fields>
+        <label>ארץ כתובת2</label>
+        <name>HealthCloudGA__Address2Country__c</name>
+    </fields>
+    <fields>
+        <label>תאריך סיום כתובת2</label>
+        <name>HealthCloudGA__Address2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>שורה1 כתובת2</label>
+        <name>HealthCloudGA__Address2Line1__c</name>
+    </fields>
+    <fields>
+        <label>שורה2 כתובת2</label>
+        <name>HealthCloudGA__Address2Line2__c</name>
+    </fields>
+    <fields>
+        <label>מיקוד כתובת2</label>
+        <name>HealthCloudGA__Address2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה כתובת2</label>
+        <name>HealthCloudGA__Address2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>מדינה כתובת2</label>
+        <name>HealthCloudGA__Address2State__c</name>
+    </fields>
+    <fields>
+        <label>טקסט כתובת2</label>
+        <name>HealthCloudGA__Address2Text__c</name>
+    </fields>
+    <fields>
+        <label>שימוש כתובת2</label>
+        <name>HealthCloudGA__Address2Use__c</name>
+    </fields>
+    <fields>
+        <label>עיר כתובת3</label>
+        <name>HealthCloudGA__Address3City__c</name>
+    </fields>
+    <fields>
+        <label>ארץ כתובת3</label>
+        <name>HealthCloudGA__Address3Country__c</name>
+    </fields>
+    <fields>
+        <label>תאריך סיום כתובת3</label>
+        <name>HealthCloudGA__Address3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>שורה1 כתובת3</label>
+        <name>HealthCloudGA__Address3Line1__c</name>
+    </fields>
+    <fields>
+        <label>שורה2 כתובת3</label>
+        <name>HealthCloudGA__Address3Line2__c</name>
+    </fields>
+    <fields>
+        <label>מיקוד כתובת3</label>
+        <name>HealthCloudGA__Address3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה כתובת3</label>
+        <name>HealthCloudGA__Address3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>מדינה כתובת3</label>
+        <name>HealthCloudGA__Address3State__c</name>
+    </fields>
+    <fields>
+        <label>טקסט כתובת3</label>
+        <name>HealthCloudGA__Address3Text__c</name>
+    </fields>
+    <fields>
+        <label>שימוש כתובת3</label>
+        <name>HealthCloudGA__Address3Use__c</name>
+    </fields>
+    <fields>
+        <label>עיר כתובת4</label>
+        <name>HealthCloudGA__Address4City__c</name>
+    </fields>
+    <fields>
+        <label>ארץ כתובת4</label>
+        <name>HealthCloudGA__Address4Country__c</name>
+    </fields>
+    <fields>
+        <label>תאריך סיום כתובת4</label>
+        <name>HealthCloudGA__Address4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>שורה1 כתובת4</label>
+        <name>HealthCloudGA__Address4Line1__c</name>
+    </fields>
+    <fields>
+        <label>שורה2 כתובת4</label>
+        <name>HealthCloudGA__Address4Line2__c</name>
+    </fields>
+    <fields>
+        <label>מיקוד כתובת4</label>
+        <name>HealthCloudGA__Address4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה כתובת4</label>
+        <name>HealthCloudGA__Address4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>מדינה כתובת4</label>
+        <name>HealthCloudGA__Address4State__c</name>
+    </fields>
+    <fields>
+        <label>טקסט כתובת4</label>
+        <name>HealthCloudGA__Address4Text__c</name>
+    </fields>
+    <fields>
+        <label>שימוש כתובת4</label>
+        <name>HealthCloudGA__Address4Use__c</name>
+    </fields>
+    <fields>
+        <label>עיר כתובת5</label>
+        <name>HealthCloudGA__Address5City__c</name>
+    </fields>
+    <fields>
+        <label>ארץ כתובת5</label>
+        <name>HealthCloudGA__Address5Country__c</name>
+    </fields>
+    <fields>
+        <label>תאריך סיום כתובת5</label>
+        <name>HealthCloudGA__Address5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>שורה1 כתובת5</label>
+        <name>HealthCloudGA__Address5Line1__c</name>
+    </fields>
+    <fields>
+        <label>שורה2 כתובת5</label>
+        <name>HealthCloudGA__Address5Line2__c</name>
+    </fields>
+    <fields>
+        <label>מיקוד כתובת5</label>
+        <name>HealthCloudGA__Address5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה כתובת5</label>
+        <name>HealthCloudGA__Address5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>מדינה כתובת5</label>
+        <name>HealthCloudGA__Address5State__c</name>
+    </fields>
+    <fields>
+        <label>טקסט כתובת5</label>
+        <name>HealthCloudGA__Address5Text__c</name>
+    </fields>
+    <fields>
+        <label>שימוש כתובת5</label>
+        <name>HealthCloudGA__Address5Use__c</name>
+    </fields>
+    <fields>
+        <label>תאריך לידה</label>
+        <name>HealthCloudGA__BirthDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- if  Name is null or Blank it is populated with GivenName1__c + FamilyName1__c else it is populated with Name --></help>
+        <label>שם מחושב</label>
+        <name>HealthCloudGA__CalculatedName__c</name>
+    </fields>
+    <fields>
+        <label>שם משפחה1</label>
+        <name>HealthCloudGA__FamilyName1__c</name>
+    </fields>
+    <fields>
+        <label>שם משפחה2</label>
+        <name>HealthCloudGA__FamilyName2__c</name>
+    </fields>
+    <fields>
+        <label>שם משפחה3</label>
+        <name>HealthCloudGA__FamilyName3__c</name>
+    </fields>
+    <fields>
+        <label>מין</label>
+        <name>HealthCloudGA__Gender__c</name>
+    </fields>
+    <fields>
+        <label>שם פרטי1</label>
+        <name>HealthCloudGA__GivenName1__c</name>
+    </fields>
+    <fields>
+        <label>שם פרטי2</label>
+        <name>HealthCloudGA__GivenName2__c</name>
+    </fields>
+    <fields>
+        <label>שם פרטי3</label>
+        <name>HealthCloudGA__GivenName3__c</name>
+    </fields>
+    <fields>
+        <label>שם פרטי4</label>
+        <name>HealthCloudGA__GivenName4__c</name>
+    </fields>
+    <fields>
+        <label>שם פרטי5</label>
+        <name>HealthCloudGA__GivenName5__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>שפה1</label>
+        <name>HealthCloudGA__Language1__c</name>
+    </fields>
+    <fields>
+        <label>שפה2</label>
+        <name>HealthCloudGA__Language2__c</name>
+    </fields>
+    <fields>
+        <label>שפה3</label>
+        <name>HealthCloudGA__Language3__c</name>
+    </fields>
+    <fields>
+        <label>שפה4</label>
+        <name>HealthCloudGA__Language4__c</name>
+    </fields>
+    <fields>
+        <label>שפה5</label>
+        <name>HealthCloudGA__Language5__c</name>
+    </fields>
+    <fields>
+        <label>שם</label>
+        <name>HealthCloudGA__NameFull__c</name>
+    </fields>
+    <fields>
+        <label>מטופל</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>אנשים קשורים</relationshipLabel>
+    </fields>
+    <fields>
+        <label>PeriodEnd</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>PeriodStart</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>כתובת URL של תמונה</label>
+        <name>HealthCloudGA__PhotoUrl__c</name>
+    </fields>
+    <fields>
+        <label>סיומת שם1</label>
+        <name>HealthCloudGA__PrefixName1__c</name>
+    </fields>
+    <fields>
+        <label>סיומת שם2</label>
+        <name>HealthCloudGA__PrefixName2__c</name>
+    </fields>
+    <fields>
+        <label>סיומת שם3</label>
+        <name>HealthCloudGA__PrefixName3__c</name>
+    </fields>
+    <fields>
+        <label>קשר</label>
+        <name>HealthCloudGA__Relationship__c</name>
+    </fields>
+    <fields>
+        <label>תפקיד 255</label>
+        <name>HealthCloudGA__Role255__c</name>
+    </fields>
+    <fields>
+        <label>תפקיד</label>
+        <name>HealthCloudGA__Role__c</name>
+    </fields>
+    <fields>
+        <label>מזהה מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>שינוי במערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>התמחות 255</label>
+        <name>HealthCloudGA__Specialty255__c</name>
+    </fields>
+    <fields>
+        <label>התמחות</label>
+        <name>HealthCloudGA__Specialty__c</name>
+    </fields>
+    <fields>
+        <label>SuffixName1</label>
+        <name>HealthCloudGA__SuffixName1__c</name>
+    </fields>
+    <fields>
+        <label>SuffixName2</label>
+        <name>HealthCloudGA__SuffixName2__c</name>
+    </fields>
+    <fields>
+        <label>SuffixName3</label>
+        <name>HealthCloudGA__SuffixName3__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה1</label>
+        <name>HealthCloudGA__Telecom1PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה1</label>
+        <name>HealthCloudGA__Telecom1PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>מערכת טלקום1</label>
+        <name>HealthCloudGA__Telecom1System__c</name>
+    </fields>
+    <fields>
+        <label>שימוש טלקום1</label>
+        <name>HealthCloudGA__Telecom1Use__c</name>
+    </fields>
+    <fields>
+        <label>ערך טלקום1</label>
+        <name>HealthCloudGA__Telecom1Value__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה2</label>
+        <name>HealthCloudGA__Telecom2PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה2</label>
+        <name>HealthCloudGA__Telecom2PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>מערכת טלקום2</label>
+        <name>HealthCloudGA__Telecom2System__c</name>
+    </fields>
+    <fields>
+        <label>שימוש טלקום2</label>
+        <name>HealthCloudGA__Telecom2Use__c</name>
+    </fields>
+    <fields>
+        <label>ערך טלקום2</label>
+        <name>HealthCloudGA__Telecom2Value__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה3</label>
+        <name>HealthCloudGA__Telecom3PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה3</label>
+        <name>HealthCloudGA__Telecom3PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>מערכת טלקום3</label>
+        <name>HealthCloudGA__Telecom3System__c</name>
+    </fields>
+    <fields>
+        <label>שימוש טלקום3</label>
+        <name>HealthCloudGA__Telecom3Use__c</name>
+    </fields>
+    <fields>
+        <label>ערך טלקום3</label>
+        <name>HealthCloudGA__Telecom3Value__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה4</label>
+        <name>HealthCloudGA__Telecom4PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה4</label>
+        <name>HealthCloudGA__Telecom4PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>מערכת טלקום4</label>
+        <name>HealthCloudGA__Telecom4System__c</name>
+    </fields>
+    <fields>
+        <label>שימוש טלקום4</label>
+        <name>HealthCloudGA__Telecom4Use__c</name>
+    </fields>
+    <fields>
+        <label>ערך טלקום4</label>
+        <name>HealthCloudGA__Telecom4Value__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה5</label>
+        <name>HealthCloudGA__Telecom5PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label> תחילת תקופת טלקומוניקציה5</label>
+        <name>HealthCloudGA__Telecom5PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>מערכת טלקום5</label>
+        <name>HealthCloudGA__Telecom5System__c</name>
+    </fields>
+    <fields>
+        <label>שימוש טלקום5</label>
+        <name>HealthCloudGA__Telecom5Use__c</name>
+    </fields>
+    <fields>
+        <label>ערך טלקום5</label>
+        <name>HealthCloudGA__Telecom5Value__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>מזהה אדם קשור ב-EHR</nameFieldLabel>
+</CustomObjectTranslation>

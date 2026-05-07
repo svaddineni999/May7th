@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Zorgplan volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Zorgplannen volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Zorgplannen volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Is beperkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Is zichtbaar op patiëntenkaart</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Notities</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Zorgplannen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Einde van periode</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>ID van zorgplan volgens EPD (elektronisc</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Beobachtung in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Beobachtungen in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Beobachtung in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Beobachtungen in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Beobachtung in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Beobachtungen in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Beobachtung in EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Beobachtungen in EGA</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Beobachtungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Anwendung Datum/Uhrzeit</label>
+        <name>HealthCloudGA__AppliesDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Anwendungszeitraum Enddatum</label>
+        <name>HealthCloudGA__AppliesPeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Anwendungszeitraum Startdatum</label>
+        <name>HealthCloudGA__AppliesPeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Körperstelle Code</label>
+        <name>HealthCloudGA__BodySiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Körperstelle Bezeichnung</label>
+        <name>HealthCloudGA__BodySiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Körperstelle System</label>
+        <name>HealthCloudGA__BodySiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kommentare</label>
+        <name>HealthCloudGA__Comments__c</name>
+    </fields>
+    <fields>
+        <label>Gerät</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>EGA Beobachtungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Auswertung Code</label>
+        <name>HealthCloudGA__InterpretationCode__c</name>
+    </fields>
+    <fields>
+        <label>Auswertung Bezeichnung</label>
+        <name>HealthCloudGA__InterpretationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Auswertung System</label>
+        <name>HealthCloudGA__InterpretationSystem__c</name>
+    </fields>
+    <fields>
+        <label>Ist eingeschränkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Wird auf Patientenkarte angezeigt</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Ausgestellt am</label>
+        <name>HealthCloudGA__IssuedDate__c</name>
+    </fields>
+    <fields>
+        <label>Methode Code</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>Methode Bezeichnung</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>Methode System</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <label>Name Code</label>
+        <name>HealthCloudGA__NameCode__c</name>
+    </fields>
+    <fields>
+        <label>Name Bezeichnung</label>
+        <name>HealthCloudGA__NameLabel__c</name>
+    </fields>
+    <fields>
+        <label>Name System</label>
+        <name>HealthCloudGA__NameSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this is about --></help>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Beobachtungen</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Patient who performed this observation --></help>
+        <label>Durchführender Patient</label>
+        <name>HealthCloudGA__PerformingPatient__c</name>
+        <relationshipLabel>EGA Beobachtungen (Durchführender Patient)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>Durchführender Arzt</label>
+        <name>HealthCloudGA__PerformingPractitioner__c</name>
+        <relationshipLabel>EGA Beobachtungen (Durchführender Arzt)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related person who performed the observation --></help>
+        <label>Durchführende zugehörige Person</label>
+        <name>HealthCloudGA__PerformingRelatedPerson__c</name>
+        <relationshipLabel>EGA Beobachtungen (Durchführende zugehörige Person)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>Arzt</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>Beobachtungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Referenzbedeutung Bezeichnung</label>
+        <name>HealthCloudGA__ReferenceMeaningLabel__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Alter hoch</label>
+        <name>HealthCloudGA__ReferenceRangeAgeHigh__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Alter niedrig</label>
+        <name>HealthCloudGA__ReferenceRangeAgeLow__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Hoch Einheit</label>
+        <name>HealthCloudGA__ReferenceRangeHighUnit__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Hoch Wert</label>
+        <name>HealthCloudGA__ReferenceRangeHighValue__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Niedrig Einheit</label>
+        <name>HealthCloudGA__ReferenceRangeLowUnit__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Niedrig Wert</label>
+        <name>HealthCloudGA__ReferenceRangeLowValue__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Bedeutung Code</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningCode__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Bedeutung System</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningSystem__c</name>
+    </fields>
+    <fields>
+        <label>Referenzbereich Einheit</label>
+        <name>HealthCloudGA__ReferenceRangeUnit__c</name>
+    </fields>
+    <fields>
+        <label>Zuverlässigkeitscode</label>
+        <name>HealthCloudGA__ReliabilityCode__c</name>
+    </fields>
+    <fields>
+        <label>Zuverlässigkeit</label>
+        <name>HealthCloudGA__Reliability__c</name>
+        <picklistValues>
+            <masterLabel>calibrating</masterLabel>
+            <translation><!-- calibrating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>early</masterLabel>
+            <translation><!-- early --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>error</masterLabel>
+            <translation><!-- error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ok</masterLabel>
+            <translation><!-- ok --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ongoing</masterLabel>
+            <translation><!-- ongoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>questionable</masterLabel>
+            <translation><!-- questionable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Erfasste Daten</label>
+        <name>HealthCloudGA__SampledData__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status Code</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>amended</masterLabel>
+            <translation><!-- amended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>final</masterLabel>
+            <translation><!-- final --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>preliminary</masterLabel>
+            <translation><!-- preliminary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>registered</masterLabel>
+            <translation><!-- registered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Werteanhang</label>
+        <name>HealthCloudGA__ValueAttachment__c</name>
+    </fields>
+    <fields>
+        <label>Wert Code</label>
+        <name>HealthCloudGA__ValueCode__c</name>
+    </fields>
+    <fields>
+        <label>Wert Bezeichnung</label>
+        <name>HealthCloudGA__ValueLabel__c</name>
+    </fields>
+    <fields>
+        <label>Wert Zeitraumende Datum</label>
+        <name>HealthCloudGA__ValuePeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Wert Zeitraumstart Datum</label>
+        <name>HealthCloudGA__ValuePeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Wert Zeitraum</label>
+        <name>HealthCloudGA__ValuePeriod__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>Wert Mengeneinheit</label>
+        <name>HealthCloudGA__ValueQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>Wert Menge</label>
+        <name>HealthCloudGA__ValueQuantity__c</name>
+    </fields>
+    <fields>
+        <label>Wertverhältnis Nenner</label>
+        <name>HealthCloudGA__ValueRatioDenominator__c</name>
+    </fields>
+    <fields>
+        <label>Wertverhältnis Zähler</label>
+        <name>HealthCloudGA__ValueRatioNumerator__c</name>
+    </fields>
+    <fields>
+        <label>Wertverhältnis</label>
+        <name>HealthCloudGA__ValueRatio__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Dimensionen</label>
+        <name>HealthCloudGA__ValueSampledDataDimensions__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Faktor</label>
+        <name>HealthCloudGA__ValueSampledDataFactor__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Untere Grenze</label>
+        <name>HealthCloudGA__ValueSampledDataLowerLimit__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprungscode Bez.</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprungscode System</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprung Code</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCode__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprung Komparator</label>
+        <name>HealthCloudGA__ValueSampledDataOriginComparator__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprung System</label>
+        <name>HealthCloudGA__ValueSampledDataOriginSystem__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprung Einheiten</label>
+        <name>HealthCloudGA__ValueSampledDataOriginUnits__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprung Wert</label>
+        <name>HealthCloudGA__ValueSampledDataOriginValue__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Ursprung</label>
+        <name>HealthCloudGA__ValueSampledDataOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Zeitraum Mili</label>
+        <name>HealthCloudGA__ValueSampledDataPeriodMili__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten Obere Grenze</label>
+        <name>HealthCloudGA__ValueSampledDataUpperLimit__c</name>
+    </fields>
+    <fields>
+        <label>Wert Erfasste Daten</label>
+        <name>HealthCloudGA__ValueSampledData__c</name>
+    </fields>
+    <fields>
+        <label>Wert System</label>
+        <name>HealthCloudGA__ValueSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>EGA Beobachtung Name</nameFieldLabel>
+</CustomObjectTranslation>

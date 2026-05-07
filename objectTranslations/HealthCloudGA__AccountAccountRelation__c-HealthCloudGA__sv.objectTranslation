@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Konto-till-konto-relationen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>En konto-till-konto-relation</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Konto-till-konto-relation</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Konto-till-konto-relationerna</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Konto-till-konto-relationer</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Konto-till-konto-relationer</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel><!-- Account Account Relations (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Slutdatum</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Extern ID</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Konto-till-konto-relationer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relaterat konto</label>
+        <name>HealthCloudGA__RelatedAccount__c</name>
+        <relationshipLabel><!-- Account Account Relations (Related Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relaterade roller</label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Account Account Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Startdatum</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Namn på kontorelation</nameFieldLabel>
+    <validationRules>
+        <errorMessage>En konto-till-konto-relation kan inte skapas som Inaktiv.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

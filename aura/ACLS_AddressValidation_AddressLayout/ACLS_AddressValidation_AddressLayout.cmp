@@ -1,0 +1,140 @@
+<aura:component access="global" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickActionWithoutHeader,force:appHostable,forceCommunity:availableForAllPageTypes,lightning:actionOverride,force:LightningQuickAction" >
+    <aura:attribute name="openChildComponent" type="Boolean" default="false"/>
+    <aura:attribute name="isValidateBtnClicked" type="Boolean" default="false"/>
+    <aura:attribute name="addressInfoForValidationVerified" type="Object[]" />
+    <aura:attribute name="newAddress" type="Object" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:attribute name="userInputAddress" type="object" />
+    <aura:if isTrue="{!v.openChildComponent}">
+        <c:ACLS_AddressValidation_Modal addressList="{!v.userInputAddress}" aura:id="modal"/>
+    </aura:if>
+    <lightning:navigation aura:id="orderNavigationService"/>
+ <aura:handler name="change" value="{!v.pageReference}"
+               action="{!c.onPageReferenceChanged}" />
+    <aura:attribute name="accountId" type="String" />
+     
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <aura:handler name="validatedAddressList" event="c:ACLS_AddressValidation_Event" action="{!c.handleValidatedAddressList}" />
+    <aura:handler name="cancelModal" event="c:ACLS_AddressValidation_Event" action="{!c.handleCancelModal}" />
+    <div class="slds-grid slds-wrap">
+    <lightning:card class="slds-col slds-size_12-of-12 slds-p-around_medium">
+            <header class="slds-grid slds-align_absolute-center slds-text-heading_small">
+                <h3 class="slds-text-heading_small slds-truncate slds-m-horizontal_xx-small">New Address</h3>
+            </header>
+        <div class="slds-p-horizontal_small slds-p-top_medium">
+                
+            
+        <lightning:recordEditForm aura:id="recordEditForm" objectApiName="PC_Address__c" recordId="{!v.recordId}" onload="{!c.handleCreateLoad}">
+            <div class="slds-grid slds-wrap slds-gutters">
+                <div class="slds-col slds-size_1-of-2">
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="accountField" fieldName="PC_Account__c" 
+                                                   required="true"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="address1Field" fieldName="PC_Address_1__c" 
+                                                   required="true"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="address2Field" fieldName="PC_Address_2__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="cityField" fieldName="PC_City__c" 
+                                                   required="true"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="startDateField" fieldName="PC_Start_Date__c" 
+                                                  type="date"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="endDateField" fieldName="PC_End_Date__c" 
+                                                  type="date"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="verificationStatusField" fieldName="ACLS_Verification_Status__c" disabled="{!true}"/>
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="addressCodesField" fieldName="ACLS_Address_Codes__c" disabled="{!true}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="addressTypeField" fieldName="PC_Address_Description__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="countryField" fieldName="PC_Country__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="stateField" fieldName="PC_State__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="zipcodeField" fieldName="PC_Zip_Code__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="zipcodeExtensionField" fieldName="ACLS_Zip_Code_Extension__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="primaryAddressField" fieldName="PC_Primary_Address__c" />
+                        </div>
+                    </div>
+                    <div class="slds-form-element">
+                        
+                        <div class="slds-form-element__control">
+                            <lightning:inputField aura:id="statusField" fieldName="PC_Status__c" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-m-top_medium slds-align_absolute-center">
+                <lightning:button variant="neutral" label="Cancel"  onclick="{!c.handleCancel}" />
+                <lightning:button variant="brand" label="{!$Label.c.ACLS_Validate_Address}" title="Validate Address" onclick="{!c.validateAddress }"/>
+                <lightning:button variant="brand" label="Save"  onclick="{!c.handleSubmit}" />
+            </div>
+        </lightning:recordEditForm>
+            </div>
+    </lightning:card>
+        </div> 
+</aura:component>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Practitioner Referral</fullName>
+        <default>false</default>
+        <label>Practitioner Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Clinic Referral</fullName>
+        <default>false</default>
+        <label>Clinic Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer from Hospital (different facility)</fullName>
+        <default>false</default>
+        <label>Transfer from Hospital (different facility)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer from Skilled Nursing Facility</fullName>
+        <default>false</default>
+        <label>Transfer from Skilled Nursing Facility</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Emergency Room</fullName>
+        <default>false</default>
+        <label>Emergency Room</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Court or Law Enforcement</fullName>
+        <default>false</default>
+        <label>Court or Law Enforcement</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Ambulatory Surgical Center</fullName>
+        <default>false</default>
+        <label>Ambulatory Surgical Center</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospice</fullName>
+        <default>false</default>
+        <label>Hospice</label>
+    </standardValue>
+</StandardValueSet>

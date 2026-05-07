@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>יעד תבנית תוכנית הטיפול</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>יעד תבנית תוכנית טיפול</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>יעדי תבנית תוכנית הטיפול</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>יעדי תבנית תוכנית טיפול</value>
+    </caseValues>
+    <fields>
+        <label>פעיל</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>בעיה בתבנית</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>יעדי תבנית תוכנית טיפול</relationshipLabel>
+    </fields>
+    <fields>
+        <label>תבנית תוכנית טיפול</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>יעדי תבנית תוכנית טיפול</relationshipLabel>
+    </fields>
+    <fields>
+        <label>קטגוריה</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition Improvement</masterLabel>
+            <translation><!-- Cognition Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muscle Strength Improvement</masterLabel>
+            <translation><!-- Muscle Strength Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>תיאור</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>עדיפות</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>סדר מיון</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>שם יעד של תבנית תוכנית טיפול</nameFieldLabel>
+    <validationRules>
+        <errorMessage>שייך את היעד לתבנית תוכנית טיפול או לבעיה.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>שייך את היעד לרשומה אחת בלבד.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

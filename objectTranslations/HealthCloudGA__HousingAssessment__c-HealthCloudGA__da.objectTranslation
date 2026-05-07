@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Beboelsesvurderingen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Beboelsesvurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Beboelsesvurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Beboelsesvurderingerne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Beboelsesvurderinger</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Beboelsesvurderinger</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Beboelsesvurderinger</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Vurderingsdato</label>
+        <name>HealthCloudGA__AssessmentDate__c</name>
+    </fields>
+    <fields>
+        <label>Kan forberede mad sikkert</label>
+        <name>HealthCloudGA__CanPrepareFoodSafely__c</name>
+    </fields>
+    <fields>
+        <label>Kan gå i karantæne</label>
+        <name>HealthCloudGA__CanQuarantine__c</name>
+    </fields>
+    <fields>
+        <label>Beboelse</label>
+        <name>HealthCloudGA__Dwelling__c</name>
+        <picklistValues>
+            <masterLabel>Apartment</masterLabel>
+            <translation><!-- Apartment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board and Care or Assisted Living Facility</masterLabel>
+            <translation><!-- Board and Care or Assisted Living Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel or Motel</masterLabel>
+            <translation><!-- Hotel or Motel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>House</masterLabel>
+            <translation><!-- House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long-Term Care Facility</masterLabel>
+            <translation><!-- Long-Term Care Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Family Dwelling</masterLabel>
+            <translation><!-- Multi-Family Dwelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nursing Home</masterLabel>
+            <translation><!-- Nursing Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreational Vehicle or Mobile Home</masterLabel>
+            <translation><!-- Recreational Vehicle or Mobile Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skilled Nursing Facility</masterLabel>
+            <translation><!-- Skilled Nursing Facility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Har privat badeværelse</label>
+        <name>HealthCloudGA__HasPrivateBathroom__c</name>
+    </fields>
+    <fields>
+        <label>Er hjemløs</label>
+        <name>HealthCloudGA__IsHomeless__c</name>
+    </fields>
+    <fields>
+        <label>Karantænes slutdato</label>
+        <name>HealthCloudGA__QuarantineEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Karantæneplacering</label>
+        <name>HealthCloudGA__QuarantineLocation__c</name>
+        <relationshipLabel>Beboelsesvurderinger</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Karantænes startdato</label>
+        <name>HealthCloudGA__QuarantineStartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Navn på beboelsesvurdering</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,166 @@
+<!--
+Lightning component  : PC_PriorAuthorization
+Description          : Container component for launching Prior Authorization workflow from action center
+Parameters           : Record Id from the Program Case
+Modification Log:
+Tejas Patel 		 16-Aug-2017    [PC-1998] Initial Version
+Prachi Nandgaonkar 	 17-Aug-2017 	[PC-1998] Added hyperlink to PA, New button, launch createRecord event when New button is clicked
+Shabda Bhujad		 22-Aug-2017	[PC-1720] Allow co-ordinator to access the new PA Case
+Shabda Bhujad		 23-Aug-2017    [PC-2017] Added changes to disable the 'New' button when there is an active PA on Program Case
+Shabda Bhujad		 28-Sep-2017	[PC-2293] Show a user friendly message when there is no PA history for a program case
+Vijay kashikar		 26-Jun-2018	[PC-3102] Added new button to launch ePA
+Vijay kashikar		 26-Jun-2018	[PC-3247] Removed logic that blocks more than one PA to be open for a program case
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                controller="PC_PriorAuthorizationListView">
+    <ltng:require styles="{!$Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="ID"/>
+    <aura:attribute name="patientId" type="ID"/>
+    <aura:attribute name="fieldLabels" type="sObject" default="false"/> 
+    <aura:attribute name="paInfo" type="sObject[]" default="false"/>
+    <aura:attribute name="paRecTypeId" type="Id"/>
+    <aura:attribute name="isPAActive" type="Boolean"/>
+    <aura:attribute name="isDataAvailable" type="Boolean" default="true"/>
+    <aura:attribute name="cssStyle" type="String" />
+
+
+    <aura:attribute name="ePAModalTitle" type="String" default="{!$Label.c.PC_ePA_Modal_Title}" />
+    <aura:attribute name="ePAModalCloseTracker" type="boolean" default="false" />
+    <aura:handler name="change" value="{!v.ePAModalCloseTracker}" action="{!c.doInit}"/>
+
+
+    <aura:attribute name="disableVendorEnabledPA" type="boolean" access="global"/>
+    <aura:attribute name="disableNonVendorEnabledPA" type="boolean" access="global"/>
+
+    <aura:attribute name="hideVendorEnabledPA" type="boolean" access="global"/>
+    <aura:attribute name="hideNonVendorEnabledPA" type="boolean" access="global"/>
+
+    <aura:attribute name="overridePrescriptionWithCoverage" type="boolean"
+                    access="global" default="false"
+                    description="This will be used in vendor PA flow to override prescription selection with program coverage"/>
+
+    <div class="ePAWrapper">
+        <lightning:overlayLibrary aura:id="ePAOverlay"/>
+    </div>
+
+    <div>
+        <!-- Start of Container -->
+        <div style="border: 1px solid #d8dde6;">
+            
+            <!--Start of Header Component-->
+            <div class="slds-tabs--scoped__nav " >
+                <div class="slds-col">                    
+                </div>
+                <div class="slds-col slds-no-flex">
+                    <div class="slds-m-bottom--x-small"  /> 
+                    <div class="slds-form-element">
+                        <aura:if isTrue="{!v.isPAActive}">
+                            <ui:button class="{! v.hideNonVendorEnabledPA == 'true' ? 'slds-hide' : 'slds-button slds-button--neutral'}" disabled="true" label="{! $Label.c.PC_New}" press="{!c.newPriorAuthorization}"/>
+                            <ui:button class="{! v.hideVendorEnabledPA == 'true' ? 'slds-hide' : 'slds-button slds-button--neutral'}" disabled="true" label="{! $Label.c.PC_ePA_Launch_Button}" press="{!c.newElectronicPA}"/>
+                            <aura:set attribute="else">
+                                <ui:button class="{! v.hideNonVendorEnabledPA == 'true' ? 'slds-hide' :  'slds-button slds-button--brand'}" disabled="{! v.disableNonVendorEnabledPA }" label="{!$Label.c.PC_New}" press="{!c.newPriorAuthorization}"/>
+                                <ui:button class="{! v.hideVendorEnabledPA == 'true' ? 'slds-hide' : 'slds-button slds-button--brand'}" disabled="{! v.disableVendorEnabledPA }" label="{!$Label.c.PC_ePA_Launch_Button}" press="{!c.newElectronicPA}"/>
+                            </aura:set>
+                        </aura:if>
+                        </div> 
+                    <div class="slds-m-bottom--x-small"  />
+                </div>                
+            </div>    
+            <center>
+                <ui:spinner aura:id="spinner" />
+            </center>
+            <aura:if isTrue="{!v.isDataAvailable}">
+                <!-- Start of List View -->
+                <div class="dataTable">
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table--fixed-layout">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.paID}">{!v.fieldLabels.paID}</div>
+                                </th>
+                                <th scope="col" class="prescriptionHeader">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.prescription}">{!v.fieldLabels.prescription}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.submittedon}">{!v.fieldLabels.submittedon}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.lastupdatedon}">{!v.fieldLabels.lastupdatedon}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.expireson}">{!v.fieldLabels.expireson}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.status}">{!v.fieldLabels.status}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.paOutcome}">{!v.fieldLabels.paOutcome}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div><div class="slds-truncate" title="{!$Label.c.PC_ePA_Link_to_Vendor_Portal}">{!$Label.c.PC_ePA_Link_to_Vendor_Portal}</div></div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration aura:id="paData" items="{!v.paInfo}" var="th" indexVar="i">
+                                <tr>
+                                    <td scope="row" data-label="{!th.paID}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.paID}">
+                                            <a data-index="{!i}" href="{!th.paUrl}" target="_blank">{!th.paID}</a>
+                                        </div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.prescription}" class="prescriptionData">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.prescription}">{!th.prescription}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.submittedon}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.submittedon}">{!th.submittedon}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.lastupdatedon}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.lastupdatedon}">{!th.lastupdatedon}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.expireson}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.expireson}">{!th.expireson}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.status}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.status}">{!th.status}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.paOutcome}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.paOutcome}">{!th.paOutcome}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.paExtURL}">
+                                        <aura:renderIf isTrue="{! not(empty(th.paExtURL))}">
+                                            <div class="slds-truncate slds-text-align--center" data-id="{!'ext'+i}" title="">
+                                                <lightning:button value="{!th.paID}" type="button" variant="base"
+                                                                  iconName="utility:link" onclick="{!c.openVendorPortal}"/>
+                                            </div>
+                                        </aura:renderIf>
+
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+                <aura:set attribute="else">
+                    <div>
+                        <div class="slds-p-around_medium">
+                            <p class="slds-text-align_center">{!$Label.c.PC_No_Records_Found}</p>
+                        </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+            <!-- Clickable Text 
+            <div>
+                <div class="slds-text-body_regular slds-text-link_faux ">
+                    <p><a  href="javascript:void(0);" onclick="{!c.gotoRelatedList}">{!$Label.c.PC_ShowMore}</a></p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <style>{!v.cssStyle}</style>
+</aura:component>

@@ -1,0 +1,32 @@
+.THIS .statusSection {
+    display: table;
+    padding-left:20px;
+}
+
+.THIS .nameSection {
+    font-size: 0.3cm;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    display: table-cell;
+    vertical-align: middle;
+    color: #000066;
+}
+
+.THIS .pictureSection {
+    display: table-cell;
+    vertical-align: middle;
+    height: 30%;
+   	width: 30%;
+}
+
+.THIS .objList {
+    text-align: center;
+}
+
+.THIS .patientNameSection {
+    font-size: 0.5cm;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #000066;
+}

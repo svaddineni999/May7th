@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The PC_Pharmacy_Referral__c is a custom object in Patient Connect used to store referrals for pharmacy.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ACLS_Engagement_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Engagement Program Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Last_Refill_Date__c</fullName>
+        <description>Date when patient last refilled their prescription</description>
+        <label>Last Refill Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Next_Refill_Date__c</fullName>
+        <description>Date when patient will next refill their prescription</description>
+        <label>Next Refill Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the pharmacy referral expires.</description>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Patient__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The patient account associated with a specific pharmacy referral.</description>
+        <label>Patient</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Patient</value>
+            </filterItems>
+            <infoMessage>You can only associate patient accounts to a referral. Search results only display patient accounts.</infoMessage>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pharmacy Referrals</relationshipLabel>
+        <relationshipName>PC_Pharmacy_Referrals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Prescription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The prescription associated with a specific pharmacy referral.</description>
+        <label>Prescription</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Prescription does not exist or is not active.</errorMessage>
+            <filterItems>
+                <field>PC_Prescription__c.PC_Rx_Status__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <filterItems>
+                <field>PC_Prescription__c.PC_Program_Case__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.PC_Program__c</valueField>
+            </filterItems>
+            <infoMessage>You can only associate active prescriptions to a referral. Search results only display active prescription.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PC_Prescription__c</referenceTo>
+        <relationshipLabel>Pharmacy Referrals</relationshipLabel>
+        <relationshipName>PC_Pharmacy_Referrals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Prior_Authorization__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The prior authorization case associated with a specific pharmacy referral.</description>
+        <label>Prior Authorization</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Case.PC_Program__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.PC_Program__c</valueField>
+            </filterItems>
+            <filterItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Prior Authorization</value>
+            </filterItems>
+            <infoMessage>Prior Authorization does not exist on the current program.</infoMessage>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Pharmacy Referrals</relationshipLabel>
+        <relationshipName>Pharmacy_Referrals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Program_Coverage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The program coverage associated with a specific pharmacy referral.</description>
+        <label>Program Coverage</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Coverage does not exist or is not active.</errorMessage>
+            <filterItems>
+                <field>PC_Program_Coverage__c.PC_Coverage_Status__c</field>
+                <operation>equals</operation>
+                <value>Active</value>
+            </filterItems>
+            <filterItems>
+                <field>PC_Program_Coverage__c.PC_Program__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.PC_Program__c</valueField>
+            </filterItems>
+            <infoMessage>You can only associate active program coverage to a referral. Search results only display active program coverage.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PC_Program_Coverage__c</referenceTo>
+        <relationshipLabel>Pharmacy Referrals</relationshipLabel>
+        <relationshipName>Pharmacy_Referrals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The program case associated with a specific pharmacy referral.</description>
+        <label>Program</label>
+        <lookupFilter>
+            <active>true</active>
+            <errorMessage>Program does not exist or is not a program case.</errorMessage>
+            <filterItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Program</value>
+            </filterItems>
+            <infoMessage>You can only associate program case to a referral. Search results only display program cases.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Pharmacy Referrals</relationshipLabel>
+        <relationshipName>PC_Pharmacy_Referrals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Reason_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reason for referral status change if Canceled, Discontinued or Error.</description>
+        <externalId>false</externalId>
+        <label>Reason Code</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Referral_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the pharmacy referral.
+Started -&gt;Ready to Send -&gt; Sent -&gt; Active --&gt; Closed/Discontinued/Canceled/Error</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Started</fullName>
+                    <default>true</default>
+                    <label>Started</label>
+                </value>
+                <value>
+                    <fullName>Ready to Send</fullName>
+                    <default>false</default>
+                    <label>Ready to Send</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Discontinued</fullName>
+                    <default>false</default>
+                    <label>Discontinued</label>
+                </value>
+                <value>
+                    <fullName>Error</fullName>
+                    <default>false</default>
+                    <label>Error</label>
+                </value>
+                <value>
+                    <fullName>Closed</fullName>
+                    <default>false</default>
+                    <label>Closed</label>
+                </value>
+                <value>
+                    <fullName>Canceled</fullName>
+                    <default>false</default>
+                    <label>Canceled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Source__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the source who originated the pharmacy referral process.</description>
+        <externalId>false</externalId>
+        <label>Source</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date when the pharmacy referral starts.</description>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Target_Pharmacy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The pharmacy account to which the pharmacy referral is routed to.</description>
+        <label>Target Pharmacy</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Pharmacy Referrals</relationshipLabel>
+        <relationshipName>PC_PharmacyReferrals</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <label>Pharmacy Referral</label>
+    <nameField>
+        <displayFormat>REF-{000000}</displayFormat>
+        <label>Pharmacy Referral Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Pharmacy Referrals</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>PC_EndDateLesserThanStartDate</fullName>
+        <active>true</active>
+        <description>Validates that a custom field called End Date does not come before another custom field called Start Date.</description>
+        <errorConditionFormula>PC_End_Date__c &lt;  PC_Start_Date__c</errorConditionFormula>
+        <errorDisplayField>PC_End_Date__c</errorDisplayField>
+        <errorMessage>End Date has to be later than Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_ValidateTargetPharmacyTypeAndStatus</fullName>
+        <active>true</active>
+        <description>Validates that account selected in PC_Target_Pharmacy field is of type Pharmacy and is active</description>
+        <errorConditionFormula>IF(PC_Target_Pharmacy__c &lt;&gt; null, OR(TEXT(PC_Target_Pharmacy__r.Type) &lt;&gt; &apos;Pharmacy&apos; ,  TEXT(PC_Target_Pharmacy__r.PC_Status__c) &lt;&gt; &apos;Active&apos;), false)</errorConditionFormula>
+        <errorDisplayField>PC_Target_Pharmacy__c</errorDisplayField>
+        <errorMessage>Selected account should be of type Pharmacy and should be active</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

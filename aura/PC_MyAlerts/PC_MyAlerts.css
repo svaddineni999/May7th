@@ -1,0 +1,48 @@
+/**
+ * Created by sahgarg on 3/15/2018.
+ */
+.THIS .PC_tile {
+	background:white;
+	border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+.THIS .slds-card__header {
+    padding: .25rem .75rem 0rem;
+    margin-bottom: 0rem;
+}
+.THIS .slds-card__body {
+    margin-bottom: 0rem;
+}
+.THIS .dropdown-wrapper{
+    width:100% !important;
+}
+.THIS ul li.selected span::before {
+    content: '✓\00a0';
+    display: inline-block;
+    color: rgb(0, 112, 210);
+    font-weight : bold;
+
+}
+.THIS .toggleDiv .slds-checkbox_off {
+    display:none !important;
+}
+.THIS .toggleDiv .slds-checkbox_on {
+    display:none !important;
+}
+.THIS .flexContainer{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items:flex-start;
+    align-content:space-evenly;
+}
+.THIS .flexItem{
+    flex-grow:1;
+    /*width:30%;*/
+    padding:0.2rem;
+    flex-shrink:10;
+    min-width:0;
+    /*max-width:33%;*/
+    max-height:250px;
+}

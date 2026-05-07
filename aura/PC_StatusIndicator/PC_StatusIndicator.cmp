@@ -1,0 +1,154 @@
+<!--
+ - Created by vkashikar on 8/2/2018.
+ -->
+
+<aura:component description="PC_StatusIndicator"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId"
+                controller="PC_StatusIndicatorController" extensible="true" access="global">
+
+    <aura:attribute name="title" type="Id" access="global"/>
+    <aura:attribute name="content" type="Id" access="global"/>
+    <aura:attribute name="attributes" type="String" default="" access="global"/>
+    <aura:attribute name="recordId" type="Id" access="global"/>
+    <aura:attribute name="status" type="String" access="global"/>
+    <aura:attribute name="statusIcon" type="String" access="global"/>
+    <aura:attribute name="iconVariant" type="String" default="brand" access="global"></aura:attribute>
+    <aura:attribute name="iconSize" type="String" default="small" access="global"></aura:attribute>
+    <aura:attribute name="contentComponent" type="String" access="global"/>
+    <aura:attribute name="contentComponentAttributes" type="String" access="global"/>
+
+    <aura:attribute name="error" type="String" access="global"/>
+
+    <aura:attribute name="auraId" type="String"></aura:attribute>
+    <aura:attribute name="testCounter" type="Integer" default="0"></aura:attribute>
+
+    <aura:attribute name="showModal" type="Boolean" default="false"></aura:attribute>
+
+    <aura:attribute name="initData" type="Object" />
+
+    <aura:attribute name="isConsoleNavigation" type="Boolean" default="false"/>
+    <aura:attribute name="currentTabId" type="String" default="-1"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+
+    <aura:attribute name="showOnlySummaryView" type="Boolean"/>
+
+
+    <aura:attribute name="DynamicContentComponent" type="Aura.Component[]"/>
+
+    <aura:handler event="lightning:tabFocused" action="{! c.onTabFocused }"/>
+    <aura:handler event="force:refreshView" action="{!c.refreshView}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:workspaceAPI aura:id="workspace" />
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <div>
+        <div class="intelligentIndicator slds-box">
+            <aura:if isTrue="{!v.initData.isError}">
+                <span class="slds-text-color_error">{!v.initData.errorMessage}</span>
+                <aura:set attribute="else">
+
+                        <div class="viewBlock" aura:id="viewBlock">
+                        <aura:if isTrue="{!v.showOnlySummaryView}">
+
+                                <div class="summaryView" aura:id="summaryViewBlock">
+
+                                    <div class="slds-float--left slds-p-right_small">
+                                        <lightning:icon iconName="{!v.statusIcon}"  size="{!v.iconSize}"
+                                                        alternativeText="{!v.status}" variant="{!v.iconVariant}"/>
+
+                                    </div>
+                                    <div class="">
+                                        <aura:if isTrue="{! not(empty(v.content))}">
+                                            <div class="slds-float--right">
+                                                <lightning:icon iconName="utility:threedots_vertical"
+                                                                size="xx-small"/>
+                                            </div>
+
+                                        </aura:if>
+                                        <div class="slds-text slds-text-heading_small ">SV{!v.title}</div>
+                                        <div class="slds-text slds-text-body_small">
+
+                                                {!v.status}
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            <aura:set attribute="else">
+                                <div class="detailedView" aura:id="detailedViewBlock">
+                                    <div>
+                                        <span class="slds-text-color--error">{!v.error}</span>
+                                    </div>
+                                    <div class="slds-float--left slds-p-right_small">
+                                        <lightning:icon iconName="{!v.statusIcon}"  size="{!v.iconSize}"
+                                                        alternativeText="{!v.status}" variant="{!v.iconVariant}"/>
+
+                                    </div>
+                                    <div class="">
+                                        <aura:if isTrue="{! not(empty(v.content)) || not(empty(v.contentComponent))}">
+                                            <a onclick="{!c.showPopUp}">
+                                            <div class="slds-float--right">
+                                                <lightning:icon iconName="utility:threedots_vertical"
+                                                                size="xx-small"/>
+                                            </div>
+                                            </a>
+                                        </aura:if>
+                                        <div>
+                                            <div class="slds-text slds-text-heading_small slds-truncate" title="{!v.title}">{!v.title}</div>
+                                            <div class="slds-text slds-text-body_small slds-truncate" title="{!v.status}">{!v.status}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+
+
+                </aura:set>
+            </aura:if>
+            <aura:if isTrue="{!v.initData.attributes.isDebugMode}">
+                Debug info:
+                isConsoleNavigation = {!v.isConsoleNavigation}
+                currentTabId = {!v.currentTabId}
+                attributes = {!v.attributes}
+                testCounter (This will get incremented on every refresh) -> {!v.testCounter}
+            </aura:if>
+        </div>
+    </div>
+
+    <aura:if isTrue="{!v.showModal}">
+        <div role="dialog" tabindex="1" aria-labelledby="header43" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container viewModal">
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="" onclick="{!c.closeModal}">
+                        <c:svg class="slds-button__icon slds-button__icon--medium"
+                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#close'}"
+                               ariaHidden="true" />
+
+                        <span class="slds-assistive-text"></span>
+                    </button>
+
+
+                    <div id="header43" class="slds-page-header__title">{!v.title}</div>
+                    <div class="slds-align-middle slds-text-body_small" style="font-style:italic;">{!v.status}</div>
+
+
+                </div>
+                <div class="slds-modal__content slds-p-around--medium">
+                    <div class="slds-tabs__content">{!v.content}</div>
+                    <div class="slds-tabs__content">{!v.body}</div>
+                    <div class="slds-tabs__content">{!v.DynamicContentComponent}</div>
+                </div>
+                <div class="slds-modal__footer">
+
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open"></div>
+    </aura:if>
+
+</aura:component>

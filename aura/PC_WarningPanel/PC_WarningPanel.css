@@ -1,0 +1,24 @@
+.THIS .pageWarning {
+    border-bottom: 1px solid rgb(216, 221, 230);
+    margin-bottom: 1rem;
+    padding-bottom: .75rem;    
+}
+
+.THIS .pageWarning .genericNotification {
+    background: rgb(255, 183, 93);
+    padding: 1rem;
+    color: rgb(255, 255, 255);
+    line-height: 1.25;
+    font-weight: 300;
+    border-radius: .25rem;
+    font-size: 1rem;
+}
+
+.THIS .pageWarning .warningsList {
+    list-style: none;
+    color: rgb(194, 57, 52);
+    line-height: 1.5;
+    margin: 0;
+    padding: .5rem 1rem .25rem 1rem;
+    font-size: .8125rem;
+}

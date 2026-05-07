@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>風險分數年齡範圍持續登記者</value>
+    </caseValues>
+    <fields>
+        <label>年齡範圍始於</label>
+        <name>HealthCloudGA__AgeBandFrom__c</name>
+    </fields>
+    <fields>
+        <label>年齡範圍終於</label>
+        <name>HealthCloudGA__AgeBandTo__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 FBDual</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 FBDual</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 NonDual</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 NonDual</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 PBDual</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 PBDual</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>社群</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>性別</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>機構</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>啟用</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>年份範圍</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+</CustomObjectTranslation>

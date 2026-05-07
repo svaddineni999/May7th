@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Integration Configuration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Integration Configurations</value>
+    </caseValues>
+    <fields>
+        <label><!-- API Key --></label>
+        <name>ACLS_APIKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- BaseURL --></label>
+        <name>ACLS_BaseURL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint --></label>
+        <name>ACLS_Endpoint__c</name>
+    </fields>
+    <fields>
+        <label><!-- Environment --></label>
+        <name>ACLS_Environment__c</name>
+        <picklistValues>
+            <masterLabel>DEV</masterLabel>
+            <translation><!-- DEV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PROD</masterLabel>
+            <translation><!-- PROD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QA</masterLabel>
+            <translation><!-- QA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SIT</masterLabel>
+            <translation><!-- SIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TRAIN</masterLabel>
+            <translation><!-- TRAIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UAT</masterLabel>
+            <translation><!-- UAT --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Headers --></label>
+        <name>ACLS_Headers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integration Name --></label>
+        <name>ACLS_IntegrationName__c</name>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Five9 SMS GetStatus</masterLabel>
+            <translation><!-- Five9 SMS GetStatus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Five9 SMS OptIn</masterLabel>
+            <translation><!-- Five9 SMS OptIn --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Five9 SMS SendSMS</masterLabel>
+            <translation><!-- Five9 SMS SendSMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Five9 SMS Token</masterLabel>
+            <translation><!-- Five9 SMS Token --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HC Split</masterLabel>
+            <translation><!-- HC Split --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Melissa Address</masterLabel>
+            <translation><!-- Melissa Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RisRx Pharmacy</masterLabel>
+            <translation><!-- RisRx Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eFax Fax GetStatus</masterLabel>
+            <translation><!-- eFax Fax GetStatus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eFax Fax SendFax</masterLabel>
+            <translation><!-- eFax Fax SendFax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eFax Fax Token</masterLabel>
+            <translation><!-- eFax Fax Token --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Integration Procedure Name --></label>
+        <name>ACLS_Integration_Procedure_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timeout --></label>
+        <name>ACLS_Timeout__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

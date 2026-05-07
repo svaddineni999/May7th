@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Protocollo di vaccinazione EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Protocolli di vaccinazione EHR</value>
+    </caseValues>
+    <fields>
+        <label>Autorità 255</label>
+        <name>HealthCloudGA__Authority255__c</name>
+    </fields>
+    <fields>
+        <label>Autorità</label>
+        <name>HealthCloudGA__Authority__c</name>
+    </fields>
+    <fields>
+        <label>Descrizione</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Sequenza dosi</label>
+        <name>HealthCloudGA__DoseSequence__c</name>
+    </fields>
+    <fields>
+        <label>Codice stato dose</label>
+        <name>HealthCloudGA__DoseStatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta stato dose</label>
+        <name>HealthCloudGA__DoseStatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Codice motivo stato dose</label>
+        <name>HealthCloudGA__DoseStatusReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta motivo stato dose</label>
+        <name>HealthCloudGA__DoseStatusReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema motivo stato dose</label>
+        <name>HealthCloudGA__DoseStatusReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Sistema stato dose</label>
+        <name>HealthCloudGA__DoseStatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Codice riferimento dose</label>
+        <name>HealthCloudGA__DoseTargetCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta riferimento dose</label>
+        <name>HealthCloudGA__DoseTargetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema riferimento dose</label>
+        <name>HealthCloudGA__DoseTargetSystem__c</name>
+    </fields>
+    <fields>
+        <label>Immunizzazione</label>
+        <name>HealthCloudGA__Immunization__c</name>
+        <relationshipLabel>Protocolli di vaccinazione</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Dosi della serie</label>
+        <name>HealthCloudGA__SeriesDoses__c</name>
+    </fields>
+    <fields>
+        <label>Serie</label>
+        <name>HealthCloudGA__Series__c</name>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema di origine</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>ID protocollo di vaccinazione EHR</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

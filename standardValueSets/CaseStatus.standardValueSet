@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>New</fullName>
+        <default>true</default>
+        <label>New</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>false</default>
+        <label>Open</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Re-Opened</fullName>
+        <default>false</default>
+        <label>Re-Opened</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Missing Information</fullName>
+        <default>false</default>
+        <label>Missing Information</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Enrolled</fullName>
+        <default>false</default>
+        <label>Enrolled</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Critical</fullName>
+        <default>false</default>
+        <label>Critical</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pending</fullName>
+        <default>false</default>
+        <label>Pending</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Treatment</fullName>
+        <default>false</default>
+        <label>In Treatment</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Completed</fullName>
+        <default>false</default>
+        <label>Completed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Benefit Verification</fullName>
+        <default>false</default>
+        <label>Benefit Verification</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Withdrawn</fullName>
+        <default>false</default>
+        <label>Withdrawn</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Triaged to SP</fullName>
+        <default>false</default>
+        <label>Triaged to SP</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pretreatment</fullName>
+        <default>false</default>
+        <label>Pretreatment</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Prior Authorization</fullName>
+        <default>false</default>
+        <label>Prior Authorization</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Appeal</fullName>
+        <default>false</default>
+        <label>Appeal</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Enrollment &amp; Onboarding</fullName>
+        <default>false</default>
+        <label>Enrollment &amp; Onboarding</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Monitoring</fullName>
+        <default>false</default>
+        <label>Monitoring</label>
+        <closed>false</closed>
+    </standardValue>
+</StandardValueSet>

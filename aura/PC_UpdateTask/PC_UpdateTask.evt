@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" access="global" description="Fired when an Activity is Updated">
+        <!--<aura:attribute name="tasks" type="boolean" description="The task that is updated"/>-->
+</aura:event>

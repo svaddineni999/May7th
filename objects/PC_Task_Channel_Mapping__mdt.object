@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Mapping standard Task Subtype to custom Task subtype and custom Task sub subtypes</description>
+    <fields>
+        <fullName>FROM__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>CustomTask Subtype value available for the user to pick</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>FROM</label>
+        <length>15</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SUB__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom Task Sub Subtype</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>SUB</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TO__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Standard Task Subtype</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>TO</label>
+        <length>15</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>PC Task Channel Mapping</label>
+    <pluralLabel>PC Task Channel Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,150 @@
+<!--
+Lightning component  : PC_Referral_Launch
+Description          : Container component for launching Pharmacy Referral workflow from action center
+Parameters           : Record Id from the Program Case
+Modification Log:
+Prachi Nandgaonkar 	 16-Aug-2017 	[PC-1705] Initial Version
+Shabda Bhujad		 27-Sep-2017	[PC-2292] Show a user friendly message when there is no referral history for a program case
+Tushar Arora         04-Aug-2020    [PC-6439] Added  relatedToObject as well as relatedToId attribute for launching referral component from task
+-->
+
+    <aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+                    controller="PC_Referral_Launch">
+
+    <aura:attribute name="newReferralBody" type="Aura.Component[]" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <!-- Attribute declaration -->
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="relatedToObject" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToId" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="patientId" type="Id"/>
+    <!--<aura:attribute name="disabled" type="Boolean" />-->
+    <aura:attribute name="fieldLabels" type="sObject" default="false"/> 
+    <aura:attribute name="refInfo" type="sObject[]" default="false"/>
+    <aura:attribute name="isRefActive" type="Boolean"/>
+    <aura:attribute name="isModalMapActive" type="Boolean" default="false"/>
+    <aura:attribute name="isDataAvailable" type="Boolean" default="true"/>
+
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+    
+    <div>
+        <!-- Start of Container -->
+        <div style="border: 1px solid #d8dde6;">
+            
+            <!--Start of Header Component-->
+            <div class="slds-tabs--scoped__nav " >
+                <div class="slds-col">                    
+                </div>
+                <div class="slds-col slds-no-flex">
+                    <div class="slds-m-bottom--x-small"  /> 
+                    <div class="slds-form-element">
+                        <aura:if isTrue="{!v.isRefActive}">
+                            <ui:button class="slds-button slds-button--neutral" disabled="true" label="{!$Label.c.PC_New}" press="{!c.launchNewReferral}"/>
+                            <aura:set attribute="else">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_New}" press="{!c.launchNewReferral}"/>
+                            </aura:set>
+                        </aura:if>
+                        </div> 
+                    <div class="slds-m-bottom--x-small"  />
+                </div>                
+            </div>    
+            <center>
+                <ui:spinner aura:id="spinner" />
+            </center>
+            <aura:if isTrue="{!v.isDataAvailable}">
+                <!-- Start of List View -->
+                <div >
+                    <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table--fixed-layout">
+                        <thead>
+                            <tr class="slds-text-title_caps">
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.refID}">{!v.fieldLabels.refID}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.pharmacy}">{!v.fieldLabels.pharmacy}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.status}">{!v.fieldLabels.status}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.submittedon}">{!v.fieldLabels.submittedon}</div>
+                                </th>
+                                <th scope="col" class="">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.lastupdatedon}">{!v.fieldLabels.lastupdatedon}</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration aura:id="refData" items="{!v.refInfo}" var="th" indexVar="i">
+                                <tr>
+                                    <td scope="row" data-label="{!th.refID}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.refID}">
+                                            <a data-index="{!i}" href="{!th.refUrl}" target="_blank">{!th.refID}</a>
+                                        </div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.pharmacy}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.pharmacy}">{!th.pharmacy}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.status}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.status}">{!th.status}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.submittedon}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.submittedon}">{!th.submittedon}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.lastupdatedon}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.lastupdatedon}">{!th.lastupdatedon}</div>
+                                    </td>
+                                    <td scope="row" data-label="{!th.expireson}">
+                                        <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.expireson}">{!th.expireson}</div>
+                                    </td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+                <aura:set attribute="else">
+                    <div>
+                        <div class="slds-p-around_medium">
+                            <p class="slds-text-align_center">{!$Label.c.PC_No_Records_Found}</p>
+                        </div>
+                    </div>
+                </aura:set>
+            </aura:if>
+            <aura:if isTrue="{!v.isModalMapActive}">
+                <div class="demo-only">
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                    <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="panel slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container" >
+                            <div class="slds-modal__header">
+                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$Label.c.PC_NewReferral_Title}</h2>
+                            </div>
+                            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                    {!v.body}
+                                {!v.newReferralBody}
+                            </div>
+                            <div class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick="{!c.closeMap}">{!$Label.c.PC_Cancel_Button}</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </aura:if>
+            <!-- Clickable Text -->
+            <!--
+            <div>
+                <div class="slds-text-body_regular slds-text-link_faux ">
+                    <p><a  href="javascript:void(0);" onclick="{!c.gotoRelatedList}">{!$Label.c.PC_ShowMore}</a></p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>リスクスコア疾患インタラクション</value>
+    </caseValues>
+    <fields>
+        <help><!-- True when this additive score is applied if the patient is disabled and has additional conditions. --></help>
+        <label>障害がある場合に適用</label>
+        <name>HealthCloudGA__ApplyIfDisabled__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ FBDual 高齢</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ FBDual 障害</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ NonDual 高齢</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ NonDual 障害</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ PBDual 高齢</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ PBDual 障害</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>コミュニティ</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>症状あり</label>
+        <name>HealthCloudGA__HasConditions__c</name>
+    </fields>
+    <fields>
+        <label>施設</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <label>相互作用する症状あり</label>
+        <name>HealthCloudGA__InteractingConditions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>有効</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>期間 (年)</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+</CustomObjectTranslation>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>篩選條件</value>
+    </caseValues>
+    <fields>
+        <label>分組</label>
+        <name>HealthCloudGA__Grouping__c</name>
+    </fields>
+    <fields>
+        <label>IsWaveList</label>
+        <name>HealthCloudGA__IsWaveList__c</name>
+    </fields>
+    <fields>
+        <label>物件名稱</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <nameFieldLabel>篩選條件名稱</nameFieldLabel>
+    <recordTypes>
+        <label>PatientList</label>
+        <name>HealthCloudGA__PatientList</name>
+    </recordTypes>
+    <recordTypes>
+        <label>時間表</label>
+        <name>HealthCloudGA__Timeline</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>已有其他篩選清單使用此名稱。請選取唯一的名稱。</errorMessage>
+        <name>HealthCloudGA__No_Duplicates</name>
+    </validationRules>
+</CustomObjectTranslation>

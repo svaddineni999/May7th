@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This object will hold program status indicators</description>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Identifies if the intelligent indicator is active</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Identifies if the intelligent indicator is active</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Component_Attributes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Component Attributes</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Component Attrbutes</inlineHelpText>
+        <label>Component Attributes</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Content_Component_Attributes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the content component attributes that will be passed dynamically to the Content Component when instantiated dynamically.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Holds the content component attributes that will be passed dynamically to the Content Component when instantiated dynamically.</inlineHelpText>
+        <label>Content Component Attributes</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Content_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Component to show in the content area of the status indicator. This will be loaded dynamically</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Fully qualified name of the component. e.g PatientConnect:PC_ContentView</inlineHelpText>
+        <label>Content Component</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Content__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Content of the Intelligent Indicator</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Content of the Intelligent Indicator. You may also specify the fully qualified label path.</inlineHelpText>
+        <label>Content</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Indicator_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name with Namespace of the Intelligent Indicator Component</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API Name with Namespace of the Intelligent Indicator Component</inlineHelpText>
+        <label>Indicator Component API Name</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order of the Intelligent Indicator Card</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Order of the Intelligent Indicator Card</inlineHelpText>
+        <label>Order</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Title__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Title of the Intelligent Indicator. You may also specify the fully qualified label path ($Label.namespace.labelName).</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Title of the Intelligent Indicator. You may also specify the fully qualified label path ($Label.namespace.labelName).</inlineHelpText>
+        <label>Title</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Intelligent Indicators</label>
+    <pluralLabel>Intelligent Indicators</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

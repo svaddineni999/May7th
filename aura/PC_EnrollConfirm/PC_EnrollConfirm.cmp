@@ -1,0 +1,10 @@
+<!--
+ - Created by vkashikar on 6/3/2021.
+ -->
+
+<aura:component description="PC_EnrollConfirm" implements="c:PC_EnrollConfirmInterface">
+    {!$Label.c.PC_FinalEnrollConfirm_Msg}
+    <!-- Values available on implementing the interface are as follows -->
+    <!-- Enrollment Case Id - {!v.enrollmentCaseId} -->
+    <!-- Program Case Id - {!v.programCaseId} -->
+</aura:component>

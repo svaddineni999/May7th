@@ -1,0 +1,142 @@
+<!--
+- Created by vkashikar on 2/8/2018.
+- Developed by gulskhan from 2/8/2018.
+Modifiction Log:
+Prachi Nandgaonkar     	Feb 21 2018         [PC-2720] Added interfaces to make it available on flexi page
+                                            Added apex controller
+                                            Added navigateToList() on click of View All Support Plans
+                                            Removed 'Edit Support Plan Properties' button
+Tejas Patel				March 03 2018		Modified the JS to allow Sequence Activities to be added using aura:id
+Tejas Patel				March 03 2018		Added custom labels
+Tejas Patel             March 30 2018       Custom Labels for Toast Msg
+Tejas Patel             April 04, 2018      Custom Labels for Buttons
+Tejas Patel				May 09, 2018		PC-2986 Ability to Add activity ob click of arrow
+Tejas Patel				May 09, 2018		PC-2963 Floating Menu's
+Tejas Patel				May 10, 2018		PC-2985 Remove 'Add Activity' button
+Tejas Patel				May 15, 2018		PC-2841 Add Sequence
+Tejas Patel				May 23, 2018		Reinitiate Attribute
+Kanteti Kishore         Mar 19,2020         Removed section of support plan header.
+Tushar Arora            May 05,2020         [PC-6147] Modified helper logic for error handling in activation method
+-->
+
+<aura:component description="PC_SupportPlan_Builder" controller="PC_SupportPlanBuilderController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <ltng:require scripts="{!join(',',
+                           $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js',
+                           $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'
+                           )}"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name = "contentURL" type="String" default = "{! join('', 'url(', $Resource.PC_Resources , '/PC_Resources/Images/SupportPlan/plus_icon_blue.svg)')}"/>
+    <style>
+        .leftPanelContent .arrowIcon:after{
+            content: {!v.contentURL};
+        }
+    </style>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="refresh" event="c:PC_Refresh_SupportPlan_Builder" action="{!c.refreshView}"/>
+    <aura:attribute name="refresh" type="Boolean" default="false"/>
+    <aura:attribute name="activityContainer" type="Object[]"/>
+    <aura:attribute name="auraId" type="String"/>
+    <aura:attribute name="fieldSet" type="String" default="Task_Fields_Required" access="global"/>
+    <aura:attribute name="fieldSetForNonCaseObjects" type="String" default="PC_TaskFieldSetForNonCaseObjects" access="global"/>
+    <aura:attribute name="unSavedActId" type="String"/>
+    <aura:attribute name="seqId" type="String"/>
+    <aura:attribute name="clickedSeqId" type="String"/>
+    <aura:attribute name="addInProgress" type="Boolean" default="false"/>
+    <aura:attribute name="addInProgressSeq" type="Boolean" default="false"/>
+    <aura:attribute name="activityOpen" type="Boolean" default="false"/>
+    <aura:attribute name="clickedActivityListIndex" type="Integer"/>
+    <aura:attribute name="clickedActivityUiIndex" type="Integer"/>
+    <aura:attribute name="supportPlan" type="Object"/>
+    <aura:attribute name="supportPlanID" type="ID"/>
+    <aura:attribute name="activityListSorted" type="Object[]"/>
+    <aura:attribute name="prevActivity" type="String"/>
+    <aura:attribute name="nextActivity" type="String"/>
+    <aura:attribute name="recordId" type="ID"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="counter" type="Boolean" default="true"/>
+    <aura:attribute name="internalActivity" type="Boolean" default="false"/>
+    <aura:attribute name="activityPropertiesShown" type="Boolean" default="false"/>
+    <aura:attribute name="disableActivate" type="Boolean" default="false"/>
+    <aura:attribute name="elementCount" type="integer" />
+    <aura:attribute name="prvCmpName" type="String"/>
+    <aura:attribute name="defaultName" type="String" default="{!$Label.c.PC_Activity_Name}"/>
+    <aura:attribute name="defaultNameSeq" type="String" default="{!$Label.c.PC_Sequence_Name}"/>
+    <aura:attribute name="activationMsg" type="String" default="{!$Label.c.PC_Support_Plan_Activation}"/>
+    <aura:attribute name="startSign" type="String" default="{!$Label.c.PC_StartIcon}"/>
+    <aura:attribute name="stopSign" type="String" default="{!$Label.c.PC_StopIcon}"/>
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_SupportPlan_Back}"/>
+    <aura:attribute name="_label2" type="String" default="{!$Label.c.PC_SupportPlan_Activate}"/>
+    <aura:attribute name="_label3" type="String" default="{!$Label.c.PC_SupportPlan_Deactivate}"/>
+    <aura:attribute name="_label4" type="String" default="{!$Label.c.PC_Add_Activity}"/>
+    <aura:attribute name="_label5" type="String" default="{!$Label.c.PC_Add_Activity_Sequence}"/>
+    <aura:attribute name="_label6" type="String" default="{!$Label.c.PC_UserTask_Prop_Fieldset_Error}"/>
+    <aura:attribute name="_label7" type="String" default="{!$Label.c.PC_Clone_Button}"/>
+    <aura:attribute name="_label8" type="String" default="{!$Label.c.PC_Edit_Button}"/>
+
+
+    <aura:attribute name="warning" type="String" default="{!$Label.c.PC_Warning}"/>
+    <aura:attribute name="success" type="String" default="{!$Label.c.PC_Success}"/>
+    <aura:attribute name="warningMessage" type="String" default="{!$Label.c.PC_Add_Activity_Warning}"/>
+
+    <aura:attribute name="dragCounter" type="Integer" default="0"/>
+    <aura:attribute name="isDnDContext" type="boolean" default="false"/>
+
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="fieldSetNotValid" type="Boolean" default="false"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+
+    <body>
+    <div>
+        <aura:if isTrue="{!v.fieldSetNotValid}">
+            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+        </aura:if>
+    </div>
+
+        <header class="">
+            <div class="navBar slds-grid slds-p-bottom_x-small">
+                <div class="{!v.activityPropertiesShown ? 'slds-size_2-of-5' : 'slds-size_1-of-3'}">
+            	<lightning:button variant="neutral" onclick="{!c.gotoList}" label="{!v._label1}"/>
+				<lightning:button disabled="{!or(or(and(v.activityOpen,not(v.supportPlan.isactive)),v.disableActivate),empty(v.activityContainer))}" variant="brand" onclick="{!c.activation}" label="{!v.supportPlan.isactive == true ? v._label3 : v._label2}"/>
+                <lightning:button disabled="{!and(v.activityOpen,not(v.supportPlan.isactive))}" variant="brand" onclick="{!c.showClone}" label="{!v._label7}"/>
+            </div>
+                <div class="{!v.activityPropertiesShown ? 'slds-size_2-of-5 slds-text-align_left slds-text-heading_medium':'slds-size_1-of-3 slds-text-align_center slds-text-heading_medium'}"><b> {!v.supportPlan.supportplanname}</b></div>
+                <div class="{!v.activityPropertiesShown ? 'slds-size_1-of-5':'slds-size_1-of-3'}">
+                <lightning:button label="{!v._label8}"  disabled="{!v.supportPlan.isactive}"  variant="brand" onclick="{!c.editSP }" class="slds-button__icon_right slds-p-left_medium slds-float_right"/>
+                </div>
+            </div>
+        </header>
+        <div>
+            <lightning:spinner class="slds-hide" size="medium" aura:id="mySpinner" />
+        </div>
+        <section aura:id="graphElementRegion" class="wrapper">
+            <section aura:id="leftPanel" class="leftPanel">
+                <div id="leftPanelScrollable" class="slds-scrollable" style="height:100%;width:100%;">
+                    <div class="{!v.supportPlan.isactive == true ? 'leftPanelContentInAct' : 'leftPanelContent'}">
+                        <div class="slds-popover slds-nubbin_top slds-hide popover-width" aura:id="popoverBlock">
+                            <button class="slds-button slds-button_icon slds-button_icon-xx-small slds-float_right slds-popover__close slds-button_icon"
+                                    title="Close dialog" onclick="{! c.hideActions}" style="margin:0px">
+                                <c:svg class="slds-button__icon"
+                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#close'}"
+                                       ariaHidden="true" />
+                                <span class="slds-assistive-text">Close dialog</span>
+                            </button>
+                            <div class="slds-button-group slds-grid" role="tooltip">
+                                <button class="slds-button slds-size_1-of-2" aura:id="addAct" onclick="{!c.addElement}">{!v._label4}</button>
+                                <button class="slds-button slds-size_1-of-2" aura:id="addSeq" onclick="{!c.addSequence}">{!v._label5}</button>
+                            </div>
+                        </div>
+                        <div aura:id="startSign" class="startSign"></div>
+                        <div aura:id="Inner"></div>
+                        <div aura:id="stopSign" class="stopSign"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="rightPanel">
+                <div style="height:100%" aura:id="propertiesPanel"></div>
+            </section>
+        </section>
+    <div aura:id="cloneSP"></div>
+    </body>
+
+</aura:component>

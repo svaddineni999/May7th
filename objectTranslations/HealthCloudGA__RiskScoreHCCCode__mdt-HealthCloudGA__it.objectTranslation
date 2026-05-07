@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Codice HCC-punteggio rischio</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Codici HCC-punteggio rischio</value>
+    </caseValues>
+    <fields>
+        <label>Comunità FBDual Anziano</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Comunità FBDual Disabile</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Comunità NonDual Anziano</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Comunità NonDual Disabile</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Comunità PBDual Anziano</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Comunità PBDual Disabile</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Comunità</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>Categoria patologia</label>
+        <name>HealthCloudGA__ConditionCategory__c</name>
+    </fields>
+    <fields>
+        <label>Descrizione</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>HCCCode</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <label>Ricoverato in istituto</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>È attivo</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Codici HCC ignorati</label>
+        <name>HealthCloudGA__OverriddenHCCCodes__c</name>
+    </fields>
+    <fields>
+        <label>Arco di anni</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,18 @@
+<!--
+ - Created by peharitha on 10/17/2019.
+ -->
+
+<design:component>
+    <design:attribute name="identifier" label="Identifier"
+                      description="Unique Identifier string for the feature. Ex:PC_PatientSearch" />
+    <design:attribute name="searchObjectAPIName" label="Search Object API Name"
+                      description="API Name of Object on which Search is done. Ex:Account, PatientConnect__PC_Applicant, {orgNamespace}__PC_Applicant. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+    <design:attribute name="searchFormFieldsetAPIName" label="Search Form Fieldset API Name"
+                      description="Name of Field set that contains Fields to show on Search Form. Ex:PatientConnect__PC_SearchForm, {orgNamespace}__PC_SearchForm. Here, {orgNamespace} will be replaced with current Org Namespace in runtime. " />
+    <design:attribute name="searchResultsFieldsetAPIName" label="Search Results Fieldset API Name"
+                      description="Name of Field set that contains Fields to show on Search Form Results. Ex:PatientConnect__PC_SearchResults, {orgNamespace}__PC_SearchForm. Here, {orgNamespace} will be replaced with current Org Namespace in runtime. " />
+    <design:attribute name="searchButtonLabel" label="Search Button Label"
+                      description="Custom Label Name along with namespace or Button name for Search. Ex:$Label.namespace.PC_SearchButtonLabel, $Label.{orgNamespace}.PC_SearchButtonLabel. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+    <design:attribute name="fieldsPerRow" label="Number of fields in a row"
+                      description="Number of fields in a row to be shown in the search form. By default, 3 fields will be shown per row." />
+</design:component>

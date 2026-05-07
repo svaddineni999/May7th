@@ -1,0 +1,83 @@
+<!--
+ - Created by havalakki on 3/1/2018.
+ - Modification log:
+   Sheela Sathyanarayana       8/1/2018       [PC-3453] Changed the table stucture to be inside the component & added condition to show 'No Records Found'
+ -->
+
+<aura:component description="PC_Document_Management_Related_Docs" controller="PC_Document_ManagementSplitController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+
+    <!--Attribute declaration -->
+    <aura:attribute name="noSplitDocs" type="PC_DocumentSplitLightningController.Object[]" />
+    <aura:attribute name="labelRelated" type="String" default="{!$Label.c.PC_Document_Related}"/>
+    <aura:attribute name="newChildDocPgRange" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="isSplitbuttonActive" type="boolean" default="true" />
+    <aura:attribute name="isResubmit" type="boolean" default="true" />
+    <aura:attribute name="errorMsg" type="String" default="{!$Label.c.PC_Correct_Your_Input}" />
+    <aura:attribute name="confirmDelIndex" type="Integer" />
+    <aura:attribute name="selDocIndex" type="Integer" />
+    <aura:attribute name="pageRange" type="Integer[]" />
+    <aura:attribute name="pageCount" type="Integer" default="0" />
+    <aura:attribute name="isRelatedComponent" type="Boolean" default="true" />
+
+    <!--Init function to get all child documents -->
+    <aura:handler name="init" value="{!this}" action="{!c.getChildDocList}"/>
+    <!-- Refreshes list of child documents as soon as a new child document is added or any status gets updated -->
+    <aura:handler event="force:refreshView" action="{!c.getChildDocList}"/>
+
+    <!--Component event on child component to refresh the parent component when fired-->
+    <aura:registerEvent name="cmpEvent" type="c:PC_RefreshCmp"/>
+
+    <div class="slds" aura:id="documentRelatedDocsId">
+        <div>
+            <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.showAccordion}">
+                <section class="slds-clearfix">
+                    <div class="slds-float--left ">
+                        <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates open"/>
+                        <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:chevronright" size="x-small" alternativeText="Indicates close"/>
+                    </div>
+                    <div class="slds-m-left--large cmpntNameFontSize">{!v.labelRelated}</div>
+                </section>
+            </div>
+
+        <div class="slds-show" aura:id="articleOne">
+            <div class="slds-tabs--scoped__content" style="{!v.noSplitDocs.length == 0 ? '' : 'display:none;'}" >
+                     {!$Label.c.PC_No_Records_Found}
+			</div>
+
+            <div class="slds-tabs--scoped__content noPadding" style="{!v.noSplitDocs.length != 0 ? '' : 'display:none;'}">
+                <div class="slds-scrollable">
+                    <table class="slds-table slds-table--bordered" width="100%">
+                        <thead>
+                            <tr class="slds-text-heading--label">
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_1}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_3}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_4}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_5}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_CreatedDate}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <aura:iteration items="{!v.noSplitDocs}" var="noSplitDoc" indexVar="i">
+                            <tr class="slds-hint-parent">
+
+                                <td data-label="docNumber" class="slds-truncate" role="row">
+                                    <a data-index="{!i}" href="{!noSplitDoc.DocUrl}" target="_blank">{!noSplitDoc.DocumentName}</a>
+                                </td>
+                                <td data-label="docStatus" class="slds-truncate">{!noSplitDoc.DocumentStatusLabel}</td>
+                                <td data-label="relationType" class="slds-truncate">{!noSplitDoc.relationType}</td>
+                                <td data-label="description" class="slds-truncate">{!noSplitDoc.description}</td>
+                                <td data-label="createdDate" class="slds-truncate">{!noSplitDoc.createdDate}</td>
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</aura:component>

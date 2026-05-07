@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Impfung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Impfungen laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Impfung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Impfungen laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Impfung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Impfungen laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Impfung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Impfungen laut EGA</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Impfungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Verabreicht am</label>
+        <name>HealthCloudGA__DateAdministered__c</name>
+    </fields>
+    <fields>
+        <label>Dosismengeneinheiten</label>
+        <name>HealthCloudGA__DoseQuantityUnits__c</name>
+    </fields>
+    <fields>
+        <label>Dosismenge Wert</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <label>Dosismenge</label>
+        <name>HealthCloudGA__DoseQuantity__c</name>
+    </fields>
+    <fields>
+        <label>Ablaufdatum</label>
+        <name>HealthCloudGA__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label>Ist eingeschränkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if Refused Indicator = False AND Expiration Date &gt; Now()  else returns false --></help>
+        <label>Wird auf Patientenkarte angezeigt</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Standort Stadt</label>
+        <name>HealthCloudGA__LocationCity__c</name>
+    </fields>
+    <fields>
+        <label>Standort Land</label>
+        <name>HealthCloudGA__LocationCountry__c</name>
+    </fields>
+    <fields>
+        <label>Standort Kennung</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Standort Zeile 1</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Standort Zeile 2</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Standort Name</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Standort Postleitzahl</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Standort Startdatum</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Standort Bundesland</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Standort Telekommunikation</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Standort Text</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Standort Typ</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Standort Verwendung</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Chargennummer</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Impfungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Diensterbringer Name 255</label>
+        <name>HealthCloudGA__PerformerName255__c</name>
+    </fields>
+    <fields>
+        <label>Diensterbringer Name</label>
+        <name>HealthCloudGA__PerformerName__c</name>
+    </fields>
+    <fields>
+        <label>Diensterbringer</label>
+        <name>HealthCloudGA__Performer__c</name>
+        <relationshipLabel>Durchgeführte Impfungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Grund Code</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Grund Bezeichnung</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Grund System</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Ablehnungsgrund Code</label>
+        <name>HealthCloudGA__RefusalReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Ablehnungsgrund Bezeichnung</label>
+        <name>HealthCloudGA__RefusalReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Ablehnungsgrund System</label>
+        <name>HealthCloudGA__RefusalReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Ablehnungsanzeige</label>
+        <name>HealthCloudGA__RefusedIndicator__c</name>
+    </fields>
+    <fields>
+        <label>Anforderername 255</label>
+        <name>HealthCloudGA__RequesterName255__c</name>
+    </fields>
+    <fields>
+        <label>Anforderername</label>
+        <name>HealthCloudGA__RequesterName__c</name>
+    </fields>
+    <fields>
+        <label>Anforderer</label>
+        <name>HealthCloudGA__Requester__c</name>
+        <relationshipLabel>Impfungen angefordert</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Anwendungsart Code</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>Anwendungsart Bezeichnung</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Anwendungsart System</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Selbst gemeldet</label>
+        <name>HealthCloudGA__SelfReported__c</name>
+    </fields>
+    <fields>
+        <label>Körperstelle Code</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Körperstelle Bezeichnung</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Körperstelle System</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Impfstoffart Code</label>
+        <name>HealthCloudGA__VaccineTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Impfstoffart Bezeichnung</label>
+        <name>HealthCloudGA__VaccineTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Impfstoffart System</label>
+        <name>HealthCloudGA__VaccineTypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>EGA Impfung ID</nameFieldLabel>
+</CustomObjectTranslation>

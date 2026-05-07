@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>56.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <assignments>
+        <description>Pre-Populate values on service case from the Parent Case</description>
+        <name>Pre_Populate_Values_from_Parent_Case</name>
+        <label>Pre-Populate Values from Parent Case</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.PC_Engagement_Program__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Parent.PC_Program__r.PC_Engagement_Program__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.PC_Program_Product__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Parent.PC_Program__r.PC_Program_Product__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Parent.PC_Program__r.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.PC_Program__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Parent.PC_Program__c</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <description>Pre-Populate values on service case from the program Case</description>
+        <name>Pre_Populate_Values_from_Program_Case</name>
+        <label>Pre-Populate Values from Program Case</label>
+        <locationX>314</locationX>
+        <locationY>431</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.PC_Engagement_Program__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PC_Program__r.PC_Engagement_Program__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.PC_Program_Product__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PC_Program__r.PC_Program_Product__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PC_Program__r.AccountId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>$Record.ParentId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.PC_Program__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <decisions>
+        <description>Check Is Parent/Program Case Populated?</description>
+        <name>Is_Parent_Program_Case_Populated</name>
+        <label>Is Parent/Program Case Populated?</label>
+        <locationX>314</locationX>
+        <locationY>311</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Parent_Case_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Parent.PC_Program__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pre_Populate_Values_from_Parent_Case</targetReference>
+            </connector>
+            <label>Parent Case Populated</label>
+        </rules>
+        <rules>
+            <name>Program_Case_Populated</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.PC_Program__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Pre_Populate_Values_from_Program_Case</targetReference>
+            </connector>
+            <label>Program Case Populated</label>
+        </rules>
+    </decisions>
+    <description>Populate Values on Service Case from Parent Case</description>
+    <environments>Default</environments>
+    <interviewLabel>Populate Values on Service Case from Parent Case {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Populate Values on Service Case from Parent Case</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_Parent_Program_Case_Populated</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OCR Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OCR Responses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>PC_AdditionalInformation__c</name>
+    </fields>
+    <fields>
+        <label><!-- OCR Queue --></label>
+        <name>PC_OcrQueue__c</name>
+        <relationshipLabel><!-- OCR Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OCR Service Response Id --></label>
+        <name>PC_OcrServiceResponseId__c</name>
+    </fields>
+    <fields>
+        <label><!-- OCR Service --></label>
+        <name>PC_OcrService__c</name>
+        <picklistValues>
+            <masterLabel>Amazon Textract</masterLabel>
+            <translation><!-- Amazon Textract --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- OCR Status --></label>
+        <name>PC_OcrStatus__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OCR Enqueue</masterLabel>
+            <translation><!-- OCR Enqueue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

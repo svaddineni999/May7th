@@ -1,0 +1,21 @@
+/**
+ * Created by xning on 11/21/2018.
+ */
+
+.THIS .labelStyling {
+        color: rgb(62, 62, 60);
+        font-size: .75rem;
+        font-weight: normal;
+}
+
+.THIS .custom-loading-text {
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -1.5rem;
+    left: -1rem;
+    white-space: nowrap;
+}
+
+.THIS .cursorHover{
+    cursor:pointer;
+}

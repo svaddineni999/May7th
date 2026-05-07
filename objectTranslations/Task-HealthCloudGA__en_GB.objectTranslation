@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label>HcCarePlanTaskFields</label>
+        <name>HealthCloudGA__HcCarePlanTaskFields</name>
+    </fieldSets>
+    <fieldSets>
+        <label>HC Task List</label>
+        <name>HealthCloudGA__HcTaskList</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Task FieldSet For Non Case Objects --></label>
+        <name>PC_TaskFieldSetForNonCaseObjects</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Task Fields Required --></label>
+        <name>Task_Fields_Required</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Attempt --></label>
+        <name>ACLS_Attempt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related eFax --></label>
+        <name>EFX__eFax__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Five9 Session Id --></label>
+        <name>Five9__Five9SessionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Five9 Task Type --></label>
+        <name>Five9__Five9TaskType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>HealthCloudGA__Age__c</name>
+    </fields>
+    <fields>
+        <help><!-- Goal this task is meant to address --></help>
+        <label><!-- Goal --></label>
+        <name>HealthCloudGA__CarePlanGoal__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Problem this task is mean to address --></help>
+        <label><!-- Problem --></label>
+        <name>HealthCloudGA__CarePlanProblem__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Care Plan Template --></label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Condition Status --></label>
+        <name>HealthCloudGA__Conditions_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Tracing Status --></label>
+        <name>HealthCloudGA__Contract_Tracing_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>HealthCloudGA__Gender__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monitored at Home --></label>
+        <name>HealthCloudGA__Monitored_at_Home__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sort Order --></label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaskType --></label>
+        <name>HealthCloudGA__TaskType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Testing Status --></label>
+        <name>HealthCloudGA__Testing_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the lightning action component that is associated with the record --></help>
+        <label><!-- Action Component --></label>
+        <name>PC_ActionComponent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Template ID --></label>
+        <name>PC_Activity_Template_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The care team member role to which the task is assigned to. --></help>
+        <label><!-- Assign to Role --></label>
+        <name>PC_Assign_to_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>PC_Assigned_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Outcome --></label>
+        <name>PC_Call_Outcome__c</name>
+    </fields>
+    <fields>
+        <label><!-- Capture Time --></label>
+        <name>PC_Capture_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- The primary category of the activity. --></help>
+        <label><!-- Category --></label>
+        <name>PC_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>PC_Channel__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date and time on which the task was closed. --></help>
+        <label><!-- Close Date --></label>
+        <name>PC_Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if the task/activity such as fax,sms, email or call is inbound or outbound --></help>
+        <label><!-- Direction --></label>
+        <name>PC_Direction__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document --></label>
+        <name>PC_Document__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checked/Selected when the task has passed its due date. --></help>
+        <label><!-- Is Overdue --></label>
+        <name>PC_IsOverdue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if a task/event is of type SMS --></help>
+        <label><!-- Is SMS --></label>
+        <name>PC_Is_SMS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to store the original due date if the task’s Due Date is changed. --></help>
+        <label><!-- Original Due Date --></label>
+        <name>PC_Original_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Participant --></label>
+        <name>PC_Participant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Referral --></label>
+        <name>PC_Pharmacy_Referral__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Value associated with the acticity based on the priority. --></help>
+        <label><!-- Priority Value --></label>
+        <name>PC_Priority_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to the program case with which the task is associated. --></help>
+        <label><!-- Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Child Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Form --></label>
+        <name>PC_Request_Form__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Send to Patient --></label>
+        <name>PC_Send_to_Patient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked for starred and important tasks and activities. --></help>
+        <label><!-- Starred --></label>
+        <name>PC_Starred__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Sub-category of activity. --></help>
+        <label><!-- Sub-Category --></label>
+        <name>PC_Sub_Category__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Activity --></label>
+        <name>PC_SupportPlanActivity__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description>Task related to healthcare plan</description>
+        <label>Care Plan Task</label>
+        <name>HealthCloudGA__CarePlanTask</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Custom record type for &apos;Log a Call&apos; action --></description>
+        <label><!-- Log a Call --></label>
+        <name>PC_LogCall</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used to manage PSP tasks --></description>
+        <label><!-- PSP Task --></label>
+        <name>PC_PSP_Task</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Template Activity --></label>
+        <name>PC_Template_Activity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- eLetter --></label>
+        <name>PC_eLetter</name>
+    </recordTypes>
+</CustomObjectTranslation>

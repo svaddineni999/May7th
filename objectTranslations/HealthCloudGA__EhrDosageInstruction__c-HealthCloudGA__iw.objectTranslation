@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>הנחיית המינון ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>הנחיית מינון ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>הנחיות המינון ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>הנחיות מינון ב-EHR</value>
+    </caseValues>
+    <fields>
+        <label>קוד הוראה נוספת</label>
+        <name>HealthCloudGA__AdditionalInstructionCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית הוראה נוספת</label>
+        <name>HealthCloudGA__AdditionalInstructionLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת הוראה נוספת</label>
+        <name>HealthCloudGA__AdditionalInstructionSystem__c</name>
+    </fields>
+    <fields>
+        <label>הוראה נוספת</label>
+        <name>HealthCloudGA__AdditionalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>קוד AsNeeded</label>
+        <name>HealthCloudGA__AsNeededCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית AsNeeded</label>
+        <name>HealthCloudGA__AsNeededLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת AsNeeded</label>
+        <name>HealthCloudGA__AsNeededSystem__c</name>
+    </fields>
+    <fields>
+        <label>As Needed</label>
+        <name>HealthCloudGA__AsNeeded__c</name>
+    </fields>
+    <fields>
+        <label>יחידת כמות של מינון</label>
+        <name>HealthCloudGA__DoseQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <label>ערך כמות של מינון</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this applies to --></help>
+        <label>מטופל EHR</label>
+        <name>HealthCloudGA__EhrPatient__c</name>
+        <relationshipLabel>הנחיות מינון ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>הוראה</label>
+        <name>HealthCloudGA__Instruction__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>יחידת מכנה של מינון מרבי לכל תקופה</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorUnit__c</name>
+    </fields>
+    <fields>
+        <label>ערך מכנה של מינון מרבי לכל תקופה</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorValue__c</name>
+    </fields>
+    <fields>
+        <label>יחידת מונה של מינון מרבי לכל תקופה</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorUnit__c</name>
+    </fields>
+    <fields>
+        <label>ערך מונה של מינון מרבי לכל תקופה</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorValue__c</name>
+    </fields>
+    <fields>
+        <label>מרשם לתרופה</label>
+        <name>HealthCloudGA__MedicationPrescription__c</name>
+        <relationshipLabel>הנחיות מינון</relationshipLabel>
+    </fields>
+    <fields>
+        <label>הצהרת תרופות</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>הנחיות מינון</relationshipLabel>
+    </fields>
+    <fields>
+        <label>קוד שיטה</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית שיטה</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת שיטה</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denominator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>מכנה יחס</label>
+        <name>HealthCloudGA__RateDenominator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Numerator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>מונה יחס</label>
+        <name>HealthCloudGA__RateNumerator__c</name>
+    </fields>
+    <fields>
+        <label>קוד נתיב</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית נתיב</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת נתיב</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד מקום</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית מקום</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת מקום</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>מזהה מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>שינוי במערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>הוראה משלימה</label>
+        <name>HealthCloudGA__SupplementalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>סיום תקופת תזמון</label>
+        <name>HealthCloudGA__TimingPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>תחילת תקופת תזמון</label>
+        <name>HealthCloudGA__TimingPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>תזמון</label>
+        <name>HealthCloudGA__Timing__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>מזהה הוראת מינון ב-EHR</nameFieldLabel>
+</CustomObjectTranslation>

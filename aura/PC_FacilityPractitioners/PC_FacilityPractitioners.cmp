@@ -1,0 +1,81 @@
+<!--
+Lightning component  : PC_FacilityPractitioners
+Description          : Component for displaying available participants at the selected location
+
+Modification Log:
+Haritha Reddy, Chetna Mohapatra	     10-Nov-2021 	[PC-8278] Initial Version
+-->
+<aura:component controller="PC_FacilityPractitionersController" implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global" description="PC_FacilityPractitioners">
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="participantList" type="Object[]" />
+    <aura:attribute name="selectedParticipants" type="List" />
+    <aura:attribute name="selectedLocation" type="String"/>
+    <aura:attribute name="interactionRecordId" type="String" default=""/>
+    <aura:attribute name="fieldLabels" type="Object" default="false"/>
+    <aura:method name="save" action="{!c.saveParticipantInfo}"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <div class="slds-page-header">
+            {!$Label.c.PC_SelectFacilityPractitioners}
+    </div>
+    <div class="slds-modal__content slds-p-around_medium" style="{!v.participantList.length == 0 ? '' : 'display:none;'}" >
+        {!$Label.c.PC_No_Records_Found}
+    </div><br/>
+    <div class="dataTable" id="modal-content-id-1" style="{!v.participantList.length != 0 ? '' : 'display:none;'}">
+        <table class="slds-table slds-table--fixed-layout slds-table_bordered">
+            <thead>
+            <tr class="slds-text-title_caps">
+                <th class="slds-cell-shrink" scope="col"></th>
+                <th scope="col"   class="">
+                    <div class="slds-truncate" title="{!v.fieldLabels.name}">{!v.fieldLabels.name}</div>
+                </th>
+                <th scope="col"  class="">
+                    <div class="slds-truncate" title="{!v.fieldLabels.type}">{!v.fieldLabels.type}</div>
+                </th>
+                <th scope="col"  class="">
+                    <div class="slds-truncate" title="{!v.fieldLabels.subType}">{!v.fieldLabels.subType}</div>
+                </th>
+                <th scope="col"  class="" >
+                    <div class="slds-truncate" title="{!v.fieldLabels.operatingHours}">{!v.fieldLabels.operatingHours}</div>
+                </th>
+                <th scope="col"  class="" >
+                    <div class="slds-truncate" title="{!v.fieldLabels.primaryFacility}">{!v.fieldLabels.primaryFacility}</div>
+                </th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <aura:iteration items ="{!v.participantList}" var="participant" indexVar="i">
+                <tr>
+                    <td>
+                        <label class="slds-checkbox">
+                            <ui:inputCheckbox aura:id="checkParticipant" text="{!participant.practitionerId}"/>
+                            <span class="slds-checkbox--faux" />
+                            <span class="slds-form-element__label"></span>
+                        </label>
+                    </td>
+                    <td class="slds-truncate" >
+                        <a id ="{!participant.practitionerId}" role="link" onclick="{!c.navigateToRecordDetail}" target="_self">
+                                {!participant.practitionerName}
+                        </a>
+                    </td>
+                    <td  class="slds-truncate" title="{!participant.practitionerType}" >
+                            {!participant.practitionerType}
+                    </td>
+                    <td  class="slds-truncate" title="{!participant.practitionerSubtype}" >
+                            {!participant.practitionerSubtype}
+                    </td>
+                    <td class="slds-truncate" >
+                        <a id ="{!participant.operatingHoursId}" role="link" onclick="{!c.navigateToRecordDetail}" target="_self">
+                                {!participant.operatingHoursName}
+                        </a>
+                    </td>
+                    <td  class="slds-truncate" title="{!participant.primaryFacility}" >
+                        <lightning:input type="checkbox" checked="{!participant.primaryFacility}" disabled="true"/>
+                    </td>
+                </tr>
+            </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+</aura:component>

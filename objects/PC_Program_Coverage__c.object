@@ -1,0 +1,4643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This is a custom object in Patient Connect that represents patient&apos;s coverage information that satisfies the coverage for the treatment/program that the patient is enrolled into.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>PC_Doc_Link_Program_Coverage</fullName>
+        <description>Field set used to display out-of-the-box program coverage fields on Document Link screen. Used in default config for Document Link screen: PC_Document_Link_Related_Object_Setting custom metadata.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>RecordTypeId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Payer__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>PC Document Link Program Coverage</label>
+    </fieldSets>
+    <fields>
+        <fullName>ACLS_AOB_MD_Purchase__c</fullName>
+        <label>AOB/MD Purchase</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AOB</fullName>
+                    <default>false</default>
+                    <label>AOB</label>
+                </value>
+                <value>
+                    <fullName>MD Purchase</fullName>
+                    <default>false</default>
+                    <label>MD Purchase</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Additional_Information__c</fullName>
+        <description>Additional Information</description>
+        <label>Additional Information</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_Administration_Copay_Amount_Percent__c</fullName>
+        <label>Administration Copay Amount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Administration_Copay_Amount__c</fullName>
+        <label>Administration Copay Amount $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Annual_Cap__c</fullName>
+        <label>Annual Cap</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Billing_and_Coding__c</fullName>
+        <description>Billing and Coding</description>
+        <label>Billing and Coding</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_Coverage_Source__c</fullName>
+        <label>Coverage Source</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Manual</fullName>
+                    <default>true</default>
+                    <label>Manual</label>
+                </value>
+                <value>
+                    <fullName>Automated</fullName>
+                    <default>false</default>
+                    <label>Automated</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Does_Deductible_Apply_to_OOP__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Does Deductible Apply to OOP?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Effective_From__c</fullName>
+        <label>Effective From</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Has_Mandatory_Contracted_SP__c</fullName>
+        <label>Has Mandatory Contracted SP?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Is_Product_on_Formulary__c</fullName>
+        <label>Is Product on Formulary?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Office_Visit_Copay_Amount_Percent__c</fullName>
+        <label>Office Visit Copay Amount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Office_Visit_Copay_Amount__c</fullName>
+        <label>Office Visit Copay Amount $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_PA_Approval_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>PA Approval Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_PA_Fax__c</fullName>
+        <label>PA Fax</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_PA_Outcome__c</fullName>
+        <label>PA Outcome</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_PA_Phone__c</fullName>
+        <label>PA Phone</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Prior_Authorization_Details__c</fullName>
+        <description>Prior Authorization Details</description>
+        <label>Prior Authorization Details</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_Product_Copay_Amount_Percent__c</fullName>
+        <label>Product Copay Amount %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Product_Copay_Amount__c</fullName>
+        <label>Product Copay Amount $</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Product_Formulary_Tier__c</fullName>
+        <label>Product Formulary Tier</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+                <value>
+                    <fullName>3</fullName>
+                    <default>false</default>
+                    <label>3</label>
+                </value>
+                <value>
+                    <fullName>4</fullName>
+                    <default>false</default>
+                    <label>4</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Reference_Number__c</fullName>
+        <displayFormat>PC-{000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Reference Number</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Representative_Name__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Representative Name</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Program_Coverage</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Site_of_Care__c</fullName>
+        <label>Site of Care</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Physician Office</fullName>
+                    <default>false</default>
+                    <label>Physician Office</label>
+                </value>
+                <value>
+                    <fullName>HOP</fullName>
+                    <default>false</default>
+                    <label>HOP</label>
+                </value>
+                <value>
+                    <fullName>Infusion Center</fullName>
+                    <default>false</default>
+                    <label>Infusion Center</label>
+                </value>
+                <value>
+                    <fullName>Long Term Care</fullName>
+                    <default>false</default>
+                    <label>Long Term Care</label>
+                </value>
+                <value>
+                    <fullName>Nursing Home</fullName>
+                    <default>false</default>
+                    <label>Nursing Home</label>
+                </value>
+                <value>
+                    <fullName>Home Health</fullName>
+                    <default>false</default>
+                    <label>Home Health</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Specialty_Pharmacy__c</fullName>
+        <externalId>false</externalId>
+        <label>Specialty Pharmacy</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Year_Plan__c</fullName>
+        <label>Year Plan</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Calendar</fullName>
+                    <default>false</default>
+                    <label>Calendar</label>
+                </value>
+                <value>
+                    <fullName>Fiscal</fullName>
+                    <default>false</default>
+                    <label>Fiscal</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_eBV_Additional_Information__c</fullName>
+        <label>eBV Additional Information</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_eBV_Coverage_Status__c</fullName>
+        <label>eBV Coverage Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Covered - Commercial</fullName>
+                    <default>false</default>
+                    <label>Covered - Commercial</label>
+                </value>
+                <value>
+                    <fullName>Covered - Government</fullName>
+                    <default>false</default>
+                    <label>Covered - Government</label>
+                </value>
+                <value>
+                    <fullName>Covered with PA</fullName>
+                    <default>false</default>
+                    <label>Covered with PA</label>
+                </value>
+                <value>
+                    <fullName>Too Soon to Fill</fullName>
+                    <default>false</default>
+                    <label>Too Soon to Fill</label>
+                </value>
+                <value>
+                    <fullName>Not Covered</fullName>
+                    <default>false</default>
+                    <label>Not Covered</label>
+                </value>
+                <value>
+                    <fullName>Unable to Determine Coverage</fullName>
+                    <default>false</default>
+                    <label>Unable to Determine Coverage</label>
+                </value>
+                <value>
+                    <fullName>Unable to Determine Eligibility</fullName>
+                    <default>false</default>
+                    <label>Unable to Determine Eligibility</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_eBV_Transaction_Unique_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>eBV Transaction Unique ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PA_Required__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Flagged, if the payer requires a prior authorization.</description>
+        <label>PA Required</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Decision_Date_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the first possible alternate funding source decision.</description>
+        <label>Decision Date 1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Decision_Date_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the second possible alternate funding source decision.</description>
+        <label>Decision Date 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Denial_Reason_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason for the denial of the second possible alternative funding source.</description>
+        <label>Denial Reason 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>PC_Denial_Reason</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Outcome_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The outcome of the first possible alternate funding source.</description>
+        <label>Outcome 1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>PC_Outcome</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Outcome_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The outcome of the second possible alternate funding source.</description>
+        <label>Outcome 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>PC_Outcome</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Referral_Contact_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The contact name of the first possible alternate funding source.</description>
+        <externalId>false</externalId>
+        <label>Referral Contact 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Referral_Contact_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The contact name of the second possible alternate funding source.</description>
+        <externalId>false</externalId>
+        <label>Referral Contact 2</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Referral_Date_1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the first possible alternate funding source referral.</description>
+        <label>Referral Date 1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Referral_Date_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date of the second possible alternate funding source referral.</description>
+        <label>Referral Date 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Referral_Phone_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The contact phone of the second possible alternate funding source.</description>
+        <label>Referral Phone 2</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alt_Fund_Referral_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The contact phone of the first possible alternate funding source.</description>
+        <label>Referral Phone 1</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alternate_Funding_Source_2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The second possible source of alternate funding.</description>
+        <externalId>false</externalId>
+        <label>Alternate Funding Source 2</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Alternate_Funding__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The first possible source of alternate funding.</description>
+        <externalId>false</externalId>
+        <label>Alternate Funding Source 1</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Annual_Household_Income__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The annual household income category.</description>
+        <label>Annual Household Income?</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Greater than $45,000</fullName>
+                    <default>false</default>
+                    <label>Greater than $45,000</label>
+                </value>
+                <value>
+                    <fullName>30,0000 to 45,000</fullName>
+                    <default>false</default>
+                    <label>30,0000 to 45,000</label>
+                </value>
+                <value>
+                    <fullName>Less than $30,000</fullName>
+                    <default>false</default>
+                    <label>Less than $30,000</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Annual_Out_of_Pocket__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount the patient has paid for covered services in a plan year. Once the maximum amount is reached by spending on deductibles, copayments, and coinsurance, the health plan pays 100% of the cost of the covered benefits.</description>
+        <label>Annual Out of Pocket</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Appeal_Available__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to indicate if the appeal can be made if this coverage is refused.</description>
+        <label>Appeal Available</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Clinic__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Indicates the associated Clinic information</description>
+        <label>Clinic</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>HCO</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Program Coverage (Clinic)</relationshipLabel>
+        <relationshipName>Program_Coverage</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Coinsurance_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The percentage of cost of a covered health care service that the patient pays after deductible is paid.</description>
+        <label>Coinsurance %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Comments__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The comments about the coverage.</description>
+        <label>Comments</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_CompletionStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the Medical Benefit&apos;s Completion Status</description>
+        <externalId>false</externalId>
+        <label>Completion Status</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_CoordinatedPlanBenefits__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates Plan Benefits Details</description>
+        <externalId>false</externalId>
+        <label>Coordinated Plan Benefits</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount the patient pays.</description>
+        <label>Copay Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Assistance_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount of assistance that is provided towards the patient&apos;s copay.</description>
+        <label>Copay Assistance Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Card_Expiration_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The copay card&apos;s expiration date.</description>
+        <label>Copay Card Expiration Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Card_Group_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The group number of the copay card.</description>
+        <externalId>false</externalId>
+        <label>Copay Card Group No.</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Card_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Identification number of the card.</description>
+        <externalId>false</externalId>
+        <label>Copay Card No.</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Card_Rx_BIN_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Copay Card&apos;s Rx BIN Number.</description>
+        <externalId>false</externalId>
+        <label>Copay Card Rx BIN No.</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Card_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the copay card.</description>
+        <label>Copay Card Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Copay_Office_Visit_Amt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Co-pay amount to be paid during the office visit.</description>
+        <label>Office Visit</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Copy_Procedure_Amt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Co-pay amount to be paid for the procedure.</description>
+        <label>Product/Procedure Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Coverage_Percentage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The percent of the program&apos;s medication cost covered by the Health Plan or other funding.</description>
+        <label>Coverage %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Coverage_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the coverage.</description>
+        <label>Coverage Status</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Coverage_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Displays the record type information on screen. The record type field can be hidden as well. 
+
+Note: Users should not be able to change the record type after creation.</description>
+        <label>Coverage Type</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Alternate Funding</fullName>
+                    <default>false</default>
+                    <label>Alternate Funding</label>
+                </value>
+                <value>
+                    <fullName>Private Coverage</fullName>
+                    <default>false</default>
+                    <label>Private Coverage</label>
+                </value>
+                <value>
+                    <fullName>Copay Assistance</fullName>
+                    <default>false</default>
+                    <label>Copay Assistance</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Plan Coverage</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Plan Coverage</label>
+                </value>
+                <value>
+                    <fullName>Medicare A/B</fullName>
+                    <default>false</default>
+                    <label>Medicare A/B</label>
+                </value>
+                <value>
+                    <fullName>Medicare D</fullName>
+                    <default>false</default>
+                    <label>Medicare D</label>
+                </value>
+                <value>
+                    <fullName>Medicare Advantage</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage</label>
+                </value>
+                <value>
+                    <fullName>Tricare</fullName>
+                    <default>false</default>
+                    <label>Tricare</label>
+                </value>
+                <value>
+                    <fullName>Medicaid</fullName>
+                    <default>false</default>
+                    <label>Medicaid</label>
+                </value>
+                <value>
+                    <fullName>VA</fullName>
+                    <default>false</default>
+                    <label>VA</label>
+                </value>
+                <value>
+                    <fullName>Charitable Organization</fullName>
+                    <default>false</default>
+                    <label>Charitable Organization</label>
+                </value>
+                <value>
+                    <fullName>Discount Card</fullName>
+                    <default>false</default>
+                    <label>Discount Card</label>
+                </value>
+                <value>
+                    <fullName>Manufacturer Copay Card</fullName>
+                    <default>false</default>
+                    <label>Manufacturer Copay Card</label>
+                </value>
+                <value>
+                    <fullName>Public Coverage</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Public Coverage</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Days_Priced__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the number of days supply for medication that the pricing is returned for by third party service</description>
+        <externalId>false</externalId>
+        <label>Days Priced</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Deductible__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The amount patient has to pay as deductible.</description>
+        <label>Deductible</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Eligible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Determines the eligibility based on annual household income range.</description>
+        <label>Eligible</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Expiration_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tracks when the Coverage Expires in order to re-run an investigation.</description>
+        <label>Expires On</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Group_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The group number of the associated health plan.</description>
+        <externalId>false</externalId>
+        <formula>PC_Health_Plan__r.Group_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Group Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Health_Plan_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the health plan.</description>
+        <externalId>false</externalId>
+        <formula>TEXT (PC_Health_Plan__r.PC_Plan_Status__c)</formula>
+        <label>Health Plan Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Health_Plan_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of associated health plan - Public or Private.</description>
+        <externalId>false</externalId>
+        <formula>TEXT( PC_Health_Plan__r.PC_Plan_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Health Plan Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Health_Plan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The patient&apos;s health plan that provides the coverage.</description>
+        <label>Health Plan</label>
+        <referenceTo>PC_Health_Plan__c</referenceTo>
+        <relationshipLabel>Program Coverages</relationshipLabel>
+        <relationshipName>Program_Coverages</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_ID_Policy_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Policy number of the Health Plan.</description>
+        <externalId>false</externalId>
+        <formula>PC_Health_Plan__r.ID_Policy_No__c</formula>
+        <label>ID / Policy No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Meets_qualifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked/selected if the patient meets the copay assistance qualifications.</description>
+        <label>Meets qualifications</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Number_of_children_under_18_years_old__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The question that determines the coverage eligibility.</description>
+        <externalId>false</externalId>
+        <label>Number of children under 18 years old?</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Number_of_dependent_seniors__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The question that determines the coverage eligibility.</description>
+        <externalId>false</externalId>
+        <label>Number of dependent seniors?</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Option_1_Copay_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The copay amount of option 1.</description>
+        <label>Option 1 Copay Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Option_1_Copay_Percent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The copay as percentage for option 1.</description>
+        <label>Option 1 Copay %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Option_2_Copay_Amount__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The copay amount of option 2.</description>
+        <label>Option 2 Copay Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Option_2_Copay__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The copay as percentage for option 2.</description>
+        <label>Option 2 Copay %</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Original_Deductible_Amt_Family__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Original deductible amount for the family deductible (when applicable based on health plan)</description>
+        <label>Original Deductible Amount Family</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Original_Deductible_Amt_Individual__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Original deductible value for the individual deductible (when individual and family deductibles are applicable based on health plan)</description>
+        <label>Original Deductible Amount Individual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the patient associated with the coverage.</description>
+        <externalId>false</externalId>
+        <formula>PC_Program__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Payer_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the health plan payer.</description>
+        <externalId>false</externalId>
+        <formula>PC_Health_Plan__r.PC_Payer__r.Name</formula>
+        <label>Payer Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Payer_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The health plan payer’s phone number.</description>
+        <externalId>false</externalId>
+        <formula>PC_Health_Plan__r.PC_Payer__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payer Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Payer__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the health plan payer.</description>
+        <externalId>false</externalId>
+        <formula>PC_Health_Plan__r.PC_Payer__r.Name</formula>
+        <label>Payer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Pharmacy_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the pharmacy associated with patient’s coverage.</description>
+        <externalId>false</externalId>
+        <formula>PC_Pharmacy__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pharmacy Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Pharmacy_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The phone number of the pharmacy associated with the patient’s coverage.</description>
+        <externalId>false</externalId>
+        <formula>PC_Pharmacy__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pharmacy Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Pharmacy__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The health plan payer’s phone number.</description>
+        <label>Pharmacy</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Program Coverage (Pharmacy)</relationshipLabel>
+        <relationshipName>Selected_for_Program_Coverage</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Prescription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The prescription associated with the program coverage record</description>
+        <label>Prescription</label>
+        <referenceTo>PC_Prescription__c</referenceTo>
+        <relationshipLabel>Program Coverage</relationshipLabel>
+        <relationshipName>Program_Coverage</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Program_Coverage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The outcome status of the coverage.</description>
+        <label>Program Coverage Outcome</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Application Pending</fullName>
+                    <default>false</default>
+                    <label>Application Pending</label>
+                </value>
+                <value>
+                    <fullName>Investigation In Progress</fullName>
+                    <default>false</default>
+                    <label>Investigation In Progress</label>
+                </value>
+                <value>
+                    <fullName>Eligibility Pending</fullName>
+                    <default>false</default>
+                    <label>Eligibility Pending</label>
+                </value>
+                <value>
+                    <fullName>Pending PA</fullName>
+                    <default>false</default>
+                    <label>Pending PA</label>
+                </value>
+                <value>
+                    <fullName>Covered</fullName>
+                    <default>false</default>
+                    <label>Covered</label>
+                </value>
+                <value>
+                    <fullName>Approved</fullName>
+                    <default>false</default>
+                    <label>Approved</label>
+                </value>
+                <value>
+                    <fullName>Pending Appeal</fullName>
+                    <default>false</default>
+                    <label>Pending Appeal</label>
+                </value>
+                <value>
+                    <fullName>Patient Declined</fullName>
+                    <default>false</default>
+                    <label>Patient Declined</label>
+                </value>
+                <value>
+                    <fullName>Denied</fullName>
+                    <default>false</default>
+                    <label>Denied</label>
+                </value>
+                <value>
+                    <fullName>Not Covered</fullName>
+                    <default>false</default>
+                    <label>Not Covered</label>
+                </value>
+                <value>
+                    <fullName>Triaged</fullName>
+                    <default>false</default>
+                    <label>Triaged</label>
+                </value>
+                <value>
+                    <fullName>Created in Error</fullName>
+                    <default>false</default>
+                    <label>Created in Error</label>
+                </value>
+                <value>
+                    <fullName>Sources Not Found</fullName>
+                    <default>false</default>
+                    <label>Sources Not Found</label>
+                </value>
+                <value>
+                    <fullName>Covered with Restrictions</fullName>
+                    <default>false</default>
+                    <label>Covered with Restrictions</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The program to which the patient is enrolled into and requires coverage for.</description>
+        <label>Program</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Program</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Program Coverage</relationshipLabel>
+        <relationshipName>Program_Coverages</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_Quantity_Priced__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the quantity of medication that the pricing is returned for by third party service</description>
+        <externalId>false</externalId>
+        <label>Quantity Priced</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reason_Benefits_Not_Accepted__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason that the patient chose not to accept the benefits.</description>
+        <label>Reason Benefits Not Accepted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Concern about side effects/product research</fullName>
+                    <default>false</default>
+                    <label>Concern about side effects/product research</label>
+                </value>
+                <value>
+                    <fullName>Wants to discuss with MD</fullName>
+                    <default>false</default>
+                    <label>Wants to discuss with MD</label>
+                </value>
+                <value>
+                    <fullName>Using alternative therapy</fullName>
+                    <default>false</default>
+                    <label>Using alternative therapy</label>
+                </value>
+                <value>
+                    <fullName>Other medical issues</fullName>
+                    <default>false</default>
+                    <label>Other medical issues</label>
+                </value>
+                <value>
+                    <fullName>Insurance reasons</fullName>
+                    <default>false</default>
+                    <label>Insurance reasons</label>
+                </value>
+                <value>
+                    <fullName>Cost concern/patient did not want to apply to an alternate funding option</fullName>
+                    <default>false</default>
+                    <label>Cost concern/patient did not want to apply to an alternate funding option</label>
+                </value>
+                <value>
+                    <fullName>Pending alternate funding outcome</fullName>
+                    <default>false</default>
+                    <label>Pending alternate funding outcome</label>
+                </value>
+                <value>
+                    <fullName>Prior authorization denied</fullName>
+                    <default>false</default>
+                    <label>Prior authorization denied</label>
+                </value>
+                <value>
+                    <fullName>Does not want to inject</fullName>
+                    <default>false</default>
+                    <label>Does not want to inject</label>
+                </value>
+                <value>
+                    <fullName>Patient traveling</fullName>
+                    <default>false</default>
+                    <label>Patient traveling</label>
+                </value>
+                <value>
+                    <fullName>Wants to discuss with family member/caregiver</fullName>
+                    <default>false</default>
+                    <label>Wants to discuss with family member/caregiver</label>
+                </value>
+                <value>
+                    <fullName>Benefits discrepancy</fullName>
+                    <default>false</default>
+                    <label>Benefits discrepancy</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Reason_for_Not_Covered__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason that the patient was not covered by this Health Plan for this program&apos;s medication.</description>
+        <label>Reason for Not Covered</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Choice 1</fullName>
+                    <default>false</default>
+                    <label>Choice 1</label>
+                </value>
+                <value>
+                    <fullName>Choice 2</fullName>
+                    <default>false</default>
+                    <label>Choice 2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Remaining_Deductible_Amt_Family__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Amount remaining for the annual family deductible (when individual and family deductibles apply based on health plan)</description>
+        <label>Remaining Deductible Amount Family</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Remaining_Deductible_Amt_Individual__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Amount remaining for the annual deductible of the individual (when individual and family deductibles apply based on health plan)</description>
+        <label>Remaining Deductible Amount Individual</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Rx_Applied_Deductible__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pharmacy Deductable applied amount</description>
+        <label>Deductible Applied Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Rx_Applied_Out_Of_Pocket__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pharmacy Out Of Pocket Applied Amount</description>
+        <label>Out Of Pocket Applied Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Rx_Pay_Amt__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pharmacy pay amount</description>
+        <label>Patient Pay Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Rx_Remaining_Deductible__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pharmacy Deductible Remaining amount</description>
+        <label>Deductible Remaining Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Rx_Remaining_Out_Of_Pocket__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pharmacy Out Of Pocket Remaining amount</description>
+        <label>Out Of Pocket Remaining Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_hasActivePA__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selected or checked when the program coverage has an active prior authorization.</description>
+        <label>Has Active PA</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Program Coverage</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Coverage_Status__c</columns>
+        <columns>PC_Coverage_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>COV-{000000000}</displayFormat>
+        <label>Coverage Number</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Program Coverage</pluralLabel>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>PC_Alternate_Funding_Coverage</fullName>
+        <active>true</active>
+        <label>Alternate Funding Coverage</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Type__c</picklist>
+            <values>
+                <fullName>Alternate Funding</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Application Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sources Not Found</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Copay_Coverage</fullName>
+        <active>true</active>
+        <label>Copay Coverage</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Type__c</picklist>
+            <values>
+                <fullName>Copay Assistance</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigation In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Medical_Coverage</fullName>
+        <active>true</active>
+        <description>This field indicates that the coverage is a medical coverage</description>
+        <label>Medical Coverage</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Type__c</picklist>
+            <values>
+                <fullName>Charitable Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discount Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturer Copay Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicaid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare A%2FB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tricare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Application Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigation In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sources Not Found</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_PAP</fullName>
+        <active>true</active>
+        <label>PAP Coverage</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Type__c</picklist>
+            <values>
+                <fullName>Alternate Funding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Assistance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Coverage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Application Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eligibility Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigation In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sources Not Found</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Pharmacy_Plan</fullName>
+        <active>true</active>
+        <description>This field indicates that the coverage is a pharmacy coverage</description>
+        <label>Pharmacy Coverage</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Type__c</picklist>
+            <values>
+                <fullName>Charitable Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Discount Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manufacturer Copay Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicaid</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare A%2FB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare Advantage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medicare D</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharmacy Plan Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Private Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tricare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with Restrictions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigation In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Private_Coverage</fullName>
+        <active>false</active>
+        <label>Medical Coverage (Private)</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Type__c</picklist>
+            <values>
+                <fullName>Private Coverage</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigation In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Public_Coverage</fullName>
+        <active>false</active>
+        <label>Medical Coverage (Public)</label>
+        <picklistValues>
+            <picklist>ACLS_AOB_MD_Purchase__c</picklist>
+            <values>
+                <fullName>AOB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MD Purchase</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Coverage_Source__c</picklist>
+            <values>
+                <fullName>Automated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Has_Mandatory_Contracted_SP__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Is_Product_on_Formulary__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_PA_Outcome__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Product_Formulary_Tier__c</picklist>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Site_of_Care__c</picklist>
+            <values>
+                <fullName>HOP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Health</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infusion Center</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Long Term Care</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nursing Home</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Physician Office</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_Year_Plan__c</picklist>
+            <values>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fiscal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ACLS_eBV_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Covered - Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered - Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Covered with PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Too Soon to Fill</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Coverage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to Determine Eligibility</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PA_Required__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Denial_Reason_2__c</picklist>
+            <values>
+                <fullName>Does not meet income criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet other eligibility criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not meet residency criteria</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Missing information</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_1__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Alt_Fund_Outcome_2__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Annual_Household_Income__c</picklist>
+            <values>
+                <fullName>30%2C0000 to 45%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Greater than %2445%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Less than %2430%2C000</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Appeal_Available__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unknown</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Copay_Card_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Coverage_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Program_Coverage__c</picklist>
+            <values>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created in Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Investigation In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Covered</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending Appeal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending PA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Triaged</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_Benefits_Not_Accepted__c</picklist>
+            <values>
+                <fullName>Benefits discrepancy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Concern about side effects%2Fproduct research</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cost concern%2Fpatient did not want to apply to an alternate funding option</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Does not want to inject</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance reasons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other medical issues</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient traveling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending alternate funding outcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prior authorization denied</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Using alternative therapy</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with MD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wants to discuss with family member%2Fcaregiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Reason_for_Not_Covered__c</picklist>
+            <values>
+                <fullName>Choice 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Choice 2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PC_Coverage_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PC_Coverage_Type__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>PC_Patient__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PC_Payer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>RECORDTYPE</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>PC_Patient__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PC_Payer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>PC_HealthPlanSelectionValidation</fullName>
+        <active>true</active>
+        <errorConditionFormula>NOT(ISBLANK(PC_Health_Plan__c )) &amp;&amp; (PC_Health_Plan__r.Patient__r.Id  &lt;&gt;   PC_Program__r.Account.Id)</errorConditionFormula>
+        <errorDisplayField>PC_Health_Plan__c</errorDisplayField>
+        <errorMessage>Health plans related to the patient can only be selected.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_ProgramType_Validation</fullName>
+        <active>true</active>
+        <description>This validation rule checks for the case type &quot;Program&quot; on field &quot;PC_Program__c&quot;</description>
+        <errorConditionFormula>IF(OR(ISBLANK( PC_Program__c), ISNULL(PC_Program__c)), FALSE, NOT(ISPICKVAL(PC_Program__r.Type, &quot;Program&quot;)))</errorConditionFormula>
+        <errorDisplayField>PC_Program__c</errorDisplayField>
+        <errorMessage>Case selected must be of the type Program</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,7 @@
+<!--
+ - Created by peharitha on 7/9/2019.
+ -->
+
+<aura:documentation>
+    <aura:description><h4>Deprecated. It is recommended to use PC_DocumentRelatedListView instead.</h4> Displays the related list of Child Split Documents &amp; Original Parent Documents.</aura:description>
+</aura:documentation>

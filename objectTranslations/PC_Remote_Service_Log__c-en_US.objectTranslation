@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Remote Service Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Remote Service Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>PC_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request --></label>
+        <name>PC_Callback_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response --></label>
+        <name>PC_Callback_Response__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to store the callback URL. --></help>
+        <label><!-- Endpoint URL --></label>
+        <name>PC_Callback_URL2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Endpoint URL --></label>
+        <name>PC_Callback_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running User --></label>
+        <name>PC_Running_User__c</name>
+        <relationshipLabel><!-- Remote Service Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>PC_Service_Name__c</name>
+        <picklistValues>
+            <masterLabel>Amazon Textract</masterLabel>
+            <translation><!-- Amazon Textract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CMM</masterLabel>
+            <translation><!-- CMM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Five9 SMS</masterLabel>
+            <translation><!-- Five9 SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HC Split</masterLabel>
+            <translation><!-- HC Split --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infinitus</masterLabel>
+            <translation><!-- Infinitus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Melissa Address</masterLabel>
+            <translation><!-- Melissa Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RisRx Pharmacy</masterLabel>
+            <translation><!-- RisRx Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Twilio</masterLabel>
+            <translation><!-- Twilio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VMI</masterLabel>
+            <translation><!-- VMI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Type --></label>
+        <name>PC_Service_Type__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status Code --></label>
+        <name>PC_StatusCode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

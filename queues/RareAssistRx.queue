@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>RareAssistRx</name>
+    <queueMembers>
+        <users>
+            <user>keith.ulrich@ashfieldhealthcare.com</user>
+            <user>kiran9@deloitte.com.ashfield4prod</user>
+            <user>lcmprod@ashfieldhealthcare.com</user>
+            <user>meghan.petit@ashfieldhealthcare.com.ashfield4</user>
+            <user>sreenivasulu.vaddineni@ashfieldhealthcare.com.ashfield4</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>PC_Document__c</sobjectType>
+    </queueSobject>
+</Queue>

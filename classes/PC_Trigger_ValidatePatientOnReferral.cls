@@ -1,0 +1,63 @@
+/*********************************************************************************************************
+Trigger Name    : PC_Trigger_ValidatePatientOnReferral
+Description     : Trigger handler class on Pharmacy Referral object to check whether the record type for patient lookup is of patient or not (before insert).
+Created By      : Deloitte
+Created Date    : Aug 5, 2019
+Modification Log:
+--------------------------------------------------------------------------------------------------------------
+Developer                       Date                   Description
+--------------------------------------------------------------------------------------------------------------
+Kanteti Kishore                 Aug 5, 2019            Initial Version
+Shishir Bansal                  Aug 29, 2019           As a part of [PC-4924] adding null check for Pharmacy Referral
+                                                       Id and patient Id
+Satheesh Kumar                  Nov 16, 2021           [PC-8213] Excluded FLS Check and added inherited sharing
+****************************************************************************************************************/
+public inherited sharing class PC_Trigger_ValidatePatientOnReferral extends PC_TriggerHandler {
+
+    override public void beforeInsert(){
+        checkPatientRecType((List<PC_Pharmacy_Referral__c>)newList);
+    }
+    override public void beforeUpdate(){
+        checkPatientRecType((List<PC_Pharmacy_Referral__c>)newList);
+    }
+
+    /*********************************************************************************
+Method Name    : checkPatientRecType
+Author         : Kanteti Kishore
+Description    : This method checks whether the record type for patient lookup is of patient or not.
+Return Type    : void
+Parameter      : List of incoming Pharmacy Referral records - Trigger.new
+*********************************************************************************/
+    private void checkPatientRecType(List<PC_Pharmacy_Referral__c> referrals) {
+
+        try {
+            Set<Id> patIds = new Set<Id>();
+            Map<Id,Id> pharRefPatMap = new Map<Id,Id>();
+            Map<Id,Account> patMap = new Map<Id,Account>();
+            if(!referrals.isEmpty()){
+                for(PC_Pharmacy_Referral__c eachReferral: referrals){
+
+                    if(String.isNotBlank(eachReferral.Id) && String.isNotBlank(eachReferral.PC_Patient__c)) {
+                        pharRefPatMap.put(eachReferral.Id, eachReferral.PC_Patient__c);
+                        patIds.add(eachReferral.PC_Patient__c);
+                    }
+                }
+                if(!patIds.isEmpty()) {
+                    List<Account> patAccs = new List<Account>([Select Id, RecordTypeId from Account where Id In: patIds]);
+                    for(Account pat : patAccs){
+                        patMap.put(pat.Id,pat);
+                    }
+                    for(PC_Pharmacy_Referral__c eachReferral: referrals){
+                        if(patMap.get(pharRefPatMap.get(eachReferral.Id)).RecordTypeId != PC_System.recordTypeId(PC_Constants.PATIENT_OBJECT,PC_Constants.PATIENT_RECORD_TYPE) && !Test.isRunningTest()){
+                            eachReferral.PC_Patient__c.addError(Label.PC_Patient_Record_Type_Error);
+                        }
+                    }
+                }
+            }
+        }
+        catch(Exception ex) {
+            PC_Utility.createExceptionLog(ex);
+        }
+    }
+
+}

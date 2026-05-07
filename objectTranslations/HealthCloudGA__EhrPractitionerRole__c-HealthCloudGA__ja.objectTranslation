@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 医師の役割</value>
+    </caseValues>
+    <fields>
+        <label>EHR 医師</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>EHR 医師の役割</relationshipLabel>
+    </fields>
+    <fields>
+        <label>終了日</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>役割コード</label>
+        <name>HealthCloudGA__RoleCode__c</name>
+    </fields>
+    <fields>
+        <label>役割の表示ラベル</label>
+        <name>HealthCloudGA__RoleLabel__c</name>
+    </fields>
+    <fields>
+        <label>役割システム</label>
+        <name>HealthCloudGA__RoleSystem__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>専門1 コード</label>
+        <name>HealthCloudGA__Specialty1Code__c</name>
+    </fields>
+    <fields>
+        <label>専門1 の表示ラベル</label>
+        <name>HealthCloudGA__Specialty1Label__c</name>
+    </fields>
+    <fields>
+        <label>専門1 システム</label>
+        <name>HealthCloudGA__Specialty1System__c</name>
+    </fields>
+    <fields>
+        <label>専門2 コード</label>
+        <name>HealthCloudGA__Specialty2Code__c</name>
+    </fields>
+    <fields>
+        <label>専門2 の表示ラベル</label>
+        <name>HealthCloudGA__Specialty2Label__c</name>
+    </fields>
+    <fields>
+        <label>専門2 システム</label>
+        <name>HealthCloudGA__Specialty2System__c</name>
+    </fields>
+    <fields>
+        <label>専門3 コード</label>
+        <name>HealthCloudGA__Specialty3Code__c</name>
+    </fields>
+    <fields>
+        <label>専門3 の表示ラベル</label>
+        <name>HealthCloudGA__Specialty3Label__c</name>
+    </fields>
+    <fields>
+        <label>専門3 システム</label>
+        <name>HealthCloudGA__Specialty3System__c</name>
+    </fields>
+    <fields>
+        <label>専門4 コード</label>
+        <name>HealthCloudGA__Specialty4Code__c</name>
+    </fields>
+    <fields>
+        <label>専門4 の表示ラベル</label>
+        <name>HealthCloudGA__Specialty4Label__c</name>
+    </fields>
+    <fields>
+        <label>専門4 システム</label>
+        <name>HealthCloudGA__Specialty4System__c</name>
+    </fields>
+    <fields>
+        <label>専門5 コード</label>
+        <name>HealthCloudGA__Specialty5Code__c</name>
+    </fields>
+    <fields>
+        <label>専門5 の表示ラベル</label>
+        <name>HealthCloudGA__Specialty5Label__c</name>
+    </fields>
+    <fields>
+        <label>専門5 システム</label>
+        <name>HealthCloudGA__Specialty5System__c</name>
+    </fields>
+    <fields>
+        <label>開始日</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <nameFieldLabel>EHR 医師の役割名</nameFieldLabel>
+</CustomObjectTranslation>

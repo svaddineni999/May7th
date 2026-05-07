@@ -1,0 +1,16 @@
+/**
+ * Created by havalakki on 5/28/2021.
+ */
+.THIS .hideDiv{
+    display: none;
+}
+.THIS .outerDiv{
+    padding: 10px 10px 10px 10px;
+    border-radius:8px 8px 8px 8px;
+}
+.THIS .caseDiv{
+    padding: 10px 10px 10px 10px;
+}
+.THIS .slds-theme_backgroundColor-white {
+    background-color: white;
+}

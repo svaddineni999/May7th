@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Procedimiento de HCE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Procedimientos de HCE</value>
+    </caseValues>
+    <fields>
+        <label>Cuenta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Procedimientos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sitio de cuerpo</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Categoría</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Complicación</label>
+        <name>HealthCloudGA__Complication__c</name>
+    </fields>
+    <fields>
+        <label>Encuentro</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Procedimientos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Instrucciones de seguimiento</label>
+        <name>HealthCloudGA__FollowUpInstructions__c</name>
+    </fields>
+    <fields>
+        <label>Elementos utilizados</label>
+        <name>HealthCloudGA__ItemsUsed__c</name>
+    </fields>
+    <fields>
+        <label>Ubicación</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>No realizado</label>
+        <name>HealthCloudGA__NotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Notas</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Resultado</label>
+        <name>HealthCloudGA__Outcome__c</name>
+    </fields>
+    <fields>
+        <label>Fecha y hora de realización</label>
+        <name>HealthCloudGA__PerformedDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Motivo de la no realización</label>
+        <name>HealthCloudGA__ReasonNotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Reportar</label>
+        <name>HealthCloudGA__Report__c</name>
+    </fields>
+    <fields>
+        <label>Solicitar</label>
+        <name>HealthCloudGA__Request__c</name>
+        <relationshipLabel>Procedimientos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Id. de sistema de origen</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Estado</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entered in Error</masterLabel>
+            <translation><!-- Entered in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Id. de Procedimiento de HCE</nameFieldLabel>
+</CustomObjectTranslation>

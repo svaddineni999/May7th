@@ -1,0 +1,11 @@
+<!--
+ - Created by havalakki on 4/5/2019.
+ -->
+
+<aura:interface description="PC_eLetterPreview">
+    <aura:attribute name="recordId" type="String" description="This attribute would be the record id which triggeres eLetter functionality" access="global"/>
+    <aura:attribute name="whatId" type="String" description="This attribute would be used to get merge fields' values" access="global"/>
+    <aura:attribute name="whoId"  type="String" description="This attribute would be the contact record Id" access="global"/>
+    <aura:attribute name="templateId" type="String" description="This attribute would be the email template Id" access="global"/>
+    <aura:attribute name="eLetterId" type="String" description="This attribute would be the eLetter Id" access="global"/>
+</aura:interface>

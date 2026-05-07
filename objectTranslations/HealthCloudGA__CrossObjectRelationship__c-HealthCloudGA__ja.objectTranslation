@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>クロスオブジェクトリレーション</value>
+    </caseValues>
+    <fields>
+        <label>元オブジェクト</label>
+        <name>HealthCloudGA__FromObject__c</name>
+    </fields>
+    <fields>
+        <label>リレーション</label>
+        <name>HealthCloudGA__Relationship__c</name>
+    </fields>
+    <fields>
+        <label>逆リレーション</label>
+        <name>HealthCloudGA__ReverseRelationship__c</name>
+    </fields>
+    <fields>
+        <label>対象オブジェクト</label>
+        <name>HealthCloudGA__ToObject__c</name>
+    </fields>
+    <nameFieldLabel>クロスオブジェクトリレーション名</nameFieldLabel>
+</CustomObjectTranslation>

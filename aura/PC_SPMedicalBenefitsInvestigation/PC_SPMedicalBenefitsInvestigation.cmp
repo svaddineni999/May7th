@@ -1,0 +1,30 @@
+<!--
+*************************************************************************************
+Component Name      : PC_SPMedicalBenefitsInvestigation
+Description         : This component is used for setting properties for Medical Benefits Investigation through BRE.
+CreatedBy           : Deloitte
+Created Date        : 25 March 2022
+Modification Log    :
+*****************************************************************************************************
+Developer                   Date                   Description
+********************************************************************************************
+Chetna Mohapatra            25 Mar 2022           Initial version
+*****************************************************************************************
+-->
+
+<aura:component description="PC_SPMedicalBenefitsInvestigation" controller="PC_SPMedicalBIController" implements="c:PC_SupportPlan_Automation_Interface" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="isValidTriggerEventObject" type="Boolean" access="private" default="false"/>
+    <aura:attribute name="BINotSupportedErrorMessage" type="String" default=""/>
+
+    <aura:if isTrue="{!!v.isValidTriggerEventObject}">
+        <div aura:id="supportError" class="slds-hide supportError">
+                {!v.BINotSupportedErrorMessage}
+        </div>
+    </aura:if>
+    <div class="contentBox">
+            {!$Label.c.PC_Default_AutomationMessage}
+    </div>
+</aura:component>

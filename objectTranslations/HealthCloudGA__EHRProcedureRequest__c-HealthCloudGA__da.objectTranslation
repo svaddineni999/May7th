@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Anmodningen om procedurer i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Anmodning om procedurer i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Anmodning om procedurer i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Anmodningerne om procedurer i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Anmodninger om procedurer i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Anmodninger om procedurer i EPJ</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Anmodninger om procedurer i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kropsdel</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Kategori</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Kodebetegnelse</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kode</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Møde</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Anmodninger om procedurer i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Notater</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Bestilt af</label>
+        <name>HealthCloudGA__OrderedBy__c</name>
+        <relationshipLabel>Anmodninger om procedurer i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Bestillingstidspunkt</label>
+        <name>HealthCloudGA__OrderedOn__c</name>
+    </fields>
+    <fields>
+        <label>Prioritet</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>ASAP</masterLabel>
+            <translation><!-- ASAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Routine</masterLabel>
+            <translation><!-- Routine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stat</masterLabel>
+            <translation><!-- Stat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent</masterLabel>
+            <translation><!-- Urgent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Årsag1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Årsag2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Årsag3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Årsag4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Planlagt dato/tidspunkt</label>
+        <name>HealthCloudGA__ScheduledDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem-id</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed</masterLabel>
+            <translation><!-- Proposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Procedureanmodnings-id i EPJ</nameFieldLabel>
+</CustomObjectTranslation>

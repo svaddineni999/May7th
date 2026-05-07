@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Solicitação de procedimento do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Solicitações de procedimento do RES</value>
+    </caseValues>
+    <fields>
+        <label>Conta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Solicitações de procedimento de EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Região do corpo</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Categoria</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Encontro</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Solicitações de procedimento de EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Observações</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Pedido por</label>
+        <name>HealthCloudGA__OrderedBy__c</name>
+        <relationshipLabel>Solicitações de procedimento de EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Pedido em</label>
+        <name>HealthCloudGA__OrderedOn__c</name>
+    </fields>
+    <fields>
+        <label>Prioridade</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>ASAP</masterLabel>
+            <translation><!-- ASAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Routine</masterLabel>
+            <translation><!-- Routine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stat</masterLabel>
+            <translation><!-- Stat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent</masterLabel>
+            <translation><!-- Urgent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Motivo 1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Data e hora agendados</label>
+        <name>HealthCloudGA__ScheduledDateTime__c</name>
+    </fields>
+    <fields>
+        <label>ID do sistema de origem</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed</masterLabel>
+            <translation><!-- Proposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID da solicitação de procedimento de EHR</nameFieldLabel>
+</CustomObjectTranslation>

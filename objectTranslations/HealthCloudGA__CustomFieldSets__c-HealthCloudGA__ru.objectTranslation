@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Наборы настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Наборы настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Наборы настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Наборы настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Наборов настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Наборов настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Наборам настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Наборам настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Наборами настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Наборами настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Наборах настраиваемых полей</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Наборах настраиваемых полей</value>
+    </caseValues>
+    <fields>
+        <label>Исключенные поля</label>
+        <name>HealthCloudGA__ExcludedFields__c</name>
+    </fields>
+    <fields>
+        <label>Метка набора полей</label>
+        <name>HealthCloudGA__FieldSetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Имя sObject</label>
+        <name>HealthCloudGA__SObjectName__c</name>
+    </fields>
+    <fields>
+        <label>Макет с двумя столбцами</label>
+        <name>HealthCloudGA__TwoColumnLayout__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

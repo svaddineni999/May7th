@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für HCC-Code</value>
+    </caseValues>
+    <fields>
+        <label>Community, vollberechtigt, dual, 65+</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community, vollberechtigt, dual, behind.</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community, nicht dual, 65+</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community, nicht dual, behindert</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community, teilberechtigt, dual, 65+</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community, teilberechtigt, dual, behind.</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>Erkrankungskategorie</label>
+        <name>HealthCloudGA__ConditionCategory__c</name>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>HCC-Code</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <label>Institutionell</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>Ist aktiv</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Überschriebene HCC-Codes</label>
+        <name>HealthCloudGA__OverriddenHCCCodes__c</name>
+    </fields>
+    <fields>
+        <label>Jahreszeitraum</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

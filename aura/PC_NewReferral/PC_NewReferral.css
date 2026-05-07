@@ -1,0 +1,15 @@
+/**
+ * Created by vkashikar on 8/13/2018.
+ */
+.THIS .existingPharmacyMessage{
+    display: inline-block;
+}
+.THIS .messageWithButtons {
+    display: flex;
+}
+.THIS .programCoverageSelectLabel {
+    width: 30%;
+}
+.THIS .programCoverageSelectDropDown {
+    width: 70%;
+}

@@ -1,0 +1,83 @@
+<!--
+ - Created by sathekumar on 10/8/2021.
+ -->
+
+<aura:component description="PC_OcrTemplateSelect" controller="PC_OcrTemplateSelection">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:method name="validate" action="{!c.validate}" access="public"> </aura:method>
+
+    <aura:attribute name="ocrQueueObjectApiName" type="String" default="PC_OcrQueue__c" access="private"/>
+    <aura:attribute name="templateTypeFieldApiName" type="String" default="PC_OcrTemplateType__c" access="private"/>
+    <aura:attribute name="templateTypeId" type="String" default="" access="public"/>
+    <aura:attribute name="engagementProgram" type="String" access="public"/>
+    <aura:attribute name="isDocumentEngagementProgram" type="Boolean" access="public"/>
+    <aura:attribute name="templateCategoryList" type="Object[]"/>
+    <aura:attribute name="selectedCategory" type="List"/>
+    <aura:attribute name="engagementProgramOptions" type="List"/>
+    <aura:attribute name="templateType" type="String"/>
+    <aura:attribute name="templateTypeName" type="String"/>
+    <aura:attribute name="templateTypeOptions" type="List"/>
+    <aura:attribute name="isDisabled" type="Boolean" access="private" default="false"/>
+    <aura:attribute name="templateCategory" type="String" access="public"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="showSpinner" type="boolean" default="false" access="private"/>
+    <aura:attribute name="isTemplateTypeLoading" type="boolean" default="false" access="private"/>
+    <aura:attribute name="picklistNone" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+
+    <div class="slds-size_1-of-1">
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner aura:id="OcrSpinner" alternativeText="Loading" />
+        </aura:if>
+
+        <div class="dashedBox">
+            <div class="slds-grid slds-m-bottom_x-small">
+                <lightning:icon iconName="utility:filterList" size="x-small" alternativeText="Filter" title="{!$Label.c.PC_FilterDocumentTypeHeader}" />
+                <span class="slds-text-title_caps slds-truncate slds-p-horizontal_xx-small">{!$Label.c.PC_FilterDocumentTypeHeader}</span>
+            </div>
+            <lightning:combobox aura:id="engagementProgram"
+                                name="EngagementProgram"
+                                label="{!$Label.c.PC_Engagement_Program}"
+                                value="{!v.engagementProgram}"
+                                fieldLevelHelp="{!$Label.c.PC_DocumentReviewEngagementProgramHelpText}"
+                                options="{!v.engagementProgramOptions}"
+                                onchange="{!c.onEngProgramSelect}"
+                                class="pc-combo-desc slds-p-around_xx-small"/>
+            <div class="slds-form-element slds-p-around_xx-small pc-template-category" aura:id="template-category-section">
+                <label class="slds-form-element__label">Category</label>
+                <div class="slds-form-element__control">
+                    <aura:if isTrue="{!v.templateCategoryList.length > 0}">
+                        <c:pcPillList pills="{!v.templateCategoryList}" onfilterschange="{!c.handleCategory}" />
+                        <aura:set attribute="else">
+                            No category available
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+        <div class="contentBox">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-1">
+                    <aura:if isTrue="{!v.isTemplateTypeLoading}">
+                        <div class="pc_spinner">
+                            <lightning:spinner size="small"/>
+                        </div>
+                        <aura:set attribute="else">
+                            <lightning:combobox
+                                    aura:id="templateType"
+                                    label="{!$Label.c.PC_DocumentTypeLabel}"
+                                    required="true"
+                                    fieldLevelHelp="{!$Label.c.PC_DocumentTypeHelpText}"
+                                    value="{!v.templateTypeId}"
+                                    options="{!v.templateTypeOptions}"
+                                    disabled="{!v.isDisabled}"
+                                    onchange="{!c.handleTemplateChange}"
+                                    class="pc-combo-desc slds-p-around_xx-small"/>
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,1250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ComposeGmail</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>LogCall</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MailMerge</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>RequestUpdate</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SendEmail</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ViewAll</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>ACLS_Attempt__c</fullName>
+        <externalId>false</externalId>
+        <label>Attempt</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EFX__eFax__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Related eFax</label>
+        <referenceTo>EFX__efax__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Five9__Five9SessionId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Five9 Session Id</label>
+        <length>50</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Five9__Five9TaskType__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Five9 Task Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>Chat</fullName>
+                    <default>false</default>
+                    <label>Chat</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Age__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Age</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__CarePlanGoal__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Goal this task is meant to address</description>
+        <inlineHelpText>Goal this task is meant to address</inlineHelpText>
+        <label>Goal</label>
+        <referenceTo>HealthCloudGA__CarePlanGoal__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__CarePlanProblem__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Problem this task is mean to address</description>
+        <inlineHelpText>Problem this task is mean to address</inlineHelpText>
+        <label>Problem</label>
+        <referenceTo>HealthCloudGA__CarePlanProblem__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__CarePlanTemplate__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <label>Care Plan Template</label>
+        <referenceTo>HealthCloudGA__CarePlanTemplate__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Category__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Category</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Diagnosis</fullName>
+                    <default>false</default>
+                    <label>Diagnosis</label>
+                </value>
+                <value>
+                    <fullName>Counselling</fullName>
+                    <default>false</default>
+                    <label>Counselling</label>
+                </value>
+                <value>
+                    <fullName>Vaccination</fullName>
+                    <default>false</default>
+                    <label>Vaccination</label>
+                </value>
+                <value>
+                    <fullName>Exercise</fullName>
+                    <default>false</default>
+                    <label>Exercise</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Conditions_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Condition Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Evaluated - No Risk</fullName>
+                    <default>false</default>
+                    <label>Evaluated - No Risk</label>
+                </value>
+                <value>
+                    <fullName>Asymptomatic</fullName>
+                    <default>false</default>
+                    <label>Asymptomatic</label>
+                </value>
+                <value>
+                    <fullName>Asymptomatic - Declined to Participate</fullName>
+                    <default>false</default>
+                    <label>Asymptomatic - Declined to Participate</label>
+                </value>
+                <value>
+                    <fullName>Symptomatic</fullName>
+                    <default>false</default>
+                    <label>Symptomatic</label>
+                </value>
+                <value>
+                    <fullName>Symptomatic - Declined to Participate</fullName>
+                    <default>false</default>
+                    <label>Symptomatic - Declined to Participate</label>
+                </value>
+                <value>
+                    <fullName>Cured</fullName>
+                    <default>false</default>
+                    <label>Cured</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Contract_Tracing_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Contract Tracing Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Incoming</fullName>
+                    <default>false</default>
+                    <label>Incoming</label>
+                </value>
+                <value>
+                    <fullName>No Response</fullName>
+                    <default>false</default>
+                    <label>No Response</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Gender__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Gender</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                    <label>Female</label>
+                </value>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+                <value>
+                    <fullName>Decline to Specify</fullName>
+                    <default>false</default>
+                    <label>Decline to Specify</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Monitored_at_Home__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Monitored at Home</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__SortOrder__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sort Order</label>
+        <precision>15</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__TaskType__c</fullName>
+        <deprecated>false</deprecated>
+        <label>TaskType</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Uncategorized</fullName>
+                    <default>true</default>
+                    <label>Uncategorized</label>
+                </value>
+                <value>
+                    <fullName>Administrative</fullName>
+                    <default>false</default>
+                    <label>Administrative</label>
+                </value>
+                <value>
+                    <fullName>Clinical</fullName>
+                    <default>false</default>
+                    <label>Clinical</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>HealthCloudGA__Testing_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Testing Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Testing Recommended</fullName>
+                    <default>false</default>
+                    <label>Testing Recommended</label>
+                </value>
+                <value>
+                    <fullName>Test Scheduled</fullName>
+                    <default>false</default>
+                    <label>Test Scheduled</label>
+                </value>
+                <value>
+                    <fullName>Test Results Pending</fullName>
+                    <default>false</default>
+                    <label>Test Results Pending</label>
+                </value>
+                <value>
+                    <fullName>Negative Test</fullName>
+                    <default>false</default>
+                    <label>Negative Test</label>
+                </value>
+                <value>
+                    <fullName>Positive Test</fullName>
+                    <default>false</default>
+                    <label>Positive Test</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ActionComponent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the lightning action component that is associated with the record. This
+        is used to render the component dynamically on the layout. Note that the API name of the picklist values must
+        follow the naming convention Namespace__ComponentName For e.g PatientConnect__PC_eLetter2 or c__SampleComponent</description>
+        <inlineHelpText>Indicates the lightning action component that is associated with the record</inlineHelpText>
+        <label>Action Component</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PatientConnect__PC_PharmacyEBenefitsLookup</fullName>
+                    <default>false</default>
+                    <label>Lookup Pharmacy Ebenefits</label>
+                </value>
+                <value>
+                    <fullName>PatientConnect__PC_BookAppointment</fullName>
+                    <default>false</default>
+                    <label>Book an appointment</label>
+                </value>
+                <value>
+                    <fullName>PatientConnect__PC_Referral_Launch</fullName>
+                    <default>false</default>
+                    <label>Initiate a Referral</label>
+                </value>
+                <value>
+                    <fullName>PatientConnect__PC_LaunchLogACall</fullName>
+                    <default>false</default>
+                    <label>Log a Call</label>
+                </value>
+                <value>
+                    <fullName>ACLS_PC_eLetter2</fullName>
+                    <default>false</default>
+                    <label>Send eLetter</label>
+                </value>
+                <value>
+                    <fullName>PatientConnect__PC_eLetter2</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Send eLetter2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Activity_Template_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The ID of the support model template that is used to create the task.</description>
+        <externalId>false</externalId>
+        <label>Activity Template ID</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Assign_to_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The care team member role to which the task is assigned to.</description>
+        <inlineHelpText>The care team member role to which the task is assigned to.</inlineHelpText>
+        <label>Assign to Role</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Care Coordinator</fullName>
+                    <default>false</default>
+                    <label>Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Reimbursement Specialist</fullName>
+                    <default>false</default>
+                    <label>Reimbursement Specialist</label>
+                </value>
+                <value>
+                    <fullName>Field Reimbursement Manager</fullName>
+                    <default>false</default>
+                    <label>Field Reimbursement Manager</label>
+                </value>
+                <value>
+                    <fullName>Case Manager</fullName>
+                    <default>false</default>
+                    <label>Case Manager</label>
+                </value>
+                <value>
+                    <fullName>Clinical Educator</fullName>
+                    <default>false</default>
+                    <label>Clinical Educator</label>
+                </value>
+                <value>
+                    <fullName>HCO</fullName>
+                    <default>false</default>
+                    <label>HCO</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Treating Physician</fullName>
+                    <default>false</default>
+                    <label>Treating Physician</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Assigned_To__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assigned To</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Call_Outcome__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Outcome of phone call (if reached, or left message, etc.).</description>
+        <label>Call Outcome</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Successful</fullName>
+                    <default>false</default>
+                    <label>Successful</label>
+                </value>
+                <value>
+                    <fullName>Unsuccessful</fullName>
+                    <default>false</default>
+                    <label>Unsuccessful</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Capture_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date and time on which the task was created.</description>
+        <label>Capture Time</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The primary category of the activity.</description>
+        <inlineHelpText>The primary category of the activity.</inlineHelpText>
+        <label>Category</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AE</fullName>
+                    <default>false</default>
+                    <label>AE</label>
+                </value>
+                <value>
+                    <fullName>Alt. Funding</fullName>
+                    <default>false</default>
+                    <label>Alt. Funding</label>
+                </value>
+                <value>
+                    <fullName>Appeal</fullName>
+                    <default>false</default>
+                    <label>Appeal</label>
+                </value>
+                <value>
+                    <fullName>BI</fullName>
+                    <default>false</default>
+                    <label>BI</label>
+                </value>
+                <value>
+                    <fullName>Copay</fullName>
+                    <default>false</default>
+                    <label>Copay</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Missing Information</fullName>
+                    <default>false</default>
+                    <label>Missing Information</label>
+                </value>
+                <value>
+                    <fullName>Support Check-In</fullName>
+                    <default>false</default>
+                    <label>Support Check-In</label>
+                </value>
+                <value>
+                    <fullName>Field Activity</fullName>
+                    <default>false</default>
+                    <label>Field Activity</label>
+                </value>
+                <value>
+                    <fullName>Patient Enrollment</fullName>
+                    <default>false</default>
+                    <label>Patient Enrollment</label>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                    <label>PA</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Referral</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Referral</label>
+                </value>
+                <value>
+                    <fullName>Treatment Reminder</fullName>
+                    <default>false</default>
+                    <label>Treatment Reminder</label>
+                </value>
+                <value>
+                    <fullName>Welcome Gesture</fullName>
+                    <default>false</default>
+                    <label>Welcome Gesture</label>
+                </value>
+                <value>
+                    <fullName>Training Reminder</fullName>
+                    <default>false</default>
+                    <label>Training Reminder</label>
+                </value>
+                <value>
+                    <fullName>Integration</fullName>
+                    <default>false</default>
+                    <label>Integration</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Channel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom copy of managed field &apos;Task Subtype&apos; for use in Activity timeline via custom metadata</description>
+        <label>Channel</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+                <value>
+                    <fullName>SMS</fullName>
+                    <default>false</default>
+                    <label>SMS</label>
+                </value>
+                <value>
+                    <fullName>Task</fullName>
+                    <default>false</default>
+                    <label>Task</label>
+                </value>
+                <value>
+                    <fullName>eLetter</fullName>
+                    <default>false</default>
+                    <label>eLetter</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Close_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date and time on which the task was closed.</description>
+        <inlineHelpText>The date and time on which the task was closed.</inlineHelpText>
+        <label>Close Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Direction__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the activity such as fax,sms, email or call is inbound or outbound</description>
+        <inlineHelpText>Indicate if the task/activity such as fax,sms, email or call is inbound or outbound</inlineHelpText>
+        <label>Direction</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Inbound</fullName>
+                    <default>false</default>
+                    <label>Inbound</label>
+                </value>
+                <value>
+                    <fullName>Outbound</fullName>
+                    <default>false</default>
+                    <label>Outbound</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Document__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the document associated with the task, if any.</description>
+        <label>Document</label>
+        <referenceTo>PC_Document__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_IsOverdue__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked/Selected when the task has passed its due date.</description>
+        <inlineHelpText>Checked/Selected when the task has passed its due date.</inlineHelpText>
+        <label>Is Overdue</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Is_SMS__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if a task/event is of type SMS</description>
+        <inlineHelpText>Indicates if a task/event is of type SMS</inlineHelpText>
+        <label>Is SMS</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Original_Due_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to store the original due date if the task’s Due Date is changed.</description>
+        <inlineHelpText>Used to store the original due date if the task’s Due Date is changed.</inlineHelpText>
+        <label>Original Due Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Participant__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom field to indicate various participants that task relates to</description>
+        <label>Participant</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+                <value>
+                    <fullName>Patient</fullName>
+                    <default>false</default>
+                    <label>Patient</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Pharmacy_Referral__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Patient Connect custom field to look up a pharmacy referral on Task</description>
+        <label>Pharmacy Referral</label>
+        <referenceTo>PC_Pharmacy_Referral__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Priority_Value__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Value associated with the acticity based on the priority.</description>
+        <externalId>false</externalId>
+        <formula>IF(text(Priority) = &apos;High&apos;,10,IF(text(Priority) = &apos;Normal&apos;,20,30))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Value associated with the acticity based on the priority.</inlineHelpText>
+        <label>Priority Value</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the program case with which the task is associated.</description>
+        <inlineHelpText>Reference to the program case with which the task is associated.</inlineHelpText>
+        <label>Program</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Child Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Request_Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Request Form associated with the activity, if any.</description>
+        <label>Request Form</label>
+        <referenceTo>PC_Request_Form__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>PC_Activities_Request_Form</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Send_to_Patient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selected if the activity details need to be sent to patient.</description>
+        <label>Send to Patient</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Starred__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked for starred and important tasks and activities.</description>
+        <inlineHelpText>Checked for starred and important tasks and activities.</inlineHelpText>
+        <label>Starred</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Sub_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Sub-category of activity.</description>
+        <inlineHelpText>The Sub-category of activity.</inlineHelpText>
+        <label>Sub-Category</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>PC_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Follow up</fullName>
+                    <default>false</default>
+                    <label>Follow up</label>
+                </value>
+                <value>
+                    <fullName>Reported</fullName>
+                    <default>false</default>
+                    <label>Reported</label>
+                </value>
+                <value>
+                    <fullName>Confirmation</fullName>
+                    <default>false</default>
+                    <label>Confirmation</label>
+                </value>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>false</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Approval request</fullName>
+                    <default>false</default>
+                    <label>Approval request</label>
+                </value>
+                <value>
+                    <fullName>Payer</fullName>
+                    <default>false</default>
+                    <label>Payer</label>
+                </value>
+                <value>
+                    <fullName>Call pharmacy</fullName>
+                    <default>false</default>
+                    <label>Call pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Change of address</fullName>
+                    <default>false</default>
+                    <label>Change of address</label>
+                </value>
+                <value>
+                    <fullName>Change of treatment</fullName>
+                    <default>false</default>
+                    <label>Change of treatment</label>
+                </value>
+                <value>
+                    <fullName>Delivery confirmation</fullName>
+                    <default>false</default>
+                    <label>Delivery confirmation</label>
+                </value>
+                <value>
+                    <fullName>Outcome</fullName>
+                    <default>false</default>
+                    <label>Outcome</label>
+                </value>
+                <value>
+                    <fullName>Discontinuation</fullName>
+                    <default>false</default>
+                    <label>Discontinuation</label>
+                </value>
+                <value>
+                    <fullName>HCP</fullName>
+                    <default>false</default>
+                    <label>HCP</label>
+                </value>
+                <value>
+                    <fullName>HCP notification</fullName>
+                    <default>false</default>
+                    <label>HCP notification</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Response</fullName>
+                    <default>false</default>
+                    <label>Response</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Research</fullName>
+                    <default>false</default>
+                    <label>Research</label>
+                </value>
+                <value>
+                    <fullName>Preparation</fullName>
+                    <default>false</default>
+                    <label>Preparation</label>
+                </value>
+                <value>
+                    <fullName>Patient</fullName>
+                    <default>false</default>
+                    <label>Patient</label>
+                </value>
+                <value>
+                    <fullName>Reminder</fullName>
+                    <default>false</default>
+                    <label>Reminder</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+                <value>
+                    <fullName>eBV</fullName>
+                    <default>false</default>
+                    <label>eBV</label>
+                </value>
+                <value>
+                    <fullName>SMS</fullName>
+                    <default>false</default>
+                    <label>SMS</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <controllingFieldValue>Pharmacy Referral</controllingFieldValue>
+                <controllingFieldValue>AE</controllingFieldValue>
+                <controllingFieldValue>Alt. Funding</controllingFieldValue>
+                <controllingFieldValue>Appeal</controllingFieldValue>
+                <controllingFieldValue>BI</controllingFieldValue>
+                <controllingFieldValue>Copay</controllingFieldValue>
+                <controllingFieldValue>General</controllingFieldValue>
+                <controllingFieldValue>Support Check-In</controllingFieldValue>
+                <valueName>Follow up</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <controllingFieldValue>Pharmacy Referral</controllingFieldValue>
+                <controllingFieldValue>Alt. Funding</controllingFieldValue>
+                <controllingFieldValue>Appeal</controllingFieldValue>
+                <controllingFieldValue>BI</controllingFieldValue>
+                <controllingFieldValue>Copay</controllingFieldValue>
+                <controllingFieldValue>Missing Information</controllingFieldValue>
+                <controllingFieldValue>Field Activity</controllingFieldValue>
+                <valueName>Requested</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <controllingFieldValue>Appeal</controllingFieldValue>
+                <controllingFieldValue>BI</controllingFieldValue>
+                <valueName>Payer</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <controllingFieldValue>Alt. Funding</controllingFieldValue>
+                <controllingFieldValue>Appeal</controllingFieldValue>
+                <controllingFieldValue>BI</controllingFieldValue>
+                <controllingFieldValue>Copay</controllingFieldValue>
+                <valueName>Outcome</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <controllingFieldValue>AE</controllingFieldValue>
+                <controllingFieldValue>Alt. Funding</controllingFieldValue>
+                <controllingFieldValue>Appeal</controllingFieldValue>
+                <controllingFieldValue>BI</controllingFieldValue>
+                <controllingFieldValue>Copay</controllingFieldValue>
+                <controllingFieldValue>Patient Enrollment</controllingFieldValue>
+                <valueName>HCP notification</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <controllingFieldValue>Appeal</controllingFieldValue>
+                <controllingFieldValue>BI</controllingFieldValue>
+                <valueName>Research</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>PA</controllingFieldValue>
+                <valueName>Preparation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Pharmacy Referral</controllingFieldValue>
+                <controllingFieldValue>Patient Enrollment</controllingFieldValue>
+                <valueName>Pharmacy</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Integration</controllingFieldValue>
+                <valueName>Fax</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Integration</controllingFieldValue>
+                <valueName>eBV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Integration</controllingFieldValue>
+                <valueName>SMS</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>AE</controllingFieldValue>
+                <controllingFieldValue>Field Activity</controllingFieldValue>
+                <valueName>Reported</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Change of address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Change of treatment</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Discontinuation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>General</controllingFieldValue>
+                <valueName>Other</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Missing Information</controllingFieldValue>
+                <valueName>HCP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Missing Information</controllingFieldValue>
+                <valueName>Response</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Missing Information</controllingFieldValue>
+                <valueName>Patient</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_SupportPlanActivity__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to Support Plan Activity from which this activity was generated from</description>
+        <label>Support Plan Activity</label>
+        <referenceTo>PC_SupportPlanActivity__c</referenceTo>
+        <relationshipLabel>Activities</relationshipLabel>
+        <relationshipName>Activities</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <listViews>
+        <fullName>MyActivities</fullName>
+        <columns>ACTIVITY_SUBTYPE</columns>
+        <columns>TASK.STATUS</columns>
+        <columns>TASK.SUBJECT</columns>
+        <columns>TASK.DUE_DATE</columns>
+        <columns>TASK.WHAT_NAME</columns>
+        <columns>TASK.WHO_NAME</columns>
+        <columns>EVENT.LOCATION</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyDelegatedActivities</fullName>
+        <filterScope>Delegated</filterScope>
+        <label>My Delegated Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTeamsActivities</fullName>
+        <filterScope>Team</filterScope>
+        <label>My Team&apos;s Activities</label>
+    </listViews>
+    <listViews>
+        <fullName>TodaysTasks</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>TASK.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>lessThan</operation>
+            <value>TOMORROW</value>
+        </filters>
+        <label>Today&apos;s Tasks</label>
+    </listViews>
+    <listViews>
+        <fullName>UpcomingEvents</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>ACTIVITY.TASK</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>TASK.DUE_DATE</field>
+            <operation>greaterThan</operation>
+            <value>YESTERDAY</value>
+        </filters>
+        <label>Upcoming Events</label>
+    </listViews>
+    <searchLayouts>
+        <searchResultsAdditionalFields>TASK.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHO_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.WHAT_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>TASK.DUE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

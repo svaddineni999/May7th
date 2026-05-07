@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Observatie volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Observaties volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Observaties</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Past datum/tijd toe</label>
+        <name>HealthCloudGA__AppliesDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Past einddatum van periode toe</label>
+        <name>HealthCloudGA__AppliesPeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>Past begindatum van periode toe</label>
+        <name>HealthCloudGA__AppliesPeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Code voor plaats op lichaam</label>
+        <name>HealthCloudGA__BodySiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor plaats op lichaam</label>
+        <name>HealthCloudGA__BodySiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor plaats op lichaam</label>
+        <name>HealthCloudGA__BodySiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Opmerkingen</label>
+        <name>HealthCloudGA__Comments__c</name>
+    </fields>
+    <fields>
+        <label>Apparaat</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>Observaties volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Code voor interpretatie</label>
+        <name>HealthCloudGA__InterpretationCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor interpretatie</label>
+        <name>HealthCloudGA__InterpretationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor interpretatie</label>
+        <name>HealthCloudGA__InterpretationSystem__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Datum van uitgifte</label>
+        <name>HealthCloudGA__IssuedDate__c</name>
+    </fields>
+    <fields>
+        <label>Code voor methode</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor methode</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor methode</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code voor naam</label>
+        <name>HealthCloudGA__NameCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor naam</label>
+        <name>HealthCloudGA__NameLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor naam</label>
+        <name>HealthCloudGA__NameSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this is about --></help>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Observaties</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Patient who performed this observation --></help>
+        <label>Uitvoerende patiënt</label>
+        <name>HealthCloudGA__PerformingPatient__c</name>
+        <relationshipLabel>Observaties volgens EPD (uitvoerende patiënt)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>Uitvoerend praktiserend arts</label>
+        <name>HealthCloudGA__PerformingPractitioner__c</name>
+        <relationshipLabel>Observaties volgens EPD (elektronisch patiëntendossier) (uitvoerend praktiserend arts)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related person who performed the observation --></help>
+        <label>Uitvoerende gerelateerde persoon</label>
+        <name>HealthCloudGA__PerformingRelatedPerson__c</name>
+        <relationshipLabel>Observaties volgens EPD (uitvoerende gerelateerde persoon)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>Praktiserend arts</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>Observaties</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Label voor betekenis van verwijzing</label>
+        <name>HealthCloudGA__ReferenceMeaningLabel__c</name>
+    </fields>
+    <fields>
+        <label>Leeftijd van verwijzingsbereik hoog</label>
+        <name>HealthCloudGA__ReferenceRangeAgeHigh__c</name>
+    </fields>
+    <fields>
+        <label>Leeftijd van verwijzingsbereik laag</label>
+        <name>HealthCloudGA__ReferenceRangeAgeLow__c</name>
+    </fields>
+    <fields>
+        <label>Eenheid voor verwijzingsbereik hoog</label>
+        <name>HealthCloudGA__ReferenceRangeHighUnit__c</name>
+    </fields>
+    <fields>
+        <label>Waarde voor verwijzingsbereik hoog</label>
+        <name>HealthCloudGA__ReferenceRangeHighValue__c</name>
+    </fields>
+    <fields>
+        <label>Eenheid voor verwijzingsbereik laag</label>
+        <name>HealthCloudGA__ReferenceRangeLowUnit__c</name>
+    </fields>
+    <fields>
+        <label>Waarde voor verwijzingsbereik laag</label>
+        <name>HealthCloudGA__ReferenceRangeLowValue__c</name>
+    </fields>
+    <fields>
+        <label>Code betekenis van verwijzingsbereik</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningCode__c</name>
+    </fields>
+    <fields>
+        <label>Systeem betekenis van verwijzingsbereik</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningSystem__c</name>
+    </fields>
+    <fields>
+        <label>Eenheid voor verwijzingsbereik</label>
+        <name>HealthCloudGA__ReferenceRangeUnit__c</name>
+    </fields>
+    <fields>
+        <label>Betrouwbaarheidscode</label>
+        <name>HealthCloudGA__ReliabilityCode__c</name>
+    </fields>
+    <fields>
+        <label>Betrouwbaarheid</label>
+        <name>HealthCloudGA__Reliability__c</name>
+        <picklistValues>
+            <masterLabel>calibrating</masterLabel>
+            <translation><!-- calibrating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>early</masterLabel>
+            <translation><!-- early --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>error</masterLabel>
+            <translation><!-- error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ok</masterLabel>
+            <translation><!-- ok --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ongoing</masterLabel>
+            <translation><!-- ongoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>questionable</masterLabel>
+            <translation><!-- questionable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Voorbeeldgegevens</label>
+        <name>HealthCloudGA__SampledData__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code voor status</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>amended</masterLabel>
+            <translation><!-- amended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>final</masterLabel>
+            <translation><!-- final --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>preliminary</masterLabel>
+            <translation><!-- preliminary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>registered</masterLabel>
+            <translation><!-- registered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Bijlage voor waarde</label>
+        <name>HealthCloudGA__ValueAttachment__c</name>
+    </fields>
+    <fields>
+        <label>Code voor waarde</label>
+        <name>HealthCloudGA__ValueCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor waarde</label>
+        <name>HealthCloudGA__ValueLabel__c</name>
+    </fields>
+    <fields>
+        <label>Einddatum van periode voor waarde</label>
+        <name>HealthCloudGA__ValuePeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van periode voor waarde</label>
+        <name>HealthCloudGA__ValuePeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Periode voor waarde</label>
+        <name>HealthCloudGA__ValuePeriod__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>Eenheid voor hoeveelheid voor waarde</label>
+        <name>HealthCloudGA__ValueQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>Hoeveelheid voor waarde</label>
+        <name>HealthCloudGA__ValueQuantity__c</name>
+    </fields>
+    <fields>
+        <label>Noemer van verhouding voor waarde</label>
+        <name>HealthCloudGA__ValueRatioDenominator__c</name>
+    </fields>
+    <fields>
+        <label>Teller van verhouding voor waarde</label>
+        <name>HealthCloudGA__ValueRatioNumerator__c</name>
+    </fields>
+    <fields>
+        <label>Verhouding voor waarde</label>
+        <name>HealthCloudGA__ValueRatio__c</name>
+    </fields>
+    <fields>
+        <label>Dimensies waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataDimensions__c</name>
+    </fields>
+    <fields>
+        <label>Factor waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataFactor__c</name>
+    </fields>
+    <fields>
+        <label>Lagere limiet waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataLowerLimit__c</name>
+    </fields>
+    <fields>
+        <label>Label herkomstcode waardenmonstergeg.</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem herkomstcode waardenmonstergeg.</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Herkomstcode waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCode__c</name>
+    </fields>
+    <fields>
+        <label>Herkomstvergelijking waardenmonstergeg.</label>
+        <name>HealthCloudGA__ValueSampledDataOriginComparator__c</name>
+    </fields>
+    <fields>
+        <label>Systeem herkomst waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataOriginSystem__c</name>
+    </fields>
+    <fields>
+        <label>Eenheden herkomst waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataOriginUnits__c</name>
+    </fields>
+    <fields>
+        <label>Waarde herkomst waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataOriginValue__c</name>
+    </fields>
+    <fields>
+        <label>Herkomst waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Periode waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataPeriodMili__c</name>
+    </fields>
+    <fields>
+        <label>Bovenste limiet waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledDataUpperLimit__c</name>
+    </fields>
+    <fields>
+        <label>Waardenmonstergegevens</label>
+        <name>HealthCloudGA__ValueSampledData__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor waarde</label>
+        <name>HealthCloudGA__ValueSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam voor observatie volgens EPD (elektr</nameFieldLabel>
+</CustomObjectTranslation>

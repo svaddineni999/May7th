@@ -1,0 +1,150 @@
+<aura:component controller="ACLS_AddressValidationController" access="global">
+     
+    
+    <aura:attribute name="suggestedAddress" type="Object" description="The suggested address returned by the Melissa API" />
+    <aura:attribute name="openChild" type="Boolean" default="false"/>
+    <aura:attribute name="spinner" type="Boolean" default="false"/>
+    <aura:attribute name="isAcceptClicked" type="Boolean" default="false"/>
+    <aura:attribute name="isRejectClicked" type="Boolean" default="false"/>
+    <aura:attribute name="isEnrollmentWizard"  type="Boolean" />
+    
+    <aura:attribute name="addressList"  type="Object"/>
+    
+    <aura:attribute name="addressValue"  type="Object"/>
+    <aura:attribute name="count"  type="Integer"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    
+  
+    <aura:registerEvent name="cancelModal" type="c:ACLS_AddressValidation_Event" />
+    <aura:registerEvent name="validatedAddressList" type="c:ACLS_AddressValidation_Event" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+        
+        <aura:if isTrue="{!v.openChild}">
+
+       
+        <div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container" >
+            
+            <header class="slds-modal__header">
+                <h2 class="slds-text-heading_medium">Address Verification</h2>
+            </header>
+            <aura:if isTrue="{!v.spinner}">
+            <lightning:spinner alternativeText="Loading"  />
+    </aura:if>
+    
+        
+            <div class="slds-modal__content slds-p-around_medium">
+                <div class="slds-scrollable_x" style="width:600px">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Address Fields">Address Fields</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Entered Address">Entered Address</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="Suggested Address">Suggested Address</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" data-label="Address1">
+                                <div class="slds-truncate" title="Address1">Address 1</div>
+                            </th>
+                            <td>
+                                <div class="slds-truncate" title="{!v.address.Address1__c}">{!v.addressValue.PC_Address_1__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title="{!v.suggestedAddress.Address1__c}">{!v.suggestedAddress.PC_Address_1__c}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="Address2">
+                                <div class="slds-truncate" title="Address2">Address 2</div>
+                            </th>
+                            <td>
+                                <div class="slds-truncate" title="{!v.address.Address2__c}">{!v.addressValue.PC_Address_2__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title="{!v.suggestedAddress.Address2__c}">{!v.suggestedAddress.PC_Address_2__c}</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row" data-label="City">
+                                <div class="slds-truncate" title="City">City</div>
+                            </th>
+                            <td>
+                                <div class="slds-truncate" title="{!v.address.City__c}">{!v.addressValue.PC_City__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" title="{!v.suggestedAddress.City__c}">{!v.suggestedAddress.PC_City__c}</div>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row" data-label="Country">
+                            <div class="slds-truncate" title="Country">Country</div>
+                            </th>
+                            <td>
+                            <div class="slds-truncate" title="{!v.address.Country__c}">{!v.addressValue.PC_Country__c}</div>
+                            </td>
+                            <td>
+                            <div class="slds-truncate" title="{!v.suggestedAddress.Country__c}">{!v.suggestedAddress.PC_Country__c}</div>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row" data-label="State">
+                            <div class="slds-truncate" title="State">State</div>
+                            </th>
+                            <td>
+                            <div class="slds-truncate" title="{!v.address.State__c}">{!v.addressValue.PC_State__c}</div>
+                            </td>
+                            <td>
+                            <div class="slds-truncate" title="{!v.suggestedAddress.State__c}">{!v.suggestedAddress.PC_State__c}</div>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row" data-label="Zip Code">
+                            <div class="slds-truncate" title="Zip Code">Zip Code</div>
+                            </th>
+                            <td>
+                            <div class="slds-truncate" title="{!v.address.ZipCode__c}">{!v.addressValue.PC_Zip_Code__c}</div>
+                            </td>
+                            <td>
+                            <div class="slds-truncate" title="{!v.suggestedAddress.ZipCode__c}">{!v.suggestedAddress.PC_Zip_Code__c}</div>
+                            </td>
+                            </tr>
+                            <tr>
+                            <th scope="row" data-label="Zip Code Extension">
+                            <div class="slds-truncate" title="Zip Code Extension">Zip Code Extension</div>
+                            </th>
+                            <td>
+                            <div class="slds-truncate" title="{!v.address.ZipCodeExtension__c}">{!v.addressValue.ACLS_Zip_Code_Extension__c}</div>
+                            </td>
+                            <td>
+                            <div class="slds-truncate" title="{!v.suggestedAddress.ZipCodeExtension__c}">{!v.suggestedAddress.ACLS_Zip_Code_Extension__c}</div>
+                            </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            </div>
+                        
+                            <footer class="slds-modal__footer slds-modal__footer_directional">
+                                <div class="slds-align_absolute-center">
+                                    <lightning:button label="Cancel" variant="neutral" onclick="{!c.cancelhandle}" />
+                                    <lightning:button label="{!$Label.c.ACLS_Reject_Address}" variant="brand" onclick="{!c.rejectMelissaAddress}" />
+                                    <lightning:button label="{!$Label.c.ACLS_Accept_Address}" variant="brand" onclick="{!c.verifyMelissaAddress}" />
+                                </div>
+                            </footer>
+
+    </div>
+</div>
+</div>
+</aura:if>
+
+<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</aura:component>

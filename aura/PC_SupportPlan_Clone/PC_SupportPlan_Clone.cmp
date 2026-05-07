@@ -1,0 +1,50 @@
+<!--
+ - Created by tejapatel on 2/18/2019.
+ -->
+
+<aura:component description="PC_SupportPlan_Clone" controller="PC_SupportPlan_CloneController" implements="flexipage:availableForAllPageTypes" access="global">
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="render" value="{!this}" action="{!c.doneRendering}"/>
+
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="SPName" type="String"/>
+    <aura:attribute name="clonePrefix" type="String" default="{!$Label.c.PC_ClonePrefix}"/>
+    <aura:attribute name="fieldLabels" type="sObject"/>
+
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_Create}"/>
+    <aura:attribute name="_label2" type="String" default="{!$Label.c.PC_Close}" />
+    <aura:attribute name="_label4" type="String" default="{!$Label.c.PC_ConfirmClone}" />
+
+    <aura:attribute name="errorHeader" type="String" default="{!$Label.c.PC_Toast_Title_Error}"/>
+    <aura:attribute name="errorMessage" type="String" default="{!$Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute name="errors" type="List"/>
+
+    <div>
+        <div aria-hidden="false" aura:id="aura_cloneSectionId" id="cloneSectionId" role="dialog" class="slds-modal slds-modal--small slds-fade-in-open slds-show">
+            <div class="slds-modal__container">
+                <div class="slds-modal__header " >
+                    <h2 class="slds-text-heading--medium slds-hyphenate"><b>{!v._label4 + ' ' + v.SPName}</b></h2>
+                    <lightning:button class="slds-button slds-modal__close" onclick="{!c.hideCloneModal}">
+                        <lightning:icon iconName="utility:close"  size="x-small"/>
+                        <span class="slds-assistive-text">{!v._label2}</span>
+                    </lightning:button>
+                </div>
+                <div class="slds-modal__content slds-p-around_xx-small">
+                    <aura:renderIf isTrue="{!not(empty(v.errors))}">
+                        <c:PC_ErrorPanel errorHeader="{!v.errorHeader}" errors="{!v.errors}"  />
+                    </aura:renderIf>
+                </div>
+                <div aura:id="clonedSP" class="slds-modal__content slds-p-around_x-small">
+                    <lightning:input aura:id="clonedSPName" name="clonedSPName" required="true" maxlength="80" label="{!v.fieldLabels.supportPlanName}"/>
+                </div>
+                <div class="slds-modal__footer slds-modal__footer--center">
+                    <div class="slds-x-small-buttons--horizontal" align="center">
+                        <lightning:button class="slds-button slds-button--neutral" onclick="{!c.clone}" >{!v._label1}</lightning:button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-backdrop slds-backdrop--open slds-show" aura:id="aura_backGroundSectionId" id="backGroundSectionId"></div>
+    </div>
+</aura:component>

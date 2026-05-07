@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meta do modelo de plano de saúde</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Metas do modelo de plano de saúde</value>
+    </caseValues>
+    <fields>
+        <label>Ativo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Problema do modelo</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>Metas do modelo de plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Modelo de plano de saúde</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Metas do modelo de plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categoria</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition Improvement</masterLabel>
+            <translation><!-- Cognition Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muscle Strength Improvement</masterLabel>
+            <translation><!-- Muscle Strength Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Descrição</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Prioridade</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ordem de classificação</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nome da meta do modelo de plano de saúde</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Associe a meta a um modelo de plano de saúde ou problema.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Associe a meta a apenas um registro.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

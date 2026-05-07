@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement Program eLetter</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagement Program eLetter</value>
+    </caseValues>
+    <fields>
+        <help><!-- Description of the Engagement Program eLetter Template --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_Engagement_Program__c</name>
+        <relationshipLabel><!-- Engagement Program eLetter --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Recipients for sending Adverse Event report via email and to show non-case role users as recipients for e-letter. Please add mail ids as comma separated values and with no spaces. Ex-abc@xyz.com,xyz@abc.com. See description for more details. --></help>
+        <label><!-- Pre Configured Email Recipients --></label>
+        <name>PC_PreConfiguredEmailRecipients__c</name>
+    </fields>
+    <fields>
+        <help><!-- External recipients for sending SMS .Please add phone numbers in JSON format as shown in the example,
+
+            Ex. [{&quot;name&quot; : &quot;Linda&quot;,&quot;Phone&quot; : &quot;+15671112230&quot;,&quot;role&quot;:&quot;Nurse&quot;},
+            {&quot;name&quot; : &quot;David&quot;,&quot;Phone&quot; : &quot;+919897898789&quot;,&quot;role&quot;:&quot;Specialist&quot;}] --></help>
+        <label><!-- Pre Configured SMS Recipients --></label>
+        <name>PC_PreConfiguredSMSRecipients__c</name>
+    </fields>
+    <fields>
+        <label><!-- eLetter --></label>
+        <name>PC_eLetter__c</name>
+        <relationshipLabel><!-- Engagement Program eLetter --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

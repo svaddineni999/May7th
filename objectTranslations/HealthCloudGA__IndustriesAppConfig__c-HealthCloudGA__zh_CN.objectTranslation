@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>行业应用程序配置</value>
+    </caseValues>
+    <fields>
+        <help><!-- By default, account names are displayed: {firstname} {lastname}. To change the order, enter: {lastname} {firstname} --></help>
+        <label>客户名称格式</label>
+        <name>HealthCloudGA__AccountNameFormat__c</name>
+    </fields>
+    <fields>
+        <label>应用程序名称</label>
+        <name>HealthCloudGA__AppName__c</name>
+    </fields>
+    <fields>
+        <label>创建反向（仅限 Salesforce）</label>
+        <name>HealthCloudGA__AutoCreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>从联系人创建个人客户</label>
+        <name>HealthCloudGA__AutocreateIndividualAccount__c</name>
+    </fields>
+    <fields>
+        <label>默认个人类型</label>
+        <name>HealthCloudGA__DefaultIndividualType__c</name>
+    </fields>
+    <fields>
+        <label>依赖包</label>
+        <name>HealthCloudGA__DependentPackageNS__c</name>
+    </fields>
+    <fields>
+        <label>潜在客户转换批量大小</label>
+        <name>HealthCloudGA__LeadConversionBatchSize__c</name>
+    </fields>
+    <fields>
+        <label>多个关系组</label>
+        <name>HealthCloudGA__MultipleRelationshipGroups__c</name>
+    </fields>
+    <fields>
+        <help><!-- For example : v32.0 --></help>
+        <label>页面布局 API 版本</label>
+        <name>HealthCloudGA__PageLayoutApiVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show a detailed error message when someone performs an action without having permission. --></help>
+        <label>显示详细错误消息</label>
+        <name>HealthCloudGA__ShowDetailedError__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sync Account and Contact fields when records are created in the individual object model. --></help>
+        <label>同步个人系统字段</label>
+        <name>HealthCloudGA__SyncIndividualSystemFields__c</name>
+    </fields>
+</CustomObjectTranslation>

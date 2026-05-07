@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Gegevenstoewijzing van taakstroom</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Gegevenstoewijzingen van taakstroom</value>
+    </caseValues>
+    <fields>
+        <label>Actief</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Naam van toewijzingsgroep</label>
+        <name>HealthCloudGA__MappingGroupName__c</name>
+    </fields>
+    <fields>
+        <label>Bronveld</label>
+        <name>HealthCloudGA__SourceField__c</name>
+    </fields>
+    <fields>
+        <label>Bronobject</label>
+        <name>HealthCloudGA__SourceObject__c</name>
+    </fields>
+    <fields>
+        <label>Doelveld</label>
+        <name>HealthCloudGA__TargetField__c</name>
+    </fields>
+    <fields>
+        <label>Doelobject</label>
+        <name>HealthCloudGA__TargetObject__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

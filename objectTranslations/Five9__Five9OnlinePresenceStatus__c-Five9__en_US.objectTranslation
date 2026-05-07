@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Five9 Online Presence Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Five9 Online Presence Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Default Online Presence Status --></label>
+        <name>Five9__Is_Default_Online_Presence_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Deleted Online Presence Status --></label>
+        <name>Five9__Is_Deleted_Online_Presence_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Selected Online Presence Status --></label>
+        <name>Five9__Is_Selected_Online_Presence_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not Ready Reason Code Name --></label>
+        <name>Five9__Online_Not_Ready_Reason_Code_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Presence Status Id --></label>
+        <name>Five9__Online_Presence_Status_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Presence Status Label --></label>
+        <name>Five9__Online_Presence_Status_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Id --></label>
+        <name>Five9__Owner_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

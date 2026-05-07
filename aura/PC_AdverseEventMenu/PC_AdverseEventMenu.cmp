@@ -1,0 +1,152 @@
+<!--
+Lightning component  : PC_AdverseEventMenu
+Description          : Displays Adverse event Creation Menu & corresponding forms in a Popup
+Parameters           : Case Id from the PC_AdverseEvents Component
+Modification Log:
+Haritha Reddy 		 26-Oct-2018    Initial Version
+Haritha Reddy        25-Jan-2018    PC-4267: disabled Next button when "Additional Info Tab" is hidden in Manufacturer tab
+Shishir Bansal        4-Oct-2019   PC-5553 Capturing Type on Adverse Event record
+Kanteti Kishore      4-Nov-2019   PC-5679 Added a toast message on successful save along with link in helper.
+Haritha Reddy        06-Jan-2020    [PC-5600] Passing new property usePrescriptionForSuspectProducts to usePrescription attribute of Suspect Product Component
+Haritha Reddy        18-Feb-2020    [PC-5955] Code changes to make Error handling consistent in Suspect product and additional info tabs of Adverse Event
+-->
+
+<aura:component description="PC_AdverseEventMenu" controller="PC_AdverseEventMenuController">
+
+    <aura:attribute name="aeWrapper" type="Map" default="{aeInfo : {},epatInfo: {},adverseEventInfo: {},manufacturerInfo:{},suspectProductInfo:{},initialReporterInfo:{},fsFields:{}}"/>
+    <aura:attribute name="selTabId" type="string" default="Patient_Information" />
+    <aura:attribute name="visitedTab" type="Map" default="{patientInfo:false, adverseEvent:false, manufacturer:false, suspectProducts:false, initialReporter:false, additionalInfo:false}"/>
+    <aura:attribute name="previousTabId" type="string" default="Patient_Information" />
+    <aura:attribute name="aeId" type="string"/>
+    <aura:attribute name="errorDescription" type="String" default="Unknown error"/>
+    <aura:attribute name="caseId" type="string"/>
+    <aura:attribute name="aeRecord" type="Object"/>
+    <aura:attribute name="adverseEventMenuCmpAttributes" type="Map"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />    
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="saveSuccessMessage" type="String" default="{!$Label.c.PC_Save_Toast}" />
+    <aura:attribute name="reviewErrors" type="String" default="{!$Label.c.PC_EWP_Warning}" />
+    <aura:attribute name="patientInformation" type="String" default="{!$Label.c.PC_AE_Patient_Information}"/>
+    <aura:attribute name="additionalInformation" type="String" default="{!$Label.c.PC_AE_Additional_Information}"/>
+    <aura:attribute name="suspectProducts" type="String" default="{!$Label.c.PC_AE_Suspect_Products}"/>
+    <aura:attribute name="dateFormat" type="String" default="NULL"/>
+    <aura:attribute name="dateFormatErrorMessage" type="String" default=""/>
+    <aura:attribute name="versionNumber" type="String" default=""/>
+    <aura:attribute name="SubmissionStatusDefaultVal" type="string" default=""/>
+    <aura:attribute name="submissionStatus" type="string" default=""/>
+    <aura:attribute name="fieldLabels" type="Object" default="false"/>
+    <aura:attribute name="type" type="List"/>
+    <aura:attribute name="currentType" type="String" default=""/>
+    <aura:attribute name="disableSaveButton" type="Boolean" default="false"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:if isTrue="{! v.errors.length > 0 }">
+    	<c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+
+
+
+    <div class="slds AE fieldStyle allign ">
+        <div class="topLevelOptions">
+            <div class="slds-size_1-of-1">
+                <div class="">
+                    <lightning:select class="" name="currentType" label="{!v.fieldLabels.type}" aura:id="currentSubmissionStatus" value="{!v.currentType}" >
+                        <aura:iteration items="{!v.type}" var="option">
+                            <option text="{!option.label}" value="{!option.value}" selected="{!option.selected}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+            </div>
+        </div>
+        <lightning:tabset variant="vertical" selectedTabId="{!v.selTabId}" onselect="{!c.switchTabs}" class="tabSet">
+            <lightning:tab onactive="{!c.handleActive}" label="{!$Label.c.PC_AE_Patient_Information}" id="Patient_Information">
+                <c:PC_AE_PatientInfoRenderer aura:id="patientInfoComp" caseId ="{!v.caseId}" aeId="{!v.aeId}" aeWrapper="{!v.aeWrapper.patInfo}"/>
+                <div class="slds-float_left">
+                    <lightning:button disabled="true" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                </div>
+                <div class="slds-float_right">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                </div>
+            </lightning:tab>
+            <lightning:tab onactive="{!c.handleActive}" label="{!$Label.c.PC_AE_Adverse_Event_or_Product_Problem}" id="Adverse_Event">
+                <c:PC_AE_AdverseEventRenderer aura:id="adverseInfoComp" caseId ="{!v.caseId}" aeId="{!v.aeId}" aeWrapper="{!v.aeWrapper.adverseEventInfo}"/>
+                <div class="slds-float_left">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                </div>
+                <div class="slds-float_right">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                </div>
+            </lightning:tab>
+            <lightning:tab onactive="{!c.handleActive}" label="{!$Label.c.PC_AE_Suspect_Products}" id="Suspect_Products">
+                <c:PC_AE_SuspectProductsRenderer aura:id="suspectProductComp" caseId ="{!v.caseId}" aeId="{!v.aeId}" aeWrapper="{!v.aeWrapper.suspectProductInfo}"
+                                                 usePrescription="{!v.adverseEventMenuCmpAttributes.usePrescriptionForSuspectProducts}"
+                                                 dateFormatErrorMessage="{!v.dateFormatErrorMessage}" dateFormat="{!v.dateFormat}" submissionStatus="{!v.submissionStatus}"/>
+                <div class="slds-float_left">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                </div>
+                <div class="slds-float_right">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                </div>
+            </lightning:tab>
+            <lightning:tab onactive="{!c.handleActive}" label="{!$Label.c.PC_AE_Initial_Reporter}" id="Initial_Repoter">
+                <c:PC_AE_InitialReporterRenderer aeId="{!v.aeId}" aeWrapper="{!v.aeWrapper.initialReporterInfo}" caseId="{!v.caseId}"/>
+                <div class="slds-float_left">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                </div>
+                <div class="slds-float_right">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                </div>
+            </lightning:tab>
+            <lightning:tab onactive="{!c.handleActive}" label="{!$Label.c.PC_AE_Manufacturers}" id="Manufacturer">
+                <c:PC_AE_ManufacturerRenderer aeId="{!v.aeId}" caseId ="{!v.caseId}" aeWrapper="{!v.aeWrapper.manufacturerInfo}"/>
+                <div class="slds-float_left">
+                    <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                </div>
+                <div class="slds-float_right">
+                    <lightning:button disabled="{!or((v.adverseEventMenuCmpAttributes.hideAdditionalInfoTab),(v.adverseEventMenuCmpAttributes.hideAdditionalInfoTab == 'true'))}" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                </div>
+            </lightning:tab>
+            <aura:if isTrue="{! or(not(v.adverseEventMenuCmpAttributes.hideAdditionalInfoTab),(v.adverseEventMenuCmpAttributes.hideAdditionalInfoTab == 'false'))}">
+                <lightning:tab onactive="{!c.handleActive}" label="{!$Label.c.PC_AE_Additional_Information}" id="Additional_Info">
+                    <c:PC_AE_AdditionalInfoRenderer aeId="{!v.aeId}" aeWrapper="{!v.aeWrapper.fsFields}"
+                                                    aura:id="additionalInfoTab"
+                                                    additionalInfoTabFieldSet="{!v.adverseEventMenuCmpAttributes.additionalInfoTabFieldSet}"/>
+
+                    <div class="slds-float_left">
+                        <lightning:button disabled="false" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                    </div>
+                    <div class="slds-float_right">
+                        <lightning:button disabled="true" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                    </div>
+
+                </lightning:tab>
+            </aura:if>
+        </lightning:tabset>
+        <!--<div class="slds-float_left">
+                        <lightning:button disabled="{!v.selTabId == 'Patient_Information'}" variant="brand" label="{!$Label.c.PC_AE_Prev}" onclick="{!c.back}" />
+                    </div>
+                    <div class="slds-float_right">
+                        <lightning:button disabled="{!or(v.selTabId == 'Additional_Info',and(v.selTabId == 'Manufacturer',or((v.adverseEventMenuCmpAttributes.hideAdditionalInfoTab),(v.adverseEventMenuCmpAttributes.hideAdditionalInfoTab == 'true'))))}" variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.next}" />
+                    </div>-->
+        <footer class="slds-modal__footer">
+
+            <aura:if isTrue="{!v.dateFormatErrorMessage.length > 0}">
+                <!--<div class="slds-text-align_left slds-text-color_error">{!v.dateFormatErrorMessage}</div>-->
+                <div class="slds-text-align_left">
+                    <lightning:icon iconName="utility:warning" alternativeText="Warning!" variant="warning" size="large"/>
+                        {!$Label.c.PC_AdverseEvent_DownloadPDF_DateFormatWarning}</div>
+                <aura:set attribute="else">
+                    <div class="slds-text-align_left">*{!format($Label.c.PC_AdverseEvent_DownloadPDF_DateFormatInfo, v.dateFormat)}</div>
+                </aura:set>
+            </aura:if>
+            <br/>
+            <div class="slds-text-align_center">
+                <lightning:button variant="neutral" label="{!$Label.c.PC_Cancel_Button}" onclick="{! c.handleCancel }" />
+                <lightning:button variant="brand" disabled="{!v.disableSaveButton}" label="{!$Label.c.PC_Save}" onclick="{! c.handleSave }" />
+            </div>
+        </footer>
+    </div>
+</aura:component>

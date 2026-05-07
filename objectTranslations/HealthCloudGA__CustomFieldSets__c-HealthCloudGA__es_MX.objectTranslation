@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Conjunto de campos personalizado</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Conjuntos de campos personalizados</value>
+    </caseValues>
+    <fields>
+        <label>Campos excluidos</label>
+        <name>HealthCloudGA__ExcludedFields__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de conjunto de campos</label>
+        <name>HealthCloudGA__FieldSetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de sObject</label>
+        <name>HealthCloudGA__SObjectName__c</name>
+    </fields>
+    <fields>
+        <label>Formato de dos columnas</label>
+        <name>HealthCloudGA__TwoColumnLayout__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

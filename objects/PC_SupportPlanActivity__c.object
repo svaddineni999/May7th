@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Custom object in Patient Connect to store template activities for a Support Plan.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>PC_ActionClass__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the action class name from the custom metadata, relevant to the automated task.</description>
+        <externalId>false</externalId>
+        <label>Action Class</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ActivitySequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internal Activity Number of an activity sequence to which the activity belongs.</description>
+        <externalId>false</externalId>
+        <label>Activity Sequence</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ActivityType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of activity:
+•	User Task: The user must complete the activity.
+•	System Task: Automatically executed by Patient Connect.</description>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Task</fullName>
+                    <default>false</default>
+                    <label>User Task</label>
+                </value>
+                <value>
+                    <fullName>Automation Task</fullName>
+                    <default>false</default>
+                    <label>Automation Task</label>
+                </value>
+                <value>
+                    <fullName>Create Record</fullName>
+                    <default>false</default>
+                    <label>Create Record</label>
+                </value>
+                <value>
+                    <fullName>Publish Platform Event</fullName>
+                    <default>false</default>
+                    <label>Publish Platform Event</label>
+                </value>
+                <value>
+                    <fullName>Update Record</fullName>
+                    <default>false</default>
+                    <label>Update Record</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_AlternateActivity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internal Activity Number of an alternative activity in case of parallel flows</description>
+        <externalId>false</externalId>
+        <label>Alternate Activity</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ApexCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of an Apex class to indicate a Start Condition for an activity. This class must return a Boolean.</description>
+        <externalId>false</externalId>
+        <label>Apex Class Condition</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Assign_To_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Assign To Role</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_AutomationTaskJSON__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Automation Task JSON</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Whether activity is an independent activity or an Activity Sequence</description>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AE</fullName>
+                    <default>false</default>
+                    <label>AE</label>
+                </value>
+                <value>
+                    <fullName>Alt. Funding</fullName>
+                    <default>false</default>
+                    <label>Alt. Funding</label>
+                </value>
+                <value>
+                    <fullName>Appeal</fullName>
+                    <default>false</default>
+                    <label>Appeal</label>
+                </value>
+                <value>
+                    <fullName>Copay</fullName>
+                    <default>false</default>
+                    <label>Copay</label>
+                </value>
+                <value>
+                    <fullName>General</fullName>
+                    <default>false</default>
+                    <label>General</label>
+                </value>
+                <value>
+                    <fullName>Missing Information</fullName>
+                    <default>false</default>
+                    <label>Missing Information</label>
+                </value>
+                <value>
+                    <fullName>Support Check-In</fullName>
+                    <default>false</default>
+                    <label>Support Check-In</label>
+                </value>
+                <value>
+                    <fullName>Field Activity</fullName>
+                    <default>false</default>
+                    <label>Field Activity</label>
+                </value>
+                <value>
+                    <fullName>Patient Enrollment</fullName>
+                    <default>false</default>
+                    <label>Patient Enrollment</label>
+                </value>
+                <value>
+                    <fullName>PA</fullName>
+                    <default>false</default>
+                    <label>PA</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy Referral</fullName>
+                    <default>false</default>
+                    <label>Pharmacy Referral</label>
+                </value>
+                <value>
+                    <fullName>Treatment Reminder</fullName>
+                    <default>false</default>
+                    <label>Treatment Reminder</label>
+                </value>
+                <value>
+                    <fullName>Welcome Gesture</fullName>
+                    <default>false</default>
+                    <label>Welcome Gesture</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Channel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the communication channel used for the activity.</description>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call</fullName>
+                    <default>false</default>
+                    <label>Call</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+                <value>
+                    <fullName>SMS</fullName>
+                    <default>false</default>
+                    <label>SMS</label>
+                </value>
+                <value>
+                    <fullName>Task</fullName>
+                    <default>false</default>
+                    <label>Task</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ClonedFrom__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The PC_InternalActivityNumber__c of the original Support Plan Activity</description>
+        <externalId>false</externalId>
+        <label>Cloned From</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ConditionBehavior__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates how the Start Condition should be treated: 
+ -Wait Until True: The Support Plan will stay on the current activity unless a Start Condition is met.
+ -No Condition: There is no condition on the Support Plan activity and hence can be created/executed.</description>
+        <label>Condition Behavior</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Condition</fullName>
+                    <default>true</default>
+                    <label>No Condition</label>
+                </value>
+                <value>
+                    <fullName>Wait until True</fullName>
+                    <default>false</default>
+                    <label>Wait until True</label>
+                </value>
+                <value>
+                    <fullName>Skip if False</fullName>
+                    <default>false</default>
+                    <label>Skip if False</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ConditionOption__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the method of defining the Start Condition.</description>
+        <label>Condition Option</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>PC_ConditionBehavior__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apex Class</fullName>
+                    <default>false</default>
+                    <label>Apex Class</label>
+                </value>
+                <value>
+                    <fullName>Conditional Builder</fullName>
+                    <default>false</default>
+                    <label>Condition Builder</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Wait until True</controllingFieldValue>
+                <controllingFieldValue>Skip if False</controllingFieldValue>
+                <valueName>Apex Class</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Wait until True</controllingFieldValue>
+                <controllingFieldValue>Skip if False</controllingFieldValue>
+                <valueName>Conditional Builder</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Conditional_Logic__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For internal use to store how should multiple conditions being defined on Support Plan Activity/Group be evaluated.</description>
+        <label>Conditional Logic</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Provides the description about a Support Plan activity.</description>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_GroupActivityExecution__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Group Activity Execution</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All at once</fullName>
+                    <default>false</default>
+                    <label>All at once</label>
+                </value>
+                <value>
+                    <fullName>In sequence</fullName>
+                    <default>true</default>
+                    <label>In sequence</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_InitialSequenceActivity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internal Activity Number of the first activity in an activity sequence.</description>
+        <externalId>false</externalId>
+        <label>Initial Sequence Activity</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_InternalActivityNumber__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Auto generated unique ID for a Support Plan activity. It can also be used for migrating across orgs.</description>
+        <externalId>true</externalId>
+        <label>Internal Activity Number</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PC_InternalActivityType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internal field that indicates the type of task . Only used for development purpose.
+- User Task: Task that requires manual intervention.
+- Sequence: Group of tasks
+- Sequence Task: Task is a part of a group</description>
+        <label>Internal Activity Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>User Task</fullName>
+                    <default>false</default>
+                    <label>User Task</label>
+                </value>
+                <value>
+                    <fullName>Sequence</fullName>
+                    <default>false</default>
+                    <label>Sequence</label>
+                </value>
+                <value>
+                    <fullName>Sequence Task</fullName>
+                    <default>false</default>
+                    <label>Sequence Task</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_NextActivityNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internal activity number for the next activity that the current activity points to.</description>
+        <externalId>false</externalId>
+        <label>Next Activity</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Operators__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Operators used on the Conditional Builder</description>
+        <label>Operators</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>PC_Operators</valueSetName>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Priority__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Priority of the generated activity.</description>
+        <label>Priority</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>High</fullName>
+                    <default>false</default>
+                    <label>High</label>
+                </value>
+                <value>
+                    <fullName>Normal</fullName>
+                    <default>false</default>
+                    <label>Normal</label>
+                </value>
+                <value>
+                    <fullName>Low</fullName>
+                    <default>false</default>
+                    <label>Low</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ReferenceDate__c</fullName>
+        <defaultValue>&quot;None&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Date when an activity is created or executed.</description>
+        <externalId>false</externalId>
+        <label>Reference Date</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ReferenceOffsetUnit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Offset unit for Reference Offset.</description>
+        <label>Reference Offset Unit</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Days</fullName>
+                    <default>true</default>
+                    <label>Days</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ReferenceOffset__c</fullName>
+        <defaultValue>&quot;0&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Offset on Reference Date to create or execute an activity.</description>
+        <externalId>false</externalId>
+        <label>Reference Offset</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ReferenceType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The method that determines how a Reference offset is applied to the Reference Date.</description>
+        <label>Reference Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Before Reference Date</fullName>
+                    <default>false</default>
+                    <label>Before Reference Date</label>
+                </value>
+                <value>
+                    <fullName>After Reference Date</fullName>
+                    <default>false</default>
+                    <label>After Reference Date</label>
+                </value>
+                <value>
+                    <fullName>After completion of previous activity</fullName>
+                    <default>true</default>
+                    <label>After completion of previous activity</label>
+                </value>
+                <value>
+                    <fullName>Activity Creation Date</fullName>
+                    <default>false</default>
+                    <label>Activity Creation Date</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_SubType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sub Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Subject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The subject of the generated activity.</description>
+        <label>Subject</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_SupportPlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Reference to the Support Plan to which an activity or an activity sequence belongs.</description>
+        <label>Support Plan</label>
+        <referenceTo>PC_SupportPlan__c</referenceTo>
+        <relationshipLabel>Support Plan Activities</relationshipLabel>
+        <relationshipName>Support_Plan_Activities</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_UserTask_Fields__c</fullName>
+        <deprecated>false</deprecated>
+        <description>JSON String to store provided values for various User Task fields.</description>
+        <label>User Task Fields</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Support Plan Activity</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>PC_SupportPlan__c</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>PC_InternalActivityNumber__c</columns>
+        <columns>NAME</columns>
+        <columns>PC_Subject__c</columns>
+        <columns>PC_ActivityType__c</columns>
+        <columns>PC_NextActivityNumber__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Support Plan Activities</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

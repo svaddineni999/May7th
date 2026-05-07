@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>PC_AdverseEventDownloadDateFormat</label>
+    <protected>false</protected>
+    <values>
+        <field>PC_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>PC_Description__c</field>
+        <value xsi:type="xsd:string">dd               -Day in month(Case Sensitive)
+MM/MMM   -  Month in year(Case Sensitive)
+yyyy            -  Year(Case Sensitive)
+
+For example
+dd-MMM-yyyy, yyyy-MMM-dd, dd-MM-yyyy</value>
+    </values>
+    <values>
+        <field>PC_IsOverridable__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>PC_SettingName__c</field>
+        <value xsi:type="xsd:string">PC_AdverseEventDownloadDateFormat</value>
+    </values>
+    <values>
+        <field>PC_SettingValue__c</field>
+        <value xsi:type="xsd:string">dd-MMM-yyyy</value>
+    </values>
+</CustomMetadata>

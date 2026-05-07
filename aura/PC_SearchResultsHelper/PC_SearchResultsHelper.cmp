@@ -1,0 +1,67 @@
+<!--****************************************************************************************************
+Class Name      : PC_SearchResultsHelper
+Description     :
+Created By      : Vijay Kashikar
+Created Date    : Oct 17, 2019
+Modification Log:
+****************************************************************************************************
+Developer                   Date                           Description
+****************************************************************************************************
+Vijay Kashikar              10/17/2019                    Initial Version
+Kanteti Kishore             13-Dec-2019                 [PC-5795] Updated search method signature in helper
+****************************************************************************************************-->
+
+<aura:component controller="PC_SearchResultsHelper">
+
+    <aura:attribute name="rows" type="Object[]" access="private"/>
+    <aura:attribute name="columns" type="List" access="private"/>
+
+    <aura:attribute name="inProgress" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="errors" type="List" default="[]" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+
+    <aura:attribute name="identifier" type="String" access="public"/>
+    <aura:attribute name="searchObjectAPIName" type="String" access="public"/>
+    <aura:attribute name="searchFormFieldsetAPIName" type="String" access="public"/>
+    <aura:attribute name="searchResultFieldsetAPIName" type="String" access="public"/>
+    <aura:attribute name="defaultRowActions" type="String" access="public" description="Configured Row Actions" />
+    <aura:attribute name="customRowActions" type="List" access="public" default="Custom Row Actions received by server"/>
+    <aura:attribute name="searchParams" type="Map" access="public"/>
+    <aura:attribute name="resultClass" type="String" access="public"/>
+    <aura:attribute name="keyField" type="String" access="public" default="Id"/>
+    <aura:attribute name="noResultsMessage" type="String" access="public" default="{!$Label.c.PC_NoSearchResultsMessage}"/>
+    <aura:attribute name="title" type="String" access="public" />
+    <aura:attribute name="searchTableHeight" type="String" access="public" />
+    <aura:attribute name="sourceUniqueId" type="String" access="public" />
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.fetchResults}"/>
+
+
+    <div class="slds">
+        <aura:if isTrue="{!v.inProgress == false}">
+            <aura:if isTrue="{! v.errors.length > 0 }">
+                <div class="slds-box slds-theme_shade slds-m-bottom--medium">
+                    <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                </div>
+                <aura:set attribute="else">
+                    <c:PC_SearchResultsDataTable rows="{!v.rows}"
+                                                 columns="{!v.columns}"
+                                                 keyField="{!v.keyField}"
+                                                 noResultsMessage="{!v.noResultsMessage}"
+                                                 title="{!v.title}"
+                                                 tableHeight="{!v.searchTableHeight}"
+                                                 sourceUniqueId="{!v.sourceUniqueId}"
+                                                 customRowActions="{!v.customRowActions}"
+                    />
+                </aura:set>
+            </aura:if>
+            <aura:set attribute="else">
+                <div class="pc_spinner slds-align-middle slds-box slds-theme_shade slds-m-bottom--medium">
+                    <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+
+</aura:component>

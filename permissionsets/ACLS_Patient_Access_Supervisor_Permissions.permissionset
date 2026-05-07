@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Permission set assigned to Patient Access Supervisor</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>ACLS Patient Access Supervisor Permissions</label>
+</PermissionSet>

@@ -1,0 +1,97 @@
+<!--
+ - Created by sathekumar on 4/29/2021.
+ -->
+
+<aura:component description="PC_DocumentOcrSubmitter" implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="PC_OcrSubmitter" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="templateTypeId" type="String" default="" access="private"/>
+    <aura:attribute name="ocrQueueObjectApiName" type="String" default="PC_OcrQueue__c" access="private"/>
+    <aura:attribute name="templateTypeFieldApiName" type="String" default="PC_OcrTemplateType__c" access="private"/>
+    <aura:attribute name="documentApiName" type="String" default="PC_SourceDocument__c" access="private"/>
+    <aura:attribute name="isOpen" type="boolean" default="true" access="private"/>
+    <aura:attribute name="isDocumentReadyForOCR" type="boolean" default="false" access="private"/>
+    <aura:attribute name="isValidDocumentForOCR" type="boolean" default="false" access="private"/>
+    <aura:attribute name="isOcrSetupValid" type="boolean" default="false" access="private"/>
+    <aura:attribute name="isSelectedTemplateTypeValid" type="boolean" default="false" access="private"/>
+    <aura:attribute name="showSpinner" type="boolean" default="false" access="private"/>
+    <aura:attribute name="disabled" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="disableSubmit" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="errors" type="List" default="" access="private"/>
+    <aura:attribute name="templateTypeValidationMessages" type="Object" default="" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="documentExtractLabel" type="String" default="{!$Label.c.PC_DocumentExtract}" access="private"/>
+    <aura:attribute name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="ocrDocumentQueuedSuccessMessage" type="String" default="{! $Label.c.PC_DocumentQueuedSuccessMessage}" access="private"/>
+    <aura:attribute name="ocrQueueCompletionNotifyMessage" type="String" default="{! $Label.c.PC_OcrQueueCompletionNotifyMessage}" access="private"/>
+
+    <lightning:notificationsLibrary aura:id="RunOcrNotifLib" />
+
+    <div id="PC_Document_RunOCR">
+        <aura:if isTrue="{!v.isOpen}">
+            <section class="slds-modal slds-fade-in-open slds-modal_small">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModal }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 class="slds-modal__title slds-hyphenate">{! $Label.c.PC_OcrSubmitterHeader}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_large" style="min-height: 280px;">
+                        <aura:if isTrue="{!v.showSpinner}">
+                            <lightning:spinner aura:id="OcrSpinner" alternativeText="Loading" />
+                        </aura:if>
+                        <aura:if isTrue="{! v.errors.length > 0 }">
+                            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                        </aura:if>
+
+                        <aura:if isTrue="{! v.templateTypeValidationMessages.errorMessages.length > 0}">
+                            <div class="slds-box slds-box_x-small slds-m-bottom_medium">
+                                <div class="slds-grid">
+                                    <lightning:icon iconName="utility:error" alternativeText="Error!" title="Error" variant="error" size="small" class="slds-col slds-m-right--small slds-no-flex"/>
+                                    <div class="slds-col slds-align-middle">
+                                        <aura:iteration items="{!v.templateTypeValidationMessages.errorMessages}" var="errorMsg">
+                                            <p class="slds-text-color_error">{!errorMsg}</p>
+                                        </aura:iteration>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{! v.templateTypeValidationMessages.warningMessages.length > 0}">
+                            <div class="slds-box slds-box_x-small slds-m-bottom_medium">
+                                <div class="slds-grid">
+                                    <lightning:icon iconName="utility:warning" alternativeText="Warning!" title="Warning" variant="warning" size="small" class="slds-col slds-m-right--small slds-no-flex"/>
+                                    <div class="slds-col slds-align-middle">
+                                        <aura:iteration items="{!v.templateTypeValidationMessages.warningMessages}" var="warning">
+                                            <p style="color:#fe9339">{!warning}</p>
+                                        </aura:iteration>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+                        <div class="row">
+                            <lightning:recordEditForm objectApiName="{!v.ocrQueueObjectApiName}">
+                                <lightning:messages />
+                                <lightning:inputField fieldName="{!v.templateTypeFieldApiName}" aura:id="templateType" required="true" value="{!v.templateTypeId}" onchange="{!c.handleTemplateTypeChange}" disabled="{!v.disabled}"/>
+                                <lightning:inputField fieldName="{!v.documentApiName}" value="{!v.recordId}" disabled="true"/>
+                            </lightning:recordEditForm>
+                            <div class="slds-p-horizontal_xx-small">
+                                <lightning:input type="checkbox" label="{!$Label.c.PC_NotifyOnCompleteLabel}" aura:id="notifyOnCompletion" checked="true" name="notifyCheckbox" disabled="{!v.disabled}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button label="{!$Label.c.PC_Cancel_Button}" title="{!$Label.c.PC_Cancel_Button}" onclick="{! c.closeModal }"/>
+                        <lightning:button variant="brand" disabled="{!(or((not(v.isDocumentReadyForOCR &amp;&amp; v.isValidDocumentForOCR &amp;&amp; v.isOcrSetupValid &amp;&amp; v.isSelectedTemplateTypeValid)), v.disableSubmit))}" label="{!$Label.c.PC_Submit_Button_Label}" title="{!$Label.c.PC_Submit_Button_Label}" onclick="{!c.onSubmit}" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+</aura:component>

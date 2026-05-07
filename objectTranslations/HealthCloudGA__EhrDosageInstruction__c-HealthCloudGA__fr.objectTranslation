@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Instruction de dosage DME</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Instructions de dosage DME</value>
+    </caseValues>
+    <fields>
+        <label>Code d&apos;instruction supplémentaire</label>
+        <name>HealthCloudGA__AdditionalInstructionCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette d&apos;instruction supplémentaire</label>
+        <name>HealthCloudGA__AdditionalInstructionLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système d&apos;instruction supplémentaire</label>
+        <name>HealthCloudGA__AdditionalInstructionSystem__c</name>
+    </fields>
+    <fields>
+        <label>Instruction supplémentaire</label>
+        <name>HealthCloudGA__AdditionalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>Code selon les besoins</label>
+        <name>HealthCloudGA__AsNeededCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette selon les besoins</label>
+        <name>HealthCloudGA__AsNeededLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système selon les besoins</label>
+        <name>HealthCloudGA__AsNeededSystem__c</name>
+    </fields>
+    <fields>
+        <label>Selon les besoins</label>
+        <name>HealthCloudGA__AsNeeded__c</name>
+    </fields>
+    <fields>
+        <label>Unité de quantité de dosage</label>
+        <name>HealthCloudGA__DoseQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valeur de quantité de dosage</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this applies to --></help>
+        <label>Patient DME</label>
+        <name>HealthCloudGA__EhrPatient__c</name>
+        <relationshipLabel>Instructions de dosage DME</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Instruction</label>
+        <name>HealthCloudGA__Instruction__c</name>
+    </fields>
+    <fields>
+        <label>Restreint</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Visible sur la carte du patient</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Unité dénominateur dose max par période</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valeur dénominateur dose max par période</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorValue__c</name>
+    </fields>
+    <fields>
+        <label>Unité numérateur dose max par période</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valeur numérateur dose max par période</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorValue__c</name>
+    </fields>
+    <fields>
+        <label>Prescription médicale</label>
+        <name>HealthCloudGA__MedicationPrescription__c</name>
+        <relationshipLabel>instructions de dosage</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Déclaration médicale</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>instructions de dosage</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Code de méthode</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette de méthode</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système de méthode</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denominator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>Dénominateur du taux</label>
+        <name>HealthCloudGA__RateDenominator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Numerator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>Numérateur du taux</label>
+        <name>HealthCloudGA__RateNumerator__c</name>
+    </fields>
+    <fields>
+        <label>Code d&apos;acheminement</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette d&apos;acheminement</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système d&apos;acheminement</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code de site</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette de site</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système de site</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>ID du système source</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Système source modifié</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Système source</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Instruction supplémentaire</label>
+        <name>HealthCloudGA__SupplementalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>Fin de la période de temporisation</label>
+        <name>HealthCloudGA__TimingPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Début de la période de temporisation</label>
+        <name>HealthCloudGA__TimingPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Temporisation</label>
+        <name>HealthCloudGA__Timing__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID d&apos;instruction de dosage DME</nameFieldLabel>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

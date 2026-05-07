@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 백신 접종 프로토콜</value>
+    </caseValues>
+    <fields>
+        <label>기관 255</label>
+        <name>HealthCloudGA__Authority255__c</name>
+    </fields>
+    <fields>
+        <label>기관</label>
+        <name>HealthCloudGA__Authority__c</name>
+    </fields>
+    <fields>
+        <label>설명</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>복용량 순서</label>
+        <name>HealthCloudGA__DoseSequence__c</name>
+    </fields>
+    <fields>
+        <label>복용량 상태 코드</label>
+        <name>HealthCloudGA__DoseStatusCode__c</name>
+    </fields>
+    <fields>
+        <label>복용량 상태 레이블</label>
+        <name>HealthCloudGA__DoseStatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>복용량 상태 이유 코드</label>
+        <name>HealthCloudGA__DoseStatusReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>복용량 상태 이유 레이블</label>
+        <name>HealthCloudGA__DoseStatusReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>복용량 상태 이유 시스템</label>
+        <name>HealthCloudGA__DoseStatusReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>복용량 상태 시스템</label>
+        <name>HealthCloudGA__DoseStatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>복용량 대상 코드</label>
+        <name>HealthCloudGA__DoseTargetCode__c</name>
+    </fields>
+    <fields>
+        <label>복용량 대상 레이블</label>
+        <name>HealthCloudGA__DoseTargetLabel__c</name>
+    </fields>
+    <fields>
+        <label>복용량 대상 시스템</label>
+        <name>HealthCloudGA__DoseTargetSystem__c</name>
+    </fields>
+    <fields>
+        <label>면역 조치</label>
+        <name>HealthCloudGA__Immunization__c</name>
+        <relationshipLabel>백신 접종 프로토콜</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>연속 복용량</label>
+        <name>HealthCloudGA__SeriesDoses__c</name>
+    </fields>
+    <fields>
+        <label>연속</label>
+        <name>HealthCloudGA__Series__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 수정일</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>소스 시스템</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 백신 접종 프로토콜 ID</nameFieldLabel>
+</CustomObjectTranslation>

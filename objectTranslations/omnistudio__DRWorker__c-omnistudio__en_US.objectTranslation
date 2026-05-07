@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Data Mapper Workers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action --></label>
+        <name>omnistudio__Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Apex Job Id --></label>
+        <name>omnistudio__ApexJobId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Bundle Name --></label>
+        <name>omnistudio__DRBundleName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Object Name --></label>
+        <name>omnistudio__DRObjectName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Status --></label>
+        <name>omnistudio__DRStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Started At --></label>
+        <name>omnistudio__StartedAt__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,18 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global" controller="PC_FieldSet">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="record" type="Account[]" description="The record being edited"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="fsName" type="String"/>
+    <aura:attribute name="typeName" type="String"/>
+    <aura:attribute name="fields" type="Object[]"/>
+    <aura:attribute name="fieldset" type="sObject[]"/>
+    <aura:attribute name="form" type="Aura.Component[]"/>
+    <aura:attribute name="inputToField" type="Map"/>
+
+    <aura:iteration items="{!v.fieldset}" var="fs">
+        <p>{!fs.label} : {!fs.value}</p>
+    </aura:iteration>
+
+</aura:component>

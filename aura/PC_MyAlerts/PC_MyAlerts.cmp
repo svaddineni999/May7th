@@ -1,0 +1,84 @@
+<!--
+     - Created by sahgarg on 3/15/2018.
+
+Lightning component  : PC_MyAlerts
+Description          : Alerts component for homepage
+Parameters           :
+Modification Log:
+Sahil Garg 		 3/15/2018    [PC-2858] Initial Version
+Satheesh Kumar   3/17/2021    [PC-7444] Added toggle button which helps to show all alerts or my alerts based on selection
+
+     -->
+<aura:component controller="PC_HomeActivitiesController" implements="flexipage:availableForAllPageTypes" access="global">
+
+    <ltng:require scripts="{!join(',',
+                           $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js',
+                           $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'
+                           )}"
+                  afterScriptsLoaded="{!c.doInit}" />
+
+
+    <aura:attribute name="lstActivity" type="Object[]" />
+    
+    <aura:attribute name="userContext" type="String" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="dropdownOver" type="Boolean" default="false" />
+    <aura:attribute name="recordSize" type="integer" />
+    <aura:attribute name="currentPagenumber" type="integer"  description="using to store current page Number"/>
+    <aura:attribute name="totalNumberOfPages"  type="integer"  description="using to store total number of pages"/>
+    <aura:attribute name="totalRecords" type="integer"  description="using to store total records count  "/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+
+    <aura:attribute name="showAllRecordsOption" type="Boolean" default="false" description="If true, shows all tasks. Otherwise, show only current user's tasks" access="global"/>
+    <aura:attribute name="defaultView" type="String" default="MY RECORDS" description="Default view to show - My Tasks or All Tasks?" access="global"/>
+    <aura:attribute name="numberOfColumns" type="Integer" default="3" description="Number of columns. Set this based on your layout's width. Default value is 3." access="global"/>
+    <aura:attribute name="cardWidth" type="Decimal" default="{! divide(100, v.numberOfColumns)}"/>
+
+    <aura:attribute name="toggleLabel" type="String" default="{!$Label.c.PC_AllAlerts}"/>
+    <aura:attribute name="recordsPerPage" type="Integer" default="30"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+
+    <aura:handler name="change" value="{!v.showAllRecordsOption}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.defaultView}" action="{!c.doInit}"/>
+
+    <!--   <aura:registerEvent name="appEvent" type="c:PC_Pagination_AppEvent"/> -->
+    <aura:handler event="c:PC_Pagination_AppEvent" action="{!c.handleMyApplicationEvent}"/>
+
+ <div>
+     <div>
+         <aura:if isTrue="{!v.showSpinner}">
+             <lightning:spinner class="slds-text-align_center" size="small" variant="brand"/>
+         </aura:if>
+     </div>
+     <div class="slds-grid slds-gutters">
+         <div class="slds-col toggleDiv slds-size_6-of-12 slds-m-bottom_small slds-m-left_xx-small">
+             <aura:if isTrue="{!v.showAllRecordsOption}">
+                 <lightning:input name="showAllAlerts"
+                                  label="{!v.toggleLabel}"
+                                  type="toggle" class="ShowAllAlerts"
+                                  checked="{!if(v.defaultView == 'ALL RECORDS', true, false)}"
+                                  onchange="{!c.refreshView}" aura:id="showAllAlertsToggle"/>
+             </aura:if>
+         </div>
+     </div>
+    <div class="flexContainer">
+        <aura:if isTrue="{!v.lstActivity.length > 0}">
+            <aura:iteration items="{!v.lstActivity}" var="task">
+                <div class="flexItem" style="{! join('','width:',v.cardWidth,'%',';','max-width:',v.cardWidth,'%')}">
+                    <c:PC_HomeActivityCard_CardView objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+                </div>
+            </aura:iteration>
+            <aura:set attribute="else">
+                <div class="slds-text-align--center">
+                    <span class="slds-text-heading--medium slds-truncate">{!$Label.c.PC_Task_Message_Nothing_To_Show}
+                    </span>
+                </div>
+            </aura:set>
+
+        </aura:if>
+     </div>
+     <br/>
+    <c:PC_Pagination sourceId="MyAlerts" currentPagenumber="{!v.currentPagenumber}" totalRecords="{!v.totalRecords}" totalNumberOfPages="{!v.totalNumberOfPages}" recordsPerPage="{!v.recordsPerPage}" />
+    </div>
+    
+</aura:component>

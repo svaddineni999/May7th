@@ -1,0 +1,43 @@
+/**
+ * Created by vkashikar on 8/2/2018.
+ */
+.THIS .intelligentIndicator {
+    width : 266px;
+    word-break: break-word;
+    overflow-y: auto;
+    transition: min-height 3s, max-height 3s;
+    min-height: 56px;
+    border-radius: .25rem;
+    padding: 0.5rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+.THIS .moreInfo {
+    border-bottom-style: inset;
+}
+.THIS .pc-animate-slds-show {
+    /*display: block;
+    transition: height 3s;*/
+    opacity: 1;
+    height: auto;
+}
+.THIS .pc-animate-slds-hide {
+    /*display: none;*/
+    transition: opacity 5s ease-out;
+    opacity: 0;
+    height: 0;
+    /*transition: height 3s;*/
+}
+.THIS .popoverclass {
+    min-height: 100px;
+}
+.THIS.no-pointer .pointer{
+    visibility: hidden;
+}
+.THIS .slds-transition-hide {
+    height: 0px;
+}
+.THIS .viewModal {
+    max-width: 75%;
+    width: 75%;
+}

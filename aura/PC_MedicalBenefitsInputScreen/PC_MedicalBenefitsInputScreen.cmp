@@ -1,0 +1,461 @@
+<!--
+Lightning component  : PC_MedicalBenefitsInputScreen
+Description          : Component for Action Center
+Parameters           : getting caseId and medicalBenefitsCmpAttributes from the parent component
+
+Created By           : Shishir Bansal
+Created Date         : <31-Jan-2019>
+
+Modification Log:
+Shishir Bansal        31-Jan-2019     [PC-4130]Initial version
+Shishir Bansal        5-Jan-2019     [PC-4278] Lightning Component creation
+Shishir Bansal        5-Jan-2019     [PC-4393] Setting of default values for the primary, secondary and tertiary Health Plan
+Shishir Bansal        5-Jan-2019     [PC-4393] Setting of default values for the primary, secondary and tertiary Health Plan
+Shishir Bansal        5-Jan-2019     [PC-4344] Display Health Plan details in accordion
+Haritha Reddy         19-Mar-2019    [PC-4143] Added Admin Code Field on UI
+Haritha Reddy         20-Mar-2019    [PC-4165] Added Validations on Health Plan Fields
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" description="PC_MedicalBenefitsInputScreen" controller="PC_MedicalBenefitsInputScreenController">
+    <ltng:require scripts="{! $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" styles="{! $Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}"
+                  afterScriptsLoaded="{!c.doInit}"/>
+    <aura:registerEvent name="refreshMedeBVListEvent" type="c:PC_RefreshMedeBVListView"/>
+    <ltng:require styles="{! $Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}"/>
+    <aura:attribute name="caseId" type="Id"  />
+    <aura:attribute name="medicalBenefitsCmpAttributes" type="Map" default='{"hideAdminCodes":false}}'/>
+    <aura:attribute name="medicalBenefits" type="Object"  access="private"/>
+
+    <aura:attribute name="primaryHealthPlanOptions" type="List" access="private"/>
+    <aura:attribute name="noPlanTypePrimaryHealthPlanOptions" type="List" access="private"/>
+    <aura:attribute name="currentPrimaryHealthPlan" type="Object" access="private"/>
+
+    <aura:attribute name="secondaryHealthPlanOptions" type="List" access="private"/>
+    <aura:attribute name="noPlanTypeSecondaryHealthPlanOptions" type="List" access="private"/>
+    <aura:attribute name="currentSecondaryHealthPlan" type="Object" access="private"/>
+    <aura:attribute name="disableSecondarypicklist" type="Boolean" default="true"  access="private"/>
+
+    <aura:attribute name="tertiaryHealthPlanOptions" type="List" access="private"/>
+    <aura:attribute name="noPlanTypeTertiaryHealthPlanOptions" type="List" access="private"/>
+    <aura:attribute name="currentTertiaryHealthPlan" type="Object" access="private"/>
+    <aura:attribute name="enableTertiarySection" type="Boolean" default="false" access="private"/>
+
+
+    <aura:attribute name="noPlanTypeHealthPlanOptions" type="List" access="private"/>
+
+    <aura:attribute name="prescriptionOptions" type="List" access="private"/>
+    <aura:attribute name="currentPrescription" type="Object" access="private"/>
+
+
+    <aura:attribute name="clinicOptions" type="List" access="private"/>
+    <aura:attribute name="currentClinic" type="Object" access="private"/>
+    <aura:attribute name="noClinicRecordsError" type="String" default="{! $Label.c.PC_MedicalBenefits_Clinic_NoRecordsError}" access="private"/>
+
+    <aura:attribute name="adminCodeOptions" type="List" access="private"/>
+    <aura:attribute name="noAdminCodesHelpText" type="String" default="" access="private"/>
+    <aura:attribute name="maxAdminCodes" type="String" default="5" access="private"/>
+    <aura:attribute name="selectedAdminCodes" type="List" access="private"/>
+
+    <aura:attribute name="isPrimaryHealthPlanValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isSecondaryHealthPlanValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isTertiaryHealthPlanValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isPrescriptionValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isClinicValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isAdminCodesValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isPatientValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="primaryHealthPlanErrors" type="List" access="private"/>
+    <aura:attribute name="secondaryHealthPlanErrors" type="List" access="private"/>
+    <aura:attribute name="tertiaryHealthPlanErrors" type="List" access="private"/>
+    <aura:attribute name="prescriptionErrors" type="List" access="private"/>
+    <aura:attribute name="clinicErrors" type="List" access="private"/>
+    <aura:attribute name="patientErrors" type="List" access="private"/>
+    <aura:attribute name="isFormValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="isFormValidStandard" type="Boolean" default="true" access="private"/>
+
+    <aura:attribute name="showProgressOnSubmit" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="successMessage" type="String" default="{!$Label.c.PC_MedicalBenefits_SuccessMessage}" access="private"/>
+    <aura:attribute name="errorMessage" type="String" default="{!$Label.c.PC_MedicalBenefits_ErrorMessage}" access="private"/>
+    <aura:attribute name="requiredFieldMissingError" type="String" default="{!$Label.c.PC_MedicalBenefitsRequiredFieldsMissing}" access="private"/>
+
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="errors" type="List" access="private"/>
+    <aura:attribute  name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute  name="nonePicklistValue" type="String" default="{! $Label.c.PC_Picklist_None}" access="private"/>
+
+    <aura:attribute name="namespace" type="String" default=""  access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" default="" access="private"/>
+
+    <aura:attribute name="showSpinner" type="boolean" default="false"/>
+    <!-- displaying error messages in the error panel-->
+    <aura:if isTrue="{!v.errors.length > 0}">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+    <aura:if isTrue="{!v.showProgressOnSubmit}">
+        <div class="pc_spinner slds-align-middle">
+            <lightning:spinner alternativeText="Loading" class="slds-text-align--center" size="small" variant="brand" />
+        </div>
+    </aura:if>
+    <aura:if isTrue="{!v.showSpinner}">
+        <div class="pc_spinner slds-align-middle">
+            <lightning:spinner alternativeText="Loading" class="slds-text-align--center" size="small" variant="brand" />
+        </div>
+
+        <aura:set attribute="else">
+
+            <!-- Health Plan Section-->
+            <div class="slds slds-grid slds-wrap">
+                <lightning:overlayLibrary aura:id="medicalBenefitsPopup"/>
+                <lightning:notificationsLibrary aura:id="notifLib"/>
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="slds-page-header accordionHeader accordionHeaderEnabled" aura:id="healthPlanInformationHeader"
+                         onclick="{!c.toggleAccordion}" data-toggleContentAuraId="healthPlanInformationDetails">
+                        <section class="slds-clearfix">
+                            <div class="slds-float--left ">
+                                <lightning:icon class="slds-hide" aura:id="healthPlanInformationDetails" iconName="utility:chevronright"
+                                                size="x-small" alternativeText="Indicates open"/>
+                                <lightning:icon class="slds-show" aura:id="healthPlanInformationDetails" iconName="utility:chevrondown"
+                                                size="x-small" alternativeText="Indicates close"/>
+                            </div>&nbsp;{!$Label.c.PC_MedicalBenefits_HealthPlan_SectionTitle}
+
+                        </section>
+                    </div>
+                </div>
+
+                <div class="slds-show slds-col slds-size_12-of-12" aura:id="healthPlanInformationDetails">
+
+                    <!-- Primary Health Plan Section-->
+
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_4-of-12 ">
+                            <div class="slds-size_11-of-12 ">
+                                <lightning:select name="pHealthPlan" label="{!$Label.c.PC_MedicalBenefits_PrimaryHealthPlan_title}"
+                                                  aura:id="primaryHealthPlan"   required="true"   onchange="{!c.setPrimaryHealthPlanDetails}" >
+                                    <option  value="" text="{!v.nonePicklistValue}"  class="picklistColor" />
+                                    <aura:if isTrue="{!v.primaryHealthPlanOptions.length >0}">
+                                        <optgroup label="{!$Label.c.PC_MedicalBenefits_PrimaryHealthPlan}">
+                                            <aura:iteration items="{!v.primaryHealthPlanOptions}" var="pHealthPlan" >
+                                                <option  value="{!pHealthPlan.id}" text="{!pHealthPlan.healthPlanLabel}"  selected="{!pHealthPlan.selected}"
+                                                         class="picklistColor" />
+                                            </aura:iteration>
+                                        </optgroup>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.noPlanTypePrimaryHealthPlanOptions.length >0}">
+                                        <optgroup label="{!$Label.c.PC_MedicalBenefits_NoPlanTypeHealthPlan}">
+                                            <aura:iteration items="{!v.noPlanTypePrimaryHealthPlanOptions}" var="noPlanTypeHealthPlan">
+                                                <option  value="{!noPlanTypeHealthPlan.id}" text="{!noPlanTypeHealthPlan.healthPlanLabel}"
+                                                         selected="{!noPlanTypeHealthPlan.selected}" class="picklistColor"/>
+                                            </aura:iteration>
+
+                                        </optgroup>
+                                    </aura:if>
+                                </lightning:select>
+                                <aura:if isTrue="{!v.isPrimaryHealthPlanValid == false}">
+                                    <aura:iteration items="{!v.primaryHealthPlanErrors}" var="error">
+                                        <div class="errorDescription">{!error}</div>
+                                    </aura:iteration>
+                                </aura:if>
+                            </div>
+
+
+                            <aura:if isTrue="{!v.currentPrimaryHealthPlan != null}">
+                                <div class="slds-m-top--x-small slds-m-bottom--x-small">
+                                    <dl class="slds-list_horizontal slds-wrap">
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.payerNameLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrimaryHealthPlan.payerName}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.memberIdLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrimaryHealthPlan.memberId}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.planNameLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrimaryHealthPlan.planName}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.relationshipToCardholderLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrimaryHealthPlan.relationshipToCardholderLabel}</dd>
+                                    </dl>
+                                </div>
+                            </aura:if>
+                        </div>
+
+                        <!-- Secondary Health Plan Section -->
+
+                        <div class="slds-col slds-size_4-of-12 ">
+                            <div class="slds-size_11-of-12 ">
+                                <lightning:select name="sHealthPlan" label="{!$Label.c.PC_MedicalBenefits_SecondaryHealthPlan_title}"
+                                                  aura:id="secondaryHealthPlan"  onchange="{!c.setSecondaryHealthPlanDetails}" disabled="{!v.disableSecondarypicklist}">
+                                    <option  value="" text="{!v.nonePicklistValue}" class="picklistColor"/>
+                                    <aura:if isTrue="{!v.secondaryHealthPlanOptions.length >0}">
+                                        <optgroup label="{!$Label.c.PC_MedicalBenefits_SecondaryHealthPlan}">
+                                            <aura:iteration items="{!v.secondaryHealthPlanOptions}" var="sHealthPlan" >
+                                                <option  value="{!sHealthPlan.id}" text="{!sHealthPlan.healthPlanLabel}" class="picklistColor"
+                                                         selected="{!sHealthPlan.selected}"/>
+                                            </aura:iteration>
+                                        </optgroup>
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.noPlanTypeSecondaryHealthPlanOptions.length >0}">
+                                        <optgroup label="{!$Label.c.PC_MedicalBenefits_NoPlanTypeHealthPlan}">
+                                            <aura:iteration items="{!v.noPlanTypeSecondaryHealthPlanOptions}" var="noPlanTypeHealthPlan">
+                                                <option  value="{!noPlanTypeHealthPlan.id}" text="{!noPlanTypeHealthPlan.healthPlanLabel}" class="picklistColor"
+                                                         selected="{!noPlanTypeHealthPlan.selected}"/>
+                                            </aura:iteration>
+                                        </optgroup>
+                                    </aura:if>
+                                </lightning:select>
+                                <aura:if isTrue="{!v.isSecondaryHealthPlanValid == false}">
+                                    <aura:iteration items="{!v.secondaryHealthPlanErrors}" var="error">
+                                        <div class="errorDescription">{!error}</div>
+                                    </aura:iteration>
+                                </aura:if>
+                            </div>
+
+
+                            <aura:if isTrue="{!v.currentSecondaryHealthPlan != null}">
+                                <div class="slds-m-top--x-small slds-m-bottom--x-small">
+                                    <dl class="slds-list_horizontal slds-wrap">
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.payerNameLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentSecondaryHealthPlan.payerName}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.memberIdLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentSecondaryHealthPlan.memberId}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.planNameLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentSecondaryHealthPlan.planName}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.relationshipToCardholderLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentSecondaryHealthPlan.relationshipToCardholder}</dd>
+                                    </dl>
+                                </div>
+                            </aura:if>
+                        </div>
+
+                        <!-- Tertiary health plan section -->
+
+                        <div class="slds-col slds-size_4-of-12 ">
+                            <aura:if isTrue="{!v.enableTertiarySection}">
+                                <div class="slds-size_11-of-12 ">
+                                    <lightning:select name="tertiaryHealthPlan"
+                                                      label="{!$Label.c.PC_MedicalBenefits_TertiaryHealthPlan_title}" aura:id="tertiaryHealthPlan"
+                                                      onchange="{!c.setTertiaryHealthPlanDetails}" >
+                                        <option  value="" text="{!v.nonePicklistValue}"  class="picklistColor"/>
+                                        <aura:if isTrue="{!v.tertiaryHealthPlanOptions.length >0}">
+                                            <optgroup label="{!$Label.c.PC_MedicalBenefits_TertiaryHealthPlan}">
+                                                <aura:iteration items="{!v.tertiaryHealthPlanOptions}" var="tertiaryHealthPlan" >
+                                                    <option  value="{!tertiaryHealthPlan.id}" text="{!tertiaryHealthPlan.healthPlanLabel}"
+                                                             selected="{!tertiaryHealthPlan.selected}" class="picklistColor" />
+                                                </aura:iteration>
+                                            </optgroup>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.noPlanTypeTertiaryHealthPlanOptions.length >0}">
+                                            <optgroup label="{!$Label.c.PC_MedicalBenefits_NoPlanTypeHealthPlan}">
+                                                <aura:iteration items="{!v.noPlanTypeTertiaryHealthPlanOptions}" var="noPlanTypeHealthPlan">
+                                                    <option  value="{!noPlanTypeHealthPlan.id}" text="{!noPlanTypeHealthPlan.healthPlanLabel}"
+                                                             selected="{!noPlanTypeHealthPlan.selected}" class="picklistColor" />
+                                                </aura:iteration>
+                                            </optgroup>
+                                        </aura:if>
+                                    </lightning:select>
+                                    <aura:if isTrue="{!v.isTertiaryHealthPlanValid == false}">
+                                        <aura:iteration items="{!v.tertiaryHealthPlanErrors}" var="error">
+                                            <div class="errorDescription">{!error}</div>
+                                        </aura:iteration>
+                                    </aura:if>
+                                </div>
+
+                                <aura:if isTrue="{!v.currentTertiaryHealthPlan != null}">
+                                    <div class="slds-m-top--x-small slds-m-bottom--x-small">
+                                        <dl class="slds-list_horizontal slds-wrap">
+                                            <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.payerNameLabel}:</dt>
+                                            <dd class="slds-dl_horizontal__detail">{!v.currentTertiaryHealthPlan.payerName}</dd>
+
+                                            <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.memberIdLabel}:</dt>
+                                            <dd class="slds-dl_horizontal__detail">{!v.currentTertiaryHealthPlan.memberId}</dd>
+
+                                            <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.planNameLabel}:</dt>
+                                            <dd class="slds-dl_horizontal__detail">{!v.currentTertiaryHealthPlan.planName}</dd>
+
+                                            <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.medicalBenefitsFieldLabels.relationshipToCardholderLabel}:</dt>
+                                            <dd class="slds-dl_horizontal__detail">{!v.currentTertiaryHealthPlan.relationshipToCardholder}</dd>
+                                        </dl>
+                                    </div>
+                                </aura:if>
+
+                            </aura:if>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Space created as a seperator -->
+
+                <div class="slds-col slds-size_12-of-12 ">&nbsp;</div>
+
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="slds-page-header accordionHeader accordionHeaderEnabled" aura:id="prescriptionClinicInformationHeader"
+                         onclick="{!c.toggleAccordion}" data-toggleContentAuraId="prescriptionClinicInformationDetails">
+                        <section class="slds-clearfix">
+                            <div class="slds-float--left ">
+                                <lightning:icon class="slds-hide" aura:id="prescriptionClinicInformationDetails" iconName="utility:chevronright"
+                                                size="x-small" alternativeText="Indicates open"/>
+                                <lightning:icon class="slds-show" aura:id="prescriptionClinicInformationDetails" iconName="utility:chevrondown"
+                                                size="x-small" alternativeText="Indicates close"/>
+                            </div>&nbsp;{!$Label.c.PC_MedicalBenefits_PrescriptionClinicSectionTitle}
+                        </section>
+                    </div>
+                </div>
+
+                <div class="slds-show slds-col slds-size_12-of-12" aura:id="prescriptionClinicInformationDetails">
+                    <div class="slds-grid slds-wrap">
+                        <!-- Prescription Section-->
+                        <div class="slds-col slds-size_5-of-12 ">
+                            <!--Prescription will comehere-->
+                            <lightning:select name="prescriptionList" label="{!v.medicalBenefits.prescriptionLabels.name}" aura:id="prescription"
+                                              required="true"   onchange="{!c.setPrescriptionDetails}">
+                                <option  value="" text="{!v.nonePicklistValue}"  class="picklistColor" />
+                                <aura:iteration items="{!v.prescriptionOptions}" var="option">
+                                    <option text="{!option.name}" value="{!option.id}" selected="{!option.selected}"  class="picklistColor"/>
+                                </aura:iteration>
+                            </lightning:select>
+
+                            <aura:if isTrue="{!v.isPrescriptionValid == false}">
+                                <aura:iteration items="{!v.prescriptionErrors}" var="error">
+                                    <div class="errorDescription">{!error}</div>
+                                </aura:iteration>
+                            </aura:if>
+
+                            <aura:if isTrue="{!v.currentPrescription != null}">
+                                <div class="slds-m-top--xx-small slds-m-bottom--xx-small">
+                                    <dl class="slds-list_horizontal slds-wrap">
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.productName}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.drug.name}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.strength}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.drug.strength}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.drugManufacturer}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.drug.drugManufacturerName}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.providerName}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.physician.firstName +' '+ v.currentPrescription.physician.lastName}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.providerNPI}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.physician.npi}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.providerState}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.physician.address.state}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.placeOfService}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.placeOfService}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.primaryDiagnosis}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.primaryDiagnosis}</dd>
+
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.prescriptionLabels.secondaryDiagnosis}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentPrescription.secondaryDiagnosis}</dd>
+                                    </dl>
+                                </div>
+                            </aura:if>
+
+                            <!--Clinic section -->
+                            <lightning:select name="clinicList" label="{!$Label.c.PC_MedicalBenefits_ClinicTitle}" aura:id="clinic"
+                                              onchange="{!c.setClinicDetails}" required="true">
+                                <option  value="" text="{!v.nonePicklistValue}"  class="picklistColor" />
+                                <aura:iteration items="{!v.clinicOptions}" var="option">
+                                    <option text="{!option.name}" value="{!option.clinicId}"  selected="{!option.selected}"/>
+                                </aura:iteration>
+                            </lightning:select>
+
+                            <aura:if isTrue="{!v.isClinicValid == false}">
+                                <aura:iteration items="{!v.clinicErrors}" var="error">
+                                    <div class="errorDescription">{!error}</div>
+                                </aura:iteration>
+                            </aura:if>
+
+                            <div class="slds-m-top--xx-small slds-m-bottom--xx-small">
+                                <aura:if isTrue="{!(v.currentClinic != null)}">
+                                    <dl class="slds-list_horizontal slds-wrap">
+                                        <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.clinicLabels.clinicNpiLabel}:</dt>
+                                        <dd class="slds-dl_horizontal__detail">{!v.currentClinic.npi}</dd>
+                                    </dl>
+                                </aura:if>
+                            </div>
+
+                        </div>
+
+                        <!-- space created as a seperator-->
+
+                        <div class="slds-col slds-size_1-of-12 "></div>
+
+                        <div class="slds-col slds-size_6-of-12 labelFont">
+                            <!-- Admin Code Section -->
+                            <aura:if isTrue="{!or(or(or(not(v.medicalBenefitsCmpAttributes.hideAdminCodes),(v.medicalBenefitsCmpAttributes.hideAdminCodes == 'FALSE')),
+                                    (v.medicalBenefitsCmpAttributes.hideAdminCodes == 'false')),(v.medicalBenefitsCmpAttributes.hideAdminCodes == 'False'))}">
+                                <lightning:dualListbox name="adminCodes" aura:id="adminCodes"  label ="{!$Label.c.PC_MedicalBenefits_AdminCodesTitle}"
+                                                       value="{!v.selectedAdminCodes}" disableReordering="true" disabled="{!empty(v.adminCodeOptions)}"
+                                                       options="{!v.adminCodeOptions}" max="{!v.maxAdminCodes}" fieldLevelHelp="{!v.noAdminCodesHelpText}"
+                                                       sourceLabel="{!$Label.c.PC_MedicalBenefits_AdminCodesAvailable}" selectedLabel="{!$Label.c.PC_MedicalBenefits_AdminCodesSelected}"/>
+                            </aura:if>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12">&nbsp;</div>
+                <!-- Patient Information Section-->
+                <div class="slds-col slds-size_12-of-12">
+                    <div class="slds-page-header accordionHeader accordionHeaderEnabled" aura:id="patientInfoHeader"
+                         onclick="{!c.toggleAccordion}" data-toggleContentAuraId="patientInfoDetails">
+                        <section class="slds-clearfix">
+                            <div class="slds-float--left ">
+                                <lightning:icon class="slds-hide" aura:id="patientInfoDetails" iconName="utility:chevronright"
+                                                size="x-small" alternativeText="Indicates open"/>
+                                <lightning:icon class="slds-show" aura:id="patientInfoDetails" iconName="utility:chevrondown"
+                                                size="x-small" alternativeText="Indicates close"/>
+                            </div>&nbsp;{!$Label.c.PC_MedicalBenefits_PatientSectionTitle}
+                        </section>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12">
+                    <aura:if isTrue="{!v.isPatientValid == false}">
+                        <aura:iteration items="{!v.patientErrors}" var="error">
+                            <div class="errorDescription">{!error}</div>
+                        </aura:iteration>
+                    </aura:if>
+                </div>
+                <div class="slds-size_12-of-12" aura:id="patientInfoDetails">
+
+                    <div class="slds-grid slds-m-top--xx-small slds-m-bottom--xx-small">
+                        <div class="slds-col slds-size_5-of-12 ">
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.patientLabels.firstNameLabel}:</dt>
+                                <dd class="slds-dl_horizontal__detail">{!v.medicalBenefits.patientDetails.firstName}</dd>
+                                <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.patientLabels.dobLabel}:</dt>
+                                <dd class="slds-dl_horizontal__detail">{!v.medicalBenefits.patientDetails.dob}</dd>
+                                <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.patientLabels.zipCodeLabel}:</dt>
+                                <dd class="slds-dl_horizontal__detail">{!v.medicalBenefits.patientDetails.zipCode}</dd>
+                            </dl>
+                        </div>
+                        <!-- space created as a seperator-->
+                        <div class="slds-col slds-size_1-of-12 "></div>
+                        <div class="slds-col slds-size_6-of-12 ">
+                            <dl class="slds-list_horizontal slds-wrap">
+                                <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.patientLabels.lastNameLabel}:</dt>
+                                <dd class="slds-dl_horizontal__detail">{!v.medicalBenefits.patientDetails.lastName}</dd>
+                                <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.patientLabels.genderLabel}:</dt>
+                                <dd class="slds-dl_horizontal__detail">{!v.medicalBenefits.patientDetails.gender}</dd>
+                                <dt class="slds-dl_horizontal__label">{!v.medicalBenefits.patientLabels.ssnLabel}:</dt>
+                                <dd class="slds-dl_horizontal__detail">{!v.medicalBenefits.patientDetails.ssn}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_12-of-12">&nbsp;</div>
+                <div class="slds-col slds-size_12-of-12">&nbsp;</div>
+            </div>
+
+
+            <footer class="slds-modal__footer" style="margin:-1rem;">
+                <lightning:button variant="neutral" disabled="{!v.showProgressOnSubmit}" label="{!$Label.c.PC_Cancel_Button}" onclick="{!c.handleCancel}" />
+                <lightning:button variant="brand" disabled="{!v.showProgressOnSubmit}" label="{!$Label.c.PC_Submit_Button_Label}" onclick="{!c.handleSubmit}" />
+            </footer>
+        </aura:set>
+    </aura:if>
+
+
+</aura:component>

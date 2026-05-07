@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Versorgungsplanaktivität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Versorgungsplanaktivitäten laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Versorgungsplanaktivität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Versorgungsplanaktivitäten laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Versorgungsplanaktivität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Versorgungsplanaktivitäten laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Versorgungsplanaktivität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Versorgungsplanaktivitäten laut EGA</value>
+    </caseValues>
+    <fields>
+        <label>Resultierende Aktionen</label>
+        <name>HealthCloudGA__ActionsResulting__c</name>
+    </fields>
+    <fields>
+        <label>Aktivitätszeitraum</label>
+        <name>HealthCloudGA__ActivityPeriod__c</name>
+    </fields>
+    <fields>
+        <label>Aktivitätsplan</label>
+        <name>HealthCloudGA__ActivitySchedule__c</name>
+    </fields>
+    <fields>
+        <label>Versorgungsplan</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kategorie</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Code Bezeichnung</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Code System</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Tägliche Menge</label>
+        <name>HealthCloudGA__DailyAmount__c</name>
+    </fields>
+    <fields>
+        <label>Details</label>
+        <name>HealthCloudGA__Details__c</name>
+    </fields>
+    <fields>
+        <label>Ist untersagt</label>
+        <name>HealthCloudGA__IsProhibited__c</name>
+    </fields>
+    <fields>
+        <label>Ist eingeschränkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Wird auf Patientenkarte angezeigt</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Standort Kennung</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Standort Zeile 1</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Standort Zeile 2</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Standort Name</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Standort Postleitzahl</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Standort Startdatum</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Standort Bundesland</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Standort Telekommunikation</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Standort Text</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Standort Typ</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Standort Verwendung</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Notizen</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Produkt Medikament 255</label>
+        <name>HealthCloudGA__ProductMedication255__c</name>
+    </fields>
+    <fields>
+        <label>Produkt Medikament</label>
+        <name>HealthCloudGA__ProductMedication__c</name>
+    </fields>
+    <fields>
+        <label>Produkt Stoff 255</label>
+        <name>HealthCloudGA__ProductSubstance255__c</name>
+    </fields>
+    <fields>
+        <label>Produkt Stoff</label>
+        <name>HealthCloudGA__ProductSubstance__c</name>
+    </fields>
+    <fields>
+        <label>Menge</label>
+        <name>HealthCloudGA__Quantity__c</name>
+    </fields>
+    <fields>
+        <label>Zugehöriger Versorgungsplan Ziel 1</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal1__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehöriger Versorgungsplan Ziel 2</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal2__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehöriger Versorgungsplan Ziel 3</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal3__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehöriger Versorgungsplan Ziel 4</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal4__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehöriger Versorgungsplan Ziel 5</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal5__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehörige Begegnung</label>
+        <name>HealthCloudGA__RelatedEncounter__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zugehörige Medikamentenverordnung</label>
+        <name>HealthCloudGA__RelatedMedicationPrescription__c</name>
+        <relationshipLabel>Versorgungsplan Aktivitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Typ Code</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Typ Bezeichnung</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Typ System</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>EGA Versorgungsplan Aktivitäts-ID</nameFieldLabel>
+</CustomObjectTranslation>

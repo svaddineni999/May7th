@@ -1,0 +1,42 @@
+/**
+ * Created by shisbansal on 11/16/2018.
+ */
+
+.THIS .box{
+     margin-bottom: 0.5rem;
+}
+.THIS .recipientContentBox{
+     border: 1px solid #d3d3d3;
+     border-radius: .25rem;
+     background-color: rgb(249, 249, 250);
+     margin-top: 0.5rem;
+     margin-bottom: 0.5rem;
+     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.THIS .labelAdjust {
+     width: 20%;
+     color: #706e6b;
+     vertical-align: middle;
+     display: inline-block;
+     text-align: left;
+     white-space:nowrap;
+}
+
+.THIS .widthAdjust{
+    width: 80%;
+}
+
+.THIS .tableWidthAdjust{
+    width: 245px;
+}
+
+.THIS .fontColor{
+    color: rgb(107, 109, 112);
+    font-family: 'Salesforce Sans',Arial,sans-serif;
+}
+.THIS .divPadding{
+    padding: 0.5rem 0.5rem 0.5rem;
+}
+.THIS .recipientBoxDivPadding{
+    padding: 0rem 0.5rem 0rem;
+}

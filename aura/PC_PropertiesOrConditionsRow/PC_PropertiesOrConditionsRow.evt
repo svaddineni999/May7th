@@ -1,0 +1,7 @@
+<!--
+ - Created by kkanteti on 9/29/2020.
+ -->
+
+<aura:event type="COMPONENT" description="PC_PropertiesOrConditionsRow">
+    <aura:attribute required="true" name="showToValueColumn" type="Boolean"/>
+</aura:event>

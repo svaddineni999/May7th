@@ -1,0 +1,57 @@
+.THIS.EWPTitle {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.THIS.EWPContent {
+    /*empty block*/
+}
+.THIS .searchBlock .searchButton {
+    margin-left: 20px;
+    width:inherit;
+}
+.THIS .ExistingPhysicianBlockHeader {
+    height: 50px;
+    margin: auto 0%;
+}
+
+.THIS .SelectedPhysicianInfo {
+    /*empty block*/
+}
+.THIS .NewPhysicianBlock {
+    clear: both;
+}
+
+.THIS .searchFieldBlock{
+	display:flex;
+    width: 50%;
+    padding-bottom: 10px;
+}
+.THIS .searchButtonBlock {
+    display:inline-block;
+    padding-right: 20px;
+    
+}
+.THIS .searchResultMsgBlockHidden {
+    display:none;
+}
+.THIS .fontWeight {
+    font-weight:bold;
+}
+.THIS .clearButton {
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.THIS .tableheader{
+    background-color:#596D8E;
+    
+}
+
+.THIS .message{
+    color:#596D8E;
+}
+
+.THIS .refTable{
+    border: 0.25px solid #596D8E;
+    border-radius: .25rem .25rem .25rem .25rem;
+}

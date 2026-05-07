@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Инструкция по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Инструкции по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Инструкцию по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Инструкции по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Инструкции по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Инструкций по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Инструкции по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Инструкциям по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Инструкцией по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Инструкциями по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Инструкции по дозировке в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Инструкциях по дозировке в ЭМК</value>
+    </caseValues>
+    <fields>
+        <label>Код дополнительных инструкций</label>
+        <name>HealthCloudGA__AdditionalInstructionCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка дополнительных инструкций</label>
+        <name>HealthCloudGA__AdditionalInstructionLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система дополнительных инструкций</label>
+        <name>HealthCloudGA__AdditionalInstructionSystem__c</name>
+    </fields>
+    <fields>
+        <label>Дополнительные инструкции</label>
+        <name>HealthCloudGA__AdditionalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>Код «по необходимости»</label>
+        <name>HealthCloudGA__AsNeededCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка «по необходимости»</label>
+        <name>HealthCloudGA__AsNeededLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система «по необходимости»</label>
+        <name>HealthCloudGA__AsNeededSystem__c</name>
+    </fields>
+    <fields>
+        <label>По необходимости</label>
+        <name>HealthCloudGA__AsNeeded__c</name>
+    </fields>
+    <fields>
+        <label>Единица количества дозы</label>
+        <name>HealthCloudGA__DoseQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <label>Значение количества дозы</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this applies to --></help>
+        <label>Пациентов ЭМК</label>
+        <name>HealthCloudGA__EhrPatient__c</name>
+        <relationshipLabel>Инструкции дозировки ЭМК</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Инструкции</label>
+        <name>HealthCloudGA__Instruction__c</name>
+    </fields>
+    <fields>
+        <label>Ограничено</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Отображается на карте пациента</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Единица знаменателя макс. дозы за период</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorUnit__c</name>
+    </fields>
+    <fields>
+        <label>Знач-ие знаменателя макс. дозы за период</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorValue__c</name>
+    </fields>
+    <fields>
+        <label>Единица числителя макс. дозы за период</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorUnit__c</name>
+    </fields>
+    <fields>
+        <label>Значение числителя макс. дозы за период</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorValue__c</name>
+    </fields>
+    <fields>
+        <label>Рецепт на лекарство</label>
+        <name>HealthCloudGA__MedicationPrescription__c</name>
+        <relationshipLabel>Инструкции по дозировке</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Запись о выдаче лекарства</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>Инструкции по дозировке</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Код метода</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка метода</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система метода</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denominator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>Знаменатель показателя</label>
+        <name>HealthCloudGA__RateDenominator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Numerator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>Числитель показателя</label>
+        <name>HealthCloudGA__RateNumerator__c</name>
+    </fields>
+    <fields>
+        <label>Код маршрута</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка маршрута</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система маршрута</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код локализации</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка локализации</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система локализации</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код исходной системы</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Исходная система изменена</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Исходная система</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Вспомогательные инструкции</label>
+        <name>HealthCloudGA__SupplementalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>Окончание периода отсчета</label>
+        <name>HealthCloudGA__TimingPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Начало периода отсчета</label>
+        <name>HealthCloudGA__TimingPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Время</label>
+        <name>HealthCloudGA__Timing__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Код инструкций по дозировке ЭМК</nameFieldLabel>
+</CustomObjectTranslation>

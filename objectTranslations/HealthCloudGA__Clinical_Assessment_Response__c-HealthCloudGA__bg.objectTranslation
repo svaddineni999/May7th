@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Реакция при критична оценка</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Реакции при критична оценка</value>
+    </caseValues>
+    <fields>
+        <label>Болка в корема</label>
+        <name>HealthCloudGA__AbdominalPain__c</name>
+    </fields>
+    <fields>
+        <label>Сърдечносъдови заболявания</label>
+        <name>HealthCloudGA__CardiovascularDisease__c</name>
+    </fields>
+    <fields>
+        <label>Втрисане</label>
+        <name>HealthCloudGA__Chills__c</name>
+    </fields>
+    <fields>
+        <label>Хронично чернодробно заболяване</label>
+        <name>HealthCloudGA__ChronicLiverDisease__c</name>
+    </fields>
+    <fields>
+        <label>Хронично белодробно заболяване</label>
+        <name>HealthCloudGA__ChronicLungDisease__c</name>
+    </fields>
+    <fields>
+        <label>Хронично бъбречно заболяване</label>
+        <name>HealthCloudGA__ChronicRenalDisease__c</name>
+    </fields>
+    <fields>
+        <label>Кашлица</label>
+        <name>HealthCloudGA__Cough__c</name>
+    </fields>
+    <fields>
+        <label>Настоящ пушач</label>
+        <name>HealthCloudGA__CurrentSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Захарен диабет</label>
+        <name>HealthCloudGA__DiabetesMellitus__c</name>
+    </fields>
+    <fields>
+        <label>Диария</label>
+        <name>HealthCloudGA__Diarrhoea__c</name>
+    </fields>
+    <fields>
+        <label>Треска над стандартния праг</label>
+        <name>HealthCloudGA__FeverOverThreshold__c</name>
+    </fields>
+    <fields>
+        <label>Бивш пушач</label>
+        <name>HealthCloudGA__FormerSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Главоболие</label>
+        <name>HealthCloudGA__Headache__c</name>
+    </fields>
+    <fields>
+        <label>Най-висока регистрирана температура</label>
+        <name>HealthCloudGA__HighestRecordedTemperature__c</name>
+    </fields>
+    <fields>
+        <label>Състояние на хоспитализация</label>
+        <name>HealthCloudGA__HospitalizationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Admitted</masterLabel>
+            <translation><!-- Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Admitted</masterLabel>
+            <translation><!-- Not Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Компрометирана имунна система</label>
+        <name>HealthCloudGA__Immunocompromised__c</name>
+    </fields>
+    <fields>
+        <label>Мускулни болки</label>
+        <name>HealthCloudGA__MuscleAches__c</name>
+    </fields>
+    <fields>
+        <label>Гадене или повръщане</label>
+        <name>HealthCloudGA__NauseaOrVomiting__c</name>
+    </fields>
+    <fields>
+        <label>Бележки за неврологично увреждане</label>
+        <name>HealthCloudGA__NeurologicalDisablityNotes__c</name>
+    </fields>
+    <fields>
+        <label>Неврологично увреждане</label>
+        <name>HealthCloudGA__NeurologicalDisablity__c</name>
+    </fields>
+    <fields>
+        <label>Професия</label>
+        <name>HealthCloudGA__Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Childcare worker</masterLabel>
+            <translation><!-- Childcare worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical laboratory technologist or technician</masterLabel>
+            <translation><!-- Clinical laboratory technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combined food preparation or serving worker, including fast food</masterLabel>
+            <translation><!-- Combined food preparation or serving worker, including fast food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentist</masterLabel>
+            <translation><!-- Dentist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency management director</masterLabel>
+            <translation><!-- Emergency management director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency medical technician or paramedic</masterLabel>
+            <translation><!-- Emergency medical technician or paramedic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health practitioner support technologist or technician</masterLabel>
+            <translation><!-- Health practitioner support technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare support worker(including medical equipment preparer)</masterLabel>
+            <translation><!-- Healthcare support worker(including medical equipment preparer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Начало на симптомите</label>
+        <name>HealthCloudGA__OnsetOfSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Бележки за други хронични заболявания</label>
+        <name>HealthCloudGA__OtherChronicDiseasesNotes__c</name>
+    </fields>
+    <fields>
+        <label>Други хронични заболявания</label>
+        <name>HealthCloudGA__OtherChronicDiseases__c</name>
+    </fields>
+    <fields>
+        <label>Други симптоми</label>
+        <name>HealthCloudGA__OtherSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Предоставено съгласие от родител</label>
+        <name>HealthCloudGA__ParentalConsent__c</name>
+    </fields>
+    <fields>
+        <label>Профил</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Отговори на клинични оценки</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Лекар, първична медицинска помощ</label>
+        <name>HealthCloudGA__PrimaryCarePhysician__c</name>
+    </fields>
+    <fields>
+        <label>Име на учреждение на доставчик</label>
+        <name>HealthCloudGA__ProviderFacilityName__c</name>
+    </fields>
+    <fields>
+        <label>Хрема</label>
+        <name>HealthCloudGA__RunnyNose__c</name>
+    </fields>
+    <fields>
+        <label>Задух</label>
+        <name>HealthCloudGA__ShortnessOfBreath__c</name>
+    </fields>
+    <fields>
+        <label>Възпалено гърло</label>
+        <name>HealthCloudGA__SoreThroat__c</name>
+    </fields>
+    <fields>
+        <label>Субективна треска</label>
+        <name>HealthCloudGA__SubjectiveFever__c</name>
+    </fields>
+    <fields>
+        <label>Име на учреждение за тестване</label>
+        <name>HealthCloudGA__TestingFacilityName__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Име на отговор на клинична оценка</nameFieldLabel>
+</CustomObjectTranslation>

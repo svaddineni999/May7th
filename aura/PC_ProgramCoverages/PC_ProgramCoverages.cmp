@@ -1,0 +1,122 @@
+<!--
+ - Created by shisbansal on 8/27/2018.
+ -->
+
+<aura:component access="global" controller="PC_ProgramCoveragesController" description="PC_ProgramCoverages" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+
+    <aura:handler name = "init" action = "{!c.doInit}" value = "{!this}"/>
+    <aura:attribute name ="programCoveragesList" type="sObject[]" default="false"/>
+    <aura:attribute name="fieldLabels" type="sObject" default="false"/>
+    <aura:attribute name="newProgramCoverage" type="String" default="{!$Label.c.PC_New}"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="showCreateProgramCoverageOption" type="Boolean" default="true"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+
+
+
+    <div>
+        <aura:if isTrue="{!v.isLoading}">
+            <div class="pc_spinner slds-align-middle">
+                <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+            </div>
+            <aura:set attribute="else">
+                <div style="" class="slds-box">
+                    <!--Start of Header Component-->
+                    <aura:if isTrue="{!v.showCreateProgramCoverageOption}">
+                        <div class="slds-tabs--scoped__nav slds-page-header_object-home" >
+                            <div class="slds-col"></div>
+                            <div class="slds-col slds-no-flex">
+                                <div class="slds-m-bottom--x-small"/>
+                                <div class="slds-form-element">
+                                    <div class="slds-float--right">
+                                        <lightning:button onclick="{!c.createProgramCoverage}" variant="brand">{!v.newProgramCoverage}</lightning:button>
+                                    </div>
+                                </div>
+                                <div class="slds-m-bottom--x-small"  />
+                            </div>
+                        </div>
+                    </aura:if>
+                    <!--Program Coverage  Form Table-->
+
+
+                    <div class="slds-modal__content slds-p-around_medium" style="{!v.programCoveragesList.length == 0 ? '' : 'display:none;'}" >
+                    {!$Label.c.PC_No_Records_Found}
+                        <br></br>
+                    </div>
+
+
+
+                    <div class="dataTable" id="modal-content-id-1" style="{!v.programCoveragesList.length != 0 ? '' : 'display:none;'}">
+                        <div class="slds-scrollable">
+                            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                <thead>
+                                <tr class="slds-text-title_caps">
+                                    <th class="slds-cell-shrink" scope="col"></th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.name}">{!v.fieldLabels.name}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.recordType}">{!v.fieldLabels.recordType}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.healthPlanName}">{!v.fieldLabels.healthPlanName}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.coverageType}">{!v.fieldLabels.coverageType}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.coverageStatus}">{!v.fieldLabels.coverageStatus}</div>
+                                    </th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <aura:iteration items ="{!v.programCoveragesList}" var="ProgramCoverage" indexVar="i">
+                                    <tr>
+                                        <td class="slds-truncate" >
+                                            <div class="slds-truncate slds-text-align--center" data-id="" title="">
+                                                <lightning:button value="{!ProgramCoverage.programCoverageId}" type="button" variant="base" iconName="utility:edit" onclick="{!c.editProgramCoverage}"/>
+                                            </div>
+                                        </td>
+                                        <td  class="slds-truncate" title="{!ProgramCoverage.name}">
+                                            <a id ="{!ProgramCoverage.programCoverageId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                                    {!ProgramCoverage.name}
+                                            </a>
+                                        </td>
+                                        <td class="slds-truncate"  title="{!ProgramCoverage.recordTypeName}">
+                                                {!ProgramCoverage.recordTypeName}
+                                        </td>
+                                        <td  class="slds-truncate" title="{!ProgramCoverage.healthPlanName}">
+                                            <a id ="{!ProgramCoverage.healtPlanId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                                    {!ProgramCoverage.healthPlanName}
+                                            </a>
+                                        </td>
+                                        <td class="slds-truncate"  title="{!ProgramCoverage.coverageType}">
+                                                {!ProgramCoverage.coverageType}
+                                        </td>
+                                        <td class="slds-truncate"  title="{!ProgramCoverage.coverageStatus}">
+                                                {!ProgramCoverage.coverageStatus}
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                                </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+
+
+    </div>
+
+
+</aura:component>

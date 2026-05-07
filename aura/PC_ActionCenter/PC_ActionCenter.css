@@ -1,0 +1,15 @@
+.THIS .actionTitle {
+    font-size: 16px;
+    font-weight: normal;
+ }
+
+.THIS .lineheight {
+    height : 2rem
+}
+.THIS .iconButtonClass {
+    display: inline-block;
+}
+
+.THIS .pc-display-block {
+    display: block;
+}

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label>새 개별 연락처 필드</label>
+        <name>HealthCloudGA__NewIndividualContactFields</name>
+    </fieldSets>
+    <fields>
+        <label>연령</label>
+        <name>HealthCloudGA__Age__c</name>
+    </fields>
+    <fields>
+        <label>생년월일</label>
+        <name>HealthCloudGA__BirthDate__c</name>
+    </fields>
+    <fields>
+        <label>상태</label>
+        <name>HealthCloudGA__ConditionStatus__c</name>
+        <picklistValues>
+            <masterLabel>Asymptomatic</masterLabel>
+            <translation><!-- Asymptomatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asymptomatic - Declined to Participate</masterLabel>
+            <translation><!-- Asymptomatic - Declined to Participate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cured</masterLabel>
+            <translation><!-- Cured --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaluated - No Risk</masterLabel>
+            <translation><!-- Evaluated - No Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symptomatic</masterLabel>
+            <translation><!-- Symptomatic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symptomatic - Declined to Participate</masterLabel>
+            <translation><!-- Symptomatic - Declined to Participate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Count of referrals submitted in the last 6 months by this referring practitioner that have a status of “Closed-Converted”. --></help>
+        <label>전환된 의뢰 수</label>
+        <name>HealthCloudGA__ConvertedReferrals__c</name>
+    </fields>
+    <fields>
+        <label>출생 국가</label>
+        <name>HealthCloudGA__CountryOfBirth__c</name>
+    </fields>
+    <fields>
+        <label>리드에서 만들기</label>
+        <name>HealthCloudGA__CreatedFromLead__c</name>
+    </fields>
+    <fields>
+        <label>사망일시</label>
+        <name>HealthCloudGA__DeceasedDate__c</name>
+    </fields>
+    <fields>
+        <label>성별</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Decline to Specify</masterLabel>
+            <translation><!-- Decline to Specify --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>개인 ID</label>
+        <name>HealthCloudGA__IndividualId__c</name>
+    </fields>
+    <fields>
+        <label>개인 유형</label>
+        <name>HealthCloudGA__IndividualType__c</name>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation><!-- Individual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>의료 기록 번호</label>
+        <name>HealthCloudGA__MedicalRecordNumber__c</name>
+    </fields>
+    <fields>
+        <label>자택 모니터링</label>
+        <name>HealthCloudGA__Monitored_at_Home__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>기본 이름</label>
+        <name>HealthCloudGA__PreferredName__c</name>
+    </fields>
+    <fields>
+        <label>기본 언어</label>
+        <name>HealthCloudGA__PrimaryLanguage__c</name>
+    </fields>
+    <fields>
+        <label>의뢰자 점수</label>
+        <name>HealthCloudGA__ReferrerScore__c</name>
+    </fields>
+    <fields>
+        <label>보조 언어</label>
+        <name>HealthCloudGA__SecondaryLanguage__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>소스 시스템</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>상태 그룹</label>
+        <name>HealthCloudGA__StatusGroup__c</name>
+        <picklistValues>
+            <masterLabel>Monitored</masterLabel>
+            <translation><!-- Monitored --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Monitored</masterLabel>
+            <translation><!-- Not Monitored --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Test</masterLabel>
+            <translation><!-- Positive Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Intake</masterLabel>
+            <translation><!-- Ready for Intake --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>검사 상태</label>
+        <name>HealthCloudGA__Testing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Negative Test</masterLabel>
+            <translation><!-- Negative Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Test</masterLabel>
+            <translation><!-- Positive Test --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Results Awaited</masterLabel>
+            <translation><!-- Test Results Awaited --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Scheduled</masterLabel>
+            <translation><!-- Test Scheduled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing Recommended</masterLabel>
+            <translation><!-- Testing Recommended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Count of total number of referrals submitted in the last 6 months by this referring practitioner. --></help>
+        <label>총 의뢰 수</label>
+        <name>HealthCloudGA__TotalReferrals__c</name>
+    </fields>
+    <recordTypes>
+        <description>비즈니스를 나타냅니다</description>
+        <label>비즈니스</label>
+        <name>HealthCloudGA__IndustriesBusiness</name>
+    </recordTypes>
+    <recordTypes>
+        <description>개인을 나타냅니다</description>
+        <label>개인</label>
+        <name>HealthCloudGA__IndustriesIndividual</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Individual --></label>
+        <name>IndustriesIndividual</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Patient --></label>
+        <name>PC_Patient</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Physician --></label>
+        <name>PC_Physician</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>개인 레코드 유형은 변경할 수 없습니다</errorMessage>
+        <name>HealthCloudGA__NotAllowingConversionFromIndividual</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>레코드 유형은 개인으로 변경할 수 없습니다</errorMessage>
+        <name>HealthCloudGA__NotAllowingConversionToIndividual</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Send_eFax_Classic --></label>
+        <name>EFX__Send_eFax_Classic</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_eFax_Lightning --></label>
+        <name>EFX__Send_eFax_Lightning</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label>관계 추가</label>
+        <name>HealthCloudGA__AddRelation</name>
+    </webLinks>
+</CustomObjectTranslation>

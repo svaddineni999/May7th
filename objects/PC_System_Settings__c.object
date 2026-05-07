@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>PC_Document_Splitter_Class__c</fullName>
+        <defaultValue>&apos;PC_DocumentSplitWebservice&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Implementation class of PC_Document.Splitter interface that calls external service to split a document attachment and creates new attachments on child documents.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Fully qualified class name of the PC_Document.Splitter implementation that will be invoked when users split documents (typically inbound faxes). The implementing class and methods must declared as global if they are implemented outside of the PC package.</inlineHelpText>
+        <label>Document Splitter Class</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Google_Map_Location_Radius__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Google Map Location Radius</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Google_Map_Radius_Is_KM__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <label>Google Map Radius Is KM</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Pharmacy_Card_Lookup_ID_Validity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This holds the number of seconds the Pharmacy Card Lookup ID remains valid. This will be used to filter the PBM Plans that are listed in the Pharmacy Ebenefit Investigation workflow. If no value is provided, then it is assumed that the PBM Plans remain indefinitely valid.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This holds the number of seconds the Pharmacy Card Lookup ID remains valid.</inlineHelpText>
+        <label>Pharmacy Card Lookup Validity In Seconds</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_eLetter_Sender_Class__c</fullName>
+        <defaultValue>&apos;PC_eLetterEmailTemplateSender&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The class name of the PC_eLetter.Sender implementation that will be used to send eLetters. The .cls should not be included.</description>
+        <externalId>false</externalId>
+        <label>eLetter Sender Class</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ePA_Class__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The class name of the PC_ePA.Client that will be used for ePA. .cls should not be included.</description>
+        <externalId>false</externalId>
+        <label>ePA Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>System Settings</label>
+    <visibility>Public</visibility>
+</CustomObject>

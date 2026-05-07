@@ -1,0 +1,8 @@
+<!--
+ - Created by vkashikar on 10/19/2019.
+ -->
+
+<aura:event type="APPLICATION" description="PC_UnselectDataTableRow">
+    <aura:attribute name="currentSelectedRecordId" type="String"/>
+    <aura:attribute name="currentSelectionSource" type="String"/>
+</aura:event>

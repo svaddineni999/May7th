@@ -1,0 +1,83 @@
+<!--
+Lightning component  : PC_AddressInfoEWP
+Description          : Patient Address Information - Enrollment Wizard Page
+
+Modification Log:
+Kishore Kanteti       22-Nov-2021    [PC-8209] Initial Version
+-->
+
+<aura:component access="global" extends="c:PC_EnrollmentWizardPage" controller="PC_AddressInfoEWP">
+    <aura:set attribute="persistentAttributes" value="['persistentAddress']"/>
+    <aura:attribute name="persistentAddress" type="sObject[]"/>
+    <aura:attribute name="existingAddresses" type="sObject[]"/>
+    <aura:attribute name="addressColumns" type="List"/>
+    <aura:attribute name="selectedAddressColumns" type="List"/>
+    <aura:attribute name="onlineFormAddresses" type="sObject[]"/>
+    <aura:attribute name="fieldSetNames" type="String[]" default="[]"/>
+    <aura:attribute name="displayFieldSetName" type="String" default=""/>
+    <aura:attribute name="newEditAddress" type="sObject" access="public"/>
+    <aura:attribute name="showAddressModal" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="_pageError" type="String" default="{!$Label.c.PC_EWP_PageError}" />
+    <aura:attribute name="referenceAddressHeader" type="String" default="{!$Label.c.PC_AddressInfo_Reference}"/>
+    <aura:attribute name="referenceAddressHeaderInfo" type="String" default="{!$Label.c.PC_PageInfo_ApplicantAddress}"/>
+    <aura:attribute name="addressLabel" type="String" default="{!$Label.c.PC_PatientInfo_Label2}"/>
+    <aura:attribute name="addNew" type="String" default="{!$Label.c.PC_Add_New_Button}"/>
+    <aura:attribute name="addressIsSelected" type="String" default="{!$Label.c.PC_AddressSelected}"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute name="_addressPageErrorReplacements" type="Map" default="{'%ObjectName%':'address'}"/>
+    <aura:attribute name="source" type="String"/>
+    <aura:attribute name="objectName" type="String"/>
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+
+    <aura:attribute name="primaryAddressLessPageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Primary_Address_Less}" />
+    <aura:attribute name="primaryAddressMorePageErrorMessage" type="String" default="{!$Label.c.PC_PageError_Primary_Address_More}" />
+    <aura:method name="validate" action="{!c.validate}" access="public"></aura:method>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-color__background_gray-1">
+        <aura:if isTrue="{!v.onlineFormAddresses.length > 0}">
+            <div class="slds-p-around_small">
+                <div class="slds-tabs--scoped__nav reftableheader" role="tablist">
+                    <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item slds-p-around_small" style = "color:#ffffff">
+                            {!v.referenceAddressHeader} {!v.source}
+                    </legend>
+                </div>
+                <div class="slds-form-element__group slds-tabs--scoped__content">
+                    <div class="slds-text-body--small">
+                        <lightning:icon iconName="utility:info"  size="x-small" alternativeText="Information"/> &nbsp;
+                        <ui:outputText value="{!v.referenceAddressHeaderInfo}"/>
+                    </div>
+                </div>
+                <div class="slds-m-around_small">
+                    <lightning:datatable
+                        columns="{!v.addressColumns}"
+                        data="{!v.onlineFormAddresses}"
+                        keyField="AddressId"
+                        hideCheckboxColumn="true"
+                        onrowaction="{!c.handleAvailableAddressRowAction}"/>
+                </div>
+            </div>
+        </aura:if>
+        <div class="slds-p-around_small">
+            <div class="slds-tabs--scoped__nav">
+                <legend class="slds-form-element__label slds-text-heading--medium slds-p-around_small">{!v.addressLabel}</legend>
+                <lightning:button class="rightMargin" variant="brand"
+                                  label="{!v.addNew}"
+                                  title="{!v.addNew}"
+                                  onclick="{!c.addNewAddress}"/>
+            </div>
+            <div class="slds-m-around_small">
+                <lightning:datatable
+                columns="{!v.selectedAddressColumns}"
+                data="{!v.persistentAddress}"
+                hideCheckboxColumn="true"
+                keyField="AddressId"
+                onrowaction="{!c.handleSelectedAddressRowAction}"/>
+            </div>
+        </div>
+    </div>
+    <aura:if isTrue="{!v.showAddressModal}">
+        <c:PC_NewEditAddressInfoEWP objectName="{!v.objectName}" fieldSetNames="{!v.fieldSetNames}" newEditAddress="{!v.newEditAddress}" showAddressModal="{!v.showAddressModal}" persistentAddress="{!v.persistentAddress}"/>
+    </aura:if>
+</aura:component>

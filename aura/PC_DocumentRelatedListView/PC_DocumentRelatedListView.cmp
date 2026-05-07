@@ -1,0 +1,89 @@
+<!--
+Lightning component  : PC_DocumentRelatedListView
+Description          : Shows List of Child Documents of all types (Email Attachments, Split, Original & others)
+Parameters           : Document Id
+Modification Log:
+Haritha Reddy 		 02-Jul-2019    [PC-5019]Initial Version
+-->
+
+<aura:component description="PC_DocumentRelatedListView" controller="PC_DocumentRelatedListViewController" implements="flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="docId" type="String"/>
+    <aura:attribute name="childDocs" type="object" />
+    <aura:attribute name="isRelatedComponent" type="Boolean" default="true" />
+    <aura:attribute name="isCommunity" type="boolean" default="false" access="private"/>
+    <aura:attribute name="labelRelated" type="String" default="{!$Label.c.PC_Document_Related}"/>
+    <aura:attribute name="errorMsg" type="String" default="{!$Label.c.PC_Correct_Your_Input}" />
+    <aura:attribute name="fileURL" type="String" default="" />
+    <aura:attribute name="previewComponentName" type="String" default="PC_PreviewFile" />
+
+    <!-- Refreshes list of child documents as soon as a new child document is added or any status gets updated -->
+    <aura:handler event="force:refreshView" action="{!c.doInit}"/>
+
+    <div class="slds slds-m-top_large" aura:id="documentRelatedDocsId">
+        <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.showAccordion}">
+            <section class="slds-clearfix">
+                <div class="slds-float--left ">
+                    <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates open"/>
+                    <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:chevronright" size="x-small" alternativeText="Indicates close"/>
+                </div>
+                <div class="slds-m-left--large cmpntNameFontSize">{!v.labelRelated}</div>
+            </section>
+        </div>
+
+        <div class="slds-show" aura:id="articleOne">
+            <div class="slds-tabs--scoped__content" style="{!v.childDocs.length == 0 ? '' : 'display:none;'}" >
+                    {!$Label.c.PC_No_Records_Found}
+            </div>
+
+            <div class="slds-tabs--scoped__content noPadding" style="{!v.childDocs.length != 0 ? '' : 'display:none;'}">
+                <div class="slds-scrollable" style="max-height:10rem">
+                    <table class="slds-table slds-table--bordered" width="100%">
+                        <thead>
+                            <tr class="slds-text-heading--label">
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_1}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_6}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_3}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_4}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_ChildDocListView_Col_5}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_CreatedDate}</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.childDocs}" var="childDoc" indexVar="i">
+                                <tr class="slds-hint-parent">
+                                    <td data-label="docNumber" class="slds-truncate" role="row">
+                                        <a data-index="{!i}" onclick="{!c.navigateToDocument}" data-id="{!childDoc.DocUrl}" target="_blank">{!childDoc.DocumentName}</a>
+                                    </td>
+
+                                    <aura:if isTrue="{!childDoc.documentType == 'attachment'}">
+                                        <td class="slds-cell-wrap"><a onclick="{!c.navigateToFile}" data-id="{! '/servlet/servlet.FileDownload?file=' + childDoc.contentId}" id="{!childDoc.contentId}" target="_blank" >{!childDoc.contentTitle}</a></td>
+                                        <aura:set attribute="else">
+                                            <aura:if isTrue="{!childDoc.documentType == 'file'}">
+                                                <td class="slds-cell-wrap"><a onclick="{!c.navigateToFile}" data-id="{! v.fileURL+childDoc.contentId}" target="_blank" >{!childDoc.contentTitle}</a></td>
+                                                <aura:set attribute="else">
+                                                    <aura:if isTrue="{!childDoc.documentType == 'none'}">
+                                                        <td class="slds-cell-wrap"> </td>
+                                                    </aura:if>
+                                                </aura:set>
+                                            </aura:if>
+                                        </aura:set>
+                                    </aura:if>
+
+
+                                    <td data-label="docStatus" class="slds-truncate">{!childDoc.DocumentStatusLabel}</td>
+                                    <td data-label="relationType" class="slds-truncate">{!childDoc.relationType}</td>
+                                    <td data-label="description" class="slds-truncate">{!childDoc.description}</td>
+                                    <td data-label="createdDate" class="slds-truncate">{!childDoc.createdDate}</td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

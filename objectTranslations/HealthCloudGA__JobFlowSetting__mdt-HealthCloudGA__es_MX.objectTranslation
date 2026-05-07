@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuración de flujo de trabajo</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configuraciones de flujos de trabajo</value>
+    </caseValues>
+    <fields>
+        <label>Activo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Personalizado</label>
+        <name>HealthCloudGA__Custom__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de flujo de trabajo</label>
+        <name>HealthCloudGA__JobFlowName__c</name>
+    </fields>
+    <fields>
+        <label>Nombre del trabajo</label>
+        <name>HealthCloudGA__JobName__c</name>
+    </fields>
+    <fields>
+        <label>Orden de trabajo</label>
+        <name>HealthCloudGA__JobOrder__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

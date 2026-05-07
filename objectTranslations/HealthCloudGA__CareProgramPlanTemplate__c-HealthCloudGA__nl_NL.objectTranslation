@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sjabloon voor zorgprogrammaplan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sjablonen voor zorgprogrammaplan</value>
+    </caseValues>
+    <fields>
+        <label>Sjabloon voor zorgplan</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Sjablonen voor zorgprogrammaplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zorgprogramma</label>
+        <name>HealthCloudGA__CareProgram__c</name>
+        <relationshipLabel>Sjablonen voor zorgprogrammaplan</relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID</nameFieldLabel>
+</CustomObjectTranslation>

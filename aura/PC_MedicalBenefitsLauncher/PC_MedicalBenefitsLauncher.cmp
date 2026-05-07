@@ -1,0 +1,32 @@
+<!--
+Lightning component  : PC_MedicalBenefitsLauncher
+Description          : Holds a button which will launch Medical eBenefits Form
+Parameters           : String caseId, Map medicalBenefitsCmpAttributes
+Modification Log:
+Haritha Reddy 		 31-Jan-2019    Initial Version
+-->
+
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" description="PC_MedicalBenefitsLauncher" access="global">
+    <aura:attribute name="caseId" type="string" default="{!v.recordId}" access="global"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="medicalBenefitsComponentName" type="string" default="PC_MedicalBenefits"/>
+    <aura:attribute name="medicalBenifitsPoupLabel" type="String" default="{!$Label.c.PC_MedicalBenefitsTitle}"/>
+    <aura:attribute name="newMedicalBenefits" type="String" default="{!$Label.c.PC_New}"/>
+    <aura:attribute name="medicalBenefitsCmpAttributes" type="Map"/>
+    <aura:attribute name="errors" type="List" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}"
+                  styles="{!$Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <div class="slds">
+        <lightning:overlayLibrary aura:id="medicalBenefitsPopup"/>
+        <div style="border: 1px solid #d8dde6;">
+            <div class="slds-tabs--scoped__nav slds-page-header_object-home" >
+                <div class="slds-col"></div>
+                <div class="slds-col slds-no-flex slds-m-top--x-small slds-float--right">
+                    <lightning:button onclick="{!c.openMedicalBenefitsForm}" variant="brand">{!v.newMedicalBenefits}</lightning:button>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

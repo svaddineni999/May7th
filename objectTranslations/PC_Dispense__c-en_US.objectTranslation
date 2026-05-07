@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dispense</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dispenses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Dispensed Date --></label>
+        <name>PC_Dispensed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dispensed Quantity --></label>
+        <name>PC_Dispensed_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fill Number --></label>
+        <name>PC_Fill_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Item --></label>
+        <name>PC_OrderItem__c</name>
+        <relationshipLabel><!-- Dispenses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Referral --></label>
+        <name>PC_Pharmacy_Referral__c</name>
+        <relationshipLabel><!-- Dispenses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Unit of Measure --></label>
+        <name>PC_Unit_of_Measure__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

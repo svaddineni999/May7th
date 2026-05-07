@@ -1,0 +1,66 @@
+/**
+ * Created by kkanteti on 8/14/2020.
+ */
+.THIS .slds-required {
+    display: none;
+}
+.THIS .eachRowStyle{
+    width:100%;
+    line-height:1.2;
+    margin-top:-5px;
+}
+.THIS .deleteMargin{
+    margin-top:23px;
+}
+.THIS .smallFont{
+    font-size : 13px;
+    color: rgb(194, 57, 52);
+}
+.THIS .field-container .slds-tile .slds-media__body div label {
+    display: inline-block;
+    width: auto;
+    margin-right: 0.5rem;
+}
+.THIS.builderBox {
+    border: 1px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+}
+.THIS .addRow {
+    color: rgb(107, 109, 112);
+    font-size: .875rem;
+    text-decoration: none;
+    display: block;
+    cursor:pointer;
+}
+.THIS .addRow>span {
+    line-height: 13px;
+    font-size: 13px;
+}
+.THIS .addRow .slds-icon-utility-add {
+    display: inline-block;
+    margin-right: .5rem;
+}
+.THIS .addRow .slds-icon-utility-add svg {
+    fill: rgb(0, 112, 210);
+    width: .875rem;
+    height: .875rem;
+}
+.THIS .redColor{
+    color:red;
+}
+.THIS .customLogicTopMargin{
+    margin-top : -24px;
+}
+.THIS .validateTopMargin{
+    margin-top : -6px;
+}
+.THIS .successTopMargin{
+    margin-top : -5px;
+}
+.THIS .warningStyle{
+    color: darkgoldenrod;
+}

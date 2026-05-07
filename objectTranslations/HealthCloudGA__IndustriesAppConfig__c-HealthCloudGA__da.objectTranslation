@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Konfigurationen af Industries-applikation</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Konfiguration af Industries-applikation</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Konfiguration af Industries-applikation</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Konfigurationerne af Industries-applikation</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Konfigurationer af Industries-applikation</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Konfigurationer af Industries-applikation</value>
+    </caseValues>
+    <fields>
+        <help><!-- By default, account names are displayed: {firstname} {lastname}. To change the order, enter: {lastname} {firstname} --></help>
+        <label>Format på kontonavn</label>
+        <name>HealthCloudGA__AccountNameFormat__c</name>
+    </fields>
+    <fields>
+        <label>Application Name</label>
+        <name>HealthCloudGA__AppName__c</name>
+    </fields>
+    <fields>
+        <label>Create Inverse (Salesforce only)</label>
+        <name>HealthCloudGA__AutoCreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>Individuel kontooprettelse fra kontakt</label>
+        <name>HealthCloudGA__AutocreateIndividualAccount__c</name>
+    </fields>
+    <fields>
+        <label>Standard for individuel type</label>
+        <name>HealthCloudGA__DefaultIndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Afhængige pakker</label>
+        <name>HealthCloudGA__DependentPackageNS__c</name>
+    </fields>
+    <fields>
+        <label>Batchstørrelse på emnekonvertering</label>
+        <name>HealthCloudGA__LeadConversionBatchSize__c</name>
+    </fields>
+    <fields>
+        <label>Flere relationsgrupper</label>
+        <name>HealthCloudGA__MultipleRelationshipGroups__c</name>
+    </fields>
+    <fields>
+        <help><!-- For example : v32.0 --></help>
+        <label>API-version for sidelayout</label>
+        <name>HealthCloudGA__PageLayoutApiVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show a detailed error message when someone performs an action without having permission. --></help>
+        <label>Vis detaljerede fejlmeddelelser</label>
+        <name>HealthCloudGA__ShowDetailedError__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sync Account and Contact fields when records are created in the individual object model. --></help>
+        <label>Synkroniser individuelle systemfelter</label>
+        <name>HealthCloudGA__SyncIndividualSystemFields__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

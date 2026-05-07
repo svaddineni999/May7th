@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>風險分數年齡範圍新登記者</value>
+    </caseValues>
+    <fields>
+        <label>年齡範圍始於</label>
+        <name>HealthCloudGA__AgeBandFrom__c</name>
+    </fields>
+    <fields>
+        <label>年齡範圍終於</label>
+        <name>HealthCloudGA__AgeBandTo__c</name>
+    </fields>
+    <fields>
+        <label>CSNP</label>
+        <name>HealthCloudGA__CSNP__c</name>
+    </fields>
+    <fields>
+        <label>性別</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>啟用</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>非先天殘疾的醫療補助計畫</label>
+        <name>HealthCloudGA__MedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>先天殘疾的醫療補助計畫</label>
+        <name>HealthCloudGA__MedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>非先天殘疾的非醫療補助計畫</label>
+        <name>HealthCloudGA__NonMedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>先天殘疾的非醫療補助計畫</label>
+        <name>HealthCloudGA__NonMedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>年份範圍</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+</CustomObjectTranslation>

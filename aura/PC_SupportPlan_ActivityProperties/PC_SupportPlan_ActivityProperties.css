@@ -1,0 +1,288 @@
+.THIS {
+    height: 100%;
+}
+.THIS .banner:first-child{
+    color: #fff;
+    font-size: 1.125rem;
+    background-color: rgb(35, 55, 91);
+    line-height: 1.5;
+    padding: 0.5rem;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(217, 219, 221);
+}
+.THIS .slds-page-header,
+.THIS form .banner:first-child {
+    padding: 0.5rem;
+    background: rgb(249, 249, 250);
+    font-size: 1rem;
+    border-radius: 0;
+    border-top: none;
+    border-bottom: none;
+    color: rgb(62, 62, 60);
+}
+.THIS form{
+    height: calc(100% - (89px));
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.THIS form + .slds-box{
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid rgb(217, 219, 221);
+    border-bottom: 1px solid rgb(217, 219, 221);
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
+.THIS .labelAdjust{
+    width: 20%;
+    color: #706e6b;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: left;
+    white-space:nowrap;
+}
+.THIS .widthAdjust{
+    width: 80%;
+}
+.THIS .noBorder{
+    border: none !important;
+}
+.THIS .slds-box .box {
+    margin-bottom: 0.5rem;
+}
+.THIS .threeFieldGroup{
+    width: 100%;
+}
+.THIS .secondField{
+  width: 20%;
+  margin-right: 5%;
+}
+.THIS .thirdField{
+  width: 55%;
+}
+.THIS .slds-text-heading_medium{
+    font-weight: 400;
+    font-size: 18px;
+}
+.THIS #fieldMappingContainer .conditionalBuilderBox {
+    border: 0.5px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+.THIS #conditionalBuilderContainer .conditionalBuilderBox {
+    border: 0.5px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+.THIS #userTaskPropertiesContainer .conditionalBuilderBox {
+    border: 0.5px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+.THIS .uiInput--input .input,
+.THIS .uiInput--input.input {
+    min-height: 32px;
+}
+.THIS .slds-form-element__label {
+    color: #706e6b;
+    font-size: 13px;
+}
+.THIS .conditionalBuilderBox .uiInput--default .form-element__label {
+    display: inline-block;
+    width: 19%;
+}
+.THIS .conditionalBuilderBox .widthAdjust.slds-input.select {
+    display: inline-block;
+    width: 81%;
+}
+.THIS .conditionTable {
+    table-layout: fixed;
+    width: 100%;
+    border-spacing: 0.5rem 0.25rem;
+    border-collapse: separate;
+}
+.THIS .conditionTable .uiInput--default .form-element__label {
+    display: block;
+    width: auto;
+}
+.THIS .conditionTable .slds-form-element__label {
+    margin-bottom: 0.25rem;
+}
+.THIS .conditionTable .slds-form-element__help {
+    margin-top: 0.25rem;
+}
+.THIS .conditionTable th {
+    text-align: left;
+    color: rgb(107, 109, 112);
+    font-family: 'Salesforce Sans',Arial,sans-serif;
+    font-size: .875rem;
+    width: 30px;
+    vertical-align: top;
+}
+.THIS .conditionalBuilderBox .conditionTable:first-child th .index {
+    margin-top: 24px;
+}
+.THIS .conditionalBuilderBox .conditionTable:first-child td .slds-button_icon-bare{
+    margin-top:22px;
+}
+.THIS .conditionalBuilderBox .conditionTable:first-child td .slds-icon-utility-info{
+    margin-top: 27px;
+}
+.THIS .conditionTable td {
+    vertical-align: top;
+}
+.THIS .conditionTable th .index {
+    margin: 1px 0;
+    line-height: 1.875rem;
+    text-align: center;
+    background-color: rgb(0, 112, 210);
+    border: none;
+    border-radius: .25rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Salesforce Sans',Arial,sans-serif;
+    font-weight: normal;
+}
+.THIS .conditionTable .deleteIcon {
+    font-size: 1.125rem;
+    color: rgb(171, 173, 176);
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+    width: 20px;
+}
+.THIS .conditionTable .deleteIcon .slds-button_icon-bare,
+.THIS .conditionTable .deleteIcon .slds-button--icon-bare {
+    line-height: 32px;
+    color: rgb(171, 173, 176);
+    height: 32px;
+}
+.THIS .conditionTable .uiInput--select.select:not([multiple]),
+.THIS .conditionTable .uiInput--select .select:not([multiple]),
+.THIS .conditionTable .uiInput--select .uiPopupTrigger a {
+    height: 32px;
+    line-height: 32px;
+    text-transform: capitalize;
+}
+.THIS .conditionTable .uiInput--select.select:not([multiple]) option,
+.THIS .conditionTable .uiInput--select .select:not([multiple]) option,
+.THIS .conditionTable .uiInput--select .uiPopupTrigger a option {
+    text-transform: capitalize;
+}
+.THIS .conditionalBuilderBox .conditionTable:not(:first-child) .slds-form-element label,
+.THIS .conditionalBuilderBox .conditionTable:not(:first-child) .uiInputSelect label{
+    display: none;
+}
+.THIS .conditionalBuilderBox .conditionTable:not(:first-child) .slds-checkbox label{
+    display: block !important;
+}
+.THIS .slds-dropdown--length-5{
+   max-height: calc(((0.8125rem * 1.5) + 1rem) * 3) !important;
+}
+.THIS .addRow {
+    color: rgb(107, 109, 112);
+    font-size: .875rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+    display: block;
+    width:20%;
+}
+.THIS .addRow>span {
+    line-height: 13px;
+    font-size: 13px;
+}
+.THIS .addRow .slds-icon-utility-add {
+    display: inline-block;
+    margin-right: .5rem;
+}
+.THIS .addRow .slds-icon-utility-add svg {
+    fill: rgb(0, 112, 210);
+    width: .875rem;
+    height: .875rem;
+}
+.THIS .conditionalBuilderBox .conditionTable:not(:first-child) .uiInputDateTime.uiInput--default .uiLegend-top.form-element__label {
+    display: none;
+}
+
+.THIS .conditionalBuilderBox .conditionTable .uiInputDateTime.uiInput--default .dateTime-inputDate .form-element__label {
+    display: none;
+}
+
+.THIS .conditionalBuilderBox .conditionTable .uiInputDateTime.uiInput--default .dateTime-inputTime .form-element__label {
+    display: none;
+}
+
+.THIS .conditionalBuilderBox .conditionTable:not(:first-child) .uiInputDate .form-element__label {
+    display: none;
+}
+.THIS .conditionTable:first-child .verticalAlignmentBox{
+    align-self: center;
+    vertical-align: middle;
+}
+
+.THIS .iconContainer{
+    display: inline-block;
+    float:right;
+    cursor:pointer;
+}
+.THIS .milestoneChkBox{
+    display: inline-block;
+}
+.THIS .fixWidth{
+    width:55%;
+}
+.THIS .customWidth{
+    width: 44%;
+}
+.THIS .customMargin{
+    margin-left:5px;
+}
+.THIS .customLabel{
+    width: 38%;
+}
+.THIS .customInput{
+    width: 55%;
+}
+.THIS .slds-size--2-of-3{
+    margin-right: -22px !important;
+    width: 67%;
+}
+.THIS .slds-form-element__row{
+    margin-bottom: 0 !important;
+}
+.THIS > .banner:nth-child(2){
+    margin-top:10px;
+    border: 5px solid rgb(22, 50, 92);
+    margin-left: -2px;
+    margin-right: -2px;
+    border-top: none;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.THIS.toggle {
+   display: none;
+ }
+ .THIS .slds-modal__header .slds-button{
+     border: none !important;
+     background-color: transparent !important;
+ }
+ .THIS .eLetterContentBox{
+    border: 1px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+ }
+.THIS .infoDivStyle{
+  color: darkgoldenrod;
+}

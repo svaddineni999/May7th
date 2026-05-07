@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>The Adverse Event is a custom object in Patient Connect that represents the adverse events reported for the patients enrolled into the patient services program.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>PC_Doc_Link_Adverse_Event</fullName>
+        <description>Field set used to display out-of-the-box Adverse Event fields on Document Link screen. Used in default config for Document Link screen: PC_Document_Link_Related_Object_Setting custom metadata.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Event_Onset_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>PC Document Link Adverse Event</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>Test_fieldset</fullName>
+        <description>DOcument Link</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Patient__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Death_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Reporter__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Stop_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_CauseOfDeath__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Test_fieldset</label>
+    </fieldSets>
+    <fields>
+        <fullName>PC_AE_Received_by_Manufacturer_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This indicates the date when the applicant, manufacturer, corporate affiliate,
+            and so on received information about the occurrence of an adverse event.</description>
+        <label>Date Received by Manufacturer</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_ANDA__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The abbreviated new drug application or the new drug application (NDA) number.</description>
+        <externalId>false</externalId>
+        <label>Abbreviated New Drug Application #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Abated_After_Use_Stopped_or_Reduced__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Event Abated after use stopped or dosage reduced flag</description>
+        <label>Abated After Use Stopped or Reduced</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Doesn&apos;t apply</fullName>
+                    <default>false</default>
+                    <label>Doesn&apos;t apply</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ActionTaken__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The action taken by the patient or physician after an adverse event was observed.</description>
+        <externalId>false</externalId>
+        <label>Action Taken</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Adverse_Event_Reporter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Role who reported Adverse Event.</description>
+        <label>Reporter Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Nurse</fullName>
+                    <default>false</default>
+                    <label>Nurse</label>
+                </value>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+                <value>
+                    <fullName>Nurse Practitioner</fullName>
+                    <default>false</default>
+                    <label>Nurse Practitioner</label>
+                </value>
+                <value>
+                    <fullName>Dentist</fullName>
+                    <default>false</default>
+                    <label>Dentist</label>
+                </value>
+                <value>
+                    <fullName>Physician Assistant</fullName>
+                    <default>false</default>
+                    <label>Physician Assistant</label>
+                </value>
+                <value>
+                    <fullName>Other Healthcare Professional</fullName>
+                    <default>false</default>
+                    <label>Other Healthcare Professional</label>
+                </value>
+                <value>
+                    <fullName>Risk Manager</fullName>
+                    <default>false</default>
+                    <label>Risk Manager</label>
+                </value>
+                <value>
+                    <fullName>Biomedical Engineer</fullName>
+                    <default>false</default>
+                    <label>Biomedical Engineer</label>
+                </value>
+                <value>
+                    <fullName>Administrator/Supervisor</fullName>
+                    <default>false</default>
+                    <label>Administrator/Supervisor</label>
+                </value>
+                <value>
+                    <fullName>Pharmacist</fullName>
+                    <default>false</default>
+                    <label>Pharmacist</label>
+                </value>
+                <value>
+                    <fullName>Patient</fullName>
+                    <default>false</default>
+                    <label>Patient</label>
+                </value>
+                <value>
+                    <fullName>Non-Healthcare Professional</fullName>
+                    <default>false</default>
+                    <label>Non-Healthcare Professional</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Adverse_Event_Terms__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Includes a list of adverse event terms that most accurately characterize the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Adverse Event Term(s)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Age_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Units used to determine the patient&apos;s age. For example, in years, months, weeks, or days.</description>
+        <label>PC_Age_Unit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Year(s)</fullName>
+                    <default>true</default>
+                    <label>Year(s)</label>
+                </value>
+                <value>
+                    <fullName>Month(s)</fullName>
+                    <default>false</default>
+                    <label>Month(s)</label>
+                </value>
+                <value>
+                    <fullName>Week(s)</fullName>
+                    <default>false</default>
+                    <label>Week(s)</label>
+                </value>
+                <value>
+                    <fullName>Day(s)</fullName>
+                    <default>false</default>
+                    <label>Day(s)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Age__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The patient&apos;s age at the onset of the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Age at Onset of Event</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_BLA__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The 6 digit Biologics Application Number (BLA).</description>
+        <externalId>false</externalId>
+        <label>Biologics Application #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Care_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Program (Case) to which the adverse event is associated with.</description>
+        <label>Care Program</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Adverse Events</relationshipLabel>
+        <relationshipName>Adverse_Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Causality__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The HCPs opinion of causality.</description>
+        <label>Causality</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Not reported</fullName>
+                    <default>false</default>
+                    <label>Not reported</label>
+                </value>
+                <value>
+                    <fullName>Unable to determine</fullName>
+                    <default>false</default>
+                    <label>Unable to determine</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_CauseOfDeath__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason for the death.</description>
+        <externalId>false</externalId>
+        <label>Cause of Death</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Combination_Product_Report__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Combination Product Report flag</description>
+        <label>Combination Product Report</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Current_Treating_Physician__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The current treating physician associated with the program case.</description>
+        <externalId>false</externalId>
+        <formula>PC_Care_Program__r.PC_Physician__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Current Treating Physician</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Date_of_Birth__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Patient&apos;s date of birth. Will be populated from Account.</description>
+        <label>Date of Birth</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Date_of_the_Report__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date of the Report on the Event</description>
+        <label>Date of the Report</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Deactivate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked for deactivated adverse events.</description>
+        <label>Deactivate</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Deactivation_Reason__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason for deactivating the adverse event.</description>
+        <label>Deactivation Reason</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Error in completing report</fullName>
+                    <default>false</default>
+                    <label>Error in completing report</label>
+                </value>
+                <value>
+                    <fullName>Incorrect patient</fullName>
+                    <default>false</default>
+                    <label>Incorrect patient</label>
+                </value>
+                <value>
+                    <fullName>Incorrect information received from HCP</fullName>
+                    <default>false</default>
+                    <label>Incorrect information received from HCP</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Death_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date of Death</description>
+        <label>Date of Death</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the event in detail using the reporter’s own words, including a description of what happened and a summary of all relevant clinical information (medical status prior to the event, signs and/or symptoms, differential diagnosis for the event in question, clinical course, treatment, outcome, and so on).</description>
+        <label>Description</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Dose__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The dosage information that caused the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Dose</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Drug_NDC__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates National Drug Code.</description>
+        <externalId>false</externalId>
+        <label>Drug NDC</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Ethnicity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Ethnicity of the patient.</description>
+        <label>Ethnicity</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Hispanic/Latino</fullName>
+                    <default>false</default>
+                    <label>Hispanic/Latino</label>
+                </value>
+                <value>
+                    <fullName>Not Hispanic/Latino</fullName>
+                    <default>false</default>
+                    <label>Not Hispanic/Latino</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EventType__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Event Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Product Complaint</fullName>
+                    <default>false</default>
+                    <label>Product Complaint</label>
+                </value>
+                <value>
+                    <fullName>Medical Inquiry</fullName>
+                    <default>false</default>
+                    <label>Medical Inquiry</label>
+                </value>
+                <value>
+                    <fullName>Adverse Event</fullName>
+                    <default>false</default>
+                    <label>Adverse Event</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Event_HLGT_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>High Level Group Term (HLGT) code to which the adverse event belongs to.</description>
+        <externalId>false</externalId>
+        <label>High Level Group Term</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Event_HLGT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>High Level Group Term to which the adverse event belongs to.</description>
+        <label>Event HLGT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_HLT_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>High Level Term (HLT) code to which the adverse event belongs to.</description>
+        <externalId>false</externalId>
+        <label>High Level Term</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Event_HLT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>High Level Term  to which the adverse event belongs to.</description>
+        <label>Event HLT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_LLT_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Low Level Term (LLT) code to which the adverse event belongs to.</description>
+        <externalId>false</externalId>
+        <label>Low Level Term</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Event_LLT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Low Level Term to which the adverse event belongs to.</description>
+        <label>Event LLT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_Master__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Look up field to Event Master</description>
+        <label>Event Master</label>
+        <referenceTo>PC_Event_Master__c</referenceTo>
+        <relationshipLabel>Adverse Events</relationshipLabel>
+        <relationshipName>Adverse_Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_Onset_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the actual or best estimate of the date of first onset of the adverse event.</description>
+        <label>Event Onset Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_Outcome__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the outcome of the adverse event occurred.</description>
+        <label>Event Outcome</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Death</fullName>
+                    <default>false</default>
+                    <label>Death</label>
+                </value>
+                <value>
+                    <fullName>Life-threatening</fullName>
+                    <default>false</default>
+                    <label>Life-threatening</label>
+                </value>
+                <value>
+                    <fullName>Disability or Permanent Damage</fullName>
+                    <default>false</default>
+                    <label>Disability or Permanent Damage</label>
+                </value>
+                <value>
+                    <fullName>Hospitalization – initial or prolonged</fullName>
+                    <default>false</default>
+                    <label>Hospitalization – initial or prolonged</label>
+                </value>
+                <value>
+                    <fullName>Congenital Anomaly/Birth Defects</fullName>
+                    <default>false</default>
+                    <label>Congenital Anomaly/Birth Defects</label>
+                </value>
+                <value>
+                    <fullName>Other Serious (Important Medical Events)</fullName>
+                    <default>false</default>
+                    <label>Other Serious (Important Medical Events)</label>
+                </value>
+                <value>
+                    <fullName>Required Intervention to Prevent Permanent Impairment/Damage (Devices)</fullName>
+                    <default>false</default>
+                    <label>Required Intervention to Prevent Permanent Impairment/Damage (Devices)</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Event_PT_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Preferred Term (PT) code to which the adverse event belongs to.</description>
+        <externalId>false</externalId>
+        <label>Preferred Term</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Event_PT__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Preferred Term to which the adverse event belongs to.</description>
+        <label>Event PT</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_Reappeared_after_Reintroduction__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Event Reappeared after Reintroduction flag</description>
+        <label>Event Reappeared after Reintroduction</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Doesn&apos;t apply</fullName>
+                    <default>false</default>
+                    <label>Doesn&apos;t apply</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Event_SOC_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the System Organ Class (SOC) code to which the adverse event belongs to.</description>
+        <externalId>false</externalId>
+        <label>System Organ Class</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Event_SOC__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates System Organ Class  (SOC) to which the adverse event belongs to.</description>
+        <label>Event SOC</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Event_Verbatim__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Describes the occurred adverse event in reporter&apos;s words.</description>
+        <label>Event Verbatim</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Expiration_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the expiry date of the product.</description>
+        <label>Expiration Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Follow_Up_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Phone number to follow up</description>
+        <label>Follow-Up Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Frequency__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Frequency at which the patient used the product.</description>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Gender__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Gender of the Patient</description>
+        <label>Gender</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Female</fullName>
+                    <default>false</default>
+                    <label>Female</label>
+                </value>
+                <value>
+                    <fullName>Male</fullName>
+                    <default>false</default>
+                    <label>Male</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_HealthCareProfessional__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the Reporter is Health care Professional or not.</description>
+        <label>Health Care Professional</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Hospitalization_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date on which the patient was hospitalized due to adverse event.</description>
+        <label>Hospitalization Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_IND__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Investigational New Drug (IND) application number.</description>
+        <externalId>false</externalId>
+        <label>Investigational New Drug Application #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_If_IND_Give_Protocol__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Protocol number.</description>
+        <externalId>false</externalId>
+        <label>If IND, Give Protocol #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Indication_for_Product_Use__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The symptom of the disease for which the product was prescribed for or used by the particular patient.</description>
+        <label>Indication for Product Use</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Indication_for_use__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Informs for what indication the medication was used for.</description>
+        <label>Indication for use</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Ini_Reporter_Also_Sent_Report_to_FDA__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the initial reporter also notified or submitted a copy of this report to FDA.</description>
+        <label>Ini. Reporter Also Sent Report to FDA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Laboratory_Data__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates all appropriate information, including relevant negative test and laboratory findings, in order to most completely convey how the medical work-up/assessment led to strong consideration of medical-product-induced disease as etiology for clinical status, as other differential diagnostic considerations were being eliminated.</description>
+        <label>Laboratory Data</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_LatestAdverseEvent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The field value will be updated on the parent Adverse Event whenever a new version of Adverse Event is created from it.</description>
+        <label>Latest Adverse Event</label>
+        <referenceTo>PC_AdverseEvent__c</referenceTo>
+        <relationshipLabel>Adverse Events (Latest Adverse Event Version)</relationshipLabel>
+        <relationshipName>PC_Adverse_Events1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Manufacturer_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Drug manufacturer&apos;s address</description>
+        <externalId>false</externalId>
+        <label>Manufacturer Address</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Manufacturer_Comp_Outsourcing_Fac__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if the manufacturer is registered as 503B facility.</description>
+        <label>Compounding Outsourcing Facility 503B?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Manufacturer_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Drug manufacture&apos;s email</description>
+        <externalId>false</externalId>
+        <label>Manufacturer Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Manufacturer_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the manufacturer&apos;s name who reports the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Manufacturer Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Manufacturer_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Phone number of the drug manufacturer</description>
+        <label>Manufacturer Phone Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Manufacturer_Report_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the unique identifier used by the manufacturer for this report.</description>
+        <externalId>false</externalId>
+        <label>Manufacturer Report Number</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Meddra_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates Medical Dictionary for Regulatory Activities (MedDRA) ID.</description>
+        <externalId>false</externalId>
+        <label>Meddra ID</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Meddra_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Version of the MedDRA dictionary used to code the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Meddra Version</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Medication__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the medication that caused the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Medication</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_NDA__c</fullName>
+        <deprecated>false</deprecated>
+        <description>NDA number</description>
+        <externalId>false</externalId>
+        <label>New Drug Application #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_OtherMedicalHistory__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The medical history of the patient.</description>
+        <label>Other Medical History</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Other_Relevent_History__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Any other relavent history data</description>
+        <label>Other Relevant History</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Outcome__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the outcome of the adverse event occurred.</description>
+        <label>Outcome</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Recovered</fullName>
+                    <default>false</default>
+                    <label>Recovered</label>
+                </value>
+                <value>
+                    <fullName>Improving</fullName>
+                    <default>false</default>
+                    <label>Improving</label>
+                </value>
+                <value>
+                    <fullName>Unchanged</fullName>
+                    <default>false</default>
+                    <label>Unchanged</label>
+                </value>
+                <value>
+                    <fullName>Deteriorating</fullName>
+                    <default>false</default>
+                    <label>Deteriorating</label>
+                </value>
+                <value>
+                    <fullName>Death</fullName>
+                    <default>false</default>
+                    <label>Death</label>
+                </value>
+                <value>
+                    <fullName>Unknown</fullName>
+                    <default>false</default>
+                    <label>Unknown</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_PMA_510k__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Premarket Application (PMA) or pre-market notification [510(k)] submission number for the approved / cleared medical device or combination product.</description>
+        <externalId>false</externalId>
+        <label>Premarket Application / 510(k) #</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ParentAdverseEvent__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field will be populated (with the parent Adverse Event )  when a new version is created</description>
+        <label>Parent Adverse Event</label>
+        <referenceTo>PC_AdverseEvent__c</referenceTo>
+        <relationshipLabel>Adverse Events</relationshipLabel>
+        <relationshipName>PC_Adverse_Events</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Patient_Identifier__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Manufacturer specific identifier for a patient.</description>
+        <externalId>false</externalId>
+        <label>Patient Identifier</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Patient account with which the adverse event is associated.</description>
+        <label>Patient</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Patient</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Adverse Events</relationshipLabel>
+        <relationshipName>Adverse_Events</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_Pre_1938_Flag__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the  suspect product  was marketed prior to 1938 and does not have an application number.PC_Prescription__c</description>
+        <label>Pre-1938</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Prescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Prescription</description>
+        <externalId>false</externalId>
+        <label>Prescription</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Product_Compounded__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the product was compounded.</description>
+        <label>Product Compounded</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Product_Lot__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the lot number of the product used by the patient.</description>
+        <externalId>false</externalId>
+        <label>Product Lot#</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Product_Manufacturer__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the manufacturer of the consumed product.</description>
+        <externalId>false</externalId>
+        <label>Product Manufacturer</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Product_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates trade name of the suspect product.</description>
+        <externalId>false</externalId>
+        <label>Product Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Product_OTC__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the product is issued over-the-counter.</description>
+        <label>Over the counter product</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Product_Strength__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the strength of the product used by the patient during the occurrence of the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Product Strength</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Race__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the race of the patient as reported by the patient. For example, Asian, American Indian or Alaskan Native, Black or African American, and so on.</description>
+        <label>Race</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Asian</fullName>
+                    <default>false</default>
+                    <label>Asian</label>
+                </value>
+                <value>
+                    <fullName>American Indian or Alaskan Native</fullName>
+                    <default>false</default>
+                    <label>American Indian or Alaskan Native</label>
+                </value>
+                <value>
+                    <fullName>Black or African American</fullName>
+                    <default>false</default>
+                    <label>Black or African American</label>
+                </value>
+                <value>
+                    <fullName>White</fullName>
+                    <default>false</default>
+                    <label>White</label>
+                </value>
+                <value>
+                    <fullName>Native Hawaiian or Other Pacific Islander</fullName>
+                    <default>false</default>
+                    <label>Native Hawaiian or Other Pacific Islander</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Reference_No__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The cross reference number that is used to confirm the capture in a patient safety type of system.</description>
+        <label>Reference No.</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Report_Source_Other_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Additional details on source of the report</description>
+        <label>Report Source Other Text</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Report_Source__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates accurately  how the manufacturer [contact office] became aware of the reported adverse event or the source from which the information about the adverse event originated.</description>
+        <label>Report Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Company Representative</fullName>
+                    <default>false</default>
+                    <label>Company Representative</label>
+                </value>
+                <value>
+                    <fullName>User Facility</fullName>
+                    <default>false</default>
+                    <label>User Facility</label>
+                </value>
+                <value>
+                    <fullName>Distributor</fullName>
+                    <default>false</default>
+                    <label>Distributor</label>
+                </value>
+                <value>
+                    <fullName>Foreign</fullName>
+                    <default>false</default>
+                    <label>Foreign</label>
+                </value>
+                <value>
+                    <fullName>Study</fullName>
+                    <default>false</default>
+                    <label>Study</label>
+                </value>
+                <value>
+                    <fullName>Consumer</fullName>
+                    <default>false</default>
+                    <label>Consumer</label>
+                </value>
+                <value>
+                    <fullName>Literature</fullName>
+                    <default>false</default>
+                    <label>Literature</label>
+                </value>
+                <value>
+                    <fullName>Health Professional</fullName>
+                    <default>false</default>
+                    <label>Health Professional</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Report_Type_Other_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To enter the description when the Follow-up report type is selected.</description>
+        <externalId>false</externalId>
+        <label>Follow-up #</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Report_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the type of adverse event report as specified by regulations.</description>
+        <label>Report Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>5-day</fullName>
+                    <default>false</default>
+                    <label>5-day</label>
+                </value>
+                <value>
+                    <fullName>7-day</fullName>
+                    <default>false</default>
+                    <label>7-day</label>
+                </value>
+                <value>
+                    <fullName>10-day</fullName>
+                    <default>false</default>
+                    <label>10-day</label>
+                </value>
+                <value>
+                    <fullName>15-day</fullName>
+                    <default>false</default>
+                    <label>15-day</label>
+                </value>
+                <value>
+                    <fullName>30-day</fullName>
+                    <default>false</default>
+                    <label>30-day</label>
+                </value>
+                <value>
+                    <fullName>Periodic</fullName>
+                    <default>false</default>
+                    <label>Periodic</label>
+                </value>
+                <value>
+                    <fullName>Initial</fullName>
+                    <default>false</default>
+                    <label>Initial</label>
+                </value>
+                <value>
+                    <fullName>Follow-up</fullName>
+                    <default>false</default>
+                    <label>Follow-up</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Report_to_FDA__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This report will be sent to FDA</description>
+        <label>Report to FDA</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ReporterAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The complete address of the person who reports the adverse event.</description>
+        <label>Reporter Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_City__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reporter City</description>
+        <externalId>false</externalId>
+        <label>Reporter City</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_Country__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reporter Country</description>
+        <externalId>false</externalId>
+        <label>Reporter Country</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_Email__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address of the Reporter</description>
+        <externalId>false</externalId>
+        <label>Reporter&apos;s Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_First_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>First name of the reporter</description>
+        <externalId>false</externalId>
+        <label>Reporter&apos;s First Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_Last_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Last name of the Reporter</description>
+        <externalId>false</externalId>
+        <label>Reporter&apos;s Last Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_Phone__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The telephone number of the person who reports the adverse event.</description>
+        <label>Reporter&apos;s Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_State__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reporter State</description>
+        <externalId>false</externalId>
+        <label>Reporter State</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter_Zip_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reporter&apos;s contact Zip Code.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Reporter Zip Code</inlineHelpText>
+        <label>Reporter Zip Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Reporter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the person who reports the adverse event.</description>
+        <externalId>false</externalId>
+        <label>Reporter</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Route_of_Administration__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Route in which patient consumed the product.</description>
+        <externalId>false</externalId>
+        <label>Route of Administration</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Stop_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the actual or best estimate of the date of end of the adverse event</description>
+        <label>Event End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_SubmissionStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Based on the field value , new versions of the adverse Event can be created</description>
+        <label>Submission Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Therapy_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the  date on which the administration of the therapy ended.</description>
+        <label>Therapy End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Therapy_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the date on which the administration of the therapy started.</description>
+        <label>Therapy Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_VersionNumber__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Version Number gives the info on which version of Adverse Event the user is on.</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Weight_Unit__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unit in which the patient&apos;s  weight is denoted. For example, lb. or kg.</description>
+        <label>Weight Unit</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>lb</fullName>
+                    <default>false</default>
+                    <label>lb</label>
+                </value>
+                <value>
+                    <fullName>kg</fullName>
+                    <default>false</default>
+                    <label>kg</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Weight__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Weight of the Patient</description>
+        <externalId>false</externalId>
+        <label>Weight</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Adverse Event</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Event_Onset_Date__c</columns>
+        <columns>PC_Hospitalization_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AE-{00000000}</displayFormat>
+        <label>Adverse Events Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Adverse Events</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>PC_Patient__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PC_Event_Onset_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PC_Hospitalization_Date__c</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>PC_Patient__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PC_Event_Onset_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PC_Hospitalization_Date__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

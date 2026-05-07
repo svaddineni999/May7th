@@ -1,0 +1,213 @@
+<!--
+ - Created by shisbansal on 7/5/2018.
+ -->
+
+<aura:component description="PC_SearchPharmacies" controller="PC_PharmacyFinder">
+
+    <aura:attribute name="display_npi_param_section" type="String" default="retailMailButtonSection" />
+    <aura:attribute name="display_zipCode_section" type="boolean" default="true"/>
+    <aura:attribute name="selected" type="boolean" default="true"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:handler name="init"  value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="addPharmacyEvent" type="c:PC_AddPharmacy"/>
+    <aura:attribute name="pharmacies" type="Object[]" default="[]"/>
+    <aura:attribute name="pharmacyMultiSelect" type="Object[]" />
+    <aura:attribute name="selectedPharmacies" type="Object[]" default="[]"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+    <aura:attribute name="queryObj" type="Object"/>
+    <aura:attribute name="selectParam" type="String" default="NA"/>
+    <aura:attribute name="selectParamMailOrder" type="String" default="NA"/>
+    <aura:attribute name="searchInProgress" type="Boolean" default="false"/>
+    <aura:attribute name="isError" type="Boolean" default="false"/>
+    <aura:attribute name="lightningError" type="String" default="{!$Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="errors" type="List"/>
+
+
+
+    <div class="c-container slds-text-body_small" >
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem flexibility="shrink" size="2">
+                <div class="custom-box" >
+                    <label class="slds-form-element__label slds-no-flex infoText">{!$Label.c.PC_PharmacyFinder_SearchBy}</label>
+                    <lightning:button class=" slds-truncate " variant="{!v.selected ? 'brand': 'neutral'}" label="{!$Label.c.PC_PharmacyFinder_Npi}" title="{!$Label.c.PC_PharmacyFinder_Npi}" onclick="{! c.handleNPIClick }" />
+                    <lightning:button  class=" slds-truncate " variant="{!v.selected ?  'neutral':'brand'}" label="{!$Label.c.PC_PharmacyFinder_Params}" title="{!$Label.c.PC_PharmacyFinder_Params}" onclick="{! c.handleParamsClick }" />
+                </div>
+            </lightning:layoutItem>
+
+
+
+            <aura:if isTrue="{!v.display_npi_param_section == 'npiSection'}">
+                <lightning:layoutItem flexibility="auto" size="2">
+                    <div class="custom-box slds-show slds-truncate npiBlock" >
+                        <lightning:input name="input6" required="true"  label="{!$Label.c.PC_PharmacyFinder_Npi}" aura:id="NPI" default="" type="text"/>
+                    </div>
+                </lightning:layoutItem>
+            <aura:set attribute="else">
+                <lightning:layoutItem flexibility="auto" size="2">
+                    <div class="slds-show  custom-box nameBlock ">
+                        <lightning:input class=" slds-truncate" name="input6" type="text" label="{!$Label.c.PC_PharmacyFinder_PharmacyName}" aura:id="PharmacyName" default=""/>
+                    </div>
+                    </lightning:layoutItem>
+                </aura:set>
+            </aura:if>
+
+
+            <div class="slds-m-left--large">
+            </div>
+            <aura:if isTrue="{!v.display_npi_param_section == 'retailMailButtonSection'}">
+                <lightning:layoutItem flexibility="auto" size="4">
+                    <label class="slds-form-element__label slds-no-flex infoText">{!$Label.c.PC_PharmacyFinder_PharmacyType}&nbsp;</label>
+                    <div class="slds-button-group" style="length:50% ;">
+                        <lightning:button class="slds-truncate" variant="{!v.selectParam =='Retail' ? 'brand': 'neutral'}" label="{!$Label.c.PC_PharmacyFinder_Retail}" title="{!$Label.c.PC_PharmacyFinder_Retail}" onclick="{! c.handleRetailClick }"/>
+                        <lightning:button class="slds-truncate" variant="{!v.selectParamMailOrder =='Mail' ? 'brand': 'neutral'}" label="{!$Label.c.PC_PharmacyFinder_MailOrder}" title="{!$Label.c.PC_PharmacyFinder_MailOrder}" onclick="{! c.handleMailOrderClick }"/>
+
+                        <div class="custom-box slds-show slds-list_horizontal slds-m-left--xx-small">
+                        <lightning:input type="checkbox" label="{!$Label.c.PC_PharmacyFinder_Specialty}" aura:id="specialty" checked="false"/>
+                        <lightning:input type="checkbox" label="{!$Label.c.PC_PharmacyFinder_Longterm}" aura:id="longterm" checked="false"/>
+                        </div>
+                    </div>
+                </lightning:layoutItem>
+            </aura:if>
+
+
+
+           <!--<aura:if isTrue="{!(v.display_checkbox_section == 'true')}">
+            <lightning:layoutItem  flexibility="auto" size="2">
+                <label class="slds-form-element__label slds-no-flex infoText">&nbsp;</label>
+                <div class="custom-box slds-show slds-list_horizontal">
+
+
+                    <lightning:input type="checkbox" label="{!$Label.c.PC_PharmacyFinder_Specialty}" aura:id="specialty" checked="false"/>
+                    <lightning:input type="checkbox" label="{!$Label.c.PC_PharmacyFinder_Longterm}" aura:id="longterm" checked="false"/>
+
+                    </div>
+            </lightning:layoutItem>
+
+
+           </aura:if>-->
+
+
+
+            <lightning:layoutItem flexibility="auto" size="1" >
+                <div class="custom-box">
+                    <div class="{!if(v.display_zipCode_section == 'true','slds-show','slds-hide')}">
+                        <p>
+                            <lightning:input name="input6" label="{!$Label.c.PC_PharmacyFinder_ZipCode}"
+                                             type="text" class=" slds-truncate " aura:id="ZipCode" default=""/>
+                        </p>
+                    </div>
+                </div>
+            </lightning:layoutItem>
+
+            <lightning:layoutItem flexibility="auto" size="1" >
+                <label class="slds-form-element__label slds-no-flex infoText">&nbsp;</label>
+                <div class="custom-box slds-text-align--center" >
+                    <lightning:button class=" slds-truncate " variant="brand" label="{!$Label.c.PC_Search_Button_Label}"
+                                      title="{!$Label.c.PC_Search_Button_Label}" onclick="{! c.handleSearch }" />
+                </div>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+
+
+
+    <!-- Work Under Construction -->
+
+
+
+    <aura:if isTrue="{! (v.pharmacyMultiSelect.length > 0)}">
+        <div class="mainBody slds-m-top--x-small">
+            <div class="slds-text-body_small slds-text-align_left ">{!$Label.c.PC_PharmacyFinder_PharmaciesFound}({!v.pharmacyMultiSelect.length})
+                <aura:if isTrue="{!v.pharmacyMultiSelect.length == 100 }">
+                    &emsp;&emsp;&emsp;{!$Label.c.PC_PharmacyFinder_SearchCaption}
+                </aura:if>
+            </div>
+            <div class="pharmacyResultBlock">
+                <div class="slds-form-element__group slds-tabs--scoped__content1">
+                    <div class="slds-form-element__row">
+                        <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_col-bordered">
+                            <thead>
+                            <tr class="slds-text-title--caps">
+                                <th scope="col">
+                                    <!-- <span>{!$Label.c.PC_EWP_Select_Col_Header}</span> -->
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_PharmacyName}">{!$Label.c.PC_PharmacyFinder_PharmacyName}</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_Type}">{!$Label.c.PC_PharmacyFinder_Type}</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_ZipCode}">{!$Label.c.PC_PharmacyFinder_ZipCode}</div>
+                                </th>
+                                <th scope="col">
+                                    <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_Pharmacy_Contact}">{!$Label.c.PC_PharmacyFinder_Pharmacy_Contact}</div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <aura:iteration items="{!v.pharmacyMultiSelect}" var="pharmacy">
+                                <tr>
+                                    <td>
+                                        <a data-name="{! pharmacy.id}"   onclick="{!c.addPharmacies}"   >
+                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new'}"
+                                                   ariaHidden="true"/>
+                                        </a>
+                                    </td>
+                                    <td scope="row" data-label="">
+                                        <div class="slds-truncate" title="">{!pharmacy.displayName}</div>
+                                    </td>
+
+                                    <td scope="row" data-label="">
+                                        <div class="slds-truncate" title="">{!pharmacy.specialtyType}</div>
+
+
+                                    </td>
+                                    <td scope="row" data-label="">
+                                        <div class="slds-truncate" title="">{!pharmacy.zipCode}</div>
+
+
+                                    </td>
+                                    <td scope="row" data-label="">
+                                        <div class="slds-wrap" title="">
+                                            <div class="slds-col">{!$Label.c.PC_Phone} : {!pharmacy.phone} </div>
+                                            <div class="slds-col">{!$Label.c.PC_Fax} : {!pharmacy.fax} </div>
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+                            </aura:iteration>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <span>{!$Label.c.PC_PharmacyFinder_Add_Caption}</span>
+        <br/>
+
+        <aura:set attribute="else">
+            <aura:if isTrue="{!v.searchInProgress == 'true'}">
+                <lightning:spinner class="slds-text-align--center" size="small" />
+                <aura:set attribute="else">
+                    <aura:if isTrue="{! v.errors.length > 0 }">
+                        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                        <aura:set attribute="else">
+                            <span>{!$Label.c.PC_No_Records_Found}</span>
+                        </aura:set>
+                    </aura:if>
+
+                </aura:set>
+            </aura:if>
+
+        </aura:set>
+    </aura:if>
+
+</aura:component>

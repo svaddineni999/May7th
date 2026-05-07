@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>산업 응용 프로그램 구성</value>
+    </caseValues>
+    <fields>
+        <help><!-- By default, account names are displayed: {firstname} {lastname}. To change the order, enter: {lastname} {firstname} --></help>
+        <label>계정 이름 형식</label>
+        <name>HealthCloudGA__AccountNameFormat__c</name>
+    </fields>
+    <fields>
+        <label>응용 프로그램 이름</label>
+        <name>HealthCloudGA__AppName__c</name>
+    </fields>
+    <fields>
+        <label>반전 만들기(Salesforce 전용)</label>
+        <name>HealthCloudGA__AutoCreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>연락처에서 개인 계정 만들기</label>
+        <name>HealthCloudGA__AutocreateIndividualAccount__c</name>
+    </fields>
+    <fields>
+        <label>기본 개인 유형</label>
+        <name>HealthCloudGA__DefaultIndividualType__c</name>
+    </fields>
+    <fields>
+        <label>종속 패키지</label>
+        <name>HealthCloudGA__DependentPackageNS__c</name>
+    </fields>
+    <fields>
+        <label>리드 변환 배치 크기</label>
+        <name>HealthCloudGA__LeadConversionBatchSize__c</name>
+    </fields>
+    <fields>
+        <label>여러 관계 그룹</label>
+        <name>HealthCloudGA__MultipleRelationshipGroups__c</name>
+    </fields>
+    <fields>
+        <help><!-- For example : v32.0 --></help>
+        <label>페이지 레이아웃 API 버전</label>
+        <name>HealthCloudGA__PageLayoutApiVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show a detailed error message when someone performs an action without having permission. --></help>
+        <label>자세한 오류 메시지 표시</label>
+        <name>HealthCloudGA__ShowDetailedError__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sync Account and Contact fields when records are created in the individual object model. --></help>
+        <label>개별 시스템 필드 동기화</label>
+        <name>HealthCloudGA__SyncIndividualSystemFields__c</name>
+    </fields>
+</CustomObjectTranslation>

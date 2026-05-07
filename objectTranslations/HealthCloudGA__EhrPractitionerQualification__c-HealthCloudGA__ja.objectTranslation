@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 医師の資格</value>
+    </caseValues>
+    <fields>
+        <label>コードの表示ラベル</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>コードシステム</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>コード</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>発行者 255</label>
+        <name>HealthCloudGA__Issuer255__c</name>
+    </fields>
+    <fields>
+        <label>発行者</label>
+        <name>HealthCloudGA__Issuer__c</name>
+    </fields>
+    <fields>
+        <label>期間の終了</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>期間の開始</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>医師</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>医師の資格</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 医師の資格 ID</nameFieldLabel>
+</CustomObjectTranslation>

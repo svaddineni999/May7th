@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Kortvisningsrullelisten</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Kortvisningsrulleliste</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Kortvisningsrulleliste</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Kortvisningsrullelisterne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Kortvisningsrullelister</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Kortvisningsrullelister</value>
+    </caseValues>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Kategoribetegnelse</label>
+        <name>HealthCloudGA__CategoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kategorinavn</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Standardunderfane</label>
+        <name>HealthCloudGA__DefaultSubtab__c</name>
+    </fields>
+    <fields>
+        <label>URL-parameter</label>
+        <name>HealthCloudGA__Param_String__c</name>
+    </fields>
+    <fields>
+        <label>Fanetype</label>
+        <name>HealthCloudGA__Rec_Open_Type__c</name>
+    </fields>
+    <fields>
+        <label>Navn på underkategori</label>
+        <name>HealthCloudGA__Sub_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Betegnelse for underkategori</label>
+        <name>HealthCloudGA__SubcategoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sorteringsrækkefølge for underfane</label>
+        <name>HealthCloudGA__SubtabSortOrder__c</name>
+    </fields>
+    <fields>
+        <label>Sidetype</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>URL</label>
+        <name>HealthCloudGA__Url__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

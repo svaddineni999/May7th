@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Acute</fullName>
+        <default>false</default>
+        <label>Acute</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Intermediate</fullName>
+        <default>false</default>
+        <label>Intermediate</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Telemetry</fullName>
+        <default>false</default>
+        <label>Telemetry</label>
+    </standardValue>
+    <standardValue>
+        <fullName>ICU</fullName>
+        <default>false</default>
+        <label>ICU</label>
+    </standardValue>
+</StandardValueSet>

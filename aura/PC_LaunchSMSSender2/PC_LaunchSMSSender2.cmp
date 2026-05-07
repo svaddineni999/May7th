@@ -1,0 +1,28 @@
+<!--
+Lightning component  : PC_LaunchSMSSender2
+Description          : This is a SMSSender2 launcher component
+Parameters           : Record Id of case
+
+Modification Log:
+Chetna Mohapatra		 04-Dec-2020    Initial Version
+ -->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" description="PC_LaunchSMSSender2">
+
+    <!--Attributes-->
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="sendMessage" type="String" default="{!$Label.c.PC_SendMessage}" />
+    <aura:attribute name="messageTabLabel" type="String" default="{!$Label.c.PC_SmsSender2_Title}"/>
+    <aura:attribute name="messagePageName" type="String" default="PC_SMSSender2"/>
+    <aura:attribute name="messageTabIcon" type="String" default="utility:engage"/>
+    <aura:attribute name="messageComponentName" type="String" default="PC_SMSSender2"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:workspaceAPI aura:id="smsSenderLaunchWorkspace" />
+
+    <div>
+        <lightning:button variant="brand"  label="{!v.sendMessage}" title="{!v.sendMessage}" onclick="{!c.launchSMSSender2Component}"/>
+    </div>
+</aura:component>

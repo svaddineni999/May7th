@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>케어 계획 템플릿</value>
+    </caseValues>
+    <fields>
+        <label>활성</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>범주</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Disease Management</masterLabel>
+            <translation><!-- Disease Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endocrinology and Metabolism</masterLabel>
+            <translation><!-- Endocrinology and Metabolism --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation><!-- Home Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness</masterLabel>
+            <translation><!-- Wellness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>복제 원본</label>
+        <name>HealthCloudGA__ClonedFrom__c</name>
+        <relationshipLabel>케어 계획 템플릿</relationshipLabel>
+    </fields>
+    <fields>
+        <label>설명</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <nameFieldLabel>케어 계획 템플릿 이름</nameFieldLabel>
+</CustomObjectTranslation>

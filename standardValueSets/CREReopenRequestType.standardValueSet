@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Reconsideration</fullName>
+        <default>false</default>
+        <label>Reconsideration</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Peer-to-Peer Review</fullName>
+        <default>false</default>
+        <label>Peer-to-Peer Review</label>
+    </standardValue>
+</StandardValueSet>

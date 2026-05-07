@@ -1,0 +1,45 @@
+<!--
+ - Created by havalakki on 3/4/2020.
+ -->
+
+<aura:component description="PC_SendAdverseEventEmail" implements="force:appHostable,flexipage:availableForAllPageTypes,force:lightningQuickAction,force:hasRecordId" controller="PC_SendAdverseEventEmailController" access="global">
+    <aura:attribute name="emailAddressList" type="List" default="[]" description="Email Address List"/>
+    <aura:attribute name="orgWideEmailAddressList" type="List" default="[]" description="Org Wide Email Address List"/>
+    <aura:attribute name="selectedEmailAddressList" type="List" default="[]" description="Selected Email Address Values"/>
+    <aura:attribute name="eLetterTemplateList" type="List"/>
+    <aura:attribute name="selectedELetterTemplateId" type="String" />
+    <aura:attribute name="selectedeLetterId" type="String" />
+    <aura:attribute name="options" type="List"/>
+    <aura:attribute name="showWarning" type="Boolean" default="false"/>
+    <aura:attribute name="disableSend" type="Boolean" default="true"/>
+    <aura:attribute name="eLetterTemplateIdAndConfiguredRecipientsMap" type="Map"/>
+    <aura:attribute name="noneOptionName" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />
+    <aura:attribute name="successMailMessage" type="String" default="{!$Label.c.PC_SuccessMailSent}" />
+    <aura:attribute name="_message1" type="String" default="{!$Label.c.PC_AE_Mail_WarningMessage}" />
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_AE_Mail_SelectEletterTemplate}" />
+    <aura:attribute name="_label2" type="String" default="{!$Label.c.PC_AE_Mail_SelectRecipients}" />
+    <aura:attribute name="_label3" type="String" default="{!$Label.c.PC_AE_Mail_AvailableRecipients}" />
+    <aura:attribute name="_label4" type="String" default="{!$Label.c.PC_AE_Mail_SelectedRecipients}" />
+    <!-- Events -->
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <div class="slds-list_vertical">
+        <aura:if isTrue="{!v.showWarning}">
+            <div aura:id="emailWarning" class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_warning" role="alert">
+                <lightning:icon class="slds-float_left" size="small" iconName="utility:warning" alternativeText="Warning!" title="Warning" />
+                    {!v._message1}
+            </div>
+        </aura:if>
+        <lightning:select name="emailTemplate" label="{!v._label1}" aura:id="emailTemplateId" value="{!v.selectedELetterTemplateId}" onchange="{!c.handleChange}">
+            <aura:iteration items="{!v.eLetterTemplateList}" var="item">
+                <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}"/>
+            </aura:iteration>
+        </lightning:select>
+        <lightning:dualListbox class="slds-show" label="{!v._label2}" options="{!v.emailAddressList}" value="{!v.selectedEmailAddressList}" sourceLabel="{!v._label3}" selectedLabel="{!v._label4}"  onchange="{!c.handleEmailAddressChange}">
+        </lightning:dualListbox>
+    </div>
+    <br/>
+    <c:PC_eLetterPreviewButton eLetterId="{!v.selectedeLetterId}" recordId="{!v.recordId}"/>
+    <span class="slds-m-left_small"> <lightning:button disabled="{!v.disableSend}" class="slds-button_brand" name="Send Email" label="Send Email" onclick="{!c.sendEmail}"/></span>
+</aura:component>

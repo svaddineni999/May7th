@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>הנרשם החדש בטווח גילאי ציון הסיכון</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>נרשם חדש בטווח גילאי ציון סיכון</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>הנרשמים החדשים בטווח גילאי ציון הסיכון</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>נרשמים חדשים בטווח גילאי ציון סיכון</value>
+    </caseValues>
+    <fields>
+        <label>טווח גילאים מ-</label>
+        <name>HealthCloudGA__AgeBandFrom__c</name>
+    </fields>
+    <fields>
+        <label>טווח גילאים עד</label>
+        <name>HealthCloudGA__AgeBandTo__c</name>
+    </fields>
+    <fields>
+        <label>CSNP</label>
+        <name>HealthCloudGA__CSNP__c</name>
+    </fields>
+    <fields>
+        <label>מין</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>פעיל</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>עם Medicaid ולא נכה במקור</label>
+        <name>HealthCloudGA__MedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>עם Medicaid ונכה במקור</label>
+        <name>HealthCloudGA__MedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>ללא Medicaid ולא נכה במקור</label>
+        <name>HealthCloudGA__NonMedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>ללא Medicaid ונכה במקור</label>
+        <name>HealthCloudGA__NonMedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>טווח שנים</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

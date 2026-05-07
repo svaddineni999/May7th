@@ -1,0 +1,116 @@
+<!--
+Lightning component  :  
+Description          : Create Applicant and Enrollment Case
+Parameters           : 
+Author               : Ajinkya Deshmukh
+Date                 : 
+Modification Log     :
+Haritha Reddy 		 22-Feb-2019    [PC-4340]updated the enrollment launch logic to work for both lightning and lightning console apps
+Vijay Kashikar       16-May-2019    [PC-4805] Made changes so that users can navigate search page using keyboard
+Vijay Kashikar       09-Oct-2019    [PC-4712] Added Error Panel to show server side errors on search.
+Kanteti Kishore     29-July-2020    [PC-6592] Changes in controller at line-96-103,Added lightingErrorMessage variable in controller -createApplicant method
+Haritha Reddy        11-Nov-2020    [PC-6795] Added a new attribute isCustomApp to help determine from where pre enrollment wizard is launched
+-->
+
+<aura:component controller="PC_Enrollment_NewApplicant" implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <!-- Attributes -->
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="namespace" type="String" default="" />  
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="newApplicant" type="Object" />
+    <aura:attribute name="docId" type="String" />
+    <aura:attribute name="caseId" type="String" />
+    <aura:attribute name="onlineFormApplicantId" type="String"/>
+    <aura:attribute name="isExistingApplicant" type="Boolean" default="false" />
+    <aura:attribute name="toastSuccessMessage" type="String" default="{!$Label.c.PC_New_Enrollment_Case_Success}" />
+    <aura:attribute name="isCustomApp" type="Boolean" default="false" description="Indicates if this component is launched from custom App"/>
+
+    <aura:attribute name="fieldSetFields" type="Object[]"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]"/>
+    <aura:attribute name="fieldSetFormBody1" type="Aura.Component[]"/>
+    <aura:attribute name="fieldSetName" type="String"/>
+    <aura:attribute name="typeName" type="String" default="Account"/>
+    <aura:attribute name="pageErrors" type="List"  access="global" />
+    <aura:attribute name="searchPatient" type="sObject"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+    <aura:attribute name="fsFieldValues" type="Map"/>
+    <aura:attribute name="enrollmentWizardTabLabel" type="String" default="{!$Label.c.PC_EnrollmentWizardHeader}"/>
+    <aura:attribute name="enrollmentWizardPageName" type="String" default="Enrollment_Wizard"/>
+    <aura:attribute name="enrollmentWizardTabIcon" type="String" default="action:flow"/>
+    <aura:attribute name="enrollmentWizardComponentName" type="String" default="PC_EnrollmentWizard"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute name="isNewEnrollmentBtnClicked" type="Boolean" default="false"/>
+
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute  name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}"/>
+
+    <!-- Event Handlers -->
+   <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>-->
+    <aura:registerEvent name="toastEvent" type="c:PC_ToastEvent"/>
+	<aura:registerEvent name="closeEvent" type="c:PC_CloseCmp"/>
+    
+    <div class="slds">
+        <lightning:workspaceAPI aura:id="enrollNewApplicantWorkspace" />
+
+        <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--medium slds-fade-in-open" aura:id="modaldialog" >
+            <form id="form">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_New_Applicant_Label}</h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}" type="button">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true" />
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                    </div>
+                        <div class="slds-modal__content">
+                            <aura:if isTrue="{! v.errors.length > 0 }">
+                                <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                            </aura:if>
+
+                            <fieldset class="slds-form--compound leftMargin">
+                                <div class="slds-form-element slds-size--1-of-1">
+                                    <div class="slds-form-element__row">
+                                        <aura:if isTrue="{!v.fieldSetFields.length > 0}">
+                                            <ul>
+                                                <li class="slds-item">
+                                                    <div class="slds-tabs--scoped">
+                                                        <fieldset class="slds-form--compound">
+                                                            <div class="slds-form-element__group">
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-1">
+                                                                            {!v.fieldSetFormBody}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </aura:if>
+                                    </div>
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element slds-size--1-of-1">
+                                            <lightning:input label="{!$Label.c.PC_SearchInput_Col_4}" title="{!v.newApplicant.manuProgramName}" name="applicantProgram" readonly="true" value="{!v.newApplicant.manuProgramName}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <div class="slds-x-small-buttons--horizontal">
+                                <button class="slds-button slds-button--neutral" type="button" onclick="{!c.hideModalBox}">{!$Label.c.PC_Cancel_Button}</button>
+                                <button class="slds-button slds-button--neutral slds-button--brand" disabled="{!v.isNewEnrollmentBtnClicked}" type="button" onclick="{!c.createApplicant}">{!$Label.c.PC_New_Applicant_Button}</button>
+                            </div>
+                        </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+	<div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>    
+</aura:component>

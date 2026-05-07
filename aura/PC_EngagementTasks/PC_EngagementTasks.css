@@ -1,0 +1,11 @@
+/**
+ * Created by shisbansal on 8/28/2018.
+ */
+
+
+.THIS .pc_spinner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+}

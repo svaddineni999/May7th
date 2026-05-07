@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata type would help admins to configure the components on the document management screen.</description>
+    <fields>
+        <fullName>PC_Account_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This pick list allows select account record type for which the related objects need to be excluded.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Select the account type for which you would like to exclude the objects to be linked</inlineHelpText>
+        <label>Account Record Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Patient</fullName>
+                    <default>true</default>
+                    <label>Patient</label>
+                </value>
+                <value>
+                    <fullName>HCO</fullName>
+                    <default>false</default>
+                    <label>HCO</label>
+                </value>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+                <value>
+                    <fullName>Payer</fullName>
+                    <default>false</default>
+                    <label>Payer</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Manufacturer</fullName>
+                    <default>false</default>
+                    <label>Manufacturer</label>
+                </value>
+                <value>
+                    <fullName>Field Training Nurse</fullName>
+                    <default>false</default>
+                    <label>Field Training Nurse</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Objects_excluded_from_linking__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For selecting the objects to be excluded from linking to the selected record type in the account record type</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Select the object to excluded from linking, if any.</inlineHelpText>
+        <label>Related objects excluded from linking</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>true</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                    <label>Case</label>
+                </value>
+                <value>
+                    <fullName>PC_AdverseEvent__c</fullName>
+                    <default>false</default>
+                    <label>PC_AdverseEvent__c</label>
+                </value>
+                <value>
+                    <fullName>PC_Interaction__c</fullName>
+                    <default>false</default>
+                    <label>PC_Interaction__c</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Doc Management View Configuration</label>
+    <pluralLabel>Doc Management View Configuration</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

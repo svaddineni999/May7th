@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Registered Nurse Review</fullName>
+        <default>true</default>
+        <label>Registered Nurse Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Physician Review</fullName>
+        <default>false</default>
+        <label>Physician Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Medical Director Review</fullName>
+        <default>false</default>
+        <label>Medical Director Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Peer Review</fullName>
+        <default>false</default>
+        <label>Peer Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Intake Specialist Review</fullName>
+        <default>false</default>
+        <label>Intake Specialist Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Admin Review</fullName>
+        <default>false</default>
+        <label>Admin Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Requesting Practitioner Review</fullName>
+        <default>false</default>
+        <label>Requesting Practitioner Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Servicing Practitioner Review</fullName>
+        <default>false</default>
+        <label>Servicing Practitioner Review</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Missing Information</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Missing Informations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category --></label>
+        <name>ACLS_Category__c</name>
+        <picklistValues>
+            <masterLabel>Consent</masterLabel>
+            <translation><!-- Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCP/HCO Information</masterLabel>
+            <translation><!-- HCP/HCO Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Information</masterLabel>
+            <translation><!-- Patient Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer Information</masterLabel>
+            <translation><!-- Payer Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription</masterLabel>
+            <translation><!-- Prescription --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Entity --></label>
+        <name>ACLS_Entity_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Missing Information Field Labels --></label>
+        <name>ACLS_Missing_Information_Field_Labels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Missing Information --></label>
+        <name>ACLS_Missing_Information_Fields__c</name>
+        <picklistValues>
+            <masterLabel>CPT Code(s)</masterLabel>
+            <translation><!-- CPT Code(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caregiver Phone Number</masterLabel>
+            <translation><!-- Caregiver Phone Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Date of Birth</masterLabel>
+            <translation><!-- Date of Birth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Day Supply</masterLabel>
+            <translation><!-- Day Supply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dosage</masterLabel>
+            <translation><!-- Dosage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frequency</masterLabel>
+            <translation><!-- Frequency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NPI</masterLabel>
+            <translation><!-- NPI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Address</masterLabel>
+            <translation><!-- Patient Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Consent</masterLabel>
+            <translation><!-- Patient Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Email Address</masterLabel>
+            <translation><!-- Patient Email Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Phone Number</masterLabel>
+            <translation><!-- Patient Phone Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer Policy Number</masterLabel>
+            <translation><!-- Payer Policy Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Policy Holder Date of Birth</masterLabel>
+            <translation><!-- Policy Holder Date of Birth --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription Date</masterLabel>
+            <translation><!-- Prescription Date --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription Signature</masterLabel>
+            <translation><!-- Prescription Signature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Diagnosis</masterLabel>
+            <translation><!-- Primary Diagnosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Name</masterLabel>
+            <translation><!-- Product Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Address</masterLabel>
+            <translation><!-- Provider Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Consent</masterLabel>
+            <translation><!-- Provider Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Email</masterLabel>
+            <translation><!-- Provider Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Fax</masterLabel>
+            <translation><!-- Provider Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provider Phone</masterLabel>
+            <translation><!-- Provider Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quantity</masterLabel>
+            <translation><!-- Quantity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary Diagnosis</masterLabel>
+            <translation><!-- Secondary Diagnosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Site of Care</masterLabel>
+            <translation><!-- Site of Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State License Number</masterLabel>
+            <translation><!-- State License Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax ID Number</masterLabel>
+            <translation><!-- Tax ID Number --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Object Name --></label>
+        <name>ACLS_Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object Record Id --></label>
+        <name>ACLS_Object_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Type Name --></label>
+        <name>ACLS_Object_Record_Type_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Case --></label>
+        <name>ACLS_Related_Case__c</name>
+        <relationshipLabel><!-- Missing Informations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source Record Id --></label>
+        <name>ACLS_Source_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>ACLS_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Document Status --></label>
+        <name>ACLS_Document_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prescription --></label>
+        <name>ACLS_Prescription__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>PC_Account__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Activity Id --></label>
+        <name>PC_Activity_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity Name --></label>
+        <name>PC_Activity_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Activity --></label>
+        <name>PC_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adverse Event 2 --></label>
+        <name>PC_Adverse_Event2__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Adverse Event --></label>
+        <name>PC_Adverse_Event__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Association Record --></label>
+        <name>PC_Association_Record_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Association Record Id --></label>
+        <name>PC_Association_Record_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Association Record Name --></label>
+        <name>PC_Association_Record_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Association Type --></label>
+        <name>PC_Association_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attachment Link --></label>
+        <name>PC_Attachment_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Categorization --></label>
+        <name>PC_Categorization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coverage --></label>
+        <name>PC_Coverage__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Category --></label>
+        <name>PC_Document_Category__c</name>
+        <picklistValues>
+            <masterLabel>AE/PC</masterLabel>
+            <translation><!-- AE/PC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adverse Event</masterLabel>
+            <translation><!-- Adverse Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Adverse Event and Product Complaint</masterLabel>
+            <translation><!-- Adverse Event and Product Complaint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay Card</masterLabel>
+            <translation><!-- Copay Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay Program Cover Letter</masterLabel>
+            <translation><!-- Copay Program Cover Letter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coverage Denial Documentation</masterLabel>
+            <translation><!-- Coverage Denial Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment Follow Up</masterLabel>
+            <translation><!-- Enrollment Follow Up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment Form</masterLabel>
+            <translation><!-- Enrollment Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illegible</masterLabel>
+            <translation><!-- Illegible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Injection Training</masterLabel>
+            <translation><!-- Injection Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Information</masterLabel>
+            <translation><!-- Insurance Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab Results</masterLabel>
+            <translation><!-- Lab Results --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Notes</masterLabel>
+            <translation><!-- Medical Notes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Authorization</masterLabel>
+            <translation><!-- Patient Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Consent</masterLabel>
+            <translation><!-- Patient Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient HIPAA Revocation</masterLabel>
+            <translation><!-- Patient HIPAA Revocation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Opt Out</masterLabel>
+            <translation><!-- Patient Opt Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Un-enrollment</masterLabel>
+            <translation><!-- Patient Un-enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer Forms</masterLabel>
+            <translation><!-- Payer Forms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician Authorization</masterLabel>
+            <translation><!-- Physician Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Injection Training Report</masterLabel>
+            <translation><!-- Post Injection Training Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription</masterLabel>
+            <translation><!-- Prescription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Complaint</masterLabel>
+            <translation><!-- Product Complaint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Feedback</masterLabel>
+            <translation><!-- Program Feedback --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Referral</masterLabel>
+            <translation><!-- Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SA Documentation</masterLabel>
+            <translation><!-- SA Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal Authorization Transcript Representation</masterLabel>
+            <translation><!-- Verbal Authorization Transcript Representation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome Gesture</masterLabel>
+            <translation><!-- Welcome Gesture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>PC_Document_Log__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Owner Id --></label>
+        <name>PC_Document_Owner_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Type --></label>
+        <name>PC_Document_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document --></label>
+        <name>PC_Document__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Health Plan --></label>
+        <name>PC_Health_Plan__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Interaction --></label>
+        <name>PC_Interaction__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legacy System Document ID --></label>
+        <name>PC_Legacy_System_Document_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy System Document Log ID --></label>
+        <name>PC_Legacy_System_Document_Log_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy System Patient ID --></label>
+        <name>PC_Legacy_System_Patient_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy System Program ID --></label>
+        <name>PC_Legacy_System_Program_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy System Source --></label>
+        <name>PC_Legacy_System_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Parent Id --></label>
+        <name>PC_Prior_Parent_Id_GLBL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Document Logs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

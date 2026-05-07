@@ -1,0 +1,58 @@
+<!--
+Lightning component  : PC_AdverseEventMenuLauncher
+Description          : Adverse Event 2 Menu.
+Parameters           :
+Modification Log:
+Hitha Avalakki 		 17-Oct-2019    Initial Version
+Kanteti Kishore      24-Oct-2019    [PC-5616]Added controller to get component attributes dynamically from patient connect settings
+Shishir Bansal         18-Dec-2019            Ability to launch AE creation action from a custom button
+Haritha Reddy        06-Jan-2020    [PC-5600] added new property usePrescriptionForSuspectProducts with default value
+                                    in adverseEventMenuCmpAttributes attribute
+Vijay Kashikar       12-Mar-2020    [PC-6097] Made changes so that this component can be used as a child component by
+                                    passing values to the global attributes
+Kanteti Kishore       2-Dec-2020      [PC-7034] Code changes to open adverse event in new tab when clicked in console or in lightning app.
+Kanteti Kishore       8-Dec-2020      [PC-7055] Added attributes to control the visibility of different tabs and sections.
+-->
+
+<aura:component description="This component launches adverse event workflow and can be added on Case, Account, Home and PC_Search pages." controller="PC_AdverseEventMenuLauncher"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <ltng:require styles="{!$Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:handler event="c:PC_SelectedRecord" action="{!c.populateSelectedRecDetails}"/>
+    <aura:handler event="c:PC_SearchParams" action="{!c.handleSearchParams}"/>
+    <aura:attribute name="identifier" type="String"/>
+    <aura:attribute name="searchParams" type="List"/>
+    <aura:attribute name="recordId" type="Id" access="global"/>
+    <aura:attribute name="caseId" type="Id" default="" access="global"/>
+    <aura:attribute name="searchActive" type="String" default="true"/>
+    <aura:attribute name="selectedRecordId" type="String"/>
+    <aura:attribute name="actionNameList" type="List"/>
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <aura:attribute name="adverseEventMenuCmpAttributes" type="Object" access="global"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="AEpoupLabel" type="String" default="{!$Label.c.PC_AE_AdverseEventReport}"/>
+    <aura:attribute name="dateFormatErrorMessage" type="String" default=""/>
+    <aura:attribute name="openAEPopUpButtonLabel" type="String" default="{!$Label.c.PC_OpenAEPopup}" access="global"/>
+    <aura:attribute name="adverseEventTabName" type="String" default="{!$Label.c.PC_Adverse_Event_TabName}"/>
+    <aura:attribute name="openAEPopUpButtonName" type="String" default=""/>
+    <aura:attribute name="orgNamespace" type="String" access="private"/>
+    <aura:attribute name="isChild" type="Boolean" default="false" access="global"/> <!--unused attribute. Cannot remove this since it was marked as global in Alpha Released package -->
+    <aura:attribute name="isUsedInSearchContext" type="Boolean" default="true" access="global"/>
+
+    <aura:attribute name="hideCoding" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="hideMfr" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="hideNotes" type="Boolean" default="false" access="global"/>
+
+    <aura:attribute name="hideAdditionalInfoTab" type="Boolean" default="true" access="global"/>
+    <aura:attribute name="usePrescriptionForSuspectProducts" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="useRxForMI" type="Boolean" default="false" access="global"/>
+    <div>
+        <lightning:overlayLibrary aura:id="overlayLib"/>
+        <lightning:workspaceAPI aura:id="adverseEventMenuLauncherWorkspace"/>
+        <lightning:button variant="brand"
+                          disabled="{!and(and(v.selectedRecordId != null,v.selectedRecordId != 'undefined' ) , (v.searchActive))}"
+                          aura:id="openAEPopUpButtonId" label="{!v.openAEPopUpButtonName}" onclick="{!c.openAEPopup}"/>
+
+    </div>
+</aura:component>

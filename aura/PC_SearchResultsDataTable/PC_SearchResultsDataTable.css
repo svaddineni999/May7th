@@ -1,0 +1,10 @@
+/**
+ * Created by vkashikar on 10/19/2019.
+ */
+.THIS .dataTable{
+    /*overflow : scroll;*/
+    clear: both;
+}
+.THIS .selectedIndicator {
+    float: right;
+}

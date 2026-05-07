@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DocumentDetails FieldSet</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DocumentDetails FieldSets</value>
+    </caseValues>
+    <fields>
+        <help><!-- Namespace of record type --></help>
+        <label><!-- Document Record Type Namespace Prefix --></label>
+        <name>PC_Document_RecordType_Namespaceprefix__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide Document Record Type DeveloperName --></help>
+        <label><!-- Document Record Type --></label>
+        <name>PC_Document_RecordType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document Field Set Api --></help>
+        <label><!-- Field Set Name --></label>
+        <name>PC_FieldSetName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Approved</fullName>
+        <default>false</default>
+        <label>Approved</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Denied</fullName>
+        <default>false</default>
+        <label>Denied</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partially Approved</fullName>
+        <default>false</default>
+        <label>Partially Approved</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Stopped</fullName>
+        <default>false</default>
+        <label>Stopped</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Reduced</fullName>
+        <default>false</default>
+        <label>Reduced</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Suspended</fullName>
+        <default>false</default>
+        <label>Suspended</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Medical Director Review Pending</fullName>
+        <default>false</default>
+        <label>Medical Director Review Pending</label>
+    </standardValue>
+</StandardValueSet>

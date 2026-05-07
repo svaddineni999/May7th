@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Proceduren i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Procedure i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Procedure i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Procedurerne i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Procedurer i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Procedurer i EPJ</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Procedurer i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kropsdel</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Kategori</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Kodebetegnelse</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kode</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Komplikation</label>
+        <name>HealthCloudGA__Complication__c</name>
+    </fields>
+    <fields>
+        <label>Møde</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Procedurer i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Opfølgningsinstruktioner</label>
+        <name>HealthCloudGA__FollowUpInstructions__c</name>
+    </fields>
+    <fields>
+        <label>Brugte forsyninger</label>
+        <name>HealthCloudGA__ItemsUsed__c</name>
+    </fields>
+    <fields>
+        <label>Placering</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>Ikke udført</label>
+        <name>HealthCloudGA__NotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Notater</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Resultat</label>
+        <name>HealthCloudGA__Outcome__c</name>
+    </fields>
+    <fields>
+        <label>Udførelsesdato/-tidspunkt</label>
+        <name>HealthCloudGA__PerformedDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Årsag1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Årsag2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Årsag3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Årsag4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Årsag til, at proc. ikke blev udført</label>
+        <name>HealthCloudGA__ReasonNotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Rapport</label>
+        <name>HealthCloudGA__Report__c</name>
+    </fields>
+    <fields>
+        <label>Anmodning</label>
+        <name>HealthCloudGA__Request__c</name>
+        <relationshipLabel>Procedurer i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kildesystem-id</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entered in Error</masterLabel>
+            <translation><!-- Entered in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Procedure-id i EPJ</nameFieldLabel>
+</CustomObjectTranslation>

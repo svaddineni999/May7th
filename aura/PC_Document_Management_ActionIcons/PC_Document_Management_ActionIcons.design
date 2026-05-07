@@ -1,0 +1,12 @@
+<!--
+ - Created by tusarora on 2/26/2020.
+
+Modification Log:
+ Tushar Arora          26-feb-2020   [PC-6018] Added refreshControlInterface attribute to prevent auto-refresh of Document Actions on change of any document tag
+ Chetna Mohapatra      31-Mar-2020   [PC-6047] Edited the label and info icon description of the refreshControlInterface attribute. -->
+
+<design:component>
+    <design:attribute name="refreshControlInterface" label="Select this checkbox to auto-refresh the Document Actions based on the tag selection."
+                      default="false"
+                      description="Document Actions might need to get auto-refreshed based on the selection or de-selection of document tags. Ensure to provide the validator class for all necessary Document Action icons in the custom metadata so that visibility of the actions can be determined when this option is selected. For more details, refer to Implementation guide."/>
+</design:component>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Intolerância alérgica do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Intolerâncias alérgicas do RES</value>
+    </caseValues>
+    <fields>
+        <label>Conta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Intolerâncias alérgicas do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Código de criticidade</label>
+        <name>HealthCloudGA__CriticalityCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo de criticidade</label>
+        <name>HealthCloudGA__CriticalityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de criticidade</label>
+        <name>HealthCloudGA__CriticalitySystem__c</name>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if value of Status Label field is NOT equal to &apos; Resolved &apos;, else returns false. --></help>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Paciente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Intolerâncias alérgicas do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Reação 255</label>
+        <name>HealthCloudGA__Reaction255__c</name>
+    </fields>
+    <fields>
+        <label>Reação</label>
+        <name>HealthCloudGA__Reaction__c</name>
+    </fields>
+    <fields>
+        <label>Data de registro</label>
+        <name>HealthCloudGA__RecordedDate__c</name>
+    </fields>
+    <fields>
+        <label>Nome do registrador 255</label>
+        <name>HealthCloudGA__RecorderName255__c</name>
+    </fields>
+    <fields>
+        <label>Nome do registrador</label>
+        <name>HealthCloudGA__RecorderName__c</name>
+    </fields>
+    <fields>
+        <label>Registrador</label>
+        <name>HealthCloudGA__Recorder__c</name>
+        <relationshipLabel>Intolerâncias alérgicas</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Teste de sensibilidade 1</label>
+        <name>HealthCloudGA__SensitivityTest1__c</name>
+        <relationshipLabel>Intolerâncias alérgicas do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Teste de sensibilidade 2</label>
+        <name>HealthCloudGA__SensitivityTest2__c</name>
+        <relationshipLabel>Intolerâncias alérgicas do RES (teste de sensibilidade 2)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Teste de sensibilidade 3</label>
+        <name>HealthCloudGA__SensitivityTest3__c</name>
+        <relationshipLabel>Intolerâncias alérgicas do RES (teste de sensibilidade 3)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Código do tipo de sensibilidade</label>
+        <name>HealthCloudGA__SensitivityTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do tipo de sensibilidade</label>
+        <name>HealthCloudGA__SensitivityTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipos de sensibilidade</label>
+        <name>HealthCloudGA__SensitivityTypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>ID do sistema de origem</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código do status</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do status</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de status</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Substância 255</label>
+        <name>HealthCloudGA__Substance255__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de código da substância</label>
+        <name>HealthCloudGA__SubstanceCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código da substância</label>
+        <name>HealthCloudGA__SubstanceCode__c</name>
+    </fields>
+    <fields>
+        <label>Substância</label>
+        <name>HealthCloudGA__SubstanceLong__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID de intolerância alérgica do RES</nameFieldLabel>
+</CustomObjectTranslation>

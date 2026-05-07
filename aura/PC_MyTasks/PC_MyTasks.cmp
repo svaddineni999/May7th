@@ -1,0 +1,184 @@
+<!--
+     - Created by sahgarg on 3/15/2018.
+
+Lightning component  : PC_MyTasks
+Description          : Tasks component for homepage
+Parameters           :
+Modification Log:
+Sahil Garg 		 3/15/2018    [PC-2858] Initial Version
+Soumya Soumya    5/25/2018    [PC-42] Home Page Grouping
+Vijay Kashikar  01/15/2019    [PC-3814] Hyperlink to physician/patient in group by scenario will be shown only when physician/patient exists for a task.
+Kanteti Kishore 29-July-2020  [PC-6592] Changes in helper at lines-293,298,278
+
+     -->
+<aura:component controller="PC_HomeActivitiesController" implements="flexipage:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="showAllRecordsOption" type="Boolean" default="false" description="If true, shows all tasks. Otherwise, show only current user's tasks" access="global"/>
+    <aura:attribute name="defaultView" type="String" default="MY RECORDS" description="Default view to show - My Tasks or All Tasks?" access="global"/>
+    <aura:attribute name="numberOfColumns" type="Integer" default="3" description="Number of columns. Set this based on your layout's width. Default value is 3." access="global"/>
+    <aura:attribute name="cardWidth" type="Decimal" default="{! divide(100, v.numberOfColumns)}"/>
+    <aura:attribute name="toggleLabel" type="String" default="{!$Label.c.PC_AllTasks}"/>
+    <aura:attribute name="recordsPerPage" type="Integer" default="30"/>
+
+    <aura:handler name="change" value="{!v.showAllRecordsOption}" action="{!c.doInit}"/>
+    <aura:handler name="change" value="{!v.defaultView}" action="{!c.doInit}"/>
+
+    <ltng:require scripts="{!join(',',
+                           $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js',
+                           $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'
+                           )}"
+                  afterScriptsLoaded="{!c.doInit}" />
+    
+    <aura:attribute name="chosenFilter" type="String" />
+    <aura:attribute name="lstActivity" type="Object[]" />
+    
+    <aura:attribute name="userContext" type="String" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="dropdownOver" type="Boolean" default="false" />
+    
+    <aura:attribute name="currentPagenumber" type="integer"  description="using to store current page Number"/>
+    <aura:attribute name="recordSize" type="integer" />
+
+    <aura:attribute name="totalNumberOfPages"  type="integer"  description="using to store total number of pages"/>
+    <aura:attribute name="totalRecords" type="integer"  description="using to store total records count  "/>
+    <aura:attribute name="groupByParam" type="String" description="using to store selected group by pick list value "/>
+    <aura:attribute name="filterByParam" type="String" description="using to store selected filter by pick list value "/>
+    <aura:attribute name="groupBy_PickList_Option_None" type="String" default="{!$Label.c.PC_Task_GroupBy_Option_None}" />
+    <aura:attribute name="groupBy_PickList_Option_Physician" type="String" default="{!$Label.c.PC_Task_GroupBy_Option_Physician}" />
+    <aura:attribute name="groupBy_PickList_Option_Patient" type="String" default="{!$Label.c.PC_Task_GroupBy_Option_Patient}" />
+    <aura:attribute name="filterBy_PickList_Option_All" type="String" default="{!$Label.c.PC_Task_Filter_Option_All}" />
+    <aura:attribute name="filterBy_PickList_Option_Overdue" type="String" default="{!$Label.c.PC_Task_Filter_Option_Overdue}" />
+    <aura:attribute name="filterBy_PickList_Option_Due_Today" type="String" default="{!$Label.c.PC_Task_Filter_Option_Due_Today}" />
+    <aura:attribute name="filterBy_PickList_Option_Due_Tomorrow" type="String" default="{!$Label.c.PC_Task_Filter_Option_Due_Tomorrow}" />
+    <aura:attribute name="filterBy_PickList_Option_Due_HighPriority" type="String" default="{!$Label.c.PC_Task_SortBy_HighPriority}" />
+    <aura:attribute name="groupBy_Label" type="String" default="{!$Label.c.PC_Task_GroupBy_Label}" />
+    <aura:attribute name="filterBy_Label" type="String" default="{!$Label.c.PC_Task_FilterBy_Label}" />
+    <aura:attribute name="tasks_Label" type="String" default="{!$Label.c.PC_Tasks_Label}" />
+    <aura:attribute name="groupByNone" type="String" default="True" />
+    <aura:attribute name="mapActivities" type="Object[]" />
+    <aura:attribute name="groupedActivitiesList" type="list" />
+    <aura:attribute name="mapNames" type="Object[]" />
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:handler event="c:PC_Pagination_AppEvent" action="{!c.handleMyApplicationEvent}"/>
+
+    <div>
+        <aura:if isTrue="{!v.showSpinner}">
+            <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+        </aura:if>
+    </div>
+    <div aura:id="outerDiv" class="slds-clearfix slds-dropdown-trigger_click">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col toggleDiv slds-size--6-of-12">
+                <aura:if isTrue="{!v.showAllRecordsOption}">
+                <lightning:input name="showAllTasks"
+                                 label="{!v.toggleLabel}"
+                                 type="toggle" class="ShowAllTasks"
+                                 checked="{!if(v.defaultView == 'ALL RECORDS', true, false)}"
+                                 onchange="{!c.refreshView}" aura:id="showAllTasksToggle"/>
+                </aura:if>
+            </div>
+            <div class="slds-col slds-size--3-of-12">
+                <div class="slds-form slds-form_horizontal custom-horizontal">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="groupBy">{!v.groupBy_Label}</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                                <ui:inputSelect class="slds-select" change="{!c.applyGroupBy}" aura:id="groupBy" value="{!v.groupByParam}">
+                                    <ui:inputSelectOption text="None" label="{!v.groupBy_PickList_Option_None}" value="true" />
+                                    <ui:inputSelectOption text="Physician" label="{!v.groupBy_PickList_Option_Physician}" />
+                                    <ui:inputSelectOption text="Patient" label="{!v.groupBy_PickList_Option_Patient}"/>
+                                </ui:inputSelect>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-size--3-of-12">
+                <div class="slds-form slds-form_horizontal custom-horizontal">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="filterBy">{!v.filterBy_Label}</label>
+                        <div class="slds-form-element__control">
+                            <div class="slds-select_container">
+                                <ui:inputSelect class="slds-select" change="{!c.sort}" aura:id="filterBy" value="{!v.filterByParam}">
+                                    <ui:inputSelectOption text="soryByDueDate" label="{!v.filterBy_PickList_Option_All}" value="true" />
+                                    <ui:inputSelectOption text="filterOverdueItems" label="{!v.filterBy_PickList_Option_Overdue}" value="true" />
+                                    <ui:inputSelectOption text="filterTodaysItems" label="{!v.filterBy_PickList_Option_Due_Today}" value="true" />
+                                    <ui:inputSelectOption text="filterTomorrowItems" label="{!v.filterBy_PickList_Option_Due_Tomorrow}" value="true" />
+                                    <ui:inputSelectOption text="soryByPriority" label="{!v.filterBy_PickList_Option_Due_HighPriority}" value="true" />
+                                </ui:inputSelect>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tasksWithPaginationContainer">
+        <!-- START  -->
+        <div class="flexContainer">
+            <aura:if isTrue="{!v.groupByNone}">
+            <aura:if isTrue="{!v.lstActivity.length > 0}">
+                <aura:iteration items="{!v.lstActivity}" var="task">
+                    <div class="flexItem" style="{! join('','width:',v.cardWidth,'%',';','max-width:',v.cardWidth,'%')}">
+                        <c:PC_HomeActivityCard_CardView objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+                    </div>
+                </aura:iteration>
+                <aura:set attribute="else">
+
+
+                            <div class="slds-text-align--center">
+                                <span class="slds-text-heading--medium slds-truncate">{!$Label.c.PC_Task_Message_Nothing_To_Show}
+                                </span>
+                            </div>
+
+
+                </aura:set>
+            </aura:if>
+            </aura:if>
+            <aura:if isTrue="{! !v.groupByNone}">
+                <aura:if isTrue="{!v.groupedActivitiesList.length > 0}">
+                <aura:iteration items="{!v.groupedActivitiesList}" var="task" >
+                    <aura:if isTrue="{!task.key != '' || task.key != null}">
+                        <div class="slds-size_1-of-1">
+                        <p class="taskName"  title="{!$Label.c.PC_Task_Label_AccountName}">
+                            <aura:if isTrue="{! not(empty((task.key))) }">
+                                <a onclick="{!c.navigateToAccountRecord}" id="{!task.key}">{!task.keyLabel}  </a>
+                            </aura:if>
+                            ({!task.count})
+                        </p>
+                        </div>
+                    </aura:if>
+                    <aura:iteration items="{!task.value}" var="taskList" >
+                        <div class="flexItem" style="{! join('','width:',v.cardWidth,'%',';','max-width:',v.cardWidth,'%')}">
+                            <c:PC_HomeActivityCard_CardView objTask="{!taskList}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+                        </div>
+                	</aura:iteration>
+                </aura:iteration>
+                <aura:set attribute="else">
+
+
+                            <div class="slds-text-align--center">
+                                <span class="slds-text-heading--medium slds-truncate">{!$Label.c.PC_Task_Message_Nothing_To_Show}
+                                </span>
+                            </div>
+                        
+
+
+                </aura:set>
+            </aura:if>
+            </aura:if>
+        </div>
+        <br/>
+        <!-- END  -->
+        <div aura:id="paginationCmt">
+            <c:PC_Pagination sourceId="MyTasks" currentPagenumber="{!v.currentPagenumber}"
+                             totalRecords="{!v.totalRecords}" totalNumberOfPages="{!v.totalNumberOfPages}"  recordsPerPage="{!v.recordsPerPage}"/>
+        </div>
+    </div>
+    
+    
+    
+</aura:component>

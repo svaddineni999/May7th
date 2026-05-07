@@ -1,0 +1,103 @@
+<aura:component controller="PC_eLetterAuraController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="eLetters" type="PC_LightningMap" />
+    <aura:attribute name="recipients" type="PC_eLetter_Recipient.Object[]" />
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="msgNoRecipient" type="String" default="{!$Label.c.PC_No_Recipients_Available}" />
+    <aura:attribute name="msgNoEngagementProgram" type="String" default="{!$Label.c.PC_eLetterError}" />
+    <aura:attribute name="msgNoPrimaryContact" type="String" default="{!$Label.c.PC_NoPrimaryContact}" />
+    <aura:attribute name="noeLetterSelectedError" type="String" default="{!$Label.c.PC_noeLetterSelectedError}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="selectedELetterVal" type="String"/>
+    <aura:attribute name="showPreviewOption" type="Boolean" access="global" default="false"/>
+    <aura:attribute name="noneValue" type="String" default="None"/>
+    <aura:handler name="eLetterEvent" event="c:PC_eLetterPreviewEvent" action="{!c.validateEletterId}"/>
+    <aura:handler event="force:refreshView" action="{!c.onChangeSelectedLetter}" />
+    <div>
+        <!-- Start of Container -->
+        <div style="border: 1px solid #d8dde6;">
+
+    <form action="">
+        <div class="">
+            <div class="msgDisplayFalse" aura:id="msgResult">
+                <ui:message title="" severity="info" closable="false">{!v.message}</ui:message>
+            </div>
+            <div class="slds-form-element" style="margin-bottom:10px;">
+                <ui:inputselect label="" class="slds-select" aura:id="inputSelectLetter" change="{!c.onChangeSelectedLetter}" />
+            </div>
+            <div class="slds-form-element overallContainer">
+                <div class="slds-form-element__control verticalScroll">
+                    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                        <tr class="slds-text-heading--label">
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Recipient}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:20%;">
+                                {!$Label.c.PC_Recipient_Type}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Communication_Language}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Fax}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Email}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Send_to_Me}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Send_Fax}
+                            </th>
+                            <th class="slds-cell-shrink" style="width:10%;">
+                                {!$Label.c.PC_Send_Email}
+                            </th>
+                        </tr>
+                        <aura:iteration items="{!v.recipients}" var="recipient">
+                            <tr class="slds-hint-parent">
+                                <td class="slds-truncate">
+                                    {!recipient.recipientName}
+                                </td>
+                                <td class="slds-truncate">
+                                    {!recipient.recipientTypeLabel}
+                                </td>
+                                <td class="slds-truncate">
+                                    {!recipient.communicationLanguage}
+                                </td>
+                                <td class="slds-truncate">
+                                    {!recipient.recipientFax}
+                                </td>
+                                <td class="slds-truncate">
+                                    {!recipient.recipientEmail}
+                                </td>
+                                <td class="slds-truncate">
+                                    <ui:inputcheckbox value="{!recipient.sendToMe}" disabled="{!recipient.bDisableSendToMe}" />
+                                </td>
+                                <td class="slds-truncate">
+                                    <ui:inputcheckbox value="{!recipient.sendFax}" disabled="{!recipient.bDisableFax}" />
+                                </td>
+                                <td class="slds-truncate">
+                                    <ui:inputcheckbox value="{!recipient.sendEmail}" disabled="{!recipient.bDisableEmail}" />
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </table>
+                </div>
+            </div>
+            <div class="slds-form-element bottomBar slds-x-small-buttons--horizontal">
+                <div class="bottomBarRight slds-x-small-buttons--horizontal">
+                    <aura:if isTrue="{!v.showPreviewOption}">
+                        <c:PC_eLetterPreviewButton eLetterId="{!v.selectedELetterVal}" recordId="{!v.recordId}"/>
+                    </aura:if>
+                    <ui:button class="slds-button slds-button--neutral slds-button--brand" label="{!$Label.c.PC_Send}" press="{!c.onSend}" />
+                </div>
+                <div class="clearBoth"></div>
+            </div>
+        </div>
+</form>
+            
+        </div>
+    </div>
+</aura:component>

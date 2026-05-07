@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Instelling voor klinische beoordeling</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Instellingen voor klinische beoordeling</value>
+    </caseValues>
+    <fields>
+        <label>Wachtrij voor beoordelingstaak</label>
+        <name>HealthCloudGA__Assessment_Task_Queue__c</name>
+    </fields>
+    <fields>
+        <label>Zorgprogramma</label>
+        <name>HealthCloudGA__Care_Program__c</name>
+    </fields>
+    <fields>
+        <label>Toestemming Aut. Gebr. van gegevensform.</label>
+        <name>HealthCloudGA__Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Toestemming Doelstelling Gebr. van geg.</label>
+        <name>HealthCloudGA__Consent_Data_Use_Purpose__c</name>
+    </fields>
+    <fields>
+        <label>Toest. Aut. Gebr. gegevensform. gezin</label>
+        <name>HealthCloudGA__Household_Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Leeftijdsgrens voor minderj. kinderen</label>
+        <name>HealthCloudGA__MinorChildAgeLimit__c</name>
+    </fields>
+    <fields>
+        <label>Naam van patiënt RecordType</label>
+        <name>HealthCloudGA__Patient_RecordType_Name__c</name>
+    </fields>
+    <fields>
+        <label>Voorgeschreven aantal quarantainedagen</label>
+        <name>HealthCloudGA__PrescribedQuarantineDays__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

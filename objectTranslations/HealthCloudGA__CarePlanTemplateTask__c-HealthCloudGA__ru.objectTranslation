@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Задача шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Задачи шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Задачу шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Задачи шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Задачи шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Задач шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Задаче шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Задачам шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Задачей шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Задачами шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Задаче шаблона плана обслуживания</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Задачах шаблона плана обслуживания</value>
+    </caseValues>
+    <fields>
+        <label>Активно</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Назначено</label>
+        <name>HealthCloudGA__AssignedTo__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Цель шаблона плана обслуживания</label>
+        <name>HealthCloudGA__CarePlanTemplateGoal__c</name>
+        <relationshipLabel>Задачи шаблона плана обслуживания</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Проблема шаблона плана обслуживания</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>Задачи шаблона плана обслуживания</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Шаблон Плана обслуживания</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Задачи шаблона плана обслуживания</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Категория</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Counselling</masterLabel>
+            <translation><!-- Counselling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diagnosis</masterLabel>
+            <translation><!-- Diagnosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exercise</masterLabel>
+            <translation><!-- Exercise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaccination</masterLabel>
+            <translation><!-- Vaccination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Описание</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Начало</label>
+        <name>HealthCloudGA__Offset__c</name>
+    </fields>
+    <fields>
+        <label>Приоритет</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Порядок сортировки</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label>Статус</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Тема</label>
+        <name>HealthCloudGA__Subject__c</name>
+    </fields>
+    <fields>
+        <label>Тип</label>
+        <name>HealthCloudGA__Type__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation><!-- Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical</masterLabel>
+            <translation><!-- Clinical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncategorized</masterLabel>
+            <translation><!-- Uncategorized --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Имя задачи шаблона плана обслуживания</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Свяжите задачу с шаблоном плана обслуживания, проблемой или целью.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanTaskAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Свяжите задачу только с одной записью.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanTaskAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

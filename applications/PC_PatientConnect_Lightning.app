@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>Case_Record_Page1</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+        <pageOrSobjectType>Case</pageOrSobjectType>
+    </actionOverrides>
+    <brand>
+        <headerColor>#000000</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>Patient Connect Lightning</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Enrollment</tabs>
+    <tabs>PC_Search</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>PC_Document__c</tabs>
+    <tabs>PC_Alert__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>PC_Health_Plan__c</tabs>
+    <tabs>PC_Interaction__c</tabs>
+    <tabs>PC_Address__c</tabs>
+    <tabs>PC_eLetter__c</tabs>
+    <tabs>PC_Applicant__c</tabs>
+    <tabs>PC_Engagement_Program__c</tabs>
+    <tabs>PC_AdverseEvent2__c</tabs>
+    <tabs>standard-Product2</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>PC_Document_Log__c</tabs>
+    <tabs>PC_Request_Form__c</tabs>
+    <tabs>PC_Request_Form_Service__c</tabs>
+    <tabs>PC_Service__c</tabs>
+    <tabs>PC_Engagement_Program_Service__c</tabs>
+    <tabs>PC_Program_Service_Permission__c</tabs>
+    <tabs>PC_Account_Identifier__c</tabs>
+    <tabs>PC_Order__c</tabs>
+    <tabs>PC_OcrQueue__c</tabs>
+    <tabs>PC_OcrResponse__c</tabs>
+    <tabs>PC_OcrResult__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

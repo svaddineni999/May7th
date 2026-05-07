@@ -1,0 +1,32 @@
+/**
+ * Created by peharitha on 11/14/2018.
+ */
+.THIS table.slds-table {
+    border: 1px solid #d8dde6;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.THIS .center_align {
+    text-align: center;
+}
+
+.THIS .dataTable {
+    height: 200px;
+    overflow: auto;
+}
+
+.THIS .slds-text-title_caps{
+    font-size:85%;
+}
+
+.THIS .scrollable{
+    font-size:85%;
+}
+
+.THIS .pc_spinner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+}

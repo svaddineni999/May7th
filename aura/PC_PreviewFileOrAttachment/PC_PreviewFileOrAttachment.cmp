@@ -1,0 +1,62 @@
+<!--
+Lightning component  : PC_PreviewFileOrAttachment
+Description          : Shows Preview of File or Attachment
+Parameters           : Document Id
+Modification Log:
+Haritha Reddy 		 07-Jul-2019    [PC-4947]Initial Version
+Xiukai Ning          14-Nov-2019    [PC-5713] Added capability of Preview for html attachment
+Satheesh Kumar       08-Aug-2020    [PC-6642] Added condition to show text type document in formattedText and html type document in formattedRichText
+Satheesh Kumar       26-Mar-2021    [PC-7609] Added new attribute siteBaseUrl which helps to preview the attachment in community
+-->
+
+<aura:component access="global" controller="PC_PreviewFileOrAttachmentController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" description="PC_PreviewFileOrAttachment">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="previewComponentName" type="String" default="PC_PreviewFile" />
+    <aura:attribute name="popoutTitle" type="String" default="Document Preview" />
+    <aura:attribute name="documentDetails" type="object"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="hidePopout" type="Boolean" default="false" />
+    <aura:attribute name="siteBaseUrl" type="String" default="" />
+
+
+    <lightning:flexipageRegionInfo />
+    <div class="slds backgroundColour componentContainer" aura:id="documentPreviewId">
+        <div class="content">
+            <div class="second slds">
+                <aura:if isTrue="{! and (or(and(v.documentDetails.previewFile == FALSE,v.documentDetails.attachmentId != null ),and(v.documentDetails.previewFile,v.documentDetails.fileId != null )), v.hidePopout==false)}">
+                    <div id="expandAltIcon" title="{!$Label.c.PC_Pop_Out}" class="slds-form-element expandIconSize changeCursorPointer" onclick="{!c.popOutDocument}">
+                        <lightning:icon size="x-small" iconName="utility:new_window"/>
+                    </div>
+                </aura:if>
+
+                <aura:if isTrue="{!v.documentDetails.previewFile}">
+                    <lightning:fileCard fileId="{!v.documentDetails.fileId}"/>
+                </aura:if>
+
+                <aura:if isTrue="{! and(v.documentDetails.attachmentId == null,v.documentDetails.previewFile == FALSE) }">
+                    <div class="slds-box slds-align_absolute-center" style="width:100%; height:80%; min-height:calc(100vh - 260px);">
+                            {!$Label.c.PC_NoPreviewAvailable}
+                    </div>
+                </aura:if>
+
+                <aura:if isTrue="{! and(and(v.documentDetails.isTEXT == false,  v.documentDetails.attachmentId != null), v.documentDetails.previewFile != true) }">
+                    <iframe src="{! v.siteBaseUrl +'/servlet/servlet.FileDownload?file=' + v.documentDetails.attachmentId}" width="100%" height="80%" style=" min-height:calc(100vh - 260px);"/>
+                </aura:if>
+
+                <aura:if isTrue="{! and(and(v.documentDetails.isTEXT == true,  v.documentDetails.attachmentId != null), v.documentDetails.previewFile != true) }">
+                    <div class="slds-scrollable" style="height:45rem;width:100%">
+                        <aura:if isTrue="{!v.documentDetails.isHTMLType}">
+                            <lightning:formattedRichText value="{!v.documentDetails.attachmentBody}"/>
+                            <aura:set attribute="else">
+                                <lightning:formattedText value="{!v.documentDetails.attachmentBody}"/>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Clinic</fullName>
+        <default>false</default>
+        <label>Clinic</label>
+    </customValue>
+    <customValue>
+        <fullName>Private Practice</fullName>
+        <default>false</default>
+        <label>Private Practice</label>
+    </customValue>
+    <customValue>
+        <fullName>Hospital</fullName>
+        <default>false</default>
+        <label>Hospital</label>
+    </customValue>
+    <customValue>
+        <fullName>Long Term Care Facility</fullName>
+        <default>false</default>
+        <label>Long Term Care Facility</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>HCO Types</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

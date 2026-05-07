@@ -1,0 +1,99 @@
+<template>
+    <lightning-record-edit-form
+        object-api-name={_objectApiName}
+        record-id={_recordId}
+        record-type-id={_recordTypeId}
+        density={density}
+        onload={handleLoad}
+        onsubmit={handleSubmit}
+        onsuccess={handleSuccess}
+        onerror={handleError}>
+        <div class="slds-form" role="list">
+            <lightning-messages></lightning-messages>
+            <div class="slds-is-relative record-form-spinner-holder">
+                <lightning-spinner alternative-text={_labelLoading} if:true={_loading}></lightning-spinner>
+
+                <!--<template for:each={_sections} for:item="section">
+                    <div key={section.id} class="slds-section slds-is-open">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-p-horizontal_small slds-truncate">
+                                {section.heading}
+                            </span>
+                        </h3>
+                        <template for:each={section.layoutRows} for:item="row" for:index="index">
+                            <div key={row.key} class="slds-grid slds-gutters_small blockSectionRow">
+                                <template for:each={row.layoutItems} for:item="item">
+                                    <template for:each={item.layoutComponents} for:item="field">
+                                        <div class="slds-col slds-has-flexi-truncate" role="listitem" key={field.apiName} if:true={field.apiName}>
+                                            <template if:true={_editMode}>
+                                                <lightning-input-field
+                                                    field-name={field.apiName}
+                                                    class={computedInputClass}
+                                                ></lightning-input-field>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>-->
+                <template for:each={_sections} for:item="section">
+                    <div key={section.id} class="slds-section slds-is-open" style="background:white">
+                        <h3 class="slds-section__title slds-theme_shade">
+                            <span class="slds-p-horizontal_small slds-truncate">
+                                {section.heading}
+                            </span>
+                            <template if:true={section.isCustom}>
+                                <button class="slds-button slds-button--neutral slds-button--brand" type="button">Add New</button>
+                            </template>
+                        </h3>
+                        <template for:each={section.rows} for:item="row">
+                            <div key={row.key} class="slds-grid slds-gutters_small blockSectionRow">
+                                <template for:each={row.fields} for:item="field">
+                                    <div class="slds-col slds-has-flexi-truncate" role="listitem" key={field.field}>
+                                        <template if:false={field.isBlankSpaceItem}>
+                                            <template if:true={_editMode}>
+                                                <lightning-input-field
+                                                    if:true={field.updateable}
+                                                    field-name={field.field}
+                                                    required={field.required}
+                                                    data-id={field.field}
+                                                ></lightning-input-field>
+                                                <lightning-output-field
+                                                    if:false={field.updateable}
+                                                    field-name={field.field}
+                                                    data-id={field.field}
+                                                ></lightning-output-field>
+                                            </template>
+                                        </template>
+                                        <template if:true={_viewMode}>
+                                            <lightning-output-field
+                                                field-class="slds-border_bottom"
+                                                class={computedOutputClass}
+                                                key={field.field}
+                                                field-name={field.field}
+                                            >
+                                                <lightning-button-icon
+                                                    if:true={field.editable}
+                                                    onclick={toggleEdit}
+                                                    icon-class="slds-button__icon_hint"
+                                                    icon-name="utility:edit"
+                                                    variant="bare"
+                                                ></lightning-button-icon>
+                                            </lightning-output-field>
+                                        </template>
+                                    </div>
+                                </template>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+            <lightning-button
+                    class="slds-hidden submitProgrammatic"
+                    type="submit"
+            ></lightning-button>
+        </div>
+    </lightning-record-edit-form>
+</template>

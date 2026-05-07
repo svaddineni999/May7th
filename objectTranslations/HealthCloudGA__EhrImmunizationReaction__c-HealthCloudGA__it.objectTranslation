@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reazione all&apos;immunizzazione EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reazioni all&apos;immunizzazione EHR</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Reazioni all&apos;immunizzazione EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Dettagli</label>
+        <name>HealthCloudGA__Details__c</name>
+    </fields>
+    <fields>
+        <label>Osservazione EHR</label>
+        <name>HealthCloudGA__EhrObservation__c</name>
+        <relationshipLabel>Reazioni all&apos;immunizzazione EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Immunizzazione</label>
+        <name>HealthCloudGA__Immunization__c</name>
+        <relationshipLabel>Reazioni all&apos;immunizzazione</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Reazione 255</label>
+        <name>HealthCloudGA__Reaction255__c</name>
+    </fields>
+    <fields>
+        <label>Data iniziale reazione</label>
+        <name>HealthCloudGA__ReactionStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Reazione</label>
+        <name>HealthCloudGA__Reaction__c</name>
+    </fields>
+    <fields>
+        <label>Segnalata dall&apos;interessato</label>
+        <name>HealthCloudGA__SelfReported__c</name>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema di origine</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID reazione all&apos;immunizzazione EHR</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

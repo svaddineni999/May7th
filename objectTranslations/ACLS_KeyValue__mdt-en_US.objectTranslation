@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>KeyValue Config</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>KeyValue Configs</value>
+    </caseValues>
+    <fields>
+        <label><!-- EPCode --></label>
+        <name>ACLS_EPCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Key --></label>
+        <name>ACLS_Key__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>ACLS_Type__c</name>
+        <picklistValues>
+            <masterLabel>Batch Frequency</masterLabel>
+            <translation><!-- Batch Frequency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Batch Size</masterLabel>
+            <translation><!-- Batch Size --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Config 1</masterLabel>
+            <translation><!-- Config 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration Defaults</masterLabel>
+            <translation><!-- Integration Defaults --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Transformation</masterLabel>
+            <translation><!-- Value Transformation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>ACLS_Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

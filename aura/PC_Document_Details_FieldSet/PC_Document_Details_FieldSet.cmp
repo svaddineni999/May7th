@@ -1,0 +1,29 @@
+<!--
+ - Created by tejapatel on 1/22/2018.
+Modification Log:
+Shabda Bhujad      Jan 26, 2018         [PC-2682] Updated slds styles so that the field set display matches the specs
+Prachi Nandgaonkar Jan 31, 2018         [PC-2717] Removed interfaces- flexipage:availableForAllPageTypes,
+										flexipage:availableForRecordHome to disable this component from lightning builder page
+ -->
+<aura:component implements="force:appHostable,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction"
+                access="global">
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="record" type="Account[]" description="The record being edited"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="fsName" type="String"/>
+    <aura:attribute name="typeName" type="String"/>
+    <aura:attribute name="fields" type="Object[]"/>
+    <aura:attribute name="fieldset" type="Map" access="PUBLIC"/>
+    <aura:attribute name="form" type="Aura.Component[]" access="PUBLIC"/>
+    <aura:attribute name="inputToField" type="Map"/>
+    <aura:attribute name="index" type="String" default="00" access="PUBLIC"/>
+    <aura:attribute name="label" type="String"/>
+    <aura:attribute name="value" type="String"/>
+
+    <span class="slds-form-element__label">{!v.label}</span>
+    <div class="slds-form-element__control">
+        <div class="slds-form-element__static">{!v.value}</div>
+    </div>
+
+</aura:component>

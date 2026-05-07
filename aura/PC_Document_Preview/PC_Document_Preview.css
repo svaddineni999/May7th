@@ -1,0 +1,54 @@
+/**
+ * Created by havalakki on 1/17/2018.
+ */
+.THIS {
+    position: relative;
+    /*margin-top: 60px;*/
+}
+
+.THIS .container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 20px;
+}
+.THIS .showComponent  {
+    display:block;
+}
+.THIS .content {
+    display:flex;
+}
+.THIS .second {
+    width: 100%;
+}
+.THIS .blockSection {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.THIS .whiteOnBlue svg {
+    fill:white;
+}
+.THIS .whiteOnBlue {
+    background-color:#2574a9;
+}
+
+.THIS .expandIconSize {
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    padding-left: 6px;
+    padding-top: 3px;
+    background: #0070d2;
+    border: 1px solid #ffffff;
+}
+
+.THIS .expandIconSize .slds-icon-text-default {
+    fill: #ffffff;
+}
+
+.THIS .changeCursorPointer:hover {
+     cursor: pointer;
+}

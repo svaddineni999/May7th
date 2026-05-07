@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>HCP_Compact</compactLayoutAssignment>
+    <compactLayouts>
+        <fullName>HCP_Compact</fullName>
+        <fields>PC_Associated_User_Name__c</fields>
+        <fields>PC_Role__c</fields>
+        <label>HCP Compact</label>
+    </compactLayouts>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>PatientConnect custom object to manage the patient program&apos;s care team (including physician)</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>PC_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The reference to the account which is associated with the patient&apos;s program case.</description>
+        <label>Account</label>
+        <lookupFilter>
+            <active>false</active>
+            <booleanFilter>1 AND 2 AND 3</booleanFilter>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>notEqual</operation>
+                <value>PC_Patient</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>notEqual</operation>
+                <value>PC_Pharmacy</value>
+            </filterItems>
+            <filterItems>
+                <field>Account.RecordType.DeveloperName</field>
+                <operation>notEqual</operation>
+                <value>Payer</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Association</relationshipLabel>
+        <relationshipName>Association</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Associated_User_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Display the associated username based on the selected user or account.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&apos;&apos; &amp; IF(ISBLANK(PC_Associated_User__r.LastName), PC_Account__r.Id, PC_Associated_User__r.Id), IF(ISBLANK(PC_Associated_User__r.LastName), PC_Account__r.Name , PC_Associated_User__r.LastName &amp; &apos;, &apos; &amp; PC_Associated_User__r.FirstName ))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Associated_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Patient Connect Internal User</description>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Associations</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_AssociationStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates Active or Inactive status of the association.</description>
+        <label>Association Status</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>true</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date on which the participant ceased to be an association member.
+Note: A new record will be created if the participant becomes a member again. This ensures integrity of history.</description>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_IsCreatedViaWCD__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This helps to identify whether the association record is created by WCD or not.</description>
+        <inlineHelpText>This helps to identify whether the association record is created by WCD or not.</inlineHelpText>
+        <label>Is Created via WCD</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The program to which the Account is associated as part of the patient&apos;s circle of care.</description>
+        <label>Patient Program</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Program</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Care Team</relationshipLabel>
+        <relationshipName>Associations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_QueueOrGroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank.</inlineHelpText>
+        <label>User Queue/Group Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RoleType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group.</description>
+        <inlineHelpText>Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group.</inlineHelpText>
+        <label>Role Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Queue</fullName>
+                    <default>false</default>
+                    <label>Queue</label>
+                </value>
+                <value>
+                    <fullName>Group</fullName>
+                    <default>false</default>
+                    <label>Group</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Role__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Role that the Account plays as part of the patient&apos;s circle of care.</description>
+        <label>Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HCO</fullName>
+                    <default>false</default>
+                    <label>HCO</label>
+                </value>
+                <value>
+                    <fullName>Treating Physician</fullName>
+                    <default>false</default>
+                    <label>Treating Physician</label>
+                </value>
+                <value>
+                    <fullName>Field Reimbursement Manager</fullName>
+                    <default>false</default>
+                    <label>Field Reimbursement Manager</label>
+                </value>
+                <value>
+                    <fullName>Caregiver</fullName>
+                    <default>false</default>
+                    <label>Caregiver</label>
+                </value>
+                <value>
+                    <fullName>Case Manager</fullName>
+                    <default>false</default>
+                    <label>Case Manager</label>
+                </value>
+                <value>
+                    <fullName>Pharmacy</fullName>
+                    <default>false</default>
+                    <label>Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Clinical Educator</fullName>
+                    <default>false</default>
+                    <label>Clinical Educator</label>
+                </value>
+                <value>
+                    <fullName>Care Coordinator</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Reimbursement Specialist</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Reimbursement Specialist</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Association</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Care_Team_Members</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>PC_Role__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Associated_User__c</field>
+            <operation>equals</operation>
+            <value>$User.Name</value>
+        </filters>
+        <filters>
+            <field>PC_Account__c</field>
+            <operation>equals</operation>
+            <value>$User.Account.Name</value>
+        </filters>
+        <label>Care Team Members</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>AS-{000000}</displayFormat>
+        <label>Association</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Associations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>ACLS_Caregiver_Role_And_Acc_Combination</fullName>
+        <active>true</active>
+        <errorConditionFormula>((PC_Account__r.RecordType.DeveloperName != &apos;ACLS_Caregiver&apos; &amp;&amp; PC_Account__c != null &amp;&amp; Text(PC_Role__c) == &apos;Caregiver&apos;) || ( PC_Account__r.ACLS_Patient__c !=  PC_Program__r.AccountId  &amp;&amp; Text(PC_Role__c) == &apos;Caregiver&apos; ))</errorConditionFormula>
+        <errorMessage>Please select Caregiver associated with the Patient on the Program for the selected Caregiver role</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_Change_In_Lookup_Or_Role</fullName>
+        <active>true</active>
+        <description>Patient Connect- To validate that the lookup to Account, User or Role  doesn&apos;t change.</description>
+        <errorConditionFormula>OR( ISCHANGED(PC_Account__c ), ISCHANGED(PC_Associated_User__c), ISCHANGED(PC_Role__c) )</errorConditionFormula>
+        <errorMessage>Change of User, Account or Role is not allowed. 
+For any change, deactivate the association and create new one.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_HCO_Role_and_Account_Combination</fullName>
+        <active>true</active>
+        <errorConditionFormula>(PC_Account__r.RecordType.DeveloperName != &apos;HCO&apos; &amp;&amp; PC_Account__c != null &amp;&amp; Text(PC_Role__c) == &apos;HCO&apos;)</errorConditionFormula>
+        <errorMessage>Please select HCO for the selected HCO role</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_HCP_Role_and_Account_Combination</fullName>
+        <active>true</active>
+        <errorConditionFormula>(PC_Account__r.RecordType.DeveloperName != &apos;PC_Physician&apos; &amp;&amp;  PC_Account__c != null &amp;&amp;  Text(PC_Role__c) == &apos;Treating Physician&apos;)</errorConditionFormula>
+        <errorMessage>Please select a physician account for the selected physician role</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_User_Account_Both_Filled_In</fullName>
+        <active>true</active>
+        <description>Patient Connect - To validate whether the user has filled in both eh Account and Associated User fields.</description>
+        <errorConditionFormula>AND( 
+IF(ISBLANK( PC_Account__c ), 0,1) + 
+IF(ISBLANK( PC_Associated_User__c ), 0,1) &gt; 1)</errorConditionFormula>
+        <errorMessage>An Association cannot have both an Account and a User.  Please fill in just one of the Account or User fields.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_User_Account_Neither_Filled_In</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( 
+IF(ISBLANK( PC_Account__c ), 1,0) + 
+IF(ISBLANK( PC_Associated_User__c ), 1,0) &gt; 1)</errorConditionFormula>
+        <errorMessage>Please ensure that either an Account or a User has been associated with the program.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

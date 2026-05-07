@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Coverage</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Coverage</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- PC Document Link Program Coverage --></label>
+        <name>PC_Doc_Link_Program_Coverage</name>
+    </fieldSets>
+    <fields>
+        <label><!-- AOB/MD Purchase --></label>
+        <name>ACLS_AOB_MD_Purchase__c</name>
+        <picklistValues>
+            <masterLabel>AOB</masterLabel>
+            <translation><!-- AOB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MD Purchase</masterLabel>
+            <translation><!-- MD Purchase --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>ACLS_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Administration Copay Amount % --></label>
+        <name>ACLS_Administration_Copay_Amount_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Administration Copay Amount $ --></label>
+        <name>ACLS_Administration_Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Cap --></label>
+        <name>ACLS_Annual_Cap__c</name>
+    </fields>
+    <fields>
+        <label><!-- Billing and Coding --></label>
+        <name>ACLS_Billing_and_Coding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coverage Source --></label>
+        <name>ACLS_Coverage_Source__c</name>
+        <picklistValues>
+            <masterLabel>Automated</masterLabel>
+            <translation><!-- Automated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual</masterLabel>
+            <translation><!-- Manual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Does Deductible Apply to OOP? --></label>
+        <name>ACLS_Does_Deductible_Apply_to_OOP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>ACLS_Effective_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Mandatory Contracted SP? --></label>
+        <name>ACLS_Has_Mandatory_Contracted_SP__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Product on Formulary? --></label>
+        <name>ACLS_Is_Product_on_Formulary__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Office Visit Copay Amount % --></label>
+        <name>ACLS_Office_Visit_Copay_Amount_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Office Visit Copay Amount $ --></label>
+        <name>ACLS_Office_Visit_Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- PA Approval Number --></label>
+        <name>ACLS_PA_Approval_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- PA Fax --></label>
+        <name>ACLS_PA_Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- PA Outcome --></label>
+        <name>ACLS_PA_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PA Phone --></label>
+        <name>ACLS_PA_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prior Authorization Details --></label>
+        <name>ACLS_Prior_Authorization_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Copay Amount % --></label>
+        <name>ACLS_Product_Copay_Amount_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Copay Amount $ --></label>
+        <name>ACLS_Product_Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Formulary Tier --></label>
+        <name>ACLS_Product_Formulary_Tier__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reference Number --></label>
+        <name>ACLS_Reference_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Representative Name --></label>
+        <name>ACLS_Representative_Name__c</name>
+        <relationshipLabel><!-- Program Coverage --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Site of Care --></label>
+        <name>ACLS_Site_of_Care__c</name>
+        <picklistValues>
+            <masterLabel>HOP</masterLabel>
+            <translation><!-- HOP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation><!-- Home Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infusion Center</masterLabel>
+            <translation><!-- Infusion Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care</masterLabel>
+            <translation><!-- Long Term Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nursing Home</masterLabel>
+            <translation><!-- Nursing Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician Office</masterLabel>
+            <translation><!-- Physician Office --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Specialty Pharmacy --></label>
+        <name>ACLS_Specialty_Pharmacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Year Plan --></label>
+        <name>ACLS_Year_Plan__c</name>
+        <picklistValues>
+            <masterLabel>Calendar</masterLabel>
+            <translation><!-- Calendar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiscal</masterLabel>
+            <translation><!-- Fiscal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- eBV Additional Information --></label>
+        <name>ACLS_eBV_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- eBV Coverage Status --></label>
+        <name>ACLS_eBV_Coverage_Status__c</name>
+        <picklistValues>
+            <masterLabel>Covered - Commercial</masterLabel>
+            <translation><!-- Covered - Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered - Government</masterLabel>
+            <translation><!-- Covered - Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered with PA</masterLabel>
+            <translation><!-- Covered with PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Covered</masterLabel>
+            <translation><!-- Not Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Too Soon to Fill</masterLabel>
+            <translation><!-- Too Soon to Fill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to Determine Coverage</masterLabel>
+            <translation><!-- Unable to Determine Coverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to Determine Eligibility</masterLabel>
+            <translation><!-- Unable to Determine Eligibility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- eBV Transaction Unique ID --></label>
+        <name>ACLS_eBV_Transaction_Unique_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PA Required --></label>
+        <name>PA_Required__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Decision Date 1 --></label>
+        <name>PC_Alt_Fund_Decision_Date_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Decision Date 2 --></label>
+        <name>PC_Alt_Fund_Decision_Date_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Denial Reason 2 --></label>
+        <name>PC_Alt_Fund_Denial_Reason_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outcome 1 --></label>
+        <name>PC_Alt_Fund_Outcome_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outcome 2 --></label>
+        <name>PC_Alt_Fund_Outcome_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Contact 1 --></label>
+        <name>PC_Alt_Fund_Referral_Contact_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Contact 2 --></label>
+        <name>PC_Alt_Fund_Referral_Contact_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Date 1 --></label>
+        <name>PC_Alt_Fund_Referral_Date_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Date 2 --></label>
+        <name>PC_Alt_Fund_Referral_Date_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Phone 2 --></label>
+        <name>PC_Alt_Fund_Referral_Phone_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referral Phone 1 --></label>
+        <name>PC_Alt_Fund_Referral_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Funding Source 2 --></label>
+        <name>PC_Alternate_Funding_Source_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Funding Source 1 --></label>
+        <name>PC_Alternate_Funding__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Household Income? --></label>
+        <name>PC_Annual_Household_Income__c</name>
+        <picklistValues>
+            <masterLabel>30,0000 to 45,000</masterLabel>
+            <translation><!-- 30,0000 to 45,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greater than $45,000</masterLabel>
+            <translation><!-- Greater than $45,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Less than $30,000</masterLabel>
+            <translation><!-- Less than $30,000 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Annual Out of Pocket --></label>
+        <name>PC_Annual_Out_of_Pocket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appeal Available --></label>
+        <name>PC_Appeal_Available__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Clinic --></label>
+        <name>PC_Clinic__c</name>
+        <relationshipLabel><!-- Program Coverage (Clinic) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Coinsurance % --></label>
+        <name>PC_Coinsurance_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>PC_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Status --></label>
+        <name>PC_CompletionStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coordinated Plan Benefits --></label>
+        <name>PC_CoordinatedPlanBenefits__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Amount --></label>
+        <name>PC_Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Assistance Amount --></label>
+        <name>PC_Copay_Assistance_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Card Expiration Date --></label>
+        <name>PC_Copay_Card_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Card Group No. --></label>
+        <name>PC_Copay_Card_Group_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Card No. --></label>
+        <name>PC_Copay_Card_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Card Rx BIN No. --></label>
+        <name>PC_Copay_Card_Rx_BIN_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Card Status --></label>
+        <name>PC_Copay_Card_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Office Visit --></label>
+        <name>PC_Copay_Office_Visit_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product/Procedure Amount --></label>
+        <name>PC_Copy_Procedure_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coverage % --></label>
+        <name>PC_Coverage_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Coverage Status --></label>
+        <name>PC_Coverage_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Coverage Type --></label>
+        <name>PC_Coverage_Type__c</name>
+        <picklistValues>
+            <masterLabel>Alternate Funding</masterLabel>
+            <translation><!-- Alternate Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Charitable Organization</masterLabel>
+            <translation><!-- Charitable Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay Assistance</masterLabel>
+            <translation><!-- Copay Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discount Card</masterLabel>
+            <translation><!-- Discount Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturer Copay Card</masterLabel>
+            <translation><!-- Manufacturer Copay Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicaid</masterLabel>
+            <translation><!-- Medicaid --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare A/B</masterLabel>
+            <translation><!-- Medicare A/B --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare Advantage</masterLabel>
+            <translation><!-- Medicare Advantage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medicare D</masterLabel>
+            <translation><!-- Medicare D --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Plan Coverage</masterLabel>
+            <translation><!-- Pharmacy Plan Coverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private Coverage</masterLabel>
+            <translation><!-- Private Coverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tricare</masterLabel>
+            <translation><!-- Tricare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VA</masterLabel>
+            <translation><!-- VA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Days Priced --></label>
+        <name>PC_Days_Priced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deductible --></label>
+        <name>PC_Deductible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Eligible --></label>
+        <name>PC_Eligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expires On --></label>
+        <name>PC_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Number --></label>
+        <name>PC_Group_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Plan Status --></label>
+        <name>PC_Health_Plan_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Plan Type --></label>
+        <name>PC_Health_Plan_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Plan --></label>
+        <name>PC_Health_Plan__c</name>
+        <relationshipLabel><!-- Program Coverages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ID / Policy No. --></label>
+        <name>PC_ID_Policy_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meets qualifications --></label>
+        <name>PC_Meets_qualifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of children under 18 years old? --></label>
+        <name>PC_Number_of_children_under_18_years_old__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of dependent seniors? --></label>
+        <name>PC_Number_of_dependent_seniors__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option 1 Copay Amount --></label>
+        <name>PC_Option_1_Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option 1 Copay % --></label>
+        <name>PC_Option_1_Copay_Percent__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option 2 Copay Amount --></label>
+        <name>PC_Option_2_Copay_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Option 2 Copay % --></label>
+        <name>PC_Option_2_Copay__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Deductible Amount Family --></label>
+        <name>PC_Original_Deductible_Amt_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Deductible Amount Individual --></label>
+        <name>PC_Original_Deductible_Amt_Individual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>PC_Patient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payer Name --></label>
+        <name>PC_Payer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payer Phone --></label>
+        <name>PC_Payer_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payer --></label>
+        <name>PC_Payer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Name --></label>
+        <name>PC_Pharmacy_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Phone --></label>
+        <name>PC_Pharmacy_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy --></label>
+        <name>PC_Pharmacy__c</name>
+        <relationshipLabel><!-- Program Coverage (Pharmacy) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prescription --></label>
+        <name>PC_Prescription__c</name>
+        <relationshipLabel><!-- Program Coverage --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Coverage Outcome --></label>
+        <name>PC_Program_Coverage__c</name>
+        <picklistValues>
+            <masterLabel>Application Pending</masterLabel>
+            <translation><!-- Application Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered</masterLabel>
+            <translation><!-- Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered with Restrictions</masterLabel>
+            <translation><!-- Covered with Restrictions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created in Error</masterLabel>
+            <translation><!-- Created in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eligibility Pending</masterLabel>
+            <translation><!-- Eligibility Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Investigation In Progress</masterLabel>
+            <translation><!-- Investigation In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Covered</masterLabel>
+            <translation><!-- Not Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Declined</masterLabel>
+            <translation><!-- Patient Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Appeal</masterLabel>
+            <translation><!-- Pending Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending PA</masterLabel>
+            <translation><!-- Pending PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sources Not Found</masterLabel>
+            <translation><!-- Sources Not Found --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Triaged</masterLabel>
+            <translation><!-- Triaged --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Program Coverage --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity Priced --></label>
+        <name>PC_Quantity_Priced__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Benefits Not Accepted --></label>
+        <name>PC_Reason_Benefits_Not_Accepted__c</name>
+        <picklistValues>
+            <masterLabel>Benefits discrepancy</masterLabel>
+            <translation><!-- Benefits discrepancy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concern about side effects/product research</masterLabel>
+            <translation><!-- Concern about side effects/product research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost concern/patient did not want to apply to an alternate funding option</masterLabel>
+            <translation><!-- Cost concern/patient did not want to apply to an alternate funding option --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Does not want to inject</masterLabel>
+            <translation><!-- Does not want to inject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance reasons</masterLabel>
+            <translation><!-- Insurance reasons --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other medical issues</masterLabel>
+            <translation><!-- Other medical issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient traveling</masterLabel>
+            <translation><!-- Patient traveling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending alternate funding outcome</masterLabel>
+            <translation><!-- Pending alternate funding outcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prior authorization denied</masterLabel>
+            <translation><!-- Prior authorization denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Using alternative therapy</masterLabel>
+            <translation><!-- Using alternative therapy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wants to discuss with MD</masterLabel>
+            <translation><!-- Wants to discuss with MD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wants to discuss with family member/caregiver</masterLabel>
+            <translation><!-- Wants to discuss with family member/caregiver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Not Covered --></label>
+        <name>PC_Reason_for_Not_Covered__c</name>
+        <picklistValues>
+            <masterLabel>Choice 1</masterLabel>
+            <translation><!-- Choice 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Choice 2</masterLabel>
+            <translation><!-- Choice 2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Remaining Deductible Amount Family --></label>
+        <name>PC_Remaining_Deductible_Amt_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Remaining Deductible Amount Individual --></label>
+        <name>PC_Remaining_Deductible_Amt_Individual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deductible Applied Amount --></label>
+        <name>PC_Rx_Applied_Deductible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Out Of Pocket Applied Amount --></label>
+        <name>PC_Rx_Applied_Out_Of_Pocket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Pay Amount --></label>
+        <name>PC_Rx_Pay_Amt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deductible Remaining Amount --></label>
+        <name>PC_Rx_Remaining_Deductible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Out Of Pocket Remaining Amount --></label>
+        <name>PC_Rx_Remaining_Out_Of_Pocket__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Active PA --></label>
+        <name>PC_hasActivePA__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Alternate Funding Coverage --></label>
+        <name>PC_Alternate_Funding_Coverage</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Copay Coverage --></label>
+        <name>PC_Copay_Coverage</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This field indicates that the coverage is a medical coverage --></description>
+        <label><!-- Medical Coverage --></label>
+        <name>PC_Medical_Coverage</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PAP Coverage --></label>
+        <name>PC_PAP</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This field indicates that the coverage is a pharmacy coverage --></description>
+        <label><!-- Pharmacy Coverage --></label>
+        <name>PC_Pharmacy_Plan</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Medical Coverage (Private) --></label>
+        <name>PC_Private_Coverage</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Medical Coverage (Public) --></label>
+        <name>PC_Public_Coverage</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Health plans related to the patient can only be selected. --></errorMessage>
+        <name>PC_HealthPlanSelectionValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case selected must be of the type Program --></errorMessage>
+        <name>PC_ProgramType_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

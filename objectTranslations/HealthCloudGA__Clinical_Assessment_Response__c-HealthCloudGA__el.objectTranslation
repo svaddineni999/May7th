@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Απάντηση στην κλινική αξιολόγηση</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Απαντήσεις στην κλινική αξιολόγηση</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Απάντηση στην κλινική αξιολόγηση</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Απαντήσεις στην κλινική αξιολόγηση</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Απάντησης στην κλινική αξιολόγηση</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Απαντήσεων στην κλινική αξιολόγηση</value>
+    </caseValues>
+    <fields>
+        <label>Κοιλιακό άλγος</label>
+        <name>HealthCloudGA__AbdominalPain__c</name>
+    </fields>
+    <fields>
+        <label>Καρδιαγγειακή πάθηση</label>
+        <name>HealthCloudGA__CardiovascularDisease__c</name>
+    </fields>
+    <fields>
+        <label>Ρίγη</label>
+        <name>HealthCloudGA__Chills__c</name>
+    </fields>
+    <fields>
+        <label>Χρόνια ηπατοπάθεια</label>
+        <name>HealthCloudGA__ChronicLiverDisease__c</name>
+    </fields>
+    <fields>
+        <label>Χρόνια πνευμονοπάθεια</label>
+        <name>HealthCloudGA__ChronicLungDisease__c</name>
+    </fields>
+    <fields>
+        <label>Χρόνια νεφροπάθεια</label>
+        <name>HealthCloudGA__ChronicRenalDisease__c</name>
+    </fields>
+    <fields>
+        <label>Βήχας</label>
+        <name>HealthCloudGA__Cough__c</name>
+    </fields>
+    <fields>
+        <label>Νυν καπνιστής</label>
+        <name>HealthCloudGA__CurrentSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Σακχαρώδης διαβήτης</label>
+        <name>HealthCloudGA__DiabetesMellitus__c</name>
+    </fields>
+    <fields>
+        <label>Διάρροια</label>
+        <name>HealthCloudGA__Diarrhoea__c</name>
+    </fields>
+    <fields>
+        <label>Πυρετός</label>
+        <name>HealthCloudGA__FeverOverThreshold__c</name>
+    </fields>
+    <fields>
+        <label>Πρώην καπνιστής</label>
+        <name>HealthCloudGA__FormerSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Πονοκέφαλος</label>
+        <name>HealthCloudGA__Headache__c</name>
+    </fields>
+    <fields>
+        <label>Υψηλότερη καταγεγραμμένη θερμοκρασία</label>
+        <name>HealthCloudGA__HighestRecordedTemperature__c</name>
+    </fields>
+    <fields>
+        <label>Κατάσταση νοσηλείας</label>
+        <name>HealthCloudGA__HospitalizationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Admitted</masterLabel>
+            <translation><!-- Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Admitted</masterLabel>
+            <translation><!-- Not Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ανοσοκατεσταλμένος</label>
+        <name>HealthCloudGA__Immunocompromised__c</name>
+    </fields>
+    <fields>
+        <label>Μυικοί πόνοι</label>
+        <name>HealthCloudGA__MuscleAches__c</name>
+    </fields>
+    <fields>
+        <label>Ναυτία ή εμετός</label>
+        <name>HealthCloudGA__NauseaOrVomiting__c</name>
+    </fields>
+    <fields>
+        <label>Σημειώσεις νευρολογικής ανεπάρκειας</label>
+        <name>HealthCloudGA__NeurologicalDisablityNotes__c</name>
+    </fields>
+    <fields>
+        <label>Νευρολογική ανεπάρκεια</label>
+        <name>HealthCloudGA__NeurologicalDisablity__c</name>
+    </fields>
+    <fields>
+        <label>Επάγγελμα</label>
+        <name>HealthCloudGA__Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Childcare worker</masterLabel>
+            <translation><!-- Childcare worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical laboratory technologist or technician</masterLabel>
+            <translation><!-- Clinical laboratory technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combined food preparation or serving worker, including fast food</masterLabel>
+            <translation><!-- Combined food preparation or serving worker, including fast food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentist</masterLabel>
+            <translation><!-- Dentist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency management director</masterLabel>
+            <translation><!-- Emergency management director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency medical technician or paramedic</masterLabel>
+            <translation><!-- Emergency medical technician or paramedic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health practitioner support technologist or technician</masterLabel>
+            <translation><!-- Health practitioner support technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare support worker(including medical equipment preparer)</masterLabel>
+            <translation><!-- Healthcare support worker(including medical equipment preparer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Έναρξη συμπτωμάτων</label>
+        <name>HealthCloudGA__OnsetOfSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Σημειώσεις άλλων χρόνιων παθήσεων</label>
+        <name>HealthCloudGA__OtherChronicDiseasesNotes__c</name>
+    </fields>
+    <fields>
+        <label>Άλλες χρόνιες παθήσεις</label>
+        <name>HealthCloudGA__OtherChronicDiseases__c</name>
+    </fields>
+    <fields>
+        <label>Άλλα συμπτώματα</label>
+        <name>HealthCloudGA__OtherSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Δόθηκε γονική συναίνεση</label>
+        <name>HealthCloudGA__ParentalConsent__c</name>
+    </fields>
+    <fields>
+        <label>Λογαριασμός</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Απαντήσεις κλινικής αξιολόγησης</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Προσωπικός γιατρός</label>
+        <name>HealthCloudGA__PrimaryCarePhysician__c</name>
+    </fields>
+    <fields>
+        <label>Όνομα ιδρύματος παρόχου</label>
+        <name>HealthCloudGA__ProviderFacilityName__c</name>
+    </fields>
+    <fields>
+        <label>Καταρροή</label>
+        <name>HealthCloudGA__RunnyNose__c</name>
+    </fields>
+    <fields>
+        <label>Δύσπνοια</label>
+        <name>HealthCloudGA__ShortnessOfBreath__c</name>
+    </fields>
+    <fields>
+        <label>Πονόλαιμος</label>
+        <name>HealthCloudGA__SoreThroat__c</name>
+    </fields>
+    <fields>
+        <label>Υποκειμενικό αίσθημα πυρετού</label>
+        <name>HealthCloudGA__SubjectiveFever__c</name>
+    </fields>
+    <fields>
+        <label>Όνομα ιδρύματος ελέγχου</label>
+        <name>HealthCloudGA__TestingFacilityName__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Όνομα απάντησης σε κλινική αξιολόγηση</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,38 @@
+<!--
+Lightning component  : PC_LaunchEletter2
+Description          : This is a eletter2 launcher component
+Parameters           : Record Id of case
+
+Modification Log:
+Satheesh Kumar 		 03-Aug-2020    Initial Version
+Satheesh Kumar       14-Dec-2020    [PC-7103] Added design attributes.
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" description="This will launch eletter workflow. It must be added only on Case and PC_Document__c Object Lightning Page.">
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="sendEletter" type="String" default="{!$Label.c.PC_SendEletter2}" />
+
+    <aura:attribute name="showAttachmentSection" type="Boolean" default="true" description="Hides or displays the attachments section. To hide the attachments section, set showAttachments to false. The default is true." access="global"/>
+    <aura:attribute name="showPreviewScreen" type="Boolean" default="true" description="Hides or displays the preview screen. To hide the preview screen, set showPreviewScreen to false. The default is true." access="global"/>
+    <aura:attribute name="showSendSecureOption" type="Boolean" default="true" description="Hides or displays the Send Secure Button. To hide the Send Secure Button, set showSendSecureOption to false. The default is true." access="global"/>
+    <aura:attribute name="closeTabAfterSend" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="emailWorkflow" type="Boolean" default="true" access="global" description="Enable or disable Email workflow. To enable the email workflow, set this to true. The default is true."/>
+    <aura:attribute name="faxWorkflow" type="Boolean" default="false" access="global" description="Enable or disable Fax workflow. To enable the fax workflow, set this to true. The default is false."/>
+    <aura:attribute name="eletterContext" type="String" access="global" default="New" description="Helps to set E-Letter Reply Context. To open e-letter in Reply Context, set this to REPLY. The default is NEW."/>
+    <aura:attribute name="moreEmailRecipients" type="Boolean" default="false" access="global" description="If Selected, the additional email recipients field will be visible on the eLetter UI. The default value is false."/>
+    <aura:attribute name="eletterTabLabel" type="String" default="{!$Label.c.PC_Eletter2_Title}"/>
+    <aura:attribute name="eletterPageName" type="String" default="PC_eLetter2"/>
+    <aura:attribute name="eletterTabIcon" type="String" default="standard:email"/>
+    <aura:attribute name="eletterComponentName" type="String" default="PC_eLetter2"/>
+    <aura:attribute name="hideConsent" type="Boolean" default="false" description="Hides or displays the consent model. The default is true." access="global"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:workspaceAPI aura:id="eletterLauncherWorkspace" />
+
+    <div>
+        <lightning:button variant="brand" iconName="utility:email" label="{!v.sendEletter}" title="{!v.sendEletter}" onclick="{!c.launchEletter2Component}"/>
+    </div>
+
+</aura:component>

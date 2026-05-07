@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Critère de filtrage</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Critères de filtrage</value>
+    </caseValues>
+    <fields>
+        <label>Regroupement</label>
+        <name>HealthCloudGA__Grouping__c</name>
+    </fields>
+    <fields>
+        <label>IsWaveList</label>
+        <name>HealthCloudGA__IsWaveList__c</name>
+    </fields>
+    <fields>
+        <label>Nom de l&apos;objet</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nom du critère de filtrage</nameFieldLabel>
+    <recordTypes>
+        <label>Liste de patients</label>
+        <name>HealthCloudGA__PatientList</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Chronologie</label>
+        <name>HealthCloudGA__Timeline</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>Une autre liste de filtres utilise déjà ce nom. Sélectionnez un nom unique.</errorMessage>
+        <name>HealthCloudGA__No_Duplicates</name>
+    </validationRules>
+</CustomObjectTranslation>

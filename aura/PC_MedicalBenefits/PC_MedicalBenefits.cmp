@@ -1,0 +1,21 @@
+<!--
+Lightning component  : PC_MedicalBenefits
+Description          : Holds Medical Benefits Input Form and the resulting Details
+Parameters           : String caseId, Map medicalBenefitsCmpAttributes
+Modification Log:
+Haritha Reddy 		 31-Jan-2019    Initial Version
+-->
+
+<aura:component description="PC_MedicalBenefits">
+    <aura:attribute name="caseId" type="string"/>
+    <aura:attribute name="medicalBenefitsCmpAttributes" type="Map"/>
+    <aura:attribute name="errors" type="List" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <div class="slds">
+        <aura:if isTrue="{! v.errors.length > 0 }">
+            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+        </aura:if>
+        <lightning:overlayLibrary aura:id="medicalBenefitsPopup"/>
+        <c:PC_MedicalBenefitsInputScreen caseId="{!v.caseId}" medicalBenefitsCmpAttributes="{!v.medicalBenefitsCmpAttributes}"/>
+    </div>
+</aura:component>

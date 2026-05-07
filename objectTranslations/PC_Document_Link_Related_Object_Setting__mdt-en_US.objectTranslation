@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Link Related Objects Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Link Related Objects Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- API name of  sObject look-up field related to Account. This field is used to query which records to display on linking screen by filtering it on this account lookup. If sObject is &apos;Case&apos; , &apos;Account&apos; or does not have a acc look up, leave this field blank. --></help>
+        <label><!-- Account Lookup Field --></label>
+        <name>PC_Account_Lookup_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Namespace of record type --></help>
+        <label><!-- Account Record Type Namespace Prefix --></label>
+        <name>PC_Account_Record_Type_Namespace_Prefix__c</name>
+    </fields>
+    <fields>
+        <help><!-- Unique Record Type Label for Account object record type, not Record Type Developer Name --></help>
+        <label><!-- Account Record Type --></label>
+        <name>PC_Account_Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Check to activate config entry. Uncheck if you want Document Link functionality to ignore config entry --></help>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of  sObject look-up field related to Case. This field is used to query which records to display on linking screen by filtering it on this case lookup. 
+If sObject is &apos;Case&apos; , &apos;Account&apos; or does not have a case look up , leave this field blank. --></help>
+        <label><!-- Case Lookup Field --></label>
+        <name>PC_Case_Lookup_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Brief Description --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of object fieldset to control fields to be displayed on specified object on Document linking screen.-	First two fields on this custom field set must always be &apos;Name&apos; of the field and &apos;Record Type&apos; in that order. --></help>
+        <label><!-- Field Set Name --></label>
+        <name>PC_FieldSetName__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of PC_Document_Log__c look up field for linked object to create a Document Log entry. Ensure this field is created on &apos;PC_Document_Log__c&apos; before using linking feature. Lookup field name should match exactly with Sobject name. --></help>
+        <label><!-- Linked Object Lookup Field on Doc Log --></label>
+        <name>PC_Linked_Obj_Lookup_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order in which objects related to account should be displayed on Document Link screen.  Objects will be arranged in ascending order. For example: 1 means on top of screen. --></help>
+        <label><!-- Ordinal --></label>
+        <name>PC_Ordinal__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of Salesforce standard or custom object that you would allow document to be linked to --></help>
+        <label><!-- Object --></label>
+        <name>PC_sObject__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

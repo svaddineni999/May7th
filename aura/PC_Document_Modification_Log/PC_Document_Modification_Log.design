@@ -1,0 +1,7 @@
+<!--
+ - Created by kkanteti on 3/26/2021.
+ -->
+
+<design:component>
+    <design:attribute name="navigateToObjectPage" label="Enable navigation to Object Record Details Page. (See help text for more details)" default="false" description="If enabled, all the associated record's link will point to respective object's 'Object Record Details Page' instead of 'Standard Record Details Page'. When enabled, DO NOT change the auto-generated base URL for the Object Pages."/>
+</design:component>

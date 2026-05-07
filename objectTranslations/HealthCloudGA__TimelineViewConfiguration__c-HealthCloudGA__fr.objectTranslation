@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuration de vue chronologique</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configurations de vue chronologique</value>
+    </caseValues>
+    <fields>
+        <label>Actif</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the timelines where you want users to see these fields. --></help>
+        <label>Cible de configuration</label>
+        <name>HealthCloudGA__Configuration_Target__c</name>
+        <picklistValues>
+            <masterLabel>Health Cloud Console App</masterLabel>
+            <translation><!-- Health Cloud Console App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timeline For Health Cloud Empower</masterLabel>
+            <translation><!-- Timeline For Health Cloud Empower --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Champ de détail</label>
+        <name>HealthCloudGA__DetailField__c</name>
+    </fields>
+    <fields>
+        <label>Critère de filtrage</label>
+        <lookupFilter>
+            <errorMessage><!-- Record Type does not match Timeline type --></errorMessage>
+        </lookupFilter>
+        <name>HealthCloudGA__FilterCriterion__c</name>
+        <relationshipLabel>Configurations de la vue chronologique</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nom convivial</label>
+        <name>HealthCloudGA__FriendlyName__c</name>
+    </fields>
+    <fields>
+        <label>Icône graphique</label>
+        <name>HealthCloudGA__GraphicalIcon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter up to 7 comma-separated field names related to this object. Field details are displayed when users hover over an object in the timeline. --></help>
+        <label>Nom du champ de survol</label>
+        <name>HealthCloudGA__HoverFieldName__c</name>
+    </fields>
+    <fields>
+        <label>Code de langue</label>
+        <name>HealthCloudGA__LanguageCode__c</name>
+    </fields>
+    <fields>
+        <label>Langue</label>
+        <name>HealthCloudGA__Language__c</name>
+        <picklistValues>
+            <masterLabel>Chinese (Simplified)</masterLabel>
+            <translation><!-- Chinese (Simplified) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese (Traditional)</masterLabel>
+            <translation><!-- Chinese (Traditional) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Danish</masterLabel>
+            <translation><!-- Danish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dutch</masterLabel>
+            <translation><!-- Dutch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United Kingdom)</masterLabel>
+            <translation><!-- English (United Kingdom) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>English (United States)</masterLabel>
+            <translation><!-- English (United States) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finnish</masterLabel>
+            <translation><!-- Finnish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French</masterLabel>
+            <translation><!-- French --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>German</masterLabel>
+            <translation><!-- German --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italian</masterLabel>
+            <translation><!-- Italian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korean</masterLabel>
+            <translation><!-- Korean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portuguese (Brazil)</masterLabel>
+            <translation><!-- Portuguese (Brazil) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian</masterLabel>
+            <translation><!-- Russian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish</masterLabel>
+            <translation><!-- Spanish --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spanish (Mexico)</masterLabel>
+            <translation><!-- Spanish (Mexico) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Catégorie d&apos;objet</label>
+        <name>HealthCloudGA__ObjectCategory__c</name>
+    </fields>
+    <fields>
+        <label>Nom de l&apos;objet</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label>Référence du compte du patient</label>
+        <name>HealthCloudGA__PatientAccountLookup__c</name>
+    </fields>
+    <fields>
+        <label>Champ de position</label>
+        <name>HealthCloudGA__PositionField__c</name>
+    </fields>
+    <fields>
+        <label>Afficher au chargement</label>
+        <name>HealthCloudGA__ShowOnLoad__c</name>
+    </fields>
+    <fields>
+        <label>Ordre de tri</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nom de la configuration de la vue chrono</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

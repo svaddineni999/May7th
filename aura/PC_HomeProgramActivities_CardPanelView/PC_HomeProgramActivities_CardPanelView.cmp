@@ -1,0 +1,107 @@
+<!--
+ - Created by vkashikar on 9/11/2017.
+ - Modified by nswami on 9/14/2017.
+ - nswami               10/5/2017        PC-2331 Translation Home Page: Task Labels, Priority, Type
+ - Vijay Kashikar       02/13/2017       PC-2562 Added additional filters
+ - Kanteti Kishore      29-July-2020     [PC-6592] Changes in controller at lines-82,87 and in helper at lines-140,146
+ -->
+<aura:component controller="PC_HomeProgramActivities_CPV_Controller" implements="flexipage:availableForAllPageTypes" access="global">
+
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="lstThisWeekActivity" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+    <aura:attribute name="lstStarredActivity" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+    <aura:attribute name="lstOverDueActivity" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+    <aura:attribute name="lstTodayDueActivity" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+    <aura:attribute name="lstTomorrowDueActivity" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+    <aura:attribute name="lstAlerts" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+    <aura:attribute name="lstTasks" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+
+    <aura:attribute name="lstActivity" type="PC_HomeProgramActivities_CPV_Controller.Object[]" />
+
+    <aura:attribute name="userContext" type="String" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="dropdownOver" type="Boolean" default="false" />
+
+    <div aura:id="outerDiv" class="slds-clearfix slds-dropdown-trigger_click" >
+                             <div class="slds-float--left">
+                                 <span class="slds-text-heading--medium" title="{!$Label.c.PC_Tasks_Alerts_Title}">{!$Label.c.PC_Tasks}</span>
+                             </div>
+
+
+                        <div class="slds-float--right">
+                             <div aura:id="main-div"  class="slds-shrink-none slds-dropdown-trigger slds-dropdown-trigger_click">
+                                 <button class="slds-button slds-button_icon slds-button_icon-more" aria-haspopup="true" title="More Options" onclick="{!c.handleMoreOption}" onmouseleave="{!c.handleMoreOptionOut}">
+                                     <c:svg class="slds-button__icon" xlinkHref="{! $Resource.PC_SLDS202 + '/PC_SLDS202/assets/icons/utility-sprite/svg/symbols.svg#sort'}" ariaHidden="true"/>
+                                     <c:svg class="slds-button__icon slds-button__icon_x-small" xlinkHref="{! $Resource.PC_SLDS202 + '/PC_SLDS202/assets/icons/utility-sprite/svg/symbols.svg#down'}" ariaHidden="true"/>
+                                     <span class="slds-assistive-text">More options</span>
+                                 </button>
+
+                                 <div class="slds-dropdown slds-dropdown_xx-small slds-dropdown_right slds-nubbin_top-right" onmouseenter="{!c.handleMoreOptionEnter}" onmouseleave="{!c.handleMoreOptionLeave}">
+                                     <ul class="slds-dropdown__list filterOptions" role="menu">
+                                         <li class="slds-dropdown__item option sortBy slds-list__item" role="presentation" style="display:none;">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_SortBy}" style="padding-left:10px;"> {!$Label.c.PC_Task_SortBy} </span>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option all selected slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="soryByDueDate">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_Filter_Option_All}">{!$Label.c.PC_Task_Filter_Option_All}</span>
+                                             </a>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option overdue slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="filterOverdueItems">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_Filter_Option_Overdue}">{!$Label.c.PC_Task_Filter_Option_Overdue}</span>
+                                             </a>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option dueToday slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="filterTodaysItems">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_Filter_Option_Due_Today}">{!$Label.c.PC_Task_Filter_Option_Due_Today}</span>
+                                             </a>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option dueTomorrow slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="filterTomorrowItems">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_Filter_Option_Due_Tomorrow}">{!$Label.c.PC_Task_Filter_Option_Due_Tomorrow}</span>
+                                             </a>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option highPriority slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="soryByPriority">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_SortBy_HighPriority}">{!$Label.c.PC_Task_SortBy_HighPriority}</span>
+                                             </a>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option myAlerts slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="filterAlerts">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_Filter_Option_Show_Alerts}">{!$Label.c.PC_Task_Filter_Option_Show_Alerts}</span>
+                                             </a>
+                                         </li>
+
+                                         <li class="slds-dropdown__item option myTasks slds-list__item" role="presentation">
+                                             <a role="menuitem" tabindex="-1" onclick="{!c.sort}" data-sortType="filterTasks">
+                                                 <span class="slds-truncate" title="{!$Label.c.PC_Task_Filter_Option_Show_Tasks}">{!$Label.c.PC_Task_Filter_Option_Show_Tasks}</span>
+                                             </a>
+                                         </li>
+                                     </ul>
+                                 </div>
+                             </div>
+                        </div>
+      </div><br/>
+
+    <!-- START STARRED 1 -->
+                <aura:if isTrue="{!v.lstActivity.length > 0}">
+                    <aura:iteration items="{!v.lstActivity}" var="task">
+                        <c:PC_HomeActivityCard_CardView objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+                    </aura:iteration>
+                    <aura:set attribute="else">
+                        <div class="slds-text-align--center">
+                            <span class="slds-text-heading--medium slds-truncate">{!$Label.c.PC_Task_Message_Nothing_To_Show}
+                            </span>
+                        </div>
+                    </aura:set>
+                </aura:if>
+
+</aura:component>

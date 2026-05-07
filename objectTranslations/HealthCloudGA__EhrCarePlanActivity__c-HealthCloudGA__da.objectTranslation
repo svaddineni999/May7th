@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Aktiviteten i EPJ-behandlingsplan</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Aktivitet i EPJ-behandlingsplan</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Aktivitet i EPJ-behandlingsplan</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Aktiviteterne i EPJ-behandlingsplan</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Aktiviteter i EPJ-behandlingsplan</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Aktiviteter i EPJ-behandlingsplan</value>
+    </caseValues>
+    <fields>
+        <label>Handlingsresultater</label>
+        <name>HealthCloudGA__ActionsResulting__c</name>
+    </fields>
+    <fields>
+        <label>Aktivitetsperiode</label>
+        <name>HealthCloudGA__ActivityPeriod__c</name>
+    </fields>
+    <fields>
+        <label>Aktivitetsoversigt</label>
+        <name>HealthCloudGA__ActivitySchedule__c</name>
+    </fields>
+    <fields>
+        <label>Behandlingsplan</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kategori</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Kodebetegnelse</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kodesystem</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kode</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Daglig mængde</label>
+        <name>HealthCloudGA__DailyAmount__c</name>
+    </fields>
+    <fields>
+        <label>Detaljer</label>
+        <name>HealthCloudGA__Details__c</name>
+    </fields>
+    <fields>
+        <label>IsProhibited</label>
+        <name>HealthCloudGA__IsProhibited__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Identifikator</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Linje1</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Linje2</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Navn</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Postnummer</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Startdato</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Stat</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Telekommunikation</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Placering  – Tekst</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Type</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Placering – Anvendelse</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Notater</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Produktmedicin 255</label>
+        <name>HealthCloudGA__ProductMedication255__c</name>
+    </fields>
+    <fields>
+        <label>Produktmedicin</label>
+        <name>HealthCloudGA__ProductMedication__c</name>
+    </fields>
+    <fields>
+        <label>Produktsubstans 255</label>
+        <name>HealthCloudGA__ProductSubstance255__c</name>
+    </fields>
+    <fields>
+        <label>Produktsubstans</label>
+        <name>HealthCloudGA__ProductSubstance__c</name>
+    </fields>
+    <fields>
+        <label>Mængde</label>
+        <name>HealthCloudGA__Quantity__c</name>
+    </fields>
+    <fields>
+        <label>Relateret behandlingsplanmål1</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal1__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relateret behandlingsplanmål2</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal2__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relateret behandlingsplanmål3</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal3__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relateret behandlingsplanmål4</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal4__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relateret behandlingsplanmål5</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal5__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relateret møde</label>
+        <name>HealthCloudGA__RelatedEncounter__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relateret medicinrecept</label>
+        <name>HealthCloudGA__RelatedMedicationPrescription__c</name>
+        <relationshipLabel>Behandlingsplanskabeloner</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Typekode</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Typebetegnelse</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Typesystem</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Id for aktivitet i behandlingsplan i EPJ</nameFieldLabel>
+</CustomObjectTranslation>

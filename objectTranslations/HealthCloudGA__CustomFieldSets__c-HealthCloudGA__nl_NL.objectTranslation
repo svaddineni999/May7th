@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sets aangepaste velden</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sets aangepaste velden</value>
+    </caseValues>
+    <fields>
+        <label>Uitgesloten velden</label>
+        <name>HealthCloudGA__ExcludedFields__c</name>
+    </fields>
+    <fields>
+        <label>Label voor veldset</label>
+        <name>HealthCloudGA__FieldSetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Naam van sObject</label>
+        <name>HealthCloudGA__SObjectName__c</name>
+    </fields>
+    <fields>
+        <label>Tweekolomslay-out</label>
+        <name>HealthCloudGA__TwoColumnLayout__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Group Member</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Group Members</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will contain field API Name or developer name without namespaceprefix. In case of standard field such as Record Type Field Name would be RecordType only. --></help>
+        <label><!-- Field Name --></label>
+        <name>PC_FieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will store field value which needs to be grouped . In case of standard field such as RecordType it would be qualified api name i.e. recordtype with namespaceprefix. --></help>
+        <label><!-- Field Value --></label>
+        <name>PC_FieldValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Namespace --></label>
+        <name>PC_Field_Namespace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>PC_Group__c</name>
+        <relationshipLabel><!-- Group Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This Field will store the API Name of Object i.e. Developer Name without Namespace --></help>
+        <label><!-- Object Name --></label>
+        <name>PC_ObjectName__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will store namespace prefix associated with the Sobject name. --></help>
+        <label><!-- Object Namespace --></label>
+        <name>PC_Object_Namespace__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

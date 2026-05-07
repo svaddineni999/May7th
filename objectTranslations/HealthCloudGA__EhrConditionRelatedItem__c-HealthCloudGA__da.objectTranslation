@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Relateret element til sygdom i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Relateret element til sygdom i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Relateret element til sygdom i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Relaterede elementer til sygdom i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Relaterede elementer til sygdom i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Relaterede elementer til sygdom i EPJ</value>
+    </caseValues>
+    <fields>
+        <label>Kodebetegnelse</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kodesystem</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kode</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Sygdom</label>
+        <name>HealthCloudGA__Condition__c</name>
+        <relationshipLabel>Relaterede elementer til sygdom i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Medicinfortegnelse</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>Relaterede elementer til sygdom i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Notater</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Målsygdom</label>
+        <name>HealthCloudGA__TargetCondition__c</name>
+        <relationshipLabel>Relaterede elementer til sygdom i EPJ (målsygdom)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Måldetaljer</label>
+        <name>HealthCloudGA__TargetDetail__c</name>
+    </fields>
+    <fields>
+        <label>Målvaccination</label>
+        <name>HealthCloudGA__TargetImmunization__c</name>
+        <relationshipLabel>Relaterede elementer til sygdom i EPJ</relationshipLabel>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Sygdom i EPJ (elektronisk patientjournal</nameFieldLabel>
+</CustomObjectTranslation>

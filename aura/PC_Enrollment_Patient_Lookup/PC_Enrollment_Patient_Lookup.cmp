@@ -1,0 +1,257 @@
+<!--
+Lightning component  : PC_Enrollment_Patient_Lookup 
+Description          : Component to lookup Patient Account and Applicants that may be enrolled in other programs for same manufacturer.
+         Pre-enrollment lookup is important to avoid duplicate creation of accounts and enrollments. 
+        Can be launched from document viewer or anyother page on patient connect application.
+Parameters           : Document Id (not required)
+Author               : Mayuresh Patil
+Date                 : 10 Feb 2017 
+
+Date				Author								Comments
+04/03/2017			Mayuresh Patil						[PC-1364] Modified the code to make engagement program field readonly 
+														when document has engagement program associated.
+22/01/2019          Tejas Patel                         [PC-4268] Bug Fix related to record selection
+07/03/2019          Haritha Reddy                       [PC-4516] Made changes to display Error when there is no Applicant in Document
+15-Apr-2019         Tejas Patel                         [PC-4737] Remiving Applicant dependancy
+16-May-2019         Vijay Kashikar                      [PC-4805] Made changes so that users can navigate search page using keyboard
+09-Oct-2019         Vijay Kashikar                      [PC-4712] Added Error Panel to show server side errors on search.
+07-Jul-2019         Tejas Patel                        [PC-6509 Opening record in new window for non-console view
+11-Nov-2020         Haritha Reddy                      [PC-6795] Added a new attribute isCustomApp to help determine from where pre enrollment wizard is launched
+-->
+
+<aura:component controller="PC_Enrollment_PatientLookup_Controller" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <aura:dependency resource="markup://force:navigateToSObject" type="EVENT"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <!--<aura:handler event="aura:waiting" action="{!c.showSpinner}"/>-->
+    <!--<aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>-->
+    <aura:handler event="c:PC_CloseCmp" action="{!c.closePreEnrollmentWizard}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    
+    <aura:attribute name="docId" type="String"/>
+    <aura:attribute name="reqCaseId" type="String"/>
+    <aura:attribute name="onlineFormApplicantId" type="String"/>
+    <aura:attribute name="docDetails" type="Object"/>
+    <aura:attribute name="lstPatient" type="Object[]"/>
+    <aura:attribute name="isSelected" type="Boolean" default="false"/>
+    <aura:attribute name="isNewApplicant" type="Boolean" default="false"/>
+    <aura:attribute name="isExistingAccount" type="Boolean" default="false"/>
+    <aura:attribute name="isEnrollingInOtherProgram" type="Boolean" default="false"/>
+    <aura:attribute name="isBack" type="Boolean" default="false"/>
+    <aura:attribute name="noMatchFound" type="Boolean" default="false"/>
+    <aura:attribute name="showSearchResult" type="Boolean" default="false"/>
+    <aura:attribute name="newEnrollmentSelected" type="Boolean" default="false"/>
+    <aura:attribute name="selectedPatient" type="Object"/>
+    <aura:attribute name="searchPatient" type="sObject"/>
+    <aura:attribute name="newApplicant" type="Object"/>
+    <aura:attribute name="newApplicantFSfield" type="Map"/>
+    <aura:attribute name="engagementProgramList" type="Object[]"/>
+    <aura:attribute name="isOnlineForm" type="Boolean" default="false"/>
+    <aura:attribute name="docEngagementProgram" type="Boolean" default="false"/>
+    <aura:attribute name="searchFSMap" type="Map"/>
+    <aura:attribute name="searchFSMapToSend" type="Map"/>
+    <aura:attribute name="isCustomApp" type="Boolean" default="false" description="Indicates if this component is launched from custom App"/>
+
+    <aura:attribute name="fieldSetName" type="String"/>
+    <aura:attribute name="typeName" type="String" default="Account"/>
+    <aura:attribute name="persistentAccount" type="sObject"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+    <aura:attribute name="pageErrors" type="List"  access="global" />
+    <aura:attribute name="fieldSetFields" type="Object[]"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="columnLabelList" type="List"/>
+    <aura:attribute name="showRadioButton" type="Boolean" default="false"/>
+    <aura:attribute name="accountAppDetailsMap" type="Map"/>
+    <aura:attribute name="accountAppDetailsArray" type="Object"/>
+    <aura:attribute name="accountAppWrapperArray" type="Object"/>
+    <aura:attribute name="disableSearchButton" type="Boolean" default="false"/>
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="none" type="String" default="{!$Label.c.PC_Picklist_None}" />
+    <aura:attribute  name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute  name="navigateToLink" type="String" default="{! $Label.c.PC_Navigate_to_Link}"/>
+
+    <div class="slds">
+        <lightning:workspaceAPI aura:id="workspace" />
+            <!--Spinner -->
+            <c:PC_ToastMessage />
+            <!--<center>
+                <ui:spinner aura:id="spinner" />
+            </center>-->
+            <!--Modal Popup displays search input and results (Main component) -->
+            <div class="slds-tabs--scoped__nav blockSection" >
+                <div class="slds-col">
+                    <h2 class="slds-tabs--scoped__item slds-text-align--center slds-text-heading--medium slds-active blockSection">
+                        {!$Label.c.PC_PreEnroll_Modal_Header}                    
+                    </h2> 
+                </div>
+            </div>
+
+            <aura:if isTrue="{! v.errors.length > 0 }">
+                <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+            </aura:if>
+
+            <!-- Search Input Section -->
+            <div class="slds-tabs--scoped">
+                <fieldset class="slds-form--compound">
+                    <div class="slds-form-element__group slds-tabs--scoped__content leftMargin">
+                        <div class="slds-form-element">
+                            <!--Engagement Program Section-->
+                            <div class="slds-section-title--divider">{!$Label.c.PC_SearchPatientSubSecHeader1}</div>
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size--1-of-2">
+                                    <label class="slds-form-element__label" for="input-09">
+                                        {!$Label.c.PC_SearchInput_Col_4}
+                                        <abbr class="slds-required" title="required">*</abbr>
+                                    </label>
+                                    <!--Engagement Program should be readonly, when populated on the document [PC-1364]-->
+                                    <aura:if isTrue="{!v.docEngagementProgram}">
+	                                    <ui:outputText aura:id="docEngagementProgram" class="slds-input" value="{!v.searchPatient.manuProgramName}"/>
+                                    </aura:if>
+                                    <aura:if isTrue="{!!v.docEngagementProgram}">
+                                        <lightning:select aura:id="engagementProgram" value="{!v.searchPatient.engagementProgramCode}" onchange="{!c.fetchFieldSets}">
+                                            <aura:iteration items="{!v.engagementProgramList}" var="option">
+                                                <option class="uiInputSelectOption" label="{!option.manuProgramName}" text="{!option.engagementProgramCode}"/>
+                                            </aura:iteration>
+                                        </lightning:select>
+                                    </aura:if>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2"/>
+                            </div>
+                            <div class="slds-m-top--large"/>
+                            <!-- Patient detail section-->
+                            <div class="slds-section-title--divider">{!$Label.c.PC_SearchPatientSubSecHeader2}</div>
+                            <aura:if isTrue="{!v.fieldSetFields.length > 0}">
+                                <ul>
+                                <li class="slds-item">
+                                    <div class="slds-tabs--scoped">
+                                        <fieldset class="slds-form--compound">
+                                            <div class="slds-form-element__group">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size--1-of-1">
+                                                            {!v.fieldSetFormBody}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </div>
+                                </li>
+                                </ul>
+                            </aura:if>
+                            <div class="slds-m-top--small"/>
+                            <div class="slds-form-element__row">                                
+                                <div class="slds-form-element slds-size--2-of-2">
+                                    <button class="slds-float--right slds-button slds-button--neutral slds-button--brand"
+                                            disabled="{!v.disableSearchButton}" aura:id="searchResultButton"
+                                            type="button" onclick="{!c.getSearchResult}">{!$Label.c.PC_Search_Patients}</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+        <form id="resultForm" onsubmit="event.preventDefault();return false;" aura:id="resultForm">
+            <!-- Search Result Section -->
+            <aura:if isTrue="{!v.showSearchResult || v.noMatchFound}">
+                <div class="slds-tabs--scoped__nav slds-clearfix leftMargin" role="tablist">
+                    <legend class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection">{!$Label.c.PC_Enroll_Sr_Hdr_1}</legend>
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.noMatchFound}">
+                <div class="slds-form-element__row slds-scrollable tableMargin">{!$Label.c.PC_NoPatientFound}</div>
+            </aura:if>
+            <aura:if isTrue="{!v.showSearchResult}">
+                <div class="slds-form-element__row slds-scrollable tableMargin">
+                    <table class="slds-table slds-table--bordered">
+                        <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="Select Patient"></div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="{!v.navigateToLink}"></div>
+                            </th>
+                            <aura:iteration var="colLabel" items="{!v.columnLabelList}">
+                                <th scope="col">
+                                    <div class="slds-truncate" title="{!colLabel}">{!colLabel}</div>
+                                </th>
+                            </aura:iteration>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <aura:iteration items="{!v.accountAppDetailsArray}" var="accountAppMapEntry" indexVar="y">
+                            <tr>
+                                <td scope="row" data-label="Select Patient">
+                                    <ui:inputRadio aura:id="selectRadioId" text="{!accountAppMapEntry.key}" name="Select" change="{!c.onSelect}" class="alignRadioButton"/>
+                                </td>
+                                <td scope="row" data-label="{!v.navigateToLink}">
+                                    <lightning:buttonIcon size="medium" title="{!v.navigateToLink}" variant="bare" value="{!accountAppMapEntry.key}" iconName="utility:preview" onclick="{!c.navigateTo}"/>
+                                </td>
+                                <aura:iteration items="{!accountAppMapEntry.value}" var="accountAppField" indexVar="i">
+                                    <td scope="row" data-label="{!accountAppField}">
+                                        <div class="slds-truncate" text="{! i}" data-id="{!accountAppField + i}" title="{!accountAppField}">{!accountAppField}</div>
+                                    </td>
+                                </aura:iteration>
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.showSearchResult || v.noMatchFound}">
+                <div class="slds-tabs--scoped__nav slds-clearfix leftMargin" role="tablist">
+                    <legend class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection">{!$Label.c.PC_Enroll_Sr_Hdr_3}</legend>
+                </div>
+                <div class="slds-form-element__row tableMargin">
+                    <table class="slds-table slds-table--bordered">
+                        <tbody>
+                            <tr>
+                                <td scope="row" style="width:3.25rem">
+                                    <ui:inputRadio class="leftMargin" name="NewEnrollment" change="{!c.newEnrollment}" value="{!v.newEnrollmentSelected}"/>
+                                </td>
+                                <td scope="row">
+                                    <legend class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection">{!$Label.c.PC_Enroll_Sr_Hdr_2}</legend>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="slds-form-element__row"/>
+
+            </aura:if>
+            <!-- Footer Section Contains buttons -->
+            <div class="slds-modal__footer">
+                <div class="slds-x-small-buttons--horizontal">
+                    <aura:if isTrue="{!v.isBack}">
+                        <button class="slds-button slds-button--neutral" type="button" onclick="">{!$Label.c.PC_Back}</button>
+                    </aura:if>
+                    <aura:if isTrue="{!!v.isSelected}">
+                        <button class="slds-button slds-button--neutral slds-button--brand" disabled="true" type="button" onclick="">{!$Label.c.PC_Next}</button>
+                    </aura:if>
+                    <aura:if isTrue="{!v.isSelected}">
+                        <button class="slds-button slds-button--neutral slds-button--brand" disabled="false" type="button" onclick="{!c.executeNextStep}">{!$Label.c.PC_Next}</button>
+                    </aura:if>
+                </div>
+            </div>
+        </form>
+
+        <!--Create New Applicant -->
+        <aura:if isTrue="{!v.isNewApplicant}">
+            <c:PC_Enrollment_NewApplicant isCustomApp="{!v.isCustomApp}" newApplicant="{!v.newApplicant}" docId="{!v.docId}" onlineFormApplicantId="{!v.onlineFormApplicantId}" fsFieldValues="{!v.newApplicantFSfield}"/>
+        </aura:if>
+        <!-- View existing Case -->
+        <aura:if isTrue="{!v.isExistingAccount}">
+            <c:PC_ExistingCase_Summary isCustomApp="{!v.isCustomApp}" selectedPatient="{!v.selectedPatient}" docId="{!v.docId}" reqCaseId="{!v.reqCaseId}" fsFieldValues="{!v.searchFSMapToSend}"/>
+        </aura:if>
+        <!-- View existing Case for another program-->
+        <aura:if isTrue="{!v.isEnrollingInOtherProgram}">
+            <c:PC_OtherExistingEnrollment isCustomApp="{!v.isCustomApp}" enrollCaseId="{!v.selectedPatient.enrollmentCase}" caseOwnerName="{!v.selectedPatient.enrollmentCaseOwner}"/>
+        </aura:if>
+
+        <div class="manageFlicker">&nbsp;</div>
+    </div>
+</aura:component>

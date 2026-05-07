@@ -1,0 +1,441 @@
+<!--
+Lightning component  : PC_Document_Management
+Description          : Component for document viewer
+Modification Log:
+Developer              Date                   Description
+Mayuresh Patil         June 27 2017           PC-1669 Child Doc or email attachments should not appear in the split section since they are attachments of the email
+Tejas Patel            July 25 2017           [PC-1927],[PC-1928],[PC-1918] Translation Issues
+Tejas Patel			   Aug  11 2017			  [PC-2011] Mark Spam On Date is showing the incorrect Date
+Shabda Bhujad		   July 25 2017           [PC-1968] - Removed the Document Split Component
+Shabda Bhujad		   Sep 11 2017			  PC-1980 Cleaned up the redundant variable from component and updated the method in JS to fetch multiple components instead of just the first component.
+Mayuresh Patil         Nov 27 2017            PC-2529 Document Status labels not accessible in managed package
+Tejas Patel            Jan 12 2018            PC-2641 changed the attribute fieldSetComponent
+Haritha Reddy         Sep 04, 2019           [PC-5384] Updated saveCategory method to include logic of adding/removing selected category in List
+                                              instead of doing list refresh in controller, for performance improvement.
+Haritha Reddy         Sep 25, 2019           [PC-5416] Updated logic to search for Accounts only of configured Record types when All option is selected.
+
+-->
+
+<aura:component controller="PC_DocumentManagementLightningController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+
+    <aura:attribute name="isPopout" type="Boolean" default="false"/>
+    <aura:attribute name="EnrollmentForm" type="String" default="{!$Label.c.PC_Enrollment_Form}" />
+    <aura:attribute name="userId" type="String"/>
+    <aura:attribute name="documentType" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="showReassign" type="Boolean" default="true"/>
+    <aura:attribute name="showAssignToMe" type="Boolean" default="false"/>
+    <aura:attribute name="showReassignSection" type="Boolean" default="false"/>
+    <aura:attribute name="showSpam" type="Boolean" default="false"/>
+    <aura:attribute name="showArchive" type="Boolean" default="false"/>
+    <aura:attribute name="showUnspam" type="Boolean" default="false"/>
+    <aura:attribute name="showIllegible" type="Boolean" default="false"/>
+    <aura:attribute name="showEnrollment" type="Boolean" default="false"/>
+    <aura:attribute name="patiendId" type="String"/>
+    <aura:attribute name="accountRecordType" type="String" default="Patient"/> <!--Pass the record type to the document linking component [PC-1610]-->   
+    <aura:attribute name="docId" type="String"/> 
+    <aura:attribute name="docManufacturerId" type="String"/><!--PC-1598 - Customize the options to the Manufacturer context, if the document is tagged to one-->
+    <aura:attribute name="docEngagementProgId" type="String"/><!--PC-1598 - Customize the options to the Engagement program context, if the document is tagged to one-->
+    <aura:attribute name="allRecordTypeList" type="String"/>
+    <aura:attribute name="doc" type="docWrapper.object"/>
+    <aura:attribute name="modalMessage" type="String" default=""/>
+    <aura:attribute name="categories" type="PC_DocumentManagementLightningController.Object[]"/>
+    <aura:attribute name="details" type="PC_DocumentManagementLightningController.Object[]"/>
+    <aura:attribute name="documentLogs" type="List"/>
+    <aura:attribute name="searchString" type="String"/>
+    <aura:attribute name="recordType" type="String" default="All" />
+    <!--    <aura:attribute name="lstPatientsWrapper" type="PC_DocumentManagementLightningController.PatParticWrapper[]"/>-->
+    <aura:attribute name="lstPatientsWrapper" type="PC_DocumentManagementLightningController.Object[]"/>
+    <aura:attribute name="displayPatientsTable" type="Boolean"/>
+    <aura:attribute name="lstDocumentsLogs" type="PC_DocumentManagementLightningController.Object[]"/>
+    <aura:attribute name="userName" type="String" />
+    <aura:attribute name="loadFaxContainer" type="Boolean" default="false"/>
+    <aura:attribute name="loadEmailContainer" type="Boolean" default="false"/>
+    <aura:attribute name="showNoPatients" type="Boolean" default="false"/>
+    <aura:attribute name="namespace" type="String" default="" />  
+    <aura:attribute name="namespacePrefix" type="String" default="" /> 
+    <aura:attribute name="InboundFax" type="String" default="{!$Label.c.PC_Inbound_Fax}" />
+    <aura:attribute name="InboundEmail" type="String" default="{!$Label.c.PC_Inbound_Email}" />
+    <aura:attribute name="Document" type="String" default="{!$Label.c.PC_Document}" />
+    <aura:attribute name="ArchiveMessage" type="String" default="{!$Label.c.PC_ArchiveMessage}" />
+    <aura:attribute name="ConfirmText" type="String" default="{!$Label.c.PC_ConfirmText}" />
+    <aura:attribute name="SelectPatient" type="String" default="{!$Label.c.PC_SelectPatient}" />
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="validityMessage" type="String" default="{!$Label.c.PC_DocLinkTwoCharacters}" />
+    <aura:attribute name="documentCompleted" type="String" default="{!$Label.c.PC_Document_Completed}" />
+    <aura:attribute name="documentCompleteMessage" type="String" default="{!$Label.c.PC_Document_Complete_Message}" />
+    <aura:attribute name="documentSplitFailure" type="String" default="{!$Label.c.PC_Document_Split_Failure}" />
+    <aura:attribute name="documentReadyForSplit" type="String" default="{!$Label.c.PC_Document_Ready_For_Split}" />
+    <aura:attribute name="documentAwaitingAttachment" type="String" default="{!$Label.c.PC_Document_Awaiting_Attachment}" />
+    <aura:attribute name="documentSplitInProgress" type="String" default="{!$Label.c.PC_Document_Split_In_Progress}" />
+    <aura:attribute name="documentCompleteErrorText" type="String" default="{!$Label.c.PC_Document_Complete_Error_Text}" />
+    <!--Attributes added for Document Splitting logic-->
+    <aura:attribute name="isParentDoc" type="Boolean" default="true" /><!--(By default all new documents could be parent)-->
+    <aura:attribute name="parentURL" type="String" default="#" />
+    <aura:attribute name="parentName"  type="String"  default=""/>
+    <aura:attribute name="parentHasAttachments"  type="Boolean" default="true"/>
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:attribute name="isAppWindow" type="Boolean" default="true"/>
+    <aura:attribute name="noOfComponents" type="Integer"/>
+    <aura:attribute name="subComponents" type="List"/>
+    <aura:attribute name="fieldSetComponent" type="String" default="PC_DocumentDetail_FieldSet"/>
+    <aura:attribute name="isSplit" type="Boolean" default="false" /><!--(PC-1669 By default all new documents are not split documents)-->
+    <aura:attribute name="showDescriptionField" type="Boolean" default="false"/>
+    <aura:attribute name="accountPatientType" type="String" default="Patient"/>
+
+    <!--<aura:registerEvent name="refreshLink" type="c:PC_RefreshCmp"/>-->
+    <aura:handler name="cmpEvent" event="c:PC_RefreshCmp" action="{!c.doInit}"/>
+    <aura:registerEvent name="refreshLink" type="c:PC_RefreshChildCmp"/>
+    <aura:handler event="c:PC_RefreshChildCmp" action="{!c.handleBackToSearch}"/>
+    <center>
+        <ui:spinner aura:id="spinner" />
+    </center>
+    <form action="">
+        
+        <div class="container hideComponent" aura:id="documentLogLinkId" >
+            <!-- PC_DocumentLog_Link would go here -->
+            <c:PC_DocumentLog_Link docId="{!v.recordId}" patientId="{!v.patiendId}" accountRecordType="{!v.accountRecordType}" docEngagementProgId="{!v.docEngagementProgId}" />
+        </div>
+        <div class="container showComponent" aura:id="documentManagementId" >
+            <div class="content">
+            <div class="first slds">
+                <!-- top buttons -->
+                <div class="slds-form--inline">
+                    <aura:if isTrue="{!v.isAppWindow}">
+                        <div class="slds-form-element">
+                            <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Return_to_List}" press="{!c.returnToList}"/>
+                        </div>
+                    </aura:if>
+                    <span style="{!v.doc.RecordType.DeveloperName != 'PC_Knowledge_Article' ? '' : 'display:none;'}">
+                        <aura:if isTrue="{!v.showAssignToMe}">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Assign_to_me}" press="{!c.assignToMe}"/>                                
+                            </div>
+                        </aura:if>
+                        
+                        <aura:if isTrue="{!v.showReassign}">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Reassign}" press="{!c.showReassignDocument}"/>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showArchive}">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Archive_Fax}" press="{!c.archiveFax}"/>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showSpam}">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Report_Spam}" press="{!c.markAsSpam}"/>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showUnspam}">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Unspam}" press="{!c.markAsUnspam}"/>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.showIllegible}">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Illegible}" press="{!c.markAsIllegible}"/>
+                            </div>
+                        </aura:if>
+                        <div class="slds-form-element">
+                            <lightning:button variant="brand" label="{!$Label.c.PC_MarkComplete}" onclick="{!c.markComplete}" />
+                        </div>
+                        <aura:iteration items="{!v.categories}" var="category">
+                            <Label/>
+                            <aura:if isTrue="{!category.isEnrollmentForm}">
+                                <div class="slds-form-element">
+                                    <c:PC_Launch_PreEnrollment recordId="{!v.recordId}"/>
+                                </div>
+                            </aura:if>
+                        </aura:iteration>
+                        
+                    </span>
+                </div>
+                
+                <!-- accordion content -->
+                <div class="detailsAccordion">
+                    <!-- DOCUMENT DETAILS -->
+                    <h3>
+                        <a href="#" class="section">
+                            <ul class="slds-tabs--scoped__nav" role="tablist">
+                                <li class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection" title="Item One" role="presentation">{!$Label.c.PC_DocumentDetails}</li>
+                            </ul>
+                        </a>
+                    </h3>                    
+                    <div class="slds-tabs--scoped" style="display: none;">
+                        <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                            <div class="slds-form--horizontal">
+                                <!-- banner -->
+                                <div class="slds-page-header banner" role="banner">
+                                    <div class="slds-grid gridBanner">
+                                        <div class="slds-col slds-has-flexi-truncate">
+                                            <div class="slds-media slds-media--center slds-no-space slds-grow">
+                                                <div class="slds-media__body" style="text-align: left;">
+                                                    <p class="slds-text-heading--label">{!v.documentType}</p>
+                                                    <h1 class="slds-page-header__title slds-m-right--small slds-truncate slds-align-middle">{!v.doc.Name}</h1>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-grid slds-page-header__detail-row fieldsGroup">
+                                        {!v.details[0].engagementProgram}
+                                    </div>
+                                    <ul class="slds-grid slds-page-header__detail-row fieldsGroup">
+                                        <li class="slds-page-header__detail-block">
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_Status}: <ui:outputText value="{!v.details[0].docStatusLabel}"/></p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_CreatedDate}: <ui:outputdate value="{!v.doc.CreatedDate}" /></p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_From_Name}: <ui:outputText value="{!v.details[0].fromName}"/></p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_From_Fax}: <ui:outputText value="{!v.details[0].fromFaxNum}"/></p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_From_Email}: <ui:outputText value="{!v.details[0].fromEmail}"/></p>
+                                        </li>
+                                        <li class="slds-page-header__detail-block" style="{!v.doc.RecordType.DeveloperName != 'PC_Knowledge_Article' ? '' : 'display:none;'}">
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_ArchivedBy}: {!v.details[0].archivedBy}</p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_MarkedSpamBy}: {!v.details[0].spamBy}</p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_ArchivedOn}: <ui:outputdatetime format="YYYY-MM-DD HH:mm" value="{!v.details[0].archivedOn}" /></p>
+                                            <p class="slds-text-heading--label-normal slds-truncate slds-m-bottom--xx-small">{!$Label.c.PC_MarkedSpamOn}: <ui:outputdate format="YYYY-MM-DD" value="{!v.details[0].spamOn}" /></p>
+                                        </li>
+                                        <li class="slds-page-header__detail-block" style="{!v.doc.RecordType.DeveloperName != 'PC_Knowledge_Article' ? '' : 'display:none;'}">
+                                            <!-- Dynamically Creating Field Set Component -->
+                                            <div aura:id="fieldSetCmp">
+    										</div>
+                                        </li>
+                                    </ul>
+                                    <!--Display parent details when a document is child-->
+                                    
+                                    <div class="slds-text-align--left" style="{!v.isParentDoc ? 'display:none;' : ''}">
+                                        <p class="slds-text-heading--label-normal slds-m-bottom--xx-small">&nbsp;{!$Label.c.PC_ParentDocument}: <a href="{!v.parentURL}">{!v.details[0].parentDocName}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    
+                    <!-- category -->
+                    <div class="slds-form-element">
+                        <div class="rtc-div">
+                            <aura:iteration items="{!v.categories}" var="category">
+                                <div class="rtc-link">
+                                    <span class="{!category.isSelected ? 'selectedCategory' : ''}" data-category="{!category.categoryName}" onclick="{!c.selectCategory}">{!category.categoryLabel}</span>
+                                </div>
+                            </aura:iteration>
+                        </div>
+                    </div>
+                    
+                    <!--REASSIGN BLOCK-->
+                    <div style="{!v.doc.RecordType.DeveloperName != 'PC_Knowledge_Article' ? '' : 'display:none;'}">
+                        <h3 class="ui-accordion-header ui-helper-reset ui-state-default ui-corner-top ui-corner-bottom" style="{!v.showReassignSection ? '' : 'display:none;'}">
+                            <a href="#" class="section">
+                                <ul class="slds-tabs--scoped__nav" role="tablist">
+                                    <li class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection" title="Item One" role="presentation">{!$Label.c.PC_DocumentOwner}</li>
+                                </ul>
+                            </a>
+                        </h3>
+                        <div class="slds-tabs--scoped" style="{!v.showReassignSection ? '' : 'display:none;'}">
+                            <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                                <div class="slds-form--inline ui-accordion-content ui-helper-reset ui-widget-content ui-corner-bottom" style="{!v.showReassignSection ? '' : 'display:none;'}">
+                                    <div class="slds-form--inline">
+                                        <div class="slds-form-element" style="margin-right: 0px">
+                                            <!--{!v.body}-->
+                                            <c:PC_ChangeDocumentOwner documentId="{!v.recordId}" showReassignSection="{!v.showReassignSection}" userId="{!v.userId}" userName="{!v.userName}" searchString="" />
+                                        </div>
+                                        <div class="slds-form-element">
+                                            <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Reassign}" press="{!c.reassignDoc}" />
+                                        </div>
+                                        <div class="slds-form-element">
+                                            <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Button_Label_Cancel}" press="{!c.closeReassignSection}" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--END REASSIGN BLOCK-->
+                        <!-- SEARCH -->
+                        <h3>
+                            <a href="#" class="section">
+                                <ul class="slds-tabs--scoped__nav" role="tablist">
+                                    <li class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection" title="Item One" role="presentation">{!$Label.c.PC_QuickSearch}</li>
+                                </ul>
+                            </a>
+                        </h3>
+                        <div class="slds-tabs--scoped">
+                            <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                                <div class="slds-form--inline">
+                                    <div class="slds-form-element searchBlock">
+                                        <ui:inputText value="{!v.searchString}" class="searchPatient"/>
+                                    </div>
+                                    <div class="slds-form-element">
+                                        <ui:inputSelect class="dynamic" aura:id="selectAccountRt" change="{!c.onSelectChange}"/>
+                                    </div>
+                                    <div class="slds-form-element">
+                                        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_SearchPatients}" press="{!c.searchPatient}"/>
+                                    </div>
+                                    <!--@@RemoveNewEnrollmentButton -->
+                                    <aura:if isTrue="{!v.displayPatientsTable}">
+                                        <div class="slds-text-body--regular">
+                                            <div class="slds-m-bottom--large"></div>
+                                            <label style="{!v.showNoPatients ? '' : 'display:none;'}">{!$Label.c.PC_NoPatientFound}</label>
+                                        </div>
+                                        <aura:if isTrue="{!v.lstPatientsWrapper.length != 0}">
+                                            <div class="patientsTable slds-scrollable">
+                                                <table class="slds-table slds-table--bordered">
+                                                    <thead>
+                                                        <tr class="slds-text-heading--label">
+                                                            <th class="slds-cell-shrink"></th>
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col1}</th>
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col2}</th>
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col3}</th>
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col4}</th>
+                                                            <!-- <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col5}</th> -->
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col6}</th>
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col7}</th>
+                                                            <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col8}</th>
+                                                            <!-- <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col9}</th> -->
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <aura:iteration items="{!v.lstPatientsWrapper}" var="patient">
+                                                            <tr class="slds-hint-parent">
+                                                                <td  class="slds-truncate" style="width:10%;">
+                                                                    <ui:inputRadio text="{!patient.sPatientId}" name="patientsOptions" click="{!c.setPatientInformation}"/>
+                                                                </td>
+                                                                <td class="slds-truncate"  style="width:45%;">
+                                                                    <a id="{!patient.sPatientId}" onclick="{!c.goToSelectedLink}" target="_blank">
+                                                                        {!patient.sPatientName}
+                                                                    </a>
+                                                                </td>
+                                                                <td class="slds-truncate" style="width:45%;">{!patient.sAccountTypeLabel}</td>
+                                                                <td class="slds-truncate" style="width:45%;">{!patient.sPatientBirthDate}</td>
+                                                                <td class="slds-truncate" style="width:45%;">{!patient.sPhysicianNPI }</td>
+                                                                <!-- <td class="slds-truncate" style="width:45%;">{!patient.sAccStatus}</td> -->
+                                                                <td class="slds-truncate" style="width:45%;">{!patient.sAccAddr}</td>
+                                                                <td class="slds-truncate" style="width:45%;">{!patient.sAccCity}</td>
+                                                                <td class="slds-truncate" style="width:45%;">{!patient.sAccState}</td>
+                                                                <!-- <td class="slds-truncate" style="width:45%;">{!patient.sAccZipCode}</td> -->
+                                                            </tr>
+                                                        </aura:iteration>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.lstPatientsWrapper.length != 0}">
+                                            <div class="slds-form-element" style="margin-top:10px;"> 
+                                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Link}" press="{!c.linkCheck}"/>
+                                            </div>
+                                        </aura:if>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!--Display child list when a document is not a child-->
+                        <!-- PC-3900 Any document can now be split --> <!--<aura:if isTrue="{!!v.isSplit}">--> <!-- PC-1669 modified to show doc splitting section only for docs that are not split but may have other docs as parent docs. -->
+                            <!-- commented for PC-1980
+                            <aura:if isTrue="{!v.parentHasAttachments}">
+                                <c:PC_DocumentSplit recordId="{!v.recordId}"/>
+
+                            </aura:if>
+								-->
+                        <!--</aura:if>-->
+                        
+                        <!-- Components added via metadata -->
+                        <div class="WBody" aura:id="body">                            
+                            {!v.body}   
+                        </div>
+                        
+                        <!-- MODIFICATION LOG -->
+                        <h3>
+                            <a href="#" class="section">
+                                <ul class="slds-tabs--scoped__nav" role="tablist">
+                                    <li class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSection" title="Item One" role="presentation">{!$Label.c.PC_DocumentModificationLog}</li>
+                                </ul>
+                            </a>
+                        </h3>
+                        <div class="slds-tabs--scoped">
+                            <div class="slds-tabs--scoped__content" style="{!v.lstDocumentsLogs.length == 0 ? '' : 'display:none;'}" >
+                                {!$Label.c.PC_No_Records_Found}
+                            </div>
+                            <div class="slds-tabs--scoped__content" style="{!v.lstDocumentsLogs.length != 0 ? '' : 'display:none;'}" >
+                                <div class="modificationLogs slds-scrollable">
+                                    <table class="slds-table slds-table--bordered">
+                                        <thead>
+                                            <tr class="slds-text-heading--label">
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_AssociatedRecord}</th>
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_AssociatedType}</th>
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_LastModifyBy}</th>
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_LastModifiedDate}</th>
+                                                <aura:if isTrue="{!v.showDescriptionField}">
+                                                    <th class="slds-cell-shrink">{!$Label.c.PC_Description}</th>
+                                                </aura:if>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <aura:iteration items="{!v.lstDocumentsLogs}" var="log">
+                                                <tr class="slds-hint-parent">
+                                                    <td class="slds-truncate" style="white-space: normal">
+                                                        <a id="{!log.associationRecordId}" role="link" onclick="{!c.goToSelectedLink}" target="_blank">{!log.associationRecordName}</a> 
+                                                    </td>
+                                                    <td class="slds-truncate" style="white-space: normal">{!log.associationType}</td>
+                                                    <td class="slds-truncate" style="white-space: normal">{!log.lastModifiedName}</td>
+                                                    <td class="slds-truncate" style="white-space: normal"><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!log.lastModifiedDate}" /></td>
+                                                    <aura:if isTrue="{!v.showDescriptionField}">
+                                                        <td class="slds-truncate" style="white-space: normal">{!log.docLog}</td>
+                                                    </aura:if>
+                                                </tr> 
+                                            </aura:iteration>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- right side -->
+            <div class="second slds">
+                <aura:if isTrue="{!v.loadFaxContainer}">
+                    <div class="slds-form-element" style="margin-bottom: 20px;">
+                        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Pop_Out}" press="{!c.popOutDocument}"/>
+                    </div>
+                    <c:PC_Document_InboundFax docId="{!v.recordId}"/>
+                </aura:if>
+                <aura:if isTrue="{!v.loadEmailContainer}">
+                    <div class="slds-form-element" style="margin-bottom: 20px;">
+                        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Pop_Out}" press="{!c.popOutDocument}"/>
+                    </div>
+                    <c:PC_Document_InboundEmail recordId="{!v.recordId}" isPopout="{!v.isPopout}"/>
+                </aura:if>
+            </div>
+            </div>
+            <!--Link confirmation message window-->
+            <div aria-hidden="false" aura:id="aura_linkSectionId" id="linkSectionId" role="dialog" class="slds-modal slds-modal--small slds-fade-in-open" style="display:none;">
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header modalAlert" >
+                        <h2 class="slds-text-heading--medium">{!$Label.c.PC_Confirmation}</h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideAckModal}">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true"
+                                   />
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </div>
+                    <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                        <p>{!v.modalMessage}</p>
+                    </div>
+                    <div class="slds-modal__footer slds-modal__footer--center">
+                        <div class="slds-x-small-buttons--horizontal" align="center">
+                            <button class="slds-button slds-button--neutral" onclick="{!c.hideAckModal}" >{!$Label.c.PC_Okay_Button}</button> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open" aura:id="aura_backGroundSectionId" id="backGroundSectionId" style="display:none;"></div>
+        </div>
+    </form>
+</aura:component>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meta do plano de saúde do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Metas do plano de saúde do RES</value>
+    </caseValues>
+    <fields>
+        <label>Plano de saúde</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Metas do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Descrição</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Observações</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID da meta do plano de saúde do RES</nameFieldLabel>
+</CustomObjectTranslation>

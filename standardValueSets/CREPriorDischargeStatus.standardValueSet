@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Discharged to home/self care.</fullName>
+        <default>false</default>
+        <label>Discharged to home/self care.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged to home with home health.</fullName>
+        <default>false</default>
+        <label>Discharged to home with home health.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged to hospice care.</fullName>
+        <default>false</default>
+        <label>Discharged to hospice care.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged/transferred to SNF.</fullName>
+        <default>false</default>
+        <label>Discharged/transferred to SNF.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged/transferred to LTACC.</fullName>
+        <default>false</default>
+        <label>Discharged/transferred to LTACC.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged/transferred to Psychiatric facility.</fullName>
+        <default>false</default>
+        <label>Discharged/transferred to Psychiatric facility.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged/transferred to other acute care facility.</fullName>
+        <default>false</default>
+        <label>Discharged/transferred to other acute care facility.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discharged to court/law enforcement.</fullName>
+        <default>false</default>
+        <label>Discharged to court/law enforcement.</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Left against medical advice (AMA).</fullName>
+        <default>false</default>
+        <label>Left against medical advice (AMA).</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Expired</fullName>
+        <default>false</default>
+        <label>Expired</label>
+    </standardValue>
+</StandardValueSet>

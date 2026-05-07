@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Aan EPD (elektronisch patiëntendossier) gerelateerde persoon</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Aan EPD (elektronisch patiëntendossier) gerelateerde personen</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Gerelateerde mensen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Plaats van adres 1</label>
+        <name>HealthCloudGA__Address1City__c</name>
+    </fields>
+    <fields>
+        <label>Land van adres 1</label>
+        <name>HealthCloudGA__Address1Country__c</name>
+    </fields>
+    <fields>
+        <label>Einddatum van adres 1</label>
+        <name>HealthCloudGA__Address1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van adres 1</label>
+        <name>HealthCloudGA__Address1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van adres 1</label>
+        <name>HealthCloudGA__Address1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van adres 1</label>
+        <name>HealthCloudGA__Address1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van adres 1</label>
+        <name>HealthCloudGA__Address1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van adres 1</label>
+        <name>HealthCloudGA__Address1State__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van adres 1</label>
+        <name>HealthCloudGA__Address1Text__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van adres 1</label>
+        <name>HealthCloudGA__Address1Use__c</name>
+    </fields>
+    <fields>
+        <label>Plaats van adres 2</label>
+        <name>HealthCloudGA__Address2City__c</name>
+    </fields>
+    <fields>
+        <label>Land van adres 2</label>
+        <name>HealthCloudGA__Address2Country__c</name>
+    </fields>
+    <fields>
+        <label>Einddatum van adres 2</label>
+        <name>HealthCloudGA__Address2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van adres 2</label>
+        <name>HealthCloudGA__Address2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van adres 2</label>
+        <name>HealthCloudGA__Address2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van adres 2</label>
+        <name>HealthCloudGA__Address2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van adres 2</label>
+        <name>HealthCloudGA__Address2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van adres 2</label>
+        <name>HealthCloudGA__Address2State__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van adres 2</label>
+        <name>HealthCloudGA__Address2Text__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van adres 2</label>
+        <name>HealthCloudGA__Address2Use__c</name>
+    </fields>
+    <fields>
+        <label>Plaats van adres 3</label>
+        <name>HealthCloudGA__Address3City__c</name>
+    </fields>
+    <fields>
+        <label>Land van adres 3</label>
+        <name>HealthCloudGA__Address3Country__c</name>
+    </fields>
+    <fields>
+        <label>Einddatum van adres 3</label>
+        <name>HealthCloudGA__Address3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van adres 3</label>
+        <name>HealthCloudGA__Address3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van adres 3</label>
+        <name>HealthCloudGA__Address3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van adres 3</label>
+        <name>HealthCloudGA__Address3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van adres 3</label>
+        <name>HealthCloudGA__Address3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van adres 3</label>
+        <name>HealthCloudGA__Address3State__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van adres 3</label>
+        <name>HealthCloudGA__Address3Text__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van adres 3</label>
+        <name>HealthCloudGA__Address3Use__c</name>
+    </fields>
+    <fields>
+        <label>Plaats van adres 4</label>
+        <name>HealthCloudGA__Address4City__c</name>
+    </fields>
+    <fields>
+        <label>Land van adres 4</label>
+        <name>HealthCloudGA__Address4Country__c</name>
+    </fields>
+    <fields>
+        <label>Einddatum van adres 4</label>
+        <name>HealthCloudGA__Address4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van adres 4</label>
+        <name>HealthCloudGA__Address4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van adres 4</label>
+        <name>HealthCloudGA__Address4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van adres 4</label>
+        <name>HealthCloudGA__Address4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van adres 4</label>
+        <name>HealthCloudGA__Address4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van adres 4</label>
+        <name>HealthCloudGA__Address4State__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van adres 4</label>
+        <name>HealthCloudGA__Address4Text__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van adres 4</label>
+        <name>HealthCloudGA__Address4Use__c</name>
+    </fields>
+    <fields>
+        <label>Plaats van adres 5</label>
+        <name>HealthCloudGA__Address5City__c</name>
+    </fields>
+    <fields>
+        <label>Land van adres 5</label>
+        <name>HealthCloudGA__Address5Country__c</name>
+    </fields>
+    <fields>
+        <label>Einddatum van adres 5</label>
+        <name>HealthCloudGA__Address5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van adres 5</label>
+        <name>HealthCloudGA__Address5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van adres 5</label>
+        <name>HealthCloudGA__Address5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van adres 5</label>
+        <name>HealthCloudGA__Address5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van adres 5</label>
+        <name>HealthCloudGA__Address5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van adres 5</label>
+        <name>HealthCloudGA__Address5State__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van adres 5</label>
+        <name>HealthCloudGA__Address5Text__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van adres 5</label>
+        <name>HealthCloudGA__Address5Use__c</name>
+    </fields>
+    <fields>
+        <label>Geboortedatum</label>
+        <name>HealthCloudGA__BirthDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- if  Name is null or Blank it is populated with GivenName1__c + FamilyName1__c else it is populated with Name --></help>
+        <label>Naam van berekening</label>
+        <name>HealthCloudGA__CalculatedName__c</name>
+    </fields>
+    <fields>
+        <label>Achternaam 1</label>
+        <name>HealthCloudGA__FamilyName1__c</name>
+    </fields>
+    <fields>
+        <label>Achternaam 2</label>
+        <name>HealthCloudGA__FamilyName2__c</name>
+    </fields>
+    <fields>
+        <label>Achternaam 3</label>
+        <name>HealthCloudGA__FamilyName3__c</name>
+    </fields>
+    <fields>
+        <label>Geslacht</label>
+        <name>HealthCloudGA__Gender__c</name>
+    </fields>
+    <fields>
+        <label>Voornaam 1</label>
+        <name>HealthCloudGA__GivenName1__c</name>
+    </fields>
+    <fields>
+        <label>Voornaam 2</label>
+        <name>HealthCloudGA__GivenName2__c</name>
+    </fields>
+    <fields>
+        <label>Voornaam 3</label>
+        <name>HealthCloudGA__GivenName3__c</name>
+    </fields>
+    <fields>
+        <label>Voornaam 4</label>
+        <name>HealthCloudGA__GivenName4__c</name>
+    </fields>
+    <fields>
+        <label>Voornaam 5</label>
+        <name>HealthCloudGA__GivenName5__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Taal 1</label>
+        <name>HealthCloudGA__Language1__c</name>
+    </fields>
+    <fields>
+        <label>Taal 2</label>
+        <name>HealthCloudGA__Language2__c</name>
+    </fields>
+    <fields>
+        <label>Taal 3</label>
+        <name>HealthCloudGA__Language3__c</name>
+    </fields>
+    <fields>
+        <label>Taal 4</label>
+        <name>HealthCloudGA__Language4__c</name>
+    </fields>
+    <fields>
+        <label>Taal 5</label>
+        <name>HealthCloudGA__Language5__c</name>
+    </fields>
+    <fields>
+        <label>Naam</label>
+        <name>HealthCloudGA__NameFull__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Gerelateerde mensen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Einde van periode</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Foto-URL</label>
+        <name>HealthCloudGA__PhotoUrl__c</name>
+    </fields>
+    <fields>
+        <label>Voorvoegsel voor naam 1</label>
+        <name>HealthCloudGA__PrefixName1__c</name>
+    </fields>
+    <fields>
+        <label>Voorvoegsel voor naam 2</label>
+        <name>HealthCloudGA__PrefixName2__c</name>
+    </fields>
+    <fields>
+        <label>Voorvoegsel voor naam 3</label>
+        <name>HealthCloudGA__PrefixName3__c</name>
+    </fields>
+    <fields>
+        <label>Relatie</label>
+        <name>HealthCloudGA__Relationship__c</name>
+    </fields>
+    <fields>
+        <label>Rol (255)</label>
+        <name>HealthCloudGA__Role255__c</name>
+    </fields>
+    <fields>
+        <label>Rol</label>
+        <name>HealthCloudGA__Role__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Vakgebied (255)</label>
+        <name>HealthCloudGA__Specialty255__c</name>
+    </fields>
+    <fields>
+        <label>Vakgebied</label>
+        <name>HealthCloudGA__Specialty__c</name>
+    </fields>
+    <fields>
+        <label>SuffixName1</label>
+        <name>HealthCloudGA__SuffixName1__c</name>
+    </fields>
+    <fields>
+        <label>SuffixName2</label>
+        <name>HealthCloudGA__SuffixName2__c</name>
+    </fields>
+    <fields>
+        <label>SuffixName3</label>
+        <name>HealthCloudGA__SuffixName3__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 1</label>
+        <name>HealthCloudGA__Telecom1PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 1</label>
+        <name>HealthCloudGA__Telecom1PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Systeem van telecommunicatie 1</label>
+        <name>HealthCloudGA__Telecom1System__c</name>
+    </fields>
+    <fields>
+        <label>Telecom1Use</label>
+        <name>HealthCloudGA__Telecom1Use__c</name>
+    </fields>
+    <fields>
+        <label>Waarde van telecommunicatie 1</label>
+        <name>HealthCloudGA__Telecom1Value__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 2</label>
+        <name>HealthCloudGA__Telecom2PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 2</label>
+        <name>HealthCloudGA__Telecom2PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Systeem van telecommunicatie 2</label>
+        <name>HealthCloudGA__Telecom2System__c</name>
+    </fields>
+    <fields>
+        <label>Telecom2Use</label>
+        <name>HealthCloudGA__Telecom2Use__c</name>
+    </fields>
+    <fields>
+        <label>Waarde van telecommunicatie 2</label>
+        <name>HealthCloudGA__Telecom2Value__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 3</label>
+        <name>HealthCloudGA__Telecom3PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 3</label>
+        <name>HealthCloudGA__Telecom3PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Systeem van telecommunicatie 3</label>
+        <name>HealthCloudGA__Telecom3System__c</name>
+    </fields>
+    <fields>
+        <label>Telecom3Use</label>
+        <name>HealthCloudGA__Telecom3Use__c</name>
+    </fields>
+    <fields>
+        <label>Waarde van telecommunicatie 3</label>
+        <name>HealthCloudGA__Telecom3Value__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 4</label>
+        <name>HealthCloudGA__Telecom4PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 4</label>
+        <name>HealthCloudGA__Telecom4PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Systeem van telecommunicatie 4</label>
+        <name>HealthCloudGA__Telecom4System__c</name>
+    </fields>
+    <fields>
+        <label>Telecom4Use</label>
+        <name>HealthCloudGA__Telecom4Use__c</name>
+    </fields>
+    <fields>
+        <label>Waarde van telecommunicatie 4</label>
+        <name>HealthCloudGA__Telecom4Value__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 5</label>
+        <name>HealthCloudGA__Telecom5PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Begin van periode van telecommunicatie 5</label>
+        <name>HealthCloudGA__Telecom5PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Systeem van telecommunicatie 5</label>
+        <name>HealthCloudGA__Telecom5System__c</name>
+    </fields>
+    <fields>
+        <label>Telecom5Use</label>
+        <name>HealthCloudGA__Telecom5Use__c</name>
+    </fields>
+    <fields>
+        <label>Waarde van telecommunicatie 5</label>
+        <name>HealthCloudGA__Telecom5Value__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID van gerelateerde persoon volgens EPD </nameFieldLabel>
+</CustomObjectTranslation>

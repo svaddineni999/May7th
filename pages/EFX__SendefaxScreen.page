@@ -1,0 +1,16 @@
+<apex:page controller="EFX.SendefaxScreenController"> 
+    <apex:includeLightning /> 
+    <div id="sendeFaxPage" /> 
+    <script>   
+    var namespace = '{!namespace}';
+    $Lightning.use(namespace+":SendefaxScreenApp", function() {  
+        $Lightning.createComponent(       
+            namespace+":SendefaxScreen",
+            {'recordId' : '{!JSENCODE($CurrentPage.parameters.recordId)}',
+             'fieldApiName': '{!JSENCODE($CurrentPage.parameters.fieldApi)}'},  
+             'sendeFaxPage',               
+            function(component) {
+            }); 
+    }); 
+    </script>
+</apex:page>

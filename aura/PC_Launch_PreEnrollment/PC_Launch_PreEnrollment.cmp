@@ -1,0 +1,105 @@
+<!--
+	Component            	: PC_Launch_PreEnrollment
+	Description             : Creates the "Begin Enrollment" button and displays pop-up if document has enrollement case
+	Parameters              : Record Id from the page
+	Created By              : Tejas Patel
+	Created Date            : 24-Apr-2017
+    Modification Log:
+    Haritha Reddy 		 22-Feb-2019    [PC-4340]updated the enrollment launch logic to work for both lightning and lightning console apps
+    Shishir Bansal       04-Feb-2020    [PC-5934] For Home Page adding component design attribute to open Enrollment in new tab(PC_Launch_PreEnrollment)
+
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId"
+                controller="PC_Launch_PreEnrollment" access="global">
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="recordId" type="Id" default="NULL"/>
+    <aura:attribute name="caseDetails" type="sObject"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="enrollmentTabLabel" type="String" default="{!$Label.c.PC_EnrollmentPatientSearchHeader}"/>
+    <aura:attribute name="enrollmentComponentName" type="String" default="PC_Enrollment_Patient_Lookup"/>
+    <aura:attribute name="enrollmentSearchPageName" type="String" default="Enrollment"/>
+    <aura:attribute name="enrollmentTabIcon" type="String" default="action:new_lead"/>
+    <aura:attribute name="enrollButtonInlineCSS" type="String" default="" description="Inline Style for Enrollment Button" access="global"/>
+    <aura:attribute name="viewEnrollmentInNewBrowserTab" type="boolean" default="false" description="user can see view Enrollment in browser tab" access="global" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <div style="{! v.enrollButtonInlineCSS}">
+        <ui:button class="{!v.recordId == 'NULL' ? 'slds-button slds-button--brand margin' : 'slds-button slds-button--brand'}" label="{!$Label.c.PC_Begin_Enrollment}" press="{!c.openWizard}"/>
+    </div>
+    <div class="slds">
+            <lightning:workspaceAPI aura:id="enrollmentHomeWorkspace" />
+            <form id="form">
+                <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--medium slds-fade-in-hide" aura:id="modaldialog" >
+                    <div class="slds-modal__container">
+                        <div class="slds-modal__header">
+                            <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">
+                                    {!$Label.c.PC_EnrollmentCase_Summary_Header_Document}
+                            </h2>
+                            <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}">
+                                <c:svg class="slds-button__icon slds-button__icon--large"
+                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                       ariaHidden="true" />
+                                <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                            </button>
+                        </div>
+                        <div class="slds-modal__content">
+                            <div class="slds-form--compound slds-m-around--medium">
+                                <!--Patient details section-->
+                                <div class="slds-form-element__row">
+                                    <div class="slds-form-element slds-size--1-of-2">
+                                        <label class="slds-form-element__label">{!$Label.c.PC_Enroll_Sr_Col_1}</label>
+                                        <div class="slds-form-element__control">
+                                            <p>{!v.caseDetails.name}</p>
+                                        </div>
+                                    </div>
+                                    <div class="slds-form-element slds-size--1-of-2">
+                                        <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field2}</label>
+                                        <div class="slds-form-element__control">
+                                            <p>{!v.caseDetails.dob}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Case details section-->
+                                <div class="slds-form-element__row">
+                                    <div class="slds-form-element slds-size--1-of-2">
+                                        <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field6}</label>
+                                        <div class="slds-form-element__control">
+                                            <p>{!v.caseDetails.casenumber}</p>
+                                        </div>
+                                    </div>
+                                    <div class="slds-form-element slds-size--1-of-2">
+                                        <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field5}</label>
+                                        <div class="slds-form-element__control">
+                                            <p>{!v.caseDetails.caseowner}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__row">
+                                    <div class="slds-form-element slds-size--1-of-2">
+                                        <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field7}</label>
+                                        <div class="slds-form-element__control">
+                                            <p>{!v.caseDetails.casestatus}</p>
+                                        </div>
+                                    </div>
+                                    <div class="slds-form-element slds-size--1-of-2">
+                                        <label class="slds-form-element__label">{!$Label.c.PC_CreatedDate}</label>
+                                        <div class="slds-form-element__control">
+                                            <p>{!v.caseDetails.createddate}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-modal__footer">
+                            <div class="slds-x-small-buttons--horizontal">
+                                <button class="slds-button slds-button--neutral" type="button" onclick="{!c.hideModalBox}">{!$Label.c.PC_Back_to_Document}</button>
+                                <button class="slds-button slds-button--brand" type="button" onclick="{!c.goToCase}">{!$Label.c.PC_View_Case}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop"></div>
+            </form>
+        </div>
+</aura:component>

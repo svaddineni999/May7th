@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement Program Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagement Program Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_Engagement_Program__c</name>
+        <relationshipLabel><!-- Engagement Program Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notification Template --></label>
+        <name>PC_Notification_Template__c</name>
+        <relationshipLabel><!-- Engagement Program Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>PC_Service__c</name>
+        <relationshipLabel><!-- Engagement Program Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>PC_Start_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

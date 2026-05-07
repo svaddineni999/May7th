@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>PC_CareTeamAccount__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the name of the Care Team Account of the Program Region User Mapping record for which Associate record is created.</description>
+        <label>Care Team Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Program Region User Histories</relationshipLabel>
+        <relationshipName>PC_ProgramRegionUserHistories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_CareTeamRole__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the Care Team Role of the Program Region User Mapping record for which Associate record is created.</description>
+        <label>Care Team Role</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HCO</fullName>
+                    <default>false</default>
+                    <label>HCO</label>
+                </value>
+                <value>
+                    <fullName>Treating Physician</fullName>
+                    <default>false</default>
+                    <label>Treating Physician</label>
+                </value>
+                <value>
+                    <fullName>Care Coordinator</fullName>
+                    <default>false</default>
+                    <label>Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Reimbursement Specialist</fullName>
+                    <default>false</default>
+                    <label>Reimbursement Specialist</label>
+                </value>
+                <value>
+                    <fullName>Field Reimbursement Manager</fullName>
+                    <default>false</default>
+                    <label>Field Reimbursement Manager</label>
+                </value>
+                <value>
+                    <fullName>Case Manager</fullName>
+                    <default>false</default>
+                    <label>Case Manager</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_CareTeamUser__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the Care Team Member of the Program Region User Mapping record for which Associate record is created.</description>
+        <label>Care Team User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PC_ProgramRegionUserHistories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the Case for which Associate record is created.</description>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Program Region User Histories</relationshipLabel>
+        <relationshipName>PC_ProgramRegionUserHistories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_EngagementProgram__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the Engagement Program of the Program Region User Mapping record for which Associate record is created.</description>
+        <label>Engagement Program</label>
+        <referenceTo>PC_Engagement_Program__c</referenceTo>
+        <relationshipLabel>Program Region User Histories</relationshipLabel>
+        <relationshipName>PC_ProgramRegionUserHistories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_QueueOrGroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank.</inlineHelpText>
+        <label>User Queue/Group Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Region__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field is used to store the Region of the Program Region User Mapping record for which Associate record is created.</description>
+        <label>Region</label>
+        <referenceTo>PC_Region__c</referenceTo>
+        <relationshipLabel>Program Region User Histories</relationshipLabel>
+        <relationshipName>PC_ProgramRegionUserHistories</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_RoleType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group.</description>
+        <inlineHelpText>Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group.</inlineHelpText>
+        <label>Role Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Queue</fullName>
+                    <default>false</default>
+                    <label>Queue</label>
+                </value>
+                <value>
+                    <fullName>Group</fullName>
+                    <default>false</default>
+                    <label>Group</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Program Region User History</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PRUH{0}</displayFormat>
+        <label>Program Region User History Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Program Region User History</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <validationRules>
+        <fullName>PC_User_and_Account_values_check</fullName>
+        <active>true</active>
+        <description>This rule will ensure to have value in only one of &apos;Care Team Account&apos; and &apos;Care Team User&apos;.</description>
+        <errorConditionFormula>OR(AND(ISBLANK( PC_CareTeamAccount__c ), ISBLANK( PC_CareTeamUser__c ) ),
+AND( NOT(ISBLANK( PC_CareTeamAccount__c )), NOT(ISBLANK( PC_CareTeamUser__c ) ) ))</errorConditionFormula>
+        <errorMessage>Please enter only one of &apos;Care Team Account&apos; and &apos;Care Team User&apos;.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

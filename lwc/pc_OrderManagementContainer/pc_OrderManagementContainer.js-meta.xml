@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="fsOrderDetails" type="String" description="API name of the fieldset on PC_Order object which will be used in Order Details. If left blank, then PC_OrderDetails fieldset will be considered." default="" label="Order Details Fieldset"/>
+            <property name="fsProduct" type="String" description="API name of the fieldset on Product object which will be used in Product Select List. If left blank, then PC_Product fieldset will be considered." default="" label="Product Selection Fieldset"/>
+            <property name="fsOrderItem" type="String" description="API name of the fieldset on PC_OrderItem object which will be used in Order Item Details. If left blank, then PC_OrderItems fieldset will be considered." default="" label="Order Item Fieldset"/>
+            <property name="fsOrderShipment" type="String" description="API name of the fieldset on PC_Order object which will be used in Order Shipment Details. If left blank, then PC_OrderShipment fieldset will be considered." default="" label="Order Shipment Fieldset"/>
+            <property name="showAllProduct" type="Boolean" description="Show Engagement Program Product or All Products. It will show only first 1000 records" default="false" label="Show all product"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Region User Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Region User Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Care Team Account --></label>
+        <name>PC_CareTeamAccount__c</name>
+        <relationshipLabel><!-- Program Region User Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Care Team Member --></label>
+        <name>PC_CareTeamMember__c</name>
+        <relationshipLabel><!-- Program Region User Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Care Team Role --></label>
+        <name>PC_CareTeamRole__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Manager</masterLabel>
+            <translation><!-- Case Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical Educator</masterLabel>
+            <translation><!-- Clinical Educator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Reimbursement Manager</masterLabel>
+            <translation><!-- Field Reimbursement Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation><!-- Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursement Specialist</masterLabel>
+            <translation><!-- Reimbursement Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_EndDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_EndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_EngagementProgram__c</name>
+        <relationshipLabel><!-- Program Region User Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Ordinal --></label>
+        <name>PC_Ordinal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank. --></help>
+        <label><!-- User Queue/Group Name --></label>
+        <name>PC_QueueOrGroupName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>PC_Region__c</name>
+        <relationshipLabel><!-- Program Region User Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group. --></help>
+        <label><!-- Role Type --></label>
+        <name>PC_RoleType__c</name>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>PC_StartDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>PC_StartDate__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please add value in &apos;Care Team Account&apos; if &apos;Care Team Role&apos; is selected as &apos;Treating Physician&apos; or &apos;HCO&apos;. --></errorMessage>
+        <name>PC_Care_Team_Account_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please add value in &apos;Care Team Member&apos; if &apos;Care Team Role&apos; is selected as &apos;Care Coordinator&apos; or &apos;Reimbursement Specialist&apos;. --></errorMessage>
+        <name>PC_Care_Team_Role_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &apos;Care Team Account&apos; of type &apos;HCO&apos; for the selected &apos;Care Team Role&apos; HCO --></errorMessage>
+        <name>PC_HCO_RoleAndAccount_Combination</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select &apos;Care Team Account&apos; of type &apos;Physician&apos; for the selected &apos;Care Team Role&apos; Treating Physician --></errorMessage>
+        <name>PC_Physician_RoleAndAccount_Combination</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter only one of &apos;Care Team Account&apos; and &apos;Care Team User&apos;. --></errorMessage>
+        <name>User_and_Account_values_check</name>
+    </validationRules>
+</CustomObjectTranslation>

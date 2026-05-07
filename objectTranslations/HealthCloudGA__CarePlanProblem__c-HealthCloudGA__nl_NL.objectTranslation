@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Probleem</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Problemen</value>
+    </caseValues>
+    <fieldSets>
+        <label>HcProblemCreateEdit</label>
+        <name>HealthCloudGA__HcProblemCreateEdit</name>
+    </fieldSets>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Problemen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zorgplansjabloon</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Problemen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zorgplan</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Problemen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categorie</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition</masterLabel>
+            <translation><!-- Cognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pain Monitoring or Management</masterLabel>
+            <translation><!-- Pain Monitoring or Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respiratory Impairment</masterLabel>
+            <translation><!-- Respiratory Impairment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Beschrijving</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Prioriteit</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Sorteervolgorde</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Naam</nameFieldLabel>
+    <validationRules>
+        <errorMessage>De opzoekopdracht naar Account moet overeenkomen met de opzoekopdracht naar Account voor case.</errorMessage>
+        <name>HealthCloudGA__AccountProblem_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

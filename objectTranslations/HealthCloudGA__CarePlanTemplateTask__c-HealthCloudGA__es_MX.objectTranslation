@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Tarea de plantilla de seguro médico</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Tareas de plantilla de seguro médico</value>
+    </caseValues>
+    <fields>
+        <label>Activo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Asignado a</label>
+        <name>HealthCloudGA__AssignedTo__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Objetivo de plantilla de seguro médico</label>
+        <name>HealthCloudGA__CarePlanTemplateGoal__c</name>
+        <relationshipLabel>Tareas de plantilla de seguro médico</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Problema de plantilla de seguro médico</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>Tareas de plantilla de seguro médico</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Plantilla de seguro médico</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Tareas de plantilla de seguro médico</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categoría</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Counselling</masterLabel>
+            <translation><!-- Counselling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diagnosis</masterLabel>
+            <translation><!-- Diagnosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exercise</masterLabel>
+            <translation><!-- Exercise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaccination</masterLabel>
+            <translation><!-- Vaccination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Descripción</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Compensación</label>
+        <name>HealthCloudGA__Offset__c</name>
+    </fields>
+    <fields>
+        <label>Prioridad</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Orden de clasificación</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label>Estado</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Asunto</label>
+        <name>HealthCloudGA__Subject__c</name>
+    </fields>
+    <fields>
+        <label>Tipo</label>
+        <name>HealthCloudGA__Type__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation><!-- Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical</masterLabel>
+            <translation><!-- Clinical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncategorized</masterLabel>
+            <translation><!-- Uncategorized --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nombre de tarea de plantilla de seguro m</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Asocia la tarea con una plantilla de seguro médico, problema u objetivo.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanTaskAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Asocia la tarea con solo un registro.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanTaskAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Documents</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- ACLS_Document_EmailFieldSet --></label>
+        <name>ACLS_Document_EmailFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- ACLS_Document_FaxFieldSet --></label>
+        <name>ACLS_Document_FaxFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- ACLS_Document_OutboundFaxFieldSet --></label>
+        <name>ACLS_Document_OutboundFaxFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- ACLS_Document_SMSFieldSet --></label>
+        <name>ACLS_Document_SMSFieldSet</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- PC_Document_FieldSet --></label>
+        <name>PC_Document_FieldSet</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Description --></label>
+        <name>ACLS_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Failure reason --></label>
+        <name>ACLS_Failure_reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>ACLS_Fax__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Message --></label>
+        <name>ACLS_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- RelationType --></label>
+        <name>ACLS_RelationType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>ACLS_Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- eLetter --></label>
+        <name>ACLS_eLetter__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Alert --></label>
+        <name>PC_Alert__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Applicant --></label>
+        <name>PC_Applicant__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Archived By --></label>
+        <name>PC_Archived_By__c</name>
+        <relationshipLabel><!-- Documents (Archived By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Archived On --></label>
+        <name>PC_Archived_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attachment Id --></label>
+        <name>PC_Attachment_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Correlation Id --></label>
+        <name>PC_Correlation_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- Document description --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>PC_Document_Category__c</name>
+        <picklistValues>
+            <masterLabel>Adverse Event</masterLabel>
+            <translation><!-- Adverse Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appeals Documentation</masterLabel>
+            <translation><!-- Appeals Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay Information</masterLabel>
+            <translation><!-- Copay Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment Form</masterLabel>
+            <translation><!-- Enrollment Form --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illegible Document</masterLabel>
+            <translation><!-- Illegible Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Information</masterLabel>
+            <translation><!-- Insurance Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA Documentation</masterLabel>
+            <translation><!-- PA Documentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Consent</masterLabel>
+            <translation><!-- Patient Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Information Update</masterLabel>
+            <translation><!-- Patient Information Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Infusion Report</masterLabel>
+            <translation><!-- Post Infusion Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Training Report</masterLabel>
+            <translation><!-- Post Training Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription</masterLabel>
+            <translation><!-- Prescription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Results</masterLabel>
+            <translation><!-- Test Results --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Document Name --></label>
+        <name>PC_Document_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>PC_Document_Status__c</name>
+        <picklistValues>
+            <masterLabel>Archived</masterLabel>
+            <translation><!-- Archived --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Attachment</masterLabel>
+            <translation><!-- Awaiting Attachment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Categorized</masterLabel>
+            <translation><!-- Categorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illegible</masterLabel>
+            <translation><!-- Illegible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Review</masterLabel>
+            <translation><!-- In Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obsolete</masterLabel>
+            <translation><!-- Obsolete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preview Only</masterLabel>
+            <translation><!-- Preview Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Processed</masterLabel>
+            <translation><!-- Processed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Published</masterLabel>
+            <translation><!-- Published --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Split</masterLabel>
+            <translation><!-- Ready for Split --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review Needed</masterLabel>
+            <translation><!-- Review Needed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spam</masterLabel>
+            <translation><!-- Spam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Split Failure</masterLabel>
+            <translation><!-- Split Failure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Split in Progress</masterLabel>
+            <translation><!-- Split in Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>PC_EngagementProgramCode__c</name>
+        <picklistValues>
+            <masterLabel>ASHF</masterLabel>
+            <translation><!-- ASHF --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_Engagement_Program__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Error --></label>
+        <name>PC_Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Failure Count --></label>
+        <name>PC_Failure_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Fax Handle --></label>
+        <name>PC_Fax_Handle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax Sent --></label>
+        <name>PC_Fax_Sent_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax Unique Id --></label>
+        <name>PC_Fax_Unique_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Email Address --></label>
+        <name>PC_From_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Fax Number --></label>
+        <name>PC_From_Fax_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Name --></label>
+        <name>PC_From_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Queue Owner --></label>
+        <name>PC_Has_Queue_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax Received --></label>
+        <name>PC_Inbound_Fax_Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inbound Fax --></label>
+        <name>PC_Inbound_Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Split --></label>
+        <name>PC_IsSplit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mark for Delete ? --></label>
+        <name>PC_Mark_for_Delete__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marked Spam By --></label>
+        <name>PC_Marked_Spam_By__c</name>
+        <relationshipLabel><!-- Documents (Marked Spam By) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Marked Spam On --></label>
+        <name>PC_Marked_Spam_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Fax Handle --></label>
+        <name>PC_Outbound_Fax_Handle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Page Count --></label>
+        <name>PC_Page_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Document Page Range --></label>
+        <name>PC_ParentPgRange__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Document --></label>
+        <name>PC_Parent_Document__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Form --></label>
+        <name>PC_Request_Form__c</name>
+        <relationshipLabel><!-- Documents --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SMS Body --></label>
+        <name>PC_SMS_Body__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Phone Number --></label>
+        <name>PC_SMS_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Timestamp --></label>
+        <name>PC_SMS_Timestamp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sorted Parent Page Numbers --></label>
+        <name>PC_Sorted_Parent_Pg_Num__c</name>
+    </fields>
+    <fields>
+        <help><!-- Email address of the receiver. This will be populated only for an inbound email. --></help>
+        <label><!-- To Email Address (Inbound) --></label>
+        <name>PC_To_Email_Address_Inbound__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Email Address --></label>
+        <name>PC_To_Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Name --></label>
+        <name>PC_To_Fax_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- To Fax Number --></label>
+        <name>PC_To_Fax_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Any Information Identified --></label>
+        <name>PC_isPIIIdentified__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- SMS Outbound --></label>
+        <name>ACLS_SMS_Outbound</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- General Document or Attachment --></description>
+        <label><!-- Document --></label>
+        <name>Document</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for documents that are attachments of an inbound / outbound email --></description>
+        <label><!-- Email Attachment --></label>
+        <name>PC_Email_Attachment</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Inbound Emails --></description>
+        <label><!-- Email - Inbound --></label>
+        <name>PC_Email_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Email - Outbound --></label>
+        <name>PC_Email_Outbound</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Inbound fax document --></description>
+        <label><!-- Fax - Inbound --></label>
+        <name>PC_Fax_Inbound</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Outbound fax document --></description>
+        <label><!-- Fax - Outbound --></label>
+        <name>PC_Fax_Outbound</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Knowledge Article --></label>
+        <name>PC_Knowledge_Article</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This record is for the manual upload of file from document log on program related list. --></description>
+        <label><!-- Manual Upload --></label>
+        <name>PC_Manual_Upload</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This recordtype is to store the incoming Smartform Registrations as a Document. --></description>
+        <label><!-- Online Form --></label>
+        <name>PC_Online_Form</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type to capture the documents that have been created as a part of sharing to the portal --></description>
+        <label><!-- Portal Sharing --></label>
+        <name>PC_Portal_Sharing</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Stores inbound SMS Communication History --></description>
+        <label><!-- SMS Inbound --></label>
+        <name>PC_SMS_Inbound</name>
+    </recordTypes>
+    <sharingReasons>
+        <label><!-- PC Address --></label>
+        <name>PC_Address</name>
+    </sharingReasons>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

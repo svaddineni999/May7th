@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Model</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Model</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case Type --></label>
+        <name>PC_Case_Type__c</name>
+        <picklistValues>
+            <masterLabel>Access Service</masterLabel>
+            <translation><!-- Access Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alternate Funding</masterLabel>
+            <translation><!-- Alternate Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appeal</masterLabel>
+            <translation><!-- Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI / BV</masterLabel>
+            <translation><!-- BI / BV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay</masterLabel>
+            <translation><!-- Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feature Request</masterLabel>
+            <translation><!-- Feature Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prior Authorization</masterLabel>
+            <translation><!-- Prior Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problem</masterLabel>
+            <translation><!-- Problem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program</masterLabel>
+            <translation><!-- Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Question</masterLabel>
+            <translation><!-- Question --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Generate All --></label>
+        <name>PC_Generate_All__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>PC_Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

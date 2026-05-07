@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Five9 Omni-Channel Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Five9 Omni-Channel Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Delete Entry --></label>
+        <name>Five9__Delete_Entry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Five9 Channel Id --></label>
+        <name>Five9__Five9_Channel_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Five9 Channel Label --></label>
+        <name>Five9__Five9_Channel_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Id --></label>
+        <name>Five9__Owner_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Channel Id --></label>
+        <name>Five9__Service_Channel_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

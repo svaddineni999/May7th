@@ -1,0 +1,38 @@
+<template>
+    <div>
+        <h3 class="slds-section-title_divider">
+            <span class="slds-truncate" title="Section Title">{tileLabel}</span>
+        </h3>
+        <div style="background: white;">
+            <lightning-record-edit-form
+                    record-id={recordId}
+                    object-api-name={objectName}
+                    onsuccess={handleSuccess}
+                    onsubmit ={handleSubmit}
+            >
+                <div class="slds-grid slds-wrap slds-p-around_x-small">
+                    <template for:each={fieldListMap} for:item="field">
+                        <div key={field.field} class="slds-size_1-of-2">
+                            <div class="slds-form-element" if:true={field.show1} >
+                                <lightning-combobox
+                                        name={field.fieldLabel}
+                                        label={field.fieldLabel}
+                                        value={existingShipToValue}
+                                        placeholder="Select"
+                                        options={shipTo}
+                                        onchange={selectionChangeHandler} >
+                                </lightning-combobox>
+                            </div>
+
+                            <lightning-input-field if:true={field.showProgramCase} data-id={field.field}  field-name={field.field} value={programCaseId} onchange={handleChange}></lightning-input-field>
+                            <lightning-input-field if:true={field.show1} class="slds-hide" data-id={field.field}  field-name={field.field} value={shipToValue} onchange={handleChange}></lightning-input-field>
+                            <lightning-input-field if:true={field.show2} data-id={field.field}  field-name={field.field} value={associationValue} disabled={field.show2}></lightning-input-field>
+                            <lightning-input-field if:true={field.show3} data-id={field.field}  field-name={field.field} onchange={handleChange}></lightning-input-field>
+                        </div>
+                    </template>
+                </div>
+            </lightning-record-edit-form>
+
+        </div>
+    </div>
+</template>

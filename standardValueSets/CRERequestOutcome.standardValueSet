@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Overturned</fullName>
+        <default>false</default>
+        <label>Overturned</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Upheld</fullName>
+        <default>false</default>
+        <label>Upheld</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Voided</fullName>
+        <default>false</default>
+        <label>Voided</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partially Upheld</fullName>
+        <default>false</default>
+        <label>Partially Upheld</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Partially Pending</fullName>
+        <default>false</default>
+        <label>Partially Pending</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Queued</fullName>
+        <default>false</default>
+        <label>Queued</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Complete</fullName>
+        <default>false</default>
+        <label>Complete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Error</fullName>
+        <default>false</default>
+        <label>Error</label>
+    </standardValue>
+</StandardValueSet>

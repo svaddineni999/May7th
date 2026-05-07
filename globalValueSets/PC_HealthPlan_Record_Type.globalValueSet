@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Private Health Plan</fullName>
+        <default>false</default>
+        <label>Private Health Plan</label>
+    </customValue>
+    <customValue>
+        <fullName>Public Health Plan</fullName>
+        <default>false</default>
+        <label>Public Health Plan</label>
+    </customValue>
+    <masterLabel>HealthPlan Record Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

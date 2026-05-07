@@ -1,0 +1,84 @@
+<!--
+ - Created by havalakki on 1/12/2018.
+Modification Log:
+Prachi Nandgaonkar      Jan 25, 2018         [PC-2568] Updated section title to Link Log. Removed subtable heading
+Prachi Nandgaonkar      Feb 13, 2018         [PC-2794] Removed padding to align with Document Action Ribbon
+Sheela Sathyanarayana   Jul 28, 2018         [PC3087] Made the component section expand by default.
+Satheesh Kumar          Jun 18, 2020         [PC-6461] Removed the association record link if associationRecordId is invalid
+ -->
+
+<aura:component description="PC_Document_Modification_Log" controller="PC_DocumentModificationLog" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.refreshView}"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="lstDocumentsLogs" type="PC_DocumentModificationLog.Object[]"/>
+    <aura:attribute name="doc" type="docWrapper.object"/>
+    <aura:attribute name="showDescriptionField" type="Boolean" default="false"/>
+    <aura:attribute name="isCommunity" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="navigateToObjectPage" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <aura:attribute name="descriptionColLabel" type="String" default="{!$Label.c.PC_Description}"/>
+    <lightning:flexipageRegionInfo />
+    <div class="slds" aura:id="documentLogId">
+        <div>
+                    <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.showAccordion}">
+                        <section class="slds-clearfix">
+                            <div class="slds-float--left ">
+                                <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                            </div>
+                            <div class="slds-m-left--large">{!$Label.c.PC_DocumentModificationLog}</div>
+                        </section>
+                    </div>
+
+                    <div class="slds-show" aura:id="articleOne">
+                        <div class="slds-tabs--scoped">
+
+                            <div class="slds-tabs--scoped__content" style="{!v.lstDocumentsLogs.length == 0 ? '' : 'display:none;'}" >
+                                {!$Label.c.PC_No_Records_Found}
+                            </div>
+                            <div class="slds-tabs--scoped__content noPadding" style="{!v.lstDocumentsLogs.length != 0 ? '' : 'display:none;'}" >
+                                <div class="modificationLogs slds-scrollable">
+
+                                    <table class="slds-table slds-table--bordered" width="100%">
+                                        <thead>
+                                            <tr class="slds-text-heading--label">
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_AssociatedRecord}</th>
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_AssociatedType}</th>
+                                                <aura:if isTrue="{!v.showDescriptionField}">
+                                                    <th class="slds-cell-shrink">{!v.descriptionColLabel}</th>
+                                                </aura:if>
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_LastModifyBy}</th>
+                                                <th class="slds-cell-shrink">{!$Label.c.PC_LastModifiedDate}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <aura:iteration items="{!v.lstDocumentsLogs}" var="log">
+                                                <tr class="slds-hint-parent">
+                                                    <td class="slds-truncate" style="white-space: normal">
+                                                        <aura:if isTrue="{!!empty(log.associationRecordId)}">
+                                                            <a data-id="{!log.objectName}" id="{!log.associationRecordId}" role="link" onclick="{!c.goToSelectedLink}" target="_blank">{!log.associationRecordName}</a>
+                                                            <aura:set attribute="else">
+                                                                <span>{!log.associationRecordName}</span>
+                                                            </aura:set>
+                                                        </aura:if>
+                                                    </td>
+                                                    <td class="slds-truncate" style="white-space: normal">{!log.associationType}</td>
+                                                    <aura:if isTrue="{!v.showDescriptionField}">
+                                                        <td class="slds-truncate" style="white-space: normal">{!log.docLog}</td>
+                                                    </aura:if>
+                                                    <td class="slds-truncate" style="white-space: normal">{!log.lastModifiedName}</td>
+                                                    <td class="slds-truncate" style="white-space: normal"><ui:outputDateTime format="YYYY-MM-DD HH:mm" value="{!log.lastModifiedDate}" /></td>
+                                                </tr>
+                                            </aura:iteration>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</aura:component>

@@ -1,0 +1,12 @@
+.THIS {
+    color: rgb(62, 62, 60);
+    padding: 0.5rem 1rem;
+}
+
+.THIS .widthAdjust{
+    width: 55px;
+}
+
+.THIS .uiInput--default .form-element__label {
+    margin-right: 0.25rem
+}

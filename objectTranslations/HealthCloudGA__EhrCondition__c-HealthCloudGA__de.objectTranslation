@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Erkrankung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Erkrankungen laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Erkrankung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Erkrankungen laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Erkrankung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Erkrankungen laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Erkrankung laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Erkrankungen laut EGA</value>
+    </caseValues>
+    <fields>
+        <label>Abklingen Details 255</label>
+        <name>HealthCloudGA__AbatementDetail255__c</name>
+    </fields>
+    <fields>
+        <label>Abklingen Details</label>
+        <name>HealthCloudGA__AbatementDetail__c</name>
+    </fields>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EGA Erkrankungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Bestätigender Patient</label>
+        <name>HealthCloudGA__AsserterPatient__c</name>
+    </fields>
+    <fields>
+        <label>Bestätigender Arzt</label>
+        <name>HealthCloudGA__AsserterPractitioner__c</name>
+    </fields>
+    <fields>
+        <label>Kategoriecode</label>
+        <name>HealthCloudGA__CategoryCode__c</name>
+    </fields>
+    <fields>
+        <label>Kategoriesystem</label>
+        <name>HealthCloudGA__CategorySystem__c</name>
+    </fields>
+    <fields>
+        <label>Kategoriebezeichnung</label>
+        <name>HealthCloudGA__CatergoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sicherheitscode</label>
+        <name>HealthCloudGA__CertaintyCode__c</name>
+    </fields>
+    <fields>
+        <label>Sicherheitsbezeichnung</label>
+        <name>HealthCloudGA__CertaintyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sicherheitssystem</label>
+        <name>HealthCloudGA__CertaintySystem__c</name>
+    </fields>
+    <fields>
+        <label>Code Bezeichnung</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Code System</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Bestätigt am</label>
+        <name>HealthCloudGA__DateAsserted__c</name>
+    </fields>
+    <fields>
+        <label>Erfassungsdatum</label>
+        <name>HealthCloudGA__DateDocumented__c</name>
+    </fields>
+    <fields>
+        <label>Begegnung</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>EGA Erkrankungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Evidenz Code</label>
+        <name>HealthCloudGA__EvidenceCode__c</name>
+    </fields>
+    <fields>
+        <label>Evidenz Details</label>
+        <name>HealthCloudGA__EvidenceDetail__c</name>
+    </fields>
+    <fields>
+        <label>Evidenz Bezeichnung</label>
+        <name>HealthCloudGA__EvidenceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Evidenz System</label>
+        <name>HealthCloudGA__EvidenceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Ist abgeklungen</label>
+        <name>HealthCloudGA__IsAbated__c</name>
+    </fields>
+    <fields>
+        <label>Ist eingeschränkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Wird auf Patientenkarte angezeigt</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Standort Code</label>
+        <name>HealthCloudGA__LocationCode__c</name>
+    </fields>
+    <fields>
+        <label>Standort Details</label>
+        <name>HealthCloudGA__LocationDetail__c</name>
+    </fields>
+    <fields>
+        <label>Standort Bezeichnung</label>
+        <name>HealthCloudGA__LocationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Standort System</label>
+        <name>HealthCloudGA__LocationSystem__c</name>
+    </fields>
+    <fields>
+        <label>Notizen</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Ausbruch</label>
+        <name>HealthCloudGA__Onset__c</name>
+    </fields>
+    <fields>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Erkrankungen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Schweregrad Code</label>
+        <name>HealthCloudGA__SeverityCode__c</name>
+    </fields>
+    <fields>
+        <label>Schweregrad Bezeichnung</label>
+        <name>HealthCloudGA__SeverityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Schweregrad System</label>
+        <name>HealthCloudGA__SeveritySystem__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Phase</label>
+        <name>HealthCloudGA__Stage__c</name>
+    </fields>
+    <fields>
+        <label>Status Code</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Status Bezeichnung</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Status System</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Erfassungsjahr</label>
+        <name>HealthCloudGA__YearDocumented__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>EGA Erkrankung ID</nameFieldLabel>
+</CustomObjectTranslation>

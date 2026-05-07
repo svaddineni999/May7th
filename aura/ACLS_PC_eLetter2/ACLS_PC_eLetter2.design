@@ -1,0 +1,13 @@
+<!--
+ - Created by sathekumar on 7/1/2020.
+ -->
+
+ <design:component>
+    <design:attribute name="moreEmailRecipients" label="Allow Additional Email Recipients" description="If selected, a field will be shown to enter more recipients provided the eletter is configured to allow for additional recipients. Same applies when no eletter is selected in Reply Context" />
+    <design:attribute name="showAttachments" label="Show Attachments" description="Select this option to show attachments" />
+    <design:attribute name="showPreviewScreen" label="Show Preview Screen" description="Select this option to show preview screen" />
+    <design:attribute name="showSendSecureOption" label="Show Send Secure Option" description="Select this option to show send secure button" />
+    <design:attribute name="emailWorkflow" label="Enable Email Workflow" description="Select this option to enable email workflow" />
+    <design:attribute name="faxWorkflow" label="Enable Fax Workflow" description="Select this option to enable fax workflow" />
+    <design:attribute name="eletterContext" label="E-Letter Context" datasource="New,Reply" default="New" description="It helps to set the context of eletter. Select Reply to run eletter in Reply Context. Default is New."/>
+</design:component>

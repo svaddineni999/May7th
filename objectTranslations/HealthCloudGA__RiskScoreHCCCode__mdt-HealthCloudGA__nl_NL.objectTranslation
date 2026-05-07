@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>RiskScoreHCCCode</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RiskScoreHCCCodes</value>
+    </caseValues>
+    <fields>
+        <label>Community FBDubbel oud</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community FBDubbel invalide</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community Niet dubbel oud</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community Niet dubbel invalide</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community PBDubbel oud</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community PBDubbel invalide</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>Aandoeningscategorie</label>
+        <name>HealthCloudGA__ConditionCategory__c</name>
+    </fields>
+    <fields>
+        <label>Beschrijving</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>HCC-code</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <label>Instelling</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>Is actief</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Overschreven HCC-codes</label>
+        <name>HealthCloudGA__OverriddenHCCCodes__c</name>
+    </fields>
+    <fields>
+        <label>Bereik in jaren</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Action Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Action Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- For components that have registered actions populate this field with the appropriate action name. --></help>
+        <label><!-- Action --></label>
+        <name>PC_Action__c</name>
+    </fields>
+    <fields>
+        <help><!-- Icon will be displayed only if this field is checked --></help>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Component Attributes --></label>
+        <name>PC_ComponentAttributes__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of component that needs to be launched on clicking action icon --></help>
+        <label><!-- Component --></label>
+        <name>PC_Component__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of document record type to which the action should be associated with. To apply icon for all record types, use keyword &apos;ALL&apos; without single quotes. For example: ALL --></help>
+        <label><!-- Document Record Type --></label>
+        <name>PC_Document_Record_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- Namespace of record type --></help>
+        <label><!-- Document Record Type Namespace Prefix --></label>
+        <name>PC_Document_Recordtype_Namespaceprefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group of RecordTypes --></label>
+        <name>PC_Group_of_RecordTypes__c</name>
+        <relationshipLabel><!-- Document Action Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Name of the Lightning Icon. Refer Icons section on Salesforce Lightning Design System. 
+Sample Input:  standard-account --></help>
+        <label><!-- Icon --></label>
+        <name>PC_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Label of the Document Action Icon that will visible on the document action center. You may also specify the fully qualified custom label path ($Label.namespace.labelName). --></help>
+        <label><!-- Icon Label --></label>
+        <name>PC_Label__c</name>
+    </fields>
+    <fields>
+        <help><!-- Numeric order in which icon should be displayed left to right. 1 indicates left most. --></help>
+        <label><!-- Ordinal --></label>
+        <name>PC_Ordinal__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Class will control visibility and accessibility for document action. --></help>
+        <label><!-- Validator Class --></label>
+        <name>PC_ValidatorClass__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

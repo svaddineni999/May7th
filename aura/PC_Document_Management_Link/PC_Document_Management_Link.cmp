@@ -1,0 +1,166 @@
+<!--
+Created by havalakki on 2/5/2018.
+Modification Log     :
+Haritha Reddy         Sep 25, 2019           [PC-5416] Updated logic to search for Accounts only of configured Record types when All option is selected.
+Shishir Bansal        Nov 7,2019             [PC-5624] fixed the issue with Document Linking
+Kishore Kanteti       Dec -11-2019           [PC-5795] Reduced the parameters sent to apex call in searchForPatient Method in helper.
+Tejas Patel           Jan-07-2020            [PC-5877] Adding a spinner and disable the save button when doclog record creation in progress
+Vijay Kashikar        Feb-10-2020            [PC-5986] Made recordId global as some users were not able to access this property on the flexipage
+Vijay Kashikar        Apr-09-2020            [PC-6157] Reference App.css to override to use overridden class of toast message to show line breaks.
+-->
+<aura:component description="PC_Document_Link" controller="PC_DocumentManagementLink" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <ltng:require styles="{!$Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="errorDocStatus" type="String" default="{!$Label.c.PC_ErrorDocMgmt}" />
+    <aura:attribute name="docManagementLinkUnlinkLabel" type="String" default="{!$Label.c.PC_Document_Link_Unlink}"/>
+    <aura:attribute name="displayPatientsTable" type="Boolean" default="false"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="searchString" type="String" description="The search string to find." />
+    <aura:attribute name="recordId" type="Id" access="global"/>
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:attribute name="recordType" type="String" default="All" />
+    <aura:attribute name="lstPatientsWrapper" type="PC_DocumentManagementLink.Object[]"/>
+    <aura:attribute name="showNoPatients" type="Boolean" default="false"/>
+    <aura:attribute name="patiendId" type="String"/>
+    <aura:attribute name="docManufacturerId" type="String"/>
+    <aura:attribute name="docEngagementProgId" type="String"/>
+    <aura:attribute name="allRecordTypeList" type="String"/>
+    <aura:attribute name="doc" type="docWrapper.object"/>
+    <aura:attribute name="accountRecordType" type="String" default="Patient"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="docLinkingErrorText" type="String" default="{!$Label.c.PC_Document_Linking_Error_Message}" />
+    <aura:attribute name="docLinkingSuccessText" type="String" default="{!$Label.c.PC_Document_Linking_Success_Message}" />
+    <aura:attribute name="docLinkingWarningText" type="String" default="{!$Label.c.PC_Document_Linking_Warning_Message}" />
+    <aura:attribute name="selectAccountErrorText" type="String" default="{!$Label.c.PC_SELECT_ACC_REC}" />
+    <aura:attribute name="isDisabled" type="Boolean"/>
+    <aura:registerEvent name="refreshLink" type="c:PC_RefreshChildCmp"/>
+    <aura:handler event="c:PC_RefreshChildCmp" action="{!c.handleBackToSearch}"/>
+    <aura:attribute name="showBackToSearch" type="Boolean" default="false"/>
+    <aura:handler name="closeParentModalBox" action="{!c.handleChildCmpEvent}" event="c:PC_CloseModalBox"/>
+    <aura:attribute name="labelAll" type="String" default="{!$Label.c.PC_All}"/>
+    <aura:attribute name="_label1" type="String" default="{!$Label.c.PC_Document_Management_Link}"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="isInValidInput" type="Boolean" default="false"/>
+    <center>
+        <ui:spinner aura:id="spinner" />
+    </center>
+
+    <div id="PC_ChangeDocOwner"  class="slds">
+        <div id="form">
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--large slds-fade-in-open" aura:id="modaldialog" >
+                <div class="slds-modal__container" aura:id="modaldialogContainer">
+                    <div class="slds-modal__header slds-modal--large">
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection" align="left">{!v.docManagementLinkUnlinkLabel}</h2>
+                        <button type="button" class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true" />
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                    </div>
+                    <div class="slds-modal__content slds-modal--large">
+
+                        <div class="container hideComponent slds-modal--large" aura:id="documentLogLinkId" >
+                            <!-- PC_DocumentLog_Link would go here -->
+                            <c:PC_Document_Management_LinkDetails aura:id="documentLinkDetailsId" docId="{!v.recordId}" patientId="{!v.patiendId}" accountRecordType="{!v.accountRecordType}" docEngagementProgId="{!v.docEngagementProgId}" />
+                        </div>
+
+                        <div class="slds-tabs--scoped showComponent" aura:id="documentLinkId">
+                            <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+                                <div class="slds-form--inline">
+                                    <div class="slds-form-element searchBlock" onkeypress="{!c.checkEnter}">
+                                        <ui:inputText aura:id="searchString" value="{!v.searchString}" class="searchPatient" updateOn="keyup"/>
+                                    </div>
+                                    <div class="slds-form-element">
+                                        <ui:inputSelect class="dynamic" aura:id="selectAccountRt" change="{!c.onSelectChange}"/>
+                                    </div>
+                                    <div class="slds-form-element">
+                                        <lightning:button aura:id="searchPatientButton" class="slds-button slds-button--brand" label="{!$Label.c.PC_SearchPatients}" onclick="{!c.searchPatient}"/>
+                                    </div>
+                                    <aura:if isTrue="{!v.isInValidInput}">
+                                        <div style="color:RED; padding:2px">{!$Label.c.PC_DocLinkTwoCharacters}</div>
+                                    </aura:if>
+                                    <!--@@RemoveNewEnrollmentButton -->
+                                    <aura:if isTrue="{!v.displayPatientsTable}">
+                                        <div class="slds-text-body--regular">
+                                            <div class="slds-m-bottom--large"></div>
+                                            <label style="{!v.showNoPatients ? '' : 'display:none;'}">{!$Label.c.PC_NoPatientFound}</label>
+                                        </div>
+                                        <aura:if isTrue="{! v.errors.length > 0 }">
+                                            <div style="color:RED">{!$Label.c.PC_SELECT_ACC_REC}</div>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.lstPatientsWrapper.length != 0}">
+                                            <div class="patientsTable slds-scrollable">
+                                                <table class="slds-table slds-table--bordered slds-table_col-bordered">
+                                                    <thead>
+                                                    <tr class="slds-text-heading--label">
+                                                        <th class="slds-cell-shrink slds-border_left"></th>
+                                                        <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col1}</th>
+                                                        <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col2}</th>
+                                                        <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col3}</th>
+                                                        <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col4}</th>
+                                                        <!-- <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col5}</th> -->
+                                                        <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col6}</th>
+                                                        <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col7}</th>
+                                                        <th class="slds-cell-shrink slds-border_right">{!$Label.c.PC_SearchRes_Col8}</th>
+                                                        <!-- <th class="slds-cell-shrink">{!$Label.c.PC_SearchRes_Col9}</th> -->
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <aura:iteration items="{!v.lstPatientsWrapper}" var="patient">
+                                                        <tr class="slds-hint-parent">
+                                                            <td  class="slds-truncate slds-border_left" style="width:10%;">
+                                                                <ui:inputRadio text="{!patient.sPatientId}" name="patientsOptions" click="{!c.setPatientInformation}"/>
+                                                            </td>
+                                                            <td class="slds-truncate"  style="width:45%;">
+                                                                <a id="{!patient.sPatientId}" onclick="{!c.goToSelectedLink}" target="_blank">
+                                                                        {!patient.sPatientName}
+                                                                </a>
+                                                            </td>
+                                                            <td class="slds-truncate" style="width:45%;">{!patient.sAccountTypeLabel}</td>
+                                                            <td class="slds-truncate" style="width:45%;">{!patient.sPatientBirthDate}</td>
+                                                            <td class="slds-truncate" style="width:45%;">{!patient.sPhysicianNPI }</td>
+                                                            <!-- <td class="slds-truncate" style="width:45%;">{!patient.sAccStatus}</td> -->
+                                                            <td class="slds-truncate" style="width:45%;">{!patient.sAccAddr}</td>
+                                                            <td class="slds-truncate" style="width:45%;">{!patient.sAccCity}</td>
+                                                            <td class="slds-truncate slds-border_right" style="width:45%;">{!patient.sAccState}</td>
+                                                            <!-- <td class="slds-truncate" style="width:45%;">{!patient.sAccZipCode}</td> -->
+                                                        </tr>
+                                                    </aura:iteration>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </aura:if>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-modal__footer slds-modal--large">
+                        <div class="slds-x-small-buttons--horizontal">
+                            <div class="slds-form-element">
+                                <aura:if isTrue="{!v.showBackToSearch}">
+                                    <ui:button class="slds-button slds-button_neutral slds-float_left" press="{!c.handleBackToSearch}" label="{!$Label.c.PC_Back_to_Search}" />
+                                </aura:if>
+                                <ui:button class="slds-button slds-button_neutral" press="{!c.hideModalBox}" label="{!$Label.c.PC_Button_Label_Cancel}"/>
+
+                                <aura:if isTrue="{!v.showBackToSearch}">
+                                    <ui:button aura:id="saveButtonId" class="slds-button slds-button--brand" disabled="false" label="{!$Label.c.PC_Save}" press="{!c.saveDocumentLogs}"/>
+                                    <aura:set attribute="else">
+                                        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Document_Link}" press="{!c.linkCheck}"/>
+                                    </aura:set>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+</aura:component>

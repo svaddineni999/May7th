@@ -1,0 +1,28 @@
+<aura:component extends="c:PC_EnrollmentWizardPage">    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:set attribute="persistentAttributes" value="['services', 'facilityName']" />
+    
+    <aura:attribute name="services" type="Map"/>
+    <aura:attribute name="facilityName" type="String"/>
+    
+	<aura:set attribute="body">
+        <div class="slds-card slds-p-top--medium">
+            <header class="slds-card__header">
+                <h3 class="slds-text-heading--small">Program Services Wizard Page</h3>
+            </header>
+            
+            <form class="slds-form--stacked">
+                <section class="slds-card__body">
+                    <div id="list" class="row">
+                        <aura:iteration items="{!v.services}" var="service">
+                            <p><ui:inputCheckbox value="{!service.Selected}"/> {!service.Name}</p>
+                        </aura:iteration>
+                    </div>
+                </section>
+                <section class="slds-card__body">
+                    <p><ui:inputText aura:id="facilityName" value="{!v.facilityName}"/></p>
+                </section>
+            </form>
+        </div>	
+    </aura:set>
+</aura:component>

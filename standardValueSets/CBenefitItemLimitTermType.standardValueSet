@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Calendar Year</fullName>
+        <default>false</default>
+        <label>Calendar Year</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Year to Date</fullName>
+        <default>false</default>
+        <label>Year to Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Day</fullName>
+        <default>false</default>
+        <label>Day</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Month</fullName>
+        <default>false</default>
+        <label>Month</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hour</fullName>
+        <default>false</default>
+        <label>Hour</label>
+    </standardValue>
+    <standardValue>
+        <fullName>24 Hours</fullName>
+        <default>false</default>
+        <label>24 Hours</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Years</fullName>
+        <default>false</default>
+        <label>Years</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service Year</fullName>
+        <default>false</default>
+        <label>Service Year</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Contract</fullName>
+        <default>false</default>
+        <label>Contract</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Episode</fullName>
+        <default>false</default>
+        <label>Episode</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visit</fullName>
+        <default>false</default>
+        <label>Visit</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outlier</fullName>
+        <default>false</default>
+        <label>Outlier</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Remaining</fullName>
+        <default>false</default>
+        <label>Remaining</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Exceeded</fullName>
+        <default>false</default>
+        <label>Exceeded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not Exceeded</fullName>
+        <default>false</default>
+        <label>Not Exceeded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lifetime</fullName>
+        <default>false</default>
+        <label>Lifetime</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Lifetime Remaining</fullName>
+        <default>false</default>
+        <label>Lifetime Remaining</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Week</fullName>
+        <default>false</default>
+        <label>Week</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Admission</fullName>
+        <default>false</default>
+        <label>Admission</label>
+    </standardValue>
+</StandardValueSet>

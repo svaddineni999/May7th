@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Условие в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Условие в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Условий в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Условию в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Условиям в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Условием в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Условиями в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Условии в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Условиях в ЭМК</value>
+    </caseValues>
+    <fields>
+        <label>Информация об ослаблении симптомов 255</label>
+        <name>HealthCloudGA__AbatementDetail255__c</name>
+    </fields>
+    <fields>
+        <label>Информация об ослаблении симптомов</label>
+        <name>HealthCloudGA__AbatementDetail__c</name>
+    </fields>
+    <fields>
+        <label>Организация</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Состояния ЭМК</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Утверждающее лицо Пациент</label>
+        <name>HealthCloudGA__AsserterPatient__c</name>
+    </fields>
+    <fields>
+        <label>Утверждающее лицо Врач</label>
+        <name>HealthCloudGA__AsserterPractitioner__c</name>
+    </fields>
+    <fields>
+        <label>Код категории</label>
+        <name>HealthCloudGA__CategoryCode__c</name>
+    </fields>
+    <fields>
+        <label>Система категории</label>
+        <name>HealthCloudGA__CategorySystem__c</name>
+    </fields>
+    <fields>
+        <label>Метка категории</label>
+        <name>HealthCloudGA__CatergoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Код достоверности</label>
+        <name>HealthCloudGA__CertaintyCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка достоверности</label>
+        <name>HealthCloudGA__CertaintyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система достоверности</label>
+        <name>HealthCloudGA__CertaintySystem__c</name>
+    </fields>
+    <fields>
+        <label>Метка кода</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система кода</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Дата утверждения</label>
+        <name>HealthCloudGA__DateAsserted__c</name>
+    </fields>
+    <fields>
+        <label>Дата документального оформления</label>
+        <name>HealthCloudGA__DateDocumented__c</name>
+    </fields>
+    <fields>
+        <label>Обращение</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Состояния ЭМК</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Код признака</label>
+        <name>HealthCloudGA__EvidenceCode__c</name>
+    </fields>
+    <fields>
+        <label>Детали признака</label>
+        <name>HealthCloudGA__EvidenceDetail__c</name>
+    </fields>
+    <fields>
+        <label>Метка признака</label>
+        <name>HealthCloudGA__EvidenceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система признака</label>
+        <name>HealthCloudGA__EvidenceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Отменено</label>
+        <name>HealthCloudGA__IsAbated__c</name>
+    </fields>
+    <fields>
+        <label>Ограничено</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Отображается на карте пациента</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Код локализации</label>
+        <name>HealthCloudGA__LocationCode__c</name>
+    </fields>
+    <fields>
+        <label>Информация о локализации</label>
+        <name>HealthCloudGA__LocationDetail__c</name>
+    </fields>
+    <fields>
+        <label>Метка локализации</label>
+        <name>HealthCloudGA__LocationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система локализации</label>
+        <name>HealthCloudGA__LocationSystem__c</name>
+    </fields>
+    <fields>
+        <label>Примечания</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Начало проявления</label>
+        <name>HealthCloudGA__Onset__c</name>
+    </fields>
+    <fields>
+        <label>Пациент</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Условия</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Код выраженности</label>
+        <name>HealthCloudGA__SeverityCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка выраженности</label>
+        <name>HealthCloudGA__SeverityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система выраженности</label>
+        <name>HealthCloudGA__SeveritySystem__c</name>
+    </fields>
+    <fields>
+        <label>Код исходной системы</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Исходная система изменена</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Исходная система</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Этап</label>
+        <name>HealthCloudGA__Stage__c</name>
+    </fields>
+    <fields>
+        <label>Код статуса</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка статуса</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система статуса</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Год регистрации</label>
+        <name>HealthCloudGA__YearDocumented__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Код состояния в ЭМК</nameFieldLabel>
+</CustomObjectTranslation>

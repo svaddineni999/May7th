@@ -1,0 +1,67 @@
+/**
+ * Created by sahgarg on 3/15/2018.
+ */
+
+.THIS .slds-form_horizontal .slds-form-element__label:first-child {
+    max-width: 70px;
+    flex-basis: 70px;
+    padding-top: .5rem;
+    text-align: right;
+    width: 100%;
+}
+
+.THIS .slds-form_horizontal .slds-form-element__control {
+    padding-left: 70px;
+}
+
+.THIS .slds-select_container:before {
+    display: none;
+}
+
+.THIS .slds-select_container:after {
+    display: none;
+}
+
+.THIS .slds-card+.slds-card {
+    margin-top: 0.5rem;
+}
+
+.THIS .slds-card__tile {
+    margin-top: 0;
+}
+
+.THIS .taskName{
+    font-size: 1rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+
+.THIS .taskName:first-child{
+    padding-top: 0;
+}
+
+.THIS .slds-form_horizontal .slds-form-element {
+    margin-bottom: 1rem;
+}
+.THIS .toggleDiv .slds-checkbox_off {
+    display:none !important;
+}
+.THIS .toggleDiv .slds-checkbox_on {
+    display:none !important;
+}
+.THIS .flexContainer{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content:flex-start;
+    align-items:flex-start;
+    align-content:space-evenly;
+}
+.THIS .flexItem{
+    flex-grow:1;
+    /*width:30%;*/
+    padding:0.2rem;
+    flex-shrink:10;
+    min-width:0;
+    /*max-width:33%;*/
+    max-height:250px;
+}

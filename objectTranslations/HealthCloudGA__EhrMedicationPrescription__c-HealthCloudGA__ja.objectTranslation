@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 薬剤処方箋</value>
+    </caseValues>
+    <fields>
+        <label>取引先</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>薬剤処方箋</relationshipLabel>
+    </fields>
+    <fields>
+        <label>記述日</label>
+        <name>HealthCloudGA__DateWritten__c</name>
+    </fields>
+    <fields>
+        <label>調剤の供給想定期間</label>
+        <name>HealthCloudGA__DispenseExpectedSupplyDuration__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>調剤薬コードシステム</label>
+        <name>HealthCloudGA__DispenseMedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>調剤薬コード</label>
+        <name>HealthCloudGA__DispenseMedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>調剤薬の有効期限</label>
+        <name>HealthCloudGA__DispenseMedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>ブランド調剤薬</label>
+        <name>HealthCloudGA__DispenseMedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>調剤薬種別コード</label>
+        <name>HealthCloudGA__DispenseMedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>調剤薬種別の表示ラベル</label>
+        <name>HealthCloudGA__DispenseMedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>調剤薬種別システム</label>
+        <name>HealthCloudGA__DispenseMedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for this medication --></help>
+        <label>調剤薬の表示ラベル</label>
+        <name>HealthCloudGA__DispenseMedicationLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>調剤薬のロット番号</label>
+        <name>HealthCloudGA__DispenseMedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>調剤薬名</label>
+        <name>HealthCloudGA__DispenseMedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>調剤薬製品形状コード</label>
+        <name>HealthCloudGA__DispenseMedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>調剤薬製品形状の表示ラベル</label>
+        <name>HealthCloudGA__DispenseMedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>調剤薬製品形状システム</label>
+        <name>HealthCloudGA__DispenseMedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>繰り返し調剤の許容回数</label>
+        <name>HealthCloudGA__DispenseNumberOfRepeatAllowed__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of medication to supply per dispense unit of measure --></help>
+        <label>調剤量の単位</label>
+        <name>HealthCloudGA__DispenseQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Amount of medication to supply per dispense --></help>
+        <label>調剤量の値</label>
+        <name>HealthCloudGA__DispenseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <label>調剤有効期間の終了</label>
+        <name>HealthCloudGA__DispenseValidityPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>調剤有効期間の開始</label>
+        <name>HealthCloudGA__DispenseValidityPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>接触</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>薬剤処方箋</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for medication code --></help>
+        <label>薬剤コードの表示ラベル</label>
+        <name>HealthCloudGA__MedicationCodeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>薬剤コードシステム</label>
+        <name>HealthCloudGA__MedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>薬剤コード</label>
+        <name>HealthCloudGA__MedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>薬剤の有効期限</label>
+        <name>HealthCloudGA__MedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>ブランド薬剤</label>
+        <name>HealthCloudGA__MedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>薬剤種別コード</label>
+        <name>HealthCloudGA__MedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>薬剤種別の表示ラベル</label>
+        <name>HealthCloudGA__MedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>薬剤種別システム</label>
+        <name>HealthCloudGA__MedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>薬剤のロット番号</label>
+        <name>HealthCloudGA__MedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>薬剤名</label>
+        <name>HealthCloudGA__MedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>薬剤製品形状コード</label>
+        <name>HealthCloudGA__MedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>薬剤製品形状の表示ラベル</label>
+        <name>HealthCloudGA__MedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>薬剤製品形状システム</label>
+        <name>HealthCloudGA__MedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>患者</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>薬剤処方箋</relationshipLabel>
+    </fields>
+    <fields>
+        <label>処方者名</label>
+        <name>HealthCloudGA__PrescriberName__c</name>
+    </fields>
+    <fields>
+        <label>処方者</label>
+        <name>HealthCloudGA__Prescriber__c</name>
+        <relationshipLabel>薬剤処方箋</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reason or indication for writing the prescription --></help>
+        <label>理由コード</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>理由となる症状</label>
+        <name>HealthCloudGA__ReasonCondition__c</name>
+        <relationshipLabel>薬剤処方箋</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Reason code or indication for writing the prescription --></help>
+        <label>理由の表示ラベル</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Coding System ReasonCode or indication for writing the prescription --></help>
+        <label>理由システム</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code for: active | on-hold | completed | entered-in-error | stopped | superseded | draft --></help>
+        <label>状況コード</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Status --></help>
+        <label>状況の表示ラベル</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Status Code --></help>
+        <label>状況システム</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>代替制限理由コード</label>
+        <name>HealthCloudGA__SubstituteRestrictReasonCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any restrictions on medication substitution, generic / formulary + friendly name --></help>
+        <label>代替制限理由の表示ラベル</label>
+        <name>HealthCloudGA__SubstituteRestrictReasonLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- Any restrictions on medication substitution? coding system --></help>
+        <label>代替制限理由システム</label>
+        <name>HealthCloudGA__SubstituteRestrictReasonSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- generic | formulary + code --></help>
+        <label>代替制限種別コード</label>
+        <name>HealthCloudGA__SubstituteRestrictTypeCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- generic | formulary + code friendly name --></help>
+        <label>代替制限種別の表示ラベル</label>
+        <name>HealthCloudGA__SubstituteRestrictTypeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- generic | formulary + coding system --></help>
+        <label>代替制限種別システム</label>
+        <name>HealthCloudGA__SubstituteRestrictTypeSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 薬剤処方箋 ID</nameFieldLabel>
+</CustomObjectTranslation>

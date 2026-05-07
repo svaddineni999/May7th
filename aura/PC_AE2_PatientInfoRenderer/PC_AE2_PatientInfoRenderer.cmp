@@ -1,0 +1,99 @@
+<!--
+Lightning component  : PC_AE_PatientInfoRenderer2
+Description          : Form to capture Patient Information for Adverse Event
+Parameters           : aeWrapper Map
+Modification Log:
+Haritha Reddy 		 19-Nov-2018    Initial Version
+Shishir Bansal       18-Dec-2019    Ability to launch AE creation action from a custom button
+Pavankumar           25-Aug-2021    [PC-8066] Replaced standard labels with custom label to get the ** symbol
+-->
+
+<aura:component description="PC_AE2_PatientInfoRenderer" controller="PC_AE2_PatientInfoRendererController"
+                access="global">
+    <aura:attribute name="dateLabel" type="string" default="{!$Label.c.PC_AE2_DateFormatLegend}"/>
+    <aura:attribute name="aeWrapper" type="Map"/>
+    <aura:attribute name="aeId" type="string"/>
+    <aura:attribute name="patientId" type="string"/>
+    <aura:attribute name="caseId" type="string"/>
+    <aura:attribute name="genderOptions" type="List"/>
+    <aura:attribute name="ethnicityOptions" type="List"/>
+    <aura:attribute name="raceOptions" type="List"/>
+    <aura:attribute name="weightOptions" type="List"/>
+    <aura:attribute name="ageTypeOptions" type="List"/>
+    <aura:attribute name="fieldLabels" type="Object"/>
+    <aura:attribute name="errorDescription" type="String" default="Unknown error"/>
+    <aura:method name="validate" action="{!c.validatePatientInfo}"/>
+    <aura:method name="initializeComponent" action="{!c.doInit}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds slds-grid slds-wrap patientInfoForm">
+
+        <aura:if isTrue="{!not(empty(v.aeWrapper.patId))}">
+            <div class="slds-col slds-size_6-of-12">
+                <lightning:input name="patId" label="{!v.fieldLabels.patId}" value="{!v.aeWrapper.patId}"
+                                 disabled="true"/>
+            </div>
+            <div class="slds-col slds-size_6-of-12"></div>
+
+            <aura:set attribute="else">
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning:input name="firstName" label="{!v.fieldLabels.firstName}"
+                                     value="{!v.aeWrapper.firstName}"/>
+                </div>
+
+                <div class="slds-col slds-size_6-of-12 slds-p-left_medium">
+                    <lightning:input name="lastName" label="{!v.fieldLabels.lastName}" value="{!v.aeWrapper.lastName}"
+                    />
+                </div>
+                <div class="slds-col slds-size_6-of-12">
+                    <lightning:input name="patId" label="{!v.fieldLabels.patId}" value="{!v.aeWrapper.userPatId}"/>
+                </div>
+                <div class="slds-col slds-size_8-of-12"></div>
+            </aura:set>
+        </aura:if>
+
+        <div class="slds-col slds-size_5-of-12">
+            <ul class="slds-list_horizontal ">
+                <li>
+                    <lightning:input class="" type="number" name="age" label="{!v.fieldLabels.age}"
+                                     value="{!v.aeWrapper.age}"/>
+                </li>
+                <li>
+                    <lightning:radioGroup class="slds-p-left_medium" options="{! v.ageTypeOptions }"
+                                          value="{! v.aeWrapper.ageType }" type="radio"/>
+                </li>
+            </ul>
+        </div>
+        <div class="slds-col slds-size_1-of-12">
+            <!--<center>{!$Label.c.PC_AE_or}</center>-->
+        </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-left_medium">
+            <lightning:input type="date" name="dob" label="{! (v.dateLabel + v.fieldLabels.dob )}" value="{!v.aeWrapper.dob}"/>
+        </div>
+        <div class="slds-col slds-size_6-of-12">
+            <lightning:radioGroup label="{!v.fieldLabels.gender}" options="{! v.genderOptions }"
+                                  value="{! v.aeWrapper.gender }" type="radio"/>
+        </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-left_medium">
+            <ul class="slds-list_horizontal">
+                <li>
+                    <lightning:input type="number" name="weight" class="AE" label="{!v.fieldLabels.weight}"
+                                     value="{!v.aeWrapper.weight}"/>
+                </li>
+                <li class="slds-p-left_medium slds-p-top_medium">
+                    <lightning:radioGroup options="{! v.weightOptions }"
+                                          value="{! v.aeWrapper.weightType }" type="radio"/>
+                </li>
+            </ul>
+        </div>
+        <div class="slds-col slds-size_6-of-12 slds-p-top--small">
+            <lightning:radioGroup label="{!v.fieldLabels.ethnicity}" options="{! v.ethnicityOptions }"
+                                  value="{! v.aeWrapper.ethnicity }" type="radio"/>
+        </div>
+
+        <div class="slds-col slds-size_6-of-12 slds-p-left_medium">
+            <lightning:checkboxGroup name="race" label="{!v.fieldLabels.race}" options="{!v.raceOptions}"
+                                     value="{!v.aeWrapper.race }"/>
+        </div>
+    </div>
+</aura:component>

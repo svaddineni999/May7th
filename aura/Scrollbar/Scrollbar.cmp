@@ -1,0 +1,34 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+    <div class="mainWrap">
+        <ui:scrollerWrapper class="sWrapTest">
+            <ul class="testDiv">        
+               <li>In the Winter ’17 release, many of your favorite features 
+                   are easier to use than ever before. 
+               </li>
+               <li>Lightning Experience has a brand new                      
+                   navigation bar and lots of critical sales,
+                   service, and analytics capabilities. 
+               </li>
+               <li>You’ve got more options for managing customer and partner
+                   communities, running your business from your phone, 
+                   and keeping your data and your users secure. 
+               </li>
+               <li>Not to mention plentiful new
+                   customization and app development features, 
+                   including custom Lightning apps.
+               </li>                      
+               <li>Other features require direct action by an administrator 
+                   before users can benefit from the new functionality.
+               </li>
+               <li>If a key feature is also available in Salesforce1, 
+                   our mobile app, we mention that in the feature description. 
+               </li>
+               <li>ui:scrollerWrapper
+                   Creates a container that enables native scrolling in 
+                   Salesforce1.
+               </li>
+
+            </ul>
+        </ui:scrollerWrapper>
+    </div>
+</aura:component>

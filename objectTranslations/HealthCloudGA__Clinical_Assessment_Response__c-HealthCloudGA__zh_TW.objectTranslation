@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>臨床評估回應</value>
+    </caseValues>
+    <fields>
+        <label>腹痛</label>
+        <name>HealthCloudGA__AbdominalPain__c</name>
+    </fields>
+    <fields>
+        <label>心血管疾病</label>
+        <name>HealthCloudGA__CardiovascularDisease__c</name>
+    </fields>
+    <fields>
+        <label>發冷</label>
+        <name>HealthCloudGA__Chills__c</name>
+    </fields>
+    <fields>
+        <label>慢性肝病</label>
+        <name>HealthCloudGA__ChronicLiverDisease__c</name>
+    </fields>
+    <fields>
+        <label>慢性肺病</label>
+        <name>HealthCloudGA__ChronicLungDisease__c</name>
+    </fields>
+    <fields>
+        <label>慢性腎病</label>
+        <name>HealthCloudGA__ChronicRenalDisease__c</name>
+    </fields>
+    <fields>
+        <label>咳嗽</label>
+        <name>HealthCloudGA__Cough__c</name>
+    </fields>
+    <fields>
+        <label>現吸煙者</label>
+        <name>HealthCloudGA__CurrentSmoker__c</name>
+    </fields>
+    <fields>
+        <label>糖尿病</label>
+        <name>HealthCloudGA__DiabetesMellitus__c</name>
+    </fields>
+    <fields>
+        <label>腹瀉</label>
+        <name>HealthCloudGA__Diarrhoea__c</name>
+    </fields>
+    <fields>
+        <label>發燒超過閾值</label>
+        <name>HealthCloudGA__FeverOverThreshold__c</name>
+    </fields>
+    <fields>
+        <label>前吸煙者</label>
+        <name>HealthCloudGA__FormerSmoker__c</name>
+    </fields>
+    <fields>
+        <label>頭痛</label>
+        <name>HealthCloudGA__Headache__c</name>
+    </fields>
+    <fields>
+        <label>記錄的最高體溫</label>
+        <name>HealthCloudGA__HighestRecordedTemperature__c</name>
+    </fields>
+    <fields>
+        <label>住院治療狀態</label>
+        <name>HealthCloudGA__HospitalizationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Admitted</masterLabel>
+            <translation><!-- Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Admitted</masterLabel>
+            <translation><!-- Not Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>免疫功能低下</label>
+        <name>HealthCloudGA__Immunocompromised__c</name>
+    </fields>
+    <fields>
+        <label>肌肉痛</label>
+        <name>HealthCloudGA__MuscleAches__c</name>
+    </fields>
+    <fields>
+        <label>噁心或嘔吐</label>
+        <name>HealthCloudGA__NauseaOrVomiting__c</name>
+    </fields>
+    <fields>
+        <label>神經障礙備註</label>
+        <name>HealthCloudGA__NeurologicalDisablityNotes__c</name>
+    </fields>
+    <fields>
+        <label>神經障礙</label>
+        <name>HealthCloudGA__NeurologicalDisablity__c</name>
+    </fields>
+    <fields>
+        <label>職業</label>
+        <name>HealthCloudGA__Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Childcare worker</masterLabel>
+            <translation><!-- Childcare worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical laboratory technologist or technician</masterLabel>
+            <translation><!-- Clinical laboratory technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combined food preparation or serving worker, including fast food</masterLabel>
+            <translation><!-- Combined food preparation or serving worker, including fast food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentist</masterLabel>
+            <translation><!-- Dentist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency management director</masterLabel>
+            <translation><!-- Emergency management director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency medical technician or paramedic</masterLabel>
+            <translation><!-- Emergency medical technician or paramedic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health practitioner support technologist or technician</masterLabel>
+            <translation><!-- Health practitioner support technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare support worker(including medical equipment preparer)</masterLabel>
+            <translation><!-- Healthcare support worker(including medical equipment preparer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>症狀的發作</label>
+        <name>HealthCloudGA__OnsetOfSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>其他慢性病備註</label>
+        <name>HealthCloudGA__OtherChronicDiseasesNotes__c</name>
+    </fields>
+    <fields>
+        <label>其他慢性病</label>
+        <name>HealthCloudGA__OtherChronicDiseases__c</name>
+    </fields>
+    <fields>
+        <label>其他症狀</label>
+        <name>HealthCloudGA__OtherSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>已提供父母同意</label>
+        <name>HealthCloudGA__ParentalConsent__c</name>
+    </fields>
+    <fields>
+        <label>帳戶</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>臨床評估回應</relationshipLabel>
+    </fields>
+    <fields>
+        <label>主要照護醫師</label>
+        <name>HealthCloudGA__PrimaryCarePhysician__c</name>
+    </fields>
+    <fields>
+        <label>提供者設施名稱</label>
+        <name>HealthCloudGA__ProviderFacilityName__c</name>
+    </fields>
+    <fields>
+        <label>流鼻水</label>
+        <name>HealthCloudGA__RunnyNose__c</name>
+    </fields>
+    <fields>
+        <label>呼吸急促</label>
+        <name>HealthCloudGA__ShortnessOfBreath__c</name>
+    </fields>
+    <fields>
+        <label>喉嚨痛</label>
+        <name>HealthCloudGA__SoreThroat__c</name>
+    </fields>
+    <fields>
+        <label>主觀發燒</label>
+        <name>HealthCloudGA__SubjectiveFever__c</name>
+    </fields>
+    <fields>
+        <label>測試設施名稱</label>
+        <name>HealthCloudGA__TestingFacilityName__c</name>
+    </fields>
+    <nameFieldLabel>臨床評估回應名稱</nameFieldLabel>
+</CustomObjectTranslation>

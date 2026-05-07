@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für Altersgruppe bei fortgesetzter Mitgliedschaft</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für Altersgruppe bei fortgesetzten Mitgliedschaften</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für Altersgruppe bei fortgesetzter Mitgliedschaft</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für Altersgruppe bei fortgesetzten Mitgliedschaften</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für Altersgruppe bei fortgesetzter Mitgliedschaft</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für Altersgruppe bei fortgesetzten Mitgliedschaften</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Risikobewertung für Altersgruppe bei fortgesetzter Mitgliedschaft</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Risikobewertungen für Altersgruppe bei fortgesetzten Mitgliedschaften</value>
+    </caseValues>
+    <fields>
+        <label>Altersgruppe von</label>
+        <name>HealthCloudGA__AgeBandFrom__c</name>
+    </fields>
+    <fields>
+        <label>Altersgruppe bis</label>
+        <name>HealthCloudGA__AgeBandTo__c</name>
+    </fields>
+    <fields>
+        <label>Community, vollberechtigt, dual, 65+</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community, vollberechtigt, dual, behind.</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community, nicht dual, 65+</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community, nicht dual, behindert</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community, teilberechtigt, dual, 65+</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>Community, teilberechtigt, dual, behind.</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Community</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>Geschlecht</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Institutionell</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>Ist aktiv</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Jahreszeitraum</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

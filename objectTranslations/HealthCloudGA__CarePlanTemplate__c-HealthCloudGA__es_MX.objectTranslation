@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Plantilla de seguro médico</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Plantillas de seguro médico</value>
+    </caseValues>
+    <fields>
+        <label>Activo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Categoría</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Disease Management</masterLabel>
+            <translation><!-- Disease Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endocrinology and Metabolism</masterLabel>
+            <translation><!-- Endocrinology and Metabolism --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation><!-- Home Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness</masterLabel>
+            <translation><!-- Wellness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Duplicado desde</label>
+        <name>HealthCloudGA__ClonedFrom__c</name>
+        <relationshipLabel>Plantillas de seguro médico</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Descripción</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nombre de plantilla de seguro médico</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+<aura:interface description="Automation Lightning Component Interface" access="global">
+	<aura:attribute name="taskJSON" type="String" description="Stores the JOSN config" access="global"/>
+    <aura:attribute name="isDisabled" type="Boolean" description="disable the component if support plan is active" default="false" access="global"/>
+    <aura:attribute name="supportPlanID"  type="STRING" description="The current Support Plan Id" access="global"/>
+    <aura:attribute name="activityID" type="STRING" description="The current Activity Id" access="global"/>
+    <aura:attribute name="isValid" type="Boolean" description="Set to false if any data validation error occur" access="global" default="true"/>
+    <aura:method 	name="validateData" action="{!c.validateData}" description="The method called from Parent Component to validate data" access="global"/>
+</aura:interface>

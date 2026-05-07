@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Apparaat volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Apparaten volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Contactpersoon</label>
+        <name>HealthCloudGA__Contact__c</name>
+    </fields>
+    <fields>
+        <label>Apparaat-URL</label>
+        <name>HealthCloudGA__DeviceUrl__c</name>
+    </fields>
+    <fields>
+        <label>Vervaldatum</label>
+        <name>HealthCloudGA__Expiry__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Locatie (255)</label>
+        <name>HealthCloudGA__Location255__c</name>
+    </fields>
+    <fields>
+        <label>Locatie</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>Partijnummer</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>Fabrikant</label>
+        <name>HealthCloudGA__Manufacturer__c</name>
+    </fields>
+    <fields>
+        <label>Model</label>
+        <name>HealthCloudGA__Model__c</name>
+    </fields>
+    <fields>
+        <label>Eigenaar (255)</label>
+        <name>HealthCloudGA__Owner255__c</name>
+    </fields>
+    <fields>
+        <label>Eigenaar</label>
+        <name>HealthCloudGA__Owner__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Apparaten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Type</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>UDI (Unique Device Identifier)</label>
+        <name>HealthCloudGA__Udi__c</name>
+    </fields>
+    <fields>
+        <label>Versie</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>ID van apparaat volgens EPD (elektronisc</nameFieldLabel>
+</CustomObjectTranslation>

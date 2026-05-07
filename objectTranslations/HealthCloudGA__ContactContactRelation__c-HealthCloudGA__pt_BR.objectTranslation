@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relacionamento de contato para contato</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relacionamentos de contato para contato</value>
+    </caseValues>
+    <fields>
+        <label>Ativo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Contato</label>
+        <name>HealthCloudGA__Contact__c</name>
+        <relationshipLabel>Contatos relacionados</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Data de término</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>ID externa</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>Relacionamento inverso</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Relações entre contatos</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Contato relacionado</label>
+        <name>HealthCloudGA__RelatedContact__c</name>
+        <relationshipLabel><!-- Contact Contact Relations (Related Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Papel relacionado </label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Contact Contact Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Data de início</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nome da relação de contatos</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Não foi possível criar um relacionamento entre contatos como Inativo.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

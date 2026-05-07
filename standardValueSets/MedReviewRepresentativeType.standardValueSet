@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Healthcare Proxy</fullName>
+        <default>false</default>
+        <label>Healthcare Proxy</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Guardian</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Guardian</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Spouse</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Spouse</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Child</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Child</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Parent</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Parent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Sibling</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Sibling</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Relative</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Relative</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Friend</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Friend</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient&apos;s Guardian of the Estate</fullName>
+        <default>false</default>
+        <label>Patient&apos;s Guardian of the Estate</label>
+    </standardValue>
+</StandardValueSet>

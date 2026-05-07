@@ -1,0 +1,79 @@
+<!--
+ - Created by Deloitte on 1/12/2014.
+Modification Log:
+Prachi Nandgaonkar      Jan 25, 2018         [PC-2706] Removed hyperlink on Attachment section title which used to navigate to home screen
+Vijay Kashikar          Sep 14, 2018         [PC-3526]/[PC-2570] Added condition to show Attachments section if it has documents within it.
+Vijay Kashikar          Feb 14, 2020         [PC-5996] Fixed broken functionality. Changes done in other companents necessiated the changes done for this ticket.
+Satheesh Kumar          Jun 15, 2020         [PC-6402] Fixed Document Pop Out Window Scrolling
+Satheesh Kumar          Aug 08, 2020         [PC-6642] Added condition to show text type document in formattedText and html type document in formattedRichText
+ -->
+
+<aura:component controller="PC_DocInboundEmailLightningController" implements="force:hasRecordId">
+    <ltng:require scripts="{! $Resource.PC_Resources + '/PC_Resources/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="isPopout" type="Boolean" default="false"/>
+    <aura:attribute name="emailDetails" type="PC_DocInboundEmailLightningController.object"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+
+    <!--textarea disabled="disabled" style="width:100%; height:500px;">{!v.emailDetails.attachmentBody}</textarea replaced for [PC-1813]-->
+    <aura:if isTrue="{! and(v.emailDetails.isTEXT == false,  v.emailDetails.attachmentId != null) }">
+        <iframe class="faxImage backgroundColour" src="{!'/servlet/servlet.FileDownload?file=' + v.emailDetails.attachmentId}" width="100%" height="80%" style="{!v.emailDetails.lstDocuments.length != 0 ? 'min-height:calc(100vh - 260px);' : v.isPopout ? 'min-height:calc(97vh);' : 'min-height:calc(100vh - 180px);'}"/>
+        <aura:set attribute="else">
+            <div class="slds-scrollable backgroundColour" style="height:45rem;width:100%">
+                <aura:if isTrue="{!v.emailDetails.isHTMLType}">
+                    <lightning:formattedRichText class="pc-document-body" value="{!v.emailDetails.attachmentBody}"/>
+                    <aura:set attribute="else">
+                        <lightning:formattedText class="pc-document-body" value="{!v.emailDetails.attachmentBody}"/>
+                    </aura:set>
+                </aura:if>
+            </div>
+        </aura:set>
+    </aura:if>
+
+    <aura:if isTrue="{! not(empty(v.emailDetails.lstDocuments))}">
+
+        <div class="slds">
+            <div>
+                <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.showAccordion}">
+                    <section class="slds-clearfix">
+                        <div class="slds-float--left ">
+                            <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates open"/>
+                            <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:chevronright" size="x-small" alternativeText="Indicates close"/>
+                        </div>
+                        <div class="slds-m-left--large cmpntNameFontSize">{!$Label.c.PC_ChildDocuments}</div>
+                    </section>
+                </div>
+
+                <div class="slds-show" aura:id="articleOne">
+                    <div class="slds-tabs--scoped__content" style="{!v.noSplitDocs.length == 0 ? '' : 'display:none;'}" >
+                            {!$Label.c.PC_No_Records_Found}
+                    </div>
+
+                    <div class="slds-tabs--scoped__content noPadding slds-show" style="{!v.emailDetails.lstDocuments.length != 0 ? '' : 'display:none;'}">
+                        <table class="slds-table slds-table--bordered">
+                            <thead>
+                            <tr class="slds-text-heading--label">
+                                <th class="slds-cell-shrink">{!$Label.c.PC_DocumentNumber}</th>
+                                <th class="slds-cell-shrink">{!$Label.c.PC_AttachmentName}</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <aura:iteration items="{!v.emailDetails.lstDocuments}" var="doc">
+                                <aura:iteration items="{!doc.Attachments}" var="attach">
+                                    <tr class="slds-hint-parent">
+                                        <td class="slds-truncate"><a id="{!doc.Id}" target="_blank" onclick="{!c.goToSelectedLink}">{!doc.Name}</a></td>
+                                        <td class="slds-cell-wrap"><a href="{! '/servlet/servlet.FileDownload?file=' + attach.Id}" id="{!attach.Id}" target="_blank" >{!attach.Name}</a></td>
+                                    </tr>
+                                </aura:iteration>
+                            </aura:iteration>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </aura:if>
+</aura:component>

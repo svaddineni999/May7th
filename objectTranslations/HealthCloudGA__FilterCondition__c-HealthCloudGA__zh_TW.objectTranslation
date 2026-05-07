@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>篩選條件</value>
+    </caseValues>
+    <fields>
+        <label>欄位名稱</label>
+        <name>HealthCloudGA__FieldName__c</name>
+    </fields>
+    <fields>
+        <label>篩選條件</label>
+        <name>HealthCloudGA__FilterCriterion__c</name>
+        <relationshipLabel>篩選條件</relationshipLabel>
+    </fields>
+    <fields>
+        <label>物件名稱</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label>運算子</label>
+        <name>HealthCloudGA__Operator__c</name>
+    </fields>
+    <fields>
+        <label>列號</label>
+        <name>HealthCloudGA__RowNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- SRow Number --></label>
+        <name>HealthCloudGA__SRowNumber__c</name>
+    </fields>
+    <fields>
+        <label>類型</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>值</label>
+        <name>HealthCloudGA__Value__c</name>
+    </fields>
+    <nameFieldLabel>篩選條件名稱</nameFieldLabel>
+</CustomObjectTranslation>

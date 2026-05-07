@@ -1,0 +1,648 @@
+<!--
+Lightning component  : PC_PharmacyEbenefitsLookup
+Description          : Component to retrieve pharmacy coverage details.
+Modification Log:
+Vijay Kashikar       30-Jan-2018    Initial Version
+Vijay Kashikar       18-May-2018     [PC-3156] implemented pluggaable pharmacies component.
+Shishir Bansal       13-June-2018    [PC-3108] Autopopulate PBM, if only one exists.
+Shishir Bansal       13-June-2018    [PC-3109] Autopopulate prescription, if only one exists.
+Shishir Bansal       21-June-2018    [PC-3055] Rearrange existing UI components on RX RTBC (e-benefits investigation for pharmacy) pop out
+Shishir Bansal       26-June-2018    [PC-3057] Showing coverage results from selected  PBM Plan
+Shishir Bansal       4-July-2018     [PC-3067] Added option to Delete selected Pharmacies
+Shishir Bansal       8-July-2018      [PC-3367] Removing the column Drug Status Code
+Haritha Reddy		 17-Jul-2020     [PC-6440] Made changes so that e-Benefits Investigation can be loaded on Task Page.
+-->
+
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="PC_PharmacyEbenefitsLookupController" access="global">
+    <aura:handler name="init"  value="{!this}" action="{!c.doInit}" /> 
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+
+    <aura:attribute name="configurationErrorMsg" type="String" default="{!$Label.c.PC_Configuration_Warning}"/>
+    <aura:attribute name="lightningErrorMsg" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="isModalMapActive" type="boolean" default="false"/>
+    <aura:attribute name="isModalMapActiveInner" type="boolean"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="serviceInput" type="Object" /> <!--PC_EbenefitsLookupRequest -->
+    <aura:attribute name="defaultDropDownValue" type="String" default="{! $Label.c.PC_Select}" />
+    <aura:attribute name="pharmacyCardFetchInfo" type="Object" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Toast_Error_Title}" />
+    <aura:attribute name="cardHolderFetchInfo" type="Object" />
+    <aura:attribute name="healthPlanRequired" type="boolean" default="false"/>
+    <aura:attribute name="pharmacyRequired" type="boolean" default="false"/>
+    <aura:attribute name="prescriptionRequired" type="boolean" default="false"/>
+    <aura:attribute name="serviceOutput" type="Object[]"/> <!--PC_EbenefitsLookupResponse-->
+    <aura:attribute name="selectedOuput" type="Object"/> <!--PC_EbenefitsLookupResponse-->
+    <aura:attribute name="cssStyle" type="String" />
+    <aura:attribute name="prescriptions" type="List" />
+    <aura:attribute name="prescriptionMap" type="Map" />
+    <aura:attribute name="selectedHealthPlan" type="string" />
+    <aura:attribute name="prescriptionPhysician" type="Object" />
+    <aura:attribute name="selectedPrescription" type="Object" />
+    <aura:attribute name="daysSupplyRequested" type="Integer"/>
+    <aura:attribute name="quantityRequested" type="Integer"/>
+    <aura:attribute name="pharmacyCoverage" type="Object"/>
+    <aura:attribute name="isHealthPlanSelected" type="boolean" default="false"/>
+    <aura:attribute name="isPhysicianAvailable" type="boolean" default="false"/>
+    <aura:attribute name="missingCardholderInfo" type="String" default="{!$Label.c.PC_PharmaCardLookup_Missing_CardholderInfo}" />
+    <aura:attribute name="missingPrescriptionInfo" type="String" default="{!$Label.c.PC_PharmaCardLookup_Missing_PrescriptionInfo}" />
+    <aura:attribute name="nonNumericPrescriptionInfo" type="String" default="{!$Label.c.PC_PharmaCardLookup_NonNumeric_PrescriptionInfo}" />
+    <aura:attribute name="missingPatientInfo" type="String" default="{!$Label.c.PC_PharmaCardLookup_Missing_PatientInfo}" />
+    <aura:attribute name="missingNDC" type="String" default="{!$Label.c.PC_PharmaCardLookup_MissingProductNDC}" />
+    <aura:attribute name="missingUnitOfMeasurecode" type="String" default="{!$Label.c.PC_PharmaCardLookup_MissingProductUnitOfMeasureCode}" />
+    <aura:attribute name="toastTitleSuccess" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />
+    <aura:attribute name="toastTitleError" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="progCoverageSuccessMsg" type="String" default="{!$Label.c.PC_Ebenefits_Success_Message}" />
+    <aura:attribute name="pharmacyFinderCmpName" type="String" description="Name of the component to be called to launch pharmacy finder. Must have namespace qualifier"
+                    default="PC_PharmacyFinderV2" access="global" />
+    <aura:attribute name="specialtyPharmacyByPayerCmpName" type="String" description="Name of the component to show the SP-Payer relationship table."
+                     default="PC_ViewSPsByPayer" access="global"/>
+    <aura:attribute name="pharmacyFinderCmp" type="Object" />
+    <aura:attribute name="PBM_ModalTitle" type="String" default="{!$Label.c.PC_PBM_Modal_Title}"/>
+    <aura:attribute name="pharmacyFinderCmpAttributes" type="Map" default='{"showDefaultPharmacyTab":"true","showSearchPharmacyTab":"true"}' access="global"/>
+    <aura:attribute name="showSearchPharmacyTab" type="Boolean" default="true" />
+    <aura:attribute name="selectedPharmacies" type="Object[]"/>
+    <aura:attribute name="relatedToId" type="Id"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToObject" type="String"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="displayModal" type="Boolean" default="true"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+
+    <aura:attribute name="selectedPharmcyIdForfinder" type="String" default=""/>
+
+    <aura:handler event="c:PC_AddPharmacy" action="{!c.handleAddPharmacy}" name="addPharmacyEvent"/>
+
+    <div class="ePAWrapper">
+        <lightning:overlayLibrary aura:id="ePAOverlay"/>
+    </div>
+
+    <aura:if isTrue="{! v.isModalMapActive}">
+
+        <div aura:id="eModalBackdrop" class="{!if(v.displayModal, 'slds-backdrop slds-backdrop_open', '')}"></div>
+        <div aura:id="eModal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1"
+             class="{!if(v.displayModal, 'panel slds-modal slds-fade-in-open slds-modal_large', 'panel')}">
+            <div aura:id="eModalContainer" class="{!if(v.displayModal, 'slds-modal__container', '')}" >
+                <div class="slds-modal__header">
+                    <button class="slds-button slds-modal__close" title="{!$Label.c.PC_Close}" onclick="{!c.closeWindow}">
+                        <lightning:icon iconName="utility:close"  size="x-small" variant="inverse" alternativeText="{!$Label.c.PC_Close}"/>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$Label.c.PC_PharmaCardLookup_Pharmacy_Coverage_Investigation}</h2>
+                </div>
+                <a href="#modalContentAnchor"></a>
+                <div class="slds-modal__content slds-p-around_medium" id="modalContent" aura:id="modalContent">
+                    <div class="customDiv slds-grid">
+                        <div class="leftPane slds-form-element slds-p-horizontal_small slds-size_1-of-3 slds-medium-size_1-of-3">
+                            <div class="slds-form-element__control slds-m-bottom--xxx-small">
+                                <label class="slds-item_label" for="select-01"><abbr class="slds-required" title="required">*</abbr>{!$Label.c.PC_PharmaCardLookup_Pharmacy_Health_Plans_Subtitle}</label>
+                                <aura:if isTrue="{!v.healthPlanRequired}">
+                                    <label class="slds-required">{!$Label.c.PC_FieldError_Required_Fields}</label>
+                                </aura:if>
+                                <ui:inputSelect class="slds-select" change="{!c.updatePatientInfo}" aura:id="select-01">
+
+                                </ui:inputSelect>
+
+                            </div>
+
+                            <div class="slds-form-element__control slds-m-bottom--x-small">
+                                <label class="slds-item_label" for="select-03"><abbr class="slds-required" title="required">*</abbr>{!$Label.c.PC_Ebenefits_Prescription}</label>
+                                <aura:if isTrue="{!v.prescriptionRequired}">
+                                    <label class="slds-required">{!$Label.c.PC_FieldError_Required_Fields}</label>
+                                </aura:if>
+                                <ui:inputSelect class="slds-select" change="{!c.changePrescription}" aura:id="select-03">
+
+                                </ui:inputSelect>
+                            </div>
+
+                            <div class="slds-box--border slds-m-bottom--x-small">
+                                <div class="slds-section__title  test-id__section-header-container accordionHeader"  onclick="{!c.toggleAccordion}" data-toggleContentAuraId="prescriptionDetails">
+                                    <section class="slds-clearfix">
+                                        <div class="slds-float--left ">
+                                            <lightning:icon class="slds-hide" aura:id="prescriptionDetails" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                            <lightning:icon class="slds-show" aura:id="prescriptionDetails" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                        </div>
+                                        <div class="slds-m-left--large">
+                                            <lightning:icon iconName="utility:note"  size="x-small"/>
+                                            {!$Label.c.PC_Ebenefits_Prescription_Details}<abbr class="slds-required" title="required">*</abbr>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="slds-show modalContent" aura:id="prescriptionDetails">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                    <div class="slds-media__body">
+                                        <div class="slds-tile__detail">
+                                            <dl class="slds-list_horizontal slds-wrap">
+                                                <dt class="slds-item_label" title="{!$Label.c.PC_Ebenefits_Medication_Field_Label}">{!$Label.c.PC_Ebenefits_Medication_Field_Label}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!v.selectedPrescription.productName}">
+                                                        {!v.selected.productName}
+                                                </dd>
+                                                <dt class="slds-item_label" title="{!v.selectedPrescription.ndcLabel}">{!v.selectedPrescription.ndcLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!v.selectedPrescription.ndc}">
+                                                        {!v.selectedPrescription.ndc}
+                                                </dd>
+                                                <dt class="slds-item_label" title="{!$Label.c.PC_Ebenefits_Days_Supply_Field_Label}">{!$Label.c.PC_Ebenefits_Days_Supply_Field_Label}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!$Label.c.PC_Ebenefits_Days_Supply_Field_Label}">
+                                                    <div class="slds-form-element__control">
+                                                        <ui:inputText value="{!v.daysSupplyRequested}" class="daysSupplyInput" aura:id="daysSupplyRequested"/>
+
+                                                    </div>
+                                                </dd>
+                                                <dt class="slds-item_label " title="{!$Label.c.PC_Ebenefits_Quantity_Requested_Field_Label}" >{!$Label.c.PC_Ebenefits_Quantity_Requested_Field_Label}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak">
+                                                    <div class="slds-form-element__control">
+                                                        <ui:inputText value="{!v.quantityRequested}" class="quantityRequestedInput" aura:id="quantityRequested"/>
+
+                                                    </div>
+                                                </dd>
+                                                <dt class="slds-item_label" title="{!v.selectedPrescription.unitOfMeasureCodeLabel}">{!v.selectedPrescription.unitOfMeasureCodeLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!v.selectedPrescription.unitOfMeasureCode}">
+                                                        {!v.selectedPrescription.unitOfMeasureCode}
+                                                </dd>
+
+
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </article>
+                                </div>
+                            </div>
+
+                            <div class="slds-box--border slds-m-bottom--x-small">
+                                <div class="slds-section__title  test-id__section-header-container accordionHeader"  onclick="{!c.toggleAccordion}" data-toggleContentAuraId="prescriberDetails">
+                                    <section class="slds-clearfix">
+                                        <div class="slds-float--left ">
+                                            <lightning:icon class="slds-hide" aura:id="prescriberDetails" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                            <lightning:icon class="slds-show" aura:id="prescriberDetails" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                        </div>
+                                        <div class="slds-m-left--large">
+                                            <lightning:icon iconName="utility:note"  size="x-small"/>
+                                            {!$Label.c.PC_Ebenefits_Prescriber_Information}<abbr class="slds-required" title="required">*</abbr>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="slds-show modalContent" aura:id="prescriberDetails">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                    <div class="slds-media__body">
+                                        <div class="slds-tile__detail">
+                                            <dl class="slds-list_horizontal slds-wrap">
+
+                                            <aura:if isTrue="true">
+                                                    <dt class="slds-item_label" title="{!v.prescriptionPhysician.nameLabel}">{!v.prescriptionPhysician.nameLabel}</dt>
+
+                                                    <dd class="slds-item_detail slds-text-color_weak">{!v.prescriptionPhysician.lastName}&nbsp;{!v.prescriptionPhysician.firstName}</dd>
+
+                                                    <dt class="slds-item_label" title="{!v.prescriptionPhysician.npiLabel}">{!v.prescriptionPhysician.npiLabel}</dt>
+
+                                                    <dd class="slds-item_detail slds-text-color_weak" title="{!v.prescriptionPhysician.npi}">{!v.prescriptionPhysician.npi}</dd>
+                                                </aura:if>
+
+
+
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </article>
+                                </div>
+                                </div>
+
+
+                                <div class="slds-box--border slds-m-bottom--x-small">
+                                <div class="slds-section__title  test-id__section-header-container accordionHeader" onclick="{!c.toggleAccordion}" data-toggleContentAuraId="patientInformation">
+                                    <section class="slds-clearfix">
+                                        <div class="slds-float--left ">
+                                            <lightning:icon class="slds-hide" aura:id="patientInformation" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                            <lightning:icon class="slds-show" aura:id="patientInformation" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                        </div>
+                                        <div class="slds-m-left--large">
+                                          <lightning:icon iconName="utility:user"  size="x-small"/>
+                                            {!$Label.c.PC_Ebenefits_Patient_Information}<abbr class="slds-required" title="required">*</abbr>
+
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="slds-show modalContent" aura:id="patientInformation">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                    <div class="slds-media__body">
+                                        <div class="slds-tile__detail">
+                                            <dl class="slds-list_horizontal slds-wrap">
+                                                <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.nameLabel}">{!v.pharmacyCardFetchInfo.patient.nameLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!v.pharmacyCardFetchInfo.patient.lastName + ' ' + v.pharmacyCardFetchInfo.patient.firstName}">
+                                                        {!v.pharmacyCardFetchInfo.patient.lastName + ' ' + v.pharmacyCardFetchInfo.patient.firstName}
+                                                </dd>
+                                                <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.genderLabel}">{!v.pharmacyCardFetchInfo.patient.genderLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!v.pharmacyCardFetchInfo.patient.gender}">{!v.pharmacyCardFetchInfo.patient.gender}</dd>
+                                                <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.birthdateLabel}">{!v.pharmacyCardFetchInfo.patient.birthdateLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak" title="{!v.pharmacyCardFetchInfo.patient.dob}">{!v.pharmacyCardFetchInfo.patient.dob}</dd>
+                                                <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.address.cityLabel}">{!v.pharmacyCardFetchInfo.patient.address.cityLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak">{!v.pharmacyCardFetchInfo.patient.address.city}</dd>
+                                                <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.address.stateLabel}">{!v.pharmacyCardFetchInfo.patient.address.stateLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak">{!v.pharmacyCardFetchInfo.patient.address.state}</dd>
+                                                <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.address.postalCodeLabel}">{!v.pharmacyCardFetchInfo.patient.address.postalCodeLabel}</dt>
+                                                <dd class="slds-item_detail slds-text-color_weak">{!v.pharmacyCardFetchInfo.patient.address.postalCode}</dd>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </article>
+                                </div>
+                            </div>
+
+
+                            <div class="slds-box--border slds-m-bottom--x-small">
+                                <div class="slds-section__title  test-id__section-header-container accordionHeader"  onclick="{!c.toggleAccordion}" data-toggleContentAuraId="cardInformation">
+                                    <section class="slds-clearfix">
+                                        <div class="slds-float--left ">
+                                            <lightning:icon class="slds-hide" aura:id="cardInformation" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                            <lightning:icon class="slds-show" aura:id="cardInformation" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                        </div>
+                                        <div class="slds-m-left--large">
+                                            <lightning:icon iconName="utility:user"  size="x-small"/>
+                                            {!$Label.c.PC_PharmaCardLookup_CardHolder_Information_Section_Title}
+                                        <abbr class="slds-required" title="required">*</abbr>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="slds-show modalContent" aura:id="cardInformation">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+
+                                        <div class="slds-media__body">
+                                            <div class="slds-tile__detail">
+
+                                                <dl class="slds-list_horizontal slds-wrap">
+                                                    <dt class="slds-item_label" title="{!v.cardHolderFetchInfo.nameLabel}">{!v.cardHolderFetchInfo.nameLabel}</dt>
+                                                    <dd class="slds-item_detail slds-text-color_weak" title="{!v.cardHolderFetchInfo.lastName + ' ' + v.cardHolderFetchInfo.firstName}">
+                                                            {!v.cardHolderFetchInfo.lastName + ' ' + v.cardHolderFetchInfo.firstName}
+                                                    </dd>
+                                                    <dt class="slds-item_label" title="{!v.cardHolderFetchInfo.genderLabel}">{!v.cardHolderFetchInfo.genderLabel}</dt>
+                                                    <dd class="slds-item_detail slds-text-color_weak" title="{!v.cardHolderFetchInfo.gender}">{!v.cardHolderFetchInfo.gender}</dd>
+                                                    <dt class="slds-item_label" title="{!v.cardHolderFetchInfo.birthdateLabel}">{!v.cardHolderFetchInfo.birthdateLabel}</dt>
+                                                    <dd class="slds-item_detail slds-text-color_weak" title="{!v.cardHolderFetchInfo.dob}">{!v.cardHolderFetchInfo.dob}</dd>
+                                                    <dt class="slds-item_label" title="{!v.cardHolderFetchInfo.address.cityLabel}">{!v.cardHolderFetchInfo.address.cityLabel}</dt>
+                                                    <dd class="slds-item_detail slds-text-color_weak">{!v.cardHolderFetchInfo.address.city}</dd>
+                                                    <dt class="slds-item_label" title="{!v.cardHolderFetchInfo.address.stateLabel}">{!v.cardHolderFetchInfo.address.stateLabel}</dt>
+                                                    <dd class="slds-item_detail slds-text-color_weak">{!v.cardHolderFetchInfo.address.state}</dd>
+                                                    <dt class="slds-item_label" title="{!v.cardHolderFetchInfo.address.postalCodeLabel}">{!v.cardHolderFetchInfo.address.postalCodeLabel}</dt>
+                                                    <dd class="slds-item_detail slds-text-color_weak">{!v.cardHolderFetchInfo.address.postalCode}</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                           </div >
+
+
+                        <div class="rightPane slds-form-element slds-p-horizontal_small slds-size_2-of-3 slds-medium-size_2-of-3">
+                            <div>
+                                <p>{!$Label.c.PC_CoverageAlertResults}&nbsp;<a onclick="{!c.viewPreferredPBM}">{!$Label.c.PC_Click_Here}</a>
+                                    &nbsp;{!$Label.c.PC_For_More_Details}
+                                </p>
+                                <aura:if isTrue="{!v.cardHolderFetchInfo.coverageAlerts.length > 0}">
+
+                                    <p><span class="pharmacyCoveragesText">{!$Label.c.PC_Pharmacy_Plan_Coverage}&nbsp;*&nbsp;:</span>
+
+
+                                    <aura:iteration items="{!v.cardHolderFetchInfo.coverageAlerts}" var="coverageItem" indexVar="counter">
+                                        {!coverageItem.name}&nbsp;
+                                            <aura:if isTrue="{!(counter != (v.cardHolderFetchInfo.coverageAlerts.length -1))}">
+
+                                                <aura:if isTrue="{!coverageItem.value}" >
+                                                    <lightning:icon iconName="utility:check"  size="xx-small" alternativeText="true"/>,&nbsp;
+
+                                                    <aura:set attribute="else">
+                                                        <lightning:icon iconName="utility:close"  size="xx-small" alternativeText="false"/>, &nbsp;
+                                                    </aura:set>
+                                                </aura:if>
+
+
+
+                                                <aura:set attribute="else">
+                                                    <aura:if isTrue="{!coverageItem.value}" >
+                                                        <lightning:icon iconName="utility:check"  size="xx-small" alternativeText="true"/> &nbsp;
+
+                                                        <aura:set attribute="else">
+                                                            <lightning:icon iconName="utility:close"  size="xx-small" alternativeText="false"/> &nbsp;
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </aura:set>
+                                            </aura:if>
+                                    </aura:iteration>
+                                    </p>
+                                </aura:if>
+                            </div>
+
+
+
+
+
+                            <div aura:id="pharmacyFinderDiv">
+                                <label class="slds-item_label" for="select-02"></label>
+
+
+                            </div>
+
+
+
+
+                            <div class="slds-form-element__control slds-border_top " >
+                                <div class="slds-m-top--small">
+
+                                <label class="slds-item_label" for="select-02">{!$Label.c.PC_PharmacyFinder_SelectedPharmacies_Caption}({!v.selectedPharmacies.length})
+                                </label>
+                                <aura:if isTrue="{!v.pharmacyRequired}">
+                                    <label class="slds-required">{!$Label.c.PC_FieldError_Required_Fields}</label>
+                                </aura:if>
+                                    <div class="slds-hide">
+                                <ui:inputSelect class="slds-select" aura:id="select-02" multiple="true">
+
+                                </ui:inputSelect>
+                                    </div>
+
+
+
+
+
+                                        <div class="mainBody">
+                                        <div class="pharmacySelectedBlock">
+                                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                                <div class="slds-form-element__row">
+                                                    <aura:if isTrue="{! (v.selectedPharmacies.length > 0)}">
+                                                    <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_col-bordered">
+                                                        <thead>
+                                                        <tr class="slds-text-title--caps">
+                                                            <th scope="col">
+                                                                <!--<span>{!$Label.c.PC_EWP_Select_Col_Header}</span> -->
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_PharmacyName}">{!$Label.c.PC_PharmacyFinder_PharmacyName}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_Type}">{!$Label.c.PC_PharmacyFinder_Type}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_Type}">{!$Label.c.PC_SearchRes_Col9}</div>
+                                                            </th>
+                                                            <th scope="col">
+                                                                <div class="slds-truncate" title="{!$Label.c.PC_PharmacyFinder_Pharmacy_Contact}">{!$Label.c.PC_PharmacyFinder_Pharmacy_Contact}</div>
+                                                            </th>
+
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+
+
+
+
+                                                       <aura:iteration items="{!v.selectedPharmacies}" var="item" >
+                                                            <tr>
+                                                                <td>
+                                                                    <a data-id="{!item.id}"   onclick="{!c.removePharmacies}">
+                                                                        <c:svg class="slds-button__icon slds-button__icon--medium slds-icon-text-error"
+                                                                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#clear'}"
+                                                                               ariaHidden="true"/>
+                                                                    </a>
+                                                                </td>
+                                                                <td scope="row" data-label="">
+                                                                    <div class="slds-truncate" title="">{!item.displayName}</div>
+                                                                </td>
+
+                                                                <td scope="row" data-label="">
+                                                                    <div class="slds-truncate" title="">{!item.specialtyType}</div>
+                                                                    <!--<aura:iteration items="{!item.additionalInfo}" var="info">
+
+                                                                    </aura:iteration> -->
+                                                                </td>
+
+                                                                <td scope="row" data-label="">
+                                                                    <div class="slds-truncate" title="">{!item.zipCode}</div>
+                                                                    <!--<aura:iteration items="{!item.additionalInfo}" var="info">
+
+                                                                    </aura:iteration> -->
+                                                                </td>
+                                                                <td scope="row" data-label="">
+                                                                    <div class="slds-wrap" title="">
+                                                                        <div class="slds-col">{!$Label.c.PC_Phone} : {!item.phone} </div>
+                                                                        <div class="slds-col">{!$Label.c.PC_Fax} : {!item.fax} </div>
+                                                                    </div>
+                                                                </td>
+
+                                                            </tr>
+
+                                                        </aura:iteration>
+
+
+                                                        </tbody>
+
+                                                    </table>
+                                                    <span>{!$Label.c.PC_PharmacyFinder_Remove_Caption}</span>
+                                                        <aura:set attribute="else"><br/><span>{!$Label.c.PC_No_Records_Found}</span>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                </div>
+
+                              </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="customDiv1">
+                        <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton" onclick="{!c.submit}">{!$Label.c.PC_Submit_Button_Label}</button>
+                    </div>
+                    <a href="#resultsBlockAnchor"></a>
+                    <div class="resultsBlock" aura:id="resultsBlock">
+                        <aura:if isTrue="{!v.isModalMapActiveInner}">
+                            <div class="resultsHeading slds-text-align--center slds-border--top" style="clear:both;">
+                            <span class="slds-text-heading_medium">
+                                    {!$Label.c.PC_PharmaCardLookup_Pharmacy_Coverage_Results}
+                            </span>
+                            </div>
+                            <table class="resultsTable slds-table slds-table_bordered slds-table_cell-buffer slds-no-row-hover slds-table_striped slds-table_col-bordered">
+                                <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Name}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Pharmacy_Type}</div>
+                                    </th>
+                                    <th scope="col" colspan="2">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Days_Supply}</div>
+                                    </th>
+                                    <th scope="col" colspan="2">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Quantity}</div>
+                                    </th>
+                                    <th scope="col" colspan="2">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Deductible_Amount}</div>
+                                    </th>
+                                    <th scope="col" colspan="2">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_OutofPocketAmount}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Pay_Amount}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Coverage_Alerts}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_PharmacyFinder_PA_Required}</div>
+                                    </th>
+                                    <!--<th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_PharmacyFinder_Drug_Status_Code}</div>
+                                    </th>-->
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Select}</div>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th scope="col">
+
+                                    </th>
+                                    <th scope ="col">
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Requested}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Priced}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Requested}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Priced}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Applied}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Remaining}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Applied}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Remaining}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate">{!$Label.c.PC_Ebenefits_Data_Patient}</div>
+                                    </th>
+                                    <!--<th scope="col">
+
+                                    </th>-->
+                                    <th scope="col">
+
+                                    </th>
+                                    <th scope="col">
+
+                                    </th>
+                                    <th scope="col">
+
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <aura:iteration items="{!v.serviceOutput}" var="output">
+                                    <tr>
+                                        <td width="20%" class="slds-cell-wrap">
+                                            <aura:if isTrue="{!output.isSpinner}">
+                                                <lightning:spinner aura:id="mySpinner" size="small"/>
+                                            </aura:if>
+
+                                            <div class="">
+                                                <aura:if isTrue="{!output.isSuccess}">
+                                                    <lightning:icon iconName="utility:check"  size="x-small"/>
+                                                    <aura:set attribute="else">
+
+                                                        <ui:message title="" severity="error" closable="false" class="slds-show">
+                                                                {!output.errorMessage}
+                                                        </ui:message>
+                                                    </aura:set>
+                                                </aura:if>
+                                                <span title="{!output.eBenefitsServiceResponse.pharmacy.identifier}">&nbsp;{!output.pharmacyName}</span>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">
+                                                <aura:iteration items="{!output.eBenefitsServiceResponse.pharmacyType}" var="item">
+                                                {!item.type} <br/>
+                                                </aura:iteration>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!v.daysSupplyRequested}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.daysSupplyPriced}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!v.quantityRequested}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.metricQuantityPriced}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.accumulators.deductible.individual.appliedInDollarCurrency}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.accumulators.deductible.individual.remainingInDollarCurrency }</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.accumulators.outOfPocket.individual.appliedInDollarCurrency}</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.accumulators.outOfPocket.individual.remainingInDollarCurrency }</div>
+                                        </td>
+                                        <td>
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.pricing.patientInDollarFormat}</div>
+                                        </td>
+                                        <td>
+                                            <aura:iteration items="{!output.eBenefitsServiceResponse.coverageAlerts}" var="coverage">
+                                                <div>{!coverage.description}</div>
+                                            </aura:iteration>
+                                        </td>
+                                        <td>
+                                            <aura:if isTrue="{!(if (output.eBenefitsServiceResponse.priorAuthorization.isRequired ) != undefined)}">
+
+                                            <div class="slds-truncate">{!output.eBenefitsServiceResponse.priorAuthorization.isRequired }</div>
+                                            </aura:if>
+                                        </td>
+                                        <!--<td>
+                                            <aura:if isTrue="{!(if (output.drugDbSourceCode) != undefined)}">
+                                            <div class="slds-truncate">{!output.drugDbSourceCode}</div>
+                                            </aura:if>
+                                        </td> -->
+                                        <td>
+                                            <div class="slds-form-element__control">
+                                                <aura:if isTrue="{!(!output.isSuccess)}">
+                                                    <ui:inputRadio change="{!c.radioChecked}" text="{!output}" name="radioOptions" disabled="true"/>
+                                                    <aura:set attribute="else">
+                                                        <ui:inputRadio change="{!c.radioChecked}" text="{!output}" name="radioOptions"/>
+                                                    </aura:set>
+                                                </aura:if>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                                </tbody>
+                            </table>
+                            <div class="customDiv1">
+                                <button class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton" onclick="{!c.addCoverage}"  title="{!$Label.c.PC_Add_ButtonTitle}"  disabled="{!(v.selectedOuput == null)? true : false}">{!$Label.c.PC_Add_Button}</button>
+                            </div>
+                        </aura:if>
+                    </div>
+                </div>
+                <div class="slds-modal__footer slds-text-align--left">
+                    <aura:if isTrue="{!v.cardHolderFetchInfo.coverageAlerts.length > 0}">
+                            {!$Label.c.PC_PharmacyBenefits_CoverageDisclaimer}<br/>
+                    </aura:if>
+                    {!$Label.c.PC_PharmacyBenefits_PBM_Plan_Disclaimer}
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    <style>{!v.cssStyle}</style>
+</aura:component>

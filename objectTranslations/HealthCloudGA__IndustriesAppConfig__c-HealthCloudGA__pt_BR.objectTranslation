@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuração da aplicação de indústrias</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configurações da aplicação de indústrias</value>
+    </caseValues>
+    <fields>
+        <help><!-- By default, account names are displayed: {firstname} {lastname}. To change the order, enter: {lastname} {firstname} --></help>
+        <label>Formato do nome da conta</label>
+        <name>HealthCloudGA__AccountNameFormat__c</name>
+    </fields>
+    <fields>
+        <label>Nome da aplicação</label>
+        <name>HealthCloudGA__AppName__c</name>
+    </fields>
+    <fields>
+        <label>Criar inverso (apenas Salesforce)</label>
+        <name>HealthCloudGA__AutoCreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>Criação de conta individual a partir do contato</label>
+        <name>HealthCloudGA__AutocreateIndividualAccount__c</name>
+    </fields>
+    <fields>
+        <label>Tipo individual padrão</label>
+        <name>HealthCloudGA__DefaultIndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Pacotes dependentes</label>
+        <name>HealthCloudGA__DependentPackageNS__c</name>
+    </fields>
+    <fields>
+        <label>Tamanho do lote de conversão de leads</label>
+        <name>HealthCloudGA__LeadConversionBatchSize__c</name>
+    </fields>
+    <fields>
+        <label>Vários grupos de relacionamento</label>
+        <name>HealthCloudGA__MultipleRelationshipGroups__c</name>
+    </fields>
+    <fields>
+        <help><!-- For example : v32.0 --></help>
+        <label>Versão da API do layout da página</label>
+        <name>HealthCloudGA__PageLayoutApiVersion__c</name>
+    </fields>
+    <fields>
+        <help><!-- Show a detailed error message when someone performs an action without having permission. --></help>
+        <label>Exibir mensagens de erro detalhadas</label>
+        <name>HealthCloudGA__ShowDetailedError__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sync Account and Contact fields when records are created in the individual object model. --></help>
+        <label>Sinc. Campos de sistema individuais</label>
+        <name>HealthCloudGA__SyncIndividualSystemFields__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

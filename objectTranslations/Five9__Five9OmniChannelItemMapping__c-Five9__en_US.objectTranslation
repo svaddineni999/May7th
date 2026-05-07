@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Five9 Omni-Channel Item Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Five9 Omni-Channel Item Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Object Prefix --></label>
+        <name>Five9__ObjectPrefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Presence Status Id --></label>
+        <name>Five9__PresenceStatusId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

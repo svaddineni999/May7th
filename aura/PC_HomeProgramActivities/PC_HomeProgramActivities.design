@@ -1,0 +1,5 @@
+<design:component >
+    <design:attribute name="filter" label="Activity Filter"
+                      description="Criteria added to the SOQL WHERE clause used to retrieve user activities.
+                            The filter string is appended to the where clause using AND ({filter})"/>
+</design:component>

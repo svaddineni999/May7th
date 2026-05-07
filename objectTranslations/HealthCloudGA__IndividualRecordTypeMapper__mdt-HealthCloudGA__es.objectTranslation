@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Asignador de tipo de registro individual</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Asignadores de tipos de registro individuales</value>
+    </caseValues>
+    <fields>
+        <label>Espacio nombres tipo registro (Cuenta)</label>
+        <name>HealthCloudGA__AccountRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de registro Cuenta</label>
+        <name>HealthCloudGA__AccountRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Espacio nombres tipo registro (Contacto)</label>
+        <name>HealthCloudGA__ContactRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de registro del contacto</label>
+        <name>HealthCloudGA__ContactRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Página de detalles</label>
+        <name>HealthCloudGA__DetailPage__c</name>
+    </fields>
+    <fields>
+        <label>Subtipo de cuenta</label>
+        <name>HealthCloudGA__IndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Espacio nombre tipo registro (Candidato)</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de registro de candidato</label>
+        <name>HealthCloudGA__LeadRecordType__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

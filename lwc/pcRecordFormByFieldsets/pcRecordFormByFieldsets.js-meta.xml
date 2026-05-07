@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+  <apiVersion>53.0</apiVersion>
+  <isExposed>true</isExposed>
+  <masterLabel>PC Record Form Field Sets</masterLabel>
+  <description>Creates an form based on the list of field sets.</description>
+  <!--<targets>
+    <target>lightning__AppPage</target>
+    <target>lightning__RecordPage</target>
+    <target>lightning__HomePage</target>
+  </targets>
+  <targetConfigs>
+    <targetConfig targets="lightning__RecordPage">
+      <property label="Object API Name" name="objectApiName" type="String" default="Account" required="true" description="Object API Name"/>
+      <property label="Field Set Names" name="fieldSetNames" type="String" required="true" description="Comma separated Field Set API Name"/>
+      <property label="Record Type Id" name="recordTypeId" type="String" description="The ID of the record type"/>
+      <property label="Columns" name="columns" type="String" datasource="1,2,3,4" default="2" description="Specifies the number of columns for the form."/>
+      <property label="Display Density" name="density" type="String" datasource="COMPACT,COMFY,AUTO" default="AUTO" description="Sets the arrangement style of fields and labels in the form."/>
+      <property label="Show Save Button" name="showSaveButton" type="Boolean" default="false" description="Specifies whether the save button is displayed to perform save operation. This value defaults to false."/>
+    </targetConfig>
+  </targetConfigs>-->
+</LightningComponentBundle>

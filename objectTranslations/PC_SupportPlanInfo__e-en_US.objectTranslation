@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Plan Info</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Plan Info</value>
+    </caseValues>
+    <fields>
+        <label><!-- Context --></label>
+        <name>PC_Context__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>PC_RecordId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Runtime User Id --></label>
+        <name>PC_RuntimeUserId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Plan/Runtime Ids --></label>
+        <name>PC_SupportPlanOrRuntimeIds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transaction Id --></label>
+        <name>PC_TransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Record Modified Time --></label>
+        <name>PC_TriggerRecordModifiedTime__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,27 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:availableForFlowScreens,lightning:isUrlAddressable" access="global" controller="PC_EmbedSurveyController">
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="engagementProgramId" type="String" access="PUBLIC"/>
+    <aura:attribute name="isAccountRecordId" type="Boolean" default="true"/>
+    <aura:attribute name="surveyLink" type="String" access="private"/>
+    <aura:attribute name="engagementProgramUrlFieldName" type="String" access="private" default="EngagementProgramId"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="errors" type="List" access="private" default="[]"/>
+    <aura:attribute name="surveyInvitationError" type="String" default="{!$Label.c.PC_SurveyInvitationError}" access="private"/>
+    <aura:attribute name="workflowSurveyContext" type="String" default="PC_PAP" access="private"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+
+    <div>
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+	<iframe height="430px" width="100%" aura:id="embedSurveyId"
+            src="{!v.surveyLink}">
+    </iframe>
+    </div>
+</aura:component>

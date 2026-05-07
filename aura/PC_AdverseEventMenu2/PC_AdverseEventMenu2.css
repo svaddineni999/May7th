@@ -1,0 +1,37 @@
+/**
+ * Created by peharitha on 11/27/2018.
+ */
+.THIS{
+    background-color:white;
+}
+.THIS .eventTypes{
+    width : 50%;
+}
+.THIS .AE label{
+    color: rgb(62, 62, 60);
+    font-size: .75rem;
+    font-weight: normal;
+}
+.THIS .fieldStyle{
+    padding-bottom:1rem;
+}
+.THIS .topLevelOptions {
+    /*padding-left: 120px;*/
+}
+.THIS .tabsetContainer {
+    clear: both;
+}
+.THIS .footerSection {
+    clear: both;
+}
+.THIS .notesSection textarea {
+    max-height: 125px;
+}
+.THIS .tabComponent {
+    clear: both;
+    overflow: auto;
+    /*height: 230px;*/
+}
+.THIS .topLevelOptions .slds-form-element__control{
+    display:inline-flex;
+}

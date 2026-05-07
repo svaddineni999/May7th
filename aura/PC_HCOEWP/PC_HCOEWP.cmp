@@ -1,0 +1,435 @@
+<aura:component extends="c:PC_EnrollmentWizardPage" controller="PC_HCOEWPController">
+    <aura:set attribute="persistentAttributes" value="['selectedHCOIds']" />
+    <aura:attribute name="HCOTableHeaders" type="Object" />
+    <aura:attribute name="searchString" type="String" default=""/> 
+    <aura:attribute name="searchFilter" type="String" default=""/> 
+    <aura:attribute name="searchResults" type="Object[]"></aura:attribute>
+    <aura:attribute name="searchFilterOptions" type="Map"/>
+    <aura:attribute name="selectedResults" type="Object[]"></aura:attribute>
+    <aura:attribute name="selectedHCOIds" type="String[]"></aura:attribute>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="namedCredentialName" type="String" access="global"
+                    description="Name of Named Credential which connect with the UI Interface API to load Type values on the UI. Leave it blank, to load default values." />
+    <aura:attribute name="onlineApplicantHCO" type="Object[]"/>
+    <aura:attribute name="showRefTable" type="Boolean" default="false"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    
+    <aura:attribute name="_HCOReferenceTableHeader" type="String" default="{!$Label.c.PC_HCOEWP_HCORefTable}" />
+    <aura:attribute name="_searchFilterOptionAll" type="String" default="{!$Label.c.PC_Picklist_All}"></aura:attribute>
+    <aura:attribute name="_searchHeader" type="String" default="{!$Label.c.PC_EWP_SearchHeader}" />
+    <aura:attribute name="_HCOHeader" type="String" default="{!$Label.c.PC_HCOEWP_Header}" />
+    <aura:attribute name="_selectedHCOHeader" type="String" default="{!$Label.c.PC_HCOEWP_SelectedHCOHeader}" />
+    
+    <aura:attribute name="searchStringErrorMessage" type="String" default="{!$Label.c.PC_FieldError_SearchString}" />
+    <aura:attribute name="HCOReferenceTableMsg" type="String" default="{!$Label.c.PC_HCOEWP_HCORefTable_Desc}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showSpinner" type="Boolean"/>
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+    </aura:if>
+    <div class="slds1 EWPContent">
+        <div class="ExistingHCOBlock">
+            <ul>
+                <!--****************************************Reference table of HCO populated from Online Form********************************************-->
+                <aura:if isTrue="{!v.showRefTable}">
+                <li class="slds-item slds-m-bottom--small">
+                    <div class="refTable slds-tabs--scoped">
+                        <fieldset class="slds-form--compound">
+                            <div class="searchForm">
+                                <div class="slds-tabs--scoped__nav tableheader" role="tablist">
+                                    <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection " style = "color:#ffffff">{! v._HCOReferenceTableHeader}
+                                    </legend>
+                                </div>
+
+                                <div class="slds-form-element__group slds-tabs--scoped__content">
+
+                                    <div class="slds-text-body--small message"  >
+                                        <lightning:icon iconName="utility:info"  size="x-small" alternativeText="Information"/> &nbsp;
+                                        <ui:outputText value="{! v.HCOReferenceTableMsg}"  />
+                                    </div>
+
+                                    <div class="searchResultBlock">
+
+                                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size--1-of-1">
+                                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                                            <thead>
+                                                                <tr class="slds-text-title--caps">
+
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.name}">{!v.HCOTableHeaders.name}</div>
+                                                                    </th>
+                                                                  	<th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.phone}">{!v.HCOTableHeaders.phone}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.fax}">{!v.HCOTableHeaders.fax}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryAddress1}">{!v.HCOTableHeaders.primaryAddress1}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryCity}">{!v.HCOTableHeaders.primaryCity}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryState}">{!v.HCOTableHeaders.primaryState}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.type}">{!v.HCOTableHeaders.type}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="action">&nbsp;</div>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                                <aura:iteration items="{!v.onlineApplicantHCO}" var="item" indexVar="i">
+                                                                    <tr>
+                                                                        <td scope="row" data-label="{!item.name}">
+                                                                            <div class="slds-truncate" title="{!item.name}">{!item.name}</div>
+                                                                        </td>
+                                                                		<td scope="row" data-label="{!item.phone}">
+                                                                            <div class="slds-truncate" title="{!item.phone}">{!item.phone}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.fax}">
+                                                                            <div class="slds-truncate" title="{!item.fax}">{!item.fax}</div>
+                                                                        </td>
+                                                                		<td scope="row" data-label="{!item.primaryAddress1}">
+                                                                            <div class="slds-truncate" title="{!item.primaryAddress1}">{!item.primaryAddress1}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.primaryCity}">
+                                                                            <div class="slds-truncate" title="{!item.primaryCity}">{!item.primaryCity}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.primaryState}">
+                                                                            <div class="slds-truncate" title="{!item.primaryState}">{!item.primaryState}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.type}">
+                                                                            <div class="slds-truncate" title="{!item.type}">{!item.type}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.name}">
+                                                                            <a data-text="{! item.name}"
+                                                                                   onclick="{!c.searchOnlineRecord}">
+                                                                                    <c:svg class="slds-button__icon slds-button__icon--small"
+                                                                                           xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#search'}"
+                                                                                           ariaHidden="true"
+                                                                                           />
+                                                                                </a>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </aura:iteration>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </li>
+                </aura:if>
+
+
+                <!--***********************************************Search block with search results table********************************************************-->
+                <li class="slds-item slds-m-bottom--small">
+                    <div class="slds-tabs--scoped">
+                        <fieldset class="slds-form--compound">
+                            <div class="searchForm">
+                                <div class="slds-tabs--scoped__nav" role="tablist">
+                                    <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection">{! v._searchHeader}</legend>
+                                </div>
+                                <div class="slds-form-element__group slds-tabs--scoped__content">
+                                    <form onsubmit="{!c.preventSubmitAction}">
+                                    <div class="searchBlock slds-grid slds-wrap">
+                                        <div class="slds-form-element slds-size--2-of-5 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_2-of-5 slds-max-small-size_1-of-1 searchTextField">
+                                            <div><ui:outputText class="slds-form-element__label" value="{!$Label.c.PC_EWP_HCO_SearchTitle}" /></div>
+                                            <div><ui:inputText value="{!v.searchString}" aura:id="searchHCOId" class="slds-input searchPatient" placeholder="{!$Label.c.PC_Default_SearchKeyword}"/></div>
+                                        </div>
+                                        <div class="slds-form-element slds-size--2-of-5 slds-small-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_2-of-5 slds-max-small-size_1-of-1 searchFilterField">
+                                            <div><ui:outputText class="slds-form-element__label" value="{!$Label.c.PC_EWP_HCO_SearchDdTitle}" /></div>
+                                            <div>
+                                                <ui:inputSelect aura:id="searchFilterOptions" class="slds-input">
+                                                    <ui:inputSelectOption class="uiInputSelectOption" label="{!v._searchFilterOptionAll}" text="{!v._searchFilterOptionAll}"/>
+                                                    <aura:iteration items="{!v.searchFilterOptions.Type}" var="option">
+                                                        <ui:inputSelectOption text="{!option.value}" label="{!option.label}"/>
+                                                    </aura:iteration>
+                                                </ui:inputSelect>
+                                            </div>
+                                        </div>
+                                        <div class="slds-form-element searchButton">
+                                            <div><ui:outputText class="slds-form-element__label" value="&nbsp;" /></div>
+                                            <div>
+                                                <button class="slds-button slds-button--neutral slds-button--brand"
+                                                                 type="button" onclick="{!c.searchRecord}">{!$Label.c.PC_Search_Button_Label}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>
+
+                                    <div class="searchResultMsgBlock searchResultMsgBlockHidden" aura:id="searchResultMsg">
+                                        {!$Label.c.PC_EWP_No_Results_Found_Msg}
+                                    </div>
+                                    <div class="searchResultBlock">
+                                        <aura:if isTrue="{! v.searchResults.length > 0}">
+                                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size--1-of-1">
+                                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                                            <thead>
+                                                                <tr class="slds-text-title--caps">
+                                                                    <th scope="col">
+                                                                        <span>{!$Label.c.PC_EWP_Select_Col_Header}</span>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.name}">{!v.HCOTableHeaders.name}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.status}">{!v.HCOTableHeaders.status}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryAddress1}">{!v.HCOTableHeaders.primaryAddress1}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryCity}">{!v.HCOTableHeaders.primaryCity}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryState}">{!v.HCOTableHeaders.primaryState}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryZipCode}">{!v.HCOTableHeaders.primaryZipCode}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.type}">{!v.HCOTableHeaders.type}</div>
+                                                                    </th>
+                                                                    <th scope="col">
+                                                                        <div class="slds-truncate" title="{!v.HCOTableHeaders.subType}">{!v.HCOTableHeaders.subType}</div>
+                                                                    </th>
+                                                                    <th scope="col" style= "display:none">
+                                                                        <span>{!$Label.c.PC_EWP_View_Col_Header}</span>
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+
+
+                                                                <aura:iteration items="{!v.searchResults}" var="item" indexVar="i">
+                                                                    <tr>
+                                                                        <td scope="row" data-label="{! 'rtd' + item.Id}" class="action">
+                                                                            <div class="{!item.isSelected + ' cbBlock'}" >
+                                                                                <a id="{! 'cbBlock-' + item.Id}"
+                                                                                   data-text="{! i}" data-name="{! item.Id}"
+                                                                                   onclick="{!c.onAdd}">
+                                                                                    <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                                           xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new'}"
+                                                                                           ariaHidden="true"
+                                                                                           />
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="{!item.isSelected + ' tickBlock'}" id="{! 'tickBlock-' + item.Id}">
+                                                                                <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#success'}"
+                                                                                       ariaHidden="true"
+                                                                                       />
+                                                                            </div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.name}">
+                                                                            <div class="slds-truncate" title="{!item.name}">{!item.name}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.status}">
+                                                                            <div class="slds-truncate" title="{!item.status}">{!item.status}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.primaryAddress1}">
+                                                                            <div class="slds-truncate" title="{!item.primaryAddress1}">{!item.primaryAddress1}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.primaryCity}">
+                                                                            <div class="slds-truncate" title="{!item.primaryCity}">{!item.primaryCity}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.primaryState}">
+                                                                            <div class="slds-truncate" title="{!item.primaryState}">{!item.primaryState}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.primaryZipCode}">
+                                                                            <div class="slds-truncate" title="{!item.primaryZipCode}">{!item.primaryZipCode}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.type}">
+                                                                            <div class="slds-truncate" title="{!item.type}">{!item.type}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="{!item.subType}">
+                                                                            <div class="slds-truncate" title="{!item.subType}">{!item.subType}</div>
+                                                                        </td>
+                                                                        <td scope="row" data-label="" class="action" style= "display:none">
+                                                                            <a id="{! 'cbBlock-' + item.Id}"
+                                                                               data-text="{! i}" data-name="{! item.Id}"
+                                                                               onclick="{!c.showRecordDetails}">
+                                                                                <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                                       xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new_window'}"
+                                                                                       ariaHidden="true"
+                                                                                       />
+                                                                            </a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </aura:iteration>
+
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="selectRecordButtonBlock" style="display:none">
+                                                            <ui:button class="slds-button slds-button--neutral slds-button slds-button--neutral uiButton--default uiButton"
+                                                                       label="{!$Label.c.PC_Search_Button_Label}" press="{!c.selectRecords}"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </aura:if>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </li>
+                <aura:if isTrue="{!v.selectedResults.length > 0}">
+                    <li class="slds-item slds-m-bottom--small">
+                        <div class="slds-tabs--scoped">
+                            <fieldset class="slds-form--compound">
+                                <div class="slds-tabs--scoped__nav" role="tablist">
+                                    <div>
+                                        <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection">{!v._selectedHCOHeader} ({!v.selectedResults.length})</legend>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element__group slds-tabs--scoped__content selectedResultBlock">
+                                    <div class="slds-form-element__row">
+                                        <div class="slds-form-element slds-size--1-of-1">
+                                            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                                <thead>
+                                                    <tr class="slds-text-title--caps">
+                                                        <th scope="col">
+                                                            <span>{!$Label.c.PC_EWP_Remove_Col_Header}</span>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.firstName}">{!v.HCOTableHeaders.name}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.status}">{!v.HCOTableHeaders.status}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryAddress1}">{!v.HCOTableHeaders.primaryAddress1}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryCity}">{!v.HCOTableHeaders.primaryCity}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryState}">{!v.HCOTableHeaders.primaryState}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.primaryZipCode}">{!v.HCOTableHeaders.primaryZipCode}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.type}">{!v.HCOTableHeaders.type}</div>
+                                                        </th>
+                                                        <th scope="col">
+                                                            <div class="slds-truncate" title="{!v.HCOTableHeaders.subType}">{!v.HCOTableHeaders.subType}</div>
+                                                        </th>
+                                                        <th scope="col" style= "display:none">
+                                                            <span>{!$Label.c.PC_EWP_View_Col_Header}</span>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+
+
+                                                    <aura:iteration items="{!v.selectedResults}" var="item" indexVar="i">
+                                                        <tr>
+                                                            <td scope="row" data-label="{! 'selectedItem-' + item.Id}">
+                                                                <div class="scbBlock" id="scbBlock">
+                                                                    <a id="{! 'scbBlock-' + item.Id}"
+                                                                       data-text="{! i}" data-name="{! item.Id}"
+                                                                       onclick="{!c.onRemove}">
+                                                                        <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                               xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#clear'}"
+                                                                               ariaHidden="true"
+                                                                               />
+                                                                    </a>
+                                                                </div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.firstName}">
+                                                                <div class="slds-truncate" title="{!item.name}">{!item.name}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.status}">
+                                                                <div class="slds-truncate" title="{!item.status}">{!item.status}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.lastName}">
+                                                                <div class="slds-truncate" title="{!item.primaryAddress1}">{!item.primaryAddress1}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.primaryCity}">
+                                                                <div class="slds-truncate" title="{!item.primaryCity}">{!item.primaryCity}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.type}">
+                                                                <div class="slds-truncate" title="{!item.primaryState}">{!item.primaryState}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.specialistType}">
+                                                                <div class="slds-truncate" title="{!item.primaryZipCode}">{!item.primaryZipCode}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.phone}">
+                                                                <div class="slds-truncate" title="{!item.type}">{!item.type}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="{!item.city}">
+                                                                <div class="slds-truncate" title="{!item.subType}">{!item.subType}</div>
+                                                            </td>
+                                                            <td scope="row" data-label="" class="action" style= "display:none">
+                                                                <a id="{! 'cbBlock-' + item.Id}"
+                                                                   data-text="{! i}" data-name="{! item.Id}"
+                                                                   onclick="{!c.showRecordDetails}">
+                                                                    <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                           xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new_window'}"
+                                                                           ariaHidden="true"
+                                                                           />
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </aura:iteration>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+                        </div>
+                    </li>
+                </aura:if>
+            </ul>
+        </div>
+    </div>
+
+    <div role="dialog" tabindex="1" aria-labelledby="header43" class="slds-modal slds-fade-in-open" style="display:none;">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <button class="slds-button slds-modal__close slds-button--icon-inverse" title="">
+                    <c:svg class="slds-button__icon slds-button__icon--medium"
+							xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true" />
+
+                    <span class="slds-assistive-text"></span>
+                </button>
+                <h2 id="header43" class="slds-text-heading--medium"></h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                {!v.body}
+            </div>
+            <div class="slds-modal__footer">
+
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open" style="display:none;"></div>
+
+</aura:component>

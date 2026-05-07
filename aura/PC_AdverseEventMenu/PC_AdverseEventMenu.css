@@ -1,0 +1,25 @@
+/**
+ * Created by peharitha on 11/27/2018.
+ */
+.THIS .AE label{
+    color: rgb(62, 62, 60);
+    font-size: .75rem;
+    font-weight: normal;
+}
+.THIS .fieldStyle{
+    padding-bottom:1rem;
+}
+.THIS .allign{
+    /*padding:1rem;*/
+}
+.THIS .topLevelOptions {
+    float:right;
+    border-bottom-style: outset;
+    margin-right: 1rem;
+}
+.THIS .tabSet {
+    clear: both;
+}
+.THIS .topLevelOptions .slds-form-element__control {
+    display: inline-flex;
+}

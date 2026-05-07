@@ -1,0 +1,53 @@
+.THIS a, .THIS a:focus, .THIS a:hover {
+	outline: 0 none !important;
+    text-decoration:none;
+    color: #0070d2;
+}
+.THIS .uiButton--default .label {
+    color: #fff;
+    font-size: 0.75rem;
+}
+.THIS .uiButton--default {
+    box-shadow: none;
+    font-weight: normal;
+    margin: 0 0 0 10px;
+    text-shadow: none;
+}
+.THIS .uiButton--default:hover, .THIS .uiButton--default:focus {
+    box-shadow: none;
+    font-weight: normal;
+    text-shadow: none;
+    background: #005fb2 none no-repeat right top;
+}
+.THIS .pageContent {
+    padding: 20px;
+}
+.THIS .banner {
+    margin: 0;
+}
+.THIS .bannerHeader {
+    font-size: 1.125rem;
+}
+.THIS .pageHeader {
+    border-bottom: none !important;
+    border: 1px solid rgb(216, 221, 230);
+    margin-top: 20px;
+    padding: 5px;
+    color: #54698d;
+    font-size: 0.75rem;
+    letter-spacing: 0.0625em;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+.THIS .spinner {
+    left: 50%;
+    top: 50%;
+    opacity: 0.8;
+    z-index: 999;
+}
+.THIS .spinner .loading {
+    border: none;
+}
+.THIS .slds-table--bordered {
+	border: 1px solid rgb(216, 221, 230);
+}

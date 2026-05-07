@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>e-Letter</label>
+    <protected>false</protected>
+    <values>
+        <field>PC_Action_Component_Attributes__c</field>
+        <value xsi:type="xsd:string">{&quot;showAttachments&quot;:true, &quot;showPreviewScreen&quot;:true, &quot;showSendSecureOption&quot;:true, &quot;closeTabAfterSend&quot;:false, &quot;openInNewTab&quot;:false, &quot;emailWorkflow&quot;:true, &quot;faxWorkflow&quot;:false, &quot;moreEmailRecipients&quot;:true}</value>
+    </values>
+    <values>
+        <field>PC_Action_Component__c</field>
+        <value xsi:type="xsd:string">c:PC_eLetter2</value>
+    </values>
+    <values>
+        <field>PC_Action_Icon__c</field>
+        <value xsi:type="xsd:string">standard:email_chatter</value>
+    </values>
+    <values>
+        <field>PC_Action_Label__c</field>
+        <value xsi:type="xsd:string">eLetter</value>
+    </values>
+    <values>
+        <field>PC_Action_Ordinal__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>PC_Action_Type__c</field>
+        <value xsi:type="xsd:string">Communications</value>
+    </values>
+    <values>
+        <field>PC_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>PC_Case_Record_Type__c</field>
+        <value xsi:type="xsd:string">PC_Benefits_Investigation_Benefits_Verification</value>
+    </values>
+    <values>
+        <field>PC_Case_Recordtype_Namespaceprefix__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PC_Engagement_Program_Code__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>PC_Other_Case_Record_Type__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

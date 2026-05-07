@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Patient Connect custom object used to manage information and activities for interactions with / for patients such as infusion appointments, training sessions or another types of patient appointments typically delivered by 3rd parties.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>PC_Doc_Link_Interaction</fullName>
+        <description>Field set used to display out-of-the-box Interaction fields on Document Link screen. Used in default config for Document Link screen: PC_Document_Link_Related_Object_Setting custom metadata.</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Start__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_End__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>PC Document Link Interaction</label>
+    </fieldSets>
+    <fields>
+        <fullName>ACLS_Meeting_Link__c</fullName>
+        <description>Meeting URL will be auto-populate from Care coordinator of program case when the type is Injection Training</description>
+        <label>Meeting Link</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Sub_Type__c</fullName>
+        <label>Sub Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>PC_Type__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>First Interaction</fullName>
+                    <default>false</default>
+                    <label>First Interaction</label>
+                </value>
+                <value>
+                    <fullName>Subsequent Training</fullName>
+                    <default>false</default>
+                    <label>Subsequent Training</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Injection Training</controllingFieldValue>
+                <valueName>First Interaction</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Injection Training</controllingFieldValue>
+                <valueName>Subsequent Training</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Duration_Hrs__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The duration of the interaction or appointment.</description>
+        <externalId>false</externalId>
+        <formula>(floor(( PC_End__c  -  PC_Start__c)*24))
++
+(((((PC_End__c -  PC_Start__c)*24)-floor((PC_End__c -  PC_Start__c)*24))*60)/100)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Duration (Hrs)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_End__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The End date and time of the scheduled or requested interaction or appointment.</description>
+        <label>End</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Captures the Interaction Summary</description>
+        <label>Notes</label>
+        <length>131072</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Participant__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The pharmacy, clinic, or other type of participant (account) for which the patient requests an appointment.</description>
+        <label>Location</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Pharmacy,HCO, Field Training Nurse</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Interactions</relationshipLabel>
+        <relationshipName>Interactions</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Participants__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Roles of the participants in the Interaction</description>
+        <label>Participants</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>HCO</fullName>
+                    <default>false</default>
+                    <label>HCO</label>
+                </value>
+                <value>
+                    <fullName>Treating Physician</fullName>
+                    <default>false</default>
+                    <label>Treating Physician</label>
+                </value>
+                <value>
+                    <fullName>Care Coordinator</fullName>
+                    <default>false</default>
+                    <label>Care Coordinator</label>
+                </value>
+                <value>
+                    <fullName>Reimbursement Specialist</fullName>
+                    <default>false</default>
+                    <label>Reimbursement Specialist</label>
+                </value>
+                <value>
+                    <fullName>Field Reimbursement Manager</fullName>
+                    <default>false</default>
+                    <label>Field Reimbursement Manager</label>
+                </value>
+                <value>
+                    <fullName>Caregiver</fullName>
+                    <default>false</default>
+                    <label>Caregiver</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Patient_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Program case to which the interaction is related.</description>
+        <label>Program</label>
+        <lookupFilter>
+            <active>false</active>
+            <filterItems>
+                <field>Case.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Program</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Interactions</relationshipLabel>
+        <relationshipName>Interactions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the patient the interaction is related to.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(PC_Patient_Program__r.AccountId),&quot;  &quot;,(HYPERLINK(&quot;/lightning/r/Account/&quot;+PC_Patient_Program__r.AccountId+&quot;/view&quot;, PC_Patient_Program__r.Account.PC_Last_Name__c + &apos;, &apos; + PC_Patient_Program__r.Account.PC_First_Name__c ,&quot;_blank&quot;)) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Start__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Start date and time of the scheduled or requested interaction or appointment.</description>
+        <label>Start</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the Interaction such as Requested or Confirmed.</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Requested</fullName>
+                    <default>true</default>
+                    <label>Requested</label>
+                </value>
+                <value>
+                    <fullName>Confirmed</fullName>
+                    <default>false</default>
+                    <label>Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Attended</fullName>
+                    <default>false</default>
+                    <label>Attended</label>
+                </value>
+                <value>
+                    <fullName>Cancelled</fullName>
+                    <default>false</default>
+                    <label>Cancelled</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of the interaction scheduled.</description>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Infusion Appointment</fullName>
+                    <default>false</default>
+                    <label>Infusion Appointment</label>
+                </value>
+                <value>
+                    <fullName>Test - Baseline</fullName>
+                    <default>false</default>
+                    <label>Test - Baseline</label>
+                </value>
+                <value>
+                    <fullName>Training - Live In-Person</fullName>
+                    <default>false</default>
+                    <label>Training - Live In-Person</label>
+                </value>
+                <value>
+                    <fullName>Training - Live Virtual</fullName>
+                    <default>false</default>
+                    <label>Training - Live Virtual</label>
+                </value>
+                <value>
+                    <fullName>Injection Training</fullName>
+                    <default>false</default>
+                    <label>Injection Training</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Interaction</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>PC_Participant__c</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Patient_Program__c</columns>
+        <columns>PC_Status__c</columns>
+        <columns>PC_Type__c</columns>
+        <columns>PC_Start__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Appointments</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Type__c</columns>
+        <columns>PC_Patient_Program__c</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Participant__c</columns>
+        <columns>PC_Status__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Patient__c</field>
+            <operation>contains</operation>
+            <value>Driver,Donna</value>
+        </filters>
+        <label>My Appointments</label>
+    </listViews>
+    <nameField>
+        <displayFormat>INT-{0000000}</displayFormat>
+        <label>Interaction Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Interactions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Participant_Acc_Record_Type_Validation</fullName>
+        <active>true</active>
+        <description>Participant record type must be in Pharmacy, HCO, or Field Training Nurse</description>
+        <errorConditionFormula>IF(OR(ISBLANK(PC_Participant__c),ISNULL(PC_Participant__c)), FALSE, AND((PC_Participant__r.RecordType.DeveloperName!= &apos;PC_Pharmacy&apos;),(PC_Participant__r.RecordType.DeveloperName !=&apos;HCO&apos;),(PC_Participant__r.RecordType.DeveloperName !=&apos;PC_Field_Training_Nurse&apos;)))</errorConditionFormula>
+        <errorDisplayField>PC_Participant__c</errorDisplayField>
+        <errorMessage>Account selected must be of the Record Type Pharmacy, HCO or Field Training Nurse</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Program_Case_Record_Type_Validation</fullName>
+        <active>true</active>
+        <description>Case record type must be Program</description>
+        <errorConditionFormula>!ISPICKVAL(PC_Patient_Program__r.Type,&apos;Program&apos;)</errorConditionFormula>
+        <errorDisplayField>PC_Patient_Program__c</errorDisplayField>
+        <errorMessage>Case selected must be of the Record Type Program</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

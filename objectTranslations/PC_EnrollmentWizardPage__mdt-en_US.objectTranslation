@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Enrollment Wizard Page</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Enrollment Wizard Pages</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Component Name --></label>
+        <name>PC_ComponentName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Configuration settings that are specific to the Enrollment Wizard Page. The format and specification of the attributes is implementation specific, but a JSON structure is recommended for consistency and conciseness. Recommended to use this field in place of Config if this field is blank, value from Config will be used. --></help>
+        <label><!-- Config2 --></label>
+        <name>PC_Config2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Configuration settings that are specific to the Enrollment Wizard Page. The format and specification of the attributes is implementation specific, but a JSON structure is recommended for consistency and conciseness. Recommended to use Config2 field which is of higher character length. --></help>
+        <label><!-- Config --></label>
+        <name>PC_Config__c</name>
+    </fields>
+    <fields>
+        <help><!-- Label for Enrollment Wizard Page (Progress Indicator).
+You may also specify the fully qualified custom label path ($Label.namespace.labelName).
+If this field is blank, then the value in the masterLabel field will be considered for Page name. --></help>
+        <label><!-- Enrollment Wizard Page Label --></label>
+        <name>PC_EnrollmentWizardPageLabel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ordinal --></label>
+        <name>PC_Ordinal__c</name>
+    </fields>
+    <fields>
+        <help><!-- The default name of the processor is &lt;PC_ComponantName__c&gt; + &quot;Processor&quot;, which will be used if this field is left blank. --></help>
+        <label><!-- Processor --></label>
+        <name>PC_Processor__c</name>
+    </fields>
+    <fields>
+        <help><!-- Program code of the engagement program associated with the enrollment wizard page. --></help>
+        <label><!-- Program Code --></label>
+        <name>PC_ProgramCode__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

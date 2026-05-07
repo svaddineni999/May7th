@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>機會轉介記錄類型</value>
+    </caseValues>
+    <fields>
+        <label>啟用</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>機會記錄類型名稱</label>
+        <name>HealthCloudGA__OpportunityRecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label>記錄類型命名空間</label>
+        <name>HealthCloudGA__OpportunityReferralRecordTypeNamespace__c</name>
+    </fields>
+</CustomObjectTranslation>

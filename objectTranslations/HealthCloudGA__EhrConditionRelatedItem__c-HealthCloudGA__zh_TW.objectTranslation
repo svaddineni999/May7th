@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 條件相關項目</value>
+    </caseValues>
+    <fields>
+        <label>代碼標籤</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>代碼系統</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>代碼</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>條件</label>
+        <name>HealthCloudGA__Condition__c</name>
+        <relationshipLabel>EHR 條件相關項目</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>藥物聲明</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>EHR 條件相關項目</relationshipLabel>
+    </fields>
+    <fields>
+        <label>備註</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>已修改來源系統</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>來源系統</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>目標條件</label>
+        <name>HealthCloudGA__TargetCondition__c</name>
+        <relationshipLabel>EHR 條件相關項目 (目標條件)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>目標詳細資料</label>
+        <name>HealthCloudGA__TargetDetail__c</name>
+    </fields>
+    <fields>
+        <label>目標免疫接種記錄</label>
+        <name>HealthCloudGA__TargetImmunization__c</name>
+        <relationshipLabel>EHR 條件相關項目</relationshipLabel>
+    </fields>
+    <nameFieldLabel>EHR 條件名稱</nameFieldLabel>
+</CustomObjectTranslation>

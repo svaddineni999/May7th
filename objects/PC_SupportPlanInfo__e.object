@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Object to hold the information about Support plan and Trigger object record details</description>
+    <eventType>HighVolume</eventType>
+    <fields>
+        <fullName>PC_Context__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Context in which Support Plan Info Platform event is published</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Context</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RecordId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Id of the Trigger Object Record which triggers the Support Plan</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Record Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RuntimeUserId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Id of User who triggered the Support Plan initiation</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Runtime User Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_SupportPlanOrRuntimeIds__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Record Ids of Support Plans/ Support Plan Runtimes to be processed</description>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Support Plan/Runtime Ids</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_TransactionId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique Id given for each transaction when a support plan is executed</description>
+        <externalId>false</externalId>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Transaction Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_TriggerRecordModifiedTime__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used to store Last modified Date Time of record which trigger Support Plan</description>
+        <isFilteringDisabled>false</isFilteringDisabled>
+        <isNameField>false</isNameField>
+        <isSortingDisabled>false</isSortingDisabled>
+        <label>Trigger Record Modified Time</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <label>Support Plan Info</label>
+    <pluralLabel>Support Plan Info</pluralLabel>
+    <publishBehavior>PublishAfterCommit</publishBehavior>
+</CustomObject>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HL7 パーサー対応付け</value>
+    </caseValues>
+    <fields>
+        <label>エンティティ名</label>
+        <name>HealthCloudGA__EntityName__c</name>
+    </fields>
+    <fields>
+        <label>有効</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apex class name to be used to parse --></help>
+        <label>パーサー名</label>
+        <name>HealthCloudGA__ParserName__c</name>
+    </fields>
+    <fields>
+        <label>受け入れ側アプリケーション</label>
+        <name>HealthCloudGA__ReceivingApplication__c</name>
+    </fields>
+    <fields>
+        <label>受け入れ側施設</label>
+        <name>HealthCloudGA__ReceivingFacility__c</name>
+    </fields>
+    <fields>
+        <label>送り側アプリケーション</label>
+        <name>HealthCloudGA__SendingApplication__c</name>
+    </fields>
+    <fields>
+        <label>送り側施設</label>
+        <name>HealthCloudGA__SendingFacility__c</name>
+    </fields>
+    <fields>
+        <label>バージョン</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+</CustomObjectTranslation>

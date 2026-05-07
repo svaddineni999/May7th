@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Odpoveď klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Odpovede klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Odpoveď klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Odpovede klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Odpovede klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Odpovedí klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Odpovedi klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Odpovediam klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Odpoveďou klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Odpoveďami klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>false</plural>
+        <value>Odpovedi klinického hodnotenia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <value>Odpovediach klinického hodnotenia</value>
+    </caseValues>
+    <fields>
+        <label>Bolesť brucha</label>
+        <name>HealthCloudGA__AbdominalPain__c</name>
+    </fields>
+    <fields>
+        <label>Kardiovaskulárne ochorenie</label>
+        <name>HealthCloudGA__CardiovascularDisease__c</name>
+    </fields>
+    <fields>
+        <label>Zimnica</label>
+        <name>HealthCloudGA__Chills__c</name>
+    </fields>
+    <fields>
+        <label>Chronické ochorenie pečene</label>
+        <name>HealthCloudGA__ChronicLiverDisease__c</name>
+    </fields>
+    <fields>
+        <label>Chronické ochorenie pľúc</label>
+        <name>HealthCloudGA__ChronicLungDisease__c</name>
+    </fields>
+    <fields>
+        <label>Chronické ochorenie obličiek</label>
+        <name>HealthCloudGA__ChronicRenalDisease__c</name>
+    </fields>
+    <fields>
+        <label>Kašeľ</label>
+        <name>HealthCloudGA__Cough__c</name>
+    </fields>
+    <fields>
+        <label>Fajčiar v súčastnosti</label>
+        <name>HealthCloudGA__CurrentSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Cukrovka</label>
+        <name>HealthCloudGA__DiabetesMellitus__c</name>
+    </fields>
+    <fields>
+        <label>Hnačka</label>
+        <name>HealthCloudGA__Diarrhoea__c</name>
+    </fields>
+    <fields>
+        <label>Zvýšená teplota</label>
+        <name>HealthCloudGA__FeverOverThreshold__c</name>
+    </fields>
+    <fields>
+        <label>Bývalý fajčiar</label>
+        <name>HealthCloudGA__FormerSmoker__c</name>
+    </fields>
+    <fields>
+        <label>Bolesti hlavy</label>
+        <name>HealthCloudGA__Headache__c</name>
+    </fields>
+    <fields>
+        <label>Najvyššia nameraná teplota</label>
+        <name>HealthCloudGA__HighestRecordedTemperature__c</name>
+    </fields>
+    <fields>
+        <label>Stav hospitalizácie</label>
+        <name>HealthCloudGA__HospitalizationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Admitted</masterLabel>
+            <translation><!-- Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Admitted</masterLabel>
+            <translation><!-- Not Admitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Oslabená imunita</label>
+        <name>HealthCloudGA__Immunocompromised__c</name>
+    </fields>
+    <fields>
+        <label>Bolesti svalov</label>
+        <name>HealthCloudGA__MuscleAches__c</name>
+    </fields>
+    <fields>
+        <label>Nevoľnosť alebo zvracanie</label>
+        <name>HealthCloudGA__NauseaOrVomiting__c</name>
+    </fields>
+    <fields>
+        <label>Poznámky k neurologickému postihnutiu</label>
+        <name>HealthCloudGA__NeurologicalDisablityNotes__c</name>
+    </fields>
+    <fields>
+        <label>Neurologické postihnutie</label>
+        <name>HealthCloudGA__NeurologicalDisablity__c</name>
+    </fields>
+    <fields>
+        <label>Zamestnanie</label>
+        <name>HealthCloudGA__Occupation__c</name>
+        <picklistValues>
+            <masterLabel>Childcare worker</masterLabel>
+            <translation><!-- Childcare worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical laboratory technologist or technician</masterLabel>
+            <translation><!-- Clinical laboratory technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Combined food preparation or serving worker, including fast food</masterLabel>
+            <translation><!-- Combined food preparation or serving worker, including fast food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentist</masterLabel>
+            <translation><!-- Dentist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency management director</masterLabel>
+            <translation><!-- Emergency management director --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency medical technician or paramedic</masterLabel>
+            <translation><!-- Emergency medical technician or paramedic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health practitioner support technologist or technician</masterLabel>
+            <translation><!-- Health practitioner support technologist or technician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare support worker(including medical equipment preparer)</masterLabel>
+            <translation><!-- Healthcare support worker(including medical equipment preparer) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Nástup príznakov</label>
+        <name>HealthCloudGA__OnsetOfSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Poznámky k iným chronickým ochoreniam</label>
+        <name>HealthCloudGA__OtherChronicDiseasesNotes__c</name>
+    </fields>
+    <fields>
+        <label>Iné chronické ochorenia</label>
+        <name>HealthCloudGA__OtherChronicDiseases__c</name>
+    </fields>
+    <fields>
+        <label>Ostatné symptómy</label>
+        <name>HealthCloudGA__OtherSymptoms__c</name>
+    </fields>
+    <fields>
+        <label>Súhlas rodičov poskytnutý</label>
+        <name>HealthCloudGA__ParentalConsent__c</name>
+    </fields>
+    <fields>
+        <label>Účet</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Reakcie na klinické hodnotenie</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Lekár primárnej starostlivosti</label>
+        <name>HealthCloudGA__PrimaryCarePhysician__c</name>
+    </fields>
+    <fields>
+        <label>Názov zariadenia poskytovateľa</label>
+        <name>HealthCloudGA__ProviderFacilityName__c</name>
+    </fields>
+    <fields>
+        <label>Nádcha</label>
+        <name>HealthCloudGA__RunnyNose__c</name>
+    </fields>
+    <fields>
+        <label>Dýchavičnosť</label>
+        <name>HealthCloudGA__ShortnessOfBreath__c</name>
+    </fields>
+    <fields>
+        <label>Bolesť hrdla</label>
+        <name>HealthCloudGA__SoreThroat__c</name>
+    </fields>
+    <fields>
+        <label>Subjektívna horúčka</label>
+        <name>HealthCloudGA__SubjectiveFever__c</name>
+    </fields>
+    <fields>
+        <label>Názov testovacieho zariadenia</label>
+        <name>HealthCloudGA__TestingFacilityName__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Názov reakcie na klinické hodnotenie</nameFieldLabel>
+</CustomObjectTranslation>

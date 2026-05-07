@@ -1,0 +1,76 @@
+<!--
+ - Created by havalakki on 6/3/2021.
+ -->
+
+<aura:component description="This component will serve as an intermediate screen for survey workflow.It would be presented to the user when we are not having engagement program or account details for whom the PAP survey is to be triggered." implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="PC_SurveyEligibilityCheckController">
+    <aura:attribute name="namespace" type="String" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" access="private"/>
+
+    <aura:attribute name="recordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="tabIcon" type="String" default="utility:engage"/>
+    <aura:attribute name="accountIdValue" type="Id" access="PUBLIC" />
+    <aura:attribute name="engProgramIdValue" type="Id" access="PUBLIC"/>
+    <aura:attribute name="caseObjectAPIName" type="String" access="PUBLIC" default="Case"/>
+    <aura:attribute name="accountIdFieldAPIName" type="String" default="AccountId" access="private"/>
+    <aura:attribute name="engagementProgramFieldName" type="String" default="PC_Engagement_Program__c" access="private"/>
+    <aura:attribute name="qualifiedEngagementProgramFieldAPIName" type="String" access="private"/>
+    <aura:attribute name="caseRecordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="newSurveyEligibilityCheckLabel" type="String" default="" access="private"/>
+    <aura:attribute name="invalidEngagementProgramMessage" type="String" default="{!$Label.c.PC_InvalidEngagementProgram}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="errors" type="List" access="private" default="[]"/>
+    <aura:attribute name="invalidAccountOnCase" type="String" default="{!$Label.c.PC_InvalidAccountOnCaseError}" access="private"/>
+    <aura:attribute name="caseDetailsErrorMessage" type="String" default="{!$Label.c.PC_CaseDetailsError}" access="private"/>
+    <aura:attribute name="engagementProgramUrlFieldName" type="String" access="private" default="EngagementProgramId"/>
+    <aura:attribute name="surveyInvitationPageName" type="String" access="private" default="PC_SurveyInvitationAppPage"/>
+    <aura:attribute name="surveyTabIcon" type="String" default="utility:form" access="private"/>
+    <aura:attribute name="surveyLabel" type="String" default="{!$Label.c.PC_SurveyLabel}" access="private"/>
+    <aura:attribute name="initiateSurveyLabel" type="String" default="{!$Label.c.PC_InitiateSurveyLabel}" access="private"/>
+    <aura:attribute name="invalidAccountMessage" type="String" default="{!$Label.c.PC_InvalidAccountLabel}" access="private"/>
+    <aura:attribute name="workflowSurveyContext" type="String" default="PC_PAP" access="private"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <div class="formContainerStyle">
+        <div class="formContainerStyle">
+            <aura:if isTrue="{! v.errors.length > 0 }">
+                <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+            </aura:if>
+        <div class="slds-grid">
+            <div class="slds-grid slds-col slds-size_3-of-6">
+                <div class="slds-col slds-size_1-of-9 newPAPEligibilityIconDiv"><lightning:icon iconName="utility:user" size="medium" class="slds-button__icon"/></div>
+                <div class="slds-col slds-size_8-of-9 slds-text-heading_medium newPAPEligibilityTitleDiv">{!v.newSurveyEligibilityCheckLabel}</div>
+            </div>
+        </div>
+        <br/>
+        <div class="slds-grid slds-col slds-size_5-of-12">
+            <div class="slds-grid slds-col slds-size_1-of-1 slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-form-element">
+                    <lightning:recordEditForm objectApiName="{!v.caseObjectAPIName}" recordId="{!v.caseRecordId}">
+                        <lightning:inputField fieldName="{!v.qualifiedEngagementProgramFieldAPIName}" aura:id="engagementProgAuraId" onchange="{!c.validateFieldValues}"/>
+                    </lightning:recordEditForm>
+                    <div aura:id="invalidEngProgId" class="slds-hide slds-text-color_error">{!v.invalidEngagementProgramMessage}</div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-grid slds-col slds-size_2-of-12"></div>
+        <div class="slds-grid slds-col slds-size_5-of-12">
+            <div class="slds-grid slds-col slds-size_1-of-1 slds-wrap">
+                <div class="slds-col slds-size_1-of-1 slds-form-element">
+                    <lightning:recordEditForm objectApiName="{!v.caseObjectAPIName}" recordId="{!v.caseRecordId}">
+                        <lightning:inputField fieldName="{!v.accountIdFieldAPIName}" aura:id="accountAuraId" onchange="{!c.validateFieldValues}"/>
+                    </lightning:recordEditForm>
+                    <div aura:id="invalidAccountId" class="slds-hide slds-text-color_error">{!v.invalidAccountMessage}</div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <lightning:button variant="brand" label="{!v.initiateSurveyLabel}" onclick="{!c.openSurveyInvitationPage}"/>
+        </div>
+    </div>
+    </div>
+
+</aura:component>

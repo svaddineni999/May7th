@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Error Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Error Logs</value>
+    </caseValues>
+    <fields>
+        <help><!-- Additional info, if applicable, such as error notes or developer hints --></help>
+        <label><!-- Additional Information --></label>
+        <name>PC_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Apex class where the exception or error is originated. --></help>
+        <label><!-- Class Name --></label>
+        <name>PC_Class_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date and time this error occurred --></help>
+        <label><!-- Error Date/Time --></label>
+        <name>PC_Error_Datetime__c</name>
+    </fields>
+    <fields>
+        <help><!-- The error message produced by this error --></help>
+        <label><!-- Error Message --></label>
+        <name>PC_Error_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- Line number where the exception or error is originated. --></help>
+        <label><!-- Line Number --></label>
+        <name>PC_Line_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code to represent the cause of the exception or error. --></help>
+        <label><!-- Log Level --></label>
+        <name>PC_Log_Level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Apex method where the exception or error is originated. --></help>
+        <label><!-- Method Name --></label>
+        <name>PC_Method_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record ID which is involved in the exception or error. --></help>
+        <label><!-- Record ID --></label>
+        <name>PC_Record_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The running user for this error --></help>
+        <label><!-- Running User --></label>
+        <name>PC_Running_User__c</name>
+        <relationshipLabel><!-- Error Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The system stack trace for this error, if one exists --></help>
+        <label><!-- Stack Trace --></label>
+        <name>PC_Stack_Trace__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

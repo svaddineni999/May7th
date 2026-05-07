@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Alert</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Alerts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Alert Status --></label>
+        <name>PC_Alert_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overridden</masterLabel>
+            <translation><!-- Overridden --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of Alert --></label>
+        <name>PC_Date_of_Alert__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>PC_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient ID --></label>
+        <name>PC_Patient_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>PC_Patient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Alerts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason for Alert --></label>
+        <name>PC_Reason_for_Alert__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason for Dismissal --></label>
+        <name>PC_Reason_for_Override__c</name>
+        <picklistValues>
+            <masterLabel>Adherence data received</masterLabel>
+            <translation><!-- Adherence data received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recommend Retest</masterLabel>
+            <translation><!-- Recommend Retest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_Type__c</name>
+        <picklistValues>
+            <masterLabel>Adherence Risk</masterLabel>
+            <translation><!-- Adherence Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Body Weight</masterLabel>
+            <translation><!-- Body Weight --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discontinuation Risk</masterLabel>
+            <translation><!-- Discontinuation Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Late Prescription Renewal</masterLabel>
+            <translation><!-- Late Prescription Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oximetry</masterLabel>
+            <translation><!-- Oximetry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pulsewave</masterLabel>
+            <translation><!-- Pulsewave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Result Outside Limits</masterLabel>
+            <translation><!-- Result Outside Limits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Result Risk</masterLabel>
+            <translation><!-- Test Result Risk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unanswered SMS</masterLabel>
+            <translation><!-- Unanswered SMS --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

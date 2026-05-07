@@ -1,0 +1,36 @@
+<aura:component controller="PC_HomeProgramActivitiesTodayController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <style>
+    .ActivitiesTodayBar {
+       height:10px;
+      display:inline-block;
+    }
+    .ActivitiesTodayBar.Completed {
+        	background-color:#0070D2;
+        }
+        .ActivitiesTodayBar.NotCompleted {
+        background-color:rgb(244, 246, 249);
+        }
+    </style>
+    <aura:attribute name="totalCount" type="PC_HomeProgramActivitiesTodayController.object" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <!--<div aura:id="errorMessage"></div> -->
+    <div class="slds-grid" style="height:100%" >
+        <div class="slds-col slds-size--1-of-1 slds-small-size--2-of-4 slds-medium-size--2-of-4">
+            <div class="PC_Progress_Cnt_Cont">
+                <span class="PC_Progress_Count">{!v.totalCount.completed} / {!v.totalCount.total}</span>
+            </div>
+            <div class="PC_Progress_Text_Cont">
+                <span class="PC_Progress_Text">{!$Label.c.PC_MyProgressToday}</span>
+            </div>
+        </div>
+        <div class="slds-col slds-size--1-of-1 slds-small-size--2-of-4 slds-medium-size--2-of-4 lineActivityGraph">
+            <div class="slds-grid pc-grid-overwrite1" style="top:50%" >
+                <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--1-of-1">
+                    <div style="{! 'width:' + (v.totalCount.completedPercentage*100 ) + '%' }" class="ActivitiesTodayBar Completed">&nbsp;</div>
+                    <div style="{! 'width:' + (100 - v.totalCount.completedPercentage*100) + '%' }" class="ActivitiesTodayBar NotCompleted">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

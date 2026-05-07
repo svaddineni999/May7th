@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Asignación de analizador de HL7</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Asignaciones de analizadores de HL7</value>
+    </caseValues>
+    <fields>
+        <label>Nombre de entidad</label>
+        <name>HealthCloudGA__EntityName__c</name>
+    </fields>
+    <fields>
+        <label>Activo</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apex class name to be used to parse --></help>
+        <label>Nombre de analizador</label>
+        <name>HealthCloudGA__ParserName__c</name>
+    </fields>
+    <fields>
+        <label>Aplicación receptora</label>
+        <name>HealthCloudGA__ReceivingApplication__c</name>
+    </fields>
+    <fields>
+        <label>Instalaciones receptoras</label>
+        <name>HealthCloudGA__ReceivingFacility__c</name>
+    </fields>
+    <fields>
+        <label>Aplicación de envío</label>
+        <name>HealthCloudGA__SendingApplication__c</name>
+    </fields>
+    <fields>
+        <label>Instalaciones de envío</label>
+        <name>HealthCloudGA__SendingFacility__c</name>
+    </fields>
+    <fields>
+        <label>Versión</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

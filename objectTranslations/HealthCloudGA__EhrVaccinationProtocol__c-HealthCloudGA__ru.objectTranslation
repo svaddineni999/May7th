@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Протокол вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Протоколы вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Протокол вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Протоколы вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Протокола вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Протоколов вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Протоколу вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Протоколам вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Протоколом вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Протоколами вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Протоколе вакцинации ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Протоколах вакцинации ЭМК</value>
+    </caseValues>
+    <fields>
+        <label>Полномочие 255</label>
+        <name>HealthCloudGA__Authority255__c</name>
+    </fields>
+    <fields>
+        <label>Полномочие</label>
+        <name>HealthCloudGA__Authority__c</name>
+    </fields>
+    <fields>
+        <label>Описание</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Последовательность дозы</label>
+        <name>HealthCloudGA__DoseSequence__c</name>
+    </fields>
+    <fields>
+        <label>Код статуса дозы</label>
+        <name>HealthCloudGA__DoseStatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка статуса дозы</label>
+        <name>HealthCloudGA__DoseStatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Код причины статуса дозы</label>
+        <name>HealthCloudGA__DoseStatusReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка причины статуса дозы</label>
+        <name>HealthCloudGA__DoseStatusReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система причины статуса дозы</label>
+        <name>HealthCloudGA__DoseStatusReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Система статуса дозы</label>
+        <name>HealthCloudGA__DoseStatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код целевой дозы</label>
+        <name>HealthCloudGA__DoseTargetCode__c</name>
+    </fields>
+    <fields>
+        <label>Метка целевой дозы</label>
+        <name>HealthCloudGA__DoseTargetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система целевой дозы</label>
+        <name>HealthCloudGA__DoseTargetSystem__c</name>
+    </fields>
+    <fields>
+        <label>Иммунизация</label>
+        <name>HealthCloudGA__Immunization__c</name>
+        <relationshipLabel>Протоколы вакцинации</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ограничено</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Отображается на карте пациента</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Дозы серийные</label>
+        <name>HealthCloudGA__SeriesDoses__c</name>
+    </fields>
+    <fields>
+        <label>Последовательность</label>
+        <name>HealthCloudGA__Series__c</name>
+    </fields>
+    <fields>
+        <label>Код исходной системы</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Исходная система изменена</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Исходная система</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Код протокола вакцинации ЭМК</nameFieldLabel>
+</CustomObjectTranslation>

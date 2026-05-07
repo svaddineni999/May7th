@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Aan aandoening volgens EPD (elektronisch patiëntendossier) gerelateerd item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Aan aandoening volgens EPD (elektronisch patiëntendossier) gerelateerde items</value>
+    </caseValues>
+    <fields>
+        <label>Label voor code</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Coderingssysteem</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Aandoening</label>
+        <name>HealthCloudGA__Condition__c</name>
+        <relationshipLabel>Aan aandoening volgens EPD (elektronisch patiëntendossier) gerelateerde items</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Verklaring over medicatie</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>Aan aandoening volgens EPD (elektronisch patiëntendossier) gerelateerde items</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Notities</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Doelaandoening</label>
+        <name>HealthCloudGA__TargetCondition__c</name>
+        <relationshipLabel>Aan aandoening volgens EPD (elektronisch patiëntendossier) gerelateerde items (doelaandoening)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Doeldetail</label>
+        <name>HealthCloudGA__TargetDetail__c</name>
+    </fields>
+    <fields>
+        <label>Doelimmunisatie</label>
+        <name>HealthCloudGA__TargetImmunization__c</name>
+        <relationshipLabel>Aan aandoening volgens EPD (elektronisch patiëntendossier) gerelateerde items</relationshipLabel>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Naam van aandoening volgens EPD (elektro</nameFieldLabel>
+</CustomObjectTranslation>

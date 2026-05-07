@@ -1,0 +1,62 @@
+<template>
+    <lightning-record-edit-form
+            object-api-name={objectApiName}
+            record-id={_recordId}
+            record-type-id={recordTypeId}
+            density={_density}
+            onload={handleLoad}
+            onsubmit={handleSubmit}
+            onsuccess={handleSuccess}
+            onerror={handleError}
+            onchange={handleChange}>
+        <div class="slds-form slds-tabs_card" role="list">
+            <lightning-messages></lightning-messages>
+            <div class="slds-is-relative" style="min-height:50px">
+                <lightning-spinner alternative-text={_labelLoading} if:true={_loading}></lightning-spinner>
+                <template for:each={_sections} for:item="section" for:index="index">
+                    <div key={section.key} class="slds-section slds-is-open" style="background:white">
+                        <h3 class="slds-section__title slds-theme_shade slds-m-top_small">
+                            <span class="slds-truncate slds-p-horizontal_small">{section.heading}</span>
+                        </h3>
+                        <div class="slds-grid slds-wrap slds-m-top_x-small">
+                            <template for:each={section.fields} for:item="field" for:index="index" >
+                                <div key={field.fieldApiName} class={columnProperty}>
+                                    <lightning-input-field
+                                            if:true={field.updateable}
+                                            field-name={field.fieldApiName}
+                                            class={computedInputClass}
+                                            required={field.required}
+                                            data-id={field.fieldApiName}>
+                                    </lightning-input-field>
+                                    <lightning-output-field
+                                            if:false={field.updateable}
+                                            class={computedInputClass}
+                                            field-name={field.fieldApiName}
+                                            data-id={field.fieldApiName}
+                                    ></lightning-output-field>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div if:true={showSaveButton} class="slds-modal__footer slds-m-top_medium">
+                <div class="slds-align_absolute-center">
+                    <lightning-button
+                            class="slds-m-around_xx-small pc-record-form-field-set-cancel"
+                            onclick={handleCancel}
+                            name="cancel"
+                            label={_labelCancel}
+                    ></lightning-button>
+                    <lightning-button
+                            class="slds-m-around_xx-small pc-record-form-field-set-submit"
+                            type="submit"
+                            name="submit"
+                            variant="brand"
+                            label={_labelSave}
+                    ></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-record-edit-form>
+</template>

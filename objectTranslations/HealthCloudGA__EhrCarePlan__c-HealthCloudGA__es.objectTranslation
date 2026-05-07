@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Seguro médico de HCE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Seguros médicos de HCE</value>
+    </caseValues>
+    <fields>
+        <label>Cuenta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Seguros médicos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Es restringido</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Es visible en tarjeta de paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Notas</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Paciente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Seguros médicos</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Fin de periodo</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio de periodo</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Id. de sistema de origen</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origen</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Estado</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Id. de Seguro médico de HCE</nameFieldLabel>
+</CustomObjectTranslation>

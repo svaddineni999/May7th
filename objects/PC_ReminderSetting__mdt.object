@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Reminder properties are stored in this setting for reminder queue.</description>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Keep it selected to ensure that this setting is considered while processing the reminder queue records.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Keep it selected to ensure that this setting is considered while processing the reminder queue records.</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_AssignNotificationFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>User field API Name. The user will be assigned with the Notification/Task. If left blank, Notification/Task will be assigned to the user who runs the Reminder Service Batch Job.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>User field API Name. The user will be assigned with the Notification/Task. If left blank, Notification/Task will be assigned to the user who runs the Reminder Service Batch Job.</inlineHelpText>
+        <label>Assign Notification Field API Name</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_CreateTasksOnFailure__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, tasks will be created when reminder queue processing fails.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>If checked, tasks will be created when reminder queue processing fails.</inlineHelpText>
+        <label>Create Tasks on Failure</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of Reminder Setting.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Description of Reminder Setting.</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_DueDate_FieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date / Date-Time field API name on the configured object which holds the due date. Along with the offset, this field decides when a reminder is sent.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Date / Date-Time field API name on the configured object which holds the due date. Along with the offset, this field decides when a reminder is sent.</inlineHelpText>
+        <label>Due Date Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_EndDateOffsetReference__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Reference of Days/Hours for stop processing reminder queues.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Reference of Days/Hours for stop processing reminder queues.</inlineHelpText>
+        <label>End Date Offset Reference</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Days</fullName>
+                    <default>true</default>
+                    <label>Days</label>
+                </value>
+                <value>
+                    <fullName>Hours</fullName>
+                    <default>false</default>
+                    <label>Hours</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EndDateOffsetType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Offset type is for calculating whether reminder needs to be stop processed before the due date or after the due date.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Offset type is for calculating whether reminder needs to be stop processed before the due date or after the due date.</inlineHelpText>
+        <label>End Date Offset Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>After</fullName>
+                    <default>true</default>
+                    <label>After</label>
+                </value>
+                <value>
+                    <fullName>Before</fullName>
+                    <default>false</default>
+                    <label>Before</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EndDateOffset__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of Days/Hours to be considered to stop processing reminders from Due Date.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Number of Days/Hours to be considered to stop processing reminders from Due Date.</inlineHelpText>
+        <label>End Date Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_MaximumRemindersToBeSent__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Maximum Number of Reminders that are to be sent to the recipient.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Enter the maximum number of reminders that are to be sent to recipient.</inlineHelpText>
+        <label>Maximum Number of Reminders to be Sent</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_MinimumIntervalReminders__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Minimum Interval Between Successive Reminders.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Minimum Interval Between Successive Reminders in Hours.</inlineHelpText>
+        <label>Min Interval b/w Successive Reminders(H)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ObjectNamespace__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The namespace of the object.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The namespace of the object.</inlineHelpText>
+        <label>Object Namespace</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Object_ReminderService__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of the object on which you are configuring the reminder settings. The records of this object will be considered for sending reminders.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of the object on which you are configuring the reminder settings. The records of this object will be considered for sending reminders.</inlineHelpText>
+        <label>Object API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_OtherChannelName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Other channel name is for storing custom value when channel is other.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Fill this value only if channel is other.</inlineHelpText>
+        <label>Other Channel Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_OtherTemplateType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Other template type is for storing the value when the template type is other.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Fill this value only if template type is other.</inlineHelpText>
+        <label>Other Template Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ParentFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of the lookup field on which record the outcome(mostly failed) task/notification will be created after the reminder is sent. If left blank, the outcome task will be created on the given object record.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of the lookup field on which record the outcome(mostly failed) task/notification will be created after the reminder is sent. If left blank, the outcome task will be created on the given object record. Prerequisite - Enable Allow Activities checkbox on Object.</inlineHelpText>
+        <label>Parent Look-up Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RecipientFieldName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Field API Name of the recipient who receives the reminder. Ex:- Email field API name on Case/Account Object or Phone field API Name on Account/Contact Object.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Field API Name of the recipient who receives the reminder. Ex:- Email field API name on Case/Account Object or Phone field API Name on Account/Contact Object.</inlineHelpText>
+        <label>Recipient Field API Name</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_RecipientSourceClass__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Retrieves Recipients using the specified class. Class must implement the interface PatientConnect.PC_ReminderQueue.RecipientFinder. Use this when a recipient cannot be obtained directly using Recipient Field API Name or more than one recipient needs to be retrieved.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Retrieves Recipients using the specified class. Class must implement the interface PatientConnect.PC_ReminderQueue.RecipientFinder. Use this when a recipient cannot be obtained directly using Recipient Field API Name or more than one recipient needs to be retrieved.</inlineHelpText>
+        <label>Recipient(s) Source Class</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RecipientSource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Recipients will be retrieved while creating reminder queue based on the selection of this field. If Recipient Field API Name is chosen then the Recipient will be retrieved using Field API Name. Otherwise, Recipient
+(s) Source Class will be executed to get recipients.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Recipients will be retrieved while creating reminder queue based on the selection of this field. If Recipient Field API Name is chosen then the Recipient will be retrieved using Field API Name. Otherwise, Recipient
+(s) Source Class will be executed to get recipients.</inlineHelpText>
+        <label>Recipient(s) Source</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Recipient Field API Name</fullName>
+                    <default>true</default>
+                    <label>Recipient Field API Name</label>
+                </value>
+                <value>
+                    <fullName>Recipients Source Class</fullName>
+                    <default>false</default>
+                    <label>Recipient(s) Source Class</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ReminderChannel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Channel through which the reminders will be sent.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Channel through which the reminders will be sent.</inlineHelpText>
+        <label>Channel</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>SMS</fullName>
+                    <default>true</default>
+                    <label>SMS</label>
+                </value>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ShowSuccessfulRemindersNotifications__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If checked, Notifications/Tasks will be created on Activity Timeline.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>If checked, Notifications/Tasks will be created on Activity Timeline.</inlineHelpText>
+        <label>Show Successful Reminders Notification</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_StartDateOffsetReference__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Days/Hours Before or After Due Date</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Reference of Days/Hours for Due Date Calculation to start processing reminder queues</inlineHelpText>
+        <label>Start Date Offset Reference</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Days</fullName>
+                    <default>true</default>
+                    <label>Days</label>
+                </value>
+                <value>
+                    <fullName>Hours</fullName>
+                    <default>false</default>
+                    <label>Hours</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_StartDateOffsetType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Offset type is for calculating whether reminder needs to be processed before the due date or after the due date.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Offset type is for calculating whether reminder needs to be processed before the due date or after the due date.</inlineHelpText>
+        <label>Start Date Offset Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Before</fullName>
+                    <default>true</default>
+                    <label>Before</label>
+                </value>
+                <value>
+                    <fullName>After</fullName>
+                    <default>false</default>
+                    <label>After</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_StartDateOffset__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of Days/Hours to be considered to start processing reminders from Due Date.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Number of Days/Hours to be considered to start processing reminders from Due Date.</inlineHelpText>
+        <label>Start Date Offset</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_TemplateName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Template to be used while sending reminder to recipients.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Template to be used while sending reminder to recipients.</inlineHelpText>
+        <label>Template Name</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_TemplateType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the type of template that will be used to send reminders.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Set the template type based on the type of template being used for sending reminders.</inlineHelpText>
+        <label>Template Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Salesforce Templates</fullName>
+                    <default>true</default>
+                    <label>Salesforce Templates</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Reminder Setting</label>
+    <pluralLabel>Reminder Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

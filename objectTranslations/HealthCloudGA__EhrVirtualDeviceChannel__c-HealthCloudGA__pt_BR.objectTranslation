@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Canal do dispositivo virtual do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Canais do dispositivo virtual do RES</value>
+    </caseValues>
+    <fields>
+        <label>Rótulo do código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de códigos</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Dispositivo virtual do RES</label>
+        <name>HealthCloudGA__EhrVirtualDevice__c</name>
+        <relationshipLabel>Canais do dispositivo virtual</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Métrica</label>
+        <name>HealthCloudGA__Metric__c</name>
+    </fields>
+    <fields>
+        <label>Observação</label>
+        <name>HealthCloudGA__Observation__c</name>
+        <relationshipLabel>Canais do dispositivo virtual</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ID do sistema de origem</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nome do canal do dispositivo virtual do </nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OCR Result</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OCR Results</value>
+    </caseValues>
+    <fields>
+        <label><!-- OCR Queue --></label>
+        <name>PC_OcrQueue__c</name>
+        <relationshipLabel><!-- OCR Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OCR Response --></label>
+        <name>PC_OcrResponse__c</name>
+        <relationshipLabel><!-- OCR Results --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Result Details --></label>
+        <name>PC_ResultDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Result Status --></label>
+        <name>PC_ResultStatus__c</name>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Success</masterLabel>
+            <translation><!-- Success --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resulting Record Id --></label>
+        <name>PC_ResultingRecordId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

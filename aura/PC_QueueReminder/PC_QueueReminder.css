@@ -1,0 +1,15 @@
+/**
+ * Created by kkanteti on 5/4/2021.
+ */
+.THIS.contentBox{
+    border: 1px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    padding: .5rem .5rem .5rem .5rem;
+}
+.THIS .errorMessageFont{
+    font-size:11px;
+    color:rgb(194, 57, 52);
+}

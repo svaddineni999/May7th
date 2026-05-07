@@ -1,0 +1,297 @@
+<!--
+Lightning component  : ACLS_PC_eLetter2
+Description          : Helps to send an eletter to a patient/care team member. It provide options to select template, recipient, attachments and able to preview it before sending eletter.
+Parameters           : Record Id of case/Program Coverage/task
+
+Modification Log:
+Ronak Bansal 		 14-Mar-2023    Initial Version
+-->
+
+<aura:component controller="ACLS_PC_eLetter2Controller" description="This component helps to compose, preview and send the e-letter to recipients" implements="lightning:isUrlAddressable,flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickActionWithoutHeader,force:appHostable,forceCommunity:availableForAllPageTypes" access="global">
+    <!-- Attributes -->
+    <aura:attribute name="recordId" type="String" access="global"/>
+    <aura:attribute name="eletterContext" type="String" access="global" default="NEW" description="Helps to set E-Letter Reply Context. To open e-letter in Reply Context, set this to REPLY. The default is NEW."/>
+    <aura:attribute name="launchFrom" type="String" access="public" default=""/>
+    <aura:attribute name="taskDocumentId" type="String"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToId" type="Id"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToObject" type="String"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="showAttachments" type="Boolean" default="true" description="Hides or displays the attachments section. To hide the attachments section, set showAttachments to false. The default is true." access="global"/>
+    <aura:attribute name="showPreviewScreen" type="Boolean" default="true" description="Hides or displays the preview screen. To hide the preview screen, set showPreviewScreen to false. The default is true." access="global"/>
+    <aura:attribute name="showSendSecureOption" type="Boolean" default="true" description="Hides or displays the Send Secure Button. To hide the Send Secure Button, set showSendSecureOption to false. The default is true." access="global"/>
+    <aura:attribute name="closeTabAfterSend" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="openInNewTab" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="emailWorkflow" type="Boolean" default="true" access="global" description="Enable or disable Email workflow. To enable the email workflow, set this to true. The default is true."/>
+    <aura:attribute name="faxWorkflow" type="Boolean" default="true" access="global" description="Enable or disable Fax workflow. To enable the fax workflow, set this to true. The default is true."/>
+    <aura:attribute name="moreEmailRecipients" type="Boolean" default="false" access="global" description="If Selected, the additional recipients field will be visible on the eLetter UI. The default value is false."/>
+    <aura:attribute name="templateOptions" type="List" default="[]" />
+    <aura:attribute name="disablePickTemplate" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="eletterTemplateList" type="List" default="[]" />
+    <aura:attribute name="templateDescription" type="String" default="" access="private"/>
+    <aura:attribute name="fromOptions" type="List" default="[]" />
+    <aura:attribute name="selectedELetterVal" type="String"/>
+    <aura:attribute name="selectedEletterTemplateObj" type="Object" default="" />
+    <aura:attribute name="fromAddressList" type="List"/>
+    <aura:attribute name="selectedFromAddressObj" type="Object"/>
+    <aura:attribute name="selectedFromAddress" type="String"/>
+    <aura:attribute name="recipients" type="PC_eLetter_Recipient.Object[]" />
+    <aura:attribute name="targetRecipientList" type="list" default="[]"/>
+    <aura:attribute name="finalRecipientList" type="list" default="[]"/>
+    <aura:attribute name="additionalEmailRecipientList" type="list" default="[]"/>
+    <aura:attribute name="eLetterTemplateSubject" type="String"/>
+    <aura:attribute name="eLetterTemplateFaxComments" type="String"/>
+    <aura:attribute name="eLetterPageCount" type="String"/>
+    <aura:attribute name="additionalEmailAddress" type="String" default=""/>
+    <aura:attribute name="validAdditionalEmailAddresses" type="List" default="[]"/>
+    <aura:attribute name="eLetterTemplateType" type="String"/>
+    <aura:attribute name="eLetterTemplateTextBody" type="String" default=""/>
+    <aura:attribute name="eLetterTemplateHTMLBody" type="String" default=""/>
+    <aura:attribute name="eLetterTemplateAttachments" type="list" default="[]"/>
+    <aura:attribute name="allAttachments" type="list" />
+    <aura:attribute name="isRecipientLoading" type="Boolean" default="false"/>
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="msgNoRecipient" type="String" default="{!$Label.c.PC_No_Recipients_Available}" access="private"/>
+    <aura:attribute name="msgNoEngagementProgram" type="String" default="{!$Label.c.PC_eLetterError}" access="private"/>
+    <aura:attribute name="msgNoPrimaryContact" type="String" default="{!$Label.c.PC_NoPrimaryContact}" access="private"/>
+    <aura:attribute name="msgNoEmailAddress" type="String" default="{!$Label.c.PC_Eletter2_NoEmailAddressMsg}" access="private"/>
+    <aura:attribute name="msgNoFaxNumber" type="String" default="{!$Label.c.PC_Eletter2_NoFaxNumberMsg}" access="private"/>
+    <aura:attribute name="noEletterSelectedError" type="String" default="{!$Label.c.PC_noeLetterSelectedError}" access="private"/>
+    <aura:attribute name="currentStep" type="String" default="step1" />
+    <aura:attribute name="showPreviousBtn" type="Boolean" default="false"/>
+    <aura:attribute name="showNextBtn" type="Boolean" default="false"/>
+    <aura:attribute name="showSendBtn" type="Boolean" default="false"/>
+    <aura:attribute name="showSecureBtn" type="Boolean" default="false"/>
+    <aura:attribute name="isSendToMeEnabled" type="Boolean" default="false"/>
+    <aura:attribute name="isEmailSecure" type="Boolean" default="false"/>
+    <aura:attribute name="showAttachmentsOfRecord" type="Boolean" default="true"/>
+    <aura:attribute name="showAttachmentsUsingDocumentLog" type="Boolean" default="true"/>
+    <aura:attribute name="showAttachmentsOfRelatedCase" type="Boolean" default="true"/>
+    <aura:attribute name="showAllAttachmentsOfDocument" type="Boolean" default="false"/>
+    <aura:attribute name="namespace" type="String" default="" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" default="" access="private"/>
+    <aura:attribute name="selectedAttachmentCount" type="Integer" default="0"/>
+    <aura:attribute name="hasCategoryEmail" type="Boolean" default="false"/>
+    <aura:attribute name="hasCategoryFax" type="Boolean" default="false"/>
+    <aura:attribute name="generatedDocumentJobId" type="String" default=""/>
+    <aura:attribute name="generatedPreviewDocument" type="String" default=""/>
+    <aura:attribute name="emailCategoryListStr" type="String" default="Email" access="private"/>
+    <aura:attribute name="faxCategoryListStr" type="String" default="Fax" access="private"/>
+    <aura:attribute name="emailCategoryList" type="List" default="['Email']" access="private"/>
+    <aura:attribute name="faxCategoryList" type="List" default="['Fax']" access="private"/>
+
+    <aura:attribute name="disableNavigationBtns" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="noRecipientSelected" type="String" default="{!$Label.c.PC_Eletter2_NoRecipientSelectedV2}" access="private"/>
+    <aura:attribute name="messageWhenRecipientNotSelected" type="String" default="" access="private"/>
+    <aura:attribute name="invalidAdditionalTo" type="String" default="{!$Label.c.PC_Eletter2_InvalidAdditionalTo}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" access="private"/>
+    <aura:attribute name="toastSendSuccessMessage" type="String" default="{!$Label.c.PC_Eletter2_SendSuccessMessage}" access="private"/>
+    <aura:attribute name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="pageCloseMessage" type="String" default="{!$Label.c.PC_Eletter2_PageCloseMessage}" access="private"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <!--Attribute for new console tab -->
+    <aura:attribute name="eletterTabLabel" type="String" default="{!$Label.c.PC_Eletter2_Title}" access="private"/>
+    <aura:attribute name="picklistNone" type="String" default="{!$Label.c.PC_Picklist_None}" access="private"/>
+    <aura:attribute name="eletterPageName" type="String" default="PC_eLetter2" access="private"/>
+    <aura:attribute name="eletterTabIcon" type="String" default="standard:email" access="private"/>
+    <aura:attribute name="eletterComponentName" type="String" default="PC_eLetter2" access="private"/>
+
+    <aura:attribute name="hideConsent" type="Boolean" default="true" description="Hides or displays the consent model. The default is true." access="global"/>
+    <!-- Handlers -->
+    <aura:handler event="force:refreshView" action="{!c.refreshView}" />
+
+    <!-- Added notifications library to show toast message-->
+    <lightning:notificationsLibrary aura:id="eletterNotifLib" />
+    <lightning:workspaceAPI aura:id="eLetterWorkspace" />
+
+    <!--style to increase quick action modal width-->
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 70rem !important;
+        width:70% !important;
+        }
+    </aura:html>
+
+    <aura:if isTrue="{! !v.openInNewTab}">
+    <div>
+        <div class="slds-p-around_medium pc-whitebg">
+            <!-- Eletter Progress Indicator-->
+            <div>
+                <div class="slds-text-heading_medium slds-text-align_center">{!$Label.c.PC_Eletter2_Title}</div>
+                <aura:if isTrue="{!v.showPreviewScreen}">
+                    <div class="slds-align_absolute-center" style="width: 50%">
+                        <lightning:progressIndicator class="slds-m-around_medium" currentStep="{!v.currentStep}" type="base" hasError="false" variant="base">
+                            <lightning:progressStep label="{!$Label.c.PC_Eletter2_ComposeStep}" value="step1"/>
+                            <lightning:progressStep label="{!$Label.c.PC_Eletter2_PreviewStep}" value="step2"/>
+                        </lightning:progressIndicator>
+                    </div>
+                </aura:if>
+            </div>
+
+            <!-- Compose Content Screen -->
+            <div class="{!v.currentStep == 'step1'?'slds-p-horizontal_x-large slds-p-vertical_large slds-m-top_medium eletter-box':'slds-hide'}">
+                <!--loading spinner start-->
+                <lightning:spinner aura:id="eletterSpinner" class="slds-hide" alternativeText="Loading" />
+                <!-- Loading spinner end-->
+                <aura:if isTrue="{! v.errors.length > 0 }">
+                    <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                </aura:if>
+
+                <!-- Info Message Block -->
+                <div class="slds-hide" aura:id="msgResult">
+                    <div class="slds-m-bottom_small">
+                        <div class="info pc_message" aura:id="pc_message">
+                            <div class="pc_message_body">
+                                <lightning:icon iconName="utility:warning" class="slds-m-right_x-small" alternativeText="Warning!" variant="warning" title="Warning" size="x-small" /> {!v.message}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <lightning:combobox aura:id="eletterField" name="eLetter" label="{!$Label.c.PC_Eletter2_PickTemplate}" value="{!v.selectedELetterVal}" disabled="{!v.disablePickTemplate}" placeholder="{!$Label.c.PC_Eletter2_SelectTemplate_PlaceHolder}" options="{!v.templateOptions}" onchange="{!c.handleTemplateChange}"  required="true" messageWhenValueMissing="{!$Label.c.PC_noeLetterSelectedError}"/>
+                <aura:if isTrue="{!and(!empty(v.templateDescription), v.templateDescription != ' ')}">
+                    <div class="slds-m-vertical_xx-small slds-p-around_xx-small slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light" role="status">
+                        <div class="slds-media__figure">
+                            <lightning:icon iconName="utility:info" size="x-small"/>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-body_small">{!v.templateDescription}</p>
+                        </div>
+                    </div>
+                </aura:if>
+
+                <lightning:combobox aura:id="eletterField" name="From" label="{!$Label.c.PC_Eletter2_From}" class="slds-m-top_large" value="{!v.selectedFromAddress}" placeholder="From Address" options="{!v.fromOptions}" onchange="{!c.onFromAddressChange}" required="true"/>
+                <aura:if isTrue="{! !empty(v.selectedELetterVal)}">
+                    <div class="slds-m-top_large">
+                        <fieldset class="slds-form-element slds-form-element_compound">
+                            <legend class="{!('slds-form-element__legend slds-form-element__label' + if(v.moreEmailRecipients &amp;&amp; v.selectedEletterTemplateObj.allowAdditionalRecipients &amp;&amp; v.hasCategoryEmail, '', ' pc_font-weight-normal'))}">
+                                <abbr class="slds-required" title="required">*</abbr>{!$Label.c.PC_Eletter2_RecipientLabel}</legend>
+                                <div class="slds-form-element__control">
+                                    <div class="slds-m-bottom_xx-small">
+                                        <aura:if isTrue="{!(v.moreEmailRecipients &amp;&amp; v.selectedEletterTemplateObj.allowAdditionalRecipients &amp;&amp; v.hasCategoryEmail)}">
+                                            <label class="slds-form-element__label">{!$Label.c.PC_Eletter2_SelectRecipients}</label>
+                                        </aura:if>
+                                        <aura:if isTrue="{!v.isRecipientLoading}">
+                                            <div class="pc_spinner">
+                                                <lightning:spinner size="small"/>
+                                            </div>
+                                            <aura:set attribute="else">
+                                                <aura:if isTrue="{!empty(v.targetRecipientList)}">
+                                                    <div>{!$Label.c.PC_No_Recipients_Available}</div>
+                                                    <aura:set attribute="else">
+                                                        <c:PC_eLetter2Recipients aura:id="recipientCmp" eLetterRecipients="{!v.targetRecipientList}"
+                                                                                 isSendToMeEnabled="{!v.isSendToMeEnabled}"
+                                                                                 isEmailWorkflowEnabled="{!v.hasCategoryEmail}"
+                                                                                 isFaxWorkflowEnabled="{!v.hasCategoryFax}"
+                                                                                 hideConsent="{!v.hideConsent}"/>
+                                                    </aura:set>
+                                                </aura:if>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                    <div class="slds-m-bottom_xx-small">
+                                        <aura:if isTrue="{!(v.moreEmailRecipients &amp;&amp; v.selectedEletterTemplateObj.allowAdditionalRecipients &amp;&amp; v.hasCategoryEmail)}">
+                                            <div aura:id="additionalEmailField">
+                                                <lightning:input aura:id="additionalEmail" placeholder="example@address.com; example2@address.com" fieldLevelHelp="{!$Label.c.PC_Eletter2_AdditionalEmailHelpText}" name="additional_to" required="false" label="{!$Label.c.PC_Eletter2_AdditionalEmailRecipients}" value="{!v.additionalEmailAddress}"/>
+                                            </div>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                        </fieldset>
+                        <div class="slds-form-element slds-has-error" aura:id="recipientError">
+                            <div class="slds-form-element__help">{!v.messageWhenRecipientNotSelected}</div>
+                        </div>
+                    </div>
+
+                    <lightning:input aura:id="eletterField" class="slds-m-top_large" name="subject" required="true" label="{!$Label.c.PC_Eletter2_Subject}" value="{!v.eLetterTemplateSubject}"/>
+                    
+                    <aura:if isTrue="{!v.hasCategoryFax}">
+                        <lightning:textarea aura:id="eletterField" class="slds-m-top_large" name="comment" label="{!$Label.c.ACLS_Eletter2_Comments}" value="{!v.eLetterTemplateFaxComments}"/>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.selectedELetterVal == 'None'}">
+                        <div class="slds-m-top_large">
+                            <lightning:textarea name="eletterBody" value="{!v.eLetterTemplateTextBody}" label="{!$Label.c.PC_Eletter2_Body}"/>
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.showAttachments}">
+                        <div class="slds-m-top_large">
+                            <label class="slds-form-element__label">{!$Label.c.PC_Eletter2_Attachment} {!v.selectedAttachmentCount > 0 ? ' ('+ v.selectedAttachmentCount+' '+$Label.c.PC_Eletter2_AttachmentSelected+')' : ''}</label>
+                            <c:PC_Attachments aura:id="attachmentCmp"  recordId="{!v.recordId}"
+                                              attachmentList="{!v.allAttachments}"
+                                              showAttachmentsOfRecord="{!v.showAttachmentsOfRecord}"
+                                              showAttachmentsUsingDocumentLog="{!v.showAttachmentsUsingDocumentLog}"
+                                              showAttachmentsOfRelatedCase="{!v.showAttachmentsOfRelatedCase}"
+                                              showAllAttachmentsOfDocument="{!v.showAllAttachmentsOfDocument}"
+                                              isFaxWorkflowEnabled="{!v.hasCategoryFax}"
+                                              selectedCount="{!v.selectedAttachmentCount}" />
+                        </div>
+                    </aura:if>
+                </aura:if>
+            </div>
+
+            <!-- Preview Screen -->
+            <aura:if isTrue="{! and(v.showPreviewScreen, v.currentStep == 'step2')}">
+                <aura:if isTrue="{! v.errors.length > 0 }">
+                    <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                </aura:if>
+
+                <!-- Info Message Block -->
+                <div class="slds-hide" aura:id="msgResult2">
+                    <div class="info pc_message">
+                        <div class="pc_message_body">
+                            {!v.message}
+                        </div>
+                    </div>
+                </div>
+                <c:ACLS_PC_PreviewEletter2 selectedFromAddress="{!v.selectedFromAddressObj}"
+                                      targetRecipientList="{!v.finalRecipientList}"
+                                      eLetterTemplateSubject="{!v.eLetterTemplateSubject}"
+                                      eLetterTemplateType="{!v.eLetterTemplateType}"
+                                      eLetterTemplateTextBody="{!v.eLetterTemplateTextBody}"
+                                      eLetterTemplateHTMLBody="{!v.eLetterTemplateHTMLBody}"
+                                      allAttachments="{!v.allAttachments}"
+                                      recordId="{!v.recordId}"
+                                      selectedELetterVal = "{!v.selectedELetterVal}"
+                                      isSendToMeEnabled="{!v.isSendToMeEnabled}"
+                                      isFaxWorkflowEnabled="{!v.hasCategoryFax}"
+                                      generatedDocumentJobId="{!v.generatedDocumentJobId}"
+                                      />
+            </aura:if>
+
+            <!-- Note Section -->
+            <aura:if isTrue="{!and(v.faxWorkflow, and(v.showSendSecureOption,v.showSecureBtn))}">
+                <div class="slds-p-vertical_xx-small">
+                    <lightning:icon iconName="utility:info" alternativeText="note" size="xx-small" class="slds-m-right_x-small"/>
+                    <span class="slds-text-body_small slds-align-middle">{!$Label.c.PC_Eletter2_SendSecure_FooterInfo}</span>
+                </div>
+            </aura:if>
+
+            <!-- Navigation Buttons -->
+            <div class="slds-grid slds-grid_align-center slds-m-top_medium">
+                <aura:if isTrue="{!v.showPreviousBtn}">
+                    <div class="slds-col slds-p-horizontal_small">
+                        <lightning:button label="{!$Label.c.PC_Eletter2_PreviousButton}" onclick="{!c.onPrevious}" disabled="{!v.disableNavigationBtns}"/>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showNextBtn}">
+                    <div class="slds-col slds-p-horizontal_small">
+                        <lightning:button variant="brand" label="{!$Label.c.PC_Next}" onclick="{!c.onNext}" disabled="{!v.disableNavigationBtns}"/>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{! and(v.showSendSecureOption,v.showSecureBtn)}">
+                    <div class="slds-col slds-p-horizontal_small">
+                        <lightning:button variant="brand" label="{!$Label.c.PC_Eletter2_SendSecureButton}" value="secure" onclick="{!c.onSend}" disabled="{!v.disableNavigationBtns}"/>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showSendBtn}">
+                    <div class="slds-col slds-p-horizontal_small">
+                        <lightning:button variant="brand" label="{!$Label.c.PC_Send}" onclick="{!c.onSend}" disabled="{!v.disableNavigationBtns}"/>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+    </aura:if>
+</aura:component>

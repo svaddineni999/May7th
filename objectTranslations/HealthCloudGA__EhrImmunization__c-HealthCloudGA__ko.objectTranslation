@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 면역</value>
+    </caseValues>
+    <fields>
+        <label>계정</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>면역 조치</relationshipLabel>
+    </fields>
+    <fields>
+        <label>투여한 날짜</label>
+        <name>HealthCloudGA__DateAdministered__c</name>
+    </fields>
+    <fields>
+        <label>복용량 단위</label>
+        <name>HealthCloudGA__DoseQuantityUnits__c</name>
+    </fields>
+    <fields>
+        <label>복용량 값</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <label>복용량</label>
+        <name>HealthCloudGA__DoseQuantity__c</name>
+    </fields>
+    <fields>
+        <label>만료일</label>
+        <name>HealthCloudGA__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if Refused Indicator = False AND Expiration Date &gt; Now()  else returns false --></help>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>위치 시/군/구</label>
+        <name>HealthCloudGA__LocationCity__c</name>
+    </fields>
+    <fields>
+        <label>위치 국가</label>
+        <name>HealthCloudGA__LocationCountry__c</name>
+    </fields>
+    <fields>
+        <label>위치 식별자</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>위치 줄 1</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>위치 줄 2</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>위치 이름</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>위치 우편번호</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>위치 시작일</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>위치 시/도</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>위치 이동통신</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>위치 텍스트</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>위치 유형</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>위치 사용</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>로트 번호</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>환자</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>면역 조치</relationshipLabel>
+    </fields>
+    <fields>
+        <label>수행자 이름 255</label>
+        <name>HealthCloudGA__PerformerName255__c</name>
+    </fields>
+    <fields>
+        <label>수행자 이름</label>
+        <name>HealthCloudGA__PerformerName__c</name>
+    </fields>
+    <fields>
+        <label>수행자</label>
+        <name>HealthCloudGA__Performer__c</name>
+        <relationshipLabel>수행된 면역 조치</relationshipLabel>
+    </fields>
+    <fields>
+        <label>이유 코드</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>이유 레이블</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>이유 시스템</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>거부 이유 코드</label>
+        <name>HealthCloudGA__RefusalReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>거부 이유 레이블</label>
+        <name>HealthCloudGA__RefusalReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>거부 이유 시스템</label>
+        <name>HealthCloudGA__RefusalReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>거부 표시기</label>
+        <name>HealthCloudGA__RefusedIndicator__c</name>
+    </fields>
+    <fields>
+        <label>요청자 이름 255</label>
+        <name>HealthCloudGA__RequesterName255__c</name>
+    </fields>
+    <fields>
+        <label>요청자 이름</label>
+        <name>HealthCloudGA__RequesterName__c</name>
+    </fields>
+    <fields>
+        <label>요청자</label>
+        <name>HealthCloudGA__Requester__c</name>
+        <relationshipLabel>면역 조치가 요청됨</relationshipLabel>
+    </fields>
+    <fields>
+        <label>경로 코드</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>경로 레이블</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>경로 시스템</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>자체 보고</label>
+        <name>HealthCloudGA__SelfReported__c</name>
+    </fields>
+    <fields>
+        <label>사이트 코드</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>사이트 레이블</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>사이트 시스템</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 수정일</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>소스 시스템</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>백신 유형 코드</label>
+        <name>HealthCloudGA__VaccineTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>백신 유형 레이블</label>
+        <name>HealthCloudGA__VaccineTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>백신 유형 시스템</label>
+        <name>HealthCloudGA__VaccineTypeSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 면역 ID</nameFieldLabel>
+</CustomObjectTranslation>

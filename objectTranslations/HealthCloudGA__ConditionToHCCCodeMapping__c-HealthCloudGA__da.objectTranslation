@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Tilknytningen af sygdom til HCC-kode</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Tilknytning af sygdom til HCC-kode</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Tilknytning af sygdom til HCC-kode</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Tilknytningerne af sygdom til HCC-kode</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Tilknytninger af sygdom til HCC-kode</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Tilknytninger af sygdom til HCC-kode</value>
+    </caseValues>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Sygdomskode</label>
+        <name>HealthCloudGA__ConditionCode__c</name>
+    </fields>
+    <fields>
+        <label>HCC-kode</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Year in which the HCC code becomes valid. --></help>
+        <label>Gyldig fra</label>
+        <name>HealthCloudGA__ValidFrom__c</name>
+    </fields>
+    <fields>
+        <help><!-- Year after which the code is no longer valid. --></help>
+        <label>Gyldig til</label>
+        <name>HealthCloudGA__ValidThrough__c</name>
+    </fields>
+    <fields>
+        <label>År + sygdomskode + HCC-kode</label>
+        <name>HealthCloudGA__YearConditionCodeHCCCode__c</name>
+    </fields>
+    <fields>
+        <label>År</label>
+        <name>HealthCloudGA__Year__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Tilknytnings-id</nameFieldLabel>
+</CustomObjectTranslation>

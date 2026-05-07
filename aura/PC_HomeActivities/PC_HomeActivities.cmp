@@ -1,0 +1,42 @@
+<!--
+     - Created by sahgarg on 3/15/2018.
+
+Lightning component  : PC_HomeActivities
+Description          : Container component for tasls/alert homepage
+Parameters           :
+Modification Log:
+Sahil Garg 		 3/15/2018    [PC-2858] Initial Version
+
+     -->
+<aura:component controller="PC_HomeActivitiesController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="page" type="integer" description="using for store page Number"/>
+    <aura:attribute name="pages" type="integer" description="using for store All Pages page Number"/>
+    <aura:attribute name="total" type="integer" description="total records count store "/>
+
+    <aura:attribute name="showAllRecordsOption" type="Boolean" default="false" description="If true, shows all records. Otherwise, show only current user's records" access="global"/>
+    <aura:attribute name="defaultView" type="String" default="MY RECORDS" description="Defalut view to show - My Records or All Records?" access="global"/>
+    <aura:attribute name="numberOfColumns" type="Integer" default="3" description="Number of columns. Set this based on your layout's width. Default value is 3." access="global"/>
+
+    <aura:registerEvent name="appEvent" type="c:PC_Pagination_AppEvent"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <div aura:id="outerDiv" class="bottomMargin slds-clearfix slds-dropdown-trigger_click" >
+
+        <div >
+            <ul class="slds-tabs_default__nav" role="tablist">
+                <li aura:id="Tasks" class="slds-tabs_default__item slds-active " title="{!$Label.c.PC_Task}" role="presentation"><a class="slds-tabs_default__link"  role="tab" tabindex="0"  onclick="{!c.toggleTask}" aria-controls="tab-default-1"   >{!$Label.c.PC_Task}</a></li>
+                <li  aura:id="Alerts" class="slds-tabs_default__item " title="{!$Label.c.PC_Alerts}" role="presentation"><a class="slds-tabs_default__link"  role="tab" tabindex="-1" onclick="{!c.toggleAlert}" aria-controls="tab-default-2" >{!$Label.c.PC_Alerts}</a></li>
+
+            </ul>
+
+            <div aura:id="showTask" class="slds-tabs_default__content  " role="tabpanel" aria-labelledby="tab-default-1__item">
+                <c:PC_MyTasks showAllRecordsOption="{!v.showAllRecordsOption}" defaultView="{!v.defaultView}" numberOfColumns="{!v.numberOfColumns}"/>
+            </div>
+            <div aura:id="showAlert" class="slds-tabs_default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-2__item">
+                <c:PC_MyAlerts showAllRecordsOption="{!v.showAllRecordsOption}" defaultView="{!v.defaultView}" numberOfColumns="{!v.numberOfColumns}"/>
+            </div>
+        </div>
+    </div>
+
+</aura:component>

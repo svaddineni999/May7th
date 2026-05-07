@@ -1,0 +1,38 @@
+/**
+ * Created by peharitha on 7/4/2019.
+ */
+.THIS .forceContentFileCard{
+    min-width:100% !important;
+}
+.THIS.componentContainer{
+    position: relative;
+    /* margin-top: 60px */
+}
+.THIS .content {
+    display:flex;
+}
+.THIS .second {
+    width: 100%;
+}
+.THIS .expandIconSize {
+    position: absolute;
+    right: -5px;
+    top: -10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+    padding-left: 6px;
+    padding-top: 3px;
+    background: #0070d2;
+    border: 1px solid #ffffff;
+    z-index:1;
+}
+.THIS .expandIconSize .slds-icon-text-default {
+    fill: #ffffff;
+}
+.THIS .changeCursorPointer:hover {
+    cursor: pointer;
+}
+.THIS.backgroundColour {
+    background-color: white;
+}

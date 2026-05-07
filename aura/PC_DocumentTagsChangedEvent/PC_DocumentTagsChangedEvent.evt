@@ -1,0 +1,9 @@
+<!--
+ - Created by vkashikar on 3/15/2019.
+ -->
+
+<aura:event type="APPLICATION" description="Event thrown when document category/tag is updated" access="global">
+    <aura:attribute name="documentId" type="String" access="global" description="Salesforce ID of the document"/>
+    <aura:attribute name="selectedCategory" type="String" access="global" description="Name of the selected category/tag"/>
+    <aura:attribute name="selectedCategoryStatus" type="Boolean" access="global" description="Status of the selected category/tag"/>
+</aura:event>

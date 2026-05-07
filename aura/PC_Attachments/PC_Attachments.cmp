@@ -1,0 +1,124 @@
+<!--
+Lightning component  : PC_Attachments
+Description          : Helps to show the list of attachments of case records + linked documents for outbound email attachments
+Parameters           : Record Id of case/Program Coverage/task
+
+Modification Log:
+Satheesh Kumar 		 29-Jun-2020    Initial Version
+Satheesh Kumar 		 14-Aug-2020    [PC-6702] Added Scroll to the attachment table if records goes more than 5
+Satheesh Kumar       14-Oct-2020    [PC-6845] Provided option to reorder the attachments
+Satheesh Kumar       15-Oct-2020    [PC-6845] Added fix for unsupported jquery selector like '#10:00;a_sortable'
+Satheesh Kumar       28-Oct-2020    [PC-6926] Added logic to show selected attachment count
+Satheesh Kumar       25-Nov-2020    [PC-7011] Added method to show additional attachments (email template attachments)
+-->
+
+<aura:component controller="PC_AttachmentController" description="PC_Attachments">
+    <ltng:require scripts="{!join(',',
+                           $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js',
+                           $Resource.PC_JQuery + '/PC_JQuery/js/jqueryUI-1.11.4.js')}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <!-- Attributes -->
+    <aura:attribute name="attachmentList" type="List" default="[]"/>  <!-- 2 way binding attribute to get attachmentList-->
+    <aura:attribute name="attachmentListOriginalCopy" type="List" default="[]"/>
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="cmpGlobalId" type="String" access="private"/>
+    <aura:attribute name="showAttachmentsOfRecord" type="Boolean" default="true"/>
+    <aura:attribute name="showAttachmentsUsingDocumentLog" type="Boolean" default="true"/>
+    <aura:attribute name="showAttachmentsOfRelatedCase" type="Boolean" default="true"/>
+    <aura:attribute name="showAllAttachmentsOfDocument" type="Boolean" default="false"/>
+    <aura:attribute name="isAttachmentLoading" type="Boolean" default="false"/>
+    <aura:attribute name="isFaxWorkflowEnabled" type="Boolean"/>
+    <aura:attribute name="noRecordsFound" type="Boolean"/>
+    <aura:attribute name="isSelectAllChecked" type="Boolean" default="false"/>
+    <aura:attribute name="selectedCount" type="integer" default="0"/>
+    <aura:attribute name="totalRecordsCount" type="integer" default="0"/>
+    <aura:attribute name="additionalAttachmentList" type="List" default="[]"/>
+
+    <aura:method name="addAdditionalAttachments" action="{!c.addAdditionalAttachments}" access="PUBLIC">
+        <aura:attribute name="attachments" type="List" default="[]"/>
+    </aura:method>
+
+    <aura:method name="getSelectedRows" action="{!c.getSelectedAttachments}" access="PUBLIC"> </aura:method>
+
+    <!-- Handler -->
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+
+    <!-- data table start-->
+    <aura:if isTrue="{!v.isAttachmentLoading}">
+        <div class="pc_spinner">
+            <lightning:spinner size="small"/>
+        </div>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!v.noRecordsFound}">
+                <div>{!$Label.c.PC_No_Records_Found}</div>
+                <aura:set attribute="else">
+                    <div class="slds-table--header-fixed_container slds-border_top">
+                        <div class="pc-attachment-scrollable_y">
+                            <table class="slds-table slds-no-row-hover slds-table_bordered slds-table_header-fixed pc-table-layout-fixed">
+                                <thead>
+                                <tr class="slds-line-height_reset">
+                                    <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                                        <th style="width:3.5rem;"></th>
+                                    </aura:if>
+                                    <!--header checkbox for select all-->
+                                    <th style="width:3.5rem;">
+                                        <div class="slds-cell-fixed slds-th__action">
+                                            <lightning:input type="checkbox" disabled="{!v.attachmentList.length == 0}" checked="{!v.isSelectAllChecked}" aura:id="selectAllId" onchange="{!c.selectAllAttachments}"/>
+                                        </div>
+                                    </th>
+                                    <th scope="col" class="table-column-width">
+                                        <div class="slds-truncate slds-cell-fixed pc-th-center" title="{!$Label.c.PC_Eletter2_Attachment_Header_Name}">{!$Label.c.PC_Eletter2_Attachment_Header_Name}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate slds-cell-fixed pc-th-center" title="{!$Label.c.PC_Eletter2_Attachment_Header_Type}">{!$Label.c.PC_Eletter2_Attachment_Header_Type}</div>
+                                    </th>
+                                    <th scope="col">
+                                        <div class="slds-truncate slds-cell-fixed pc-th-center" title="{!$Label.c.PC_Eletter2_Attachment_Header_Size}">{!$Label.c.PC_Eletter2_Attachment_Header_Size}</div>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody id="{!v.cmpGlobalId+'_sortable'}">
+                                <aura:iteration items="{!v.attachmentList}" var="attachment">
+                                    <tr class="slds-hint-parent" id="{!attachment.id}">
+                                        <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                                        <th scope="row" class="handle">
+                                            <lightning:icon iconName="utility:drag_and_drop" alternativeText="Drag" size="x-small" />
+                                        </th>
+                                        </aura:if>
+                                        <th scope="row">
+                                            <lightning:input type="checkbox" value="{!attachment.id}" checked="{!attachment.isChecked}" onchange="{!c.attachmentSelect}"/>
+                                        </th>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!attachment.docName}">
+                                                {!attachment.docName}
+                                            </div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!attachment.type}">
+                                                {!attachment.type}
+                                            </div>
+                                        </td>
+                                        <td scope="row">
+                                            <div class="slds-truncate" title="{!attachment.contentSizeInString}">
+                                                {!attachment.contentSizeInString}
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                                </tbody>
+                            </table>
+                            <!-- DataTable End -->
+                        </div>
+                    </div>
+                    <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                        <div class="slds-p-vertical_small">
+                            <lightning:icon iconName="utility:drag_and_drop" alternativeText="Drag" size="xx-small" />
+                            <span class="slds-text-body_small slds-align-middle">{!$Label.c.PC_Eletter2_Attachment_DragAndDropNote}</span>
+                        </div>
+                    </aura:if>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

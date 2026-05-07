@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Hospital - Inpatient</fullName>
+        <default>false</default>
+        <label>Hospital - Inpatient</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospital - Intensive Care</fullName>
+        <default>false</default>
+        <label>Hospital - Intensive Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospital - Rehabilitation</fullName>
+        <default>false</default>
+        <label>Hospital - Rehabilitation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNF - Inpatient</fullName>
+        <default>false</default>
+        <label>SNF - Inpatient</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNF - Specialized Care</fullName>
+        <default>false</default>
+        <label>SNF - Specialized Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNF - Rehabilitation</fullName>
+        <default>false</default>
+        <label>SNF - Rehabilitation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Psychiatric Intensive Care</fullName>
+        <default>false</default>
+        <label>Psychiatric Intensive Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Psychiatric Room and Board - Private</fullName>
+        <default>false</default>
+        <label>Psychiatric Room and Board - Private</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Psychiatric Room - Semi-private</fullName>
+        <default>false</default>
+        <label>Psychiatric Room - Semi-private</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Psychiatric Ward</fullName>
+        <default>false</default>
+        <label>Psychiatric Ward</label>
+    </standardValue>
+</StandardValueSet>

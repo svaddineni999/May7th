@@ -1,0 +1,5 @@
+.THIS .label {
+        font-size: .75rem; color: rgb(84, 105, 141); min-width: 100px; 
+        max-width: 100%; word-wrap: break-word; margin-bottom: 4px;
+        }
+.THIS .value {font-size: .8125rem; color: rgb(22, 50, 92); font-weight: normal;    max-width: 100%; word-wrap: break-word;}

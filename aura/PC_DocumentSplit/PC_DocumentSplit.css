@@ -1,0 +1,35 @@
+.THIS .inputBlock {
+    padding-left: 50px;
+}
+.THIS .childDocListView {
+    height:100%; max-height:200px;/*height: 200px;*/
+    width:100%;
+    border-bottom: 1px solid #d8dde6;
+}
+.THIS .childDocListView table tbody {
+    font-size:12px;
+}
+.THIS .slds-tabs--scoped__nav  {
+    border-radius: .25rem .25rem .25rem .25rem;
+}
+.THIS .blockSectionSplit {
+    padding:10px 5px;
+}
+.THIS .uiButton--default:hover, .THIS .uiButton--default:focus {
+    box-shadow: none;
+    font-weight: normal;
+    text-shadow: none;
+    background: #005fb2 none no-repeat right top; 
+}
+.THIS .modalAlert {
+    background: #5C7091;
+    color: #ffffff;
+}
+.THIS .inputBoxPadding {
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+.THIS .form-label {
+    font-size:14px;
+}

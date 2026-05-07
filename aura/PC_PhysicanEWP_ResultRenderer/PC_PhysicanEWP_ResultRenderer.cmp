@@ -1,0 +1,57 @@
+<aura:component >
+	<aura:attribute name="physicianTableHeaders" type="Object" />
+    <aura:attribute name="searchResults" type="Object[]"></aura:attribute>
+    <aura:attribute name="componentCSSClass" type="String" />
+    <div class="{!v.componentCSSClass}">
+    	<div class="slds-form-element__group slds-tabs--scoped__content">
+                    <div class="slds-form-element__row">
+                        <div class="slds-form-element slds-size--1-of-1">
+                            <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                <thead>
+                                    <tr class="slds-text-title--caps">
+                                        <th scope="col">
+                                            <span>Select</span>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.physicianTableHeaders.Id}">{!v.physicianTableHeaders.firstName}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="{!v.physicianTableHeaders.firstName}">{!v.physicianTableHeaders.lastName}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate" title="View">View</div>
+                                        </th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                    
+                                    <aura:iteration items="{!v.searchResults}" var="item" indexVar="i">
+                                        <tr>
+                                            <td scope="row" data-label="{! 'rtd' + item.Id}">
+                                                <ui:inputRadio aura:id="{! 'r' + item.Id}" text="{! i}" name="Physicians" change="{!c.onSelect}" value="{!item.isSelected}" />
+                                            </td>
+                                            <td scope="row" data-label="{!item.firstName}">
+                                                <div class="slds-truncate" title="{!item.firstName}">{!item.firstName}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!item.lastName}">
+                                                <div class="slds-truncate" title="{!item.lastName}">{!item.lastName}</div>
+                                            </td>
+                                            <td scope="row" data-label="">
+                                                <a href="javascript:void()" id="{! 'a' + item.Id}" class="slds-truncate"
+                                                   data-id="{!item.Id}" onclick="{!c.showPhysicianRecord}">
+                                                    View
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                </div>
+	</div>                                                                                          
+</aura:component>

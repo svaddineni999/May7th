@@ -1,0 +1,276 @@
+<!--
+ - Created by havalakki on 3/1/2018.
+ -->
+<!--
+******************************************************************************
+Modification Log:
+Developer               Date            Description
+Tejas Patel             8/29/2019       PC-5334 splitAccessWarning help tool-tip for disabled actions on child document
+Tejas Patel             8/29/2019       PC-5334 isResubmit defaults to false, as resubmission will not happen as per new logic
+Tejas Patel             8/29/2019       PC-5334 Enable Execute, only for Split Failure and Ready of Split with enableSplit set to true
+Shishir Bansal          Sep 4 2019      PC-5381:  Display exact error message for 'Split' Document Action Icon
+Shishir Bansal          9/27/2019       PC-5452  Added logic to show error message if any issue is occured .
+Tejas Patel             Sept 26 2019    PC-5512  New attribute isAdminAccess and actionAttribute added, force:hasRecordId removed as parent cmp passes recordId.
+Kanteti Kishore         29-July-2020    [PC-6592] Changes in controller at line-374,375 added sortedArray variable
+Tejas Patel             Mar 15 2022     [PC-8598] Disable the buttons to avoid mutiple clicks
+ -->
+
+<aura:component description="PC_Document_Management_Split" controller="PC_Document_ManagementSplitController" implements="flexipage:availableForAllPageTypes" access="global">
+    <!--Attribute declaration -->
+    <aura:attribute name="noSplitDocs" type="PC_DocumentSplitLightningController.Object[]" />
+    <aura:attribute name="docManagementSplitLabel" type="String" default="{!$Label.c.PC_Document_Split}"/>
+    <aura:attribute name="pageRangeLabel" type="String" default="{!$Label.c.PC_DocPgRangeModalHeader}"/>
+    <aura:attribute name="docSplitLabel" type="String" default="{!$Label.c.PC_Doc_Split_Section_Header}"/>
+    <aura:attribute name="docEditPageRangeLabel" type="String" default="{!$Label.c.PC_EditPgRangeModalHeader}"/>
+    <aura:attribute name="splitAccessWarning" type="String" default="{!$Label.c.PC_SplitAccessWarning}"/>
+
+    <aura:attribute name="newChildDocPgRange" type="String"/>
+    <aura:attribute name="recordId" type="Id" access="global"/>
+    <aura:attribute name="actionAttribute" type="String" access="global" default='{"adminAccessAttributes":{"adminAccess":false}}'/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="isSplitbuttonActive" type="boolean" default="true" />
+    <aura:attribute name="isAdminAccess" type="boolean" default="false" />
+    <aura:attribute name="isResubmit" type="boolean" default="false" />
+    <aura:attribute name="errorMsg" type="String" default="{!$Label.c.PC_Correct_Your_Input}" />
+    <aura:attribute name="confirmDelIndex" type="Integer" />
+    <aura:attribute name="selDocIndex" type="Integer" />
+    <aura:attribute name="pageRange" type="Integer[]" />
+    <aura:attribute name="pageCount" type="Integer" default="0" />
+    <aura:attribute name="isRelatedComponent" type="Boolean" default="false" />
+    <aura:attribute name="cssStyle" type="String" />
+    <aura:attribute name="hasAttachment" type="Boolean" default="false" />
+    <aura:attribute name="noAttachment" type="Boolean" default="false" />
+
+    <aura:attribute name="showAddLabel" type="Boolean"/>
+    <aura:attribute name="showParentLabel" type="Boolean"/>
+    <aura:attribute name="showEditLabel" type="Boolean"/>
+    <aura:attribute name="invalidInputErrorMsg" type="String" default="{!$Label.c.PC_Invalid_Input}"/>
+    <aura:attribute name="errorDocStatus" type="String" default="{!$Label.c.PC_ErrorDocMgmt}" />
+
+    <aura:attribute name="disableButton" type="Boolean" default="false"/>
+
+    <!--Init function to get all child documents -->
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.getChildDocList}" />
+    <!-- Refreshes list of child documents as soon as a new child document is added or any status gets updated -->
+    <aura:handler event="force:refreshView" action="{!c.getChildDocList}"/>
+
+    <!--Component event on child component to refresh the parent component when fired-->
+    <aura:registerEvent name="cmpEvent" type="c:PC_RefreshCmp"/>
+
+    <!--Start of main component: header and banner-->
+    <div class="slds-m-bottom--large"  />
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-open" aura:id="mainModalDialog" >
+        <div class="slds-modal__container autoScrollClass">
+            <div class="slds-modal__header">
+                <div>
+                <aura:if isTrue="{!and(v.showAddLabel,v.hasAttachment)}">
+                    <label class="slds-form-element__label form-label">{!v.pageRangeLabel}</label>
+                </aura:if>
+                <aura:if isTrue="{!v.showParentLabel}">
+                    <label class="slds-form-element__label form-label slds-text-title--caps" style="font-size:17px">{!v.docSplitLabel}</label>
+                </aura:if>
+                <aura:if isTrue="{!and(v.showEditLabel,v.hasAttachment)}">
+                    <h2 class="slds-form-element__label form-label">{!v.docEditPageRangeLabel}</h2>
+                </aura:if>
+                </div>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideMainModalBox}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"/>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <aura:if isTrue="{!and(v.showParentLabel,v.hasAttachment)}">
+                    <div class="slds-form-element" style="float:right">
+                        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_AddChild}" press="{!c.showModal}"/>
+                    </div>
+                </aura:if>
+            </div>
+            <div class="slds-modal__content inputBoxPadding">
+
+                <aura:if isTrue="{!v.hasAttachment}">
+                <div class="slds-form--inline slds-hide" aura:id="addSplitModalBox">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label form-label">{!$Label.c.PC_ChildDocListView_Col_2}</label>
+                        <div class="slds-form-element__control">
+                            <ui:inputText aura:id="pageRangeErrorSave"
+                                          class="slds-input"
+                                          value="{!v.newChildDocPgRange}"
+                                          maxlength = "255"
+                                          required="true" size="50" placeholder="e.g. 1-3, 4, 5, 9"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slds-form--inline slds-hide" aura:id="editModalBox">
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label form-label">{!$Label.c.PC_ChildDocListView_Col_2}</label>
+                        <div class="slds-form-element__control">
+                            <ui:inputText aura:id="pageRangeErrorEdit"
+                                          class="slds-input"
+                                          maxlength = "255"
+                                          value="{!v.newChildDocPgRange}"
+                                          required="true" size="50"/>
+                        </div>
+                    </div>
+                    <div>
+                        <i class="slds-form-element__label">{!$Label.c.PC_EditPgRangeWarning}</i>
+                    </div>
+                </div>
+
+                <div class="slds-form--inline slds-show" style="align:center" aura:id="parentModalBox">
+                    <table class="slds-table slds-table--bordered" style="width: 100%;border-right: 1px solid #d8dde6;border-left: 1px solid #d8dde6;">
+                        <thead>
+                        <tr class="slds-text-heading--label">
+                            <th class="slds-cell-shrink" scope="col"></th>
+                            <th class="slds-cell-shrink" scope="col"></th>
+                            <th class="slds-truncate" scope="col">
+                                <span class="slds-truncate">{!$Label.c.PC_Document_Number}</span></th>
+                            <th scope="col">
+                                <span class="slds-truncate">{!$Label.c.PC_ChildDocListView_Col_2}</span></th>
+                            <th scope="col">
+                                <span class="slds-truncate">{!$Label.c.PC_Document_Status}</span></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <aura:iteration items="{!v.noSplitDocs}" var="noSplitDoc" indexVar="i">
+                            <tr class="slds-hint-parent">
+                                <td class="cell ">
+                                    <a data-index="{!i}" onclick="{!c.showEditModal}" aria-disabled="{! !noSplitDoc.enableSplit}">
+                                        <lightning:button type="button" variant="base" title = "{!noSplitDoc.enableSplit ? '' : v.splitAccessWarning}" iconName="utility:edit" disabled="{! !noSplitDoc.enableSplit}"/>
+                                    </a>
+                                </td>
+                                <td class="cell ">
+                                    <a data-index="{!i}" onclick="{!c.showDeleteWarning}" aria-disabled="{! !noSplitDoc.enableSplit}">
+                                        <lightning:button type="button" variant="base" title = "{!noSplitDoc.enableSplit ? '' : v.splitAccessWarning}"  iconName="utility:delete" disabled="{! !noSplitDoc.enableSplit}"/>
+                                    </a>
+                                </td>
+                                <td data-label="docNumber" class="slds-truncate" role="row">
+                                    <a data-index="{!i}" href="{!noSplitDoc.DocUrl}" target="_blank">{!noSplitDoc.DocumentName}</a>
+                                </td>
+                                <td data-label="pgRange" class="slds-truncate">{!noSplitDoc.DocumentPageRange}</td>
+                                <td data-label="docStatus" class="slds-truncate">{!noSplitDoc.DocumentStatusLabel}</td>
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+                </aura:if>
+                <aura:if isTrue="{!v.noAttachment}">
+                    <div align="center" aura:id="noDocToSplitDiv">
+                        <label class="slds-form-element__label form-label slds-text-title--caps" style="font-size:14px">{!$Label.c.PC_No_Pages_To_Split}</label>
+                    </div>
+                </aura:if>
+            </div>
+            <div class="slds-modal__footer">
+                <div class="slds-x-small-buttons--horizontal">
+                    <section class="slds-clearfix blockSectionSplit">
+                        <aura:if isTrue="{!and(v.showParentLabel,v.hasAttachment)}">
+                            <ui:button class="slds-button slds-button--neutral" label="{!$Label.c.PC_Cancel_Button}" press="{!c.hideMainModalBox}"/>
+                            <aura:if isTrue="{!v.isSplitbuttonActive}">
+                                <ui:button class="slds-button slds-button--neutral slds-button--brand" label="{! v.isAdminAccess ? $Label.c.PC_Split_All : $Label.c.PC_Split}" press="{!c.sendSplitReq}"/>
+                                <aura:set attribute="else">
+                                    <button class="slds-button slds-button--brand" disabled = "true">
+                                            {! v.isAdminAccess ? $Label.c.PC_Split_All : $Label.c.PC_Split}
+                                    </button>
+                                </aura:set>
+                            </aura:if>
+                        </aura:if>
+                        <aura:if isTrue="{!and(v.showAddLabel,v.hasAttachment)}">
+                            <div class="slds-x-small-buttons--horizontal">
+                                <button class="slds-button slds-button--neutral" onclick="{!c.hideModalBox}" >{!$Label.c.PC_Cancel_Button}</button>
+                                <button class="slds-button slds-button--neutral slds-button--brand" disabled="{!v.disableButton}" onclick="{!c.savePageRange}">{!$Label.c.PC_Add_Button}</button>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!and(v.showEditLabel,v.hasAttachment)}">
+                            <div class="slds-x-small-buttons--horizontal">
+                                <button class="slds-button slds-button--neutral" onclick="{!c.hideEditModal}" >{!$Label.c.PC_Cancel_Button}</button>
+                                <button class="slds-button slds-button--neutral slds-button--brand" disabled="{!v.disableButton}" onclick="{!c.editPageRange}">{!$Label.c.PC_Save}</button>
+                            </div>
+                        </aura:if>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Start of split request sent acknowlegement modal window -->
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="splitInitmodal" >
+        <div class="slds-modal__container">
+            <div class="slds-modal__header modalAlert splitAckModalHeaderSize" align="center">
+                <div class="labelDivSize"><h6 class="slds-text-heading--medium labelFontSize">{!$Label.c.PC_Confirmation}</h6></div>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideAckModal}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"
+                    />
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+
+            <div class="slds-modal__content slds-p-around--medium slds-text-align--center splitAckModalContentSize">
+                <p>{!$Label.c.PC_DocSplitConfirmationMsg}</p>
+            </div>
+
+            <div class="slds-modal__footer slds-modal__footer--center splitAckModalFooterSize">
+                <div class="slds-x-small-buttons--horizontal footerButtonDivSize" align="center">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.hideAckModal}" >{!$Label.c.PC_Okay_Button}</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Start of ReSubmit modal window-->
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="resubmitmodal" >
+        <div class="slds-modal__container">
+            <div class="slds-modal__header modalAlert resubmitModalHeaderSize" >
+                <div class="labelDivSize"><h6 class="slds-text-heading--medium labelFontSize">{!$Label.c.PC_Warning}</h6></div>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideReSubmit}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"
+                    />
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                <p>{!$Label.c.PC_DocSplitResubmitMsg}</p>
+            </div>
+            <div class="slds-modal__footer slds-modal__footer--center">
+                <div class="slds-x-small-buttons--horizontal" align="center">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.hideReSubmit}" >{!$Label.c.PC_Cancel_Button}</button>
+                    <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.resubmitSplitReq}">{!$Label.c.PC_Yes}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Start of Delete warning popup window-->
+
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="delwarningmodal" >
+        <div class="slds-modal__container">
+            <div class="slds-modal__header modalAlert resubmitModalHeaderSize" >
+                <div class="labelDivSize"><h6 class="slds-text-heading--medium labelFontSize">{!$Label.c.PC_Warning}</h6></div>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideDelete}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"
+                    />
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                <p>{!$Label.c.PC_Del_Warning}</p>
+            </div>
+            <div class="slds-modal__footer slds-modal__footer--center">
+                <div class="slds-x-small-buttons--horizontal" align="center">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.hideDelete}" >{!$Label.c.PC_Cancel_Button}</button>
+                    <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.deleteSplit}">{!$Label.c.PC_Yes}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+</aura:component>

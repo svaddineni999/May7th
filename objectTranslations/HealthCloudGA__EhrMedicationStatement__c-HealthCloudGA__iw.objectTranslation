@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>הצהרת התרופות ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>הצהרת תרופות ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>הצהרות התרופות ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>הצהרות תרופות ב-EHR</value>
+    </caseValues>
+    <fields>
+        <label>חשבון</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>הצהרות תרופות ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>מכשיר</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>הצהרות תרופות</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for medication code --></help>
+        <label>תווית קוד תרופה</label>
+        <name>HealthCloudGA__MedicationCodeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>מערכת קוד תרופה</label>
+        <name>HealthCloudGA__MedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>קוד תרופה</label>
+        <name>HealthCloudGA__MedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>תפוגת תרופה</label>
+        <name>HealthCloudGA__MedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>התרופה היא מותג</label>
+        <name>HealthCloudGA__MedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>קוד סוג תרופה</label>
+        <name>HealthCloudGA__MedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>תווית סוג תרופה</label>
+        <name>HealthCloudGA__MedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>מערכת סוג תרופה</label>
+        <name>HealthCloudGA__MedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>מספר מנה של תרופה</label>
+        <name>HealthCloudGA__MedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>שם תרופה</label>
+        <name>HealthCloudGA__MedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>קוד טופס מוצר של תרופה</label>
+        <name>HealthCloudGA__MedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>תווית טופס מוצר של תרופה</label>
+        <name>HealthCloudGA__MedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>מערכת טופס מוצר של תרופה</label>
+        <name>HealthCloudGA__MedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>מטופל</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>הצהרות תרופות</relationshipLabel>
+    </fields>
+    <fields>
+        <label>קוד סיבת אי-מתן</label>
+        <name>HealthCloudGA__ReasonNotGivenCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Reason code or indication for writing the prescription --></help>
+        <label>תווית סיבת אי-מתן</label>
+        <name>HealthCloudGA__ReasonNotGivenLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת סיבת אי-מתן</label>
+        <name>HealthCloudGA__ReasonNotGivenSystem__c</name>
+    </fields>
+    <fields>
+        <label>מזהה מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>שינוי במערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- A code specifying the state of the statement. Generally, this will be in-progress or completed. --></help>
+        <label>קוד מצב</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+        <picklistValues>
+            <masterLabel>completed</masterLabel>
+            <translation><!-- completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>entered-in-error</masterLabel>
+            <translation><!-- entered-in-error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in-progress</masterLabel>
+            <translation><!-- in-progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>לא ניתן</label>
+        <name>HealthCloudGA__WasNotGiven__c</name>
+    </fields>
+    <fields>
+        <label>מתי ניתן</label>
+        <name>HealthCloudGA__WhenGiven__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>מזהה הצהרת תרופות ב-EHR</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>ACLS Operations Manager Permission Set Group</label>
+    <permissionSets>ACLS_Base_Permissions</permissionSets>
+    <permissionSets>ACLS_Base_RW_Permissions</permissionSets>
+    <permissionSets>ACLS_Manage_Reports_Permissions</permissionSets>
+    <permissionSets>ACLS_Operations_Manager_Permissions</permissionSets>
+    <permissionSets>Enrollment_Wizard</permissionSets>
+    <permissionSets>HealthCloudGA__HealthCloudPermissionSetLicense</permissionSets>
+    <permissionSets>PC_AllApexClasses</permissionSets>
+    <permissionSets>force__HealthCloudMemberServices</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

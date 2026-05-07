@@ -1,0 +1,8 @@
+<aura:component >
+	<aura:attribute name="lightningFormMap" type="Map" access="PUBLIC"/>  
+    <aura:attribute name="lightningFormCmp" type="Aura.Component" access="PRIVATE"/> 
+    <aura:attribute name="index" type="String" access="PUBLIC"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    {!v.body}
+</aura:component>

@@ -1,0 +1,22 @@
+/**
+ * Created by peharitha on 7/3/2019.
+ */
+.THIS .slds-page-header {
+    padding:5px;
+}
+
+.THIS .noPadding {
+    padding: 0;
+}
+
+.THIS table.slds-table {
+    border: none;
+}
+
+.THIS .slds-icon-utility-chevrondown,
+.THIS .slds-icon-utility-chevronright {
+    margin-top: 3px;
+}
+.THIS .cmpntNameFontSize {
+    font-size:16px;
+}

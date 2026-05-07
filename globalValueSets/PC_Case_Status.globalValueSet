@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>New</fullName>
+        <default>false</default>
+        <label>New</label>
+    </customValue>
+    <customValue>
+        <fullName>Open</fullName>
+        <default>false</default>
+        <label>Open</label>
+    </customValue>
+    <customValue>
+        <fullName>Escalated</fullName>
+        <default>false</default>
+        <label>Escalated</label>
+    </customValue>
+    <customValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+    </customValue>
+    <customValue>
+        <fullName>Re-Opened</fullName>
+        <default>false</default>
+        <label>Re-Opened</label>
+    </customValue>
+    <customValue>
+        <fullName>Missing Information</fullName>
+        <default>false</default>
+        <label>Missing Information</label>
+    </customValue>
+    <customValue>
+        <fullName>Enrolled</fullName>
+        <default>false</default>
+        <label>Enrolled</label>
+    </customValue>
+    <customValue>
+        <fullName>On Hold</fullName>
+        <default>false</default>
+        <label>On Hold</label>
+    </customValue>
+    <customValue>
+        <fullName>Withdrawn</fullName>
+        <default>false</default>
+        <label>Withdrawn</label>
+    </customValue>
+    <customValue>
+        <fullName>In Treatment</fullName>
+        <default>false</default>
+        <label>In Treatment</label>
+    </customValue>
+    <customValue>
+        <fullName>Pretreatment</fullName>
+        <default>false</default>
+        <label>Pretreatment</label>
+    </customValue>
+    <masterLabel>Case Status</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

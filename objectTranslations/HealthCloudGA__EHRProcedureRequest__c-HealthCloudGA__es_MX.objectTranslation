@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Solicitud de procedimiento de HCE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Solicitudes de procedimientos de HCE</value>
+    </caseValues>
+    <fields>
+        <label>Cuenta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Solicitudes de procedimientos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sitio de cuerpo</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Categoría</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Encuentro</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Solicitudes de procedimientos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Notas</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Solicitado por</label>
+        <name>HealthCloudGA__OrderedBy__c</name>
+        <relationshipLabel>Solicitudes de procedimientos de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Solicitado el</label>
+        <name>HealthCloudGA__OrderedOn__c</name>
+    </fields>
+    <fields>
+        <label>Prioridad</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>ASAP</masterLabel>
+            <translation><!-- ASAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Routine</masterLabel>
+            <translation><!-- Routine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stat</masterLabel>
+            <translation><!-- Stat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent</masterLabel>
+            <translation><!-- Urgent --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Motivo 1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Fecha y hora programadas</label>
+        <name>HealthCloudGA__ScheduledDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Id. de sistema de origen</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Estado</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposed</masterLabel>
+            <translation><!-- Proposed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Id. de Solicitud de procedimiento de HCE</nameFieldLabel>
+</CustomObjectTranslation>

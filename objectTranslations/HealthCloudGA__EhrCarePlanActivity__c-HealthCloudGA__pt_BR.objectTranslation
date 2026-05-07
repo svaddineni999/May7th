@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Atividade do plano de saúde do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Atividades do plano de saúde do RES</value>
+    </caseValues>
+    <fields>
+        <label>Ações decorrentes</label>
+        <name>HealthCloudGA__ActionsResulting__c</name>
+    </fields>
+    <fields>
+        <label>Período de atividade</label>
+        <name>HealthCloudGA__ActivityPeriod__c</name>
+    </fields>
+    <fields>
+        <label>Agenda de atividades</label>
+        <name>HealthCloudGA__ActivitySchedule__c</name>
+    </fields>
+    <fields>
+        <label>Plano de saúde</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categoria</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de códigos</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Quantidade diária</label>
+        <name>HealthCloudGA__DailyAmount__c</name>
+    </fields>
+    <fields>
+        <label>Detalhes</label>
+        <name>HealthCloudGA__Details__c</name>
+    </fields>
+    <fields>
+        <label>É proibido</label>
+        <name>HealthCloudGA__IsProhibited__c</name>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Identificador do local</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Linha 1 do local</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Linha 2 do local</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Nome do local</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Código postal do local</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Data de início do local</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado do local</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Telecomunicações do local</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Texto do local</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de local</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Uso do local</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Observações</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Medicamento do produto 255</label>
+        <name>HealthCloudGA__ProductMedication255__c</name>
+    </fields>
+    <fields>
+        <label>Medicamento do produto</label>
+        <name>HealthCloudGA__ProductMedication__c</name>
+    </fields>
+    <fields>
+        <label>Substância do produto 255</label>
+        <name>HealthCloudGA__ProductSubstance255__c</name>
+    </fields>
+    <fields>
+        <label>Substância do produto</label>
+        <name>HealthCloudGA__ProductSubstance__c</name>
+    </fields>
+    <fields>
+        <label>Quantidade</label>
+        <name>HealthCloudGA__Quantity__c</name>
+    </fields>
+    <fields>
+        <label>Meta 1 do plano de saúde relacionado</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal1__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Meta 2 do plano de saúde relacionado</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal2__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Meta 3 do plano de saúde relacionado</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal3__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Meta 4 do plano de saúde relacionado</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal4__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Meta 5 do plano de saúde relacionado</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal5__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Encontro relacionado</label>
+        <name>HealthCloudGA__RelatedEncounter__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Prescrição de medicamento relacionada</label>
+        <name>HealthCloudGA__RelatedMedicationPrescription__c</name>
+        <relationshipLabel>Atividades do plano de saúde</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de código</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de rótulo</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de sistema</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID da atividade do plano de saúde do RES</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Condição do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Condições do RES</value>
+    </caseValues>
+    <fields>
+        <label>Detalhe do abatimento 255</label>
+        <name>HealthCloudGA__AbatementDetail255__c</name>
+    </fields>
+    <fields>
+        <label>Detalhe do abatimento</label>
+        <name>HealthCloudGA__AbatementDetail__c</name>
+    </fields>
+    <fields>
+        <label>Conta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Condições do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Paciente declarador</label>
+        <name>HealthCloudGA__AsserterPatient__c</name>
+    </fields>
+    <fields>
+        <label>Médico declarador</label>
+        <name>HealthCloudGA__AsserterPractitioner__c</name>
+    </fields>
+    <fields>
+        <label>Código da categoria</label>
+        <name>HealthCloudGA__CategoryCode__c</name>
+    </fields>
+    <fields>
+        <label>Sistema da categoria</label>
+        <name>HealthCloudGA__CategorySystem__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo da categoria</label>
+        <name>HealthCloudGA__CatergoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Código de segurança</label>
+        <name>HealthCloudGA__CertaintyCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo de segurança</label>
+        <name>HealthCloudGA__CertaintyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de segurança</label>
+        <name>HealthCloudGA__CertaintySystem__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de códigos</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Data de declaração</label>
+        <name>HealthCloudGA__DateAsserted__c</name>
+    </fields>
+    <fields>
+        <label>Data documentada</label>
+        <name>HealthCloudGA__DateDocumented__c</name>
+    </fields>
+    <fields>
+        <label>Encontro</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Condições do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Código do indício</label>
+        <name>HealthCloudGA__EvidenceCode__c</name>
+    </fields>
+    <fields>
+        <label>Detalhe do indício</label>
+        <name>HealthCloudGA__EvidenceDetail__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do indício</label>
+        <name>HealthCloudGA__EvidenceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de indícios</label>
+        <name>HealthCloudGA__EvidenceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Foi abatido</label>
+        <name>HealthCloudGA__IsAbated__c</name>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Código do local</label>
+        <name>HealthCloudGA__LocationCode__c</name>
+    </fields>
+    <fields>
+        <label>Detalhe do local</label>
+        <name>HealthCloudGA__LocationDetail__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do local</label>
+        <name>HealthCloudGA__LocationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de locais</label>
+        <name>HealthCloudGA__LocationSystem__c</name>
+    </fields>
+    <fields>
+        <label>Observações</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Início</label>
+        <name>HealthCloudGA__Onset__c</name>
+    </fields>
+    <fields>
+        <label>Paciente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Condições</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Código de severidade</label>
+        <name>HealthCloudGA__SeverityCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo de severidade</label>
+        <name>HealthCloudGA__SeverityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de severidade</label>
+        <name>HealthCloudGA__SeveritySystem__c</name>
+    </fields>
+    <fields>
+        <label>ID do sistema de origem</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Fase</label>
+        <name>HealthCloudGA__Stage__c</name>
+    </fields>
+    <fields>
+        <label>Código do status</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do status</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de status</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Ano documentado</label>
+        <name>HealthCloudGA__YearDocumented__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID da condição do RES</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,17 @@
+<!--
+ - Created by vkashikar on 10/9/2017.
+ -->
+
+<apex:page showHeader="false" id="PC_Report_Container">
+    <style>
+        .asOfDate{display:none;}
+        .analyticsEmbeddedReportChart {width:100% !important;}
+        .iframeReportContainer {text-align: center !important;}
+        .outerbound {border-width: 0px !important;}		
+        .reportTitle {display:none !important}
+        .analyticsEmbeddedReportChart .reportFooter {display:none !important}
+    </style>
+
+    <analytics:reportChart cacheResults="false" developerName="{!$CurrentPage.parameters.developerName}" size="{!$CurrentPage.parameters.reportSize}" showRefreshButton="false"></analytics:reportChart>
+
+</apex:page>

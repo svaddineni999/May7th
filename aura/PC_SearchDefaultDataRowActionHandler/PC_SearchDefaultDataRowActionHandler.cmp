@@ -1,0 +1,50 @@
+<!--
+ - Created by vkashikar on 5/20/2021.
+ -->
+
+<aura:component description="This component handles events with actionType=ROW_ACTION &amp; actionName=PC_SHOW_DETAILS"
+                implements="force:appHostable,flexipage:availableForAllPageTypes"
+                access="global">
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:handler event="c:PC_SelectedRecord" action="{!c.handleSelectedRecDetails}"/>
+    <aura:handler event="c:PC_SearchParams" action="{!c.handleSearchParams}"/>
+
+    <aura:attribute name="identifier" type="String"/>
+    <aura:attribute name="searchParams" type="List"/>
+    <aura:attribute name="selectedRecordId" type="String"/>
+    <aura:attribute name="sourceUniqueId" type="String"/>
+    <aura:attribute name="actionType" type="String"/>
+    <aura:attribute name="actionName" type="String"/>
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="orgNamespace" type="String" access="private"/>
+
+    <aura:attribute name="labelPapWorkflow" type="String" default="{!$Label.c.PC_SearchActionLaunchPAP}"/>
+    <aura:attribute name="tabIcon" type="String" default="utility:engage"/>
+
+    <aura:attribute name="isEditMode" type="Boolean" default="false"/>
+
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:if isTrue="{! v.isEditMode}">
+        <div>
+            <p>
+                <lightning:formattedText value="This text is visible only in edit mode."/>
+            </p>
+            <p>
+                <lightning:formattedText class="slds-text-body_regular" value="This component listens to app events PC_SelectedRecord and
+                PC_SearchParams &amp; can handle default row actions having attributes
+                -> actionType=ROW_ACTION &amp; actionName=PC_SHOW_DETAILS"/>
+            </p>
+            <p>
+                <lightning:formattedText
+                        value="If you are using PC_GetSearchResults with PC_SHOW_DETAILS as one of the default actions, then it is recommended to add this component on
+                        the Search Page. Refer to the implementation guide for more details."/>
+            </p>
+        </div>
+    </aura:if>
+
+</aura:component>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Problema</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Problemas</value>
+    </caseValues>
+    <fieldSets>
+        <label>HcProblemCreateEdit</label>
+        <name>HealthCloudGA__HcProblemCreateEdit</name>
+    </fieldSets>
+    <fields>
+        <label>Conta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Problemas</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Modelo de plano de saúde</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Problemas</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Plano de saúde</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Problemas</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categoria</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition</masterLabel>
+            <translation><!-- Cognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pain Monitoring or Management</masterLabel>
+            <translation><!-- Pain Monitoring or Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respiratory Impairment</masterLabel>
+            <translation><!-- Respiratory Impairment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Descrição</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Prioridade</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ordem de classificação</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nome</nameFieldLabel>
+    <validationRules>
+        <errorMessage>A pesquisa de Conta deve corresponder à pesquisa de Conta no caso.</errorMessage>
+        <name>HealthCloudGA__AccountProblem_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

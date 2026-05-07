@@ -1,0 +1,250 @@
+<!--
+ - Created by havalakki on 10/11/2018.
+
+ Modifiction Log:
+Tushar Arora     	            Mar 20,2020                     [PC-6040] Added Trigger Event Information Section with specified UI information.
+Tushar Arora     	            Mar 20,2020                     [PC-6050] Added connection for both Trigger Event as well as Custom Support Plan Conditional Builder
+Tushar Arora                    Apr 01,2020                     [PC-6041][PC-6052]  Added conditions for saving support plan with trigger event object information
+Tushar Arora                    Apr 02,2020                     [PC-6042] Added conditions for editing support plan with trigger event object information
+Tushar Arora                    Apr 10,2020                     [PC-6040] Added validate method for required fields on Support Plan UI.
+Tushar Arora                    Apr 13,2020                     [PC-6176] removed Activation button from support plan UI.
+Tushar Arora                    Apr 16,2020                     [PC-6147] Added Error handling Conditions while launching and saving a support plan.
+Tushar Arora                    Apr 16,2020                     [PC-6040] Added form validation related to AddRow button in condition builder as well as done code review changes.
+Tushar Arora                    Apr 20,2020                     [PC-6170] Added spTriggerEventObjectDisabled attribute to disable on edit as well as when support plan is active.
+Tushar Arora                    Apr 21,2020                     [PC-6206] Added isSupportPlanRuleInformation for showing is null and is not null in Rule Information conditional builder.
+Tushar Arora                    Apr 27,2020                     [PC-6145] Added isSPConditionBuilderLoading for showing spinner in Rule Information conditional builder when Conditional builder is loading.
+Tushar Arora                    Apr 29,2020                     [PC-6147] Fixed issue related to required field validation before saving.
+Tushar Arora                    May 11,2020                     [PC-6252] Issue fixed when multiple conditions are added in both Trigger and Rule Condition, AND/OR Condition logic selection is retained at only one place.
+Tushar Arora                    May 12,2020                     [PC-6252] Issue fixed when selecting trigger event object when we select field  in condition builder either in Trigger or in Rule condition - object name is shown as an API Name rather it should be a label of object.
+Tushar Arora                    Jun 03,2020                     [PC-6304] Issue fixed when editing support plan both Start Condition and Condition builder is getting displayed.
+Kanteti Kishore                 29-July-2020                    [PC-6592] Changes in helper at line-154,155,165
+Kishore Kanteti                 Sep 30,2020                     [PC-6144] Enhancement of Conditions/Properties builder
+ -->
+<aura:component description="PC_Custom_Support_Plan" controller="PC_Custom_SupportPlanController"
+                implements="force:lightningQuickAction,lightning:actionOverride,force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId"
+                access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="fieldLabels" type="sObject" default="false"/>
+    <aura:attribute name="picklistEntryMap" type="Map"/>
+    <aura:attribute name="unAlteredpicklistEntryMap" type="Map"/>
+    <aura:attribute name="disabled" type="Boolean" default="false"/>
+    <aura:attribute name="constantsWrapper" type="Object"/>
+    <aura:attribute name="conditionOptionPickListOne" type="List"/>
+    <aura:attribute name="conditionOptionPickListTwo" type="List"/>
+    <aura:attribute name="conditionOptionPickListThree" type="List"/>
+    <aura:attribute name="supportPlan" type="Object"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="saveMsg" type="String" default="{!$Label.c.PC_Save_SupportPlan}"/>
+    <aura:attribute name="noneOptionName" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+
+    <!--Conditional Builder attributes-->
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <aura:attribute name="recordType" type="String" default="Case"/>
+    <!--<aura:attribute name="recordOptions" type="List"/>-->
+    <aura:attribute name="fetchedCondition" type="Object"/>
+    <aura:attribute name="isSaving" type="boolean" default="false"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+    <!--<aura:attribute name="triggerEventConditions" type="List"/>-->
+    <aura:attribute name="conBldrLogic" type="String" default=""/>
+    <aura:attribute name="isSPConditionBuilderLoading" type="Boolean" default="false"/>
+    <!--<aura:attribute name="currentConditions" type="String" default=""/>-->
+    <aura:attribute name="initiateCondition" type="Boolean" default="false"/>
+    <aura:attribute name="spPicklistTriggerEventMap" type="Map"/>
+    <!--<aura:attribute name="spPicklistTriggerEventObjectList" type="List"/>
+    <aura:attribute name="spPicklistTriggerEventTypeList" type="List"/>-->
+
+    <aura:attribute name="prevRecordType" type="String"/>
+    <aura:attribute name="tempRecordType" type="String"/>
+    <aura:attribute name="cachedConditionsMap" type="Map"/>
+    <!--<aura:attribute name="selectedRecordAPIName" type="String" access="public"/>-->
+    <!--<aura:attribute name="selectedTriggerEventObject" type="String" access="public" default=""/>-->
+    <aura:attribute name="setConditionsLabel" type="String" default="{!$Label.c.PC_Cond_Option_Conditional_Builder}"/>
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}"/>
+    <aura:attribute name="_newSupportPlanLabel" type="String" default="{!$Label.c.PC_New_Support_Plan}"/>
+    <aura:attribute name="_editLabel" type="String" default="{!$Label.c.PC_Edit_Button}"/>
+    <aura:attribute name="_informationLabel" type="String" default="{!$Label.c.PC_Information}"/>
+    <aura:attribute name="_ruleInformationLabel" type="String" default="{!$Label.c.PC_SupportPlan_RuleInformation}"/>
+    <aura:attribute name="_triggerEventInformationLabel" type="String"
+                    default="{!$Label.c.PC_SupportPlan_TriggerEventInformation}"/>
+    <aura:attribute name="selectedConditionBehaviour" type="String" default=""/>
+    <aura:attribute name="selectedConditionOption" type="String" default=""/>
+    <aura:attribute name="spTriggerEventObject" type="String" default=""/>
+    <aura:attribute name="spTriggerEventObjectLabel" type="String" default=""/>
+    <aura:attribute name="spTriggerEventType" type="String" default="" access="public"/>
+    <aura:attribute name="spTriggerEventConditions" type="List" access="public"/>
+    <aura:attribute name="recordConditions" type="List" access="public"/>
+    <aura:attribute name="spTriggerEventObjectDisabled" type="Boolean" default="false"/>
+    <aura:attribute name="triggerEventCondBldrLogic" type="String"/>
+    <aura:attribute name="sptriggerEventCondBldrLogic" type="String"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="spErrors" type="List"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}"/>
+
+    <aura:handler name="change" value="{!v.spTriggerEventObject}" action="{!c.onChangeSelectedObjectRecord}"/>
+
+    <div id="PC_SupportPlan" class="slds">
+        <form id="form">
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--large slds-fade-in-open"
+                 aura:id="modaldialog">
+                <div class="slds-modal__container restrictDivSize">
+                    <div class="slds-modal__header slds-modal--large">
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close"
+                                onclick="{!c.hideModalBox}">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true"/>
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active" align="center">
+                            <aura:if isTrue="{!v.recordId!=null}">{!v.supportPlan.existingSupportPlanLabel}</aura:if>
+                            <aura:if isTrue="{!v.recordId==null}">{!v._newSupportPlanLabel}</aura:if>
+                        </h2>
+                    </div>
+                    <div class="slds-modal__content slds-modal--large modelContentStyle">
+                        <aura:if isTrue="{! v.spErrors.length > 0 }">
+                            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.spErrors}"/>
+                        </aura:if>
+                        <div class="slds-section slds-is-open">
+                            <h3 class="slds-section__title slds-theme_shade">
+                                <span aura:id="infoId" class="slds-truncate slds-p-horizontal_small"
+                                      title="{!v._informationLabel}">{!v._informationLabel}</span>
+                            </h3>
+                            <div aria-hidden="false" class="slds-section__content">
+                                <div class="slds-form slds-form_stacked">
+                                    <div class="slds-form-element slds-has-error">
+                                        <label class="slds-form-element__label" title="{!v.fieldLabels.refID}"
+                                               for="spname">
+                                            <abbr class="slds-required"
+                                                  title="required">* </abbr>{!v.fieldLabels.supportPlanName}</label>
+                                        <div class="slds-form-element__control">
+                                            <ui:inputText aura:id="spname" maxlength="80" disabled="{!v.disabled}"
+                                                          value="{!v.supportPlan.spname}" updateOn="keyup"
+                                                          keyup="{!c.onChangeSupportPlanName}" required="true"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" title="{!v.fieldLabels.refID}"
+                                               for="description">{!v.fieldLabels.descriptionStr}</label>
+                                        <div class="slds-form-element__control">
+                                            <ui:inputText aura:id="description" disabled="{!v.disabled}"
+                                                          value="{!v.supportPlan.description}"/>
+                                        </div>
+                                    </div>
+
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        <span aura:id="infoId" class="slds-truncate slds-p-horizontal_small"
+                                              title="{!v._triggerEventInformationLabel}">{!v._triggerEventInformationLabel}</span>
+                                    </h3>
+
+                                    <c:PC_CustomBusinessRuleTriggerEvent aura:id="triggerEventComponent"
+                                                                         selectedTriggerEventObject="{!v.spTriggerEventObject}"
+                                                                         selectedTriggerEventObjectLabel="{!v.spTriggerEventObjectLabel}"
+                                                                         selectedTriggerEventType="{!v.spTriggerEventType}"
+                                                                         selectedTriggerEventConditions="{!v.spTriggerEventConditions}"
+                                                                         picklistTriggerEventObjectList="{!v.picklistEntryMap.eventObjectList}"
+                                                                         picklistTriggerEventTypeList="{!v.picklistEntryMap.eventTypeList}"
+                                                                         constantsWrapper="{!v.constantsWrapper}"
+                                                                         triggerEventCondBldrLogic="{!v.sptriggerEventCondBldrLogic}"
+                                                                         triggerEventObjectfieldLabel="{!v.fieldLabels.triggerEventObject}"
+                                                                         triggerEventTypefieldLabel="{!v.fieldLabels.triggerEventType}"
+                                                                         recordId="{!v.recordId}"
+                                                                         disabled="{!v.disabled}"
+                                                                         triggerEventObjectDisabled="{!v.spTriggerEventObjectDisabled}"
+                                                                         isSaving="{!v.isSaving}"/>
+
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        <span aura:id="ruleInfoId" class="slds-truncate slds-p-horizontal_small"
+                                              title="{!v._ruleInformationLabel}">{!v._ruleInformationLabel}</span>
+                                    </h3>
+
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <aura:if isTrue="{!v.picklistEntryMap!= null}">
+                                                <lightning:select label="{!v.fieldLabels.conditionBehaviour}"
+                                                                  aura:id="behaviorList" disabled="{!v.disabled}"
+                                                                  value="{!v.selectedConditionBehaviour}"
+                                                                  onchange="{!c.onCondBehavChange}">
+                                                    <aura:iteration items="{!v.picklistEntryMap.behaviorList}"
+                                                                    var="entry">
+                                                        <option text="{!entry.label}" value="{!entry.value}"
+                                                                selected="{!entry.selected}"/>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <aura:if isTrue="{!v.picklistEntryMap != null}">
+                                                <lightning:select label="{!v.fieldLabels.conditionType}"
+                                                                  aura:id="setCondition" disabled="{!v.disabled}"
+                                                                  value="{!v.selectedConditionOption}"
+                                                                  onchange="{!c.showCondition}">
+                                                    <aura:iteration items="{!v.picklistEntryMap.setCondition}"
+                                                                    var="entry">
+                                                        <option text="{!entry.label}" value="{!entry.value}"
+                                                                selected="{!entry.selected}"/>
+                                                    </aura:iteration>
+                                                </lightning:select>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+
+                                    <div class="slds-form-element slds-hide" aura:id="apexClass">
+                                        <label class="slds-form-element__label"
+                                               for="className">
+                                        <abbr class="slds-required"
+                                              title="required">* </abbr>{!v.fieldLabels.className}</label>
+                                        <div class="slds-form-element__control">
+                                            <ui:inputText disabled="{!v.disabled}"
+                                                          value="{!v.supportPlan.startcondition}" aura:id="className"
+                                                          class="slds-input"/>
+                                        </div>
+                                    </div>
+                                    <aura:if isTrue="{!v.selectedConditionOption == 'Conditional Builder'}">
+                                        <label class="slds-p-left_xx-small slds-form-element__label">{!v.setConditionsLabel}</label>
+                                        <c:PC_PropertiesAndConditionsBuilder aura:id="ruleInfoConditions"
+                                                                             boxBorderRequired="true"
+                                                                             operatorConstants="{!v.constantsWrapper}"
+                                                                             objectName="{!v.spTriggerEventObject}"
+                                                                             isDisabled="{!v.disabled}"
+                                                                             objectLabel="{!v.spTriggerEventObjectLabel}"
+                                                                             builderContext="ConditionalBuilder"
+                                                                             fetchedConditionsOrProperties="{!v.recordConditions}"
+                                                                             isSupportPlanTriggerEventConditions="false"
+                                                                             objectType="Data Object"/>
+                                    </aura:if>
+                                    <h3 class="slds-section__title slds-theme_shade">
+                                        <span class="slds-truncate slds-p-horizontal_small"
+                                              title="{!v.fieldLabels.supportPlanBehaviorSectionHeader}">
+                                                {!v.fieldLabels.supportPlanBehaviorSectionHeader}
+                                        </span>
+                                    </h3>
+                                    <div class="slds-m-top_xx-small">
+                                        <lightning:radioGroup name="supportPlanBehaviorOptions"
+                                                          label="{!v.fieldLabels.supportPlanBehavior}"
+                                                          options="{!v.picklistEntryMap.supportPlanBehaviorList}"
+                                                          value="{!v.supportPlan.supportPlanBehavior}"
+                                                          disabled="{!v.disabled || v.spTriggerEventObjectDisabled}"
+                                                          type="radio"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer class="slds-modal__footer">
+                        <lightning:button class="slds-button slds-button_neutral" onclick="{!c.hideModalBox}"
+                                          label="{!$Label.c.PC_Button_Label_Cancel}"/>
+                        <lightning:button aura:id="saveButtonId" class="slds-button slds-button_brand"
+                                          label="{!$Label.c.PC_Save}" onclick="{!c.saveActivity}"/>
+                    </footer>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+</aura:component>

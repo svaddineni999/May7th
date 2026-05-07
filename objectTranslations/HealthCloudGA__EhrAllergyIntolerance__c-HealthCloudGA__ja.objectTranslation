@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR アレルギー不耐性</value>
+    </caseValues>
+    <fields>
+        <label>取引先</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EHR アレルギー過敏症</relationshipLabel>
+    </fields>
+    <fields>
+        <label>重篤度コード</label>
+        <name>HealthCloudGA__CriticalityCode__c</name>
+    </fields>
+    <fields>
+        <label>重篤度の表示ラベル</label>
+        <name>HealthCloudGA__CriticalityLabel__c</name>
+    </fields>
+    <fields>
+        <label>重篤度システム</label>
+        <name>HealthCloudGA__CriticalitySystem__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if value of Status Label field is NOT equal to &apos; Resolved &apos;, else returns false. --></help>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>患者</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>EHR アレルギー過敏症</relationshipLabel>
+    </fields>
+    <fields>
+        <label>反応 255</label>
+        <name>HealthCloudGA__Reaction255__c</name>
+    </fields>
+    <fields>
+        <label>反応</label>
+        <name>HealthCloudGA__Reaction__c</name>
+    </fields>
+    <fields>
+        <label>記録日</label>
+        <name>HealthCloudGA__RecordedDate__c</name>
+    </fields>
+    <fields>
+        <label>記録者名 255</label>
+        <name>HealthCloudGA__RecorderName255__c</name>
+    </fields>
+    <fields>
+        <label>記録者名</label>
+        <name>HealthCloudGA__RecorderName__c</name>
+    </fields>
+    <fields>
+        <label>記録者</label>
+        <name>HealthCloudGA__Recorder__c</name>
+        <relationshipLabel>アレルギー過敏症</relationshipLabel>
+    </fields>
+    <fields>
+        <label>過敏症テスト 1</label>
+        <name>HealthCloudGA__SensitivityTest1__c</name>
+        <relationshipLabel>EHR アレルギー過敏症</relationshipLabel>
+    </fields>
+    <fields>
+        <label>過敏症テスト 2</label>
+        <name>HealthCloudGA__SensitivityTest2__c</name>
+        <relationshipLabel>EHR アレルギー過敏症 (過敏症テスト 2)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>過敏症テスト 3</label>
+        <name>HealthCloudGA__SensitivityTest3__c</name>
+        <relationshipLabel>EHR アレルギー過敏症 (過敏症テスト 3)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>過敏症種別コード</label>
+        <name>HealthCloudGA__SensitivityTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>過敏症種別の表示ラベル</label>
+        <name>HealthCloudGA__SensitivityTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>過敏症種別システム</label>
+        <name>HealthCloudGA__SensitivityTypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>状況コード</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>状況の表示ラベル</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>状況システム</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>物質 255</label>
+        <name>HealthCloudGA__Substance255__c</name>
+    </fields>
+    <fields>
+        <label>物質コードシステム</label>
+        <name>HealthCloudGA__SubstanceCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>物質コード</label>
+        <name>HealthCloudGA__SubstanceCode__c</name>
+    </fields>
+    <fields>
+        <label>物質</label>
+        <name>HealthCloudGA__SubstanceLong__c</name>
+    </fields>
+    <nameFieldLabel>EHR アレルギー過敏症 ID</nameFieldLabel>
+</CustomObjectTranslation>

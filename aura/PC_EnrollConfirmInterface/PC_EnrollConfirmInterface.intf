@@ -1,0 +1,10 @@
+<!--
+ - Created by vkashikar on 6/4/2021.
+ -->
+
+<aura:interface description="Implement this to be able to plug-in into the Enrollment Confirmation Screen" access="global">
+    <aura:attribute name="enrollmentCaseId" type="String" access="global"
+                    description="Salesforce Id of the Enrollment Case used in Enrollment"/>
+    <aura:attribute name="programCaseId" type="String" access="global"
+                    description="Salesforce Id of the Program Case created on enrollment"/>
+</aura:interface>

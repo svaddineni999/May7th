@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement Program OCR Template Type</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagement Program OCR Template Types</value>
+    </caseValues>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_EngagementProgram__c</name>
+        <relationshipLabel><!-- Engagement Program OCR Template Types --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OCR Template Type --></label>
+        <name>PC_OcrTemplateType__c</name>
+        <relationshipLabel><!-- Engagement Program OCR Template Types --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,50 @@
+<!--
+******************************************************************************************
+Class Name      : PC_PatientInfoEWP2
+Description     : Patient Information Enrollment Wizard Page
+Created By      : Kishore Kanteti
+Created Date    : 27-Oct-2021
+Modification Log:
+******************************************************************************************
+Developer                   Date                   Description
+******************************************************************************************
+Kishore Kanteti	        27-Oct-21              Initial Version
+*******************************************************************************************
+-->
+
+<aura:component description="Enrollment Wizard Patient Info page" extensible="true" access="global" extends="c:PC_EnrollmentWizardPage" controller="PC_PatientInfoEWP2">
+
+    <aura:set attribute="isValid" value="true"/>
+    
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+
+    <aura:attribute name="lastModifiedDate" type="String" default=""/>
+    <aura:set attribute="persistentAttributes" value="['persistentAccount']"/>
+    <aura:attribute name="persistentAccount" type="sObject"/>
+    <aura:attribute name="fieldSetNames" type="String[]" default="[]"/>
+    <aura:attribute name="_onlineFormWarning" type="String" default="{!$Label.c.PC_EWP_OnlineFormWarning}"/>
+    <aura:attribute name="_pageError" type="String" default="{!$Label.c.PC_EWP_PageError}"/>
+    <aura:attribute name="_accountPageErrorReplacements" type="Map" default="{'%ObjectName%':'account'}"/>
+    <aura:attribute name="showSpinner" type="Boolean"/>
+    <aura:attribute name="isFieldValuesLoaded" type="Boolean" default="false"/>
+
+    <aura:method name="validate" action="{!c.validate}" access="public"></aura:method>
+
+    <!-- Handler -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+    </aura:if>
+    <aura:if isTrue="{!v.isFieldValuesLoaded}">
+    <c:pcRecordFormByFieldsets aura:id="pcRecordFormByFieldSets"
+                            objectApiName="Account" 
+                            fieldSetNames="{!v.fieldSetNames}"
+                            columns="2"
+                            onvaluechange="{!c.setPersistentAccount}"
+                            density="compact"
+                            defaultFieldValues = "{!v.persistentAccount}"/>
+    </aura:if>
+    {!v.body}
+</aura:component>

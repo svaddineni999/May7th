@@ -1,0 +1,16 @@
+<apex:page controller="EFX.SendefaxScreenController"> 
+    <apex:includeLightning /> 
+    <div id="vfpageid" style="height:70rem;width:74rem"/> 
+    <script> 
+    $Lightning.use("c:ResendApp", function() {  
+        $Lightning.createComponent(       
+           '{!JSENCODE(namespace)}'+":SendefaxScreen",
+            {'selectedRecord' :'{!JSENCODE($CurrentPage.parameters.recpId)}'},
+            "vfpageid",               
+            function(component) {    
+                console.log("Component Created");
+                console.log(component);
+            }); 
+    }); 
+    </script>
+</apex:page>

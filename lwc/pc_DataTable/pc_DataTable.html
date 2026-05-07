@@ -1,0 +1,91 @@
+<template>
+    <template if:true={productDataAvailable}>
+        <div>
+            <h3 class="slds-section-title_divider">
+                <span class="slds-truncate" title="Section Title">{label.ProductTile}</span>
+                <span if:true={preselected} class="slds-truncate slds-float_right" style="text-transform: none">
+                    <lightning-icon icon-name="utility:info" alternative-text="info" title="info" size="xx-small"></lightning-icon>
+                    <span class="slds-m-left_xx-small">{warningMessages.warningPreselectPrescriptionProduct}</span>
+                </span>
+            </h3>
+            <div class="slds-scrollable_y" style="height:10rem;">
+                <lightning-datatable
+                        data-id="pcProductTable"
+                        key-field="Id"
+                        data={productData}
+                        columns={productColumns}
+                        show-row-number-column
+                        selected-rows={selectedRows}
+                        onrowselection={getSelectedName}>
+                </lightning-datatable>
+            </div>
+        </div>
+    </template>
+    <!-- Spinner -->
+    <div if:true={showLoadingSpinner}>
+        <lightning-spinner alternative-text="Loading" size="large"></lightning-spinner>
+    </div>
+    <template if:true={orderItemDataAvailable}>
+        <div class="slds-m-top_small">
+            <h3 class="slds-section-title_divider">
+                <span class="slds-truncate" title="Section Title">{label.OrderItemTile}</span>
+                <span if:true={existingprescriptionproduct} class="slds-truncate slds-float_right" style="text-transform: none">
+                    <lightning-icon icon-name="utility:info" alternative-text="info" title="info" size="xx-small"></lightning-icon>
+                    <span class="slds-m-left_xx-small">{warningMessages.warningExistingPrescriptionProduct}</span>
+                </span>
+            </h3>
+            <div class="temp">
+                <lightning-datatable
+                        data-id="pcOrderItemTable"
+                        hide-checkbox-column
+                        key-field="Id"
+                        data={OrderItemData}
+                        columns={OrderItemColumnsToDisplay}
+                        suppress-bottom-bar=true
+                        onrowaction={handleRowActions}
+                >
+                </lightning-datatable>
+            </div>
+        </div>
+    </template>
+
+    <template if:true={bShowModal}>
+        <section role="dialog" tabindex="-1"
+                 aria-labelledby="modal-heading-01"
+                 aria-modal="true"
+                 aria-describedby="modal-content-id-1"
+                 class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- modal header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close" alternative-text="close" variant="inverse" size="small" ></lightning-icon>
+                    </button>
+                    <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate" if:true={isEditForm}>{label.updateRecordTitle}</h2>
+                </header>
+                <!-- modal body -->
+
+                <!-- showing record edit form -->
+                <div if:true={isEditForm} class="slds-theme_default slds-p-around_x-small">
+                    <lightning-record-edit-form layout-type="Full" record-id={currentRecordId} object-api-name={objectName} onsubmit={handleSubmit} onsuccess={handleSuccess}>
+                        <lightning-messages></lightning-messages>
+                        <template for:each={fieldListMap} for:item="field">
+                            <lightning-input-field if:true={field.show} data-id={field.key} key={field.key} field-name={field.key} value={field.value} disabled={field.isDisabled}></lightning-input-field>
+                        </template>
+
+                        <div style="text-align:center;">
+                            <lightning-button class="slds-m-top_small"
+                                              variant="brand"
+                                              type="submit"
+                                              name="update"
+                                              label={label.updateRecordButton}></lightning-button>
+                        </div>
+                    </lightning-record-edit-form><br/>
+                    <div></div>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+
+    </template>
+</template>

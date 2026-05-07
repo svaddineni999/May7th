@@ -1,0 +1,125 @@
+<!--
+Lightning component  : PC_AE_SuspectPrescriptionForm
+Description          : Form to capture/display Suspect Products for Adverse Event
+Parameters           : aeWrapper Map
+Modification Log:
+Haritha Reddy 		 29-Nov-2018    Initial Version
+Haritha Reddy 		 22-Nov-2019    [PC-5656] Added Product Lookup to search for available Products and
+                                    auto-populate the product details on form based on Product Selection
+Haritha Reddy 		 09-Jan-2020    [PC-5600] Made Prescription drop-down/Product Lookup on Suspect Product Tab configurable
+Haritha Reddy 		 17-Jan-2020    [PC-5600]Added logic to display & save Additional SuspectPrescription Fields while creating/editing Adverse Event
+-->
+
+<aura:component controller="PC_AE_SuspectProductsRendererController" description="PC_AE_SuspectPrescriptionForm">
+    <aura:attribute name="aeWrapper" type="Map"/>
+    <aura:attribute name="aeId" type="string"/>
+    <aura:attribute name="productAvailable" type="Boolean"/>
+    <aura:attribute name="prescriptionAvailable" type="Boolean"/>
+    <aura:attribute name="isEdit" type="Boolean"/>
+    <aura:attribute name="prodCompoundedOptions" type="List"/>
+    <aura:attribute name="prodOTCOptions" type="List"/>
+    <aura:attribute name="eventAbatedOptions" type="List"/>
+    <aura:attribute name="eventReappearedOptions" type="List"/>
+    <aura:attribute name="suspectPrescriptionRec" type="Object" description="Used to hold new,updated SP Values"/>
+    <aura:attribute name="fieldLabels" type="Object"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="saveSuccessMessage" type="String" default="{!$Label.c.PC_Save_Toast}" />
+    <aura:attribute name="reviewErrors" type="String" default="{!$Label.c.PC_EWP_Warning}" />
+    <aura:attribute name="dateFormatErrorMessage" type="String" default=""/>
+    <aura:attribute name="dateFormat" type="String" default="{!$Label.c.PC_Adverse_Event_DefaultDateFormat}"/>
+    <aura:attribute Name="selectedProduct" type="object" />
+    <aura:attribute name="productLookupName" type="String" default="{!$Label.c.PC_AE_ProductLookupName}"/>
+    <aura:attribute name="additionalFieldsConfig" type="object"/>
+    <aura:attribute name="additionalfieldSetFormBody" type="Aura.Component[]" />
+    <aura:attribute name="usePrescription" type="Boolean"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="fsFields" type="Object"/>
+    <aura:attribute name="noFieldsFoundErrorDescription" type="String" default="{!$Label.c.PC_NoFieldsFoundErrorDescription}" access="private"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+    <aura:handler name="init" value="{!this}" action="{!c.autoPopulateProductDetails}"/>
+
+    <aura:registerEvent name="pushSPlistEvent" type="c:PC_AE_PushSuspectPrescription"/>
+    <aura:handler name="change" value="{!v.selectedProduct}" action="{!c.autoPopulateProductDetails}"/>
+
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+        <aura:set attribute="else">
+            <div class="pcLightningFormOverride pcNormalFontWeight">
+                <lightning:overlayLibrary aura:id="overlayLib"/>
+                <aura:if isTrue="{! and(not(v.prescriptionAvailable),not(v.productAvailable)) }">
+                    <label class="slds-form-element__label">{!v.productLookupName}</label>
+                    <c:PC_Lookup objectName="Product2" field_API_text="Name" field_API_val="Id" limit="100" field_API_search="Name"
+                                 lookupIcon="standard:product" selectedRecord="{!v.selectedProduct}" placeholder=""/>
+                    <br/>
+                </aura:if>
+
+                <div class="labelStyle">{!$Label.c.PC_AE_Name_Manufacturer_Compounder_Strength}</div>
+                <div class="slds-box fieldStyle">
+                    <div class="slds-gutters slds-grid">
+                        <div class="slds-col">
+                            <lightning:input required="true" name="productName" disabled="{!v.prescriptionAvailable}" label="{!v.fieldLabels.productName}" value="{!v.aeWrapper.productName}"/>
+
+                            <lightning:input name="ndc" label="{!v.fieldLabels.ndc}" value="{!v.aeWrapper.ndc}"/>
+
+                            <lightning:input name="lot" label="{!v.fieldLabels.lot}" value="{!v.aeWrapper.lot}"/>
+                        </div>
+                        <div class="slds-col">
+                            <lightning:input name="productStrength" label="{!v.fieldLabels.prodStrength}" value="{!v.aeWrapper.productStrength}"/>
+
+                            <lightning:input name="manufacturer" disabled="{!v.prescriptionAvailable}" label="{!v.fieldLabels.manufacturer}" value="{!v.aeWrapper.manufacturer}"/>
+                        </div>
+                    </div>
+                </div>
+
+                <lightning:input class="fieldStyle AE" name="concomitant" label="{!v.fieldLabels.concomitant}" value="{!v.aeWrapper.concomitant}"/>
+
+                <div class="slds-grid slds-gutters fieldStyle AE">
+                    <div class="slds-col">
+                        <lightning:input name="dose" label="{!v.fieldLabels.dose}" value="{!v.aeWrapper.dose}"/>
+                    </div>
+                    <div class="slds-col">
+                        <lightning:input name="frequency" label="{!v.fieldLabels.frequency}" value="{!v.aeWrapper.frequency}"/>
+                    </div>
+                    <div class="slds-col">
+                        <lightning:input name="routeUsed" label="{!v.fieldLabels.route}" value="{!v.aeWrapper.route}"/>
+                    </div>
+                </div>
+
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning:input class="fieldStyle AE" type="Date" name="therapyStartDate" label="{!('*'+v.fieldLabels.therapyStartDate)}" value="{!v.aeWrapper.therapyStartDate}"/>
+                        <lightning:input class="fieldStyle AE" name="diagnosis" label="{!v.fieldLabels.diagnosis}" value="{!v.aeWrapper.diagnosis}"/>
+                        <lightning:radioGroup class="fieldStyle" name="prodCompounded" label="{!v.fieldLabels.prodCompounded}" options="{! v.prodCompoundedOptions }" value="{! v.aeWrapper.prodCompounded }" type="radio"/>
+                        <lightning:radioGroup class="fieldStyle" name="eventAbated" label="{!v.fieldLabels.eventAbated}" options="{! v.eventAbatedOptions }" value="{! v.aeWrapper.eventAbated }" type="radio"/>
+                    </div>
+                    <div class="slds-col">
+                        <lightning:input class="fieldStyle AE" type="Date" name="therapyEndDate" label="{!('*'+v.fieldLabels.therapyEndDate)}" value="{!v.aeWrapper.therapyEndDate}"/>
+                        <lightning:radioGroup class="fieldStyle" name="prodOTC" label="{!v.fieldLabels.prodOTC}" options="{! v.prodOTCOptions }" value="{! v.aeWrapper.prodOTC }" type="radio"/>
+                        <lightning:input class="fieldStyle AE" type="Date" name="expirationDate" label="{!('*'+ v.fieldLabels.expirationDate)}" value="{!v.aeWrapper.expirationDate}"/>
+                        <lightning:radioGroup class="fieldStyle" name="eventReappeared" label="{!v.fieldLabels.eventReappeared}" options="{! v.eventReappearedOptions }" value="{! v.aeWrapper.eventReappeared }" type="radio"/>
+                    </div>
+                </div>
+                <aura:if isTrue="{!and(not(empty(v.additionalFieldsConfig.fieldSetName)), not(empty(v.additionalFieldsConfig.fsFields)))}">
+                    <br/><br/>
+                        {!$Label.c.PC_AE_Additional_Information}
+                    <div class="slds-box fieldStyle formContainerStyle">
+                            {!v.additionalfieldSetFormBody}
+                    </div>
+                </aura:if>
+
+            </div>
+            <br/>
+            <footer class="slds-modal__footer" style="margin:-1rem;">
+                <div class="slds-text-align_left">*{!format($Label.c.PC_AdverseEvent_DownloadPDF_DateFormatInfo, v.dateFormat)}</div>
+                <aura:if isTrue="{!v.dateFormatErrorMessage.length > 0}">
+                    <div class="slds-text-align_left slds-text-color_error">{!v.dateFormatErrorMessage}</div>
+                </aura:if>
+                <lightning:button variant="neutral" label="{!$Label.c.PC_Cancel_Button}" onclick="{! c.handleCancel }" />
+                <lightning:button variant="brand" label="{!v.isEdit ? $Label.c.PC_AE_Update_Product : $Label.c.PC_Add_Button}" onclick="{!c.upsertSuspectProduct}" />
+            </footer>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

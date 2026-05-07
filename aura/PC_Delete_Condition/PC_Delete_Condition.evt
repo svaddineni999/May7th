@@ -1,0 +1,8 @@
+<!--
+ - Created by vivekkmishra on 7/16/2018.
+ -->
+
+<aura:event type="COMPONENT" description="PC_Delete_Condition">
+    <aura:attribute name="rowNumber" type="Integer"/>
+    <aura:attribute name="componentId" type="String" default=""/>
+</aura:event>

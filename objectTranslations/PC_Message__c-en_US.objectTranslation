@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Message</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Messages</value>
+    </caseValues>
+    <fields>
+        <label><!-- Campaign Name --></label>
+        <name>ACLS_Campaign_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>ACLS_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interaction --></label>
+        <name>ACLS_Interaction__c</name>
+        <relationshipLabel><!-- Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Service Permission --></label>
+        <name>ACLS_Program_Service_Permission__c</name>
+        <relationshipLabel><!-- Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SMS Keyword --></label>
+        <name>ACLS_SMS_Keyword__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Operation --></label>
+        <name>ACLS_SMS_Operation__c</name>
+        <picklistValues>
+            <masterLabel>Opt-In</masterLabel>
+            <translation><!-- Opt-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opt-Out</masterLabel>
+            <translation><!-- Opt-Out --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send SMS</masterLabel>
+            <translation><!-- Send SMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>PC_Case__c</name>
+        <relationshipLabel><!-- Messages --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Content --></label>
+        <name>PC_Content__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Recipient Name --></label>
+        <name>PC_ExternalRecipientName__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Recipient Number --></label>
+        <name>PC_ExternalRecipientNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feed Item Id --></label>
+        <name>PC_Feed_Item_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- From Alias --></label>
+        <name>PC_FromAlias__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hide from Feed --></label>
+        <name>PC_Hide_from_Feed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message Previous Status --></label>
+        <name>PC_MessagePreviousStatus__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receiving</masterLabel>
+            <translation><!-- Receiving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sending</masterLabel>
+            <translation><!-- Sending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undelivered</masterLabel>
+            <translation><!-- Undelivered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Message Status Details --></label>
+        <name>PC_MessageStatusDetails__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message Date --></label>
+        <name>PC_Message_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message Read --></label>
+        <name>PC_Message_Read__c</name>
+    </fields>
+    <fields>
+        <label><!-- Message Status --></label>
+        <name>PC_Message_Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receiving</masterLabel>
+            <translation><!-- Receiving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sending</masterLabel>
+            <translation><!-- Sending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Undelivered</masterLabel>
+            <translation><!-- Undelivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unprocessed</masterLabel>
+            <translation><!-- Unprocessed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Receiver Account --></label>
+        <name>PC_ReceiverAccount__c</name>
+        <relationshipLabel><!-- ReceiverAccounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Receiver User --></label>
+        <name>PC_ReceiverUser__c</name>
+        <relationshipLabel><!-- ReceiverUsers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Receiver --></label>
+        <name>PC_Receiver__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Eletter --></label>
+        <name>PC_SMSELetter__c</name>
+        <relationshipLabel><!-- SMSEletters --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SMS ID --></label>
+        <name>PC_SMSId__c</name>
+    </fields>
+    <fields>
+        <label><!-- SMS Vendor Name --></label>
+        <name>PC_SMSVendorName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sender Account --></label>
+        <name>PC_SenderAccount__c</name>
+        <relationshipLabel><!-- SenderAccounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sender User --></label>
+        <name>PC_SenderUser__c</name>
+        <relationshipLabel><!-- SenderUsers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sender --></label>
+        <name>PC_Sender__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Type --></label>
+        <name>PC_Source_Type__c</name>
+        <picklistValues>
+            <masterLabel>App Message</masterLabel>
+            <translation><!-- App Message --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transaction ID --></label>
+        <name>PC_TransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_Type__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can&apos;t send blank messages! --></errorMessage>
+        <name>Empty_message</name>
+    </validationRules>
+</CustomObjectTranslation>

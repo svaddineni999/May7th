@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Activiteit voor zorgplan volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Activiteiten voor zorgplan volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Resulterende acties</label>
+        <name>HealthCloudGA__ActionsResulting__c</name>
+    </fields>
+    <fields>
+        <label>Activiteitsperiode</label>
+        <name>HealthCloudGA__ActivityPeriod__c</name>
+    </fields>
+    <fields>
+        <label>Activiteitenschema</label>
+        <name>HealthCloudGA__ActivitySchedule__c</name>
+    </fields>
+    <fields>
+        <label>Zorgplan</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categorie</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Label voor code</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Coderingssysteem</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Dagelijkse hoeveelheid</label>
+        <name>HealthCloudGA__DailyAmount__c</name>
+    </fields>
+    <fields>
+        <label>Details</label>
+        <name>HealthCloudGA__Details__c</name>
+    </fields>
+    <fields>
+        <label>IsProhibited</label>
+        <name>HealthCloudGA__IsProhibited__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Identifier voor locatie</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van locatie</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van locatie</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Naam van locatie</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van locatie</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van locatie</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van locatie</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Telecommunicatie voor locatie</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van locatie</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Type van locatie</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van locatie</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Notities</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Productmedicatie (255)</label>
+        <name>HealthCloudGA__ProductMedication255__c</name>
+    </fields>
+    <fields>
+        <label>Productmedicatie</label>
+        <name>HealthCloudGA__ProductMedication__c</name>
+    </fields>
+    <fields>
+        <label>Productbestanddeel (255)</label>
+        <name>HealthCloudGA__ProductSubstance255__c</name>
+    </fields>
+    <fields>
+        <label>Productbestanddeel</label>
+        <name>HealthCloudGA__ProductSubstance__c</name>
+    </fields>
+    <fields>
+        <label>Hoeveelheid</label>
+        <name>HealthCloudGA__Quantity__c</name>
+    </fields>
+    <fields>
+        <label>Doel 1 van gerelateerd zorgplan</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal1__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Doel 2 van gerelateerd zorgplan</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal2__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Doel 3 van gerelateerd zorgplan</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal3__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Doel 4 van gerelateerd zorgplan</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal4__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Doel 5 van gerelateerd zorgplan</label>
+        <name>HealthCloudGA__RelatedCarePlanGoal5__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Gerelateerde ontmoeting</label>
+        <name>HealthCloudGA__RelatedEncounter__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Recept voor gerelateerde medicatie</label>
+        <name>HealthCloudGA__RelatedMedicationPrescription__c</name>
+        <relationshipLabel>Activiteiten van/voor zorgplan</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Typecode</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Typelabel</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Typesysteem</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID van activiteit van zorgplan volgens E</nameFieldLabel>
+</CustomObjectTranslation>

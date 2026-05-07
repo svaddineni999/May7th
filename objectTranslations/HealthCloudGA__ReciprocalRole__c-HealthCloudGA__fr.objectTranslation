@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Rôle réciproque</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Rôles réciproques</value>
+    </caseValues>
+    <fields>
+        <help><!-- If checked, a corresponding inverse role is automatically created. --></help>
+        <label>Créer un rôle inverse</label>
+        <name>HealthCloudGA__CreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>Relation inverse</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Relation inverse</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Rôle inverse</label>
+        <name>HealthCloudGA__InverseRole__c</name>
+    </fields>
+    <fields>
+        <label>Type de relation</label>
+        <name>HealthCloudGA__RelationshipType__c</name>
+        <picklistValues>
+            <masterLabel>Account Account Relation</masterLabel>
+            <translation><!-- Account Account Relation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Contact Relation</masterLabel>
+            <translation><!-- Contact Contact Relation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ID du système source</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Rôle</nameFieldLabel>
+    <recordTypes>
+        <description>Rôles associés aux relations compte à compte</description>
+        <label>Rôle du compte</label>
+        <name>HealthCloudGA__AccountRole</name>
+    </recordTypes>
+    <recordTypes>
+        <description>Rôles associés aux relations contact à contact</description>
+        <label>Rôle du contact</label>
+        <name>HealthCloudGA__ContactRole</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage>Le rôle réciproque ne peut pas être modifié</errorMessage>
+        <name>HealthCloudGA__ProhibitUpdates</name>
+    </validationRules>
+</CustomObjectTranslation>

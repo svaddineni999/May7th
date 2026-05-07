@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>מגש ה-HcHelp</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>מגש HcHelp</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>מגשי ה-HcHelp</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>מגשי HcHelp</value>
+    </caseValues>
+    <fields>
+        <label>פעיל</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>ContentType</label>
+        <name>HealthCloudGA__ContentType__c</name>
+        <picklistValues>
+            <masterLabel>Help Doc</masterLabel>
+            <translation><!-- Help Doc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video</masterLabel>
+            <translation><!-- Video --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>כתובת URL של עזרה</label>
+        <name>HealthCloudGA__HelpUrl__c</name>
+    </fields>
+    <fields>
+        <label>נתיב סמל</label>
+        <name>HealthCloudGA__IconPath__c</name>
+    </fields>
+    <fields>
+        <label>תווית</label>
+        <name>HealthCloudGA__Label__c</name>
+    </fields>
+    <fields>
+        <label>סדר מיון</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label>סוג</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 의사 ID</value>
+    </caseValues>
+    <fields>
+        <label>설명</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>EHR 의사</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>의사 ID</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>조직</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>기간 종료일</label>
+        <name>HealthCloudGA__PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>기간 시작일</label>
+        <name>HealthCloudGA__PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 수정일</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>소스 시스템</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>시스템</label>
+        <name>HealthCloudGA__System__c</name>
+    </fields>
+    <fields>
+        <label>유형 코드</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>유형 레이블</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>유형 시스템</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>사용</label>
+        <name>HealthCloudGA__Use__c</name>
+    </fields>
+    <fields>
+        <label>값</label>
+        <name>HealthCloudGA__Value__c</name>
+    </fields>
+    <nameFieldLabel>EHR 의사 ID 이름</nameFieldLabel>
+</CustomObjectTranslation>

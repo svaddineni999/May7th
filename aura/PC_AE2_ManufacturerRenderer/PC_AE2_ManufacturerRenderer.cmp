@@ -1,0 +1,168 @@
+<!--
+ - Lightning component  : PC_AE_ManufacturerRenderer2
+ - Description          : Form to capture Manufacturer Information for Adverse Event
+ - Parameters           : aeWrapper Map
+ Modification Log:
+ - Shishir Bansal       26-Nov-2018  Initial Version
+ - Kanteti Kishore      24-Oct-2019  [PC-5616] Added null condition in controller when there is no case Id
+ - Shishir Bansal       27-Jan-2020  [PC-5944] Implementing workaround on Lightning:checkboxGroup undefined check for value param
+ - Pavankumar           25-Aug-2021  [PC-8066] Replaced standard labels with custom label to get the ** symbol as superscript
+ -->
+
+<aura:component description="PC_AE_ManufacturerRenderer2" controller="PC_AE2_ManufacturerRendererController"
+                access="global">
+    <aura:attribute name="aeWrapper" type="Map"/>
+    <aura:attribute name="aeId" type="String"/>
+    <aura:attribute name="fieldLabels" type="String"/>
+    <aura:attribute name="caseId" type="String"/>
+    <aura:attribute name="reportSourceOptions" type="List"/>
+    <aura:attribute name="typeOfReportsOption" type="List"/>
+    <aura:attribute name="combinationProductOptions" type="List"/>
+    <aura:attribute name="productOtcOptions" type="List"/>
+    <aura:attribute name="pre1938FlagOptions" type="List"/>
+    <aura:attribute name="reportSourceOtherTextDeactivate" type="boolean" default="true"/>
+    <aura:attribute name="reportTypeOtherTextDeactivate" type="boolean" default="true"/>
+    <aura:attribute name="dateLabel" type="string" default="{!$Label.c.PC_AE2_DateFormatLegend}"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds slds-grid slds-wrap">
+        <div class="labelStyling">{! $Label.c.PC_AE_Adverse_Event_Contact_Office}</div>
+        <div class="slds-col slds-size_12-of-12  slds-box">
+            <lightning:input name="manufacturerId" label="{!v.fieldLabels.manufacturerNameLabel}"
+                             value="{!v.aeWrapper.manufacturerName}"/>
+            <lightning:textarea name="{!v.fieldLabels.manufacturerAddressLabel}"
+                                label="{!v.fieldLabels.manufacturerAddressLabel}"
+                                value="{!v.aeWrapper.manufacturerAddress}"/>
+            <lightning:input type="email" name="{!v.fieldLabels.manufacturerEmailLabel}"
+                             label="{!v.fieldLabels.manufacturerEmailLabel}" value="{!v.aeWrapper.manufacturerEmail}"/>
+            <lightning:input class="slds-p-top_x-small" type="checkbox"
+                             label="{!v.fieldLabels.manufacturerCompOutsourcingFacLabel}"
+                             name="{!v.fieldLabels.manufacturerCompOutsourcingFacLabel}"
+                             checked="{!v.aeWrapper.manufacturerCompOutsourcingFac}"/>
+        </div>
+
+        <div class="slds-col slds-size_6-of-12   slds-m-top--medium">
+            <lightning:input type="tel" label="{!v.fieldLabels.manufacturerPhoneLabel}"
+                             name="{!v.fieldLabels.manufacturerPhoneLabel}" class="AE"
+                             value="{!v.aeWrapper.manufacturerPhone}"/>
+
+            <lightning:input type="date" name="{!v.fieldLabels.aeReceivedByManufacturerDateLabel}"
+                             label="{!(v.dateLabel+v.fieldLabels.aeReceivedByManufacturerDateLabel)}" class="AE"
+                             value="{!v.aeWrapper.aeReceivedByManufacturerDate}"/>
+
+            <div class="slds-m-top--x-large">
+
+                <div class="slds-box ">
+
+                    <lightning:input name="{!v.fieldLabels.ndaLabel}" label="{!v.fieldLabels.ndaLabel}"
+                                     value="{!v.aeWrapper.nda}"/>
+                    <lightning:input name="{!v.fieldLabels.andaLabel}" label="{!v.fieldLabels.andaLabel}"
+                                     value="{!v.aeWrapper.anda}"/>
+                    <lightning:input name="{!v.fieldLabels.indLabel}" label="{!v.fieldLabels.indLabel}"
+                                     value="{!v.aeWrapper.ind}"/>
+                    <lightning:input name="{!v.fieldLabels.blaLabel}" label="{!v.fieldLabels.blaLabel}"
+                                     value="{!v.aeWrapper.bla}"/>
+                    <lightning:input name="{!v.fieldLabels.pma510Label}" label="{!v.fieldLabels.pma510Label}"
+                                     value="{!v.aeWrapper.pma510}"/>
+
+                    <div class="slds-col slds-size_6-of-6  slds-m-top--medium">
+
+                        <div class="slds-col slds-size_3-of-6">
+
+                            <lightning:select name="combinationProduct"
+                                              label="{!v.fieldLabels.combinationProductUseLabel}"
+                                              aura:id="combinationProduct"
+                                              value="{!v.aeWrapper.combinationProductCurrentVal}">
+                                <aura:iteration items="{!v.combinationProductOptions}" var="option">
+                                    <option text="{!option.label}" value="{!option.value}"
+                                            selected="{!option.selected}"/>
+                                </aura:iteration>
+                            </lightning:select>
+
+                        </div>
+
+                    </div>
+                    <div class="slds-grid slds-wrap">
+
+                        <div class="slds-col slds-size_3-of-6">
+
+                            <lightning:select name="productOTC" label="{!v.fieldLabels.productOTCLabel}"
+                                              aura:id="productOTC" value="{!v.aeWrapper.productOTCcurrentVal}">
+                                <aura:iteration items="{!v.productOtcOptions}" var="option">
+                                    <option text="{!option.label}" value="{!option.value}"
+                                            selected="{!option.selected}"/>
+                                </aura:iteration>
+                            </lightning:select>
+
+                        </div>
+                        <div class="slds-col slds-size_3-of-6  slds-p-left--small">
+                            <lightning:select name="pre1938Flag" label="{!v.fieldLabels.pre1938FlagLabel}"
+                                              aura:id="pre1938Flag" value="{!v.aeWrapper.pre1938FlagCurrentVal}">
+                                <aura:iteration items="{!v.pre1938FlagOptions}" var="option">
+                                    <option text="{!option.label}" value="{!option.value}"
+                                            selected="{!option.selected}"/>
+                                </aura:iteration>
+                            </lightning:select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <lightning:input name="{!v.fieldLabels.manufacturerReportNumberLabel}"
+                             label="{!v.fieldLabels.manufacturerReportNumberLabel}" class=""
+                             value="{!v.aeWrapper.manufacturerReportNumber}"/>
+        </div>
+
+        <div class="slds-col slds-size_6-of-12 fieldStyle  slds-p-around--large">
+            <div class="slds-p-left--large slds-p-top_x-small">
+
+                <!-- Lighting:checkboxGroup doesn't work if value param is undefined
+                    or null so ternary check is implemented as a workaround -->
+                <lightning:checkboxGroup
+                        name="reportSource"
+                        label="{! v.fieldLabels.reportSourceLabel}"
+                        options="{!v.reportSourceOptions}"
+                        value="{! (empty(v.aeWrapper.reportSource) ? '': v.aeWrapper.reportSource )}"
+                        onchange="{!c.onReportSourceChange}"/>
+
+            </div>
+
+            <lightning:input aura:id='reportSourceOtherValue' label="{!v.fieldLabels.reportSourceOtherTextLabel}"
+                             name="{!v.fieldLabels.reportSourceOtherTextLabel}" style=""
+                             class="AE reportSourceOtherTextLabel" value="{!v.aeWrapper.reportSourceOtherText}"
+                             disabled="{!v.reportSourceOtherTextDeactivate}"/>
+
+
+            <lightning:input label="{!v.fieldLabels.ifIndProtocolLabel}" name="{!v.fieldLabels.ifIndProtocolLabel}"
+                             style="" class="ifIndProtocolLabel" value="{!v.aeWrapper.ifIndProtocolLabel}"/>
+
+            <div class="slds-p-left--large slds-p-top_x-small">
+
+                <!-- Lighting:checkboxGroup doesn't work if value param is undefined
+                or null so ternary check is implemented as a workaround -->
+
+                <lightning:checkboxGroup
+                        name="typeOfReports"
+                        label="{!v.fieldLabels.typeOfReportsLabel}"
+                        options="{!v.typeOfReportsOption}"
+                        value="{! empty(v.aeWrapper.typeOfReports)?'': v.aeWrapper.typeOfReports}"
+                        onchange="{!c.onReportTypeChange}"/>
+
+
+            </div>
+            <lightning:input aura:id='reportTypeOtherValue' label="{!v.fieldLabels.reportTypeOtherTextLabel}"
+                             name="{!v.fieldLabels.reportTypeOtherTextLabel}" style="" class=" reportTypeOtherTextLabel"
+                             value="{!v.aeWrapper.reportTypeOtherText}" disabled="{!v.reportTypeOtherTextDeactivate}"/>
+
+
+            <lightning:textarea name="{!v.fieldLabels.adverseEventTermsLabel}"
+                                label="{!v.fieldLabels.adverseEventTermsLabel}" style="" class="adverseEventTermsLabel"
+                                value="{!v.aeWrapper.adverseEventTerms}"/>
+
+        </div>
+
+    </div>
+</aura:component>

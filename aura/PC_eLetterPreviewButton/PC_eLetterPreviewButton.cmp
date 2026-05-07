@@ -1,0 +1,22 @@
+<!--
+ - Created by havalakki on 4/4/2019.
+ -->
+
+<aura:component description="PC_eLetterPreview" controller="PC_eLetterPreviewButtonController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="previewData" type="String"/>
+    <aura:attribute name="previewComponentName" type="String"/>
+    <aura:attribute name="eLetterTemplatePreviewTitle" type="String"/>
+    <aura:attribute name="eLetterId" type="String"/>
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="defaultPreviewComponentName" type="String" default="PC_eLetterEmailTemplatePreview"/>
+    <aura:attribute name="eLetterPreviewLabel" type="String" default="{!$Label.c.PC_eLetter_Preview}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="eLetterEvent" type="c:PC_eLetterPreviewEvent"/>
+    <aura:attribute name="noneValue" type="String" default="None"/>
+
+    <lightning:overlayLibrary aura:id="eLetterPreviewCmp"/>
+    <lightning:button class="slds-button slds-button--neutral slds-button--brand" label="{!v.eLetterPreviewLabel}" onclick="{!c.createPreviewComponent}" />
+
+</aura:component>

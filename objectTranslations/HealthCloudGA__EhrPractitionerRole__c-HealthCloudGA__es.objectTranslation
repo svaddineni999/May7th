@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Función de facultativo de HCE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Funciones de facultativos de HCE</value>
+    </caseValues>
+    <fields>
+        <label>Facultativo de HCE</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>Funciones de facultativo de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Fecha de finalización</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Es restringido</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Es visible en tarjeta de paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Código de función</label>
+        <name>HealthCloudGA__RoleCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de función</label>
+        <name>HealthCloudGA__RoleLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de función</label>
+        <name>HealthCloudGA__RoleSystem__c</name>
+    </fields>
+    <fields>
+        <label>Id. de sistema de origen</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origen</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código de especialidad 1</label>
+        <name>HealthCloudGA__Specialty1Code__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de especialidad 1</label>
+        <name>HealthCloudGA__Specialty1Label__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de especialidad 1</label>
+        <name>HealthCloudGA__Specialty1System__c</name>
+    </fields>
+    <fields>
+        <label>Código de especialidad 2</label>
+        <name>HealthCloudGA__Specialty2Code__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de especialidad 2</label>
+        <name>HealthCloudGA__Specialty2Label__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de especialidad 2</label>
+        <name>HealthCloudGA__Specialty2System__c</name>
+    </fields>
+    <fields>
+        <label>Código de especialidad 3</label>
+        <name>HealthCloudGA__Specialty3Code__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de especialidad 3</label>
+        <name>HealthCloudGA__Specialty3Label__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de especialidad 3</label>
+        <name>HealthCloudGA__Specialty3System__c</name>
+    </fields>
+    <fields>
+        <label>Código de especialidad 4</label>
+        <name>HealthCloudGA__Specialty4Code__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de especialidad 4</label>
+        <name>HealthCloudGA__Specialty4Label__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de especialidad 4</label>
+        <name>HealthCloudGA__Specialty4System__c</name>
+    </fields>
+    <fields>
+        <label>Código de especialidad 5</label>
+        <name>HealthCloudGA__Specialty5Code__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de especialidad 5</label>
+        <name>HealthCloudGA__Specialty5Label__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de especialidad 5</label>
+        <name>HealthCloudGA__Specialty5System__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de inicio</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nombre de función de facultativo de HCE</nameFieldLabel>
+</CustomObjectTranslation>

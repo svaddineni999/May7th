@@ -1,0 +1,8 @@
+<!--
+ - Created by peharitha on 12/7/2018.
+ -->
+
+<aura:event type="COMPONENT" description="PC_AE_PushSuspectPrescription">
+    <aura:attribute name="suspectPrescriptionRec" type="Object"/>
+    <aura:attribute name="isEdit" type="Boolean"/>
+</aura:event>

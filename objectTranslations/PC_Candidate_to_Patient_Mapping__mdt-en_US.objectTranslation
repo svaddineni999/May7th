@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Candidate to Patient Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Candidate to Patient Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- SourceField --></label>
+        <name>PC_SourceField__c</name>
+    </fields>
+    <fields>
+        <label><!-- SourceObject --></label>
+        <name>PC_SourceObject__c</name>
+    </fields>
+    <fields>
+        <label><!-- TargetField --></label>
+        <name>PC_TargetField__c</name>
+    </fields>
+    <fields>
+        <label><!-- TargetObject RecordType --></label>
+        <name>PC_TargetObject_RecordType__c</name>
+    </fields>
+    <fields>
+        <label><!-- TargetObject --></label>
+        <name>PC_TargetObject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Object Index --></label>
+        <name>PC_Target_Object_Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used For Account Record Type --></label>
+        <name>PC_Used_For_Account_Record_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

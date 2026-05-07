@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Encuentro de HCE</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Encuentros de HCE</value>
+    </caseValues>
+    <fields>
+        <label>Cuenta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Encuentros de HCE</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Clase</label>
+        <name>HealthCloudGA__Class__c</name>
+    </fields>
+    <fields>
+        <label>Encuentro</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Encuentros</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Etiqueta origen de admisión hospitalaria</label>
+        <name>HealthCloudGA__HospitalAdmitSourceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Origen de hospitalización</label>
+        <name>HealthCloudGA__HospitalizationOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Id. de Preadmisión de hospitalización</label>
+        <name>HealthCloudGA__HospitalizationPreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>Código origen de admisión hospitalaria</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceCode__c</name>
+    </fields>
+    <fields>
+        <label>Sistema origen de admisión hospitalaria</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Destino de hospitalización</label>
+        <name>HealthCloudGA__HospitalizeDestination__c</name>
+    </fields>
+    <fields>
+        <label>Código de dieta de hospitalización</label>
+        <name>HealthCloudGA__HospitalizeDietCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de dieta de hospitalización</label>
+        <name>HealthCloudGA__HospitalizeDietLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de dieta de hospitalización</label>
+        <name>HealthCloudGA__HospitalizeDietSystem__c</name>
+    </fields>
+    <fields>
+        <label>Diagnosis de descarga hospitalaria</label>
+        <name>HealthCloudGA__HospitalizeDischargeDiagnosis__c</name>
+    </fields>
+    <fields>
+        <label>Código disposición descarga hospitalaria</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionCode__c</name>
+    </fields>
+    <fields>
+        <label>Sistema disposic. descarga hospitalaria</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionSystem__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta disposic. descarga hospitalaria</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispostionLabel__c</name>
+    </fields>
+    <fields>
+        <label>Origen de hospitalización</label>
+        <name>HealthCloudGA__HospitalizeOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Fin de periodo de hospitalización</label>
+        <name>HealthCloudGA__HospitalizePeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio de periodo de hospitalización</label>
+        <name>HealthCloudGA__HospitalizePeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Id. de Preadmisión de hospitalización</label>
+        <name>HealthCloudGA__HospitalizePreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>Readmisión de hospitalización</label>
+        <name>HealthCloudGA__HospitalizeReadmission__c</name>
+    </fields>
+    <fields>
+        <label>Código disposic especial hospitalización</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta dispos especial hospitalización</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema dispos especial hospitalización</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código cortesía especial hospitalización</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta cortesía espec hospitalización</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema cortesía espec hospitalización</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesySystem__c</name>
+    </fields>
+    <fields>
+        <label>Indicación</label>
+        <name>HealthCloudGA__Indication__c</name>
+    </fields>
+    <fields>
+        <label>Es restringido</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Es visible en tarjeta de paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Último encuentro</label>
+        <name>HealthCloudGA__LastEncounter__c</name>
+    </fields>
+    <fields>
+        <label>Unidad de longitud</label>
+        <name>HealthCloudGA__LengthUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valor de longitud</label>
+        <name>HealthCloudGA__LengthValue__c</name>
+    </fields>
+    <fields>
+        <label>Ciudad de ubicación 1</label>
+        <name>HealthCloudGA__Location1City__c</name>
+    </fields>
+    <fields>
+        <label>País de ubicación 1</label>
+        <name>HealthCloudGA__Location1Country__c</name>
+    </fields>
+    <fields>
+        <label>Descripción de ubicación 1</label>
+        <name>HealthCloudGA__Location1Description__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de finalización de ubicación 1</label>
+        <name>HealthCloudGA__Location1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Identificador de ubicación 1</label>
+        <name>HealthCloudGA__Location1Id__c</name>
+    </fields>
+    <fields>
+        <label>Línea 1 de ubicación 1</label>
+        <name>HealthCloudGA__Location1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Línea 2 de ubicación 1</label>
+        <name>HealthCloudGA__Location1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de ubicación 1</label>
+        <name>HealthCloudGA__Location1Name__c</name>
+    </fields>
+    <fields>
+        <label>Código postal de ubicación 1</label>
+        <name>HealthCloudGA__Location1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de inicio de ubicación 1</label>
+        <name>HealthCloudGA__Location1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado de ubicación 1</label>
+        <name>HealthCloudGA__Location1State__c</name>
+    </fields>
+    <fields>
+        <label>Fin de periodo de telecom. ubicación 1</label>
+        <name>HealthCloudGA__Location1TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio periodo telecomunic. ubicación 1</label>
+        <name>HealthCloudGA__Location1TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Sistema telecomunicación de ubicación 1</label>
+        <name>HealthCloudGA__Location1TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Uso de telecomunicación de ubicación 1</label>
+        <name>HealthCloudGA__Location1TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Valor de telecomunicación de ubicación 1</label>
+        <name>HealthCloudGA__Location1TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Texto de ubicación 1</label>
+        <name>HealthCloudGA__Location1Text__c</name>
+    </fields>
+    <fields>
+        <label>Código de tipo de ubicación 1</label>
+        <name>HealthCloudGA__Location1TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de tipo de ubicación 1</label>
+        <name>HealthCloudGA__Location1TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipo de ubicación 1</label>
+        <name>HealthCloudGA__Location1TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de ubicación 1</label>
+        <name>HealthCloudGA__Location1Type__c</name>
+    </fields>
+    <fields>
+        <label>Uso de ubicación 1</label>
+        <name>HealthCloudGA__Location1Use__c</name>
+    </fields>
+    <fields>
+        <label>Ciudad de ubicación 2</label>
+        <name>HealthCloudGA__Location2City__c</name>
+    </fields>
+    <fields>
+        <label>País de ubicación 2</label>
+        <name>HealthCloudGA__Location2Country__c</name>
+    </fields>
+    <fields>
+        <label>Descripción de ubicación 2</label>
+        <name>HealthCloudGA__Location2Description__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de finalización de ubicación 2</label>
+        <name>HealthCloudGA__Location2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Identificador de ubicación 2</label>
+        <name>HealthCloudGA__Location2Id__c</name>
+    </fields>
+    <fields>
+        <label>Línea 1 de ubicación 2</label>
+        <name>HealthCloudGA__Location2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Línea 2 de ubicación 2</label>
+        <name>HealthCloudGA__Location2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de ubicación 2</label>
+        <name>HealthCloudGA__Location2Name__c</name>
+    </fields>
+    <fields>
+        <label>Código postal de ubicación 2</label>
+        <name>HealthCloudGA__Location2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de inicio de ubicación 2</label>
+        <name>HealthCloudGA__Location2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado de ubicación 2</label>
+        <name>HealthCloudGA__Location2State__c</name>
+    </fields>
+    <fields>
+        <label>Fin periodo telecomunicación ubicación 2</label>
+        <name>HealthCloudGA__Location2TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio periodo telecomunic. ubicación 2</label>
+        <name>HealthCloudGA__Location2TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Sistema telecomunicación de ubicación 2</label>
+        <name>HealthCloudGA__Location2TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Uso de telecomunicación de ubicación 2</label>
+        <name>HealthCloudGA__Location2TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Valor de telecomunicación de ubicación 2</label>
+        <name>HealthCloudGA__Location2TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Texto de ubicación 2</label>
+        <name>HealthCloudGA__Location2Text__c</name>
+    </fields>
+    <fields>
+        <label>Código de tipo de ubicación 2</label>
+        <name>HealthCloudGA__Location2TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de tipo de ubicación 2</label>
+        <name>HealthCloudGA__Location2TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipo de ubicación 2</label>
+        <name>HealthCloudGA__Location2TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de ubicación 2</label>
+        <name>HealthCloudGA__Location2Type__c</name>
+    </fields>
+    <fields>
+        <label>Uso de ubicación 2</label>
+        <name>HealthCloudGA__Location2Use__c</name>
+    </fields>
+    <fields>
+        <label>Ciudad de ubicación 3</label>
+        <name>HealthCloudGA__Location3City__c</name>
+    </fields>
+    <fields>
+        <label>País de ubicación 3</label>
+        <name>HealthCloudGA__Location3Country__c</name>
+    </fields>
+    <fields>
+        <label>Descripción de ubicación 3</label>
+        <name>HealthCloudGA__Location3Description__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de finalización de ubicación 3</label>
+        <name>HealthCloudGA__Location3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Identificador de ubicación 3</label>
+        <name>HealthCloudGA__Location3Id__c</name>
+    </fields>
+    <fields>
+        <label>Línea 1 de ubicación 3</label>
+        <name>HealthCloudGA__Location3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Línea 2 de ubicación 3</label>
+        <name>HealthCloudGA__Location3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de ubicación 3</label>
+        <name>HealthCloudGA__Location3Name__c</name>
+    </fields>
+    <fields>
+        <label>Código postal de ubicación 3</label>
+        <name>HealthCloudGA__Location3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de inicio de ubicación 3</label>
+        <name>HealthCloudGA__Location3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado de ubicación 3</label>
+        <name>HealthCloudGA__Location3State__c</name>
+    </fields>
+    <fields>
+        <label>Fin periodo telecomunicación ubicación 3</label>
+        <name>HealthCloudGA__Location3TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio periodo telecomunic. ubicación 3</label>
+        <name>HealthCloudGA__Location3TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Sistema telecomunicación de ubicación 3</label>
+        <name>HealthCloudGA__Location3TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Uso de telecomunicación de ubicación 3</label>
+        <name>HealthCloudGA__Location3TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Valor de telecomunicación de ubicación 3</label>
+        <name>HealthCloudGA__Location3TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Texto de ubicación 3</label>
+        <name>HealthCloudGA__Location3Text__c</name>
+    </fields>
+    <fields>
+        <label>Código de tipo de ubicación 3</label>
+        <name>HealthCloudGA__Location3TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de tipo de ubicación 3</label>
+        <name>HealthCloudGA__Location3TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipo de ubicación 3</label>
+        <name>HealthCloudGA__Location3TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de ubicación 3</label>
+        <name>HealthCloudGA__Location3Type__c</name>
+    </fields>
+    <fields>
+        <label>Uso de ubicación 3</label>
+        <name>HealthCloudGA__Location3Use__c</name>
+    </fields>
+    <fields>
+        <label>Ciudad de ubicación 4</label>
+        <name>HealthCloudGA__Location4City__c</name>
+    </fields>
+    <fields>
+        <label>País de ubicación 4</label>
+        <name>HealthCloudGA__Location4Country__c</name>
+    </fields>
+    <fields>
+        <label>Descripción de ubicación 4</label>
+        <name>HealthCloudGA__Location4Description__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de finalización de ubicación 4</label>
+        <name>HealthCloudGA__Location4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Identificador de ubicación 4</label>
+        <name>HealthCloudGA__Location4Id__c</name>
+    </fields>
+    <fields>
+        <label>Línea 1 de ubicación 4</label>
+        <name>HealthCloudGA__Location4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Línea 2 de ubicación 4</label>
+        <name>HealthCloudGA__Location4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de ubicación 4</label>
+        <name>HealthCloudGA__Location4Name__c</name>
+    </fields>
+    <fields>
+        <label>Código postal de ubicación 4</label>
+        <name>HealthCloudGA__Location4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de inicio de ubicación 4</label>
+        <name>HealthCloudGA__Location4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado de ubicación 4</label>
+        <name>HealthCloudGA__Location4State__c</name>
+    </fields>
+    <fields>
+        <label>Fin periodo telecomunicación ubicación 4</label>
+        <name>HealthCloudGA__Location4TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio periodo telecomunicac ubicación 4</label>
+        <name>HealthCloudGA__Location4TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Sistema telecomunicación de ubicación 4</label>
+        <name>HealthCloudGA__Location4TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Uso de telecomunicación de ubicación 4</label>
+        <name>HealthCloudGA__Location4TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Valor de telecomunicación de ubicación 4</label>
+        <name>HealthCloudGA__Location4TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Texto de ubicación 4</label>
+        <name>HealthCloudGA__Location4Text__c</name>
+    </fields>
+    <fields>
+        <label>Código de tipo de ubicación 4</label>
+        <name>HealthCloudGA__Location4TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de tipo de ubicación 4</label>
+        <name>HealthCloudGA__Location4TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipo de ubicación 4</label>
+        <name>HealthCloudGA__Location4TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de ubicación 4</label>
+        <name>HealthCloudGA__Location4Type__c</name>
+    </fields>
+    <fields>
+        <label>Uso de ubicación 4</label>
+        <name>HealthCloudGA__Location4Use__c</name>
+    </fields>
+    <fields>
+        <label>Ciudad de ubicación 5</label>
+        <name>HealthCloudGA__Location5City__c</name>
+    </fields>
+    <fields>
+        <label>País de ubicación 5</label>
+        <name>HealthCloudGA__Location5Country__c</name>
+    </fields>
+    <fields>
+        <label>Descripción de ubicación 5</label>
+        <name>HealthCloudGA__Location5Description__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de finalización de ubicación 5</label>
+        <name>HealthCloudGA__Location5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Identificador de ubicación 5</label>
+        <name>HealthCloudGA__Location5Id__c</name>
+    </fields>
+    <fields>
+        <label>Línea 1 de ubicación 5</label>
+        <name>HealthCloudGA__Location5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Línea 2 de ubicación 5</label>
+        <name>HealthCloudGA__Location5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Nombre de ubicación 5</label>
+        <name>HealthCloudGA__Location5Name__c</name>
+    </fields>
+    <fields>
+        <label>Código postal de ubicación 5</label>
+        <name>HealthCloudGA__Location5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Fecha de inicio de ubicación 5</label>
+        <name>HealthCloudGA__Location5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado de ubicación 5</label>
+        <name>HealthCloudGA__Location5State__c</name>
+    </fields>
+    <fields>
+        <label>Fin periodo telecomunicación ubicación 5</label>
+        <name>HealthCloudGA__Location5TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio periodo telecomunic. ubicación 5</label>
+        <name>HealthCloudGA__Location5TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Sistema telecomunicación de ubicación 5</label>
+        <name>HealthCloudGA__Location5TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Uso de telecomunicación de ubicación 5</label>
+        <name>HealthCloudGA__Location5TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Valor de telecomunicación de ubicación 5</label>
+        <name>HealthCloudGA__Location5TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Texto de ubicación 5</label>
+        <name>HealthCloudGA__Location5Text__c</name>
+    </fields>
+    <fields>
+        <label>Código de tipo de ubicación 5</label>
+        <name>HealthCloudGA__Location5TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de tipo de ubicación 5</label>
+        <name>HealthCloudGA__Location5TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipo de ubicación 5</label>
+        <name>HealthCloudGA__Location5TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de ubicación 5</label>
+        <name>HealthCloudGA__Location5Type__c</name>
+    </fields>
+    <fields>
+        <label>Uso de ubicación 5</label>
+        <name>HealthCloudGA__Location5Use__c</name>
+    </fields>
+    <fields>
+        <label>Paciente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Encuentros</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Fin de periodo</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Inicio de periodo</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Código de prioridad</label>
+        <name>HealthCloudGA__PriorityCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de prioridad</label>
+        <name>HealthCloudGA__PriorityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de prioridad</label>
+        <name>HealthCloudGA__PrioritySystem__c</name>
+    </fields>
+    <fields>
+        <label>Prioridad</label>
+        <name>HealthCloudGA__Priority__c</name>
+    </fields>
+    <fields>
+        <label>Código de motivo</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de motivo</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de motivo</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Proveedor de servicios</label>
+        <name>HealthCloudGA__ServiceProvider__c</name>
+    </fields>
+    <fields>
+        <label>Id. de sistema de origen</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origen modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origen</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Estado</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Código de tipo</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Etiqueta de tipo</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipo</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Id. de Encuentro de HCE</nameFieldLabel>
+</CustomObjectTranslation>

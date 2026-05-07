@@ -1,0 +1,12 @@
+<!--
+ - Created by vkashikar on 12/3/2019.
+ -->
+
+<design:component>
+    <design:attribute name="useUserInterfaceAPI" label="Make use of User Interface API to load tags/categories?"
+                      default="false"
+                      description="Recommend to choose this option for better performance w.r.t loading of tags/categories. Do remember to create a connected app and named credential so that this component can communicate with User Interface API. Refer to Implementation Guidelines for more details." />
+    <design:attribute name="userInterfaceAPINamedCredential" label="Name of the named credential (Set this value only if you wish to make use of User Interface API)"
+                      default=""
+                      description="Name of the named credential that should be used to communicate with User Interface API. Set this value only if you wish to make use of User Interface API." />
+</design:component>

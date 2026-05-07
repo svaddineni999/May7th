@@ -1,0 +1,12 @@
+<!--
+ - Created by vkashikar on 7/6/2021.
+ -->
+<design:component>
+    <design:attribute name="accountFieldSetAPIName" label="Account Fieldset API Name"
+                      description="API Name of Field set that contains Fields to show Account record details on PC_SurveyWorkflow cmp.
+                      If the fieldset API Name is blank, then the default Account Patient Connect fieldset value 'PatientConnect__PC_AccountSurveyWorkflowFieldset' would be used to fetch account record data." />
+    <design:attribute name="caseFieldsetAPIName" label="Case Fieldset API Name"
+                      description="API Name of Field set that contains Fields to show Case record details on PC_SurveyWorkflow cmp. If the fieldset API Name is blank, then the default Case Patient Connect fieldset value 'PatientConnect__PC_CaseSurveyWorkflowFieldset' would be used to fetch case record data." />
+    <design:attribute name="workflowSurveyContext" label="Workflow Survey Context"
+                      description="This field is used to configure the workflow survey context.Valid values would be PC_PAP and PC_Copay." />
+</design:component>

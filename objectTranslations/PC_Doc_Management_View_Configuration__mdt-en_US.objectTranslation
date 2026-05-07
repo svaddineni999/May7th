@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Doc Management View Configuration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Doc Management View Configuration</value>
+    </caseValues>
+    <fields>
+        <help><!-- Select the account type for which you would like to exclude the objects to be linked --></help>
+        <label><!-- Account Record Type --></label>
+        <name>PC_Account_Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>Field Training Nurse</masterLabel>
+            <translation><!-- Field Training Nurse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturer</masterLabel>
+            <translation><!-- Manufacturer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer</masterLabel>
+            <translation><!-- Payer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation><!-- Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select the object to excluded from linking, if any. --></help>
+        <label><!-- Related objects excluded from linking --></label>
+        <name>PC_Objects_excluded_from_linking__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case</masterLabel>
+            <translation><!-- Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_AdverseEvent__c</masterLabel>
+            <translation><!-- PC_AdverseEvent__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Interaction__c</masterLabel>
+            <translation><!-- PC_Interaction__c --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

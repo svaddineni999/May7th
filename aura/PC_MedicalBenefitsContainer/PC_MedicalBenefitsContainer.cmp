@@ -1,0 +1,22 @@
+<!--
+Lightning component  : PC_MedicalBenefitsContainer
+Description          : Holds Medical eBenefits Launcher and Medical eBenefits List
+Parameters           : Map medicalBenefitsCmpAttributes
+Modification Log:
+Haritha Reddy 		 31-Jan-2019    Initial Version
+-->
+
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes" description="PC_MedicalBenefitsContainer" access="global">
+    <aura:attribute name="errors" type="List" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="medicalBenefitsCmpAttributes" type="Map" default='{"showAdminCodes":false,"adminCodeList":""}' access="global"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <div class="slds">
+        <aura:if isTrue="{! v.errors.length > 0 }">
+            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+        </aura:if>
+        <c:PC_MedicalBenefitsLauncher caseId="{!v.recordId}" errors="{!v.errors}" medicalBenefitsCmpAttributes="{!v.medicalBenefitsCmpAttributes}"/>
+        <c:PC_MedicalBenefitsList caseId="{!v.recordId}" errors="{!v.errors}"/>
+    </div>
+</aura:component>

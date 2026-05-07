@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Plan Activity Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Plan Activity Logs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Record Id --></label>
+        <name>PC_ActionRecordId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Record Modified Time --></label>
+        <name>PC_ActionRecordModifiedTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Log Time --></label>
+        <name>PC_LogDateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Runtime User --></label>
+        <name>PC_RuntimeUser__c</name>
+        <relationshipLabel><!-- Support Plan Activity Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>PC_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Activity --></label>
+        <name>PC_SupportPlanActivity__c</name>
+        <relationshipLabel><!-- Support Plan Activity Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Runtime --></label>
+        <name>PC_SupportPlanRuntime__c</name>
+        <relationshipLabel><!-- Support Plan Activity Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Transaction Id --></label>
+        <name>PC_TransactionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trigger Record Id --></label>
+        <name>PC_TriggerRecordId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

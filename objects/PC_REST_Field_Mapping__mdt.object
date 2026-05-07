@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Used to map RESTAPI field names against the sObject field names</description>
+    <fields>
+        <fullName>PC_Other_REST_Object_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To have the rest object name for respective salesforce objects in this org, when it Rest Object Name = Other</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>If Rest Object Name = Other, this value is required.</inlineHelpText>
+        <label>Other REST Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Other_sObject_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of the sObject present in this organization.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>sObject API name for Other Rest Object</inlineHelpText>
+        <label>Other sObject API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_REST_Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>REST field name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>REST Field Name</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_REST_Object_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>REST Object Name</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Patient</fullName>
+                    <default>true</default>
+                    <label>Patient</label>
+                </value>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+                <value>
+                    <fullName>Address</fullName>
+                    <default>false</default>
+                    <label>Address</label>
+                </value>
+                <value>
+                    <fullName>HealthPlan</fullName>
+                    <default>false</default>
+                    <label>HealthPlan</label>
+                </value>
+                <value>
+                    <fullName>Manufacturer</fullName>
+                    <default>false</default>
+                    <label>Manufacturer</label>
+                </value>
+                <value>
+                    <fullName>EngagementProgram</fullName>
+                    <default>false</default>
+                    <label>EngagementProgram</label>
+                </value>
+                <value>
+                    <fullName>Payer</fullName>
+                    <default>false</default>
+                    <label>Payer</label>
+                </value>
+                <value>
+                    <fullName>Association</fullName>
+                    <default>false</default>
+                    <label>Association</label>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                    <label>Case</label>
+                </value>
+                <value>
+                    <fullName>Applicant</fullName>
+                    <default>false</default>
+                    <label>Applicant</label>
+                </value>
+                <value>
+                    <fullName>Applicant/Address</fullName>
+                    <default>false</default>
+                    <label>Applicant/Address</label>
+                </value>
+                <value>
+                    <fullName>Applicant/HealthPlan</fullName>
+                    <default>false</default>
+                    <label>Applicant/HealthPlan</label>
+                </value>
+                <value>
+                    <fullName>Applicant/HCO</fullName>
+                    <default>false</default>
+                    <label>Applicant/HCO</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+                <value>
+                    <fullName>Order</fullName>
+                    <default>false</default>
+                    <label>Order</label>
+                </value>
+                <value>
+                    <fullName>OrderItem</fullName>
+                    <default>false</default>
+                    <label>OrderItem</label>
+                </value>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Interaction</fullName>
+                    <default>false</default>
+                    <label>Interaction</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_sObject_Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>sObject Field Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>REST Field Mapping</label>
+    <pluralLabel>REST Field Mappings</pluralLabel>
+    <validationRules>
+        <fullName>PC_OtherRestObjectNameIsBlank</fullName>
+        <active>true</active>
+        <description>If Other Rest Object Name  is blank and Rest Object Name = Other</description>
+        <errorConditionFormula>AND(
+    ISPICKVAL(PC_REST_Object_Name__c, &apos;Other&apos;),
+    ISBLANK(PC_Other_REST_Object_Name__c) 
+)</errorConditionFormula>
+        <errorDisplayField>PC_Other_REST_Object_Name__c</errorDisplayField>
+        <errorMessage>Please provide the value.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

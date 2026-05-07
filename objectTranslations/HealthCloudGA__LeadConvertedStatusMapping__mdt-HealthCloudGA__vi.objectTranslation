@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ánh Xạ Trạng Thái Đã Chuyển Đổi Khách Hàng Tiềm Năng</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Ánh Xạ Trạng Thái Đã Chuyển Đổi Khách Hàng Tiềm Năng --></value>
+    </caseValues>
+    <fields>
+        <label>Đang Hoạt Động</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Trạng Thái Chuyển Đổi KH Tiềm Năng</label>
+        <name>HealthCloudGA__LeadConvertedStatus__c</name>
+    </fields>
+    <fields>
+        <label>Tên Loại Hồ Sơ Khách Hàng Tiềm Năng</label>
+        <name>HealthCloudGA__LeadRecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label>Không Gian Tên Loại Hồ Sơ</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+</CustomObjectTranslation>

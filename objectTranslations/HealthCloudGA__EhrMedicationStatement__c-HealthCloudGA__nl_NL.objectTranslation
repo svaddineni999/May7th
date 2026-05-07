@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Verklaring over medicatie volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Verklaringen over medicatie volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Verklaringen over medicatie volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Apparaat</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>Verklaringen omtrent medicatie</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for medication code --></help>
+        <label>Label voor medicatiecode</label>
+        <name>HealthCloudGA__MedicationCodeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>Medicatiecoderingssysteem</label>
+        <name>HealthCloudGA__MedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>Medicatiecode</label>
+        <name>HealthCloudGA__MedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>Vervaldatum van medicatie</label>
+        <name>HealthCloudGA__MedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>Medicatie is merkmedicatie</label>
+        <name>HealthCloudGA__MedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>Code voor medicatiesoort</label>
+        <name>HealthCloudGA__MedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>Label voor medicatiesoort</label>
+        <name>HealthCloudGA__MedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>Systeem voor medicatiesoort</label>
+        <name>HealthCloudGA__MedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>Partijnummer van medicatie</label>
+        <name>HealthCloudGA__MedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>Naam van medicatie</label>
+        <name>HealthCloudGA__MedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>Code voor medicatieproductformulier</label>
+        <name>HealthCloudGA__MedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>Label voor medicatieproductformulier</label>
+        <name>HealthCloudGA__MedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>Systeem voor medicatieproductformulier</label>
+        <name>HealthCloudGA__MedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Verklaringen omtrent medicatie</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Code voor reden niet gegeven</label>
+        <name>HealthCloudGA__ReasonNotGivenCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Reason code or indication for writing the prescription --></help>
+        <label>Label voor reden niet gegeven</label>
+        <name>HealthCloudGA__ReasonNotGivenLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor reden niet gegeven</label>
+        <name>HealthCloudGA__ReasonNotGivenSystem__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- A code specifying the state of the statement. Generally, this will be in-progress or completed. --></help>
+        <label>Code voor status</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+        <picklistValues>
+            <masterLabel>completed</masterLabel>
+            <translation><!-- completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>entered-in-error</masterLabel>
+            <translation><!-- entered-in-error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in-progress</masterLabel>
+            <translation><!-- in-progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Is niet gegeven</label>
+        <name>HealthCloudGA__WasNotGiven__c</name>
+    </fields>
+    <fields>
+        <label>Indien gegeven</label>
+        <name>HealthCloudGA__WhenGiven__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID van verklaring omtrent medicatie volg</nameFieldLabel>
+</CustomObjectTranslation>

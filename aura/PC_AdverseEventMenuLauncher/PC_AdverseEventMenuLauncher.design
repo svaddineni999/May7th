@@ -1,0 +1,14 @@
+<!--
+ - Created by havalakki on 10/18/2019.
+ -->
+
+<design:component>
+    <design:attribute name="openAEPopUpButtonLabel" label="Record Button Label"
+                      description="Custom Label Name along with namespace or Button name for creating Adverse Event record. Ex:$Label.namespace.PC_AE_AdverseEventReport, $Label.{orgNamespace}.PC_AE_AdverseEventReport. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+    <design:attribute name="usePrescriptionForSuspectProducts" label="Add Suspect Products via existing Prescriptions" default="false" description="If selected, Suspect Products can be added via existing Prescriptions. Otherwise, Suspect Products can be added via existing Products. This attribute works only if this component is on Case page."/>
+    <design:attribute name="useRxForMI" label="Add Medical Inquiry Products via existing Prescriptions" default="false" description="If selected, Medical Inquiry Products can be added via existing Prescriptions. Otherwise, Medical Inquiry Products can be added via existing Products. This attribute works only if this component is on Case page."/>
+    <design:attribute name="hideNotes" label="Hide Notes section" default="false" description="If selected, notes section will be hidden."/>
+    <design:attribute name="hideCoding" label="Hide Event Verbatim and Coding section in Adverse Event tab" default="false" description="If selected, Event Verbatim and Coding section in Adverse Event tab will be hidden."/>
+    <design:attribute name="hideMfr" label="Hide Manufacturer tab" default="false" description="If selected, Manufacturer tab will be hidden."/>
+    <design:attribute name="hideAdditionalInfoTab" label="Hide Additional Info tab" default="true" description="If selected, Additional Info tab will be hidden."/>
+</design:component>

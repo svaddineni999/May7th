@@ -1,0 +1,16 @@
+<!--
+Lightning Event      : PC_SelectedRecord
+Description          : Application Event to pass selected record Details From Search Results Form to Search Actions Form
+Parameters           : NA
+Modification Log:
+Haritha Reddy 		 10-Oct-2019    Initial Version
+-->
+
+<aura:event type="APPLICATION" description="PC_SelectedRecord" access="global">
+    <aura:attribute name="identifier" type="String" access="global"/>
+    <aura:attribute name="searchParams" type="List" access="global"/>
+    <aura:attribute name="selectedRecordId" type="String" access="global"/>
+    <aura:attribute name="sourceUniqueId" type="String" access="global"/>
+    <aura:attribute name="actionType" type="String" default="ROW_SELECTION" access="global"/>
+    <aura:attribute name="actionName" type="String" default="ROW_SELECTION" access="global"/>
+</aura:event>

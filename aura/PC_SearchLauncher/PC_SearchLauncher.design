@@ -1,0 +1,10 @@
+<!--
+ - Created by peharitha on 10/17/2019.
+ -->
+
+<design:component>
+    <design:attribute name="identifier" label="Identifier" description="Unique Identifier string for the feature. Ex:PC_PatientSearch" />
+    <design:attribute name="searchPageName" label="Search Tab Name" description="Search Form Tab Name appended with namespace. Ex:PatientConnect__PC_Search, {orgNamespace}__PC_Search. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+    <design:attribute name="searchLauncherButtonLabel" label="Search Launcher Button Label"
+                      description="Custom Label Name along with namespace or Button name for Search Launcher Button name. Ex:$Label.namespace.PC_SearchButtonLabel,$Label.{orgNamespace}.PC_SearchButtonLabel. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+</design:component>

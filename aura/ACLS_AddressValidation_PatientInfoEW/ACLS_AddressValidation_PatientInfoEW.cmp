@@ -1,0 +1,24 @@
+<aura:component access="global" extends="c:PC_PatientInfo2WithAddressEWP">
+    <aura:attribute name="patientAddressValidated" type="Boolean" default="false"/>
+    <aura:attribute name="showAddressValidation" type="Boolean" default="false"/>
+    <aura:attribute name="addressInfoForValidation" type="Object" />
+    <aura:attribute name="addressInfoForValidationVerified" type="Object" />
+    <aura:attribute name="initAddressInfoForValidation" type="Object" />
+    <aura:attribute name="initAddressInfoForValidationVerified" type="Object" />
+    <aura:attribute name="addressMapList" type="Object" />
+    <aura:attribute name="addressInfoForValidationVerifiedMapList" type="Object" />
+    <aura:attribute name="openChildComponent" type="Boolean" default="false"/>
+    <aura:attribute name="isEnrollmentWizardComponent" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!v.openChildComponent}">
+        <c:ACLS_AddressValidation_Modal addressList="{!v.addressInfoForValidation}" aura:id="modal" isEnrollmentWizard="{!v.isEnrollmentWizardComponent}"/>
+    </aura:if>
+    <aura:handler name="validatedAddressList" event="c:ACLS_AddressValidation_Event" action="{!c.handleValidatedAddressList}" />
+    <aura:handler name="cancelModal" event="c:ACLS_AddressValidation_Event" action="{!c.handleCancelModal}" />
+    <div class="slds-p-horizontal_small slds-float_right">
+        <lightning:button variant="brand" label="{!$Label.c.ACLS_Validate_Address}" title="Validate Address" onclick="{!c.validateAddress}" />
+    </div>
+    
+    
+    
+</aura:component>

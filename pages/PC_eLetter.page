@@ -1,0 +1,49 @@
+<!--*********************************************************************************
+Page Name       : PC_eLetterApp
+Description     : eLetter page for lightning
+Created By      : Deloitte
+Created Date    : June 08, 2016
+Modification Log:
+----------------------------------------------------------------------------------
+Developer                   Date                   Description
+-----------------------------------------------------------------------------------
+Alina Balan                 08-June-2016           Initial version
+*********************************************************************************-->
+<apex:page standardController="Case" showheader="false" sidebar="false" standardstylesheets="true" doctype="html-5.0">
+    <apex:includelightning />
+    <apex:includescript value="/support/console/36.0/integration.js" />
+    <apex:stylesheet value="{!URLFor($Resource.PC_SLDS202, '/PC_SLDS202/assets/styles/salesforce-lightning-design-system-ltng.css')}" />
+    <html>
+    <head>
+        <title>eLetter</title>
+    </head>
+    <body>
+        <div class="slds">
+            <div class="slds-scrollable--y" id="content" />
+        </div>
+
+    </body>
+</html>
+<script src="/canvas/sdk/js/publisher.js" />
+<apex:include pageName="PC_JSLib"/>
+
+<script>
+    setTimeout(function(){ Sfdc.canvas.publisher.resize( { height : "380px" } ); }, 500);
+        function runAfterGlobalsLoaded(callback) {
+            $A.run(function() {
+                var labelAction = $A.get("c.aura://ComponentController.loadLabels");
+                labelAction.setCallback(this, function() {
+                    callback();
+                });
+                $A.enqueueAction(labelAction);
+            });
+        }
+        var recordId = "{!$CurrentPage.parameters.Id}";
+        var ns = getOrgNamespace();
+        $Lightning.use(ns + ":PC_eLetterApp", function() {
+            runAfterGlobalsLoaded(function() {
+                $Lightning.createComponent(ns + ":PC_eLetter", { "recordId" : recordId }, "content");
+            });
+        });
+</script>
+</apex:page>

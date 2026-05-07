@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Ρύθμιση κλινικής αξιολόγησης</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Ρυθμίσεις κλινικής αξιολόγησης</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Ρύθμιση κλινικής αξιολόγησης</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Ρυθμίσεις κλινικής αξιολόγησης</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Ρύθμισης κλινικής αξιολόγησης</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Ρυθμίσεων κλινικής αξιολόγησης</value>
+    </caseValues>
+    <fields>
+        <label>Ουρά εργασίας αξιολόγησης</label>
+        <name>HealthCloudGA__Assessment_Task_Queue__c</name>
+    </fields>
+    <fields>
+        <label>Πρόγραμμα περίθαλψης</label>
+        <name>HealthCloudGA__Care_Program__c</name>
+    </fields>
+    <fields>
+        <label>Συν. χρήσης φόρμας δεδ.ελέγχ. ταυτότητας</label>
+        <name>HealthCloudGA__Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Σκοπός συναίνεσης χρήσης δεδομένων</label>
+        <name>HealthCloudGA__Consent_Data_Use_Purpose__c</name>
+    </fields>
+    <fields>
+        <label>Συναίν.χρ. φόρμ.δεδ.ελέγχ.ταυτ.νοικοκυρ.</label>
+        <name>HealthCloudGA__Household_Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Όριο ηλικίας ανήλικου τέκνου</label>
+        <name>HealthCloudGA__MinorChildAgeLimit__c</name>
+    </fields>
+    <fields>
+        <label>Αριθμός τύπου εγγραφής ασθενούς</label>
+        <name>HealthCloudGA__Patient_RecordType_Name__c</name>
+    </fields>
+    <fields>
+        <label>Συνιστώμενες ημέρες καραντίνας</label>
+        <name>HealthCloudGA__PrescribedQuarantineDays__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

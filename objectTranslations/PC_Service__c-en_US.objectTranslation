@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Care Team Permission Required Roles --></label>
+        <name>PC_CareTeamPermissionRequiredRoles__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Reimbursement Manager</masterLabel>
+            <translation><!-- Field Reimbursement Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursement Specialist</masterLabel>
+            <translation><!-- Reimbursement Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>PC_Category__c</name>
+        <picklistValues>
+            <masterLabel>Communication Channel</masterLabel>
+            <translation><!-- Communication Channel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Sharing</masterLabel>
+            <translation><!-- Data Sharing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portal / Mobile Usage</masterLabel>
+            <translation><!-- Portal / Mobile Usage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Default Expiration Days --></label>
+        <name>PC_Default_Expiration_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCP Permission Required --></label>
+        <name>PC_HCP_Permission_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Permission Required --></label>
+        <name>PC_Patient_Permission_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Communication Channel --></label>
+        <name>PC_Service_Communication_Channel__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Function --></label>
+        <name>PC_Service_Function__c</name>
+        <picklistValues>
+            <masterLabel>Referral Notification</masterLabel>
+            <translation><!-- Referral Notification --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Default Expiration Days can not be negative --></errorMessage>
+        <name>Positive_Expiration_Days</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>ACLS_Missing_Information_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>ACLS_Missing_Information_Record_Page</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ACLS_Category__c</fullName>
+        <label>Category</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Consent</fullName>
+                    <default>false</default>
+                    <label>Consent</label>
+                </value>
+                <value>
+                    <fullName>Patient Information</fullName>
+                    <default>false</default>
+                    <label>Patient Information</label>
+                </value>
+                <value>
+                    <fullName>HCP/HCO Information</fullName>
+                    <default>false</default>
+                    <label>HCP/HCO Information</label>
+                </value>
+                <value>
+                    <fullName>Prescription</fullName>
+                    <default>false</default>
+                    <label>Prescription</label>
+                </value>
+                <value>
+                    <fullName>Payer Information</fullName>
+                    <default>false</default>
+                    <label>Payer Information</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Entity_Link__c</fullName>
+        <description>Formula Field to render a URL to the record directly.</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; IF(NOT(ISBLANK( ACLS_Object_Record_Id__c )), ACLS_Object_Record_Id__c ,  ACLS_Source_Record_Id__c  ) ,   ACLS_Object_Record_Id__c   ,&quot;_self&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Entity</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Missing_Information_Field_Labels__c</fullName>
+        <description>Stores the field labels which are missing the information</description>
+        <label>Missing Information Field Labels</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Missing_Information_Fields__c</fullName>
+        <description>Capture Missing information related to HCP, Payers, Patient, Caregiver.</description>
+        <label>Missing Information</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>ACLS_Category__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Provider Consent</fullName>
+                    <default>false</default>
+                    <label>Provider Consent</label>
+                </value>
+                <value>
+                    <fullName>Patient Consent</fullName>
+                    <default>false</default>
+                    <label>Patient Consent</label>
+                </value>
+                <value>
+                    <fullName>Patient Phone Number</fullName>
+                    <default>false</default>
+                    <label>Patient Phone Number</label>
+                </value>
+                <value>
+                    <fullName>Patient Email Address</fullName>
+                    <default>false</default>
+                    <label>Patient Email Address</label>
+                </value>
+                <value>
+                    <fullName>Patient Address</fullName>
+                    <default>false</default>
+                    <label>Patient Address</label>
+                </value>
+                <value>
+                    <fullName>Date of Birth</fullName>
+                    <default>false</default>
+                    <label>Date of Birth</label>
+                </value>
+                <value>
+                    <fullName>Caregiver Phone Number</fullName>
+                    <default>false</default>
+                    <label>Caregiver Phone Number</label>
+                </value>
+                <value>
+                    <fullName>Primary Diagnosis</fullName>
+                    <default>false</default>
+                    <label>Primary Diagnosis</label>
+                </value>
+                <value>
+                    <fullName>Secondary Diagnosis</fullName>
+                    <default>false</default>
+                    <label>Secondary Diagnosis</label>
+                </value>
+                <value>
+                    <fullName>NPI</fullName>
+                    <default>false</default>
+                    <label>NPI</label>
+                </value>
+                <value>
+                    <fullName>Tax ID Number</fullName>
+                    <default>false</default>
+                    <label>Tax ID Number</label>
+                </value>
+                <value>
+                    <fullName>State License Number</fullName>
+                    <default>false</default>
+                    <label>State License Number</label>
+                </value>
+                <value>
+                    <fullName>Site of Care</fullName>
+                    <default>false</default>
+                    <label>Site of Care</label>
+                </value>
+                <value>
+                    <fullName>Provider Address</fullName>
+                    <default>false</default>
+                    <label>Provider Address</label>
+                </value>
+                <value>
+                    <fullName>Provider Phone</fullName>
+                    <default>false</default>
+                    <label>Provider Phone</label>
+                </value>
+                <value>
+                    <fullName>Provider Fax</fullName>
+                    <default>false</default>
+                    <label>Provider Fax</label>
+                </value>
+                <value>
+                    <fullName>Provider Email</fullName>
+                    <default>false</default>
+                    <label>Provider Email</label>
+                </value>
+                <value>
+                    <fullName>Dosage</fullName>
+                    <default>false</default>
+                    <label>Dosage</label>
+                </value>
+                <value>
+                    <fullName>Day Supply</fullName>
+                    <default>false</default>
+                    <label>Day Supply</label>
+                </value>
+                <value>
+                    <fullName>Quantity</fullName>
+                    <default>false</default>
+                    <label>Quantity</label>
+                </value>
+                <value>
+                    <fullName>Frequency</fullName>
+                    <default>false</default>
+                    <label>Frequency</label>
+                </value>
+                <value>
+                    <fullName>Prescription Date</fullName>
+                    <default>false</default>
+                    <label>Prescription Date</label>
+                </value>
+                <value>
+                    <fullName>Prescription Signature</fullName>
+                    <default>false</default>
+                    <label>Prescription Signature</label>
+                </value>
+                <value>
+                    <fullName>Product Name</fullName>
+                    <default>false</default>
+                    <label>Product Name</label>
+                </value>
+                <value>
+                    <fullName>Payer Policy Number</fullName>
+                    <default>false</default>
+                    <label>Payer Policy Number</label>
+                </value>
+                <value>
+                    <fullName>Policy Holder Date of Birth</fullName>
+                    <default>false</default>
+                    <label>Policy Holder Date of Birth</label>
+                </value>
+                <value>
+                    <fullName>CPT Code(s)</fullName>
+                    <default>false</default>
+                    <label>CPT Code(s)</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Consent</controllingFieldValue>
+                <valueName>Provider Consent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Consent</controllingFieldValue>
+                <valueName>Patient Consent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Patient Phone Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Patient Email Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Patient Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Date of Birth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Caregiver Phone Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Primary Diagnosis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Patient Information</controllingFieldValue>
+                <valueName>Secondary Diagnosis</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>NPI</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>Tax ID Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>State License Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>Site of Care</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>Provider Address</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>Provider Phone</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>Provider Fax</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>HCP/HCO Information</controllingFieldValue>
+                <valueName>Provider Email</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Dosage</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Day Supply</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Quantity</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Frequency</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Prescription Date</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Prescription Signature</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Prescription</controllingFieldValue>
+                <valueName>Product Name</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payer Information</controllingFieldValue>
+                <valueName>Payer Policy Number</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payer Information</controllingFieldValue>
+                <valueName>Policy Holder Date of Birth</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Payer Information</controllingFieldValue>
+                <valueName>CPT Code(s)</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Object_Name__c</fullName>
+        <description>Object API Name on which the missing information is present</description>
+        <externalId>false</externalId>
+        <label>Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Object_Record_Id__c</fullName>
+        <description>Record ID for the object on which missing information is present</description>
+        <externalId>false</externalId>
+        <label>Object Record Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Object_Record_Type_Name__c</fullName>
+        <description>Record Type API Name</description>
+        <externalId>false</externalId>
+        <label>Record Type Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Related_Case__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Case</description>
+        <label>Related Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Missing Informations</relationshipLabel>
+        <relationshipName>Missing_Informations</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Source_Record_Id__c</fullName>
+        <description>Field to Capture Id of the Source Record on which Missing information is evaluated</description>
+        <externalId>false</externalId>
+        <label>Source Record Id</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Status__c</fullName>
+        <description>This field captures the status of the Missing Information record.</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Missing Information</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>MI-{00000}</displayFormat>
+        <label>Missing Information Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Missing Informations</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

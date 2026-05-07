@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mapper del tipo di record persona</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mapper del tipo di record persona</value>
+    </caseValues>
+    <fields>
+        <label>Spazio dei nomi tipo di record (account)</label>
+        <name>HealthCloudGA__AccountRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Tipo di record account</label>
+        <name>HealthCloudGA__AccountRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Spazio dei nomi tipo di record (refer.)</label>
+        <name>HealthCloudGA__ContactRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Tipo di record referente</label>
+        <name>HealthCloudGA__ContactRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Pagina dei dettagli</label>
+        <name>HealthCloudGA__DetailPage__c</name>
+    </fields>
+    <fields>
+        <label>Sottotipo account</label>
+        <name>HealthCloudGA__IndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Spazio dei nomi tipo di record (lead)</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Tipo di record lead</label>
+        <name>HealthCloudGA__LeadRecordType__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

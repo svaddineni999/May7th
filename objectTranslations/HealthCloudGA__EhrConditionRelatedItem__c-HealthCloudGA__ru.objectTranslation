@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Связанный элемент условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Связанные элементы условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Связанный элемент условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Связанные элементы условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Связанного элемента условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Связанных элементов условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Связанному элементу условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Связанным элементам условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Связанным элементом условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Связанными элементами условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Связанном элементе условия в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Связанных элементах условия в ЭМК</value>
+    </caseValues>
+    <fields>
+        <label>Метка кода</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система кода</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Условие</label>
+        <name>HealthCloudGA__Condition__c</name>
+        <relationshipLabel>Связанные позиции состояния в ЭМК</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ограничено</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Отображается на карте пациента</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Запись о выдаче лекарства</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>Связанные позиции состояния в ЭМК</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Примечания</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Исходная система изменена</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Исходная система</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Целевое состояние</label>
+        <name>HealthCloudGA__TargetCondition__c</name>
+        <relationshipLabel>Связанные позиции состояния в ЭМК (Целевое состояние)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Подробности цели</label>
+        <name>HealthCloudGA__TargetDetail__c</name>
+    </fields>
+    <fields>
+        <label>Целевая иммунизация</label>
+        <name>HealthCloudGA__TargetImmunization__c</name>
+        <relationshipLabel>Связанные позиции состояния в ЭМК</relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Имя состояния в ЭМК</nameFieldLabel>
+</CustomObjectTranslation>

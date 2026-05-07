@@ -1,0 +1,147 @@
+<!--
+Class Name      : PC_ExistingCaseSummary
+Description     : Retrive the details for the case ID - enrollment or program case
+Parameters      : document ID if available, case Id of the case the details are queried for 
+				  and the Patient information for which the search was conducted
+Created By      : Shabda Bhujad
+Created Date    : 9-Feb-2017
+Modification Log     :
+Vijay Kashikar       16-May-2019    [PC-4805] Made changes so that users can navigate search page using keyboard
+Haritha Reddy        11-Nov-2020    [PC-6795] Added a new attribute isCustomApp to help determine from where pre enrollment wizard is launched
+Haritha Reddy        21-Oct-2022    [PC-9283] Removed assignment to isValid attribute in controller as that is not declared or referenced
+Haritha Reddy        21-Oct-2022    [PC-9280] Made changes to set showLinkButton to true when docId is not null
+-->
+<aura:component controller="PC_ExistingCaseSummary_Controller" implements="force:hasRecordId" >
+    
+    <!--Attributes-->
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    <aura:attribute name="fieldsetErrorMessage" type="String" default="{!$Label.c.PC_Enrollment_Fieldset_ErrorMessage}" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="reqCaseId" type="Id" />
+    <aura:attribute name="CaseId" type="Id" />
+    <aura:attribute name="showLinkButton" type="Boolean" default="false" />
+    <aura:attribute name="buttonlabel" type="String" default="" />
+    <aura:attribute name="caseDetails" type="PC_EnrollCaseSummary_Controller.Object"/>
+    <aura:attribute name="compDetails" type="sObject"/>
+    <aura:attribute name="ComponentName" type="Aura.Component[]"/>
+    <aura:attribute name="selectedPatient" type="Object" /> <!--Will be populated from the Search Results Screen-->
+    <aura:attribute name="docId" type="String"/> <!--Will be populated from the Search Results Screen-->
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" /> <!--Added for error handling-->
+    <aura:attribute name="toastSuccessMessage" type="String" default="{!$Label.c.PC_Case_Doc_Link_Msg}" />
+    <aura:attribute name="isCustomApp" type="Boolean" default="false" description="Indicates if this component is launched from custom App"/>
+
+    <aura:attribute name="fieldSetFields" type="Object[]"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]"/>
+    <aura:attribute name="fieldSetFormBody1" type="Aura.Component[]"/>
+    <aura:attribute name="fieldSetName" type="String"/>
+    <aura:attribute name="typeName" type="String" default="Account"/>
+    <aura:attribute name="pageErrors" type="List"  access="global" />
+    <aura:attribute name="searchPatient" type="sObject"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+    <aura:attribute name="fsFieldValues" type="Map"/>
+    
+    <!--Event handler-->
+    <!--<aura:handler name="init" value="{!this}" action="{!c.getInit}"/>-->
+    <aura:registerEvent name="toastEvent" type="c:PC_ToastEvent"/>
+    <aura:registerEvent name="closeEvent" type="c:PC_CloseCmp"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.getInit}"/>
+    
+    <div class="slds">
+        <lightning:workspaceAPI aura:id="workspace" />
+
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--medium slds-fade-in-open" aura:id="modaldialog" >
+
+                    <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">
+                            <aura:if isTrue="{!v.caseDetails.caseType == 'Program'}">
+                                {!$Label.c.PC_ProgramCase_Summary_Header} 
+                                <aura:set attribute="else">
+                                    {!$Label.c.PC_EnrollmentCase_Summary_Header}
+                                </aura:set>
+                            </aura:if>
+                        </h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}" type="button">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true" />
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                    </div>
+                    <div class="slds-modal__content">
+                        <div class="slds-form--compound slds-m-around--medium">
+                            <!--Patient details section--> 
+                            <div class="slds-form-element__row">
+                                <aura:if isTrue="{!v.fieldSetFields.length > 0}">
+                                    <ul>
+                                        <li class="slds-item">
+                                            <div class="slds-tabs--scoped">
+                                                <fieldset class="slds-form--compound">
+                                                    <div class="slds-form-element__group">
+                                                        <div class="slds-form-element__row">
+                                                            <div class="slds-form-element slds-size--1-of-1">
+                                                                    {!v.fieldSetFormBody}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </aura:if>
+                            </div>
+                            <!--Case details section--> 
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size--1-of-2">
+                                    <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field4}</label>
+                                    <div class="slds-form-element__control">
+                                        <p>{!v.caseDetails.engagementProgramName}</p>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2">
+                                    <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field5}</label>
+                                    <div class="slds-form-element__control">
+                                        <p>{!v.caseDetails.caseOwner}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size--1-of-2">
+                                    <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field6}</label>
+                                    <div class="slds-form-element__control">
+                                        <p>{!v.caseDetails.caseNumber}</p>
+                                    </div>
+                                </div>
+                                <div class="slds-form-element slds-size--1-of-2">
+                                    <label class="slds-form-element__label">{!$Label.c.PC_CaseSummary_Field7}</label>
+                                    <div class="slds-form-element__control">
+                                        <p>{!v.caseDetails.caseStatus}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div class="slds-x-small-buttons--horizontal">
+                            <button class="slds-button slds-button--neutral" type="button" onclick="{!c.hideModalBox}">{!$Label.c.PC_Back_to_Search}</button>
+                            <button class="slds-button slds-button--neutral" type="button" onclick="{!c.goToCase}" aura:id="viewCaseButton">{!$Label.c.PC_View_Case}</button>
+                            <aura:if isTrue="{!v.buttonlabel}">
+                                <button class="slds-button slds-button--brand" type="button" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width:10em;" onclick="{!c.OpenNewComponent}">{!v.buttonlabel}</button>
+                                 </aura:if>
+                                    <aura:if isTrue="{!v.showLinkButton}">
+                                    <lightning:button variant="brand" label="{!$Label.c.PC_View_and_Link_Doc}" onclick="{!c.linkEnrollDoc}" type="button" />
+                                </aura:if>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+            <div aura:id="actionIconComponent">
+        		{!v.body}
+    		</div>
+
+    </div>
+</aura:component>

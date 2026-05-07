@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Region User History</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Region User History</value>
+    </caseValues>
+    <fields>
+        <label><!-- Care Team Account --></label>
+        <name>PC_CareTeamAccount__c</name>
+        <relationshipLabel><!-- Program Region User Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Care Team Role --></label>
+        <name>PC_CareTeamRole__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Manager</masterLabel>
+            <translation><!-- Case Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Reimbursement Manager</masterLabel>
+            <translation><!-- Field Reimbursement Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursement Specialist</masterLabel>
+            <translation><!-- Reimbursement Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Care Team User --></label>
+        <name>PC_CareTeamUser__c</name>
+        <relationshipLabel><!-- Program Region User History --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>PC_Case__c</name>
+        <relationshipLabel><!-- Program Region User Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_EngagementProgram__c</name>
+        <relationshipLabel><!-- Program Region User Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank. --></help>
+        <label><!-- User Queue/Group Name --></label>
+        <name>PC_QueueOrGroupName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>PC_Region__c</name>
+        <relationshipLabel><!-- Program Region User Histories --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group. --></help>
+        <label><!-- Role Type --></label>
+        <name>PC_RoleType__c</name>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter only one of &apos;Care Team Account&apos; and &apos;Care Team User&apos;. --></errorMessage>
+        <name>PC_User_and_Account_values_check</name>
+    </validationRules>
+</CustomObjectTranslation>

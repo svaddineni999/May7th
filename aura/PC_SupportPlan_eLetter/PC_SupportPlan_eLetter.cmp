@@ -1,0 +1,86 @@
+<!--
+Lightning component  : PC_SupportPlan_eLetter
+Description          : Component for showing eletter on Support Plan
+
+Created By:
+Shishir Bansal            November 15 2018           Initial version
+Tejas Patel               November 30 2018           Implementing Interface
+Satheesh Kumar            14 Apr 2021                PC-6528 - Added logic to show error message when template is invalid
+ -->
+
+<aura:component description="PC_SupportPlan_eLetter" controller="PC_SupportPlan_eLetterController" implements="c:PC_SupportPlan_Automation_Interface">
+    <aura:attribute name="langPicklistMap"  type="String" default=""/>
+    <aura:attribute name="eletterWrapper"   type="Object" default=""/>
+    <aura:attribute name="recipientList"  type="List" default=""/>
+    <aura:attribute name="recipentMapping" type="Object[]" default=""/>
+    <aura:attribute name="fieldLabels" type="Object" default=""/>
+    <aura:attribute name="errorMsg" type="String" default="{!$Label.c.PC_eLetterAutomationError}"/>
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}"/>
+    <aura:attribute name="invalidTemplateMsg" type="String" default="{!$Label.c.PC_SupportPlan_ELetterInvalidTemplateMessage}"/>
+    <aura:attribute name="picklistNone" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+
+    <aura:attribute name="supportPlanEletterWarningMsg" type="String" default="{!$Label.c.PC_SupportPlanELetterWarningMsg}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="eletterOptionSelected" type="Boolean" default="false"/>
+
+    <div class="eLetterContentBox">
+        <div class="divPadding">
+            <table>
+                <tr>
+                    <td width="18.5%">
+                        <label class="topPadding labelAdjust" aura:id="eletterName">{!v.fieldLabels.eLetterName}:
+                            <abbr class="slds-required" title="required">*</abbr>
+                        </label>
+                    </td>
+                    <td width="81.5%">
+                        <ui:inputSelect aura:id="EletterOptions"  change="{!c.onEletterChange}" class="widthAdjust slds-input" disabled="{!v.isDisabled}">
+                        </ui:inputSelect>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <aura:if isTrue="{!and(v.isValid,v.eletterOptionSelected)}">
+            <div class="recipientBoxDivPadding">
+            <table>
+                <tr>
+                 <td width="18.5%"><div style="width:20%">&nbsp;</div></td>
+                    <td width="81.5%">
+                        <div class="recipientContentBox">
+                            <table class="">
+                                <thead >
+
+                                <tr >
+                                    <td class="slds-text-title_bold fontColor" width="23%">{!v.fieldLabels.targetRecepient}</td>
+                                    <td class="slds-text-title_bold fontColor" width="33%">{!v.fieldLabels.communicationLanguage}</td>
+                                </tr>
+
+
+                                </thead>
+                                <tbody class="slds-m-top--medium">
+                                <aura:iteration items="{!v.recipientList}" var="target">
+                                    <tr class="slds-m-bottom--large">
+                                        <td class="tableWidthAdjust fontColor">
+                                                {!target.recepient}
+                                        </td>
+                                        <td class="tableWidthAdjust fontColor">
+                                            <ui:outputText value="{!target.communicationLanguage}"/>
+                                        </td>
+                                        <td class="tableWidthAdjust fontColor">
+                                            <ui:inputCheckbox aura:id="checkbox" label=""  value="{!target.selected}" change="{!c.setSelected}" disabled="{!v.isDisabled}"/>
+                                        </td>
+                                    </tr>
+                                </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="18.5%">&nbsp;</td>
+                    <td width="81.5%" align="right" style="color:Orange">{!v.supportPlanEletterWarningMsg}</td>
+                </tr>
+            </table>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

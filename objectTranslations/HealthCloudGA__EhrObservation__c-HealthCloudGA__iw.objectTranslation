@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>תצפית ה-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>תצפית EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>תצפיות ה-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>תצפיות EHR</value>
+    </caseValues>
+    <fields>
+        <label>חשבון</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>תצפיות</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>מחיל תאריך ושעה</label>
+        <name>HealthCloudGA__AppliesDateTime__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>מחיל תאריך סיום תקופה</label>
+        <name>HealthCloudGA__AppliesPeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Physiologically Relevant time/time-period for observation --></help>
+        <label>מחיל תאריך התחלת תקופה</label>
+        <name>HealthCloudGA__AppliesPeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>קוד מקום בגוף</label>
+        <name>HealthCloudGA__BodySiteCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית מקום בגוף</label>
+        <name>HealthCloudGA__BodySiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת מקום בגוף</label>
+        <name>HealthCloudGA__BodySiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>הערות</label>
+        <name>HealthCloudGA__Comments__c</name>
+    </fields>
+    <fields>
+        <label>מכשיר</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>תצפיות ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>קוד פירוש</label>
+        <name>HealthCloudGA__InterpretationCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית פירוש</label>
+        <name>HealthCloudGA__InterpretationLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת פירוש</label>
+        <name>HealthCloudGA__InterpretationSystem__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>תאריך הנפקה</label>
+        <name>HealthCloudGA__IssuedDate__c</name>
+    </fields>
+    <fields>
+        <label>קוד שיטה</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית שיטה</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת שיטה</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד שם</label>
+        <name>HealthCloudGA__NameCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית שם</label>
+        <name>HealthCloudGA__NameLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת שם</label>
+        <name>HealthCloudGA__NameSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this is about --></help>
+        <label>מטופל</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>תצפיות</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Patient who performed this observation --></help>
+        <label>מטופל מבצע</label>
+        <name>HealthCloudGA__PerformingPatient__c</name>
+        <relationshipLabel>תצפיות ב-EHR (מטופל מבצע)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>רופא מבצע</label>
+        <name>HealthCloudGA__PerformingPractitioner__c</name>
+        <relationshipLabel>תצפיות ב-EHR (רופא מבצע)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Related person who performed the observation --></help>
+        <label>אדם קשור מבצע</label>
+        <name>HealthCloudGA__PerformingRelatedPerson__c</name>
+        <relationshipLabel>תצפיות ב-EHR (אדם קשור מבצע)</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Practitioner who performed this observation --></help>
+        <label>רופא</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>תצפיות</relationshipLabel>
+    </fields>
+    <fields>
+        <label>תווית משמעות הפניה</label>
+        <name>HealthCloudGA__ReferenceMeaningLabel__c</name>
+    </fields>
+    <fields>
+        <label>גיל גבוה בטווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeAgeHigh__c</name>
+    </fields>
+    <fields>
+        <label>גיל נמוך בטווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeAgeLow__c</name>
+    </fields>
+    <fields>
+        <label>יחידה גבוהה בטווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeHighUnit__c</name>
+    </fields>
+    <fields>
+        <label>ערך גבוה בטווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeHighValue__c</name>
+    </fields>
+    <fields>
+        <label>יחידה נמוכה בטווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeLowUnit__c</name>
+    </fields>
+    <fields>
+        <label>ערך נמוך בטווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeLowValue__c</name>
+    </fields>
+    <fields>
+        <label>קוד משמעות טווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningCode__c</name>
+    </fields>
+    <fields>
+        <label>מערכת משמעות טווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeMeaningSystem__c</name>
+    </fields>
+    <fields>
+        <label>יחידת טווח הפניה</label>
+        <name>HealthCloudGA__ReferenceRangeUnit__c</name>
+    </fields>
+    <fields>
+        <label>קוד מהימנות</label>
+        <name>HealthCloudGA__ReliabilityCode__c</name>
+    </fields>
+    <fields>
+        <label>מהימנות</label>
+        <name>HealthCloudGA__Reliability__c</name>
+        <picklistValues>
+            <masterLabel>calibrating</masterLabel>
+            <translation><!-- calibrating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>early</masterLabel>
+            <translation><!-- early --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>error</masterLabel>
+            <translation><!-- error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ok</masterLabel>
+            <translation><!-- ok --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ongoing</masterLabel>
+            <translation><!-- ongoing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>questionable</masterLabel>
+            <translation><!-- questionable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>נתוני דגימה</label>
+        <name>HealthCloudGA__SampledData__c</name>
+    </fields>
+    <fields>
+        <label>מזהה מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>שינוי במערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד מצב</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>מצב</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>amended</masterLabel>
+            <translation><!-- amended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>final</masterLabel>
+            <translation><!-- final --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>preliminary</masterLabel>
+            <translation><!-- preliminary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>registered</masterLabel>
+            <translation><!-- registered --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>צירוף ערך</label>
+        <name>HealthCloudGA__ValueAttachment__c</name>
+    </fields>
+    <fields>
+        <label>קוד ערך</label>
+        <name>HealthCloudGA__ValueCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית ערך</label>
+        <name>HealthCloudGA__ValueLabel__c</name>
+    </fields>
+    <fields>
+        <label>תאריך סיום של תקופת ערך</label>
+        <name>HealthCloudGA__ValuePeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה של תקופת ערך</label>
+        <name>HealthCloudGA__ValuePeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>תקופת ערך</label>
+        <name>HealthCloudGA__ValuePeriod__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>יחידת כמות של ערך</label>
+        <name>HealthCloudGA__ValueQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Actual Result --></help>
+        <label>כמות ערך</label>
+        <name>HealthCloudGA__ValueQuantity__c</name>
+    </fields>
+    <fields>
+        <label>מכנה יחס של ערך</label>
+        <name>HealthCloudGA__ValueRatioDenominator__c</name>
+    </fields>
+    <fields>
+        <label>מונה יחס של ערך</label>
+        <name>HealthCloudGA__ValueRatioNumerator__c</name>
+    </fields>
+    <fields>
+        <label>יחס של ערך</label>
+        <name>HealthCloudGA__ValueRatio__c</name>
+    </fields>
+    <fields>
+        <label>ממדי מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataDimensions__c</name>
+    </fields>
+    <fields>
+        <label>פקטור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataFactor__c</name>
+    </fields>
+    <fields>
+        <label>גבול תחתון של מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataLowerLimit__c</name>
+    </fields>
+    <fields>
+        <label>תווית קוד מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת קוד מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginCode__c</name>
+    </fields>
+    <fields>
+        <label>השוואת מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginComparator__c</name>
+    </fields>
+    <fields>
+        <label>מערכת מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginSystem__c</name>
+    </fields>
+    <fields>
+        <label>יחידות מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginUnits__c</name>
+    </fields>
+    <fields>
+        <label>ערך מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOriginValue__c</name>
+    </fields>
+    <fields>
+        <label>מקור מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataOrigin__c</name>
+    </fields>
+    <fields>
+        <label>תקופת מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataPeriodMili__c</name>
+    </fields>
+    <fields>
+        <label>גבול עליון של מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledDataUpperLimit__c</name>
+    </fields>
+    <fields>
+        <label>מדגם נתוני ערך</label>
+        <name>HealthCloudGA__ValueSampledData__c</name>
+    </fields>
+    <fields>
+        <label>מערכת ערך</label>
+        <name>HealthCloudGA__ValueSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>שם תצפית ב-EHR</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Toewijzing van HL7-parser</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Toewijzingen van HL7-parser</value>
+    </caseValues>
+    <fields>
+        <label>Entiteitsnaam</label>
+        <name>HealthCloudGA__EntityName__c</name>
+    </fields>
+    <fields>
+        <label>Actief</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Apex class name to be used to parse --></help>
+        <label>Parsernaam</label>
+        <name>HealthCloudGA__ParserName__c</name>
+    </fields>
+    <fields>
+        <label>Ontvangende toepassing</label>
+        <name>HealthCloudGA__ReceivingApplication__c</name>
+    </fields>
+    <fields>
+        <label>Ontvangende faciliteit</label>
+        <name>HealthCloudGA__ReceivingFacility__c</name>
+    </fields>
+    <fields>
+        <label>Verzendende toepassing</label>
+        <name>HealthCloudGA__SendingApplication__c</name>
+    </fields>
+    <fields>
+        <label>Verzendende faciliteit</label>
+        <name>HealthCloudGA__SendingFacility__c</name>
+    </fields>
+    <fields>
+        <label>Versie</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

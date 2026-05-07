@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>EPJ – Sygdommen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>EPJ – Sygdom</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>EPJ – Sygdom</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>EPJ – Sygdommene</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>EPJ – Sygdomme</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>EPJ – Sygdomme</value>
+    </caseValues>
+    <fields>
+        <label>Helbredelsesdetaljer 255</label>
+        <name>HealthCloudGA__AbatementDetail255__c</name>
+    </fields>
+    <fields>
+        <label>Helbredelsesdetaljer</label>
+        <name>HealthCloudGA__AbatementDetail__c</name>
+    </fields>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EPJ – Sygdomme</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Patient, der hævder at have en sygdom</label>
+        <name>HealthCloudGA__AsserterPatient__c</name>
+    </fields>
+    <fields>
+        <label>Diagnosticerende praktiserende læge</label>
+        <name>HealthCloudGA__AsserterPractitioner__c</name>
+    </fields>
+    <fields>
+        <label>Kategorikode</label>
+        <name>HealthCloudGA__CategoryCode__c</name>
+    </fields>
+    <fields>
+        <label>Kategorisystem</label>
+        <name>HealthCloudGA__CategorySystem__c</name>
+    </fields>
+    <fields>
+        <label>Kategoribetegnelse</label>
+        <name>HealthCloudGA__CatergoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sikkerhedskode</label>
+        <name>HealthCloudGA__CertaintyCode__c</name>
+    </fields>
+    <fields>
+        <label>Sikkerhedsbetegnelse</label>
+        <name>HealthCloudGA__CertaintyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sikkerhedssystem</label>
+        <name>HealthCloudGA__CertaintySystem__c</name>
+    </fields>
+    <fields>
+        <label>Kodebetegnelse</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kodesystem</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kode</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Dato for påstand</label>
+        <name>HealthCloudGA__DateAsserted__c</name>
+    </fields>
+    <fields>
+        <label>Dato, hvor det er dokumenteret</label>
+        <name>HealthCloudGA__DateDocumented__c</name>
+    </fields>
+    <fields>
+        <label>Møde</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>EhrConditions</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Evidenskode</label>
+        <name>HealthCloudGA__EvidenceCode__c</name>
+    </fields>
+    <fields>
+        <label>Evidensdetaljer</label>
+        <name>HealthCloudGA__EvidenceDetail__c</name>
+    </fields>
+    <fields>
+        <label>Evidensbetegnelse</label>
+        <name>HealthCloudGA__EvidenceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Evidenssystem</label>
+        <name>HealthCloudGA__EvidenceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Er reduceret</label>
+        <name>HealthCloudGA__IsAbated__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Placeringskode</label>
+        <name>HealthCloudGA__LocationCode__c</name>
+    </fields>
+    <fields>
+        <label>Placeringsdataljer</label>
+        <name>HealthCloudGA__LocationDetail__c</name>
+    </fields>
+    <fields>
+        <label>Placeringsbetegnelse</label>
+        <name>HealthCloudGA__LocationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Placeringssystem</label>
+        <name>HealthCloudGA__LocationSystem__c</name>
+    </fields>
+    <fields>
+        <label>Notater</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Start</label>
+        <name>HealthCloudGA__Onset__c</name>
+    </fields>
+    <fields>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Sygdomme</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Alvorlighedskode</label>
+        <name>HealthCloudGA__SeverityCode__c</name>
+    </fields>
+    <fields>
+        <label>Alvorlighedsbetegnelse</label>
+        <name>HealthCloudGA__SeverityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Alvorlighedssystem</label>
+        <name>HealthCloudGA__SeveritySystem__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem-id</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Fase</label>
+        <name>HealthCloudGA__Stage__c</name>
+    </fields>
+    <fields>
+        <label>Statuskode</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Statusbetegnelse</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Statussystem</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>År dokumenteret</label>
+        <name>HealthCloudGA__YearDocumented__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Id for sygdom i EPJ</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,49 @@
+<!--
+Lightning component  : PC_BookAppointment
+Description          : Container component for launching PC_PatientLocationMapViewer in a modal box
+Parameters           : Record Id from the Action Center
+Modification Log:
+Ramtej  	    	 30-Oct-2017    [PC-2456] Initial Version
+Vijay Kashikar 		 14-Jul-2020    [PC-6437] Made changes so that Book Appointment can be loaded on Task object.
+-->
+<aura:component access="global" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="relatedToId" type="Id"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToObject" type="String"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="isModalMapActive" type="boolean"/>
+    <aura:registerEvent name="actionPanel" type="c:PC_ActionPanel"/>
+    <aura:attribute name="cssStyle" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="displayModal" type="Boolean" default="true"/> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+
+
+    <div>
+        <div style="border: 1px solid #d8dde6;">
+            <aura:if isTrue="{!v.isModalMapActive}">
+                <div aura:id="eModalBackdrop"
+                     class="{!if(v.displayModal, 'slds-backdrop slds-backdrop_open', '')}"></div>
+                <div aura:id="eModal" role="dialog" tabindex="-1" aria-labelledby="modal-heading-01"
+                     aria-modal="true" aria-describedby="modal-content-id-1"
+                     class="{!if(v.displayModal, 'panel slds-modal slds-fade-in-open', 'panel')}">
+                    <div aura:id="eModalContainer" class="{!if(v.displayModal, 'slds-modal__container', '')}" >
+                        <div class="slds-modal__header">
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!$Label.c.PC_BookAppt_Title}</h2>
+                        </div>
+                        <div class="{!if(v.displayModal, 'slds-modal__content slds-p-around_medium', 'slds-p-around_medium')}"
+                             id="modal-content-id-1">
+                                {!v.body}
+                        </div>
+                        <aura:if isTrue="{!v.displayModal}">
+                            <div class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick="{!c.closeMap}">Cancel</button>
+                            </div>
+                        </aura:if>
+                    </div>
+                </div>
+            </aura:if>
+        </div>
+    </div>
+    <style>{!v.cssStyle}</style>
+</aura:component>

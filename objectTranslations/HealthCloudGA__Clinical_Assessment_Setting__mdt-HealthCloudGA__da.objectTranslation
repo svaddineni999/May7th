@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Indstillingen for klinisk vurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Indstilling for klinisk vurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Indstilling for klinisk vurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Indstillingerne for klinisk vurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Indstillinger for klinisk vurdering</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Indstillinger for klinisk vurdering</value>
+    </caseValues>
+    <fields>
+        <label>Vurderingsopgavekø</label>
+        <name>HealthCloudGA__Assessment_Task_Queue__c</name>
+    </fields>
+    <fields>
+        <label>Behandlingsprogram</label>
+        <name>HealthCloudGA__Care_Program__c</name>
+    </fields>
+    <fields>
+        <label>Brug af dataformular til samtykkegodk.</label>
+        <name>HealthCloudGA__Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Anvendelsesformål til samtykkedata</label>
+        <name>HealthCloudGA__Consent_Data_Use_Purpose__c</name>
+    </fields>
+    <fields>
+        <label>Husst. brug af dataform. til samt.godk.</label>
+        <name>HealthCloudGA__Household_Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Aldersgrænse for mindreårigt barn</label>
+        <name>HealthCloudGA__MinorChildAgeLimit__c</name>
+    </fields>
+    <fields>
+        <label>Registreringstypenavn for patient</label>
+        <name>HealthCloudGA__Patient_RecordType_Name__c</name>
+    </fields>
+    <fields>
+        <label>Ordinerede karantænedage</label>
+        <name>HealthCloudGA__PrescribedQuarantineDays__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Procedura EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Procedure EHR</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Procedure EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sede corporea</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Categoria</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta codice</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Codice</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Complicazione</label>
+        <name>HealthCloudGA__Complication__c</name>
+    </fields>
+    <fields>
+        <label>Interazione</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Procedure EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Istruzioni di follow-up</label>
+        <name>HealthCloudGA__FollowUpInstructions__c</name>
+    </fields>
+    <fields>
+        <label>Voci usate</label>
+        <name>HealthCloudGA__ItemsUsed__c</name>
+    </fields>
+    <fields>
+        <label>Sede</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>Non eseguita</label>
+        <name>HealthCloudGA__NotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Note</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Esito</label>
+        <name>HealthCloudGA__Outcome__c</name>
+    </fields>
+    <fields>
+        <label>Eseguito in data/ora</label>
+        <name>HealthCloudGA__PerformedDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Motivo 4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Motivo della mancata esecuzione</label>
+        <name>HealthCloudGA__ReasonNotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Rapporto</label>
+        <name>HealthCloudGA__Report__c</name>
+    </fields>
+    <fields>
+        <label>Richiesta</label>
+        <name>HealthCloudGA__Request__c</name>
+        <relationshipLabel>Procedure EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Stato</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entered in Error</masterLabel>
+            <translation><!-- Entered in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID procedura EHR</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>EPJ – Allergiintolerancen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>EPJ – Allergiintolerance</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>EPJ – Allergiintolerance</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>EPJ – Allergiintolerancerne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>EPJ – Allergiintolerancer</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>EPJ – Allergiintolerancer</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EPJ – Allergiintolerancer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kritikalitetskode</label>
+        <name>HealthCloudGA__CriticalityCode__c</name>
+    </fields>
+    <fields>
+        <label>Kritikalitetsbetegnelse</label>
+        <name>HealthCloudGA__CriticalityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Kritikalitetssystem</label>
+        <name>HealthCloudGA__CriticalitySystem__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if value of Status Label field is NOT equal to &apos; Resolved &apos;, else returns false. --></help>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>EPJ – Allergiintolerancer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Reaktion 255</label>
+        <name>HealthCloudGA__Reaction255__c</name>
+    </fields>
+    <fields>
+        <label>Reaktion</label>
+        <name>HealthCloudGA__Reaction__c</name>
+    </fields>
+    <fields>
+        <label>Registreringsdato</label>
+        <name>HealthCloudGA__RecordedDate__c</name>
+    </fields>
+    <fields>
+        <label>Journalførers navn 255</label>
+        <name>HealthCloudGA__RecorderName255__c</name>
+    </fields>
+    <fields>
+        <label>Journalførers navn</label>
+        <name>HealthCloudGA__RecorderName__c</name>
+    </fields>
+    <fields>
+        <label>Journalfører</label>
+        <name>HealthCloudGA__Recorder__c</name>
+        <relationshipLabel>Allergiintolerancer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Overfølsomhedstest1</label>
+        <name>HealthCloudGA__SensitivityTest1__c</name>
+        <relationshipLabel>EPJ – Allergiintolerancer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Overfølsomhedstest2</label>
+        <name>HealthCloudGA__SensitivityTest2__c</name>
+        <relationshipLabel>EPJ – allergiintolerancer (overfølsomhedstest2)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Overfølsomhedstest3</label>
+        <name>HealthCloudGA__SensitivityTest3__c</name>
+        <relationshipLabel>EPJ – allergiintolerancer (overfølsomhedstest3)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kode for overfølsomhedstype</label>
+        <name>HealthCloudGA__SensitivityTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Betegnelse for overfølsomhedstype</label>
+        <name>HealthCloudGA__SensitivityTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>System for overfølsomhedstype</label>
+        <name>HealthCloudGA__SensitivityTypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem-id</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Statuskode</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Statusbetegnelse</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Statussystem</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Substans 255</label>
+        <name>HealthCloudGA__Substance255__c</name>
+    </fields>
+    <fields>
+        <label>Substanskodesystem</label>
+        <name>HealthCloudGA__SubstanceCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Substanskode</label>
+        <name>HealthCloudGA__SubstanceCode__c</name>
+    </fields>
+    <fields>
+        <label>Substans</label>
+        <name>HealthCloudGA__SubstanceLong__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Id for allergiintolerance i henhold til </nameFieldLabel>
+</CustomObjectTranslation>

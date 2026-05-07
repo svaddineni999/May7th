@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement Program</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagement Programs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Close Time --></label>
+        <name>ACLS_Close_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Days --></label>
+        <name>ACLS_Program_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Fax --></label>
+        <name>ACLS_Program_Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Phone --></label>
+        <name>ACLS_Program_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>ACLS_Start_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeZone --></label>
+        <name>ACLS_TimeZone__c</name>
+        <picklistValues>
+            <masterLabel>CST</masterLabel>
+            <translation><!-- CST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EST</masterLabel>
+            <translation><!-- EST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MST</masterLabel>
+            <translation><!-- MST --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PST</masterLabel>
+            <translation><!-- PST --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <lookupFilter>
+            <errorMessage><!-- Manufacturer does not exist. Please select a valid manufacturer association. --></errorMessage>
+        </lookupFilter>
+        <name>PC_Manufacturer__c</name>
+        <relationshipLabel><!-- Engagement Programs --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Case Record Type Namespace --></label>
+        <name>PC_ProgramCaseRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Case Record Type Name --></label>
+        <name>PC_ProgramCaseRecordType__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comma separated values of Engagement Program specific emails. Note - These should be pre-verified in Setup -&gt; Organization-Wide Address Settings. --></help>
+        <label><!-- Program Emails --></label>
+        <name>PC_ProgramEmails__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide a short unique code that will not need to be changed. --></help>
+        <label><!-- Program Code --></label>
+        <name>PC_Program_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program End Date --></label>
+        <name>PC_Program_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Start Date --></label>
+        <name>PC_Program_Start_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

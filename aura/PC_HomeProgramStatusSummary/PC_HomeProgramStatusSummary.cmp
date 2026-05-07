@@ -1,0 +1,56 @@
+<aura:component controller="PC_HomeProgramStatusController">
+    <ltng:require styles="{!$Resource.PC_Resources + '/PC_Resources/Css/CircleCSS.css'}"/>
+    <aura:attribute name="programStatus" type="PC_HomeProgramStatusController.object" />
+    <aura:attribute name="hasLoaded" type="Boolean" default="false" />
+    <aura:attribute name="AdherenceCompletedPercentage" type="String" default="" />
+    <aura:attribute name="CoverageCompletedPercentage" type="String" default="" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- START STARRED 1 -->
+
+    <div class="slds-grid pureCssGraphics" >
+        <div class="slds-col--padded slds-size--1-of-1 slds-small-size--5-of-8 slds-medium-size--4-of-8">
+            <div class="slds-grid">
+                <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-2">
+                    <!--For the graphs to work, they must be in a full width grid 1-of-1 -->
+                    <div class="slds-grid">
+                        <div class="slds-col--padded slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--1-of-1">
+                            <div class="{!'c100 ' + 'p' + v.AdherenceCompletedPercentage + ''}">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                                <span>{!v.AdherenceCompletedPercentage}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3">
+                    <span class="PC_Title">{!$Label.c.PC_Case_Status_Indicator_4}</span>
+                </div>
+            </div>
+        </div>
+        <div class="slds-col--padded slds-size--1-of-1 slds-small-size--5-of-8 slds-medium-size--4-of-8">
+            <div class="slds-grid">
+                <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--2-of-3">
+                    <!--For the graphs to work, they must be in a full width grid 1-of-1 -->
+                    <div class="slds-grid">
+                        <div class="slds-col--padded slds-size--1-of-1 slds-small-size--1-of-1 slds-medium-size--1-of-1">
+                            <div class="{!'c100 ' + 'p' + v.CoverageCompletedPercentage + ''}">
+                                <div class="slice">
+                                    <div class="bar"></div>
+                                    <div class="fill"></div>
+                                </div>
+                                <span>{!v.CoverageCompletedPercentage}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-col slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3">
+                    <span class="PC_Title">{!$Label.c.PC_Case_Status_Indicator_2}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

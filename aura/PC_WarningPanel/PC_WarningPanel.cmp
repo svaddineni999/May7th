@@ -1,0 +1,32 @@
+<!--
+LC Name      : PC_WarningPanel
+Description  : [PC-1287] Warning panel to show a list of warning message to the user 
+Parameters   : warningHeader - Header text for the warning panel
+			   warnings - list of warnings
+Created By   : Prachi Nandgaonkar
+Created Date : 13-Apr-17
+
+Modification Log:
+
+**********************************************************************************
+Developer                   Date                   Description
+**********************************************************************************           
+Prachi Nandgaonkar          13-Apr-17              Initial Version
+-->
+
+<aura:component description="PC_WarningPanel" access="public">
+    <aura:attribute name="warningHeader" type="String" default="Review the warnings on this page."/>
+    <aura:attribute name="warnings" type="List"/>
+    <div class="pageLevelWarnings">
+        <div class="pageWarning" aria-live="assertive">
+            <div class="genericNotification">
+                <ui:outputText class="genericError" value="{!v.warningHeader}"/>
+            </div>
+            <ul class="warningsList">
+                <aura:iteration items="{!v.warnings}" var="warning">
+                <li>{!warning}</li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </div> 
+</aura:component>

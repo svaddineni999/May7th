@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HCC 코드 매핑 조건</value>
+    </caseValues>
+    <fields>
+        <label>활성</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>조건 코드</label>
+        <name>HealthCloudGA__ConditionCode__c</name>
+    </fields>
+    <fields>
+        <label>HCC 코드</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Year in which the HCC code becomes valid. --></help>
+        <label>유효 기간 시작일</label>
+        <name>HealthCloudGA__ValidFrom__c</name>
+    </fields>
+    <fields>
+        <help><!-- Year after which the code is no longer valid. --></help>
+        <label>유효 기간</label>
+        <name>HealthCloudGA__ValidThrough__c</name>
+    </fields>
+    <fields>
+        <label>연도 + 조건 코드 + HCC 코드</label>
+        <name>HealthCloudGA__YearConditionCodeHCCCode__c</name>
+    </fields>
+    <fields>
+        <label>년</label>
+        <name>HealthCloudGA__Year__c</name>
+    </fields>
+    <nameFieldLabel>매핑 ID</nameFieldLabel>
+</CustomObjectTranslation>

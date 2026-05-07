@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Holds patient&apos;s (program&apos;s) consent for a Service.</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ACLS_Engagement_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Engagement Program Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_HCP_Expiration_Date__c</fullName>
+        <description>HCP Expiration Date</description>
+        <label>HCP Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_HCP_Permission_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to check if HCP permission is required</description>
+        <label>HCP Permission Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_HCP_Signed_Date__c</fullName>
+        <label>HCP Signed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Opt_In_Status__c</fullName>
+        <label>Opt In Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Opt In Confirmed</fullName>
+                    <default>false</default>
+                    <label>Opt In Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Opt Out Confirmed</fullName>
+                    <default>false</default>
+                    <label>Opt Out Confirmed</label>
+                </value>
+                <value>
+                    <fullName>Opt In Unconfirmed</fullName>
+                    <default>false</default>
+                    <label>Opt In Unconfirmed</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_PT_Legal_GUA_Permission_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>checkbox to check Patient / Legal Guardian Permission is Required</description>
+        <label>PT/ Legal GUA Permission Required</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Patient_Expiration_Date__c</fullName>
+        <description>Patient Expiration Date</description>
+        <label>Patient Expiration Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Patient_Signed_Date__c</fullName>
+        <label>Patient Signed Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Phone__c</fullName>
+        <label>Phone</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the patient&apos;s consent is active.</description>
+        <formula>IF( (ISBLANK(  PC_End_Date__c  ) || ISNULL( PC_End_Date__c ) || 
+PC_End_Date__c &gt;= TODAY()) &amp;&amp; NOT(ISBLANK(  PC_Start_Date__c )), true, false)</formula>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_CareTeamMemberResponseDate__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Care Team Member Response Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_CareTeamMemberResponse__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field would carry information related to care team member response for a service.</description>
+        <label>Care Team Member Response</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Granted</fullName>
+                    <default>false</default>
+                    <label>Granted</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>Revoked</fullName>
+                    <default>false</default>
+                    <label>Revoked</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_CareTeamMember__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This field would provide a lookup to the association record present on case</description>
+        <label>Care Team Member</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>PC_Association__c.PC_Program__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.PC_ProgramCase__c</valueField>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>PC_Association__c</referenceTo>
+        <relationshipLabel>Program Service Permissions</relationshipLabel>
+        <relationshipName>Program_Service_Permissions</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Consent_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is to understand if Patient/HCP signed a consent form or gave verbal consent</description>
+        <label>Consent Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Verbal</fullName>
+                    <default>false</default>
+                    <label>Verbal</label>
+                </value>
+                <value>
+                    <fullName>Written</fullName>
+                    <default>false</default>
+                    <label>Written</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_End_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date on which the patient&apos;s consent ends.</description>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_HCP_Response_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>HCP&apos;s response date.</description>
+        <label>HCP Response Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_HCP_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Captures the HCP&apos;s responses such as Granted, Declined, or Revoked.</description>
+        <label>HCP Response</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Signed</fullName>
+                    <default>false</default>
+                    <label>Signed</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>Granted</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Granted</label>
+                </value>
+                <value>
+                    <fullName>Revoked</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Revoked</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Patient_Response_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Patient&apos;s response date.</description>
+        <label>Patient Response Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Patient_Response__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Holds the patient&apos;s responses such as Granted, Declined, or Revoked.</description>
+        <label>Patient Response</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Signed</fullName>
+                    <default>false</default>
+                    <label>Signed</label>
+                </value>
+                <value>
+                    <fullName>Expired</fullName>
+                    <default>false</default>
+                    <label>Expired</label>
+                </value>
+                <value>
+                    <fullName>Declined</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Declined</label>
+                </value>
+                <value>
+                    <fullName>Granted</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Granted</label>
+                </value>
+                <value>
+                    <fullName>Revoked</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Revoked</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ProgramCase__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Holds the Case(of type Program) detail.</description>
+        <label>Program</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Case.Type</field>
+                <operation>equals</operation>
+                <value>Program</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Program Service Permissions</relationshipLabel>
+        <relationshipName>PC_Program_Service_Permission</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Program_Service_Permission_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Generates a unique name from the Service Name and Program Case Number.</description>
+        <externalId>false</externalId>
+        <formula>PC_Service__r.Name &amp; &apos;-&apos; &amp; PC_ProgramCase__r.CaseNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Program Service Permission Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Service__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Contains the service details.</description>
+        <label>Service</label>
+        <referenceTo>PC_Service__c</referenceTo>
+        <relationshipLabel>Program Service Permissions</relationshipLabel>
+        <relationshipName>PC_Program_Service</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Signed_Request_Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Link to the patient&apos;s signed Request Form.</description>
+        <label>Signed Request Form</label>
+        <referenceTo>PC_Document__c</referenceTo>
+        <relationshipLabel>Program Service Permissions</relationshipLabel>
+        <relationshipName>PC_Signed_Request_Form</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Start_Date__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Program Service Permission start date</description>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Program Service Permission</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SP-{0}</displayFormat>
+        <label>Program Service Permission Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Program Service Permissions</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>ACLS_HCP_Permission_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT($Setup.ACLS_Bypass__c.ACLS_Skip_Validations__c),
+NOT(
+OR(
+AND(
+ACLS_HCP_Permission_Required__c = ACLS_PT_Legal_GUA_Permission_Required__c,
+ACLS_HCP_Permission_Required__c= true,
+ACLS_PT_Legal_GUA_Permission_Required__c=true
+),
+AND(
+ACLS_HCP_Permission_Required__c = ACLS_PT_Legal_GUA_Permission_Required__c,
+ACLS_HCP_Permission_Required__c= false,
+ACLS_PT_Legal_GUA_Permission_Required__c=false
+)
+)
+),
+AND(ACLS_HCP_Permission_Required__c),
+NOT(
+AND(   
+ISPICKVAL(PC_Patient_Response__c, &quot;&quot;), ISBLANK(ACLS_Patient_Signed_Date__c),
+ISBLANK(PC_Patient_Response_Date__c),
+ISBLANK(ACLS_Patient_Expiration_Date__c)
+))
+)</errorConditionFormula>
+        <errorMessage>Please enter values only in HCP consent fields</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ACLS_Mandate_Phone_For_SMS_Consent</fullName>
+        <active>true</active>
+        <description>Phone field on PSP should be mandatory when Service on the PSP is selected as &quot;SMS Consent&quot;</description>
+        <errorConditionFormula>AND(CONTAINS(PC_Service__r.Name, &apos;SMS Consent&apos;), ISBLANK(ACLS_Phone__c))</errorConditionFormula>
+        <errorMessage>Please enter a phone number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ACLS_PSP_Permission_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT($Setup.ACLS_Bypass__c.ACLS_Skip_Validations__c),
+OR(
+AND(
+   ACLS_HCP_Permission_Required__c = ACLS_PT_Legal_GUA_Permission_Required__c,
+   ACLS_HCP_Permission_Required__c= true,
+   ACLS_PT_Legal_GUA_Permission_Required__c=true
+),
+AND(
+   ACLS_HCP_Permission_Required__c = ACLS_PT_Legal_GUA_Permission_Required__c,
+   ACLS_HCP_Permission_Required__c= false,
+   ACLS_PT_Legal_GUA_Permission_Required__c=false
+)
+)
+)</errorConditionFormula>
+        <errorMessage>Program service permission can either be created for an HCP or Patient. Please check only one permission checkbox</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ACLS_PT_Legal_GUA_Permission_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(
+NOT($Setup.ACLS_Bypass__c.ACLS_Skip_Validations__c),
+NOT(
+OR(
+AND(
+ACLS_HCP_Permission_Required__c = ACLS_PT_Legal_GUA_Permission_Required__c,
+ACLS_HCP_Permission_Required__c= true,
+ACLS_PT_Legal_GUA_Permission_Required__c=true
+),
+AND(
+ACLS_HCP_Permission_Required__c = ACLS_PT_Legal_GUA_Permission_Required__c,
+ACLS_HCP_Permission_Required__c= false,
+ACLS_PT_Legal_GUA_Permission_Required__c=false
+)
+)
+),
+AND(ACLS_PT_Legal_GUA_Permission_Required__c),
+NOT(
+AND(
+ISPICKVAL(PC_HCP_Response__c, &quot;&quot;), ISBLANK(ACLS_HCP_Signed_Date__c),
+ISBLANK(PC_HCP_Response_Date__c),
+ISBLANK(ACLS_HCP_Expiration_Date__c)
+))
+)</errorConditionFormula>
+        <errorMessage>Please enter values only in Patient consent fields</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ACLS_Validate_PT_Permission_SMS_Consent</fullName>
+        <active>true</active>
+        <description>When Service on the PSP is selected as &quot;SMS Consent&quot; then &quot;HCP Permission Required&quot; checkbox should be set to not be TRUE</description>
+        <errorConditionFormula>AND(CONTAINS(PC_Service__r.Name, &apos;SMS Consent&apos;),  ACLS_HCP_Permission_Required__c = TRUE)</errorConditionFormula>
+        <errorMessage>SMS Consent is applicable for Patients</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

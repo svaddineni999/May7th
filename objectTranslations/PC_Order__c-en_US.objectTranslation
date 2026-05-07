@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Orders</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- Order Details --></label>
+        <name>PC_OrderDetails</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Order Shipment --></label>
+        <name>PC_OrderShipment</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>ACLS_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when the order was delivered. --></help>
+        <label><!-- Actual Delivery Date --></label>
+        <name>PC_ActualDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time period when the order delivery would be done. --></help>
+        <label><!-- Delivery Day Run --></label>
+        <name>PC_DeliveryDayRun__c</name>
+        <picklistValues>
+            <masterLabel>2 Day Delivery</masterLabel>
+            <translation><!-- 2 Day Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Same Day Delivery</masterLabel>
+            <translation><!-- Same Day Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekend Delivery</masterLabel>
+            <translation><!-- Weekend Delivery --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date when the order is expected to deliver. --></help>
+        <label><!-- Estimated Delivery Date --></label>
+        <name>PC_EstimatedDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- First line of the primary address of ‘Ship To’ Account. --></help>
+        <label><!-- Address 1 --></label>
+        <name>PC_OrderAddress1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Second line of the primary address of ‘Ship To’ Account. --></help>
+        <label><!-- Address 2 --></label>
+        <name>PC_OrderAddress2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Third line of the primary address of ‘Ship To’ Account. --></help>
+        <label><!-- Address 3 --></label>
+        <name>PC_OrderAddress3__c</name>
+    </fields>
+    <fields>
+        <help><!-- City of the primary address of ‘Ship To’ Account. --></help>
+        <label><!-- City --></label>
+        <name>PC_OrderAddressCity__c</name>
+    </fields>
+    <fields>
+        <help><!-- State of the primary address of ‘Ship To’ Account. --></help>
+        <label><!-- State --></label>
+        <name>PC_OrderAddressState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>PC_OrderAddressZipCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Instructions for the order or delivery. --></help>
+        <label><!-- Order Instructions --></label>
+        <name>PC_OrderInstructions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the order. --></help>
+        <label><!-- Order Status --></label>
+        <name>PC_OrderStatus__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entered-in-error</masterLabel>
+            <translation><!-- Entered-in-error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipped</masterLabel>
+            <translation><!-- Shipped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stopped</masterLabel>
+            <translation><!-- Stopped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of order. --></help>
+        <label><!-- Order Type --></label>
+        <name>PC_OrderType__c</name>
+        <picklistValues>
+            <masterLabel>Bridge Program</masterLabel>
+            <translation><!-- Bridge Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enrollment Package</masterLabel>
+            <translation><!-- Enrollment Package --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Infusion Training set</masterLabel>
+            <translation><!-- Home Infusion Training set --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAP</masterLabel>
+            <translation><!-- PAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Products</masterLabel>
+            <translation><!-- Sample Products --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Date when the order recipient prefers to receive the shipment. --></help>
+        <label><!-- Preferred Delivery Date --></label>
+        <name>PC_PreferredDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Time when the order recipient prefers to receive the shipment. --></help>
+        <label><!-- Preferred Delivery Window --></label>
+        <name>PC_PreferredDeliveryWindow__c</name>
+        <picklistValues>
+            <masterLabel>4:00PM - 8:00PM</masterLabel>
+            <translation><!-- 4:00PM - 8:00PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8:00AM - Noon</masterLabel>
+            <translation><!-- 8:00AM - Noon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anytime</masterLabel>
+            <translation><!-- Anytime --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Noon - 4:00PM</masterLabel>
+            <translation><!-- Noon - 4:00PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Prescription the order is submitted for. --></help>
+        <label><!-- Prescription --></label>
+        <name>PC_Prescription__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Program case the order is related to. --></help>
+        <label><!-- Program Case --></label>
+        <name>PC_ProgramCase__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Entity who received the order. --></help>
+        <label><!-- Received By --></label>
+        <name>PC_ReceivedBy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship To --></label>
+        <name>PC_ShipTo2__c</name>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Entity whom the order is being shipped to. --></help>
+        <label><!-- Ship To --></label>
+        <name>PC_ShipTo__c</name>
+        <relationshipLabel><!-- Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Unique tracking number of the order shipment. --></help>
+        <label><!-- Shipment Tracking Number --></label>
+        <name>PC_ShipmentTrackingNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when the order is shipped. --></help>
+        <label><!-- Shipping Date --></label>
+        <name>PC_ShippingDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when the request of order was submitted. --></help>
+        <label><!-- Submitted Date --></label>
+        <name>PC_SubmittedDate__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Only Program Cases allowed --></errorMessage>
+        <name>PC_Program_Case_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

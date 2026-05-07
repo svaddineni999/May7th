@@ -1,0 +1,61 @@
+<!--
+ - Created by vkashikar on 10/16/2019.
+ -->
+
+<aura:component>
+
+    <aura:attribute type="Account[]" name="acctList"/>
+
+    <aura:attribute type="Object[]" name="dummyList" default="{'Id':'1','Name':'test'}"/>
+
+    <aura:attribute name="selectedRows" type="List" default="[]" access="private"/>
+
+    <aura:attribute type="Object[]" name="rows" access="public"/>
+    <aura:attribute type="List" name="columns" access="public"/>
+    <aura:attribute type="String" name="keyField" access="public" default="Id"/>
+    <aura:attribute type="Integer" name="maxRowSelection" access="public" default="1"/>
+    <aura:attribute name="noResultsMessage" type="String" access="public"/>
+    <aura:attribute name="title" type="String" access="public" />
+    <aura:attribute name="tableHeight" type="String" access="public" />
+    <aura:attribute name="sourceUniqueId" type="String" access="public" />
+    <aura:attribute name="customRowActions" type="List" access="public" />
+    <aura:attribute name="showActiveFlag" type="Boolean" access="private" default="false" />
+
+
+    <aura:registerEvent name="selectedDataTableRow" type="c:PC_SelectedDataTableRow"/>
+
+    <aura:handler event="c:PC_UnselectDataTableRow"
+                  action="{!c.unselectRow}"/>
+
+    <div class="slds slds-box slds-theme_shade slds-m-bottom--medium">
+        <h1 class="slds-text-heading_medium">
+            <div>
+                <!-- This condition did not work and hence using a new attribute showActiveFlag <aura:if isTrue="{! and(not(empty(v.selectedRows)), v.selectedRows.length > 0)}">-->
+                <aura:if isTrue="{!v.showActiveFlag}">
+                    <div class="selectedIndicator">
+                        <lightning:icon iconName="utility:success" variant="Success" size="x-small"/>
+                    </div>
+                </aura:if>&nbsp;{!v.title}
+            </div>
+        </h1>
+        <aura:if isTrue="{! and(v.rows.length >0 , v.columns.length >0)}">
+            <div class="dataTable"
+                 style="{! if(empty(v.tableHeight) , '' , 'height:' + v.tableHeight )}">
+                <lightning:datatable data="{! v.rows }"
+                                     columns="{! v.columns }"
+                                     keyField="{! v.keyField}"
+                                     maxRowSelection="{! v.maxRowSelection}"
+                                     onrowselection="{! c.handleRowSelection}"
+                                     onrowaction="{! c.handleRowAction }"
+                                     selectedRows="{!v.selectedRows}" />
+                <!--<div aura:id="unselectContainer">
+                    <button type="button" label="unselect"
+                            onclick="{!c.unselect}" aura:id="unselect">Unselect</button>
+                </div>
+                <aura:set attribute="else">
+                    <div class="slds-align-middle slds-text-align_center slds-text-align_center">{!v.noResultsMessage}</div>
+                </aura:set>-->
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

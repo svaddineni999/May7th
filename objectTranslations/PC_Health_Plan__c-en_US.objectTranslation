@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Health Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Health Plans</value>
+    </caseValues>
+    <fields>
+        <label><!-- PBM Phone --></label>
+        <name>ACLS_PBM_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group No. --></label>
+        <name>Group_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID / Policy No. --></label>
+        <name>ID_Policy_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder City --></label>
+        <name>PC_Card_Holder_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder First Name --></label>
+        <name>PC_Card_Holder_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder Gender --></label>
+        <name>PC_Card_Holder_Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cardholder Last Name --></label>
+        <name>PC_Card_Holder_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder Name --></label>
+        <name>PC_Card_Holder_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder State --></label>
+        <name>PC_Card_Holder_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder ZipCode --></label>
+        <name>PC_Card_Holder_ZipCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder Employer --></label>
+        <name>PC_Cardholder_Employer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card Holder ID Policy No --></label>
+        <name>PC_Cardholder_ID_Policy_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder Relationship to Patient --></label>
+        <name>PC_Cardholder_Relationship_to_Patient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardholder&apos;s Date of Birth --></label>
+        <name>PC_Cardholder_s_Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created by Lookup service --></label>
+        <name>PC_Created_By_Lookup_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Date --></label>
+        <name>PC_Effective_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>PC_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group name --></label>
+        <name>PC_Group_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longterm Coverage --></label>
+        <name>PC_Has_LTC_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mail Coverage --></label>
+        <name>PC_Has_Mail_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Coverage --></label>
+        <name>PC_Has_Retail_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialty Coverage --></label>
+        <name>PC_Has_Specialty_Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medicare Supplemental Plan Letter --></label>
+        <name>PC_MedicareSupplementalPlanLetter__c</name>
+    </fields>
+    <fields>
+        <label><!-- PBM Member Id --></label>
+        <name>PC_PBMMember_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- PBM Name --></label>
+        <name>PC_PBM_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PBM Plan Name as per Card Lookup Service --></label>
+        <name>PC_PBM_Name_as_per_Card_Lookup_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payer Name --></label>
+        <name>PC_Payer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payer --></label>
+        <name>PC_Payer__c</name>
+        <relationshipLabel><!-- Health Plans (Payer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Card Lookup ID --></label>
+        <name>PC_Pharmacy_Card_Lookup_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Card Lookup Request Time --></label>
+        <name>PC_Pharmacy_Card_Lookup_Request_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Claim / Card No. --></label>
+        <name>PC_Plan_Claim_Card_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Name --></label>
+        <name>PC_Plan_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Status --></label>
+        <name>PC_Plan_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Plan Type --></label>
+        <name>PC_Plan_Type__c</name>
+        <picklistValues>
+            <masterLabel>Primary</masterLabel>
+            <translation><!-- Primary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secondary</masterLabel>
+            <translation><!-- Secondary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tertiary</masterLabel>
+            <translation><!-- Tertiary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Public or Private --></label>
+        <name>PC_Public_Or_Private__c</name>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public</masterLabel>
+            <translation><!-- Public --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Renewal Date --></label>
+        <name>PC_Renewal_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rx Bin --></label>
+        <name>PC_Rx_Bin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rx Grp --></label>
+        <name>PC_Rx_Grp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rx PCN --></label>
+        <name>PC_Rx_PCN__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>Patient__c</name>
+        <relationshipLabel><!-- Health Plans --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <description><!-- Indicates the health plan is a medical plan --></description>
+        <label><!-- Medical Plan --></label>
+        <name>PC_Medical_Plan</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Indicates the health plan is a pharmacy plan --></description>
+        <label><!-- Pharmacy Plan --></label>
+        <name>PC_Pharmacy_Plan</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Patient&apos;s health plan that is privately funded --></description>
+        <label><!-- Private Health Plan --></label>
+        <name>PC_Private_Health_Plan</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Patient&apos;s health plan which is publicly funded --></description>
+        <label><!-- Public Health Plan --></label>
+        <name>PC_Public_Health_Plan</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Cardholder&apos;s Date of Birth cannot be in future. --></errorMessage>
+        <name>PC_Validate_Cardholder_Date_of_Birth</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Effective Date must be same or older than Expiration Date and Renewal Date. --></errorMessage>
+        <name>PC_Validate_Effective_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select Account of record type Payer --></errorMessage>
+        <name>PC_Validate_Payer</name>
+    </validationRules>
+</CustomObjectTranslation>

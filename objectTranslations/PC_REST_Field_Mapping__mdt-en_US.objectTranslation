@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>REST Field Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>REST Field Mappings</value>
+    </caseValues>
+    <fields>
+        <help><!-- If Rest Object Name = Other, this value is required. --></help>
+        <label><!-- Other REST Object Name --></label>
+        <name>PC_Other_REST_Object_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- sObject API name for Other Rest Object --></help>
+        <label><!-- Other sObject API Name --></label>
+        <name>PC_Other_sObject_API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- REST Field Name --></label>
+        <name>PC_REST_Field_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- REST Object Name --></label>
+        <name>PC_REST_Object_Name__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Address</masterLabel>
+            <translation><!-- Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applicant</masterLabel>
+            <translation><!-- Applicant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applicant/Address</masterLabel>
+            <translation><!-- Applicant/Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applicant/HCO</masterLabel>
+            <translation><!-- Applicant/HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Applicant/HealthPlan</masterLabel>
+            <translation><!-- Applicant/HealthPlan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Association</masterLabel>
+            <translation><!-- Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case</masterLabel>
+            <translation><!-- Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EngagementProgram</masterLabel>
+            <translation><!-- EngagementProgram --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HealthPlan</masterLabel>
+            <translation><!-- HealthPlan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interaction</masterLabel>
+            <translation><!-- Interaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturer</masterLabel>
+            <translation><!-- Manufacturer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order</masterLabel>
+            <translation><!-- Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OrderItem</masterLabel>
+            <translation><!-- OrderItem --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer</masterLabel>
+            <translation><!-- Payer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- sObject Field Name --></label>
+        <name>PC_sObject_Field_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide the value. --></errorMessage>
+        <name>PC_OtherRestObjectNameIsBlank</name>
+    </validationRules>
+</CustomObjectTranslation>

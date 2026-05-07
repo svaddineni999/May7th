@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>照護計畫範本工作</value>
+    </caseValues>
+    <fields>
+        <label>啟用</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>指派對象</label>
+        <name>HealthCloudGA__AssignedTo__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>照護計畫範本目標</label>
+        <name>HealthCloudGA__CarePlanTemplateGoal__c</name>
+        <relationshipLabel>照護計畫範本工作</relationshipLabel>
+    </fields>
+    <fields>
+        <label>照護計畫範本問題</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>照護計畫範本工作</relationshipLabel>
+    </fields>
+    <fields>
+        <label>照護計畫範本</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>照護計畫範本工作</relationshipLabel>
+    </fields>
+    <fields>
+        <label>種類</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Counselling</masterLabel>
+            <translation><!-- Counselling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diagnosis</masterLabel>
+            <translation><!-- Diagnosis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exercise</masterLabel>
+            <translation><!-- Exercise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaccination</masterLabel>
+            <translation><!-- Vaccination --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>說明</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>位移</label>
+        <name>HealthCloudGA__Offset__c</name>
+    </fields>
+    <fields>
+        <label>優先順序</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>排序順序</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label>狀態</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiting on someone else</masterLabel>
+            <translation><!-- Waiting on someone else --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>主題</label>
+        <name>HealthCloudGA__Subject__c</name>
+    </fields>
+    <fields>
+        <label>類型</label>
+        <name>HealthCloudGA__Type__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation><!-- Administrative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical</masterLabel>
+            <translation><!-- Clinical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncategorized</masterLabel>
+            <translation><!-- Uncategorized --></translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel>照護計畫範本工作名稱</nameFieldLabel>
+    <validationRules>
+        <errorMessage>將工作與照護計畫、問題或目標建立關聯。</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanTaskAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>僅將工作與一個記錄建立關聯。</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanTaskAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

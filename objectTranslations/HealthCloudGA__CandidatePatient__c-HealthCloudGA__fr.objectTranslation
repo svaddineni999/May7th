@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Patient candidat</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Patients candidats</value>
+    </caseValues>
+    <fieldSets>
+        <label>Vue de liste Patients candidats</label>
+        <name>HealthCloudGA__CandidatePatientListView</name>
+    </fieldSets>
+    <fields>
+        <label>Compte du patient</label>
+        <name>HealthCloudGA__AccountId__c</name>
+        <relationshipLabel>Enregistrements de patients</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ville Adresse 1</label>
+        <name>HealthCloudGA__Address1City__c</name>
+    </fields>
+    <fields>
+        <label>Pays Adresse 1</label>
+        <name>HealthCloudGA__Address1Country__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin Adresse 1</label>
+        <name>HealthCloudGA__Address1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 1 Adresse 1</label>
+        <name>HealthCloudGA__Address1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 2 Adresse 1</label>
+        <name>HealthCloudGA__Address1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Code postal Adresse 1</label>
+        <name>HealthCloudGA__Address1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Date de début Adresse 1</label>
+        <name>HealthCloudGA__Address1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Région/province Adresse 1</label>
+        <name>HealthCloudGA__Address1State__c</name>
+    </fields>
+    <fields>
+        <label>Texte Adresse 1</label>
+        <name>HealthCloudGA__Address1Text__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Adresse 1</label>
+        <name>HealthCloudGA__Address1Use__c</name>
+    </fields>
+    <fields>
+        <label>Ville Adresse 2</label>
+        <name>HealthCloudGA__Address2City__c</name>
+    </fields>
+    <fields>
+        <label>Pays Adresse 2</label>
+        <name>HealthCloudGA__Address2Country__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin Adresse 2</label>
+        <name>HealthCloudGA__Address2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 1 Adresse 2</label>
+        <name>HealthCloudGA__Address2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 2 Adresse 2</label>
+        <name>HealthCloudGA__Address2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Code postal Adresse 2</label>
+        <name>HealthCloudGA__Address2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Date de début Adresse 2</label>
+        <name>HealthCloudGA__Address2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Région/province Adresse 2</label>
+        <name>HealthCloudGA__Address2State__c</name>
+    </fields>
+    <fields>
+        <label>Texte Adresse 2</label>
+        <name>HealthCloudGA__Address2Text__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Adresse 2</label>
+        <name>HealthCloudGA__Address2Use__c</name>
+    </fields>
+    <fields>
+        <label>Ville Adresse 3</label>
+        <name>HealthCloudGA__Address3City__c</name>
+    </fields>
+    <fields>
+        <label>Pays Adresse 3</label>
+        <name>HealthCloudGA__Address3Country__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin Adresse 3</label>
+        <name>HealthCloudGA__Address3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 1 Adresse 3</label>
+        <name>HealthCloudGA__Address3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 2 Adresse 3</label>
+        <name>HealthCloudGA__Address3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Code postal Adresse 3</label>
+        <name>HealthCloudGA__Address3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Date de début Adresse 3</label>
+        <name>HealthCloudGA__Address3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Région/province Adresse 3</label>
+        <name>HealthCloudGA__Address3State__c</name>
+    </fields>
+    <fields>
+        <label>Texte Adresse 3</label>
+        <name>HealthCloudGA__Address3Text__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Adresse 3</label>
+        <name>HealthCloudGA__Address3Use__c</name>
+    </fields>
+    <fields>
+        <label>Ville Adresse 4</label>
+        <name>HealthCloudGA__Address4City__c</name>
+    </fields>
+    <fields>
+        <label>Pays Adresse 4</label>
+        <name>HealthCloudGA__Address4Country__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin Adresse 4</label>
+        <name>HealthCloudGA__Address4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 1 Adresse 4</label>
+        <name>HealthCloudGA__Address4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 2 Adresse 4</label>
+        <name>HealthCloudGA__Address4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Code postal Adresse 4</label>
+        <name>HealthCloudGA__Address4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Date de début Adresse 4</label>
+        <name>HealthCloudGA__Address4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Région/province Adresse 4</label>
+        <name>HealthCloudGA__Address4State__c</name>
+    </fields>
+    <fields>
+        <label>Texte Adresse 4</label>
+        <name>HealthCloudGA__Address4Text__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Adresse 4</label>
+        <name>HealthCloudGA__Address4Use__c</name>
+    </fields>
+    <fields>
+        <label>Ville Adresse 5</label>
+        <name>HealthCloudGA__Address5City__c</name>
+    </fields>
+    <fields>
+        <label>Pays Adresse 5</label>
+        <name>HealthCloudGA__Address5Country__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin Adresse 5</label>
+        <name>HealthCloudGA__Address5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 1 Adresse 5</label>
+        <name>HealthCloudGA__Address5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Ligne 2 Adresse 5</label>
+        <name>HealthCloudGA__Address5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Code postal Adresse 5</label>
+        <name>HealthCloudGA__Address5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Date de début Adresse 5</label>
+        <name>HealthCloudGA__Address5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Région/province Adresse 5</label>
+        <name>HealthCloudGA__Address5State__c</name>
+    </fields>
+    <fields>
+        <label>Texte Adresse 5</label>
+        <name>HealthCloudGA__Address5Text__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Adresse 5</label>
+        <name>HealthCloudGA__Address5Use__c</name>
+    </fields>
+    <fields>
+        <label>Date de naissance</label>
+        <name>HealthCloudGA__BirthDate__c</name>
+    </fields>
+    <fields>
+        <label>Code Communication1</label>
+        <name>HealthCloudGA__Communication1Code__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette Communication1</label>
+        <name>HealthCloudGA__Communication1Label__c</name>
+    </fields>
+    <fields>
+        <label>Système Communication1</label>
+        <name>HealthCloudGA__Communication1System__c</name>
+    </fields>
+    <fields>
+        <label>Code Communication2</label>
+        <name>HealthCloudGA__Communication2Code__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette Communication2</label>
+        <name>HealthCloudGA__Communication2Label__c</name>
+    </fields>
+    <fields>
+        <label>Système Communication2</label>
+        <name>HealthCloudGA__Communication2System__c</name>
+    </fields>
+    <fields>
+        <label>Code Communication3</label>
+        <name>HealthCloudGA__Communication3Code__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette Communication3</label>
+        <name>HealthCloudGA__Communication3Label__c</name>
+    </fields>
+    <fields>
+        <label>Système Communication3</label>
+        <name>HealthCloudGA__Communication3System__c</name>
+    </fields>
+    <fields>
+        <label>Code Communication4</label>
+        <name>HealthCloudGA__Communication4Code__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette Communication4</label>
+        <name>HealthCloudGA__Communication4Label__c</name>
+    </fields>
+    <fields>
+        <label>Système Communication4</label>
+        <name>HealthCloudGA__Communication4System__c</name>
+    </fields>
+    <fields>
+        <label>Code Communication5</label>
+        <name>HealthCloudGA__Communication5Code__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette Communication5</label>
+        <name>HealthCloudGA__Communication5Label__c</name>
+    </fields>
+    <fields>
+        <label>Système Communication5</label>
+        <name>HealthCloudGA__Communication5System__c</name>
+    </fields>
+    <fields>
+        <label>Décédé</label>
+        <name>HealthCloudGA__Deceased__c</name>
+    </fields>
+    <fields>
+        <label>Nom 1</label>
+        <name>HealthCloudGA__FamilyName1__c</name>
+    </fields>
+    <fields>
+        <label>Nom 2</label>
+        <name>HealthCloudGA__FamilyName2__c</name>
+    </fields>
+    <fields>
+        <label>Nom 3</label>
+        <name>HealthCloudGA__FamilyName3__c</name>
+    </fields>
+    <fields>
+        <label>Code de sexe</label>
+        <name>HealthCloudGA__GenderCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette de sexe</label>
+        <name>HealthCloudGA__GenderLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système de définition du sexe</label>
+        <name>HealthCloudGA__GenderSystem__c</name>
+    </fields>
+    <fields>
+        <label>Prénom 1</label>
+        <name>HealthCloudGA__GivenName1__c</name>
+    </fields>
+    <fields>
+        <label>Prénom 2</label>
+        <name>HealthCloudGA__GivenName2__c</name>
+    </fields>
+    <fields>
+        <label>Prénom 3</label>
+        <name>HealthCloudGA__GivenName3__c</name>
+    </fields>
+    <fields>
+        <label>Prénom 4</label>
+        <name>HealthCloudGA__GivenName4__c</name>
+    </fields>
+    <fields>
+        <label>Prénom 5</label>
+        <name>HealthCloudGA__GivenName5__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if this candidate patient is represented by and Account Record --></help>
+        <label>Converti en patient</label>
+        <name>HealthCloudGA__IsConvertedToPatient__c</name>
+    </fields>
+    <fields>
+        <label>Code d&apos;état civil</label>
+        <name>HealthCloudGA__MaritalStatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Étiquette d&apos;état civil</label>
+        <name>HealthCloudGA__MaritalStatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Système de l&apos;état civil</label>
+        <name>HealthCloudGA__MaritalStatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Numéro de dossier médical</label>
+        <name>HealthCloudGA__MedicalRecordNumber__c</name>
+    </fields>
+    <fields>
+        <label>Naissances multiples</label>
+        <name>HealthCloudGA__MultipleBirth__c</name>
+    </fields>
+    <fields>
+        <label>Nom</label>
+        <name>HealthCloudGA__Name__c</name>
+    </fields>
+    <fields>
+        <label>Organisation 255</label>
+        <name>HealthCloudGA__Organization255__c</name>
+    </fields>
+    <fields>
+        <label>Organisation</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>URL de la photo</label>
+        <name>HealthCloudGA__PhotoUrl__c</name>
+    </fields>
+    <fields>
+        <label>Préfixe Nom 1</label>
+        <name>HealthCloudGA__PrefixName1__c</name>
+    </fields>
+    <fields>
+        <label>Préfixe Nom 2</label>
+        <name>HealthCloudGA__PrefixName2__c</name>
+    </fields>
+    <fields>
+        <label>Préfixe Nom 3</label>
+        <name>HealthCloudGA__PrefixName3__c</name>
+    </fields>
+    <fields>
+        <label>ID du système source</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Système source modifié</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Système source</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Suffixe Nom 1</label>
+        <name>HealthCloudGA__SuffixName1__c</name>
+    </fields>
+    <fields>
+        <label>Suffixe Nom 2</label>
+        <name>HealthCloudGA__SuffixName2__c</name>
+    </fields>
+    <fields>
+        <label>Suffixe Nom 3</label>
+        <name>HealthCloudGA__SuffixName3__c</name>
+    </fields>
+    <fields>
+        <label>Fin de la période Télécom 1</label>
+        <name>HealthCloudGA__Telecom1PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Début de la période télécom 1</label>
+        <name>HealthCloudGA__Telecom1PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Système Télécom 1</label>
+        <name>HealthCloudGA__Telecom1System__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Télécom 1</label>
+        <name>HealthCloudGA__Telecom1Use__c</name>
+    </fields>
+    <fields>
+        <label>Valeur Télécom 1</label>
+        <name>HealthCloudGA__Telecom1Value__c</name>
+    </fields>
+    <fields>
+        <label>Fin de la période Télécom 2</label>
+        <name>HealthCloudGA__Telecom2PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Début de la période Télécom 2</label>
+        <name>HealthCloudGA__Telecom2PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Système Télécom 2</label>
+        <name>HealthCloudGA__Telecom2System__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Télécom 2</label>
+        <name>HealthCloudGA__Telecom2Use__c</name>
+    </fields>
+    <fields>
+        <label>Valeur Télécom 2</label>
+        <name>HealthCloudGA__Telecom2Value__c</name>
+    </fields>
+    <fields>
+        <label>Fin de la période Télécom 3</label>
+        <name>HealthCloudGA__Telecom3PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Début de la période Télécom 3</label>
+        <name>HealthCloudGA__Telecom3PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Système Télécom 3</label>
+        <name>HealthCloudGA__Telecom3System__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Télécom 3</label>
+        <name>HealthCloudGA__Telecom3Use__c</name>
+    </fields>
+    <fields>
+        <label>Valeur Télécom 3</label>
+        <name>HealthCloudGA__Telecom3Value__c</name>
+    </fields>
+    <fields>
+        <label>Fin de la période Télécom 4</label>
+        <name>HealthCloudGA__Telecom4PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Début de la période Télécom 4</label>
+        <name>HealthCloudGA__Telecom4PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Système Télécom 4</label>
+        <name>HealthCloudGA__Telecom4System__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Télécom 4</label>
+        <name>HealthCloudGA__Telecom4Use__c</name>
+    </fields>
+    <fields>
+        <label>Valeur Télécom 4</label>
+        <name>HealthCloudGA__Telecom4Value__c</name>
+    </fields>
+    <fields>
+        <label>Fin de la période Télécom 5</label>
+        <name>HealthCloudGA__Telecom5PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Début de la période Télécom 5</label>
+        <name>HealthCloudGA__Telecom5PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Système Télécom 5</label>
+        <name>HealthCloudGA__Telecom5System__c</name>
+    </fields>
+    <fields>
+        <label>Utilisation Télécom 5</label>
+        <name>HealthCloudGA__Telecom5Use__c</name>
+    </fields>
+    <fields>
+        <label>Valeur Télécom 5</label>
+        <name>HealthCloudGA__Telecom5Value__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>ID de patient candidat</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

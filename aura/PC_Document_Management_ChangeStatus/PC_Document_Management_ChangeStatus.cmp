@@ -1,0 +1,60 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"  controller="PC_ChangeStatusLightningController" access="global">
+
+    <!-- Attributes -->
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="recordTypeId" type="Id"  access="PRIVATE"/>
+    <aura:attribute name="oldStatus" type="String"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="successMsg" type="String" default="{!$Label.c.PC_DocStatus_Success_Message}" />
+    <aura:attribute name="successDocStatus" type="String" default="{!$Label.c.PC_SuccessDocMgmt}" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="typeName" type="String"  default="PC_Document__c"/>
+    <aura:attribute name="fieldName" type="String"  default="PC_Document_Status__c"/>
+    <aura:attribute name="errorDocStatus" type="String" default="{!$Label.c.PC_ErrorDocMgmt}" />
+
+    <div class="slds">
+        <form id="form">
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--medium slds-fade-in-open" aura:id="modaldialog" >
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_Change_Status}</h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true" />
+                            <span  class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                    </div>
+                    <div class="slds-modal__content hideBorder">
+
+                        <div class="slds-box hideBorder slds-theme_default">
+                        {!$Label.c.PC_Current_Status}
+                            <div class="slds-form-element__control">
+                                    <span class="slds-form-element__static">
+                                            {!v.oldStatus}
+                                    </span>
+                            </div>
+                            <BR></BR>
+
+                            <ui:inputSelect aura:id="InputSelectDynamic" label="{!$Label.c.PC_Update_Status}"
+                                            multiple="false" class="slds-box slds-theme_default">
+                            </ui:inputSelect>
+
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <div class="slds-x-small-buttons--horizontal">
+                            <div class="slds-form-element">
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Submit_Button_Label}" press="{!c.updateStatus}"/>
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Button_Label_Cancel}" press="{!c.hideModalBox}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+</aura:component>

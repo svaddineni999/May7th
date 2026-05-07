@@ -1,0 +1,59 @@
+<!--
+    PC_EnrollmentWizardPage is the base component for all enrollment wizard pages. Wizard pages
+    extend PC_EnrollmentWizardPage in several ways, including overriding the default validate
+    method, defining the list of attributes that are required to complete server
+    side enrollment processing and adding any other page specific behavior that is required.
+Modification Log:
+
+**********************************************************************************
+Developer                   Date                   Description
+**********************************************************************************           
+Prachi Nandgaonkar          13-Apr-17              [PC-1287] Added a warning panel
+Shabda Bhujad				11-Jul-17			   [PC-1885] Added label for page error and warning messages
+Shabda Bhujad				22-Dec-17			   [PC-2629] Added access global for enrollment wizard to work with managed package
+-->
+<aura:component extensible="true" abstract="true" access="global">
+    <!-- Declares the validate method that is called by the enrollment wizard -->
+    <aura:method name="validate" action="{!c.validate}"  access="global"/>
+
+    <!-- Holds the current navigation state such as BACK, NEXT, SAVE, ENROLL-->
+    <aura:attribute name="navigationAction" type="String" default="" access="global"
+                    description="Holds the values - BACK, NEXT and SAVE. This can be used in the validate() method of wizard pages."/>
+
+    <!-- Set by extending pages to define which attributes should be saved by the wizard
+         and passed to the page processor during enrollment. -->
+	<aura:attribute name="persistentAttributes" type="String[]" default="[]" access="global"/>
+
+    <!-- Set by extending pages to define which attributes should be passed by the wizard
+         and passed to the subsequent wizard page during enrollment. These values are not persisted.-->
+    <aura:attribute name="transientWizardState" type="Map" access="global"/>
+
+
+    <!-- The enrollment case that the wizard is collecting information for. Set by the enrollment wizard. -->
+    <aura:attribute name="enrollmentCase" type="Object"  access="global"/>
+    
+    <!-- Page specifc config string from the custom metadata type. -->
+    <aura:attribute name="config" type="String"  access="global"/>
+
+    <!-- Set by the validate method to indicate if the page contents are valid -->
+    <aura:attribute name="isValid" type="Boolean" default="true"  access="global"/>
+
+    <!-- The error header to display when the page has erros. -->
+    <aura:attribute name="pageErrorHeader" type="String" default="{!$Label.c.PC_EWP_Error}"  access="global"/>
+
+    <!-- The list of page errors to display to the user. Set by the validate method. -->
+    <aura:attribute name="pageErrors" type="List"  access="global" />
+    <aura:renderIf isTrue="{!not(empty(v.pageErrors))}">
+    	<c:PC_ErrorPanel errorHeader="{!v.pageErrorHeader}" errors="{!v.pageErrors}"  />
+    </aura:renderIf>
+    
+    <!-- The warning header to display when the page has warnings. -->
+    <aura:attribute name="pageWarningHeader" type="String" default="{!$Label.c.PC_EWP_Warning}"  access="global"/>
+
+    <!-- The list of page warnings to display to the user. -->
+    <aura:attribute name="pageWarnings" type="List" access="global" />
+    <aura:renderIf isTrue="{!not(empty(v.pageWarnings))}">
+    	<c:PC_WarningPanel warningHeader="{!v.pageWarningHeader}" warnings="{!v.pageWarnings}"  />
+    </aura:renderIf>
+    {!v.body}
+</aura:component>

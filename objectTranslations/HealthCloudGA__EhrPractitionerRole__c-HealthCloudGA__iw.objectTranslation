@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>תפקיד המטפל ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>תפקיד מטפל ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>תפקידי המטפלים ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>תפקידי מטפלים ב-EHR</value>
+    </caseValues>
+    <fields>
+        <label>רופא ב-EHR</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>תפקידי רופא ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>תאריך סיום</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>קוד תפקיד</label>
+        <name>HealthCloudGA__RoleCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית תפקיד</label>
+        <name>HealthCloudGA__RoleLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת תפקיד</label>
+        <name>HealthCloudGA__RoleSystem__c</name>
+    </fields>
+    <fields>
+        <label>מזהה מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>שינוי במערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד התמחות1</label>
+        <name>HealthCloudGA__Specialty1Code__c</name>
+    </fields>
+    <fields>
+        <label>תווית התמחות1</label>
+        <name>HealthCloudGA__Specialty1Label__c</name>
+    </fields>
+    <fields>
+        <label>מערכת התמחות1</label>
+        <name>HealthCloudGA__Specialty1System__c</name>
+    </fields>
+    <fields>
+        <label>קוד התמחות2</label>
+        <name>HealthCloudGA__Specialty2Code__c</name>
+    </fields>
+    <fields>
+        <label>תווית התמחות2</label>
+        <name>HealthCloudGA__Specialty2Label__c</name>
+    </fields>
+    <fields>
+        <label>מערכת התמחות2</label>
+        <name>HealthCloudGA__Specialty2System__c</name>
+    </fields>
+    <fields>
+        <label>קוד התמחות3</label>
+        <name>HealthCloudGA__Specialty3Code__c</name>
+    </fields>
+    <fields>
+        <label>תווית התמחות3</label>
+        <name>HealthCloudGA__Specialty3Label__c</name>
+    </fields>
+    <fields>
+        <label>מערכת התמחות3</label>
+        <name>HealthCloudGA__Specialty3System__c</name>
+    </fields>
+    <fields>
+        <label>קוד התמחות4</label>
+        <name>HealthCloudGA__Specialty4Code__c</name>
+    </fields>
+    <fields>
+        <label>תווית התמחות4</label>
+        <name>HealthCloudGA__Specialty4Label__c</name>
+    </fields>
+    <fields>
+        <label>מערכת התמחות4</label>
+        <name>HealthCloudGA__Specialty4System__c</name>
+    </fields>
+    <fields>
+        <label>קוד התמחות5</label>
+        <name>HealthCloudGA__Specialty5Code__c</name>
+    </fields>
+    <fields>
+        <label>תווית התמחות5</label>
+        <name>HealthCloudGA__Specialty5Label__c</name>
+    </fields>
+    <fields>
+        <label>מערכת התמחות5</label>
+        <name>HealthCloudGA__Specialty5System__c</name>
+    </fields>
+    <fields>
+        <label>תאריך התחלה</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>שם תפקיד רופא ב-EHR</nameFieldLabel>
+</CustomObjectTranslation>

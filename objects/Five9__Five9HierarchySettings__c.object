@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Five9__Codebase__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Codebase</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Five9__Use_task_duplicate_finder_trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Enable this to activate &quot;TaskDuplicateFinder&quot; trigger that will detect Five9 duplicate Tasks and will remove them</description>
+        <label>Use task duplicate finder trigger</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Five9HierarchySettings</label>
+    <visibility>Public</visibility>
+</CustomObject>

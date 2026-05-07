@@ -1,0 +1,18 @@
+/**
+ * Created by havalakki on 2/5/2018.
+ */
+.THIS .searchPatient {
+    font-size: 0.875rem;
+}
+.THIS .searchBlock {
+    width: 65%;
+}
+.THIS .hideComponent  {
+    display:none;
+}
+.THIS .showComponent  {
+    display:block;
+}
+.THIS #modaldialogContainer  {
+    overflow-y: auto;
+}

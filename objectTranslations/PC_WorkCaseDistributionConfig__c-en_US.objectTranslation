@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Work Case Distribution Config</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Work Case Distribution Configs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assignment Lookup Field --></label>
+        <name>PC_AssignmentLookupField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assignment Type --></label>
+        <name>PC_AssignmentType__c</name>
+        <picklistValues>
+            <masterLabel>Association</masterLabel>
+            <translation><!-- Association --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program Case</masterLabel>
+            <translation><!-- Program Case --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Association Role --></label>
+        <name>PC_AssociationRole__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursement Specialist</masterLabel>
+            <translation><!-- Reimbursement Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_EngagementProgram__c</name>
+        <relationshipLabel><!-- Work Case Distribution Configs --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

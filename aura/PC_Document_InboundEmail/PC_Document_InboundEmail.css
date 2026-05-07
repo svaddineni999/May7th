@@ -1,0 +1,31 @@
+.THIS .slds-page-header {
+    padding: 5px;
+    margin-top: .75rem;
+}
+
+.THIS .noPadding {
+    padding: 0;
+}
+
+.THIS table.slds-table {
+    border: none;
+}
+
+.THIS .cmpntNameFontSize {
+    font-size:16px;
+}
+
+.THIS .slds-icon-utility-chevrondown,
+.THIS .slds-icon-utility-chevronright {
+    margin-top: 3px;
+}
+
+.THIS.backgroundColour {
+    background-color: white;
+}
+
+.THIS .pc-document-body{
+    width:100%;
+    height:80%;
+    min-height:calc(100vh - 260px);
+}

@@ -1,0 +1,118 @@
+<!--
+Modification Log:
+Developer                 Date                   Description
+Sheela Sathyanarayana     Aug 12 2017            PC-3477: Document Viewer Program Permissions flow
+Sheela Sathyanarayana     Sept 3 2018            PC-3524: Changed error log implementation and helper calls
+-->
+<aura:component  controller="PC_DocumentManagementReceiveConsent" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+   <aura:attribute name="isModalMapActive" type="boolean" default="true"/>
+   <aura:handler name = "init" action = "{!c.getConsentCasesList}" value = "{!this}"/>
+   <aura:attribute name ="consentCases" type="sObject[]" default="false"/>
+   <aura:attribute name="fieldLabels" type="sObject" default="false"/>  
+   <aura:attribute name="newConsent" type="String" default="{!$Label.c.PC_New}"/>
+   <aura:attribute name="consentFormHeading" type="String" default="{!$Label.c.PC_DocPgConsentModalHeader}"/>
+   <aura:attribute name="cancel" type="String" default="{!$Label.c.PC_Cancel_Button}"/>
+   <aura:attribute name="PC_Consent_label" type="String" default="{!$Label.c.PC_Document_Management_Consent}"/>
+   <aura:attribute name="namespace" type="String"/>
+   <aura:attribute name="namespacePrefix" type="String"/>   
+   <lightning:workspaceAPI aura:id="workspace" />
+
+   <aura:attribute name="errors" type="List"/>
+   <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    
+   <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+   </aura:if>
+    
+   <aura:if isTrue="{! v.isModalMapActive}"> 
+   	  <div class="modal-glass slds-backdrop fadein slds-backdrop_open" tabindex="1"></div>
+      <div role="dialog" tabindex="1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="panel slds-modal slds-fade-in-open slds-modal_medium">
+            
+           <div class="slds-modal__container" >
+                    
+                <!--Consent Form Header-->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-modal__close" title="{!$Label.c.PC_Close}" onclick="{!c.closeWindow}">
+                            <lightning:icon iconName="utility:close"  size="x-small" variant="inverse" alternativeText="{!$Label.c.PC_Close}"/>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate slds-form-element__label form-label">{!v.consentFormHeading}</h2>
+               		<lightning:button  class="slds-float_right" onclick="{!c.createConsent}" variant="brand">{!v.newConsent}</lightning:button> 
+               </header>
+                    
+             	<div class="slds-modal__content inputBoxPadding">       
+            	<!--Consent Form Table-->
+            
+            	<div class="slds-modal__content slds-p-around_medium" style="{!v.consentCases.length == 0 ? '' : 'display:none;'}" >
+                 	{!$Label.c.PC_No_Records_Found}
+                 	<br></br>
+ 				</div>  
+            
+                <div class="slds-form--inline" id="modal-content-id-1" style="{!v.consentCases.length != 0 ? '' : 'display:none;'}">        
+           			<table class="slds-table slds-table--bordered slds-scrollable" style="width: 100%;border-right: 1px solid #d8dde6;border-left: 1px solid #d8dde6;">
+                    	<thead>
+                    		<tr class="slds-text-title_caps">
+                            <th class="slds-cell-shrink" scope="col"></th>
+                            <th scope="col" class="">
+                        		<div class="slds-truncate" title="{!v.fieldLabels.caseId}">{!v.fieldLabels.caseId}</div>
+                        	</th>
+                        	<th scope="col" class="">
+                        	    <div class="slds-truncate" title="{!v.fieldLabels.service}">{!v.fieldLabels.service}</div>
+                        	</th>
+                        	<th scope="col" class="">
+                        	    <div class="slds-truncate" title="{!v.fieldLabels.patientResponse}">{!v.fieldLabels.patientResponse}</div>
+                        	</th>
+                        	<th scope="col" class="">
+                        	    <div class="slds-truncate" title="{!v.fieldLabels.patientResponseDate}">{!v.fieldLabels.patientResponseDate}</div>
+                        	</th>  
+                        	<th scope="col" class="">
+                        	    <div class="slds-truncate" title="{!v.fieldLabels.hcpResponse}">{!v.fieldLabels.hcpResponse}</div>
+                        	</th>
+                        	<th scope="col" class="">
+                        		<div class="slds-truncate" title="{!v.fieldLabels.hcpResponseDate}">{!v.fieldLabels.hcpResponseDate}</div>
+                        	</th>                                    
+                            </tr>
+                    	</thead>
+                    	
+                        <tbody>
+                    		<aura:iteration items ="{!v.consentCases}" var="consentCasesList" indexVar="i">
+                        		<tr>
+                                   <td class="slds-truncate" >
+                                        <div class="slds-truncate slds-text-align--center" data-id="" title="">
+                                             <lightning:button value="{!consentCasesList.pspId}" type="button" variant="base" iconName="utility:edit" onclick="{!c.editConsent}"/>
+                                        </div> 
+                                   </td>                                    
+                        		    <td class="slds-truncate" data-id="Data ID" title="{!consentCasesList.caseNumber}">
+                                       <a id ="{!consentCasesList.caseId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                            {!consentCasesList.caseNumber}
+                                        </a>
+									</td>                                    
+                        		    <td  class="slds-truncate" data-label="Data ID" title="{!consentCasesList.service}">
+                                    	<a id ="{!consentCasesList.serviceId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                            {!consentCasesList.service}
+                                        </a>
+                                    </td>
+                        		    <td class="slds-truncate"  title="{!consentCasesList.patientResponse}">
+                                        {!consentCasesList.patientResponse}
+                                    </td>
+                        		    <td class="slds-truncate"  title="{!consentCasesList.patientResponseDate}">
+                                        {!consentCasesList.patientResponseDate}
+                                    </td> 
+                                    <td class="slds-truncate"  title="{!consentCasesList.hcpResponse}">
+                                        {!consentCasesList.hcpResponse}
+                                    </td>
+                                    <td class="slds-truncate" title="{!consentCasesList.hcpResponseDate}">
+                                        {!consentCasesList.hcpResponseDate}
+                                    </td>   
+								</tr>
+                    		</aura:iteration>
+                    	</tbody>
+                	</table>
+               </div>
+           </div>     
+           <footer class="slds-modal__footer">
+				<lightning:button onclick="{!c.closeWindow}" variant="brand">{!v.cancel}</lightning:button>
+           </footer>
+        </div>
+      </div> 
+   </aura:if>
+</aura:component>

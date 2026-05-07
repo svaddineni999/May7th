@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningExperienceTheme xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultBrandingSet>LEXTHEMINGACLS_AshfieldTheme</defaultBrandingSet>
+    <description>Ashfield Theme and Branding</description>
+    <isDarkModeEnabled>false</isDarkModeEnabled>
+    <masterLabel>Ashfield Theme</masterLabel>
+    <shouldOverrideLoadingImage>false</shouldOverrideLoadingImage>
+</LightningExperienceTheme>

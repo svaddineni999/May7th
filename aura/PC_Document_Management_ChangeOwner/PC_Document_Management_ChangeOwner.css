@@ -1,0 +1,32 @@
+.THIS #reassign-button{
+    display: inline;
+}
+
+.THIS .hideBorder {
+    border: none;
+}
+.THIS .matchedItem {
+    padding: 1px 5px;
+}
+.THIS .slds-hide {
+    display: none;
+}
+
+.THIS .slds-lookup__menu{
+    display: block;
+}
+
+.THIS .listBoxWidth{
+    max-height: 210%;
+    width: 74%;
+    overflow-y: scroll;
+}
+.THIS .searcIconWidth{
+    width: 260px;
+}
+.THIS .hideScroll{
+    overflow-y:hidden;
+}
+.THIS .modalContentHeight{
+    height:35%;
+}

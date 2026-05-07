@@ -1,0 +1,133 @@
+<!--
+ - Created by vkashikar on 8/13/2018.
+
+Modifiction Log:
+Tushar Arora     	            Jul 14,2020                     [PC-6439] Added attributes relatedTo as well as relatedToObject and Logic setRecordId for Guided Task Management.
+ -->
+
+<aura:component description="PC_NewReferral" access="global"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="PC_NewReferral">
+
+    <aura:attribute name="standardErrorMessage" type="String" default="{!$Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="missingPharmacy" type="String" default="{!$Label.c.PC_NewReferral_MissingPharmacy}" />
+    <aura:attribute name="errors" type="List"/>
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+
+    <aura:attribute name="formData" type="Object" />
+    <aura:attribute name="defaultDropDownValue" type="String" default="{! $Label.c.PC_Select}" />
+    <aura:attribute name="selectedProgamCoverage" type="Object" default="null"/>
+    <aura:attribute name="recordId" type="Id" access="global" />
+    <aura:attribute name="relatedToId" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToObject" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="inProgress" type="Boolean"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+
+    <div>
+        <aura:if isTrue="{!v.inProgress}">
+            <lightning:spinner variant="brand" alternativeText="Loading" size="medium"/>
+        </aura:if>
+
+        <div class="formContent" aura:id="formContent">
+            <div class="messageWithButtons slds-p-top--small">
+                <div class="existingPharmacyMessage slds-p-right--small slds-float--left">
+                        {!$Label.c.PC_Referral_Existing_Pharmacy_Message}
+                </div>
+                <div class="buttonGroups">
+                    <lightning:buttonGroup>
+                        <lightning:button label="{!$Label.c.PC_Yes}" onclick="{!c.handleClick}"
+                                          variant="brand" aura:id="yesBtn" name="yesBtn"/>
+                        <lightning:button label="{!$Label.c.PC_No}" onclick="{!c.handleClick}"
+                                          variant="neutral" aura:id="noBtn" name="noBtn"/>
+                    </lightning:buttonGroup>
+                </div>
+            </div>
+
+            <div class="slds-clear"/>
+
+            <div aura:id="programCoveragesBlock" class="">
+                <div class="slds-p-top--medium">
+                    <div class="slds-float--right programCoverageSelectDropDown">
+                        <ui:inputSelect class="slds-select" change="{!c.setSelectedProgramCoverage}"
+                                        aura:id="inputProgramCoverage"/>
+                    </div>
+
+                    <div class="programCoverageSelectLabel">
+                        <label class="slds-item_label" for="select-01">
+                            {!$Label.c.PC_Referral_Program_Coverage} <abbr class="slds-required" title="required">&nbsp;*</abbr>
+                        </label>
+                    </div>
+
+                </div>
+
+                <div class="slds-show slds-p-top--medium">
+                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+
+                        <div class="slds-media__body">
+                            <div class="slds-tile__detail">
+
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate"
+                                           title="{!v.formData.pharmacyLabel.name}">{!v.formData.pharmacyLabel.name}
+                                            :</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate"
+                                           title="{!v.selectedProgamCoverage.pharmacy.name}">{!v.selectedProgamCoverage.pharmacy.name}</p>
+                                    </dd>
+                                </dl>
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate"
+                                           title="{!v.formData.pharmacyLabel.zipCode}">{!v.formData.pharmacyLabel.zipCode}
+                                            :</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate"
+                                           title="{!v.selectedProgamCoverage.pharmacy.zipCode}">{!v.selectedProgamCoverage.pharmacy.zipCode}</p>
+                                    </dd>
+                                </dl>
+                                <dl class="slds-list_horizontal slds-wrap">
+                                    <dt class="slds-dl_horizontal__label">
+                                        <p class="slds-truncate"
+                                           title="{!v.formData.pharmacyLabel.createdDate}">{!v.formData.pharmacyLabel.createdDate}
+                                            :</p>
+                                    </dt>
+                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                        <p class="slds-truncate"
+                                           title="{!v.selectedProgamCoverage.pharmacy.createdDate}">{!v.selectedProgamCoverage.pharmacy.createdDateInUserFormat}</p>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="slds-float--right slds-p-top--small">
+                    <lightning:button name="submit" label="{!$Label.c.PC_Submit_Button_Label}"
+                                      onclick="{!c.submit}" variant="brand"></lightning:button>
+                </div>
+
+            </div>
+
+
+
+            <div class="slds-clear"/>
+
+            <div aura:id="mapBlock" class="slds-hide">
+                    <span class="slds-text-title slds-p-bottom--small">{!$Label.c.PC_ReferralMap}</span>
+                    {!v.body}
+            </div>
+
+        </div>
+    </div>
+
+</aura:component>

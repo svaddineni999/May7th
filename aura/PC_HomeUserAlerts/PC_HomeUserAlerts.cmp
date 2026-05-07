@@ -1,0 +1,42 @@
+<aura:component controller="PC_HomeUserAlertsController" implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="lstAlerts" type="PC_HomeUserAlertsController.object[]" />
+    
+    <aura:attribute name="listURL" type="String" /> 
+    <aura:attribute name="onclick" type="Aura.Action" default="{!c.gotoList}" description="This allows handling onClick events"/>
+    <aura:attribute name="userContext" type="String" /> 
+    <aura:attribute name="namespace" type="String" default="" />  
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    
+    <!-- START STARRED --> 
+    <div class="slds-card" style="padding: 1rem; background: none; border: none;">
+        <div class="slds-card slds-card--narrow">
+            <div class="PC_Alert_Card_Header slds-card__header slds-grid ">
+                <div class="slds-media slds-media--center slds-has-flexi-truncate">
+                    <div class="slds-media__body">
+                        <a href="javascript:void(0);" class="slds-text-link--reset">
+                            <span class="slds-text-heading--small">{!$Label.c.PC_Assistant} ({!v.lstAlerts.length})</span>
+                        </a>
+                    </div>                
+                </div>
+                <div>
+                    <aura:if isTrue="{!v.lstAlerts.length > 0}">
+                        <button class="slds-button slds-shrink-none" onclick="{!c.gotoList}">{!$Label.c.PC_ShowMore}</button>
+                    </aura:if>
+                </div>
+            </div>
+            
+            <div class="slds-card__body">
+                <div class="slds-card__body--inner">
+                    <aura:iteration items="{!v.lstAlerts}" var="alert">
+                        <c:PC_HomeAlertCard objAlert="{!alert}" usersContext="{!v.userContext}" taskUpdated="{!c.handleTaskUpdated}"/>
+                    </aura:iteration>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END STARRED --> 
+    
+</aura:component>

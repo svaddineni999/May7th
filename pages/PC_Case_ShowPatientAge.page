@@ -1,0 +1,31 @@
+<apex:page standardController="Case" extensions="PC_Case_ShowPatientAge_ExtController">
+    <style>
+    	body {padding: 0px 0px 0px 0px !important}
+    </style>
+    <apex:includeLightning />
+	
+    <div id="lightning" />
+    <apex:include pageName="PC_JSLib"/>
+
+    <script>
+    /*todo - remove namespace hardcoding */ 
+    var x = {!age};
+    var ageLabel= "{!$Label.PC_Age}";
+    var age;
+    if(x == -2 || x == -1) {
+    	age = 'NA';
+    }
+    else {
+    	age = x;    
+    }
+    var ns = getOrgNamespace();
+    $Lightning.use(ns + ":PC_Template_ShowFieldInDetailsPageApp", function() {
+          $Lightning.createComponent(ns + ":PC_Template_ShowFieldInDetailsPage",
+          { label : ageLabel ,'value': age},
+          "lightning",
+          function(cmp) {
+            // do some stuff
+          });
+        });
+    </script>
+</apex:page>

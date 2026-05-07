@@ -1,0 +1,206 @@
+<!--
+ - Created by kkanteti on 6/18/2020.
+ Modification Log:
+**********************************************************************************************************
+Developer                   Date                   Description
+***********************************************************************************************************
+Kishore Kanteti           Jun 22,2020            Initial Version
+Kanteti Kishore           29-July-2020           [PC-6592] Changes in helper at line-321,323
+Kishore Kanteti           Jul 31,2020            [PC-6636] UI Feedback Changes
+Kishore Kanteti           Aug 24,2020            [PC-6691] UI Changes - Order -Asc Default
+Kishore Kanteti           Aug 28,2020            [PC-6737] Helptext overrides 'selecct an object' label when translated.
+Kishore Kanteti           Sep 30,2020            [PC-6144] Enhancement of Conditions/Properties builder
+************************************************************************************************************/
+-->
+
+
+<aura:component controller="PC_CreateOrUpdateAutomationTask"
+                description="This component is referred for Create/Update Automation task in support plan activities"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <aura:attribute name="triggerEventObjectLabel" type="String" default=""/>
+    <aura:attribute name="triggerEventObjectApiName" type="String" default=""/>
+    <aura:attribute name="createUpdateTaskJSON" type="String" default=""/>
+    <aura:attribute name="lookupChildObjects" type="Object" access="public"/>
+    <aura:attribute name="childUpdateOptions" type="Object" access="public"/>
+    <aura:attribute name="triggerEventObject" type="Object" access="public"/>
+    <aura:attribute name="constantsWrapper" type="Object"/>
+    <aura:attribute name="fetchedFieldMap" type="Object"/>
+    <aura:attribute name="fetchedFilterCondition" type="Object"/>
+    <aura:attribute name="createOutcomeTask" type="Boolean" default="false"/>
+    <aura:attribute name="continueRuntimeWhenNoUpdates" type="Boolean" default="false"/>
+    <aura:attribute name="disabled" type="Boolean" default="false"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+    <aura:attribute name="isSaving" type="Boolean" default="false"/>
+    <aura:attribute name="fieldMappingBuilderCount" type="Integer" default="0"/>
+    <aura:attribute name="filterConditionBuilderCount" type="Integer" default="0"/>
+    <aura:attribute name="conBldrLogic" type="String" default=""/>
+    <aura:attribute name="selectedObjectNameType" type="String" access="public"/>
+    <aura:attribute name="selectedObject" type="Object" access="public"/>
+    <aura:attribute name="updateObjectType" type="String" access="public"/>
+    <aura:attribute name="selectedOrder" type="String" access="public"/>
+    <aura:attribute name="selectedCriteria" type="String" access="public"/>
+    <aura:attribute name="selectedNullsOrder" type="String" access="public"/>
+    <aura:attribute name="selectedOrderByFields" type="List" access="public"/>
+    <aura:attribute name="comboboxOptions" type="List" access="public"/>
+    <aura:attribute name="recordConditions" type="List" default="[]"/>
+    <aura:attribute name="recordProperties" type="List" default="[]"/>
+    <aura:attribute name="selectedComboboxOptions" type="List" default=""
+                    description="Selected value in Single/Multi Select Combobox"/>
+
+    <aura:attribute name="selectAnObjectLabel" type="String" access="public"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_SelectObject}"/>
+    <aura:attribute name="relatedRecordsFilterLabel" type="String"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_FilterConditions}"/>
+    <aura:attribute name="orderLabel" type="String" access="public" default="{!$Label.c.PC_Order}"/>
+    <aura:attribute name="nullsLabel" type="String" access="public"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_NullRecords}"/>
+    <aura:attribute name="criteriaLabel" type="String" access="public"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_Criteria}"/>
+    <aura:attribute name="orderByFieldsLabel" type="String" access="public"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_OrderByFields}"/>
+    <aura:attribute name="setRecordFieldsLabel" type="String"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_SetFieldsValues}"/>
+    <aura:attribute name="continueRuntimeWhenNoUpdatesLabel" type="String" access="public"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_ContinueRuntime}"/>
+    <aura:attribute name="createOutcomeTaskLabel" type="String" default="{!$Label.c.PC_CreateOutcomeTask}"/>
+    <aura:attribute name="step2Label" type="String" default="{!$Label.c.PC_Step2}"/>
+    <aura:attribute name="step1Label" type="String" default="{!$Label.c.PC_Step1}"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute name="invalidJSONErrorMessage" type="String" default="{!$Label.c.PC_InvalidJSONErrorMessage}"/>
+    <aura:attribute name="requiredFieldErrorMessage" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}"/>
+    <aura:attribute name="objectOptionsHelptext" type="String"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_OptionsHelptext}"/>
+    <aura:attribute name="triggerRecordOptionGroupLabel" type="String"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_TriggerEvtObject}"/>
+    <aura:attribute name="lookupObjectsOptionGroupLabel" type="String"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_TriggerEvtLookUpObject}"/>
+    <aura:attribute name="childObjectsOptionGroupLabel" type="String"
+                    default="{!$Label.c.PC_CreateUpdateAutomationTask_TriggerEvtRelatedObject}"/>
+    <aura:attribute name="nonePicklistValue" type="String" default="{! $Label.c.PC_Picklist_None}" access="private"/>
+
+    <aura:attribute name="addRowLabel" type="String" default="{!$Label.c.PC_Add_Row}"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:method name="getTaskJSONToSave" action="{!c.getTaskJSONToSave}"/>
+    <aura:handler name="change" value="{!v.selectedComboboxOptions}" action="{!c.onChangeOrderByFields}"/>
+
+    <div class="">
+        <lightning:spinner aura:id="spinner" class="slds-hide" variant="brand"/>
+    </div>
+    <div id="fieldMappingContainer" class="box hideBorder slds-form-element slds-m-top_small">
+        <div class="conditionalBuilderBox">
+            <div id="selectObjectDropdown">
+                <label class="slds-form-element__label slds-p-left_small slds-p-bottom_none slds-p-top_none "><span style="color:rgb(194, 57, 52);padding-right:2px;">*</span>{!v.selectAnObjectLabel}</label>
+                <lightning:helptext class="adjustMargin" content="{!v.objectOptionsHelptext}"></lightning:helptext>
+                <lightning:select class="slds-size_6-of-12 slds-scrollable_y slds-p-around_small slds-p-top_none adjustWithHelptext"
+                                  required="true" onchange="{!c.handleObjectChange}" name="selectObject"
+                                  disabled="{!v.disabled}" label=""
+                                  aura:id="selectObject"
+                                  value="{!v.selectedObjectNameType}">
+                    <option text="{!v.nonePicklistValue}" value=""/>
+                    <optgroup label="{!v.triggerRecordOptionGroupLabel}">
+                    <option text="{!v.triggerEventObject.objectLabel}"
+                            value="{!v.triggerEventObject.objectApiName +','+ v.triggerEventObject.type}"
+                               selected="{!v.triggerEventObject.selected}"/>
+                    </optgroup>
+                    <optgroup label="{!format(v.lookupObjectsOptionGroupLabel,v.triggerEventObjectLabel)}">
+                        <aura:iteration items="{!v.lookupChildObjects.triggerEventLookupObjects}" var="eachLookupOption">
+                            <option title="{!eachLookupOption.lookupFieldApiName}" text="{!eachLookupOption.lookupFieldLabel}"
+                                    value="{!eachLookupOption.objectApiName +','+ eachLookupOption.type+','+ eachLookupOption.lookupFieldApiName}"
+                                    selected="{!eachLookupOption.selected}"/>
+                        </aura:iteration>
+                    </optgroup>
+                    <optgroup label="{!format(v.childObjectsOptionGroupLabel,v.triggerEventObjectLabel)}">
+                        <aura:iteration items="{!v.lookupChildObjects.triggerEventChildObjects}" var="eachChildOption">
+                            <option text="{!eachChildOption.objectLabel + ' (' + eachChildOption.childRelationshipName + ')'}"
+                                    value="{!eachChildOption.objectApiName+','+ eachChildOption.type + ',' + eachChildOption.childRelationshipName}"
+                                    selected="{!eachChildOption.selected}"/>
+                        </aura:iteration>
+                    </optgroup>
+                </lightning:select>
+            </div>
+            <aura:if isTrue="{!v.updateObjectType == 'updateChildRecords'}">
+                <div class="slds-p-top_medium slds-p-left_x-small slds-p-bottom_x-small slds-p-right_x-small stepsStyle">
+                    <label class="slds-m-around_small slds-m-bottom_none conditionalBuilderLabel">{!v.step1Label}
+                        : {!v.relatedRecordsFilterLabel}</label>
+                    <c:PC_PropertiesAndConditionsBuilder objectName="{!v.selectedObject.objectApiName}"
+                                                         objectLabel="{!v.selectedObject.objectLabel}"
+                                                         fetchedConditionsOrProperties="{!v.recordConditions}"
+                                                         triggerObjectLabel="{!v.triggerEventObjectLabel}"
+                                                         objectType="Data Object"
+                                                         aura:id="relatedObjectRecordsFilter"
+                                                         isDisabled="{!v.disabled}"
+                                                         triggerObjectName="{!v.triggerEventObjectApiName}"
+                                                         showDeleteOptionInFirstRow = "true"
+                                                         operatorConstants="{!v.constantsWrapper}"
+                                                         builderContext="ConditionalBuilder"
+                                                         isUpdateConditionalBuilder = "true"
+                                                         boxBorderRequired="false"/>
+                    <div class="slds-grid">
+                        <div class="slds-p-left_small slds-p-bottom_medium" style="width:42%">
+                            <c:PC_SingleAndMultiSelectCombobox aura:id="singleMultiSelectCombobox"
+                                                               options="{!v.comboboxOptions}"
+                                                               values="{!v.selectedComboboxOptions}" multiSelect="true"
+                                                               label="{!v.orderByFieldsLabel}"
+                                                               disabled="{!v.disabled}"/>
+                        </div>
+                        <lightning:select label="{!v.orderLabel}" value="{!v.selectedOrder}" disabled="{!v.disabled}"
+                                          class="slds-p-left_small slds-p-bottom_medium orderWidth">
+                            <aura:iteration items="{!v.childUpdateOptions.orderOptions}" var="eachOrder">
+                                <option text="{!eachOrder.label}" value="{!eachOrder.value}"
+                                        selected="{!eachOrder.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                        <lightning:select label="{!v.nullsLabel}" value="{!v.selectedNullsOrder}" disabled="{!v.disabled}"
+                                          class="slds-p-left_small slds-p-bottom_medium nullsWidth">
+                            <aura:iteration items="{!v.childUpdateOptions.nullsOptions}" var="eachNullsOption">
+                                <option text="{!eachNullsOption.label}" value="{!eachNullsOption.value}"
+                                        selected="{!eachNullsOption.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                    </div>
+                    <div class="slds-p-left_small slds-p-bottom_small">
+                        <lightning:radioGroup name="criteriaOptions"
+                                              label="{!v.criteriaLabel}"
+                                              options="{!v.childUpdateOptions.criteriaOptions}"
+                                              value="{!v.selectedCriteria}"
+                                              disabled="{!v.disabled}"
+                                              type="radio"/>
+                    </div>
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.selectedObjectNameType != ''}">
+                <div class="{!v.updateObjectType == 'updateChildRecords' ? 'slds-m-top_medium slds-p-bottom_medium slds-p-around_medium stepsStyle':'slds-m-around_small'}">
+                    <aura:if isTrue="{!v.updateObjectType == 'updateChildRecords'}">
+                        <label class="slds-m-around_xx-small slds-m-bottom_none conditionalBuilderLabel">{!v.step2Label}
+                            : {!v.setRecordFieldsLabel}</label>
+                        <aura:set attribute="else">
+                            <label class="slds-m-around_xx-small slds-m-bottom_none conditionalBuilderLabel">{!v.setRecordFieldsLabel}</label>
+                        </aura:set>
+                    </aura:if>
+                    <c:PC_PropertiesAndConditionsBuilder objectName="{!v.selectedObject.objectApiName}"
+                                                         triggerObjectLabel="{!v.triggerEventObjectLabel}"
+                                                         aura:id="updateRecordPropertyBuilder"
+                                                         triggerObjectName="{!v.triggerEventObjectApiName}"
+                                                         objectType="Data Object"
+                                                         fetchedConditionsOrProperties="{!v.recordProperties}"
+                                                         operatorConstants="{!v.constantsWrapper}"
+                                                         builderContext="PropertyBuilderInUpdate"
+                                                         boxBorderRequired="true"
+                                                         isDisabled="{!v.disabled}"
+                                                         updateContext="{!v.updateObjectType}"/>
+                </div>
+                <aura:if isTrue="{!v.updateObjectType != 'updateTriggerRecord'}">
+                    <lightning:input class="slds-p-around_small slds-p-bottom_none" type="checkbox"
+                                     disabled="{!v.disabled}" label="{!v.continueRuntimeWhenNoUpdatesLabel}"
+                                     checked="{!v.continueRuntimeWhenNoUpdates}"/>
+                </aura:if>
+                <lightning:input class="slds-p-around_small" type="checkbox"
+                                 disabled="{!v.disabled}" label="{!v.createOutcomeTaskLabel}"
+                                 checked="{!v.createOutcomeTask}"/>
+            </aura:if>
+        </div>
+    </div>
+</aura:component>

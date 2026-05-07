@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fieldSets>
+        <fullName>PC_OrderItems</fullName>
+        <description>Fiedset used on Order Creation</description>
+        <displayedFields>
+            <field>PC_Order__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Product__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_OrderItemStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_OrderItemType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Strength__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_NDC__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Packaging__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Quantity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>PC Orderitems</label>
+    </fieldSets>
+    <fields>
+        <fullName>PC_ActualDeliveryDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order was delivered.</description>
+        <inlineHelpText>Date when the order was delivered.</inlineHelpText>
+        <label>Actual Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_DaysSupply__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number of days the prescribed medication will last if taken as per the recommended dosage.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of days the prescribed medication will last if taken as per the recommended dosage.</inlineHelpText>
+        <label>Days Supply</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_EstimatedDeliveryDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order is expected to deliver.</description>
+        <inlineHelpText>Date when the order is expected to deliver.</inlineHelpText>
+        <label>Estimated Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_NDC__c</fullName>
+        <deprecated>false</deprecated>
+        <description>National Drug Code associated with the product being order.</description>
+        <externalId>false</externalId>
+        <formula>PC_Product__r.PC_NDC__c</formula>
+        <inlineHelpText>National Drug Code associated with the product being order.</inlineHelpText>
+        <label>NDC</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_OrderItemStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of the order item.</description>
+        <inlineHelpText>Status of the order item.</inlineHelpText>
+        <label>Order Item Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Shipped</fullName>
+                    <default>false</default>
+                    <label>Shipped</label>
+                </value>
+                <value>
+                    <fullName>Delivered</fullName>
+                    <default>false</default>
+                    <label>Delivered</label>
+                </value>
+                <value>
+                    <fullName>Entered-in-error</fullName>
+                    <default>false</default>
+                    <label>Entered-in-error</label>
+                </value>
+                <value>
+                    <fullName>Stopped</fullName>
+                    <default>false</default>
+                    <label>Stopped</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_OrderItemType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of the order item.</description>
+        <inlineHelpText>Type of the order item.</inlineHelpText>
+        <label>Order Item Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Informational Kits</fullName>
+                    <default>false</default>
+                    <label>Informational Kits</label>
+                </value>
+                <value>
+                    <fullName>Drugs</fullName>
+                    <default>false</default>
+                    <label>Drugs</label>
+                </value>
+                <value>
+                    <fullName>Combination Product</fullName>
+                    <default>false</default>
+                    <label>Combination Product</label>
+                </value>
+                <value>
+                    <fullName>Related Supplies</fullName>
+                    <default>false</default>
+                    <label>Related Supplies</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Order__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order associated with the order item.</description>
+        <inlineHelpText>Order associated with the order item.</inlineHelpText>
+        <label>Order</label>
+        <referenceTo>PC_Order__c</referenceTo>
+        <relationshipLabel>Order Items</relationshipLabel>
+        <relationshipName>OrderItems</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_Packaging__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of packaging of the order item.</description>
+        <inlineHelpText>Type of packaging of the order item.</inlineHelpText>
+        <label>Packaging</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pills</fullName>
+                    <default>false</default>
+                    <label>Pills</label>
+                </value>
+                <value>
+                    <fullName>Bottles</fullName>
+                    <default>false</default>
+                    <label>Bottles</label>
+                </value>
+                <value>
+                    <fullName>Cardboard Boxes</fullName>
+                    <default>false</default>
+                    <label>Cardboard Boxes</label>
+                </value>
+                <value>
+                    <fullName>Plastic Containers</fullName>
+                    <default>false</default>
+                    <label>Plastic Containers</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ProductDescription__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description of the Product being ordered.</description>
+        <externalId>false</externalId>
+        <formula>PC_Product__r.Description</formula>
+        <inlineHelpText>Description of the Product being ordered.</inlineHelpText>
+        <label>Product Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Product__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Product being ordered.</description>
+        <inlineHelpText>Product being ordered.</inlineHelpText>
+        <label>Product Name</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Order Items</relationshipLabel>
+        <relationshipName>Order_Items</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Quantity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Quantity of the product being ordered.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Quantity of the product being ordered.</inlineHelpText>
+        <label>Quantity</label>
+        <precision>5</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ReceivedBy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Entity who received the order.</description>
+        <inlineHelpText>Entity who received the order.</inlineHelpText>
+        <label>Received By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_ShipmentTrackingNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique tracking number of the order shipment.</description>
+        <inlineHelpText>Unique tracking number of the order shipment.</inlineHelpText>
+        <label>Shipment Tracking Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_ShippingDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order is shipped.</description>
+        <inlineHelpText>Date when the order is shipped.</inlineHelpText>
+        <label>Shipping Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Strength__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Strength of the Drug / Product.</description>
+        <externalId>false</externalId>
+        <formula>PC_Product__r.PC_Strength__c</formula>
+        <inlineHelpText>Strength of the Drug / Product.</inlineHelpText>
+        <label>Strength</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Order Item</label>
+    <nameField>
+        <displayFormat>Item-{0000}</displayFormat>
+        <label>OrderItemNumber</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Order Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

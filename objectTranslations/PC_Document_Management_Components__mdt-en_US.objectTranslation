@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Document Management Component</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Document Management Components</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Component Name --></label>
+        <name>PC_Component_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ordinal --></label>
+        <name>PC_Ordinal__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

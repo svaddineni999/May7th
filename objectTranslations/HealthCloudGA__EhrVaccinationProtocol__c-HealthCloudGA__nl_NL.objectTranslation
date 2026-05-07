@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vaccinatieprotocol volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vaccinatieprotocollen volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Bevoegdheid (255)</label>
+        <name>HealthCloudGA__Authority255__c</name>
+    </fields>
+    <fields>
+        <label>Bevoegdheid</label>
+        <name>HealthCloudGA__Authority__c</name>
+    </fields>
+    <fields>
+        <label>Beschrijving</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Doseringsvolgorde</label>
+        <name>HealthCloudGA__DoseSequence__c</name>
+    </fields>
+    <fields>
+        <label>Code voor doseringsstatus</label>
+        <name>HealthCloudGA__DoseStatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor doseringsstatus</label>
+        <name>HealthCloudGA__DoseStatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Code voor reden van doseringsstatus</label>
+        <name>HealthCloudGA__DoseStatusReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Label van reden voor doseringsstatus</label>
+        <name>HealthCloudGA__DoseStatusReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor reden van doseringsstatus</label>
+        <name>HealthCloudGA__DoseStatusReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor doseringsstatus</label>
+        <name>HealthCloudGA__DoseStatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code voor doseringsdoel</label>
+        <name>HealthCloudGA__DoseTargetCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor doseringsdoel</label>
+        <name>HealthCloudGA__DoseTargetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor doseringsdoel</label>
+        <name>HealthCloudGA__DoseTargetSystem__c</name>
+    </fields>
+    <fields>
+        <label>Immunisatie</label>
+        <name>HealthCloudGA__Immunization__c</name>
+        <relationshipLabel>Vaccinatieprotocollen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Doseringen in reeks</label>
+        <name>HealthCloudGA__SeriesDoses__c</name>
+    </fields>
+    <fields>
+        <label>Reeks</label>
+        <name>HealthCloudGA__Series__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>ID van vaccinatieprotocol volgens EPD (e</nameFieldLabel>
+</CustomObjectTranslation>

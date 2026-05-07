@@ -1,0 +1,163 @@
+<!--
+   - Created by sathekumar on 9/6/2021.
+   -->
+<aura:component description="PC_OcrReviewDocument" implements="force:hasRecordId,lightning:isUrlAddressable,flexipage:availableForAllPageTypes" controller="PC_OcrReviewDocumentController" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="String" default=""/>
+    <aura:attribute name="layoutType" type="String" default="Full" />
+    <aura:attribute name="defaultFieldValues" type="Map" default="{}" />
+
+    <aura:attribute name="namespace" type="String" default="" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" default="" access="private"/>
+
+    <aura:attribute name="documentInfoObj" type="Object"/>
+    <aura:attribute name="showTemplateSelectionSection" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="showRecordFormSection" type="String" default="false" access="private"/>
+    <aura:attribute name="templateTypeId" type="String" default="" access="private"/>
+    <aura:attribute name="templateTypeName" type="String" default="" access="private"/>
+    <aura:attribute name="templateTypeNameCopy" type="String" default="" access="private"/>
+
+    <aura:attribute name="ocrResponseId" type="String" default="" access="private"/>
+    <aura:attribute name="ocrQueueId" type="String" default="" access="private"/>
+    <aura:attribute name="ocrTemplateTypeId" type="String" default="" access="private"/>
+    <aura:attribute name="isTemplateTypeIdPreConfigured" type="Boolean" default="" access="private"/>
+
+
+    <aura:attribute name="ocrQueue" type="Map" default="" access="private"/>
+    <aura:attribute name="ocrTemplateType" type="Map" default="" access="private"/>
+    <aura:attribute name="ocrResponse" type="Map" default="" access="private"/>
+    <aura:attribute name="ocrTemplateMappings" type="List" default="[]" access="private"/>
+    <aura:attribute name="ocrResultList" type="List" default="[]" access="private"/>
+
+
+    <aura:attribute name="targetObjectApiName" type="String" default="" />
+    <aura:attribute name="targetRecordTypeId" type="String" default=""/>
+    <aura:attribute name="targetRecordId" type="String" default=""/>
+    <aura:attribute name="targetRecordTypeName" type="String" default="" access="private"/>
+    <aura:attribute name="targetObjectLabel" type="String" default="" />
+
+    <aura:attribute name="currentSection" type="Integer" default="1"/>
+    <aura:attribute name="hasPrevious" type="Boolean" default="false"/>
+    <aura:attribute name="hasNext" type="Boolean" default="false"/>
+    <aura:attribute name="hasSave" type="Boolean" default="false"/>
+    <aura:attribute name="launchFrom" type="String" default="ACTION_RIBBON" />
+    <aura:attribute name="ocrTabLabel" type="String" default="{!$Label.c.PC_OcrReviewPageHeader}"/>
+    <aura:attribute name="ocrTabIcon" type="String" default="standard:display_rich_text"/>
+
+    <aura:attribute name="documentName" type="String" default="" access="private"/>
+    <aura:attribute name="engagementProgram" type="String" default="" access="private"/>
+    <aura:attribute name="isDocumentEngagementProgram" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="templateCategories" type="List" default="[]" access="private"/>
+    <aura:attribute name="createDocumentLinkLog" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="hideDocTypeSelectionWhenAutoSelected" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="recordFormSectionHeader" type="String" default="" access="private"/>
+
+    <aura:attribute name="saveBtnLabel" type="String" default="{!$Label.c.PC_Create}" access="private"/>
+    <aura:attribute name="updateLabel" type="String" default="{!$Label.c.PC_Update_Button}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="showSpinner" type="boolean" default="false" access="private"/>
+    <aura:attribute name="errors" type="List" default="" access="private"/>
+    <aura:attribute name="docManagementDocumentReviewLabel" type="String" default="{!$Label.c.PC_DocumentReview}" description="Used in Document Action. Referred this label so that it gets added as a dependency during packaging."/>
+    <aura:attribute name="ocrReviewPageFormHeaderCreateLabel" type="String" default="{! $Label.c.PC_OcrReviewPageFormHeaderCreateLabel}" access="private"/>
+    <aura:attribute name="ocrReviewPageFormHeaderUpdateLabel" type="String" default="{! $Label.c.PC_OcrReviewPageFormHeaderUpdateLabel}" access="private"/>
+    <aura:attribute name="ocrReviewCreateSuccessMessage" type="String" default="{! $Label.c.PC_OcrReviewCreateSuccessMessage}" access="private"/>
+    <aura:attribute name="ocrReviewUpdateSuccessMessage" type="String" default="{! $Label.c.PC_OcrReviewUpdateSuccessMessage}" access="private"/>
+    <aura:attribute name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="standardClientSideErrorMessage" type="String" default="{!$Label.c.PC_ClientSideErrorMessage}" access="private"/>
+
+    <lightning:workspaceAPI aura:id="reviewOcrWorkspace" />
+    <lightning:notificationsLibrary aura:id="ocrNotificationLib" />
+    <lightning:navigation aura:id="documentReviewNavService"/>
+
+
+    <div class="slds-card slds-grid slds-grid_vertical ocrReviewDocument">
+            <div class="header slds-border_bottom">
+                <div class="slds-text-heading_medium slds-p-vertical_small slds-align_absolute-center">{!$Label.c.PC_OcrReviewPageHeader}</div>
+            </div>
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner aura:id="OcrSpinner" alternativeText="Loading" />
+            </aura:if>
+            <div class="slds-grid slds-scrollable_none slds-col">
+                <div class="slds-col slds-size_1-of-2 left-panel preview slds-scrollable slds-is-relative" aura:id="left-panel">
+                    <div class="slds-grid slds-grid_vertical slds-scrollable_y" aura:id="left-panel-container">
+                        <div class="slds-col slds-p-around_small slds-border_left slds-border_bottom slds-border_right dp-header-container">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2 slds-text-align_left">
+                                    <div class="slds-m-bottom_xx-small slds-text-heading_x-small slds-text-title_bold slds-truncate">
+                                        {!v.documentName}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-theme_shade dp-body-height">
+                            <c:PC_PreviewFileOrAttachment recordId="{!v.recordId}" />
+                        </div>
+                    </div>
+                    <div class="collapsedLeftHeader" aura:id="collapsedLeftHeader">{!v.documentName}</div>
+                    <div class="slds-is-absolute left-toggle-button" aura:id="left-toggle-button" style="right: 1.5rem;z-index: 99;top: 0.5rem;">
+                        <lightning:buttonIcon iconName="utility:jump_to_left" onclick="{!c.collapseLeftPanel}" alternativeText="arrow_left" title="Collapse Document Preview" />
+                    </div>
+                </div>
+                <div class="slds-col slds-size_1-of-2 right-panel" aura:id="right-panel">
+                    <aura:if isTrue="{! v.errors.length > 0 }">
+                        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.showTemplateSelectionSection}">
+                        <div class="slds-p-around_small slds-border_bottom">
+                            <div class="slds-text-heading_small bold-font">{!$Label.c.PC_DocumentTypeSelectionHeader}</div>
+                            <div class="">{!$Label.c.PC_DocumentTypeSelectionSubHeader}</div>
+                        </div>
+                        <div class="row slds-p-around_large slds-scrollable" style="height:100%">
+                            <c:PC_OcrTemplateSelect aura:id="templateSelectCmp"
+                                                    templateTypeId="{!v.templateTypeId}"
+                                                    templateTypeName="{!v.templateTypeName}"
+                                                    selectedCategory="{!v.templateCategories}"
+                                                    engagementProgram="{!v.engagementProgram}"
+                                                    isDocumentEngagementProgram="{!v.isDocumentEngagementProgram}"/>
+                        </div>
+                    </aura:if>
+
+                    <aura:if isTrue="{!v.showRecordFormSection}">
+                        <div class="slds-p-around_small slds-border_bottom">
+                            <div class="slds-text-heading_small bold-font">{!v.recordFormSectionHeader}</div>
+                                <span>
+                                    {!$Label.c.PC_DocumentTypeLabel}: {!v.templateTypeName}
+                                    <aura:if isTrue="{!and(v.documentInfoObj.isTemplateTypeAutoSelected, (v.templateTypeName == v.templateTypeNameCopy))}">
+                                        <span class="slds-p-horizontal_xx-small">{!$Label.c.PC_DocumentTypeAutoSelected}</span>
+                                    </aura:if>
+                                </span>
+                        </div>
+                        <div class="slds-scrollable detailPanel">
+                            <div class="slds-clearfix slds-p-around_small">
+                                <c:pcRecordForm aura:id="pcRecordForm"
+                                                layoutType = "Full"
+                                                mode = "edit"
+                                                objectApiName = "{!v.targetObjectApiName}"
+                                                recordId = "{!v.targetRecordId}"
+                                                recordTypeId = "{!v.targetRecordTypeId}"
+                                                defaultFieldValues = "{!v.defaultFieldValues}"
+                                                onsuccess = "{!c.handleSuccess}"
+                                                onload = "{!c.handleLoad}"
+                                                onerror = "{!c.handleError}"/>
+                            </div>
+                        </div>
+                    </aura:if>
+                </div>
+            </div>
+            <div class="slds-border_top">
+                <footer class="slds-docked-form-footer slds-p-right_small">
+                    <aura:if isTrue="{!v.hasSave}">
+                        <lightning:button aura:id="saveBtn" class="slds-float_right" variant="brand" label="{!v.saveBtnLabel}" title="{!v.saveBtnLabel}" onclick="{!c.onSave}"></lightning:button>
+                    </aura:if>
+                    <aura:if isTrue="{!v.hasPrevious}">
+                        <lightning:button aura:id="previousBtn" class="slds-m-right_small slds-float_right" variant="brand" label="{!$Label.c.PC_Previous}" title="{!$Label.c.PC_Previous}" onclick="{!c.onPrevious}"></lightning:button>
+                    </aura:if>
+                    <aura:if isTrue="{!v.hasNext}">
+                        <lightning:button aura:id="nextBtn" class="slds-m-right_small slds-float_right" variant="brand" label="{!$Label.c.PC_Next}" title="{!$Label.c.PC_Next}" onclick="{!c.onNext}"></lightning:button>
+                    </aura:if>
+                    <lightning:button class="slds-m-right_small slds-float_right" variant="neutral" label="{!$Label.c.PC_Cancel_Button}" title="{!$Label.c.PC_Cancel_Button}" onclick="{!c.onCancel}"></lightning:button>
+                </footer>
+            </div>
+        </div>
+</aura:component>

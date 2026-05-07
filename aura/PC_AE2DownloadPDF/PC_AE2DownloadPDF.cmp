@@ -1,0 +1,22 @@
+<!--
+ - Created by kkanteti on 10/23/2019.
+ -->
+
+<aura:component description="PC_AE2DownloadPDF" controller="PC_AE2DownloadPDF"
+                implements="force:hasRecordId,force:lightningQuickAction,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome" access="global">
+
+    <!--<aura:handler name="init" action="{!c.doInit}" value="{!this}"/> -->
+    <aura:attribute name="errors" type="List" default="[]"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <lightning:overlayLibrary aura:id="overlayLib"></lightning:overlayLibrary>
+              <aura:html tag="style">
+                    .slds-backdrop {
+                    background: rgba(43, 40, 38, 0) !important;
+                    }
+                    .slds-fade-in-open {
+                    display:none !important;
+                    }
+                </aura:html>
+</aura:component>

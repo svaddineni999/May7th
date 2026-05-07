@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Doel voor zorgplansjabloon</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Doelen voor zorgplansjabloon</value>
+    </caseValues>
+    <fields>
+        <label>Actief</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Sjabloonprobleem</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>Doelen zorgplansjabloon</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Zorgplansjabloon</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Doelen zorgplansjabloon</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Categorie</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition Improvement</masterLabel>
+            <translation><!-- Cognition Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muscle Strength Improvement</masterLabel>
+            <translation><!-- Muscle Strength Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Beschrijving</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Prioriteit</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Sorteervolgorde</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Naam van doel van zorgplansjabloon</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Koppel het doel aan een sjabloon voor een zorgplan of een probleem.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Koppel het doel aan slechts één record.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

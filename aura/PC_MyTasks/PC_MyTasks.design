@@ -1,0 +1,12 @@
+<!--
+ - Created by vkashikar on 3/12/2021.
+ -->
+
+<design:component>
+    <design:attribute name="showAllRecordsOption" label="Show toggle option to view either All Tasks or Current User's Tasks"
+                      default="false" description="If selected, a toggle option will be shown on UI to view either All Tasks or Current User's Tasks"/>
+    <design:attribute name="defaultView" label="Select the default view" datasource="MY RECORDS,ALL RECORDS"
+                      default="MY RECORDS" description="Select the default view"/>
+    <design:attribute name="numberOfColumns" label="Number of columns"
+                      default="3" description="Number of columns. Set this based on your layout's width. If left blank, default value of 3 is assumed."/>
+</design:component>

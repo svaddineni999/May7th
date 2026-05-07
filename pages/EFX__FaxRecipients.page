@@ -1,0 +1,108 @@
+<apex:page standardController="EFX__efax__c" extensions="EFX.FaxRecipientsController" action="{!SetRecipients}" standardStylesheets="false" applyBodyTag="false" applyHtmlTag="true" showHeader="true">
+    <apex:slds />
+    <apex:includeLightning />
+    <div id="LightningContainer" />
+    
+    <script>
+    function reload(){
+        if(isLightningOrClassic()){
+            console.log('Interface is Lightning ? '+isLightningOrClassic());
+            recId = "{!$CurrentPage.parameters.id}";
+            setInterval(function(){window.top.location= '/'+recId;},3000);
+            
+        }
+        else{
+            console.log('Interface is Lightning ? '+isLightningOrClassic());
+            recId = "{!$CurrentPage.parameters.id}";
+            setInterval(function(){window.top.location= '/'+recId;},3000);
+        }
+    }
+    function resendFax(str){
+        window.open('/apex/resendFax?recpId='+str);
+        }
+    
+     function isLightningOrClassic() {
+        return((typeof sforce != 'undefined') && sforce && (!!sforce.one));
+    }
+    function method1(str1,str2){
+        console.log('val1:'+str1);
+        console.log('val2:'+str2);
+        console.log('Interface is Lightning ? '+isLightningOrClassic()); 
+        if(str1 =='true' && str2 != null && isLightningOrClassic()){ 
+            sforce.one.showToast({ 
+                //for LEX Success
+                "title": "Success !",
+                "message": str2,
+                "type": "Success"
+            });
+            reload();
+        }
+        else if(str1 =='false' && str2 != null && isLightningOrClassic()){ 
+            //for LEX Error
+            sforce.one.showToast({ 
+                "title": "Error !",
+                "message": str2,
+                "type": "Error"
+            });
+            reload();
+        }
+        else{ 
+            // for classic
+            reload();
+        }
+     }
+    </script>
+    <style>
+        .disabled {
+        pointer-events: none;
+        cursor: default;
+        color: grey;
+        }
+        table.exceptionText td {
+        font-style:italic;
+        font-size:16px;
+        font-weight:bold;
+        text-align:center;
+        color:red;}
+        
+    </style> 
+    
+    <apex:form >
+        <div class="slds-scope"> 
+            <apex:pageMessages id="showmsg"/>
+            <apex:actionFunction name="CallApexMethod" action="{!refreshRecipients}" oncomplete="method1('{!test}','{!toastMsg}')" reRender="showmsg">
+                <apex:param name="efax_ID" value="" assignTo="{!efaxId}"/>
+                <apex:param name="recpId" value="" assignTo="{!recp_Id}"/>
+            </apex:actionFunction>
+            <apex:pageBlock >
+                <apex:outputPanel layout="block" style="overflow:auto;height:180px" >
+                    <apex:PageBlockTable value="{!wrapList}" var="recipient" styleClass="slds-table slds-table--bordered slds-table--cell-buffer">
+                        <apex:column headerValue="Name">
+                            <apex:outputText value="{!recipient.Name}"></apex:outputText>
+                        </apex:column>
+                        <apex:column headerValue="Efax Id" value="{!recipient.efaxId}"/>
+                        <apex:column headerValue="Company" value="{!recipient.company}"/>
+                        <apex:column headerValue="To" value="{!recipient.to}"/>
+                        <apex:column headerValue="Status" value="{!recipient.status}"/>
+                        <apex:column headerValue="Last Updated" value="{!recipient.completedformat}"/>
+                        <apex:column rendered="{!IF(EfaxRecordtypeName!='Received Fax', true, false)}">
+                            <apex:commandLink value="Resend" onclick="resendFax('{!recipient.Id}')" rendered="{!IF(recipient.isResend, true, false)}"/>
+                            <apex:commandLink styleclass="disabled" style="color:#A9A9A9;" value="Resend" rendered="{!IF(recipient.isResend, false, true)}"/>
+                        </apex:column>
+                        <apex:column rendered="{!IF(EfaxRecordtypeName!='Received Fax', true, false)}">
+                            <apex:commandLink value="Cancel" action="{!cancelFax}" reRender="showmsg" rendered="{!IF(recipient.isCancel, true, false)}" oncomplete="method1('{!test}','{!toastMsg}')">
+                                <apex:param name="efax_ID" value="{!recipient.efaxId}"/>
+                            </apex:commandLink>
+                            <apex:commandLink styleclass="disabled" style="color:#A9A9A9;" value="Cancel" rendered="{!IF(recipient.isCancel, false, true)}"/>
+                        </apex:column>
+                        <apex:column rendered="{!IF(EfaxRecordtypeName!='Received Fax', true, false)}"> 
+                            <apex:commandLink value="Refresh" onclick="CallApexMethod('{!recipient.efaxId}','{!recipient.Id}')" reRender="test,toastMsg" rendered="{!IF(recipient.isRefresh, true, false)}"/>
+                            <apex:commandLink styleclass="disabled" style="color:#A9A9A9;" value="Refresh" rendered="{!IF(recipient.isRefresh, false, true)}"/>
+                        </apex:column>
+                    </apex:PageBlockTable>
+                </apex:outputPanel>
+            </apex:pageBlock>
+        </div>
+        
+    </apex:form>
+</apex:page>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>カスタムラベル設定</value>
+    </caseValues>
+    <fields>
+        <label>新規表示ラベル</label>
+        <name>HealthCloudGA__NewLabel__c</name>
+    </fields>
+    <fields>
+        <label>オブジェクト項目名</label>
+        <name>HealthCloudGA__ObjectFieldName__c</name>
+    </fields>
+    <fields>
+        <label>オブジェクト種別</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label>オブジェクトレコードタイプ</label>
+        <name>HealthCloudGA__ObjectRecordType__c</name>
+    </fields>
+    <fields>
+        <label>参照項目</label>
+        <name>HealthCloudGA__RelationshipName__c</name>
+    </fields>
+    <fields>
+        <label>ビュー名</label>
+        <name>HealthCloudGA__ViewName__c</name>
+    </fields>
+</CustomObjectTranslation>

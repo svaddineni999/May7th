@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Врач по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Врачи по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Врача по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Врачей по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Врача по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Врачей по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Врачу по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Врачам по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Врачом по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Врачами по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Враче по ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Врачах по ЭМК</value>
+    </caseValues>
+    <fields>
+        <label>Адрес1 Город</label>
+        <name>HealthCloudGA__Address1City__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Страна</label>
+        <name>HealthCloudGA__Address1Country__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Дата окончания</label>
+        <name>HealthCloudGA__Address1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Строка1</label>
+        <name>HealthCloudGA__Address1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Строка2</label>
+        <name>HealthCloudGA__Address1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Почтовый индекс</label>
+        <name>HealthCloudGA__Address1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Дата начала</label>
+        <name>HealthCloudGA__Address1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Штат</label>
+        <name>HealthCloudGA__Address1State__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Текст</label>
+        <name>HealthCloudGA__Address1Text__c</name>
+    </fields>
+    <fields>
+        <label>Адрес1 Использование</label>
+        <name>HealthCloudGA__Address1Use__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Город</label>
+        <name>HealthCloudGA__Address2City__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Страна</label>
+        <name>HealthCloudGA__Address2Country__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Дата окончания</label>
+        <name>HealthCloudGA__Address2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Строка1</label>
+        <name>HealthCloudGA__Address2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Строка2</label>
+        <name>HealthCloudGA__Address2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Почтовый индекс</label>
+        <name>HealthCloudGA__Address2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Дата начала</label>
+        <name>HealthCloudGA__Address2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Штат</label>
+        <name>HealthCloudGA__Address2State__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Текст</label>
+        <name>HealthCloudGA__Address2Text__c</name>
+    </fields>
+    <fields>
+        <label>Адрес2 Использование</label>
+        <name>HealthCloudGA__Address2Use__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Город</label>
+        <name>HealthCloudGA__Address3City__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Страна</label>
+        <name>HealthCloudGA__Address3Country__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Дата окончания</label>
+        <name>HealthCloudGA__Address3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Строка1</label>
+        <name>HealthCloudGA__Address3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Строка2</label>
+        <name>HealthCloudGA__Address3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Почтовый индекс</label>
+        <name>HealthCloudGA__Address3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Дата начала</label>
+        <name>HealthCloudGA__Address3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Штат</label>
+        <name>HealthCloudGA__Address3State__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Текст</label>
+        <name>HealthCloudGA__Address3Text__c</name>
+    </fields>
+    <fields>
+        <label>Адрес3 Использование</label>
+        <name>HealthCloudGA__Address3Use__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Город</label>
+        <name>HealthCloudGA__Address4City__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Страна</label>
+        <name>HealthCloudGA__Address4Country__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Дата окончания</label>
+        <name>HealthCloudGA__Address4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Строка1</label>
+        <name>HealthCloudGA__Address4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Строка2</label>
+        <name>HealthCloudGA__Address4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Почтовый индекс</label>
+        <name>HealthCloudGA__Address4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Дата начала</label>
+        <name>HealthCloudGA__Address4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Штат</label>
+        <name>HealthCloudGA__Address4State__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Текст</label>
+        <name>HealthCloudGA__Address4Text__c</name>
+    </fields>
+    <fields>
+        <label>Адрес4 Использование</label>
+        <name>HealthCloudGA__Address4Use__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Город</label>
+        <name>HealthCloudGA__Address5City__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Страна</label>
+        <name>HealthCloudGA__Address5Country__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Дата окончания</label>
+        <name>HealthCloudGA__Address5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Строка1</label>
+        <name>HealthCloudGA__Address5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Строка2</label>
+        <name>HealthCloudGA__Address5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Почтовый индекс</label>
+        <name>HealthCloudGA__Address5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Дата начала</label>
+        <name>HealthCloudGA__Address5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Штат</label>
+        <name>HealthCloudGA__Address5State__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Текст</label>
+        <name>HealthCloudGA__Address5Text__c</name>
+    </fields>
+    <fields>
+        <label>Адрес5 Использование</label>
+        <name>HealthCloudGA__Address5Use__c</name>
+    </fields>
+    <fields>
+        <label>Дата рождения</label>
+        <name>HealthCloudGA__BirthDate__c</name>
+    </fields>
+    <fields>
+        <label>Код коммуникации1</label>
+        <name>HealthCloudGA__Communication1Code__c</name>
+    </fields>
+    <fields>
+        <label>Метка коммуникации1</label>
+        <name>HealthCloudGA__Communication1Label__c</name>
+    </fields>
+    <fields>
+        <label>Система коммуникации1</label>
+        <name>HealthCloudGA__Communication1System__c</name>
+    </fields>
+    <fields>
+        <label>Код коммуникации2</label>
+        <name>HealthCloudGA__Communication2Code__c</name>
+    </fields>
+    <fields>
+        <label>Метка коммуникации2</label>
+        <name>HealthCloudGA__Communication2Label__c</name>
+    </fields>
+    <fields>
+        <label>Система коммуникации2</label>
+        <name>HealthCloudGA__Communication2System__c</name>
+    </fields>
+    <fields>
+        <label>Код коммуникации3</label>
+        <name>HealthCloudGA__Communication3Code__c</name>
+    </fields>
+    <fields>
+        <label>Метка коммуникации3</label>
+        <name>HealthCloudGA__Communication3Label__c</name>
+    </fields>
+    <fields>
+        <label>Система коммуникации3</label>
+        <name>HealthCloudGA__Communication3System__c</name>
+    </fields>
+    <fields>
+        <label>Код коммуникации4</label>
+        <name>HealthCloudGA__Communication4Code__c</name>
+    </fields>
+    <fields>
+        <label>Метка коммуникации4</label>
+        <name>HealthCloudGA__Communication4Label__c</name>
+    </fields>
+    <fields>
+        <label>Система коммуникации4</label>
+        <name>HealthCloudGA__Communication4System__c</name>
+    </fields>
+    <fields>
+        <label>Код коммуникации5</label>
+        <name>HealthCloudGA__Communication5Code__c</name>
+    </fields>
+    <fields>
+        <label>Метка коммуникации5</label>
+        <name>HealthCloudGA__Communication5Label__c</name>
+    </fields>
+    <fields>
+        <label>Система коммуникации5</label>
+        <name>HealthCloudGA__Communication5System__c</name>
+    </fields>
+    <fields>
+        <label>Фамилия1</label>
+        <name>HealthCloudGA__FamilyName1__c</name>
+    </fields>
+    <fields>
+        <label>Фамилия2</label>
+        <name>HealthCloudGA__FamilyName2__c</name>
+    </fields>
+    <fields>
+        <label>Фамилия3</label>
+        <name>HealthCloudGA__FamilyName3__c</name>
+    </fields>
+    <fields>
+        <label>Пол</label>
+        <name>HealthCloudGA__Gender__c</name>
+    </fields>
+    <fields>
+        <label>Имя1</label>
+        <name>HealthCloudGA__GivenName1__c</name>
+    </fields>
+    <fields>
+        <label>Имя3</label>
+        <name>HealthCloudGA__GivenName2__c</name>
+    </fields>
+    <fields>
+        <label>Имя3</label>
+        <name>HealthCloudGA__GivenName3__c</name>
+    </fields>
+    <fields>
+        <label>Имя4</label>
+        <name>HealthCloudGA__GivenName4__c</name>
+    </fields>
+    <fields>
+        <label>Имя5</label>
+        <name>HealthCloudGA__GivenName5__c</name>
+    </fields>
+    <fields>
+        <label>Ограничено</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Отображается на карте пациента</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Город</label>
+        <name>HealthCloudGA__Location1City__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Страна</label>
+        <name>HealthCloudGA__Location1Country__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Описание</label>
+        <name>HealthCloudGA__Location1Description__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Дата окончания</label>
+        <name>HealthCloudGA__Location1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Идентификатор</label>
+        <name>HealthCloudGA__Location1Id__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Строка1</label>
+        <name>HealthCloudGA__Location1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Строка2</label>
+        <name>HealthCloudGA__Location1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Имя</label>
+        <name>HealthCloudGA__Location1Name__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Почтовый индекс</label>
+        <name>HealthCloudGA__Location1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Дата начала</label>
+        <name>HealthCloudGA__Location1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Штат</label>
+        <name>HealthCloudGA__Location1State__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Окончание периода тел-ции</label>
+        <name>HealthCloudGA__Location1TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Начало периода тел-ции</label>
+        <name>HealthCloudGA__Location1TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Система телекоммуникации</label>
+        <name>HealthCloudGA__Location1TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Использование тел-ции</label>
+        <name>HealthCloudGA__Location1TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Значение телекоммуникации</label>
+        <name>HealthCloudGA__Location1TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Текст</label>
+        <name>HealthCloudGA__Location1Text__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Тип</label>
+        <name>HealthCloudGA__Location1Type__c</name>
+    </fields>
+    <fields>
+        <label>Расположение1 Использование</label>
+        <name>HealthCloudGA__Location1Use__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Город</label>
+        <name>HealthCloudGA__Location2City__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Страна</label>
+        <name>HealthCloudGA__Location2Country__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Описание</label>
+        <name>HealthCloudGA__Location2Description__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Дата окончания</label>
+        <name>HealthCloudGA__Location2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Идентификатор</label>
+        <name>HealthCloudGA__Location2Id__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Строка1</label>
+        <name>HealthCloudGA__Location2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Строка2</label>
+        <name>HealthCloudGA__Location2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Имя</label>
+        <name>HealthCloudGA__Location2Name__c</name>
+    </fields>
+    <fields>
+        <label>Расположени2 Почтовый индекс</label>
+        <name>HealthCloudGA__Location2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Дата начала</label>
+        <name>HealthCloudGA__Location2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Штат</label>
+        <name>HealthCloudGA__Location2State__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Окончание периода тел-ции</label>
+        <name>HealthCloudGA__Location2TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Начало периода тел-ции</label>
+        <name>HealthCloudGA__Location2TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Система телекоммуникации</label>
+        <name>HealthCloudGA__Location2TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Использование тел-ции</label>
+        <name>HealthCloudGA__Location2TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Значение телекоммуникации</label>
+        <name>HealthCloudGA__Location2TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Текст</label>
+        <name>HealthCloudGA__Location2Text__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Тип</label>
+        <name>HealthCloudGA__Location2Type__c</name>
+    </fields>
+    <fields>
+        <label>Расположение2 Использование</label>
+        <name>HealthCloudGA__Location2Use__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Город</label>
+        <name>HealthCloudGA__Location3City__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Страна</label>
+        <name>HealthCloudGA__Location3Country__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Описание</label>
+        <name>HealthCloudGA__Location3Description__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Дата окончания</label>
+        <name>HealthCloudGA__Location3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Идентификатор</label>
+        <name>HealthCloudGA__Location3Id__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Строка1</label>
+        <name>HealthCloudGA__Location3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Строка2</label>
+        <name>HealthCloudGA__Location3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Имя</label>
+        <name>HealthCloudGA__Location3Name__c</name>
+    </fields>
+    <fields>
+        <label>Расположени3 Почтовый индекс</label>
+        <name>HealthCloudGA__Location3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Дата начала</label>
+        <name>HealthCloudGA__Location3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Штат</label>
+        <name>HealthCloudGA__Location3State__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Окончание периода тел-ции</label>
+        <name>HealthCloudGA__Location3TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Начало периода тел-ции</label>
+        <name>HealthCloudGA__Location3TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Система телекоммуникации</label>
+        <name>HealthCloudGA__Location3TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Использование тел-ции</label>
+        <name>HealthCloudGA__Location3TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Значение телекоммуникации</label>
+        <name>HealthCloudGA__Location3TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Текст</label>
+        <name>HealthCloudGA__Location3Text__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Тип</label>
+        <name>HealthCloudGA__Location3Type__c</name>
+    </fields>
+    <fields>
+        <label>Расположение3 Использование</label>
+        <name>HealthCloudGA__Location3Use__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Город</label>
+        <name>HealthCloudGA__Location4City__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Страна</label>
+        <name>HealthCloudGA__Location4Country__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Описание</label>
+        <name>HealthCloudGA__Location4Description__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Дата окончания</label>
+        <name>HealthCloudGA__Location4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Идентификатор</label>
+        <name>HealthCloudGA__Location4Id__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Строка1</label>
+        <name>HealthCloudGA__Location4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Строка2</label>
+        <name>HealthCloudGA__Location4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Имя</label>
+        <name>HealthCloudGA__Location4Name__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Почтовый индекс</label>
+        <name>HealthCloudGA__Location4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Дата начала</label>
+        <name>HealthCloudGA__Location4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Штат</label>
+        <name>HealthCloudGA__Location4State__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Окончание периода тел-ции</label>
+        <name>HealthCloudGA__Location4TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Начало периода тел-ции</label>
+        <name>HealthCloudGA__Location4TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Система телекоммуникации</label>
+        <name>HealthCloudGA__Location4TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Использование тел-ции</label>
+        <name>HealthCloudGA__Location4TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Значение телекоммуникации</label>
+        <name>HealthCloudGA__Location4TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Текст</label>
+        <name>HealthCloudGA__Location4Text__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Тип</label>
+        <name>HealthCloudGA__Location4Type__c</name>
+    </fields>
+    <fields>
+        <label>Расположение4 Использование</label>
+        <name>HealthCloudGA__Location4Use__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Город</label>
+        <name>HealthCloudGA__Location5City__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Страна</label>
+        <name>HealthCloudGA__Location5Country__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Описание</label>
+        <name>HealthCloudGA__Location5Description__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Дата окончания</label>
+        <name>HealthCloudGA__Location5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Идентификатор</label>
+        <name>HealthCloudGA__Location5Id__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Строка1</label>
+        <name>HealthCloudGA__Location5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Строка2</label>
+        <name>HealthCloudGA__Location5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Имя</label>
+        <name>HealthCloudGA__Location5Name__c</name>
+    </fields>
+    <fields>
+        <label>Расположени5 Почтовый индекс</label>
+        <name>HealthCloudGA__Location5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Дата начала</label>
+        <name>HealthCloudGA__Location5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Штат</label>
+        <name>HealthCloudGA__Location5State__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Окончание периода тел-ции</label>
+        <name>HealthCloudGA__Location5TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Начало периода тел-ции</label>
+        <name>HealthCloudGA__Location5TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Система телекоммуникации</label>
+        <name>HealthCloudGA__Location5TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Использование тел-ции</label>
+        <name>HealthCloudGA__Location5TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Значение телекоммуникации</label>
+        <name>HealthCloudGA__Location5TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Текст</label>
+        <name>HealthCloudGA__Location5Text__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Тип</label>
+        <name>HealthCloudGA__Location5Type__c</name>
+    </fields>
+    <fields>
+        <label>Расположение5 Использование</label>
+        <name>HealthCloudGA__Location5Use__c</name>
+    </fields>
+    <fields>
+        <label>Имя 255</label>
+        <name>HealthCloudGA__Name255__c</name>
+    </fields>
+    <fields>
+        <label>Имя</label>
+        <name>HealthCloudGA__Name__c</name>
+    </fields>
+    <fields>
+        <label>Организация 255</label>
+        <name>HealthCloudGA__Organization255__c</name>
+    </fields>
+    <fields>
+        <label>Организация</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>Период</label>
+        <name>HealthCloudGA__Period__c</name>
+    </fields>
+    <fields>
+        <label>URL-адрес фотографии</label>
+        <name>HealthCloudGA__PhotoUrl__c</name>
+    </fields>
+    <fields>
+        <label>Префикс Имя1</label>
+        <name>HealthCloudGA__PrefixName1__c</name>
+    </fields>
+    <fields>
+        <label>Префикс Имя2</label>
+        <name>HealthCloudGA__PrefixName2__c</name>
+    </fields>
+    <fields>
+        <label>Префикс Имя3</label>
+        <name>HealthCloudGA__PrefixName3__c</name>
+    </fields>
+    <fields>
+        <label>Код исходной системы</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Исходная система изменена</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Исходная система</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код специализации</label>
+        <name>HealthCloudGA__SpecialtyCode__c</name>
+    </fields>
+    <fields>
+        <label>Система специализации</label>
+        <name>HealthCloudGA__SpecialtySystem__c</name>
+    </fields>
+    <fields>
+        <label>Суффикс Имя1</label>
+        <name>HealthCloudGA__SuffixName1__c</name>
+    </fields>
+    <fields>
+        <label>Суффикс Имя2</label>
+        <name>HealthCloudGA__SuffixName2__c</name>
+    </fields>
+    <fields>
+        <label>Суффикс Имя3</label>
+        <name>HealthCloudGA__SuffixName3__c</name>
+    </fields>
+    <fields>
+        <label>Телеком1 Начало периода</label>
+        <name>HealthCloudGA__Telecom1PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком1 Начало периода</label>
+        <name>HealthCloudGA__Telecom1PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком1 Система</label>
+        <name>HealthCloudGA__Telecom1System__c</name>
+    </fields>
+    <fields>
+        <label>Телеком1 Использование</label>
+        <name>HealthCloudGA__Telecom1Use__c</name>
+    </fields>
+    <fields>
+        <label>Телеком1 Значение</label>
+        <name>HealthCloudGA__Telecom1Value__c</name>
+    </fields>
+    <fields>
+        <label>Телеком2 Начало периода</label>
+        <name>HealthCloudGA__Telecom2PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком2 Начало периода</label>
+        <name>HealthCloudGA__Telecom2PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком2 Система</label>
+        <name>HealthCloudGA__Telecom2System__c</name>
+    </fields>
+    <fields>
+        <label>Телеком2 Использование</label>
+        <name>HealthCloudGA__Telecom2Use__c</name>
+    </fields>
+    <fields>
+        <label>Телеком2 Значение</label>
+        <name>HealthCloudGA__Telecom2Value__c</name>
+    </fields>
+    <fields>
+        <label>Телеком3 Начало периода</label>
+        <name>HealthCloudGA__Telecom3PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком3 Начало периода</label>
+        <name>HealthCloudGA__Telecom3PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком3 Система</label>
+        <name>HealthCloudGA__Telecom3System__c</name>
+    </fields>
+    <fields>
+        <label>Телеком3 Использование</label>
+        <name>HealthCloudGA__Telecom3Use__c</name>
+    </fields>
+    <fields>
+        <label>Телеком3 Значение</label>
+        <name>HealthCloudGA__Telecom3Value__c</name>
+    </fields>
+    <fields>
+        <label>Телеком4 Начало периода</label>
+        <name>HealthCloudGA__Telecom4PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком4 Начало периода</label>
+        <name>HealthCloudGA__Telecom4PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком4 Система</label>
+        <name>HealthCloudGA__Telecom4System__c</name>
+    </fields>
+    <fields>
+        <label>Телеком4 Использование</label>
+        <name>HealthCloudGA__Telecom4Use__c</name>
+    </fields>
+    <fields>
+        <label>Телеком4 Значение</label>
+        <name>HealthCloudGA__Telecom4Value__c</name>
+    </fields>
+    <fields>
+        <label>Телеком5 Начало периода</label>
+        <name>HealthCloudGA__Telecom5PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком5 Начало периода</label>
+        <name>HealthCloudGA__Telecom5PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Телеком5 Система</label>
+        <name>HealthCloudGA__Telecom5System__c</name>
+    </fields>
+    <fields>
+        <label>Телеком5 Использование</label>
+        <name>HealthCloudGA__Telecom5Use__c</name>
+    </fields>
+    <fields>
+        <label>Телеком5 Значение</label>
+        <name>HealthCloudGA__Telecom5Value__c</name>
+    </fields>
+    <gender>AnimateMasculine</gender>
+    <nameFieldLabel>Код мед. специалиста ЭМК</nameFieldLabel>
+</CustomObjectTranslation>

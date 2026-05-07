@@ -1,0 +1,84 @@
+<!--
+Lightning component  : PC_Document_Management_ActionIcons
+Description          : Component for Document Management Action Icons
+
+Modification Log:
+Tejas Patel           23-Jan-2018 	Initial version
+Mayuresh Patil        26-Jan-2018   Updated padding and spacing for action ribbon
+Prachi Nandgaonkar    12-Feb-2018   [PC-2750] Decreased top and bottom padding for action ribbon
+Mayuresh Patil        9-Apr-2018    [PC-2958] Ability to add action to custom component.
+Xiukai Ning           4-Apr-2019    [PC-4517] Document Ribbon fixes/scrolls in normal lightning navigation/Console navigation
+Xiukai Ning           24-Apr-2019   [PC-4517] We have to roll back the solution: if there is a Sandbox banner on the top, the fixed ribbon is blocked.
+Xiukai Ning           25-Apr-2019   [PC-4517] Made the change so that the text wraps below the icons and is centrally placed w.r.t the icon when there isn't much space.
+Tushar Arora          4-feb-2020    [PC-5958] Added the condition for checking Icon Visibility.
+Tushar Arora          20-feb-2020   [PC-6006] Added Condition for refreshing document action icons component on Document tag change event.
+Tushar Arora          26-feb-2020   [PC-6017] Added Spinner for refreshing document action icons component on Document tag change event.
+Tushar Arora          26-feb-2020   [PC-6018] Added refreshControlInterface attribute to prevent auto-refresh of Document Actions on change of any document tag
+Xiukai Ning           4-Mar-2020    [PC-6047] Auto refresh Document Action Ribbon when Document Tags are clicked on - for LWC Document Tags
+Tushar Arora          05-May-20     [PC-6250] Added getGenericErrorInfo attribute for showing generic error.
+Satheesh Kumar        08-Sep-2020   [PC-6747] Added logic to fix the Document Action Center Icon Translation Issue
+Satheesh Kumar        15-Sep-2020   [PC-6747] Added logic for Icon label (backward compatibility)
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="PC_ActionIconsLightningController">
+
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="actionIconsWrapper" type="Object[]" access="PUBLIC"/>
+    <aura:attribute name="actionIconsWrapperMap" type="MAP" access="PUBLIC"/>
+    <aura:attribute name="showForm" type="Boolean" default="false"/>
+    <aura:attribute name="noOfRows" type="Integer[]" access="PUBLIC"/>
+    <aura:attribute name="noOfColumns" type="Integer[]" access="PUBLIC"/>
+    <aura:attribute name="noOfItemsInARow" type="Integer" default="5" access="PUBLIC"/>
+    <aura:attribute name="iconLabel" type="String"/>
+    <aura:attribute name="iconAction" type="String"/>
+    <aura:attribute name="iconActionComponent" type="String"/>
+    <aura:attribute name="iconActionAttribute" type="String"/>
+    <aura:attribute name="isAccessible" type="Boolean" default="true"/>
+    <aura:attribute name="actionComponentValidator" type="String"/>
+    <aura:attribute name="actionValidationMessage" type="String"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="refreshControlInterface" type="Boolean" access="global" description="Recommend to choose this option for better performance w.r.t loading of tags/categories."/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <!--Handler for Lightning Component Tags -->
+    <aura:handler event="c:PC_DocumentTagsChangedEvent" action="{!c.handleDocumentTagsChangedEvent}"/>
+    <!--Handler for Lightning Web Component Tags -->
+
+    <c:pc_Document_Tags_EventHandler ondocumenttagupdateevent="{!c.handleDocumentTagsChangedEventLWT}"/>
+    
+
+    <div class="slds-page-header header">
+        <aura:if isTrue="{! v.showForm}">
+            <div class="slds-scrollable">
+                <div class="slds-grid">
+                    <aura:if isTrue="{!v.isLoading}">
+                        <div class="pc_spinner slds-align-middle">
+                            <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+                        </div>
+                        <aura:set attribute="else">
+                            <aura:iteration items="{!v.actionIconsWrapper}" var="icons" indexVar="i">
+                                <aura:if isTrue="{!icons.iconIsVisible}">
+                                    <div class="slds-col">
+                                        <button value="{!icons.iconActionComponent}" name="{!icons.iconLabel}" class="slds-button" disabled="false" type="button" onclick="{!c.callActionComponent}">
+                                            <lightning:icon iconName="{!icons.iconImage}" size="xx-small" alternativeText="{!icons.iconLabel}" title="{!icons.iconLabel}"/>
+                                            <span class="iconLabel">&nbsp;{!icons.iconLabel}</span>
+                                        </button>
+                                    </div>
+                                </aura:if>
+                            </aura:iteration>
+                        </aura:set>
+                    </aura:if>
+                </div>
+            </div>
+        </aura:if>
+    </div>
+
+    <div aura:id="actionIconComponent">
+        {!v.body}
+    </div>
+
+</aura:component>

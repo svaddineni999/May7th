@@ -1,0 +1,41 @@
+<!--
+Lightning component  : PC_StatusIndicatorContainer
+Description          : Component for Intelligent Indicator Container
+
+Modification Log:
+Vijay Kashikar        08-Jan-2018 	Initial version
+Satheesh Kumar        08-Sep-2020   [PC-6752] Added fix for Intelligent Indicator Label Translation Issue
+-->
+
+<aura:component description="PC_IntelligentIndicatorContainer"
+                controller="PC_StatusIndicatorContainerCtrllr"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="recordId" type="Id" access="global"/>
+    <aura:attribute name="initData" type="Object" />
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+
+    <aura:attribute name="tempTitle" type="String"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:handler event="force:refreshView" action="{!c.refreshView}" />
+
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+
+    <lightning:workspaceAPI aura:id="workspace" />
+
+    <div>
+        <div class="container">
+            <aura:if isTrue="{! v.errors.length > 0 }">
+                <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+            </aura:if>
+            <aura:if isTrue="{!v.isLoading}">
+                <div class="pc_spinner">
+                    <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+                </div>
+            </aura:if>
+                {!v.body}
+
+        </div>
+    </div>
+
+</aura:component>

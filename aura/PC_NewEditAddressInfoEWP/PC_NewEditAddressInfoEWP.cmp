@@ -1,0 +1,61 @@
+<!--
+ - Created by kkanteti on 11/17/2021.
+ -->
+
+<aura:component description="PC_NewEditAddressInfoEWP" access="public" extends="c:PC_EnrollmentWizardPage">
+    <aura:attribute name="persistentAddress" type="sObject[]"/>
+    <aura:attribute name="showAddressModal" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="newEditAddress" type="sObject" access="public"/>
+    <aura:attribute name="newEditAddressLabel" type="String" default="{!$Label.c.PC_Address_NewEdit}"/>
+    <aura:attribute name="submitLabel" type="String" default="{!$Label.c.PC_Submit_Button_Label}"/>
+    <aura:attribute name="cancelLabel" type="String" default="{!$Label.c.PC_Button_Label_Cancel}"/>
+    <aura:attribute name="lastModifiedDate" type="String"/>
+    <aura:attribute name="addressName" type="String"/>
+    <aura:attribute name="addressId" type="String"/>
+    <aura:attribute name="objectName" type="String"/>
+    <aura:attribute name="fieldSetNames" type="String[]" default="[]"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds-m-around_xx-large">
+
+        <!--Use aura:if tag to display/hide popup based on editAddress value-->
+        <aura:if isTrue="{!v.showAddressModal}">
+
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{!c.closeModal}"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.newEditAddressLabel}</h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <c:pcRecordFormByFieldsets aura:id="pcRecordFormByFieldSets"
+                                               objectApiName="{!v.objectName}"
+                                               fieldSetNames="{!v.fieldSetNames}"
+                                               columns="2"
+                                               onvaluechange="{!c.setPersistentAddress}"
+                                               density="compact"
+                                               defaultFieldValues = "{!v.newEditAddress}"/>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="neutral"
+                                          label="{!v.cancelLabel}"
+                                          title="{!v.cancelLabel}"
+                                          onclick="{!c.closeModal}"/>
+                        <lightning:button variant="brand"
+                                              label="{!v.submitLabel}"
+                                              title="{!v.submitLabel}"
+                                              onclick="{!c.submitAddress}"/>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+</aura:component>

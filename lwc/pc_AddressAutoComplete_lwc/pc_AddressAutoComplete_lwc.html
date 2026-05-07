@@ -1,0 +1,36 @@
+<template>
+    <div if:true={selectedAddress}>
+        <lightning-input-address
+                address-label={label.addressSearch}
+                street-label={fieldLabels.address1}
+                city-label={fieldLabels.city}
+                country-label={fieldLabels.country}
+                province-label={fieldLabels.state}
+                postal-code-label={fieldLabels.zipCode}
+                street={selectedAddress.address1}
+                city={selectedAddress.city}
+                country={selectedAddress.country}
+                province={selectedAddress.state}
+                postal-code={selectedAddress.zipCode}
+                show-address-lookup
+                onchange={handleChange}>
+        </lightning-input-address>
+    </div>
+    <div if:false={selectedAddress}>
+        <lightning-input-address
+                address-label={label.addressSearch}
+                street-label={fieldLabels.address1}
+                city-label={fieldLabels.city}
+                country-label={fieldLabels.country}
+                province-label={fieldLabels.state}
+                postal-code-label={fieldLabels.zipCode}
+                street=''
+                city=''
+                country=''
+                province=''
+                postal-code=''
+                show-address-lookup
+                onchange={handleChange}>
+        </lightning-input-address>
+    </div>
+</template>

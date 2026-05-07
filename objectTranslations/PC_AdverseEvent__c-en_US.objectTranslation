@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Adverse Event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Adverse Events</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- PC Document Link Adverse Event --></label>
+        <name>PC_Doc_Link_Adverse_Event</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Test_fieldset --></label>
+        <name>Test_fieldset</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Date Received by Manufacturer --></label>
+        <name>PC_AE_Received_by_Manufacturer_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Abbreviated New Drug Application # --></label>
+        <name>PC_ANDA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Abated After Use Stopped or Reduced --></label>
+        <name>PC_Abated_After_Use_Stopped_or_Reduced__c</name>
+        <picklistValues>
+            <masterLabel>Doesn&apos;t apply</masterLabel>
+            <translation><!-- Doesn&apos;t apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Action Taken --></label>
+        <name>PC_ActionTaken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter Type --></label>
+        <name>PC_Adverse_Event_Reporter__c</name>
+        <picklistValues>
+            <masterLabel>Administrator/Supervisor</masterLabel>
+            <translation><!-- Administrator/Supervisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biomedical Engineer</masterLabel>
+            <translation><!-- Biomedical Engineer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dentist</masterLabel>
+            <translation><!-- Dentist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Healthcare Professional</masterLabel>
+            <translation><!-- Non-Healthcare Professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse</masterLabel>
+            <translation><!-- Nurse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse Practitioner</masterLabel>
+            <translation><!-- Nurse Practitioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Healthcare Professional</masterLabel>
+            <translation><!-- Other Healthcare Professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacist</masterLabel>
+            <translation><!-- Pharmacist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician Assistant</masterLabel>
+            <translation><!-- Physician Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Risk Manager</masterLabel>
+            <translation><!-- Risk Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Adverse Event Term(s) --></label>
+        <name>PC_Adverse_Event_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC_Age_Unit --></label>
+        <name>PC_Age_Unit__c</name>
+        <picklistValues>
+            <masterLabel>Day(s)</masterLabel>
+            <translation><!-- Day(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month(s)</masterLabel>
+            <translation><!-- Month(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week(s)</masterLabel>
+            <translation><!-- Week(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Year(s)</masterLabel>
+            <translation><!-- Year(s) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Age at Onset of Event --></label>
+        <name>PC_Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Biologics Application # --></label>
+        <name>PC_BLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Care Program --></label>
+        <name>PC_Care_Program__c</name>
+        <relationshipLabel><!-- Adverse Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Causality --></label>
+        <name>PC_Causality__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not reported</masterLabel>
+            <translation><!-- Not reported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unable to determine</masterLabel>
+            <translation><!-- Unable to determine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cause of Death --></label>
+        <name>PC_CauseOfDeath__c</name>
+    </fields>
+    <fields>
+        <label><!-- Combination Product Report --></label>
+        <name>PC_Combination_Product_Report__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Treating Physician --></label>
+        <name>PC_Current_Treating_Physician__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of Birth --></label>
+        <name>PC_Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date of the Report --></label>
+        <name>PC_Date_of_the_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivate --></label>
+        <name>PC_Deactivate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deactivation Reason --></label>
+        <name>PC_Deactivation_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Error in completing report</masterLabel>
+            <translation><!-- Error in completing report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect information received from HCP</masterLabel>
+            <translation><!-- Incorrect information received from HCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect patient</masterLabel>
+            <translation><!-- Incorrect patient --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date of Death --></label>
+        <name>PC_Death_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dose --></label>
+        <name>PC_Dose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Drug NDC --></label>
+        <name>PC_Drug_NDC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ethnicity --></label>
+        <name>PC_Ethnicity__c</name>
+        <picklistValues>
+            <masterLabel>Hispanic/Latino</masterLabel>
+            <translation><!-- Hispanic/Latino --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Hispanic/Latino</masterLabel>
+            <translation><!-- Not Hispanic/Latino --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Event Type --></label>
+        <name>PC_EventType__c</name>
+        <picklistValues>
+            <masterLabel>Adverse Event</masterLabel>
+            <translation><!-- Adverse Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Inquiry</masterLabel>
+            <translation><!-- Medical Inquiry --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Complaint</masterLabel>
+            <translation><!-- Product Complaint --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- High Level Group Term --></label>
+        <name>PC_Event_HLGT_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event HLGT --></label>
+        <name>PC_Event_HLGT__c</name>
+    </fields>
+    <fields>
+        <label><!-- High Level Term --></label>
+        <name>PC_Event_HLT_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event HLT --></label>
+        <name>PC_Event_HLT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Low Level Term --></label>
+        <name>PC_Event_LLT_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event LLT --></label>
+        <name>PC_Event_LLT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Master --></label>
+        <name>PC_Event_Master__c</name>
+        <relationshipLabel><!-- Adverse Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Event Onset Date --></label>
+        <name>PC_Event_Onset_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Outcome --></label>
+        <name>PC_Event_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Congenital Anomaly/Birth Defects</masterLabel>
+            <translation><!-- Congenital Anomaly/Birth Defects --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Death</masterLabel>
+            <translation><!-- Death --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disability or Permanent Damage</masterLabel>
+            <translation><!-- Disability or Permanent Damage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitalization – initial or prolonged</masterLabel>
+            <translation><!-- Hospitalization – initial or prolonged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life-threatening</masterLabel>
+            <translation><!-- Life-threatening --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Serious (Important Medical Events)</masterLabel>
+            <translation><!-- Other Serious (Important Medical Events) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required Intervention to Prevent Permanent Impairment/Damage (Devices)</masterLabel>
+            <translation><!-- Required Intervention to Prevent Permanent Impairment/Damage (Devices) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Preferred Term --></label>
+        <name>PC_Event_PT_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event PT --></label>
+        <name>PC_Event_PT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Reappeared after Reintroduction --></label>
+        <name>PC_Event_Reappeared_after_Reintroduction__c</name>
+        <picklistValues>
+            <masterLabel>Doesn&apos;t apply</masterLabel>
+            <translation><!-- Doesn&apos;t apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- System Organ Class --></label>
+        <name>PC_Event_SOC_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event SOC --></label>
+        <name>PC_Event_SOC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Verbatim --></label>
+        <name>PC_Event_Verbatim__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>PC_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Follow-Up Number --></label>
+        <name>PC_Follow_Up_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>PC_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>PC_Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Health Care Professional --></label>
+        <name>PC_HealthCareProfessional__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hospitalization Date --></label>
+        <name>PC_Hospitalization_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Investigational New Drug Application # --></label>
+        <name>PC_IND__c</name>
+    </fields>
+    <fields>
+        <label><!-- If IND, Give Protocol # --></label>
+        <name>PC_If_IND_Give_Protocol__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indication for Product Use --></label>
+        <name>PC_Indication_for_Product_Use__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indication for use --></label>
+        <name>PC_Indication_for_use__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ini. Reporter Also Sent Report to FDA --></label>
+        <name>PC_Ini_Reporter_Also_Sent_Report_to_FDA__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Laboratory Data --></label>
+        <name>PC_Laboratory_Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latest Adverse Event --></label>
+        <name>PC_LatestAdverseEvent__c</name>
+        <relationshipLabel><!-- Adverse Events (Latest Adverse Event Version) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Address --></label>
+        <name>PC_Manufacturer_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compounding Outsourcing Facility 503B? --></label>
+        <name>PC_Manufacturer_Comp_Outsourcing_Fac__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Email --></label>
+        <name>PC_Manufacturer_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Name --></label>
+        <name>PC_Manufacturer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Phone Number --></label>
+        <name>PC_Manufacturer_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer Report Number --></label>
+        <name>PC_Manufacturer_Report_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meddra ID --></label>
+        <name>PC_Meddra_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meddra Version --></label>
+        <name>PC_Meddra_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medication --></label>
+        <name>PC_Medication__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Drug Application # --></label>
+        <name>PC_NDA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Medical History --></label>
+        <name>PC_OtherMedicalHistory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Relevant History --></label>
+        <name>PC_Other_Relevent_History__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outcome --></label>
+        <name>PC_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Death</masterLabel>
+            <translation><!-- Death --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deteriorating</masterLabel>
+            <translation><!-- Deteriorating --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Improving</masterLabel>
+            <translation><!-- Improving --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recovered</masterLabel>
+            <translation><!-- Recovered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unchanged</masterLabel>
+            <translation><!-- Unchanged --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Premarket Application / 510(k) # --></label>
+        <name>PC_PMA_510k__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Adverse Event --></label>
+        <name>PC_ParentAdverseEvent__c</name>
+        <relationshipLabel><!-- Adverse Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Patient Identifier --></label>
+        <name>PC_Patient_Identifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>PC_Patient__c</name>
+        <relationshipLabel><!-- Adverse Events --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pre-1938 --></label>
+        <name>PC_Pre_1938_Flag__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Prescription --></label>
+        <name>PC_Prescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Compounded --></label>
+        <name>PC_Product_Compounded__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Lot# --></label>
+        <name>PC_Product_Lot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Manufacturer --></label>
+        <name>PC_Product_Manufacturer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>PC_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Over the counter product --></label>
+        <name>PC_Product_OTC__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Strength --></label>
+        <name>PC_Product_Strength__c</name>
+    </fields>
+    <fields>
+        <label><!-- Race --></label>
+        <name>PC_Race__c</name>
+        <picklistValues>
+            <masterLabel>American Indian or Alaskan Native</masterLabel>
+            <translation><!-- American Indian or Alaskan Native --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asian</masterLabel>
+            <translation><!-- Asian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Black or African American</masterLabel>
+            <translation><!-- Black or African American --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Native Hawaiian or Other Pacific Islander</masterLabel>
+            <translation><!-- Native Hawaiian or Other Pacific Islander --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White</masterLabel>
+            <translation><!-- White --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reference No. --></label>
+        <name>PC_Reference_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Source Other Text --></label>
+        <name>PC_Report_Source_Other_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Source --></label>
+        <name>PC_Report_Source__c</name>
+        <picklistValues>
+            <masterLabel>Company Representative</masterLabel>
+            <translation><!-- Company Representative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer</masterLabel>
+            <translation><!-- Consumer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foreign</masterLabel>
+            <translation><!-- Foreign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health Professional</masterLabel>
+            <translation><!-- Health Professional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Literature</masterLabel>
+            <translation><!-- Literature --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Study</masterLabel>
+            <translation><!-- Study --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User Facility</masterLabel>
+            <translation><!-- User Facility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Follow-up # --></label>
+        <name>PC_Report_Type_Other_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Type --></label>
+        <name>PC_Report_Type__c</name>
+        <picklistValues>
+            <masterLabel>10-day</masterLabel>
+            <translation><!-- 10-day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15-day</masterLabel>
+            <translation><!-- 15-day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30-day</masterLabel>
+            <translation><!-- 30-day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5-day</masterLabel>
+            <translation><!-- 5-day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7-day</masterLabel>
+            <translation><!-- 7-day --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow-up</masterLabel>
+            <translation><!-- Follow-up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initial</masterLabel>
+            <translation><!-- Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Periodic</masterLabel>
+            <translation><!-- Periodic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Report to FDA --></label>
+        <name>PC_Report_to_FDA__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reporter Address --></label>
+        <name>PC_ReporterAddress__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter City --></label>
+        <name>PC_Reporter_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter Country --></label>
+        <name>PC_Reporter_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter&apos;s Email --></label>
+        <name>PC_Reporter_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter&apos;s First Name --></label>
+        <name>PC_Reporter_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter&apos;s Last Name --></label>
+        <name>PC_Reporter_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter&apos;s Phone --></label>
+        <name>PC_Reporter_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter State --></label>
+        <name>PC_Reporter_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reporter Zip Code --></help>
+        <label><!-- Reporter Zip Code --></label>
+        <name>PC_Reporter_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reporter --></label>
+        <name>PC_Reporter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route of Administration --></label>
+        <name>PC_Route_of_Administration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event End Date --></label>
+        <name>PC_Stop_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submission Status --></label>
+        <name>PC_SubmissionStatus__c</name>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Therapy End Date --></label>
+        <name>PC_Therapy_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Therapy Start Date --></label>
+        <name>PC_Therapy_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>PC_VersionNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight Unit --></label>
+        <name>PC_Weight_Unit__c</name>
+        <picklistValues>
+            <masterLabel>kg</masterLabel>
+            <translation><!-- kg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>lb</masterLabel>
+            <translation><!-- lb --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Weight --></label>
+        <name>PC_Weight__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

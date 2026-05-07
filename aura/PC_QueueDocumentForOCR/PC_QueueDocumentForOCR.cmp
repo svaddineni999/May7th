@@ -1,0 +1,80 @@
+<!--
+*************************************************************************************
+Component Name      : PC_QueueDocumentForOCR
+Description         : This component is used for setting properties when a document is queued for OCR through BRE.
+CreatedBy           : Deloitte
+Created Date        : 19 Oct 2021
+Modification Log    :
+*****************************************************************************************************
+Developer                   Date                   Description
+********************************************************************************************
+Satheesh Kumar            19 Oct 2021           Initial version
+*****************************************************************************************
+-->
+
+<aura:component description="PC_QueueDocumentForOCR" controller="PC_QueueDocumentForOCRController" implements="c:PC_SupportPlan_Automation_Interface" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="queueObject" access="public" type="Object"/>
+    <aura:attribute name="selectedTemplateTypeObj" access="private" type="Object"/>
+
+    <aura:attribute name="selectedTemplateDescription" type="String" access="private"/>
+    <aura:attribute name="isValidTriggerEventObject" type="Boolean" access="private" default="false"/>
+    <aura:attribute name="isSPBehaviorRunEverytime" type="Boolean" access="private" default="false"/>
+
+    <aura:attribute name="noOcrTemplateTypeOptionsError" type="String" default="{!$Label.c.PC_NoOcrTemplateType}" access="private"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="picklistNone" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+    <aura:attribute name="noneDescription" type="String" default="{!$Label.c.PC_OCR_PicklistNoneDescription}"/>
+    <aura:attribute name="createResultImmediatelyMessage" type="String" default="{!$Label.c.PC_OCR_CreateResultImmediatelyMessage}"/>
+    <aura:attribute name="createResultManuallyMessage" type="String" default="{!$Label.c.PC_OCR_CreateResultManuallyMessage}"/>
+    <aura:attribute name="ocrNotSupportedErrorMessage" type="String" default="{!$Label.c.PC_OCR_NotSupportedErrorMessage}"/>
+
+
+    <aura:if isTrue="{!v.isValidTriggerEventObject}">
+        <div class="contentBox">
+            <div class="slds-p-vertical_medium slds-p-left_medium slds-p-right_medium">
+                <lightning:combobox
+                        label="{!$Label.c.PC_OcrTemplateTypeSupportPlanLabel}"
+                        fieldLevelHelp="{!$Label.c.PC_OCR_TemplateTypeTooltipSPA}"
+                        value="{!v.queueObject.selectedTemplateType}"
+                        options="{!v.queueObject.templateTypeOptions}"
+                        disabled="{!v.isDisabled}"
+                        onchange="{!c.handleChange}"
+                        class="pc-combo-desc">
+                </lightning:combobox>
+                <aura:if isTrue="{!not(empty(v.selectedTemplateDescription))}">
+                    <div class="slds-m-vertical_xx-small slds-p-around_xx-small slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light" role="status">
+                        <div class="slds-media__figure">
+                            <lightning:icon iconName="utility:info" size="x-small"/>
+                        </div>
+                        <div class="slds-media__body">
+                            <p class="slds-text-body_small">{!v.selectedTemplateDescription}</p>
+                        </div>
+                    </div>
+                </aura:if>
+                <!--<aura:if isTrue="{! and(!empty(v.selectedTemplateTypeObj.createResultsImmediately), v.selectedTemplateTypeObj.createResultsImmediately)}">-->
+                <aura:if isTrue="{! !empty(v.selectedTemplateTypeObj.value)}">
+                    <lightning:input class="slds-p-vertical_x-small slds-p-bottom_none" type="checkbox"
+                                     disabled="{!v.isDisabled}" label="{!$Label.c.PC_NotifyOnCompleteLabel}"
+                                     checked="{!v.queueObject.notifyOnCompletion}" onchange="{!c.handleNotifyCheckboxChange}"/>
+                </aura:if>
+                <!--</aura:if>-->
+                <aura:if isTrue="{!v.isSPBehaviorRunEverytime}">
+                    <div class="slds-grid slds-p-top_small">
+                        <lightning:icon iconName="utility:warning" alternativeText="Warning!" title="Warning" variant="warning" size="x-small" class="slds-col slds-m-right--small slds-no-flex"/>
+                        <div class="slds-col slds-align-middle">
+                            <p style="color:#fe9339">{!$Label.c.PC_OcrSupportPlanBehaviorRunEverytimeWarning}</p>
+                        </div>
+                    </div>
+                </aura:if>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <div aura:id="supportError" class="slds-hide supportError">
+                {!v.ocrNotSupportedErrorMessage}
+            </div>
+        </aura:set>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OCR Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OCR Queue</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>PC_IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies whether the queued document needs notification on completion of the OCR. Selecting the checkbox will send the notification on completion of OCR Performed on the document. --></help>
+        <label><!-- Notify Status --></label>
+        <name>PC_NotifyStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- OCR Template Type --></label>
+        <name>PC_OcrTemplateType__c</name>
+        <relationshipLabel><!-- OCR Queue --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Source Content Id --></label>
+        <name>PC_SourceContentId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source Document --></label>
+        <name>PC_SourceDocument__c</name>
+        <relationshipLabel><!-- OCR Queue --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Id of the source record (If different from PC_Document) --></help>
+        <label><!-- Source Record --></label>
+        <name>PC_SourceRecord__c</name>
+    </fields>
+    <fields>
+        <help><!-- Current state of the extraction process. --></help>
+        <label><!-- Status --></label>
+        <name>PC_Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Failed</masterLabel>
+            <translation><!-- Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queued</masterLabel>
+            <translation><!-- Queued --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

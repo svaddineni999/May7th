@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MktDataConnection xmlns="http://soap.sforce.com/2006/04/metadata">
+    <connectionMethod>Ingress</connectionMethod>
+    <connectionStatus>ACTIVE</connectionStatus>
+    <connectorName>ConversationTranscripts</connectorName>
+    <credentials>
+        <fullName>ConversationTranscripts_00DDn000004Mx8J_bucketName</fullName>
+        <credentialName>bucketName</credentialName>
+        <value>*</value>
+    </credentials>
+    <credentials>
+        <fullName>ConversationTranscripts_00DDn000004Mx8J_iamRoleName</fullName>
+        <credentialName>iamRoleName</credentialName>
+        <value>*</value>
+    </credentials>
+    <credentials>
+        <fullName>ConversationTranscripts_00DDn000004Mx8J_parentDirectory</fullName>
+        <credentialName>parentDirectory</credentialName>
+        <value>*</value>
+    </credentials>
+    <externalRecordIdentifier>34c49f32-8161-41d7-b98d-41164c7fa407</externalRecordIdentifier>
+    <isActivityEnabled>false</isActivityEnabled>
+    <isSentosEnabled>false</isSentosEnabled>
+    <masterLabel>ConversationTranscripts_00DDn000004Mx8J</masterLabel>
+    <parameters>
+        <fullName>ConversationTranscripts_00DDn000004Mx8J_orgId</fullName>
+        <paramName>orgId</paramName>
+        <value>00DDn000004Mx8J</value>
+    </parameters>
+    <shouldAutoCreatePolicies>false</shouldAutoCreatePolicies>
+</MktDataConnection>

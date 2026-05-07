@@ -1,0 +1,46 @@
+.THIS .PC_Progress_Container {
+    text-align: center;
+}
+.THIS .PC_Progress_Text {
+    font-size: 1.1em;
+    color: rgba(82, 63, 63, 0.66);
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.THIS .PC_Progress_Cnt_Cont {
+    /*empty block*/
+}
+.THIS .PC_Progress_Text_Cont {
+    text-align:center;
+}
+.THIS .lineActivityGraph {
+    margin: auto 0px;
+}
+.THIS .PC_Progress_Count {
+    font-size: 3em;
+    color: #520000;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.THIS .PC_Grid {
+    /*empty block*/
+}
+.THIS .pc-grid-overwrite {
+    position: relative!important;
+    top: 50%!important;
+}
+
+.THIS .ActivitiesTodayBar {
+    height:10px;
+    display:inline-block;
+}
+
+.THIS .ActivitiesTodayBar.Completed {
+    background-color:#0070D2;
+}
+
+.THIS .ActivitiesTodayBar.NotCompleted {
+    background-color:rgb(244, 246, 249);
+}

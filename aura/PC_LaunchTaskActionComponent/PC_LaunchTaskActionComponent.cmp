@@ -1,0 +1,49 @@
+<!--
+Lightning component  : PC_LaunchTaskActionComponent
+Description          : Launch Component for Guided Task Management
+
+Modification Log:
+Vijay Kashikar 		 09-Jul-2020    Initial Version
+Satheesh Kumar       20-Nov-2020    [PC-6943] Added taskDocumentId as additional default attribute
+-->
+
+<aura:component description="PC_LaunchTaskActionComponent" controller="PC_LaunchTaskActionComponent"
+                implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <!-- this component will have access to recordId attribute available from hasRecordId interface -->
+    <aura:attribute name="namespace" type="String" default="" access="private"/>
+    <aura:attribute name="actionComponentDetails" type="Object" default="" access="private"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="true"/>
+    <aura:attribute name="loadingMessage" type="String" default="{!$Label.c.PC_LoadingTaskActionComponent}"/>
+    <aura:attribute name="standardLoggedErrorMessage" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="standardClientSideErrorMessage" type="String" default="{!$Label.c.PC_ClientSideErrorMessage}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="noSuggestedActionFound" type="String" default="{!$Label.c.PC_NoSuggestedActionFound}" access="private" />
+    <aura:attribute name="errors" type="List" access="private" default="[]"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{!c.refreshView}" />
+    <aura:handler name="change" value="{!v.actionComponentDetails}" action="{!c.onChangeActionComponentDetails}"/>
+
+    <aura:if isTrue="{!v.showSpinner}">
+        <div> <!--this container div is needed so that the spinner appears within this component -->
+            <div class="slds-text-align--center spinnerHolder">
+                <lightning:spinner alternativeText="Loading" size="small"/>
+                <div>{!v.loadingMessage}</div>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!and(empty(v.actionComponentDetails.actionComponent.apiName), not(v.errors.length > 0))}">
+                <span class="slds-text-body_regular">{!v.noSuggestedActionFound}</span>
+            </aura:if>
+                {!v.body}
+        </aura:set>
+
+    </aura:if>
+
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+
+
+
+</aura:component>

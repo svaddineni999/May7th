@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Partecipante piano sanitario EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partecipanti piano sanitario EHR</value>
+    </caseValues>
+    <fields>
+        <label>Attività piano sanitario</label>
+        <name>HealthCloudGA__CarePlanActivity__c</name>
+        <relationshipLabel>Partecipanti piano sanitario</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Piano sanitario</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Partecipanti piano sanitario</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Paziente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Partecipanti piano sanitario</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nome del medico 255</label>
+        <name>HealthCloudGA__PractitionerName255__c</name>
+    </fields>
+    <fields>
+        <label>Nome del medico</label>
+        <name>HealthCloudGA__PractitionerName__c</name>
+    </fields>
+    <fields>
+        <label>Medico</label>
+        <name>HealthCloudGA__Practitioner__c</name>
+        <relationshipLabel>Partecipanti piano sanitario</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Persona correlata</label>
+        <name>HealthCloudGA__RelatedPerson__c</name>
+        <relationshipLabel>Partecipanti piano sanitario</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Codice ruolo</label>
+        <name>HealthCloudGA__RoleCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta ruolo</label>
+        <name>HealthCloudGA__RoleLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema ruolo</label>
+        <name>HealthCloudGA__RoleSystem__c</name>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema di origine</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>ID partecipante piano sanitario EHR</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

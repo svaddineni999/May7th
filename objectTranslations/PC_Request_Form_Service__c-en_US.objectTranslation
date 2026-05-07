@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Request Form Service</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Request Form Services</value>
+    </caseValues>
+    <fields>
+        <label><!-- Request Form --></label>
+        <name>PC_Request_Form__c</name>
+        <relationshipLabel><!-- Request Form Services --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>PC_Service__c</name>
+        <relationshipLabel><!-- Request Form Services --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

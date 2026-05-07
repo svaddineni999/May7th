@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Средство соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Средства соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Средство соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Средства соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Средства соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Средств соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Средству соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Средствам соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Средством соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Средствами соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Средстве соотнесения типа записи физического лица</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Средствах соотнесения типа записи физического лица</value>
+    </caseValues>
+    <fields>
+        <label>Пространство имен типа записи (орг-ция)</label>
+        <name>HealthCloudGA__AccountRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Тип записи организации</label>
+        <name>HealthCloudGA__AccountRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Пространство имен типа записи (контакт)</label>
+        <name>HealthCloudGA__ContactRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Тип записи контакта</label>
+        <name>HealthCloudGA__ContactRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Страница сведений</label>
+        <name>HealthCloudGA__DetailPage__c</name>
+    </fields>
+    <fields>
+        <label>Подтип организации</label>
+        <name>HealthCloudGA__IndividualType__c</name>
+    </fields>
+    <fields>
+        <label>Пространство имен типа записи (интерес)</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+    <fields>
+        <label>Тип записи интереса</label>
+        <name>HealthCloudGA__LeadRecordType__c</name>
+    </fields>
+    <gender>Neuter</gender>
+</CustomObjectTranslation>

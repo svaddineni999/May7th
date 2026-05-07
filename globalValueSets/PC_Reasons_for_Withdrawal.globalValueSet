@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Financial Barrier</fullName>
+        <default>false</default>
+        <label>Financial Barrier</label>
+    </customValue>
+    <customValue>
+        <fullName>Lack of effectiveness (clinical decision)</fullName>
+        <default>false</default>
+        <label>Lack of effectiveness (clinical decision)</label>
+    </customValue>
+    <customValue>
+        <fullName>Change of Treatment Regimen (clinical decision)</fullName>
+        <default>false</default>
+        <label>Change of Treatment Regimen (clinical decision)</label>
+    </customValue>
+    <customValue>
+        <fullName>Deterioration in health (self-reported)</fullName>
+        <default>false</default>
+        <label>Deterioration in health (self-reported)</label>
+    </customValue>
+    <customValue>
+        <fullName>Exacerbation of symptoms (self-reported)</fullName>
+        <default>false</default>
+        <label>Exacerbation of symptoms (self-reported)</label>
+    </customValue>
+    <customValue>
+        <fullName>Coexisting chronic conditions</fullName>
+        <default>false</default>
+        <label>Coexisting chronic conditions</label>
+    </customValue>
+    <customValue>
+        <fullName>Depression</fullName>
+        <default>false</default>
+        <label>Depression</label>
+    </customValue>
+    <customValue>
+        <fullName>Death</fullName>
+        <default>false</default>
+        <label>Death</label>
+    </customValue>
+    <customValue>
+        <fullName>Choice1</fullName>
+        <default>false</default>
+        <label>Choice1</label>
+    </customValue>
+    <masterLabel>Reasons for Withdrawal</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

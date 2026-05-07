@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Custom metadata to configure actions to be performed on each document</description>
+    <fields>
+        <fullName>PC_Action__c</fullName>
+        <deprecated>false</deprecated>
+        <description>For components that have registered actions populate this field.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>For components that have registered actions populate this field with the appropriate action name.</inlineHelpText>
+        <label>Action</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Custom metadata field to capture if action icon is activated</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Icon will be displayed only if this field is checked</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_ComponentAttributes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Attributes that will be passed onto the component at the time of dynamic creation.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Component Attributes</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom metadata field to store API name of component that needs to be launched for the action</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of component that needs to be launched on clicking action icon</inlineHelpText>
+        <label>Component</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Document_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom metadata field to capture which document record type (API name of document record type) should the action be applicable for. Leave blank if action applies to all record types.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of document record type to which the action should be associated with. To apply icon for all record types, use keyword &apos;ALL&apos; without single quotes. For example: ALL</inlineHelpText>
+        <label>Document Record Type</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Document_Recordtype_Namespaceprefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field describes the namespace prefix for document record type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Namespace of record type</inlineHelpText>
+        <label>Document Record Type Namespace Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Group_of_RecordTypes__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Group of RecordTypes</label>
+        <referenceTo>PC_Group__mdt</referenceTo>
+        <relationshipLabel>Document Action Settings</relationshipLabel>
+        <relationshipName>Document_Action_Settings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Icon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom metadata field to capture icon to be displayed on Document Action Ribbon</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Name of the Lightning Icon. Refer Icons section on Salesforce Lightning Design System. 
+Sample Input:  standard-account</inlineHelpText>
+        <label>Icon</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label of the Document Action Icon that will visible on the document action center. You may also specify the fully qualified custom label path ($Label.namespace.labelName).</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Label of the Document Action Icon that will visible on the document action center. You may also specify the fully qualified custom label path ($Label.namespace.labelName).</inlineHelpText>
+        <label>Icon Label</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Ordinal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom metadata field to capture order in which action icon should display on Document Action Ribbon</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Numeric order in which icon should be displayed left to right. 1 indicates left most.</inlineHelpText>
+        <label>Ordinal</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ValidatorClass__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The Class will control visibility and accessibility for document action.</inlineHelpText>
+        <label>Validator Class</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Document Action Setting</label>
+    <pluralLabel>Document Action Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

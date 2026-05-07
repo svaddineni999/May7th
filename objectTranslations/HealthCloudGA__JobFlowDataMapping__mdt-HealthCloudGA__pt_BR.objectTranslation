@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Mapeamento de dados do fluxo de trabalho</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Mapeamentos de dados do fluxo de trabalho</value>
+    </caseValues>
+    <fields>
+        <label>Ativo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Nome do grupo de mapeamento</label>
+        <name>HealthCloudGA__MappingGroupName__c</name>
+    </fields>
+    <fields>
+        <label>Campo de origem</label>
+        <name>HealthCloudGA__SourceField__c</name>
+    </fields>
+    <fields>
+        <label>Objeto de origem</label>
+        <name>HealthCloudGA__SourceObject__c</name>
+    </fields>
+    <fields>
+        <label>Campo de destino</label>
+        <name>HealthCloudGA__TargetField__c</name>
+    </fields>
+    <fields>
+        <label>Objeto de destino</label>
+        <name>HealthCloudGA__TargetObject__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

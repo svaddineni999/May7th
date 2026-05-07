@@ -1,0 +1,13 @@
+<template>
+    <article class="slds-card pc-pill-overflow-auto">
+        <template for:each={pills} for:item="pill">
+            <c-pc-pill
+                    key={pill.label}
+                    label={pill.label}
+                    value={pill.value}
+                    selected={pill.selected}
+                    onclick={handleClick}
+            ></c-pc-pill>
+        </template>
+    </article>
+</template>

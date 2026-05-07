@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Journey</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Journeys</value>
+    </caseValues>
+    <fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Case Status Picklist Value --></help>
+        <label><!-- PC Case Status --></label>
+        <name>PC_Case_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Label of the Program Journey Indicator Status that will be visible on the Program Journey Indicator. You may also specify the fully qualified custom label path ($Label.namespace.labelName). --></help>
+        <label><!-- Indicator Status Label --></label>
+        <name>PC_Indicator_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field holds the &apos;Other&apos; record type. Must be filled if you have chosen &apos;Other&apos; in the Record Type field. --></help>
+        <label><!-- Other Record Type --></label>
+        <name>PC_OtherRecordType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Code --></label>
+        <name>PC_Program_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Namespace of record type --></help>
+        <label><!-- Record Type Namespace Prefix --></label>
+        <name>PC_RecordType_Namespaceprefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- RecordType --></label>
+        <name>PC_RecordType__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Alternate_Funding</masterLabel>
+            <translation><!-- PC_Alternate_Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Appeal</masterLabel>
+            <translation><!-- PC_Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Benefits_Investigation_Benefits_Verification</masterLabel>
+            <translation><!-- PC_Benefits_Investigation_Benefits_Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Copay</masterLabel>
+            <translation><!-- PC_Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Enrollment</masterLabel>
+            <translation><!-- PC_Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_PAP</masterLabel>
+            <translation><!-- PC_PAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Prior_Authorization</masterLabel>
+            <translation><!-- PC_Prior_Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Program</masterLabel>
+            <translation><!-- PC_Program --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Procjena stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Procjene stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Procjenu stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Procjene stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Procjene stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Procjena stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Procjeni stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Procjenama stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Procjenom stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Procjenama stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>false</plural>
+        <value>Procjeni stanovanja</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <value>Procjenama stanovanja</value>
+    </caseValues>
+    <fields>
+        <label>Račun</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Procjene stanovanja</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Datum procjene</label>
+        <name>HealthCloudGA__AssessmentDate__c</name>
+    </fields>
+    <fields>
+        <label>Može bez opasnosti pripremati hranu</label>
+        <name>HealthCloudGA__CanPrepareFoodSafely__c</name>
+    </fields>
+    <fields>
+        <label>Može biti u karanteni</label>
+        <name>HealthCloudGA__CanQuarantine__c</name>
+    </fields>
+    <fields>
+        <label>Stanovanje</label>
+        <name>HealthCloudGA__Dwelling__c</name>
+        <picklistValues>
+            <masterLabel>Apartment</masterLabel>
+            <translation><!-- Apartment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board and Care or Assisted Living Facility</masterLabel>
+            <translation><!-- Board and Care or Assisted Living Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel or Motel</masterLabel>
+            <translation><!-- Hotel or Motel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>House</masterLabel>
+            <translation><!-- House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long-Term Care Facility</masterLabel>
+            <translation><!-- Long-Term Care Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Family Dwelling</masterLabel>
+            <translation><!-- Multi-Family Dwelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nursing Home</masterLabel>
+            <translation><!-- Nursing Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreational Vehicle or Mobile Home</masterLabel>
+            <translation><!-- Recreational Vehicle or Mobile Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skilled Nursing Facility</masterLabel>
+            <translation><!-- Skilled Nursing Facility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Ima privatnu kupaonicu</label>
+        <name>HealthCloudGA__HasPrivateBathroom__c</name>
+    </fields>
+    <fields>
+        <label>Je beskućnik</label>
+        <name>HealthCloudGA__IsHomeless__c</name>
+    </fields>
+    <fields>
+        <label>Datum završetka karantene</label>
+        <name>HealthCloudGA__QuarantineEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Lokacija karantene</label>
+        <name>HealthCloudGA__QuarantineLocation__c</name>
+        <relationshipLabel>Procjene stanovanja</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Datum početka karantene</label>
+        <name>HealthCloudGA__QuarantineStartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naziv procjene stanovanja</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is a junction object to store the status indicators associated with a program status</description>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether the record is active or not.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Program_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Program Status</label>
+        <referenceTo>PC_Program_Status__mdt</referenceTo>
+        <relationshipLabel>PC Program Status Indicators</relationshipLabel>
+        <relationshipName>PC_Program_Status_Indicators</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Status_Indicator__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>PC Status Indicator</label>
+        <referenceTo>PC_Status_Indicators__mdt</referenceTo>
+        <relationshipLabel>PC Program Status Indicators</relationshipLabel>
+        <relationshipName>PC_Program_Status_Indicators</relationshipName>
+        <required>true</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <label>Prg Journey Int Indicator Association</label>
+    <pluralLabel>Prg Journey Int Indicator Associations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

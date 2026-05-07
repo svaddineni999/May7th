@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>การตั้งค่าการประเมินทางคลินิก</value>
+    </caseValues>
+    <fields>
+        <label>คิวงานการประเมิน</label>
+        <name>HealthCloudGA__Assessment_Task_Queue__c</name>
+    </fields>
+    <fields>
+        <label>โปรแกรมการรักษา</label>
+        <name>HealthCloudGA__Care_Program__c</name>
+    </fields>
+    <fields>
+        <label>แบบฟอร์มข้อมูลการรับรองค.ยินยอมที่ใช้</label>
+        <name>HealthCloudGA__Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>จุดประสงค์ของการใช้ข้อมูลความยินยอม</label>
+        <name>HealthCloudGA__Consent_Data_Use_Purpose__c</name>
+    </fields>
+    <fields>
+        <label>บฟ.ข้อมูลการรับรองค.ยินยอมคค.ที่ใช้</label>
+        <name>HealthCloudGA__Household_Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>เกณฑ์อายุของผู้เยาว์</label>
+        <name>HealthCloudGA__MinorChildAgeLimit__c</name>
+    </fields>
+    <fields>
+        <label>ชื่อ RecordType ผู้ป่วย</label>
+        <name>HealthCloudGA__Patient_RecordType_Name__c</name>
+    </fields>
+    <fields>
+        <label>จำนวนวันที่กักตัวที่ถูกกำหนด</label>
+        <name>HealthCloudGA__PrescribedQuarantineDays__c</name>
+    </fields>
+</CustomObjectTranslation>

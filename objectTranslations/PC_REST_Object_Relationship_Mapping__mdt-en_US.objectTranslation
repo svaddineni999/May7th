@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>REST Object Relationship Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>REST Object Relationship Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Child Object Field API Name --></label>
+        <name>PC_Child_Object_Field_API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child REST Object Name --></label>
+        <name>PC_Child_REST_Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Child sObject API Name --></label>
+        <name>PC_Child_sObject_API_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent REST Object Name --></label>
+        <name>PC_Parent_REST_Object_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- REST Object Field Name --></label>
+        <name>PC_Rest_Object_Field_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

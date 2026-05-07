@@ -1,0 +1,101 @@
+.THIS .custom-completed {
+    color:#000066 !important;
+}
+
+.THIS .custom-current {
+    color:#000066 !important;
+    background-color:#FFC000 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-current + .slds-is-incomplete::before{
+    background-color: #FFC000 !important; 
+    color:#000066 !important;
+}
+
+
+.THIS .slds-tabs--path__item + .slds-is-complete::before, .THIS .slds-tabs--path__item + .slds-is-current::before {
+    background-color:#A9D18E !important; 
+    color:#000066 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-current .slds-tabs--path__link, .THIS .slds-tabs--path .slds-is-complete .slds-tabs--path__link, .THIS .slds-tabs--path .slds-is-lost .slds-tabs--path__link {
+    color:#000066 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-complete {
+    background-color:#A9D18E !important; 
+}
+
+.THIS .slds-tabs--path .slds-is-complete .slds-tabs--path__title {
+    color:#000066 !important;
+    transform:none !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete + .slds-is-incomplete::before {
+    background-color: #D9D9D9 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete, .THIS .slds-tabs--path .slds-is-incomplete:hover {
+    background-color: #D9D9D9 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete .slds-tabs--path__title {
+    color:#888888 !important;
+    transform:none !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete:hover {
+    background-color: #D9D9D9 !important;
+}
+
+/**on hold classes**/
+
+.THIS .custom-completed2 {
+    color:#000066 !important;
+}
+
+.THIS .custom-current2 {
+    color:#000066 !important;
+    background-color:#737066 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-current2 + .slds-is-incomplete2::before{
+    background-color: #737066 !important; 
+    color:#000066 !important;
+}
+
+
+.THIS .slds-tabs--path__item + .slds-is-complete2::before, .THIS .slds-tabs--path__item + .slds-is-current2::before {
+    background-color:#aaafa7 !important; 
+    color:#000066 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-current2 .slds-tabs--path__link, .THIS .slds-tabs--path .slds-is-complete2 .slds-tabs--path__link, .THIS .slds-tabs--path .slds-is-lost .slds-tabs--path__link {
+    color:#000066 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-complete2 {
+    background-color:#aaafa7 !important; 
+}
+
+.THIS .slds-tabs--path .slds-is-complete2 .slds-tabs--path__title {
+    color:#000066 !important;
+    transform:none !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete2 + .slds-is-incomplete2::before {
+    background-color: #D9D9D9 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete2, .THIS .slds-tabs--path .slds-is-incomplete2:hover {
+    background-color: #D9D9D9 !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete2 .slds-tabs--path__title {
+    color:#888888 !important;
+    transform:none !important;
+}
+
+.THIS .slds-tabs--path .slds-is-incomplete2:hover {
+    background-color: #D9D9D9 !important;
+}

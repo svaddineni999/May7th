@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Prescription</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Prescriptions</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- ACLS Document Link Prescription --></label>
+        <name>ACLS_Doc_Link_Prescription</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>ACLS_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Supply --></label>
+        <name>PC_Days_Supply__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document --></label>
+        <name>PC_Document__c</name>
+        <relationshipLabel><!-- Prescriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Dosage --></label>
+        <name>PC_Dosage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>PC_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>PC_Patient_Account__c</name>
+        <relationshipLabel><!-- Prescriptions (Patient) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Physician --></label>
+        <lookupFilter>
+            <errorMessage><!-- Physician does not exist or is not a physician account --></errorMessage>
+        </lookupFilter>
+        <name>PC_Physician_Account__c</name>
+        <relationshipLabel><!-- Prescriptions (Physician) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Place of Service --></label>
+        <name>PC_PlaceOfService__c</name>
+        <picklistValues>
+            <masterLabel>22: On Campus-Outpatient Hospita</masterLabel>
+            <translation><!-- 22: On Campus-Outpatient Hospita --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Diagnosis --></label>
+        <name>PC_PrimaryDiagnosis__c</name>
+        <picklistValues>
+            <masterLabel>Age-related osteoporosis without current pathological fracture</masterLabel>
+            <translation><!-- Age-related osteoporosis without current pathological fracture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>PC_Product__c</name>
+        <relationshipLabel><!-- Prescriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Case --></label>
+        <lookupFilter>
+            <errorMessage><!-- Program does not exist or is not a program case. --></errorMessage>
+        </lookupFilter>
+        <name>PC_Program_Case__c</name>
+        <relationshipLabel><!-- Prescriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Refills Frequency --></label>
+        <name>PC_Refills_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requested Quantity --></label>
+        <name>PC_Requested_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_Rx_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refills --></label>
+        <name>PC_Rx_Refills__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>PC_Rx_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>PC_Rx_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Diagnosis --></label>
+        <name>PC_SecondaryDiagnosis__c</name>
+        <picklistValues>
+            <masterLabel>Age-related osteoporosis without current pathological fracture</masterLabel>
+            <translation><!-- Age-related osteoporosis without current pathological fracture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- hasActivePA --></label>
+        <name>PC_hasActivePA__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Prescription record cannot have same Primary and Secondary Diagnosis value --></errorMessage>
+        <name>PC_DuplicateCheckOfDiagnosis</name>
+    </validationRules>
+</CustomObjectTranslation>

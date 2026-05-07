@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>상호 역할</value>
+    </caseValues>
+    <fields>
+        <help><!-- If checked, a corresponding inverse role is automatically created. --></help>
+        <label>역할 반전 만들기</label>
+        <name>HealthCloudGA__CreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>역관계</relationshipLabel>
+    </fields>
+    <fields>
+        <label>역할 반전</label>
+        <name>HealthCloudGA__InverseRole__c</name>
+    </fields>
+    <fields>
+        <label>관계 유형</label>
+        <name>HealthCloudGA__RelationshipType__c</name>
+        <picklistValues>
+            <masterLabel>Account Account Relation</masterLabel>
+            <translation><!-- Account Account Relation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Contact Relation</masterLabel>
+            <translation><!-- Contact Contact Relation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <nameFieldLabel>역할</nameFieldLabel>
+    <recordTypes>
+        <description>계정 간 관계와 연결된 역할</description>
+        <label>계정 역할</label>
+        <name>HealthCloudGA__AccountRole</name>
+    </recordTypes>
+    <recordTypes>
+        <description>연락처 간 관계와 연결된 역할</description>
+        <label>연락처 역할</label>
+        <name>HealthCloudGA__ContactRole</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>상호 역할은 수정할 수 없습니다</errorMessage>
+        <name>HealthCloudGA__ProhibitUpdates</name>
+    </validationRules>
+</CustomObjectTranslation>

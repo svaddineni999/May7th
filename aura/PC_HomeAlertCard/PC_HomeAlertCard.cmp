@@ -1,0 +1,53 @@
+<aura:component controller="PC_HomeUserAlertsController">
+    <aura:attribute name="objAlert" type="PC_HomeUserAlertsController.Object"/>
+    <aura:attribute name="onclick" type="Aura.Action" default="{!c.navigateToRecord}" description="This allows handling onClick events"/>
+    <aura:attribute name="onCloseClick" type="Aura.Action" default="{!c.closeAlert}" description="This allows handling onClick events"/>
+    <aura:attribute name="usersContext" type="String" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:registerEvent name="taskUpdated" type="c:PC_UpdateTask"/>
+
+    <div class="PC_tile_alert slds-tile slds-media slds-card__tile slds-col--padded slds-grow-none slds-size--1-of-1 slds-small-size--1-of-2 slds-medium-size--1-of-3 slds-large-size--1-of-4 slds-hint-parent">
+        <div class="slds-media__figure">
+            <div class="slds-icon_container">
+                <c:svg class="slds-icon lds-icon--small slds-icon-text-warning" xlinkHref="{! $Resource.PC_SLDS202 + '/PC_SLDS202/assets/icons/utility-sprite/svg/symbols.svg#warning'}" />
+                <span class="slds-assistive-text">{!$Label.c.PC_AlertIcon}</span>
+            </div>
+        </div>
+        <div class="slds-media__body">
+            <div class="alertCardHeaderRow">
+                <div class="slds-grid slds-grid--align-spread slds-has-flexi-truncate">
+                    <button class="PC_Button_Link slds-button slds-button--icon-border-filled slds-button--icon-x-small slds-shrink-none " onclick="{!v.onclick}">
+                        <p class="slds-truncate" title="{!v.objAlert.patientName}">{!v.objAlert.patientName}
+                        </p>
+                    </button>
+                </div>
+                <div  class="slds-media__figure right">
+                    <div class="slds-icon_container">
+                        <button class="PC_Button_Link slds-button slds-button--icon-border-filled slds-button--icon-x-small slds-shrink-none closeButton" onclick="{!v.onCloseClick}">
+                            <span class="">{!$Label.c.PC_Dismiss}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-tile__detail slds-text-body--small">
+                <dl class="slds-dl--horizontal">
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                        <p class="slds-truncate" title="Date of Alert">
+                            <ui:outputDateTime value="{!v.objAlert.alertDate}" />
+                        </p>
+                    </dd>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                        <p class="slds-truncate" title="Alert Type">
+                            <ui:outputText value="{!v.objAlert.alertType}"/>
+                        </p>
+                    </dd>
+                    <dd class="slds-dl--horizontal__detail slds-tile__meta">
+                        <p class="slds-truncate" title="Reason for Alert">
+                            <ui:outputText value="{!v.objAlert.alertReason}"/>
+                        </p>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+</aura:component>

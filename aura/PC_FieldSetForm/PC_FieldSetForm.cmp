@@ -1,0 +1,57 @@
+<aura:component controller="PC_FieldSetController">
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="record" type="Object" description="The record being edited" access="PUBLIC"/>
+    <aura:attribute name="fsName" type="String" access="PUBLIC"/>
+    <aura:attribute name="typeName" type="String" access="PUBLIC"/>
+    <aura:attribute name="isValid" type="Boolean"  access="PUBLIC"/>
+    <aura:attribute name="noOfItemsInARow" type="Integer" access="PUBLIC" default="2" />
+    
+    
+    <aura:method name="validate" action="{!c.validate}" />
+    <aura:attribute name="disableFlag" type="Boolean" default="false"/>
+
+    <aura:attribute name="fields" type="Object[]" access="PRIVATE"/>
+    <aura:attribute name="configHtmlMap" type="Object" access="PRIVATE"/>
+    <aura:attribute name="form" type="Aura.Component[]" access="PRIVATE"/>
+    <aura:attribute name="inputToField" type="Map" access="PRIVATE"/>
+    <aura:attribute name="lightningForm" type="Aura.Component[]" access="PRIVATE"/>  
+    <aura:attribute name="lightningFormMap" type="Map" access="PRIVATE"/>  
+    
+    <aura:attribute name="lightningForm_noOfRows" type="Integer" access="PRIVATE"/>  
+    <aura:attribute name="lightningForm_Rows" type="Integer[]" access="PRIVATE" description="Starts with 0"/>  
+    <aura:attribute name="lightningForm_Columns" type="Integer[]" access="PRIVATE" description="Starts with 0"/>  
+    
+    <aura:attribute name="showForm" type="Boolean"  access="PRIVATE" default="FALSE"/>
+    
+    <aura:attribute name="requiedErrorMessage" type="String"  default="{!$Label.c.PC_FieldSet_RequiredErrorMsg}" access="PRIVATE"/>
+
+    <aura:attribute name="autofocusFirstField" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="isAutoFocusSet" type="Boolean" default="false" />
+
+    <aura:handler name="render" value="{!this}" action="{!c.doneRendering}"/>
+
+
+    <div>
+        {!v.form}        
+    </div>    
+    <div id="fieldSetForm" aura:id="fieldSetForm">
+        <div class="PC_FieldSetLightningForm slds-form--compound">
+            <aura:if isTrue="{! v.showForm}">
+            <div class="slds-form-element__group">
+                <aura:iteration items="{!v.lightningForm_Rows}" var="row" indexVar="i">
+                    <div class="slds-form-element__row">                        
+                            <aura:iteration items="{!v.lightningForm_Columns}" var="col" indexVar="j">
+                                <div class="{! 'slds-form-element slds-size--1-of-' + v.noOfItemsInARow}">
+                                    <c:PC_FieldSetForm_ComponentRenderer lightningFormMap="{!v.lightningFormMap}" 
+                                                                         index="{! i + '' + j}" 
+                                                                         />
+                                </div>
+                            </aura:iteration>
+                    </div>
+                </aura:iteration>
+            </div>
+            </aura:if>
+        </div>
+
+    </div>
+</aura:component>

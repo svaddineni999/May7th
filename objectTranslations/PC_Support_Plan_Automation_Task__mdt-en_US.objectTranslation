@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Plan Automation Task</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Plan Automation Tasks</value>
+    </caseValues>
+    <fields>
+        <label><!-- Action Class --></label>
+        <name>PC_ActionClass__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lightning Component --></label>
+        <name>PC_LightningComponent__c</name>
+    </fields>
+    <fields>
+        <help><!-- If left blank, the automation task will be assumed to be valid for all objects.
+Specify the API name without the namespace. --></help>
+        <label><!-- Source Object --></label>
+        <name>PC_SourceObjectAPIName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Namespace of the object specified in Source Object field. --></help>
+        <label><!-- Source Object Namespace --></label>
+        <name>PC_SourceObjectNamespace__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

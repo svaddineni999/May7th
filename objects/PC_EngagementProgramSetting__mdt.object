@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Holds Engagement Program Settings</description>
+    <fields>
+        <fullName>PC_EngagementProgram__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Engagement Program for which the setting needs to be done</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Engagement Program for which the setting needs to be done</inlineHelpText>
+        <label>Engagement Program</label>
+        <referenceTo>PC_EngagementProgram__mdt</referenceTo>
+        <relationshipLabel>Engagement Program Settings</relationshipLabel>
+        <relationshipName>PC_EngagementPrograms</relationshipName>
+        <required>true</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_IntegrationSetting__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the integration setting that needs to be overridden</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Name of the integration setting that needs to be overridden</inlineHelpText>
+        <label>Integration Setting</label>
+        <referenceTo>PC_IntegrationSetting__mdt</referenceTo>
+        <relationshipLabel>Engagement Program Settings</relationshipLabel>
+        <relationshipName>PC_IntegrationSettings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Select this checkbox to mark the setting as active.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Select this checkbox to mark the setting as active.</inlineHelpText>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_PatientConnectSetting__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the &quot;Patient Connect Setting&quot; that needs to be overridden</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Name of the &quot;Patient Connect Setting&quot; that needs to be overridden</inlineHelpText>
+        <label>Patient Connect Setting</label>
+        <referenceTo>PC_Patient_Connect_Setting__mdt</referenceTo>
+        <relationshipLabel>Engagement Program Settings</relationshipLabel>
+        <relationshipName>PC_PatientConnectSettings</relationshipName>
+        <required>false</required>
+        <type>MetadataRelationship</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_SettingType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of the Setting for which you would like to set the value</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Type of the Setting for which you would like to set the value.
+If Patient Connect Setting is selected, then pick the setting from &apos;Patient Connect Setting&apos; field.
+If Integration Setting is selected, then pick the setting from &apos;Integration Setting&apos; field.</inlineHelpText>
+        <label>Setting Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Integration Setting</fullName>
+                    <default>false</default>
+                    <label>Integration Setting</label>
+                </value>
+                <value>
+                    <fullName>Patient Connect Setting</fullName>
+                    <default>false</default>
+                    <label>Patient Connect Setting</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_SettingValue__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Value for the setting selected in &quot;Setting Name&quot;</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Value for the setting selected in &quot;Setting Name&quot; section. Note - If Setting Name is &apos;Patient Connect Setting&apos; or &apos;Integration Setting&apos;, then, the value provided here (including blank value) will be considered for overriding the selected setting.</inlineHelpText>
+        <label>Setting Value</label>
+        <length>2000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Engagement Program Setting</label>
+    <pluralLabel>Engagement Program Setting</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

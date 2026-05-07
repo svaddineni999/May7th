@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Группы задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Группы задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Группы задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Группы задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Групп задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Групп задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Группам задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Группам задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Группами задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Группами задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Группах задач</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Группах задач</value>
+    </caseValues>
+    <fields>
+        <label>Активно</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Метка группировки</label>
+        <name>HealthCloudGA__GroupByLabel__c</name>
+    </fields>
+    <fields>
+        <label>Группировка по</label>
+        <name>HealthCloudGA__GroupBy__c</name>
+    </fields>
+    <fields>
+        <label>Порядок сортировки</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

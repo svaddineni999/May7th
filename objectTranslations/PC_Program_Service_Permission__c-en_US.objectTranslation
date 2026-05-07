@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Program Service Permission</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Program Service Permissions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>ACLS_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCP Expiration Date --></label>
+        <name>ACLS_HCP_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCP Permission Required --></label>
+        <name>ACLS_HCP_Permission_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCP Signed Date --></label>
+        <name>ACLS_HCP_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opt In Status --></label>
+        <name>ACLS_Opt_In_Status__c</name>
+        <picklistValues>
+            <masterLabel>Opt In Confirmed</masterLabel>
+            <translation><!-- Opt In Confirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opt In Unconfirmed</masterLabel>
+            <translation><!-- Opt In Unconfirmed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opt Out Confirmed</masterLabel>
+            <translation><!-- Opt Out Confirmed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PT/ Legal GUA Permission Required --></label>
+        <name>ACLS_PT_Legal_GUA_Permission_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Expiration Date --></label>
+        <name>ACLS_Patient_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Signed Date --></label>
+        <name>ACLS_Patient_Signed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>ACLS_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Care Team Member Response Date --></label>
+        <name>PC_CareTeamMemberResponseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Care Team Member Response --></label>
+        <name>PC_CareTeamMemberResponse__c</name>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Granted</masterLabel>
+            <translation><!-- Granted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revoked</masterLabel>
+            <translation><!-- Revoked --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Care Team Member --></label>
+        <name>PC_CareTeamMember__c</name>
+        <relationshipLabel><!-- Program Service Permissions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Consent Type --></label>
+        <name>PC_Consent_Type__c</name>
+        <picklistValues>
+            <masterLabel>Verbal</masterLabel>
+            <translation><!-- Verbal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Written</masterLabel>
+            <translation><!-- Written --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCP Response Date --></label>
+        <name>PC_HCP_Response_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HCP Response --></label>
+        <name>PC_HCP_Response__c</name>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed</masterLabel>
+            <translation><!-- Signed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Patient Response Date --></label>
+        <name>PC_Patient_Response_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Response --></label>
+        <name>PC_Patient_Response__c</name>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Signed</masterLabel>
+            <translation><!-- Signed --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>PC_ProgramCase__c</name>
+        <relationshipLabel><!-- Program Service Permissions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Service Permission Name --></label>
+        <name>PC_Program_Service_Permission_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>PC_Service__c</name>
+        <relationshipLabel><!-- Program Service Permissions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Signed Request Form --></label>
+        <name>PC_Signed_Request_Form__c</name>
+        <relationshipLabel><!-- Program Service Permissions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>PC_Start_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter values only in HCP consent fields --></errorMessage>
+        <name>ACLS_HCP_Permission_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a phone number --></errorMessage>
+        <name>ACLS_Mandate_Phone_For_SMS_Consent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Program service permission can either be created for an HCP or Patient. Please check only one permission checkbox --></errorMessage>
+        <name>ACLS_PSP_Permission_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter values only in Patient consent fields --></errorMessage>
+        <name>ACLS_PT_Legal_GUA_Permission_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- SMS Consent is applicable for Patients --></errorMessage>
+        <name>ACLS_Validate_PT_Permission_SMS_Consent</name>
+    </validationRules>
+</CustomObjectTranslation>

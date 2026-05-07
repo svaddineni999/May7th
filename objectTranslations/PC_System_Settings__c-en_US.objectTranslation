@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>System Settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>System Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Fully qualified class name of the PC_Document.Splitter implementation that will be invoked when users split documents (typically inbound faxes). The implementing class and methods must declared as global if they are implemented outside of the PC package. --></help>
+        <label><!-- Document Splitter Class --></label>
+        <name>PC_Document_Splitter_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Map Location Radius --></label>
+        <name>PC_Google_Map_Location_Radius__c</name>
+    </fields>
+    <fields>
+        <label><!-- Google Map Radius Is KM --></label>
+        <name>PC_Google_Map_Radius_Is_KM__c</name>
+    </fields>
+    <fields>
+        <help><!-- This holds the number of seconds the Pharmacy Card Lookup ID remains valid. --></help>
+        <label><!-- Pharmacy Card Lookup Validity In Seconds --></label>
+        <name>PC_Pharmacy_Card_Lookup_ID_Validity__c</name>
+    </fields>
+    <fields>
+        <label><!-- eLetter Sender Class --></label>
+        <name>PC_eLetter_Sender_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- ePA Class --></label>
+        <name>PC_ePA_Class__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

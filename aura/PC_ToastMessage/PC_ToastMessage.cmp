@@ -1,0 +1,38 @@
+<!--	*Component Name: PC_ToastMessage
+   		*Description: This method displays the toast message and can be fired through event "PC_ToastEvent".
+    	*Parameters: This method accepts 2 parameters: toastMessage and alertyType= {'success', 'error' or 'warning'}
+Modification Log:
+Haritha Reddy 		 03-Dec-2020    [PC-7027] Added custom css without z index(which is making close buttons not clickable) for toast notification container
+-->
+<aura:component >
+    <!-- Attributes -->
+    <aura:attribute name="toastMessage" type="String" default="Your request has been Successfully submitted!"/>
+    <aura:attribute name="toastType" type="String" default="success"/>
+
+    <!-- Event Handlers -->
+    <aura:handler event="c:PC_ToastEvent" action="{!c.showToast}"/>
+
+    <div aura:id="toast" class="notifyContainer slds-transition-hide">
+        <div aura:id="alertType" class="slds-notify slds-notify--toast slds-theme--success" role="alert">
+            <span class="slds-assistive-text">Success</span>
+            <button class="slds-button slds-notify__close slds-button--icon-inverse" title="Close" onclick="{!c.dismissToast}">
+                <lightning:icon iconName="utility:close" size="small" variant="inverse"/>
+                <span class="slds-assistive-text">Close</span>
+            </button>
+            <div class="slds-notify__content slds-grid">
+                <aura:if isTrue="{!v.toastType == 'success'}">
+                    <lightning:icon iconName="utility:success" size="small" variant="inverse" class="slds-m-right--small slds-col slds-no-flex"/>
+                </aura:if>
+                <aura:if isTrue="{!v.toastType == 'error'}">
+                    <lightning:icon iconName="utility:warning" size="small" variant="inverse" class="slds-m-right--small slds-col slds-no-flex"/>
+                </aura:if>
+                <aura:if isTrue="{!v.toastType == 'warning'}">
+                    <lightning:icon iconName="utility:notification" size="small" variant="inverse" class="slds-m-right--small slds-col slds-no-flex"/>
+                </aura:if>
+                <div class="slds-col slds-align-middle">
+                    <h2 class="slds-text-heading--small ">{!v.toastMessage}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

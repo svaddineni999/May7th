@@ -1,0 +1,71 @@
+.THIS .blockSection {
+    padding:10px 5px;
+}
+
+.THIS .rightMargin {
+    margin-right:5px;
+    align-self:center;
+    margin-left: auto
+}
+
+.THIS .img {
+    background: url({!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}) no-repeat;
+    width:30px;
+    height:30px;
+}
+
+.THIS .uiInputDate .datePicker-openIcon {
+    position: absolute;
+    left: 97%;
+    top: 25%;
+}
+
+.THIS .addressTable td div  {
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+
+.THIS .wipeOut {
+   color: #FFFFFF;
+}
+
+.THIS .reftableheader {
+    background-color: #596d8e;
+}
+
+.THIS .true.cbBlock {
+    display:none;
+}
+.THIS .true.tickBlock {
+    display:block;
+}
+.THIS .false.cbBlock {
+    display:block;
+}
+.THIS .false.tickBlock {
+    display:none;
+}
+
+.THIS .actionIcon{
+    width:3%;
+}
+.THIS .whiteSpace {
+    border:5px;
+    background:#FFFFFF;
+    height:75px;
+    margin:5px;
+}
+.THIS .whiteSpace1 {
+    border:5px;
+    background:#FFFFFF;
+    height:65px;
+    margin:5px;
+}
+.THIS .pc-overflow-hidden{
+    overflow:hidden;
+}
+
+.THIS .slds-form-element {
+    padding-left:4px !important;
+    padding-right:4px !important;
+}

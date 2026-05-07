@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязь между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязи между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязь между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязи между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязи между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязей между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязи между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязям между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязью между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязями между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Взаимосвязи между контактами</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Взаимосвязях между контактами</value>
+    </caseValues>
+    <fields>
+        <label>Активно</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Контакт</label>
+        <name>HealthCloudGA__Contact__c</name>
+        <relationshipLabel>Связанные контакты</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Дата окончания</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Внешний код</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Связи типа &quot;Контакт-контакт&quot;</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Связанный контакт</label>
+        <name>HealthCloudGA__RelatedContact__c</name>
+        <relationshipLabel><!-- Contact Contact Relations (Related Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Связанная роль</label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Contact Contact Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Дата начала</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Имя связи контакта</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Взаимосвязь типа &quot;Контакт-контакт&quot; не может быть создана со статусом &quot;Неактивно&quot;.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

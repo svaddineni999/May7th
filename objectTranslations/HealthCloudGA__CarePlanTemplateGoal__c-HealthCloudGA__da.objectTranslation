@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Målet i behandlingsplanskabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Mål i behandlingsplanskabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Mål i behandlingsplanskabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Mål i behandlingsplanskabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Mål i behandlingsplanskabelon</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Mål i behandlingsplanskabelon</value>
+    </caseValues>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Skabelonproblem</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>Mål i behandlingsplanskabelon</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Behandlingsplanskabelon</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Mål i behandlingsplanskabelon</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kategori</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition Improvement</masterLabel>
+            <translation><!-- Cognition Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muscle Strength Improvement</masterLabel>
+            <translation><!-- Muscle Strength Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Beskrivelse</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Prioritet</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Sorteringsrækkefølge</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Navn på behandlingsplanskabelon</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Tilknyt målet til enten en behandlingsplanskabelon eller et problem.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Tilknyt målet til kun en registrering.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

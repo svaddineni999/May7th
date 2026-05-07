@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Attempt --></label>
+        <name>ACLS_Attempt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related eFax --></label>
+        <name>EFX__eFax__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Five9 Session Id --></label>
+        <name>Five9__Five9SessionId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Five9 Task Type --></label>
+        <name>Five9__Five9TaskType__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chat</masterLabel>
+            <translation><!-- Chat --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>HealthCloudGA__Age__c</name>
+    </fields>
+    <fields>
+        <help>Цель, на которую направлена эта задача</help>
+        <label><!-- Goal --></label>
+        <name>HealthCloudGA__CarePlanGoal__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help>Проблема, на которую направлена эта задача</help>
+        <label><!-- Problem --></label>
+        <name>HealthCloudGA__CarePlanProblem__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Care Plan Template --></label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Counselling</masterLabel>
+            <translation>Консультация</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diagnosis</masterLabel>
+            <translation>Диагноз</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Exercise</masterLabel>
+            <translation>Физическая нагрузка</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vaccination</masterLabel>
+            <translation>Вакцинация</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Condition Status --></label>
+        <name>HealthCloudGA__Conditions_Status__c</name>
+        <picklistValues>
+            <masterLabel>Asymptomatic</masterLabel>
+            <translation>Без симптомов</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asymptomatic - Declined to Participate</masterLabel>
+            <translation>Без симптомов: отклонено для участия</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cured</masterLabel>
+            <translation>Вылечен</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaluated - No Risk</masterLabel>
+            <translation>Оценено: риск отсутствует</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symptomatic</masterLabel>
+            <translation>С симптомами</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symptomatic - Declined to Participate</masterLabel>
+            <translation>С симптомами: отклонено для участия</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Tracing Status --></label>
+        <name>HealthCloudGA__Contract_Tracing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation>Завершено</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation>Выполняется</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incoming</masterLabel>
+            <translation>Входящий</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Response</masterLabel>
+            <translation>Нет ответа</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Decline to Specify</masterLabel>
+            <translation>Не указывать</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation>Женский</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation>Мужской</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Другое</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Monitored at Home --></label>
+        <name>HealthCloudGA__Monitored_at_Home__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>Нет</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>Да</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sort Order --></label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <label><!-- TaskType --></label>
+        <name>HealthCloudGA__TaskType__c</name>
+        <picklistValues>
+            <masterLabel>Administrative</masterLabel>
+            <translation>Административный</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical</masterLabel>
+            <translation>Клинический</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Другое</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncategorized</masterLabel>
+            <translation>Без категории</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Testing Status --></label>
+        <name>HealthCloudGA__Testing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Negative Test</masterLabel>
+            <translation>Отрицательный тест</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Test</masterLabel>
+            <translation>Положительный тест</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Results Pending</masterLabel>
+            <translation>Ожидание результатов тестирования</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Scheduled</masterLabel>
+            <translation>Тестирование запланировано</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing Recommended</masterLabel>
+            <translation>Тестирование рекомендовано</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Неизвестно</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates the lightning action component that is associated with the record --></help>
+        <label><!-- Action Component --></label>
+        <name>PC_ActionComponent__c</name>
+        <picklistValues>
+            <masterLabel>Book an appointment</masterLabel>
+            <translation><!-- Book an appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiate a Referral</masterLabel>
+            <translation><!-- Initiate a Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Log a Call</masterLabel>
+            <translation><!-- Log a Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lookup Pharmacy Ebenefits</masterLabel>
+            <translation><!-- Lookup Pharmacy Ebenefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Send eLetter</masterLabel>
+            <translation><!-- Send eLetter --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Activity Template ID --></label>
+        <name>PC_Activity_Template_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- The care team member role to which the task is assigned to. --></help>
+        <label><!-- Assign to Role --></label>
+        <name>PC_Assign_to_Role__c</name>
+        <picklistValues>
+            <masterLabel>Care Coordinator</masterLabel>
+            <translation><!-- Care Coordinator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Manager</masterLabel>
+            <translation><!-- Case Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical Educator</masterLabel>
+            <translation><!-- Clinical Educator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Reimbursement Manager</masterLabel>
+            <translation><!-- Field Reimbursement Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation><!-- Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reimbursement Specialist</masterLabel>
+            <translation><!-- Reimbursement Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>PC_Assigned_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Outcome --></label>
+        <name>PC_Call_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Successful</masterLabel>
+            <translation><!-- Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful</masterLabel>
+            <translation><!-- Unsuccessful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Capture Time --></label>
+        <name>PC_Capture_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- The primary category of the activity. --></help>
+        <label><!-- Category --></label>
+        <name>PC_Category__c</name>
+        <picklistValues>
+            <masterLabel>AE</masterLabel>
+            <translation><!-- AE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alt. Funding</masterLabel>
+            <translation><!-- Alt. Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appeal</masterLabel>
+            <translation><!-- Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BI</masterLabel>
+            <translation><!-- BI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Copay</masterLabel>
+            <translation><!-- Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Activity</masterLabel>
+            <translation><!-- Field Activity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General</masterLabel>
+            <translation><!-- General --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Integration</masterLabel>
+            <translation><!-- Integration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Information</masterLabel>
+            <translation><!-- Missing Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA</masterLabel>
+            <translation><!-- PA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Enrollment</masterLabel>
+            <translation><!-- Patient Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Referral</masterLabel>
+            <translation><!-- Pharmacy Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Support Check-In</masterLabel>
+            <translation><!-- Support Check-In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training Reminder</masterLabel>
+            <translation><!-- Training Reminder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treatment Reminder</masterLabel>
+            <translation><!-- Treatment Reminder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome Gesture</masterLabel>
+            <translation><!-- Welcome Gesture --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>PC_Channel__c</name>
+        <picklistValues>
+            <masterLabel>Call</masterLabel>
+            <translation><!-- Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eLetter</masterLabel>
+            <translation><!-- eLetter --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date and time on which the task was closed. --></help>
+        <label><!-- Close Date --></label>
+        <name>PC_Close_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate if the task/activity such as fax,sms, email or call is inbound or outbound --></help>
+        <label><!-- Direction --></label>
+        <name>PC_Direction__c</name>
+        <picklistValues>
+            <masterLabel>Inbound</masterLabel>
+            <translation><!-- Inbound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outbound</masterLabel>
+            <translation><!-- Outbound --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Document --></label>
+        <name>PC_Document__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Checked/Selected when the task has passed its due date. --></help>
+        <label><!-- Is Overdue --></label>
+        <name>PC_IsOverdue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if a task/event is of type SMS --></help>
+        <label><!-- Is SMS --></label>
+        <name>PC_Is_SMS__c</name>
+    </fields>
+    <fields>
+        <help><!-- Used to store the original due date if the task’s Due Date is changed. --></help>
+        <label><!-- Original Due Date --></label>
+        <name>PC_Original_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Participant --></label>
+        <name>PC_Participant__c</name>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician</masterLabel>
+            <translation><!-- Physician --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy Referral --></label>
+        <name>PC_Pharmacy_Referral__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Value associated with the acticity based on the priority. --></help>
+        <label><!-- Priority Value --></label>
+        <name>PC_Priority_Value__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to the program case with which the task is associated. --></help>
+        <label><!-- Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Child Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Form --></label>
+        <name>PC_Request_Form__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Send to Patient --></label>
+        <name>PC_Send_to_Patient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Checked for starred and important tasks and activities. --></help>
+        <label><!-- Starred --></label>
+        <name>PC_Starred__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Sub-category of activity. --></help>
+        <label><!-- Sub-Category --></label>
+        <name>PC_Sub_Category__c</name>
+        <picklistValues>
+            <masterLabel>Approval request</masterLabel>
+            <translation><!-- Approval request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Call pharmacy</masterLabel>
+            <translation><!-- Call pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change of address</masterLabel>
+            <translation><!-- Change of address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Change of treatment</masterLabel>
+            <translation><!-- Change of treatment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmation</masterLabel>
+            <translation><!-- Confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delivery confirmation</masterLabel>
+            <translation><!-- Delivery confirmation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discontinuation</masterLabel>
+            <translation><!-- Discontinuation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Follow up</masterLabel>
+            <translation><!-- Follow up --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCP</masterLabel>
+            <translation><!-- HCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCP notification</masterLabel>
+            <translation><!-- HCP notification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outcome</masterLabel>
+            <translation><!-- Outcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payer</masterLabel>
+            <translation><!-- Payer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation><!-- Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preparation</masterLabel>
+            <translation><!-- Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reminder</masterLabel>
+            <translation><!-- Reminder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reported</masterLabel>
+            <translation><!-- Reported --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research</masterLabel>
+            <translation><!-- Research --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Response</masterLabel>
+            <translation><!-- Response --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eBV</masterLabel>
+            <translation><!-- eBV --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Activity --></label>
+        <name>PC_SupportPlanActivity__c</name>
+        <relationshipLabel><!-- Activities --></relationshipLabel>
+    </fields>
+</CustomObjectTranslation>

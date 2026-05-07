@@ -1,0 +1,87 @@
+<!--
+*************************************************************************************
+Component Name      : PC_QueueReminder
+Description         : This component is used for setting properties when a reminder is queued through BRE.
+CreatedBy           : Deloitte
+Created Date        : 29 Apr 2021
+Modification Log    :
+*****************************************************************************************************
+Developer                   Date                   Description
+********************************************************************************************
+Kanteti Kishore            29 Apr 2021           Initial version[PC-7703]
+*****************************************************************************************
+-->
+
+<aura:component description="PC_QueueReminder" controller="PC_QueueReminderController"
+                implements="c:PC_SupportPlan_Automation_Interface" access="global">
+
+    <aura:attribute name="queueObject" access="public" type="Object"/>
+
+    <aura:attribute name="reminderChannelLabel" type="String" default="{!$Label.c.PC_ReminderChannel}" access="private"/>
+    <aura:attribute name="reminderSettingLabel" type="String" default="{!$Label.c.PC_ReminderSetting}" access="private"/>
+    <aura:attribute name="queueCriteriaLabel" type="String" default="{!$Label.c.PC_QueueReminderCriteria}" access="private"/>
+    <aura:attribute name="noSettingOptionsError" type="String" default="{!$Label.c.PC_NoReminderSettings}" access="private"/>
+    <aura:attribute name="settingDescription" type="String" access="private"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <div class="contentBox">
+        <div class="slds-p-top_medium slds-p-left_medium slds-p-right_medium">
+            <lightning:select
+                    aura:id="channel"
+                    required="true"
+                    label="{!v.reminderChannelLabel}"
+                    onchange="{!c.onChannelChange}"
+                    value="{!v.queueObject.selectedChannel}"
+                    disabled="{!v.isDisabled}">
+                <aura:iteration items="{!v.queueObject.channelOptions}" var="channel">
+                    <option value="{!channel}"
+                            selected="{!channel == v.queueObject.selectedChannel}">{!channel}</option>
+                </aura:iteration>
+            </lightning:select>
+            <lightning:select
+                    aura:id="reminderSetting"
+                    required="true"
+                    label="{!v.reminderSettingLabel}"
+                    value="{!v.queueObject.selectedSetting}"
+                    onchange="{!c.onReminderSettingChange}"
+                    disabled="{!(v.isDisabled || v.queueObject.showNoSettingOptionsError)}">
+                <aura:iteration items="{!v.queueObject.relatedChannelSettings}" var="setting">
+                    <option value="{!setting.apiName}"
+                            selected="{!setting.apiName == v.queueObject.selectedSetting}">
+                            {!setting.label}
+                    </option>
+                </aura:iteration>
+            </lightning:select>
+            <aura:if isTrue="{!not(empty(v.settingDescription))}">
+                <div class="slds-m-vertical_xx-small slds-p-around_xx-small slds-scoped-notification slds-media slds-media_center slds-scoped-notification_light" role="status">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="utility:info" size="x-small"/>
+                    </div>
+                    <div class="slds-media__body">
+                        <p class="slds-text-body_small">{!v.settingDescription}</p>
+                    </div>
+                </div>
+            </aura:if>
+            <aura:if isTrue="{!v.queueObject.showNoSettingOptionsError}">
+                <span class="errorMessageFont">{!v.noSettingOptionsError}</span>
+            </aura:if>
+            <lightning:select
+                    aura:id="queueCriteria"
+                    required="true"
+                    label="{!v.queueCriteriaLabel}"
+                    onchange="{!c.onCriteriaChange}"
+                    value="{!v.queueObject.selectedCriteria}"
+                    disabled="{!v.isDisabled}">
+                <aura:iteration items="{!v.queueObject.criteriaOptions}" var="criteria">
+                    <option value="{!criteria.value}"
+                            selected="{!criteria.value == v.queueObject.selectedCriteria}">
+                            {!criteria.label}
+                    </option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+    </div>
+</aura:component>

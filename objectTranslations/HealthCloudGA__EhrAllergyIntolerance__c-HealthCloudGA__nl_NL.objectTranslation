@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Allergische intolerantie volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Allergische intoleranties volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Allergische intoleranties volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Urgentiecode</label>
+        <name>HealthCloudGA__CriticalityCode__c</name>
+    </fields>
+    <fields>
+        <label>Urgentielabel</label>
+        <name>HealthCloudGA__CriticalityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Urgentiesysteem</label>
+        <name>HealthCloudGA__CriticalitySystem__c</name>
+    </fields>
+    <fields>
+        <label>Is beperkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if value of Status Label field is NOT equal to &apos; Resolved &apos;, else returns false. --></help>
+        <label>Is zichtbaar op patiëntenkaart</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Allergische intoleranties volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Reactie (255)</label>
+        <name>HealthCloudGA__Reaction255__c</name>
+    </fields>
+    <fields>
+        <label>Reactie</label>
+        <name>HealthCloudGA__Reaction__c</name>
+    </fields>
+    <fields>
+        <label>Datum van vastleggen</label>
+        <name>HealthCloudGA__RecordedDate__c</name>
+    </fields>
+    <fields>
+        <label>Naam van vastleggende persoon (255)</label>
+        <name>HealthCloudGA__RecorderName255__c</name>
+    </fields>
+    <fields>
+        <label>Naam van vastleggende persoon</label>
+        <name>HealthCloudGA__RecorderName__c</name>
+    </fields>
+    <fields>
+        <label>Vastleggende persoon</label>
+        <name>HealthCloudGA__Recorder__c</name>
+        <relationshipLabel>Allergische intoleranties</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Test 1 voor gevoeligheid</label>
+        <name>HealthCloudGA__SensitivityTest1__c</name>
+        <relationshipLabel>Allergische intoleranties volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Test 2 voor gevoeligheid</label>
+        <name>HealthCloudGA__SensitivityTest2__c</name>
+        <relationshipLabel>Allergische intoleranties (test 2 voor gevoeligheid) volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Test 3 voor gevoeligheid</label>
+        <name>HealthCloudGA__SensitivityTest3__c</name>
+        <relationshipLabel>Allergische intoleranties (test 3 voor gevoeligheid) volgens EPD (elektronisch patiëntendossier)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Code voor type gevoeligheid</label>
+        <name>HealthCloudGA__SensitivityTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor type gevoeligheid</label>
+        <name>HealthCloudGA__SensitivityTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor type gevoeligheid</label>
+        <name>HealthCloudGA__SensitivityTypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code voor status</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor status</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem van status</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Stof (255)</label>
+        <name>HealthCloudGA__Substance255__c</name>
+    </fields>
+    <fields>
+        <label>Stoffencoderingssysteem</label>
+        <name>HealthCloudGA__SubstanceCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Stoffencode</label>
+        <name>HealthCloudGA__SubstanceCode__c</name>
+    </fields>
+    <fields>
+        <label>Stof</label>
+        <name>HealthCloudGA__SubstanceLong__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID van allergische intolerantie volgens </nameFieldLabel>
+</CustomObjectTranslation>

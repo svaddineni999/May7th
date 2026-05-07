@@ -1,0 +1,78 @@
+<!--
+ - Created by havalakki on 1/30/2018.
+Modification Log:
+Prachi Nandgaonkar      Feb 13, 2018         [PC-2778] Removed padding to align with Document Action Ribbon
+Sheela Sathyanarayana   Jul 28, 2018         [PC3087] Made the component section expand by default.
+Haritha Reddy         Sep 04, 2019           [PC-5384] Updated saveCategory method to include logic of adding/removing selected category in List
+                                              instead of doing list refresh in controller, for performance improvement.
+Kanteti Kishore			Oct 04, 2019		 [PC-5520] created new controller for the component to increase the performance.
+Satheesh Kumar			Mar 02, 2021		 [PC-7474] Added Spinner to fix document Tags discrepancy issue
+-->
+
+<aura:component description="PC_Document_Tags" controller="PC_DocumentTags" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:attribute name="categories" type="PC_DocumentManagementLightningController.Object[]"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="docId" type="String"/>
+    <aura:attribute name="doc" type="docWrapper.object"/>
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <aura:attribute name="currentSelectedCategory" type="String"/>
+    <aura:attribute name="selectedCategoryStatus" type="Boolean"/>
+    <aura:attribute name="EnrollmentForm" type="String" default="{!$Label.c.PC_Enrollment_Form}" />
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="useUserInterfaceAPI" type="Boolean" access="global"
+                    description="Recommend to choose this option for better performance w.r.t loading of tags/categories. Do remember to create a connected app and named credential so that this component can communicate with User Interface API. Refer to Implementation Guidelines for more details."/>
+    <aura:attribute name="userInterfaceAPINamedCredential" type="String" access="global" default=""
+                    description="Name of the named credential that should be used to communicate with User Interface API. Set this value only if you wish to make use of User Interface API."/>
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+
+    <aura:registerEvent name="documentTagsChanged" type="c:PC_DocumentTagsChangedEvent"/>
+
+    <lightning:flexipageRegionInfo />
+    <div class="slds" aura:id="documentTagsId">
+        <div class="slds-p-vertical_small">
+            <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.showAccordion}">
+                <section class="slds-clearfix">
+                    <div class="slds-float--left ">
+                        <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates open"/>
+                        <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:chevronright" size="x-small" alternativeText="Indicates close"/>
+                    </div>
+                    <div class="slds-m-left--large">{!$Label.c.PC_Document_Tags}</div>
+                </section>
+            </div>
+
+            <div class="slds-show" aura:id="articleOne">
+                <div class="errorPanel">
+                    <aura:if isTrue="{! v.errors.length > 0 }">
+                        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                    </aura:if>
+                </div>
+
+                <div class="slds-tabs--scoped">
+                    <div class="slds-tabs--scoped__content">
+                        <div class="slds-scrollable">
+                            <div class="slds-form-element">
+                                <div class="rtc-div">
+                                    <lightning:spinner aura:id="documentTagSpinner" class="slds-hide" alternativeText="{!$Label.c.PC_Loading}" />
+                                    <aura:iteration items="{!v.categories}" var="category">
+                                        <div class="rtc-link">
+                                            <span class="{!category.isSelected ? 'selectedCategory' : ''}" data-category="{!category.categoryName}" onclick="{!c.selectCategory}">{!category.categoryLabel}</span>
+                                        </div>
+                                    </aura:iteration>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,7 @@
+<!--
+ - Created by cmohapatra on 10/20/2020.
+ -->
+
+<design:component>
+    <design:attribute name="messageLength" label="Message Length" description="Maximum character limit for the Message body" />
+</design:component>

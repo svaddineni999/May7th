@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>mg</fullName>
+        <default>false</default>
+        <label>mg</label>
+    </customValue>
+    <customValue>
+        <fullName>mL</fullName>
+        <default>false</default>
+        <label>mL</label>
+    </customValue>
+    <customValue>
+        <fullName>mcg/mL</fullName>
+        <default>false</default>
+        <label>mcg/mL</label>
+    </customValue>
+    <description>Units of medication and dose</description>
+    <masterLabel>Units</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

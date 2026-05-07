@@ -1,0 +1,37 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="PC_MessageManagementController">
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="resultMsg" type="String" />
+    <aura:attribute name="msgList" type="List" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="smsSuccess" type="String" default="{!$Label.c.PC_SMS_Success}" />
+    <aura:attribute name="smsError" type="String" default="{!$Label.c.PC_SMS_Error}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div>
+        <!-- Start of Container -->
+        <div style="border: 1px solid #d8dde6;">
+            <form action="">
+                <div class="formContainer slds-form-element" style="background:none !important;">
+                    <div class="slds-form-element__control">
+                        <label>{!$Label.c.PC_Type} &nbsp;</label>
+                        <ui:inputselect class="customSelect">
+                            <ui:inputselectoption text="SMS" label="{!$Label.c.PC_SMS}" />
+                            <ui:inputselectoption text="App Message" label="{!$Label.c.PC_AppMessage}" />
+                        </ui:inputselect>
+                        <hr />
+                        <p>&nbsp;</p>
+                        <label>{!$Label.c.PC_Message}</label>
+                        <hr />
+                        <ui:inputtextarea aura:id="newSMS" class="slds-textarea customTextarea" rows="5" />
+                        <div class="bottomBar">
+                            <ui:outputtext aura:id="resultMsg" value="" />
+                            <div class="bottomBarRight">
+                                <ui:button class="slds-button slds-button--neutral slds-button--brand" label="{!$Label.c.PC_Send}" press="{!c.sendMessageC}" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</aura:component>

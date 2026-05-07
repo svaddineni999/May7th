@@ -1,0 +1,60 @@
+<!--
+     - Created by sahgarg on 3/15/2018.
+
+Lightning component  : PC_Pagination
+Description          : Reusable pagination component
+Parameters           : currentPagenumber, totalNumberOfPages, totalRecords, sourceId
+Modification Log:
+Sahil Garg 		 3/15/2018    [PC-2858] Initial Version
+Kanteti Kishore  3/15/2021    [PC-7273] Pagination Issue when filter by has nothing to show.
+Kanteti Kishore  3/15/2021    [PC-7444] Added recordsPerPage attribute so that two way binding can be done with the parent components
+     -->
+<aura:component implements="flexipage:availableForAllPageTypes" access="global">
+    
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}"/>
+    
+    <aura:attribute name="sourceId" type="String" access="PUBLIC" description="using to store the source of the event fire"/>
+    <aura:attribute name="page" type="String" access="PUBLIC"/>
+    <aura:attribute name="currentPagenumber" required="true" type="integer" access="PUBLIC" description="using to store current page Number"/>
+    <aura:attribute name="totalNumberOfPages" required="true" type="integer" access="PUBLIC" description="using to store total number of pages"/>
+    <aura:attribute name="totalRecords" required="true" type="integer" access="PUBLIC" description="using to store total records count  "/>
+
+    <aura:attribute name="recordsPerPage" type="Integer" access="public"/>
+
+    <aura:registerEvent name="appEvent" type="c:PC_Pagination_AppEvent"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <div class="slds-page-header" role="banner">
+        <table>
+            <tr>
+                <th>{!$Label.c.PC_TotalRecords}:
+                    <aura:if isTrue="{!v.totalRecords > 0}">
+                    {!v.totalRecords}
+                        <aura:set attribute="else">
+                            0
+                        </aura:set>
+                    </aura:if>
+                </th>
+                <aura:if isTrue="{!v.totalRecords > 0}">
+                    <th>
+                        <div class="slds-align_absolute-center">
+                            <lightning:buttonIcon size="large" onclick="{! c.navigateFirstLast }"  disabled="{!v.currentPagenumber == 1}" iconName="utility:left" variant="bare" alternativeText="First Page" />
+                            <lightning:buttonIcon size="large" onclick="{! c.navigate }" disabled="{!v.currentPagenumber == 1}" iconName="utility:chevronleft" variant="bare" alternativeText="Previous Page" />&nbsp;{!$Label.c.PC_Page}&nbsp;{!v.currentPagenumber}&nbsp;/&nbsp;{!v.totalNumberOfPages}<lightning:buttonIcon size="large" onclick="{! c.navigate }" disabled="{!v.currentPagenumber == v.totalNumberOfPages}" iconName="utility:chevronright" variant="bare" alternativeText="Next Page" />
+                            <lightning:buttonIcon size="large" onclick="{! c.navigateFirstLast }" disabled="{!v.currentPagenumber == v.totalNumberOfPages}" iconName="utility:right" variant="bare" alternativeText="Last Page" />
+                        </div>
+                    </th>
+                </aura:if>
+                <th>
+                    <div class="slds-text-align_right">
+                        <ui:inputSelect class="widthAdjust" aura:id="recordSize" label="{!$Label.c.PC_RecordsPerPage}"
+                                        change="{!c.onSelectChange}" value="{!v.recordsPerPage}">
+                            <ui:inputSelectOption text="30" label="30" value="true"/>
+                            <ui:inputSelectOption text="60" label="60"/>
+                        </ui:inputSelect>
+                    </div>
+                </th>
+            </tr>
+        </table>
+    </div>
+</aura:component>

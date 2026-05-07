@@ -1,0 +1,68 @@
+/**
+ * Created by vkashikar on 1/30/2018.
+ */
+.THIS .customDiv{
+    column-count: 2
+}
+.THIS .customDiv1{
+    float: right;
+    margin-bottom: 8px;
+    margin-top: 4px;
+}
+.THIS .slds-table_bordered{
+    border: 1px solid #dddbda
+}
+.THIS .slds-modal__content{
+    overflow: auto;
+}
+
+.THIS .resultsHeading {
+    padding-top: 10px;
+}
+.THIS .infoBlocks {
+    margin-top: 8px;
+}
+.THIS .resultsBlock {
+    text-align: center;
+    clear: both;
+}
+.THIS .resultsBlock table {
+    margin-top: 15px;
+}
+.THIS .resultsBlock table td {
+    text-align: center;
+}
+.THIS .resultsBlock table th {
+    text-align: center;
+}
+
+.THIS .accordionHeader {
+    cursor: pointer;
+    background:rgb(243, 242, 242);
+}
+.THIS .leftPane {
+    overflow: auto;
+    height: 350px;
+}
+.THIS .rightPane {
+    overflow: auto;
+}
+.THIS .infoText {
+    display: block;
+}
+.THIS .npiBlock {
+    margin-right: 3px;
+}
+.THIS .nameBlock {
+    margin-right : 3px;
+}
+.THIS .modalContent {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.THIS .daysSupplyInput {
+    width: 60px;
+}
+.THIS .quantityRequestedInput {
+    width: 60px;
+}

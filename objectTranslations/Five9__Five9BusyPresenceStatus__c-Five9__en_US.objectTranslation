@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Five9 Busy Presence Status</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Five9 Busy Presence Status</value>
+    </caseValues>
+    <fields>
+        <label><!-- Busy Presence Status Id --></label>
+        <name>Five9__Busy_Presence_Status_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Busy Presence Status Label --></label>
+        <name>Five9__Busy_Presence_Status_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Default Busy Presence Status --></label>
+        <name>Five9__Is_Default_Busy_Presence_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Deleted Busy Presence Status --></label>
+        <name>Five9__Is_Deleted_Busy_Presence_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Not Ready Reason Code Name --></label>
+        <name>Five9__Not_Ready_Reason_Code_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Id --></label>
+        <name>Five9__Owner_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

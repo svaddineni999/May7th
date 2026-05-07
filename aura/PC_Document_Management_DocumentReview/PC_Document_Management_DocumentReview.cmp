@@ -1,0 +1,17 @@
+<!--
+ - Created by sathekumar on 10/7/2021.
+ -->
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" description="A document reviewer action component which helps to launch document review page" access="global">
+    <!-- Attributes -->
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="ocrTabLabel" type="String" default="{!$Label.c.PC_OcrReviewPageHeader}"/>
+    <aura:attribute name="ocrTabIcon" type="String" default="standard:display_rich_text"/>
+    <aura:attribute name="ocrComponentName" type="String" default="PC_OcrReviewDocument"/>
+    <aura:attribute name="actionAttribute" type="String" default=''/>
+    <aura:attribute name="templateCategories" type="List" default="[]" />
+    <aura:attribute name="createDocumentLinkLog" type="Boolean" default="true" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:workspaceAPI aura:id="documentOCRWorkspace" />
+</aura:component>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Instrução de dosagem do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Instruções de dosagem do RES</value>
+    </caseValues>
+    <fields>
+        <label>Código de instruções adicionais</label>
+        <name>HealthCloudGA__AdditionalInstructionCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo de instruções adicionais</label>
+        <name>HealthCloudGA__AdditionalInstructionLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de instruções adicionais</label>
+        <name>HealthCloudGA__AdditionalInstructionSystem__c</name>
+    </fields>
+    <fields>
+        <label>Instruções adicionais</label>
+        <name>HealthCloudGA__AdditionalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>Código conforme necessário</label>
+        <name>HealthCloudGA__AsNeededCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo conforme necessário</label>
+        <name>HealthCloudGA__AsNeededLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema conforme necessário</label>
+        <name>HealthCloudGA__AsNeededSystem__c</name>
+    </fields>
+    <fields>
+        <label>Conforme necessário</label>
+        <name>HealthCloudGA__AsNeeded__c</name>
+    </fields>
+    <fields>
+        <label>Unidade de quantidade de doses</label>
+        <name>HealthCloudGA__DoseQuantityUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valor da quantidade da dose</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient this applies to --></help>
+        <label>Paciente do RES</label>
+        <name>HealthCloudGA__EhrPatient__c</name>
+        <relationshipLabel>Instruções de dosagem do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Instruções</label>
+        <name>HealthCloudGA__Instruction__c</name>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Unid. do denom. da dose máx. por período</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valor do denom. da dose máx. por período</label>
+        <name>HealthCloudGA__MaxDosePerPeriodDenominatorValue__c</name>
+    </fields>
+    <fields>
+        <label>Unid. do num. da dose máx. por período</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorUnit__c</name>
+    </fields>
+    <fields>
+        <label>Valor do num. da dose máxima por período</label>
+        <name>HealthCloudGA__MaxDosePerPeriodNumeratorValue__c</name>
+    </fields>
+    <fields>
+        <label>Prescrição médica</label>
+        <name>HealthCloudGA__MedicationPrescription__c</name>
+        <relationshipLabel>Instruções de dosagem</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Declaração de medicação</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>Instruções de dosagem</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Código do método</label>
+        <name>HealthCloudGA__MethodCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do método</label>
+        <name>HealthCloudGA__MethodLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de métodos</label>
+        <name>HealthCloudGA__MethodSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Denominator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>Denominador da razão</label>
+        <name>HealthCloudGA__RateDenominator__c</name>
+    </fields>
+    <fields>
+        <help><!-- Numerator of a ratio of two Quantity values - a numerator and a denominator --></help>
+        <label>Numerador da razão</label>
+        <name>HealthCloudGA__RateNumerator__c</name>
+    </fields>
+    <fields>
+        <label>Encaminhar código</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>Encaminhar rótulo</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Encaminhar sistema</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código da região</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo da região</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de regiões</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>ID do sistema de origem</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Instrução complementar</label>
+        <name>HealthCloudGA__SupplementalInstruction__c</name>
+    </fields>
+    <fields>
+        <label>Término do período de tempo</label>
+        <name>HealthCloudGA__TimingPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Início do período de tempo</label>
+        <name>HealthCloudGA__TimingPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Tempo</label>
+        <name>HealthCloudGA__Timing__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID da instrução de dosagem do RES</nameFieldLabel>
+</CustomObjectTranslation>

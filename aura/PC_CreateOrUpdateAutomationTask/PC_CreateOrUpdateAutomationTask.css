@@ -1,0 +1,33 @@
+/**
+ * Created by kkanteti on 7/7/2020.
+ */
+
+.THIS .stepsStyle{
+    background: white;
+    border-style: dashed;
+    border-color: #006eb3;
+    border-width: thin;
+}
+.THIS .conditionalBuilderLabel{
+    font-size: 15px;
+    color: rgb(35, 55, 91);
+}
+.THIS #selectObjectDropdown .slds-form-element__label{
+    font-size: 15px;
+    color: rgb(35, 55, 91);
+}
+.THIS .orderWidth{
+    width : 21%;
+}
+.THIS .nullsWidth{
+    width : 30%;
+}
+.THIS .criteriaWidth{
+    width : 21%;
+}
+.THIS.adjustMargin div{
+    vertical-align: top !important;
+}
+.THIS .adjustWithHelptext >label{
+    position: absolute !important;
+}

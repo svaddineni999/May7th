@@ -1,0 +1,26 @@
+<!--
+ - Created by vkashikar on 10/9/2017.
+ -->
+
+<aura:component access="global" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId">
+
+    <aura:attribute name="developerName" type="String" required="true" default="ReportName" access="global"/>
+    <aura:attribute name="iframeHeight" type="String" access="global"/>
+    <aura:attribute name="iframeInlineCSSStyle" type="String" access="global"/>
+    <aura:attribute name="reportTitleLabelName" type="String" access="global"/>
+    <aura:attribute name="reportTitleDynamicLabel" type="String" access="private"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="reportSize" type="String" access="global"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <div class="reportTitleBlock" style="text-align:center;">
+        <span class="slds-text-heading--small slds-truncate">{! v.reportTitleDynamicLabel}</span>
+    </div>
+    <div class="iframeReportContainer" style="text-align:center;">
+        <iframe src="{! '/apex/' + v.namespacePrefix + 'PC_ReportContainer?developerName=' + v.developerName + '&amp;' + 'reportSize=' + v.reportSize }"
+                frameBorder="0"
+                height="{!v.iframeHeight + ' px'}"
+                style="{!v.iframeInlineCSSStyle}"></iframe>
+    </div>
+
+</aura:component>

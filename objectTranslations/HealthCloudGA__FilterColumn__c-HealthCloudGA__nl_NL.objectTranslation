@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Filterkolom</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Filterkolommen</value>
+    </caseValues>
+    <fields>
+        <label>Veld-API</label>
+        <name>HealthCloudGA__FieldApi__c</name>
+    </fields>
+    <fields>
+        <label>Label voor veld</label>
+        <name>HealthCloudGA__FieldLabel__c</name>
+    </fields>
+    <fields>
+        <label>Filtercriterium</label>
+        <name>HealthCloudGA__FilterCriterion__c</name>
+        <relationshipLabel>Filterkolommen</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Objectnaam</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label>Volgorde</label>
+        <name>HealthCloudGA__Order__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam van filterkolom</nameFieldLabel>
+</CustomObjectTranslation>

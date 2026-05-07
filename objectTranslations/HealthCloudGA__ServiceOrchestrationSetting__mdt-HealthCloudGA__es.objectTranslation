@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Configuración de orquestación de servicio</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Configuraciones de orquestaciones de servicios</value>
+    </caseValues>
+    <fields>
+        <label>Activo</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Id. del proceso</label>
+        <name>HealthCloudGA__ProcessId__c</name>
+    </fields>
+    <fields>
+        <label>Requerido</label>
+        <name>HealthCloudGA__Required__c</name>
+    </fields>
+    <fields>
+        <label>Clase de paso</label>
+        <name>HealthCloudGA__StepClass__c</name>
+    </fields>
+    <fields>
+        <label>Paso</label>
+        <name>HealthCloudGA__Step__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

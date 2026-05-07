@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Ziel für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Ziele für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Ziel für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Ziele für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Ziels für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Ziele für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Ziel für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Zielen für die Versorgungsplanvorlage</value>
+    </caseValues>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Vorlagenproblem</label>
+        <name>HealthCloudGA__CarePlanTemplateProblem__c</name>
+        <relationshipLabel>Versorgungsplanvorlagen-Ziele</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Versorgungsplanvorlage</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Versorgungsplanvorlagen-Ziele</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kategorie</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition Improvement</masterLabel>
+            <translation><!-- Cognition Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muscle Strength Improvement</masterLabel>
+            <translation><!-- Muscle Strength Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Priorität</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Sortierreihenfolge</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Name des Ziels der Versorgungsplanvorlag</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Weisen Sie das Ziel einer Versorgungsplanvorlage oder einem Problem zu.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Weisen Sie das Ziel nur einem Datensatz zu.</errorMessage>
+        <name>HealthCloudGA__ValidateCarePlanGoalAssociationForSingle</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Authorized Quantity Exceeded</fullName>
+        <default>false</default>
+        <label>Authorized Quantity Exceeded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Required application data missing</fullName>
+        <default>false</default>
+        <label>Required application data missing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Input Errors</fullName>
+        <default>false</default>
+        <label>Input Errors</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Authorization/Access Restrictions</fullName>
+        <default>false</default>
+        <label>Authorization/Access Restrictions</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Unable to Respond at Current Time</fullName>
+        <default>false</default>
+        <label>Unable to Respond at Current Time</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Provider Identification</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Provider Identification</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Provider Name</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Provider Name</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Provider Specialty</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Provider Specialty</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Provider Phone Number</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Provider Phone Number</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Provider State</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Provider State</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Referring Provider Identification Number</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Referring Provider Identification Number</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider is Not Primary Care Physician</fullName>
+        <default>false</default>
+        <label>Provider is Not Primary Care Physician</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Ineligible for Inquiries</fullName>
+        <default>false</default>
+        <label>Provider Ineligible for Inquiries</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Provider Not on File</fullName>
+        <default>false</default>
+        <label>Provider Not on File</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Service Dates Not Within Provider Plan Enrollment</fullName>
+        <default>false</default>
+        <label>Service Dates Not Within Provider Plan Enrollment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inquired Benefit Inconsistent with Provider Type</fullName>
+        <default>false</default>
+        <label>Inquired Benefit Inconsistent with Provider Type</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inappropriate Product/Service ID Qualifier</fullName>
+        <default>false</default>
+        <label>Inappropriate Product/Service ID Qualifier</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inappropriate Product/Service ID</fullName>
+        <default>false</default>
+        <label>Inappropriate Product/Service ID</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inappropriate Date</fullName>
+        <default>false</default>
+        <label>Inappropriate Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Date(s) of Service</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Date(s) of Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Date-of-Birth</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Date-of-Birth</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Date of Birth Follows Date(s) of Service</fullName>
+        <default>false</default>
+        <label>Date of Birth Follows Date(s) of Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Date of Death Precedes Date(s) of Service</fullName>
+        <default>false</default>
+        <label>Date of Death Precedes Date(s) of Service</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Date of Service Not Within Allowable Inquiry Period</fullName>
+        <default>false</default>
+        <label>Date of Service Not Within Allowable Inquiry Period</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Date of Service in Future</fullName>
+        <default>false</default>
+        <label>Date of Service in Future</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Patient ID</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Patient ID</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Patient Name</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Patient Name</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Patient Gender Code</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Patient Gender Code</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Not Found</fullName>
+        <default>false</default>
+        <label>Patient Not Found</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate Patient ID Number</fullName>
+        <default>false</default>
+        <label>Duplicate Patient ID Number</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inconsistent with Patient&apos;s Age</fullName>
+        <default>false</default>
+        <label>Inconsistent with Patient&apos;s Age</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inconsistent with Patient&apos;s Gender</fullName>
+        <default>false</default>
+        <label>Inconsistent with Patient&apos;s Gender</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Birth Date Does Not Match That for the Patient on the Database</fullName>
+        <default>false</default>
+        <label>Patient Birth Date Does Not Match That for the Patient on the Database</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Subscriber/Insured ID</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Subscriber/Insured ID</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Subscriber/Insured Name</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Subscriber/Insured Name</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Subscriber/Insured Gender Code</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Subscriber/Insured Gender Code</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscriber/Insured Not Found</fullName>
+        <default>false</default>
+        <label>Subscriber/Insured Not Found</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Duplicate Subscriber/Insured ID Number</fullName>
+        <default>false</default>
+        <label>Duplicate Subscriber/Insured ID Number</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscriber Found, Patient Not Found</fullName>
+        <default>false</default>
+        <label>Subscriber Found, Patient Not Found</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Subscriber/Insured Not in Group/Plan Identified</fullName>
+        <default>false</default>
+        <label>Subscriber/Insured Not in Group/Plan Identified</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid Participant Identification</fullName>
+        <default>false</default>
+        <label>Invalid Participant Identification</label>
+    </standardValue>
+    <standardValue>
+        <fullName>No Response received - Transaction Terminated</fullName>
+        <default>false</default>
+        <label>No Response received - Transaction Terminated</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Not Eligible</fullName>
+        <default>false</default>
+        <label>Patient Not Eligible</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid or Missing Provider Address</fullName>
+        <default>false</default>
+        <label>Invalid or Missing Provider Address</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Experimental Service or Procedure</fullName>
+        <default>false</default>
+        <label>Experimental Service or Procedure</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Authorization Number Not Found</fullName>
+        <default>false</default>
+        <label>Authorization Number Not Found</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Requires Primary Care Physician Authorization</fullName>
+        <default>false</default>
+        <label>Requires Primary Care Physician Authorization</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Diagnosis Code(s)</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Diagnosis Code(s)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Procedure Code(s)</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Procedure Code(s)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Onset of Current Condition or Illness Date</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Onset of Current Condition or Illness Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Accident Date</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Accident Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Last Menstrual Period Date</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Last Menstrual Period Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Expected Date of Birth</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Expected Date of Birth</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Admission Date</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Admission Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid/Missing Discharge Date</fullName>
+        <default>false</default>
+        <label>Invalid/Missing Discharge Date</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Additional Patient Condition Information Required</fullName>
+        <default>false</default>
+        <label>Additional Patient Condition Information Required</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Certification Information Does Not Match Patient</fullName>
+        <default>false</default>
+        <label>Certification Information Does Not Match Patient</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Requires Medical Review</fullName>
+        <default>false</default>
+        <label>Requires Medical Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Invalid Authorization Number Format</fullName>
+        <default>false</default>
+        <label>Invalid Authorization Number Format</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inappropriate Provider Role</fullName>
+        <default>false</default>
+        <label>Inappropriate Provider Role</label>
+    </standardValue>
+</StandardValueSet>

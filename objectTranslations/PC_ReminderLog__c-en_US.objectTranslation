@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reminder Log</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reminder Logs</value>
+    </caseValues>
+    <fields>
+        <help><!-- External ID that stores the reminder log custom uniqueness for future reference. --></help>
+        <label><!-- External ID --></label>
+        <name>PC_ExternalID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores content of reminder that is sent to recipient. --></help>
+        <label><!-- Reminder Content --></label>
+        <name>PC_ReminderContent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Queue Record ID for which the log got created. --></help>
+        <label><!-- Reminder Queue --></label>
+        <name>PC_ReminderQueue__c</name>
+        <relationshipLabel><!-- Reminder Logs --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Salesforce Record Id is stored in this field for reference when needed. --></help>
+        <label><!-- Salesforce ID --></label>
+        <name>PC_SalesforceID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status Details is for storing information about a transaction of processing reminder queue. --></help>
+        <label><!-- Status Details --></label>
+        <name>PC_StatusDetails__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the reminder when it is processed in Batch Class --></help>
+        <label><!-- Status --></label>
+        <name>PC_Status__c</name>
+        <picklistValues>
+            <masterLabel>FAILED</masterLabel>
+            <translation><!-- FAILED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SUCCESS</masterLabel>
+            <translation><!-- SUCCESS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UNPROCESSED</masterLabel>
+            <translation><!-- UNPROCESSED --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

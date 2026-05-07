@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Opt-In Messages</name>
+    <style>none</style>
+    <subject>Welcome to {!Case.PC_Engagement_Program__c} Program</subject>
+    <textOnly>{!Case.PC_Engagement_Program__c} : here To opt-in and agree to Terms: http://www.rareassistrx.com/terms-and-conditions reply CONFIRM. Reply HELP for help, STOP to cancel.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

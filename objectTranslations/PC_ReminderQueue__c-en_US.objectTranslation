@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reminder Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reminder Queues</value>
+    </caseValues>
+    <fields>
+        <help><!-- Reminder queue is not considered for sending reminders if it is false --></help>
+        <label><!-- Is Active? --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- All Reminders Sent? --></label>
+        <name>PC_AllRemindersSent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores the information of user to whom the notification/task will be assigned. --></help>
+        <label><!-- Assign Notification to User --></label>
+        <name>PC_AssignNotificationToUser__c</name>
+    </fields>
+    <fields>
+        <help><!-- Comments if any for the Reminder Queue --></help>
+        <label><!-- Comments --></label>
+        <name>PC_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Appointment Date. --></help>
+        <label><!-- Due Date --></label>
+        <name>PC_DueDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Stores the date/time of Last Successful Reminder Sent as part of the Reminder Queue --></help>
+        <label><!-- Last Successful Reminder Sent --></label>
+        <name>PC_LastSuccessfulReminderSent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specify Record ID on which the outcome task/event has to be created when a reminder is sent. --></help>
+        <label><!-- Parent Record ID --></label>
+        <name>PC_ParentReferenceRecordID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipient to whom the reminder will be sent. --></help>
+        <label><!-- Recipient --></label>
+        <name>PC_Recipient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record ID for which reminder is sent. --></help>
+        <label><!-- Record ID --></label>
+        <name>PC_RecordID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reminder service channel to send reminders. --></help>
+        <label><!-- Reminder Channel --></label>
+        <name>PC_ReminderChannel__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Custom metadata setting name which has all properties defined. --></help>
+        <label><!-- Reminder Setting Name --></label>
+        <name>PC_ReminderSetting__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of reminders sent successfully --></help>
+        <label><!-- Number of Reminders Sent Successfully --></label>
+        <name>PC_RemindersSentSuccessfully__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of reminders that are to be sent before the queue record is disabled. --></help>
+        <label><!-- Number of Reminders to be Sent --></label>
+        <name>PC_RemindersToBeSent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Support Plan Activity Id --></help>
+        <label><!-- Support Plan Activity --></label>
+        <name>PC_SupportPlanActivity__c</name>
+        <relationshipLabel><!-- Reminder Queues --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

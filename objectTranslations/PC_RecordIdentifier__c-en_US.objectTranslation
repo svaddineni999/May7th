@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Record Identifier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Record Identifiers</value>
+    </caseValues>
+    <fields>
+        <help><!-- Name of the institution/vendor who allots/assigns the external Id --></help>
+        <label><!-- Assigner --></label>
+        <name>PC_Assigner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Salesforce Id of the record whose external identifier needs to be stored --></help>
+        <label><!-- Related Record Ids --></label>
+        <name>PC_RecordId__c</name>
+    </fields>
+    <fields>
+        <help><!-- Type of the External Id --></help>
+        <label><!-- Type --></label>
+        <name>PC_Type__c</name>
+        <picklistValues>
+            <masterLabel>Infinitus</masterLabel>
+            <translation><!-- Infinitus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internal Task</masterLabel>
+            <translation><!-- Internal Task --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Value of the External Identifier --></help>
+        <label><!-- Value --></label>
+        <name>PC_Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

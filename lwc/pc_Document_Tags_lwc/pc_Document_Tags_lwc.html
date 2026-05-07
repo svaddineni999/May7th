@@ -1,0 +1,47 @@
+<!--
+Created by Xiukai Ning on 12/20/2019  [PC-5802]
+-->
+
+<template>
+    <div class="slds">
+            <div class="slds-p-vertical_small">
+                <div class="slds-page-header" style="cursor: pointer;" onclick={showAccordion}>
+                    <section class="slds-clearfix">
+                        <div class="slds-float--left ">
+                            <lightning-icon class="slds-show" icon-name={iconName} size="x-small" alternative-text="Indicates open"></lightning-icon>
+                        </div>
+                        <div class="slds-m-left--large">{label.tagsLabel}</div>
+                    </section>
+                </div>
+
+                <div class={cssClass}>
+                        <template if:true={dependentValues}>
+                            <lightning-layout class="slds-wrap">
+                                <template for:each={dependentValues} for:item="element">
+                                    <template if:true = {element.isSelected}>
+                                        <lightning-badge style="margin:3px;
+                                        border-radius:8px 8px 8px 8px;
+                                        font-size:10px;
+                                        padding:3px 5px 3px 5px;
+                                        background:#0070d2;
+                                        color:#ffffff;
+                                        font-weight:bold;
+                                        cursor:pointer" data-id={element.value} key={element.value} onclick={handleBadgeClick} label={element.label}></lightning-badge>
+                                    </template>
+                                    <template if:false = {element.isSelected}>
+                                        <lightning-badge style="margin:3px;
+                                        border-radius:8px 8px 8px 8px;
+                                        font-size:10px;
+                                        padding:3px 5px 3px 5px;
+                                        background:#E6E6E6;
+                                        color:#000000;
+                                        font-weight: normal;
+                                        cursor:pointer" class="slds-text-link_reset" data-id={element.value} key={element.value} onclick={handleBadgeClick} label={element.label}></lightning-badge>
+                                    </template>
+                                </template>
+                            </lightning-layout>
+                        </template>
+                </div>
+        </div>
+    </div>
+</template>

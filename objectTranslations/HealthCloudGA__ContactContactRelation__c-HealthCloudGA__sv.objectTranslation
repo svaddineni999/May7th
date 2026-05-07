@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Kontakt-till-kontakt-relationen</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>En kontakt-till-kontakt-relation</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Kontakt-till-kontakt-relation</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Kontakt-till-kontakt-relationerna</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Kontakt-till-kontakt-relationer</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Kontakt-till-kontakt-relationer</value>
+    </caseValues>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Kontakt</label>
+        <name>HealthCloudGA__Contact__c</name>
+        <relationshipLabel>Relaterade kontakter</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Slutdatum</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Extern ID</label>
+        <name>HealthCloudGA__ExternalId__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>Kontakt-till kontakt-relationer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relaterad kontakt</label>
+        <name>HealthCloudGA__RelatedContact__c</name>
+        <relationshipLabel><!-- Contact Contact Relations (Related Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Relaterade roller</label>
+        <name>HealthCloudGA__Role__c</name>
+        <relationshipLabel><!-- Contact Contact Relations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Startdatum</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Namn på kontaktrelation</nameFieldLabel>
+    <validationRules>
+        <errorMessage>En kontakt-till-kontakt-relation kan inte skapas som Inaktiv.</errorMessage>
+        <name>HealthCloudGA__CannotCreateInactiveRecord</name>
+    </validationRules>
+</CustomObjectTranslation>

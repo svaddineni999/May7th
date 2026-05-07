@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Interaction Participant</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Interaction Participants</value>
+    </caseValues>
+    <fields>
+        <label><!-- Association --></label>
+        <name>PC_Association__c</name>
+        <relationshipLabel><!-- Interaction Participants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Interaction --></label>
+        <name>PC_Interaction__c</name>
+        <relationshipLabel><!-- Interaction Participants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Participant Name --></label>
+        <name>PC_ParticipantName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Practitioner --></label>
+        <name>PC_Practitioner__c</name>
+        <relationshipLabel><!-- Interaction Participants --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Revoked --></label>
+        <name>PC_Revoked__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>PC_Role__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter either Association or Practitioner as the participant. --></errorMessage>
+        <name>PC_MultipleParticipantsCheck</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>相互角色</value>
+    </caseValues>
+    <fields>
+        <help><!-- If checked, a corresponding inverse role is automatically created. --></help>
+        <label>建立反向角色</label>
+        <name>HealthCloudGA__CreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>反向關係</relationshipLabel>
+    </fields>
+    <fields>
+        <label>反向角色</label>
+        <name>HealthCloudGA__InverseRole__c</name>
+    </fields>
+    <fields>
+        <label>關係類型</label>
+        <name>HealthCloudGA__RelationshipType__c</name>
+        <picklistValues>
+            <masterLabel>Account Account Relation</masterLabel>
+            <translation><!-- Account Account Relation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Contact Relation</masterLabel>
+            <translation><!-- Contact Contact Relation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>來源系統識別碼</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <nameFieldLabel>角色</nameFieldLabel>
+    <recordTypes>
+        <description>與帳戶-帳戶關係相關聯的角色</description>
+        <label>帳戶角色</label>
+        <name>HealthCloudGA__AccountRole</name>
+    </recordTypes>
+    <recordTypes>
+        <description>與連絡人-連絡人關係相關聯的角色</description>
+        <label>連絡人角色</label>
+        <name>HealthCloudGA__ContactRole</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>無法修改互惠角色</errorMessage>
+        <name>HealthCloudGA__ProhibitUpdates</name>
+    </validationRules>
+</CustomObjectTranslation>

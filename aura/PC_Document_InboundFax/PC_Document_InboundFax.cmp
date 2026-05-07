@@ -1,0 +1,9 @@
+<aura:component controller="PC_DocumentInboundFaxLightningController">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="docId" type="String"/>
+    <aura:attribute name="faxDetails" type="PC_DocumentInboundFaxLightningController.Object"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:If isTrue="{! and(v.faxDetails.attachmentId != null, v.faxDetails.attachmentId !=null) }">
+    	<iframe class="faxImage" src="{!'/servlet/servlet.FileDownload?file=' + v.faxDetails.attachmentId}" width="100%" height="100%" style="min-height:calc(100vh - 220px);"/>
+    </aura:If>
+</aura:component>

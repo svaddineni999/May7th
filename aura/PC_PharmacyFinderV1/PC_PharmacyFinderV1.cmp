@@ -1,0 +1,69 @@
+<!--
+ - Created by vkashikar on 6/18/2018.
+ -->
+
+<aura:component description="PC_PharmacyFinderV1" controller="PC_PharmacyFinder" abstract="false" access="public">
+
+    <!--<aura:set attribute="selectedPharmacies" value="[]"/>-->
+    <!--<aura:set attribute="isValid" value="true"/>-->
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+
+    <aura:attribute name="pharmacyMultiSelect" type="Object[]" />
+
+    <aura:attribute name="selectedPharmacies" type="Object[]" default="[]"/>
+    <aura:attribute name="isValid" type="Boolean" default="true"/>
+
+    <aura:attribute name="pharmacies" type="Object[]" default="[]"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:registerEvent name="addPharmacyEvent" type="c:PC_AddPharmacy"/>
+
+    <div class="mainBody">
+        <div class="pharmacyResultBlock">
+            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                <div class="slds-form-element__row">
+                    <table class="slds-table slds-table--bordered slds-table--cell-buffer slds-table_col-bordered">
+                        <thead>
+                        <tr class="slds-text-title--caps">
+                            <th scope="col">
+                                <span>{!$Label.c.PC_EWP_Select_Col_Header}</span>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="PHARMACY NAME">PHARMACY NAME</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="TYPE">TYPE</div>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        <aura:iteration items="{!v.pharmacyMultiSelect}" var="pharmacy">
+                            <tr>
+                                <td>
+                                    <a data-name="{! pharmacy.value}"   onclick="{!c.addPharmacies}"   > <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                                                                                xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#new'}"
+                                                                                                                ariaHidden="true"/>
+                                    </a>
+                                </td>
+                                <td scope="row" data-label="">
+                                    <div class="slds-truncate" title="">{!pharmacy.label}</div>
+                                </td>
+
+                                <td scope="row" data-label="">
+                                    <div class="slds-truncate" title=""></div>
+                                </td>
+
+                            </tr>
+
+                        </aura:iteration>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</aura:component>

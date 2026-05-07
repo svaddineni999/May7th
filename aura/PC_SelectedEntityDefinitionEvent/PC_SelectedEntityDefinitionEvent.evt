@@ -1,0 +1,7 @@
+<!--
+ - Created by tusarora on 3/9/2020.
+ -->
+
+<aura:event type="APPLICATION" description="PC_SelectedEntityDefinitionEvent" access="global">
+    <aura:attribute name="recordByEvent" type="Object"/>
+</aura:event>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>ACLS_Adverse_Event_2_Read_Write_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Adverse Event 2 Read Write Access</label>
+        <sharedTo>
+            <group>ACLS_RW_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ACLS_Engagement_Program_Code__c</field>
+            <operation>equals</operation>
+            <value>ASHF</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ACLS_Advervse_Event_2_Read_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>To provide read access to Adverse Event 2</description>
+        <label>Advervse Event 2 Read Access</label>
+        <sharedTo>
+            <group>ACLS_RO_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>ACLS_Engagement_Program_Code__c</field>
+            <operation>equals</operation>
+            <value>ASHF</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

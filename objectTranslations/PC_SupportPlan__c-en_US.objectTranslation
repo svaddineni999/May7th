@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Plans</value>
+    </caseValues>
+    <fields>
+        <label><!-- Condition Behavior --></label>
+        <name>PC_ConditionBehavior__c</name>
+        <picklistValues>
+            <masterLabel>No Condition</masterLabel>
+            <translation><!-- No Condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait until True</masterLabel>
+            <translation><!-- Wait until True --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Condition Option --></label>
+        <name>PC_Condition_Option__c</name>
+        <picklistValues>
+            <masterLabel>Apex Class</masterLabel>
+            <translation><!-- Apex Class --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Condition Builder</masterLabel>
+            <translation><!-- Condition Builder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Conditional Logic --></label>
+        <name>PC_Conditional_Logic__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of Support Plan --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Initial Activity --></label>
+        <name>PC_InitialActivity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>PC_IsActive__c</name>
+    </fields>
+    <fields>
+        <help><!-- Condition that needs to be met to initiate Support Plan --></help>
+        <label><!-- Start Condition --></label>
+        <name>PC_StartCondition__c</name>
+    </fields>
+    <fields>
+        <help><!-- Would you like to run this Support Plan every time the conditions are met for a record? --></help>
+        <label><!-- Support Plan Runtime Behavior --></label>
+        <name>PC_SupportPlan_Behavior__c</name>
+        <picklistValues>
+            <masterLabel>No, run this Support Plan only once per record.</masterLabel>
+            <translation><!-- No, run this Support Plan only once per record. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No, run this Support Plan only when there are no pending activities from previous Support Plan Runtime(s).</masterLabel>
+            <translation><!-- No, run this Support Plan only when there are no pending activities from previous Support Plan Runtime(s). --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, run this Support Plan every time the conditions are met.</masterLabel>
+            <translation><!-- Yes, run this Support Plan every time the conditions are met. --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Condition Option --></label>
+        <name>PC_TriggerEventConditionOption__c</name>
+        <picklistValues>
+            <masterLabel>Conditional Builder</masterLabel>
+            <translation><!-- Conditional Builder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Condition --></label>
+        <name>PC_TriggerEventCondition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Conditional Behavior --></label>
+        <name>PC_TriggerEventConditionalBehavior__c</name>
+        <picklistValues>
+            <masterLabel>No Condition</masterLabel>
+            <translation><!-- No Condition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wait until True</masterLabel>
+            <translation><!-- Wait until True --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>PC_TriggerEventObject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>PC_TriggerEventType__c</name>
+        <picklistValues>
+            <masterLabel>Insert</masterLabel>
+            <translation><!-- Insert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insert/Update</masterLabel>
+            <translation><!-- Insert/Update --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update</masterLabel>
+            <translation><!-- Update --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>PC_Version__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Support Plan name already exists, please choose a different name. --></errorMessage>
+        <name>PC_Avoid_DuplicateName</name>
+    </validationRules>
+</CustomObjectTranslation>

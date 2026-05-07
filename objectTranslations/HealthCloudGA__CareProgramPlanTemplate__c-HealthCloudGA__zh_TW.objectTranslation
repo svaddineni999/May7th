@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>照護方案計畫範本</value>
+    </caseValues>
+    <fields>
+        <label>照護計畫範本</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>照護方案計畫範本</relationshipLabel>
+    </fields>
+    <fields>
+        <label>照護方案</label>
+        <name>HealthCloudGA__CareProgram__c</name>
+        <relationshipLabel>照護方案計畫範本</relationshipLabel>
+    </fields>
+    <nameFieldLabel>識別碼</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,47 @@
+<!--
+Created by havalakki on 1/17/2018.
+Modification Log:
+mapatil                 1/26/2018            Resized and updated icon for popout button
+Prachi Nandgaonkar      Feb 13, 2018         [PC-2794] Removed padding to align with Document Action Ribbon
+Kishore Kanteti			October 17,2019		 Removed loadFaxContainer,loadEmailContainer and the conditions based on it as
+										     loadEmailContainer is always true and loadFaxContainer is always false.
+Vijay Kashikar          Feb 14, 2020         [PC-5996] Fixed broken functionality. Changed the attribute name passed to PC_Document_InboundEmail from docId to recordId.
+ -->
+
+<aura:component description="PC_Document_Preview"  implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="isPopout" type="Boolean" default="false"/>
+    <!--aura:attribute name="loadFaxContainer" type="Boolean" default="false"/>
+    <aura:attribute name="loadEmailContainer" type="Boolean" default="false"/-->
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="InboundFax" type="String" default="{!$Label.c.PC_Inbound_Fax}" />
+    <aura:attribute name="InboundEmail" type="String" default="{!$Label.c.PC_Inbound_Email}" />
+    <aura:attribute name="Document" type="String" default="{!$Label.c.PC_Document}" />
+    <aura:attribute name="documentType" type="String"/>
+    <aura:attribute name="doc" type="docWrapper.object"/>
+    <aura:attribute name="messageFromEvent" type="String"/>
+    <lightning:flexipageRegionInfo />
+    <div class="slds" aura:id="documentPreviewId">
+            <div class="content">
+                <div class="second slds">
+                  <!--  <aura:if isTrue="{!v.loadFaxContainer}">
+                        <div class="slds-form-element expandIconSize changeCursorPointer" onclick="{!c.popOutDocument}">
+                            <lightning:icon size="x-small" iconName="utility:new_window" title="{!$Label.c.PC_Pop_Out}"/>
+                        </div>
+                        <c:PC_Document_InboundFax docId="{!v.recordId}"/>
+                    </aura:if>-->
+                    <!--aura:if isTrue="{!v.loadEmailContainer}"-->
+                        <div id="expandAltIcon" title="{!$Label.c.PC_Pop_Out}" class="slds-form-element expandIconSize changeCursorPointer" onclick="{!c.popOutDocument}">
+                            <lightning:icon size="x-small" iconName="utility:new_window"/>
+                        </div>
+                        <c:PC_Document_InboundEmail recordId="{!v.recordId}" isPopout="{!v.isPopout}"/>
+                    <!--/aura:if-->
+                </div>
+            </div>
+        </div>
+</aura:component>

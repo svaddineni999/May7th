@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Impfprotokoll laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Impfprotokolle laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Impfprotokoll laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Impfprotokolle laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Impfprotokolls laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Impfprotokolle laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Impfprotokoll laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Impfprotokollen laut EGA</value>
+    </caseValues>
+    <fields>
+        <label>Verantwortliche Stelle 255</label>
+        <name>HealthCloudGA__Authority255__c</name>
+    </fields>
+    <fields>
+        <label>Verantwortliche Stelle</label>
+        <name>HealthCloudGA__Authority__c</name>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Dosissequenz</label>
+        <name>HealthCloudGA__DoseSequence__c</name>
+    </fields>
+    <fields>
+        <label>Dosisstatus Code</label>
+        <name>HealthCloudGA__DoseStatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Dosisstatus Bezeichnung</label>
+        <name>HealthCloudGA__DoseStatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Dosisstatus Grundcode</label>
+        <name>HealthCloudGA__DoseStatusReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Dosisstatus Grundbezeichnung</label>
+        <name>HealthCloudGA__DoseStatusReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Dosisstatus Grundsystem</label>
+        <name>HealthCloudGA__DoseStatusReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Dosisstatus System</label>
+        <name>HealthCloudGA__DoseStatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Dosisziel Code</label>
+        <name>HealthCloudGA__DoseTargetCode__c</name>
+    </fields>
+    <fields>
+        <label>Dosisziel Bezeichnung</label>
+        <name>HealthCloudGA__DoseTargetLabel__c</name>
+    </fields>
+    <fields>
+        <label>Dosisziel System</label>
+        <name>HealthCloudGA__DoseTargetSystem__c</name>
+    </fields>
+    <fields>
+        <label>Impfung</label>
+        <name>HealthCloudGA__Immunization__c</name>
+        <relationshipLabel>Impfprotokolle</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ist eingeschränkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Wird auf Patientenkarte angezeigt</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Reihendosen</label>
+        <name>HealthCloudGA__SeriesDoses__c</name>
+    </fields>
+    <fields>
+        <label>Reihe</label>
+        <name>HealthCloudGA__Series__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>EGA Impfprotokoll ID</nameFieldLabel>
+</CustomObjectTranslation>

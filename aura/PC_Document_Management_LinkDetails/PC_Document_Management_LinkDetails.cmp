@@ -1,0 +1,123 @@
+<!--
+ - Created by havalakki on 2/8/2018.
+ -->
+<aura:component controller="PC_Doc_Management_LinkDetailsController" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="docId" type="String"/>
+    <aura:attribute name="patientId" type="String" />
+    <aura:attribute name="accountRecordType" type="String" access="public"/>
+    <aura:attribute name="programIds" type="String[]"/>
+    <aura:attribute name="patientName" type="String" />
+    <aura:attribute name="programList" type="Case[]"/>
+    <aura:attribute name="account" type="AccountWrapper.object"/>
+    <aura:attribute name="accountSelected" type="String[]"/>
+    <aura:attribute name="adverseEventList" type="PC_AdverseEvent__c[]"/>
+    <aura:attribute name="selectedAdverseEventList" type="String[]"/>
+    <aura:attribute name="interactionList" type="PC_Interaction__c[]"/>
+    <aura:attribute name="selectedInteractionList" type="String[]"/>
+    <aura:attribute name="coverageList" type="PC_DocumentLogLightningController.object[]"/>
+    <aura:attribute name="programCoverageMap" type="PC_DocumentLogLightningController.object[]"/>
+    <aura:attribute name="selectedProgram" type="Boolean" default="false"/>
+    <aura:attribute name="showMessage" type="Boolean" default="false"/>
+    <aura:attribute name="showCoverageTable" type="Boolean" default="false"/>
+    <aura:attribute name="showAdverseEventTable" type="Boolean" default="false"/>
+    <aura:attribute name="showInteractionTable" type="Boolean" default="false"/>
+    <aura:attribute name="showCaseTable" type="Boolean" default="false"/>
+    <aura:attribute name="accntRecTypeDevName" type="String"/>
+
+    <!--Below attributes are set to allow linking for the related objects[PC-1610]-->
+    <aura:attribute name="includeAccount" type="Boolean" default="true"/>
+    <aura:attribute name="includeAdverseEvents" type="Boolean" default="true"/>
+    <aura:attribute name="includeInteractions" type="Boolean" default="true"/>
+    <aura:attribute name="includeCases" type="Boolean" default="true"/>
+
+    <aura:attribute name="docEngagementProgId" type="String"/><!--PC-1598 - Customize the options to the Engagement program context, if the document is tagged to one-->
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="selectOne" type="String" default="{!$Label.c.PC_selectOne}" />
+    <aura:attribute name="fields" type="Object[]"/>
+    <aura:attribute name="fieldset" type="PC_DocumentLogLightningController.object[]" access="PUBLIC"/>
+    <aura:attribute name="sObjectTypeName" type="String" default="" />
+    <aura:attribute name="fsName" type="String" default=""/>
+    <aura:attribute name="typeName" type="String" default=""/>
+    <aura:attribute name="sObjectAndFieldSetMap" type="Map"/>
+    <aura:attribute name="objectFieldSetNameMap" type="Map"/>
+    <aura:attribute name="sObjectColumnLabelsMap" type="Map"/>
+    <aura:attribute name="createRowForColumnLabels" type="Boolean" default="true"/>
+    <aura:attribute name="objectFieldsWrapper" type="List"/>
+    <aura:attribute name="isError" type="Boolean" default="false"/>
+    <aura:attribute name="showDiv" type="Boolean" default="false"/>
+    <aura:attribute name="objectAndRecordIdsMapsList" type="List"/>
+    <aura:attribute name="errorMessage" type="String"/>
+
+    <aura:dependency resource="force:navigateToSObject" type="EVENT"/>
+    <aura:handler event="c:PC_RefreshChildCmp" action="{!c.doInit}"/>
+    <aura:registerEvent name="refreshLink" type="c:PC_RefreshChildCmp"/>
+    <aura:method name="saveUpdateDocumentLogs" action="{!c.saveUpdateDocLogs}" access="public"></aura:method>
+    <center>
+        <ui:spinner aura:id="spinner" />
+    </center>
+    <aura:registerEvent name="closeParentModalBox" type="c:PC_CloseModalBox"/>
+
+    <form action="">
+        <div class="pageContent" aura:id="mainPageContent">
+            <aura:if isTrue="{!v.isError}">
+                <ui:message title="" severity="info" closable="true" class="fontColor">{!v.errorMessage}</ui:message>
+                <aura:set attribute="else">
+                    <aura:if isTrue="{!v.showDiv}">
+                    <aura:if isTrue="{!v.showMessage}">
+                        <ui:message title="" severity="confirm" closable="true" >{!$Label.c.PC_LinkedPatientMessage}</ui:message>
+                    </aura:if>
+
+                    <div class="slds-grid">
+                        <div class="slds-col slds-has-flexi-truncate">
+                            <p class="slds-text-heading&#45;&#45;label">{!$Label.c.PC_PatientAcc_DocLog_Title}</p>
+                            <div class="slds-grid">
+                                <div class="slds-grid slds-type-focus slds-no-space">
+                                    <h1 class="slds-page-header__title slds-truncate bannerHeader">
+                                        <a id="{!v.patientId}" onclick="{!c.goToSelectedLink}" target="_blank">{!v.patientName}</a>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="slds-p-vertical--x-small"></div>
+
+                <aura:iteration items="{!v.objectFieldsWrapper}" var="objectFieldsWrapperObject">
+                    <div class="slds-text-heading--small"><b>{!objectFieldsWrapperObject.objectLabel}</b></div>
+                    <div class="recDetails slds-scrollable">
+                    <table class="slds-table slds-table&#45;&#45;bordered">
+                        <thead>
+                        <tr class="slds-text-heading&#45;&#45;label">
+                            <th class="slds-cell-shrink">{!$Label.c.PC_Action}</th>
+                            <aura:iteration items="{!objectFieldsWrapperObject.objectColumnLabels}" var="sObjectColumnLabelObj">
+                                <th class="slds-cell-shrink">{!sObjectColumnLabelObj}</th>
+                            </aura:iteration>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <aura:iteration items="{!objectFieldsWrapperObject.listOfObjectFieldsSetDocLinkedWrapper}" var="fieldSetObjectList">
+                            <tr class="slds-hint-parent">
+                                <td class="slds-truncate"><ui:inputCheckbox value="{!fieldSetObjectList.isLinked}" name="{!fieldSetObjectList.recordId}"/></td>
+                                <aura:iteration items="{!fieldSetObjectList.fieldSetList}" var="fieldSetObject">
+                                    <td class="slds-truncate" >{!fieldSetObject.value}</td>
+                                </aura:iteration>
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+                    </table>
+                    </div>
+                    <div class="slds-p-vertical--medium"></div>
+                </aura:iteration>
+            </aura:if>
+            </aura:set>
+            </aura:if>
+        </div>
+
+    </form>
+</aura:component>

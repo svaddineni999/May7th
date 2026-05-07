@@ -1,0 +1,21 @@
+<apex:page showHeader="false" sidebar="false">
+   
+  
+    <apex:includeLightning />
+ 
+    <div id="lightning" />
+ 
+    <script>
+        $Lightning.use("c:ManageuserApp", function() {
+          $Lightning.createComponent("c:ManageuserComp",
+                                     {},
+                                     "lightning",
+              function(cmp) {
+               console.log("Component is created!");
+                    console.log(cmp);
+              }
+          );
+        });
+    </script>
+
+</apex:page>

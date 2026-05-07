@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Relation entre les objets</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relations entre les objets</value>
+    </caseValues>
+    <fields>
+        <label>Objet De</label>
+        <name>HealthCloudGA__FromObject__c</name>
+    </fields>
+    <fields>
+        <label>Relation</label>
+        <name>HealthCloudGA__Relationship__c</name>
+    </fields>
+    <fields>
+        <label>Inverser la relation</label>
+        <name>HealthCloudGA__ReverseRelationship__c</name>
+    </fields>
+    <fields>
+        <label>Objet À</label>
+        <name>HealthCloudGA__ToObject__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nom de la relation entre les objets</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

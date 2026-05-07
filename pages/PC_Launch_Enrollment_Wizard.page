@@ -1,0 +1,40 @@
+<!--*********************************************************************************
+Page Name       : PC_Launch_Enrollment_Wizard
+Description     : Enrollment Wizard launch page for lightning
+Created By      : Deloitte
+Created Date    : Jan 05, 2017
+Modification Log:
+----------------------------------------------------------------------------------
+Developer                   Date                   Description
+-----------------------------------------------------------------------------------
+Mayuresh Patil              05-Jan-2017           Initial version
+*********************************************************************************-->
+<apex:page standardController="Case" showheader="false" sidebar="false" standardstylesheets="true" doctype="html-5.0">
+    <apex:includelightning />
+    <apex:includescript value="/support/console/36.0/integration.js" />
+    <html>
+        <head>
+            <title>Enrollment Wizard</title>
+        </head>
+        <div id="content" />
+    </html>
+    <apex:include pageName="PC_JSLib"/>
+    <script>
+    	function runAfterGlobalsLoaded(callback) {
+            $A.run(function() {
+                var labelAction = $A.get("c.aura://ComponentController.loadLabels");
+                labelAction.setCallback(this, function() {
+                    callback();
+                });
+                $A.enqueueAction(labelAction);
+                });
+        }
+        var enrollmentCaseId = "{!$CurrentPage.parameters.Id}";
+        var ns = getOrgNamespace();
+        $Lightning.use(ns + ":PC_EnrollmentWizardButtonApp", function() {
+            runAfterGlobalsLoaded(function() {
+                $Lightning.createComponent(ns + ":PC_EnrollmentWizard", { "enrollmentCaseId" : enrollmentCaseId }, "content");
+            });
+        });
+    </script>
+</apex:page>

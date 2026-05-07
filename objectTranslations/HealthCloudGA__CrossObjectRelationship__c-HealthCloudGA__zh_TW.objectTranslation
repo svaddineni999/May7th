@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>跨物件關係</value>
+    </caseValues>
+    <fields>
+        <label>來源物件</label>
+        <name>HealthCloudGA__FromObject__c</name>
+    </fields>
+    <fields>
+        <label>關係</label>
+        <name>HealthCloudGA__Relationship__c</name>
+    </fields>
+    <fields>
+        <label>反向關係</label>
+        <name>HealthCloudGA__ReverseRelationship__c</name>
+    </fields>
+    <fields>
+        <label>目標物件</label>
+        <name>HealthCloudGA__ToObject__c</name>
+    </fields>
+    <nameFieldLabel>跨物件關係名稱</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,9 @@
+/**
+ * Created by vkashikar on 10/18/2019.
+ */
+.THIS .pc_spinner {
+   position: relative;
+   display: inline-block;
+   width: 100%;
+   height: 80px;
+}

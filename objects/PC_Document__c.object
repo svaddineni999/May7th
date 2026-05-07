@@ -1,0 +1,2647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>PC_Document_Viewer_7_0</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>PatientConnect custom object to manage documents</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>ACLS_Document_EmailFieldSet</fullName>
+        <description>This Field set is used for Email Outbound record type</description>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SystemModstamp</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>ACLS_Document_EmailFieldSet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ACLS_Document_FaxFieldSet</fullName>
+        <description>As per Us 150</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Document_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_From_Fax_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_To_Fax_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Fax_Unique_Id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Page_Count__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Document_Category__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Engagement_Program__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ACLS_Subject__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ACLS_Message__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>ACLS_Document_FaxFieldSet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ACLS_Document_OutboundFaxFieldSet</fullName>
+        <description>This Field set is used for Fax Outbound record type</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Document_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_From_Fax_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_To_Fax_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Fax_Unique_Id__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Page_Count__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Document_Category__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Engagement_Program__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ACLS_Subject__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>ACLS_Message__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>ACLS_Document_OutboundFaxFieldSet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>ACLS_Document_SMSFieldSet</fullName>
+        <description>Field Set for Record type SMS Inbound</description>
+        <displayedFields>
+            <field>Id</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>OwnerId</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>CreatedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedDate</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>LastModifiedById</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>SystemModstamp</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_SMS_Phone_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_SMS_Timestamp__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>ACLS_Document_SMSFieldSet</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>PC_Document_FieldSet</fullName>
+        <description>Testing FieldSet</description>
+        <displayedFields>
+            <field>PC_Document_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Document_Status__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>PC_Document_FieldSet</label>
+    </fieldSets>
+    <fields>
+        <fullName>ACLS_Description__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PC_Parent_Document__c = &apos;&apos;, &apos;Original document before split&apos;, IF(PC_Parent_Document__c != &apos;&apos;, &apos;Split document: Pages &lt;&apos;  &amp;  PC_ParentPgRange__c  &amp; &apos;&gt;&apos; , IF(RecordType.DeveloperName = &apos;PC_Email_Attachment&apos;, &apos; &apos;, &apos;Other&apos;) ) )</formula>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Failure_reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Failure reason</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Fax__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>Fax</label>
+        <referenceTo>EFX__efax__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Message__c</fullName>
+        <label>Message</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_RelationType__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(PC_Parent_Document__c = &apos;&apos;, &apos;Original&apos;, IF(PC_Parent_Document__c != &apos;&apos;, &apos;Split&apos;, IF(RecordType.DeveloperName = &apos;PC_Email_Attachment&apos;, &apos;Email Attachment&apos;, &apos;Other&apos;) ) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RelationType</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Subject__c</fullName>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_eLetter__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <label>eLetter</label>
+        <referenceTo>PC_eLetter__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Alert__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to the alert object for which the document object is linked.</description>
+        <label>Alert</label>
+        <referenceTo>PC_Alert__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Faxes_Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Applicant__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Applicant associated with this document.</description>
+        <label>Applicant</label>
+        <referenceTo>PC_Applicant__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Archived_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The reference to the user who archived the document.</description>
+        <label>Archived By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Documents1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Archived_On__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date and time when the document was archived.</description>
+        <label>Archived On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Attachment_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Salesforce ID of the attachment record for which the document is linked.</description>
+        <externalId>false</externalId>
+        <label>Attachment Id</label>
+        <length>25</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Correlation_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A unique identifier used to correlate requests to the splitter service. An attachment is only added by the service if the correlation Id matches the request. Added in v3.0.1.</description>
+        <externalId>false</externalId>
+        <label>Correlation Id</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The description of the document.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Document description</inlineHelpText>
+        <label>Description</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Document_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Category that the document may fall into.
+Note: A document can be associated with multiple categories.</description>
+        <label>Category</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>PC_EngagementProgramCode__c</controllingField>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Enrollment Form</fullName>
+                    <default>false</default>
+                    <label>Enrollment Form</label>
+                </value>
+                <value>
+                    <fullName>Patient Consent</fullName>
+                    <default>false</default>
+                    <label>Patient Consent</label>
+                </value>
+                <value>
+                    <fullName>Patient Information Update</fullName>
+                    <default>false</default>
+                    <label>Patient Information Update</label>
+                </value>
+                <value>
+                    <fullName>Insurance Information</fullName>
+                    <default>false</default>
+                    <label>Insurance Information</label>
+                </value>
+                <value>
+                    <fullName>Prescription</fullName>
+                    <default>false</default>
+                    <label>Prescription</label>
+                </value>
+                <value>
+                    <fullName>Copay Information</fullName>
+                    <default>false</default>
+                    <label>Copay Information</label>
+                </value>
+                <value>
+                    <fullName>PA Documentation</fullName>
+                    <default>false</default>
+                    <label>PA Documentation</label>
+                </value>
+                <value>
+                    <fullName>Appeals Documentation</fullName>
+                    <default>false</default>
+                    <label>Appeals Documentation</label>
+                </value>
+                <value>
+                    <fullName>Post Infusion Report</fullName>
+                    <default>false</default>
+                    <label>Post Infusion Report</label>
+                </value>
+                <value>
+                    <fullName>Post Training Report</fullName>
+                    <default>false</default>
+                    <label>Post Training Report</label>
+                </value>
+                <value>
+                    <fullName>Test Results</fullName>
+                    <default>false</default>
+                    <label>Test Results</label>
+                </value>
+                <value>
+                    <fullName>Adverse Event</fullName>
+                    <default>false</default>
+                    <label>Adverse Event</label>
+                </value>
+                <value>
+                    <fullName>Illegible Document</fullName>
+                    <default>false</default>
+                    <label>Illegible Document</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Enrollment Form</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Patient Consent</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Patient Information Update</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Insurance Information</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Prescription</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Copay Information</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>PA Documentation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Appeals Documentation</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Post Infusion Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Post Training Report</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Test Results</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <valueName>Adverse Event</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>None</controllingFieldValue>
+                <controllingFieldValue>ASHF</controllingFieldValue>
+                <valueName>Illegible Document</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Document_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the Document</description>
+        <externalId>false</externalId>
+        <label>Document Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Document_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the document.</description>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Review Needed</fullName>
+                    <default>true</default>
+                    <label>Review Needed</label>
+                </value>
+                <value>
+                    <fullName>Categorized</fullName>
+                    <default>false</default>
+                    <label>Categorized</label>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                    <label>Completed</label>
+                </value>
+                <value>
+                    <fullName>Spam</fullName>
+                    <default>false</default>
+                    <label>Spam</label>
+                </value>
+                <value>
+                    <fullName>Sent</fullName>
+                    <default>false</default>
+                    <label>Sent</label>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                    <label>Failed</label>
+                </value>
+                <value>
+                    <fullName>Archived</fullName>
+                    <default>false</default>
+                    <label>Archived</label>
+                </value>
+                <value>
+                    <fullName>Illegible</fullName>
+                    <default>false</default>
+                    <label>Illegible</label>
+                </value>
+                <value>
+                    <fullName>Processed</fullName>
+                    <default>false</default>
+                    <label>Processed</label>
+                </value>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Published</fullName>
+                    <default>false</default>
+                    <label>Published</label>
+                </value>
+                <value>
+                    <fullName>Obsolete</fullName>
+                    <default>false</default>
+                    <label>Obsolete</label>
+                </value>
+                <value>
+                    <fullName>Split Failure</fullName>
+                    <default>false</default>
+                    <label>Split Failure</label>
+                </value>
+                <value>
+                    <fullName>Awaiting Attachment</fullName>
+                    <default>false</default>
+                    <label>Awaiting Attachment</label>
+                </value>
+                <value>
+                    <fullName>In Review</fullName>
+                    <default>false</default>
+                    <label>In Review</label>
+                </value>
+                <value>
+                    <fullName>Ready for Split</fullName>
+                    <default>false</default>
+                    <label>Ready for Split</label>
+                </value>
+                <value>
+                    <fullName>Split in Progress</fullName>
+                    <default>false</default>
+                    <label>Split in Progress</label>
+                </value>
+                <value>
+                    <fullName>New</fullName>
+                    <default>false</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>In Progress</fullName>
+                    <default>false</default>
+                    <label>In Progress</label>
+                </value>
+                <value>
+                    <fullName>Preview Only</fullName>
+                    <default>false</default>
+                    <label>Preview Only</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EngagementProgramCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Internal field to associate Engagement Program Code with Document Tags/Category. Not to be used on layout.</description>
+        <label>Engagement Program Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>None</fullName>
+                    <default>false</default>
+                    <label>None</label>
+                </value>
+                <value>
+                    <fullName>ASHF</fullName>
+                    <default>false</default>
+                    <label>ASHF</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Engagement_Program__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The Engagement Program lookup for documents.</description>
+        <label>Engagement Program</label>
+        <referenceTo>PC_Engagement_Program__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Error__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of the document.</description>
+        <label>Error</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Failure_Count__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Failure count.</description>
+        <externalId>false</externalId>
+        <label>Failure Count</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Fax_Handle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identified for incoming fax</description>
+        <externalId>false</externalId>
+        <label>Inbound Fax Handle</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Fax_Sent_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time on which the fax was sent to the recipient.</description>
+        <label>Fax Sent</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Fax_Unique_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <deprecated>false</deprecated>
+        <description>Used for the Right Fax Integration to unique identifier</description>
+        <externalId>true</externalId>
+        <label>Fax Unique Id</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PC_From_Email_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email Address of the sender</description>
+        <externalId>false</externalId>
+        <label>From Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_From_Fax_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Fax number from where the fax is recevied</description>
+        <externalId>false</externalId>
+        <label>From Fax Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_From_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the individual or business from where the fax/document is received.</description>
+        <externalId>false</externalId>
+        <label>From Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Has_Queue_Owner__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Formula field to denote if document has queue owner.</description>
+        <formula>NOT(ISBLANK(Owner:Queue.Id))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Queue Owner</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Inbound_Fax_Date_Time__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The date and time on which the fax inbound record is received.</description>
+        <label>Fax Received</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Inbound_Fax__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checked if the fax is of type Inbound</description>
+        <label>Inbound Fax</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_IsSplit__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selected or checked when the document is split.</description>
+        <label>Is Split</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Mark_for_Delete__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selected or checked when the document needs to be deleted.</description>
+        <label>Mark for Delete ?</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Marked_Spam_By__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The name of the user who has marked the document as spam.</description>
+        <label>Marked Spam By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Marked_Spam_On__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the document was marked as a spam.</description>
+        <label>Marked Spam On</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_Outbound_Fax_Handle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identified for outgoing fax</description>
+        <externalId>false</externalId>
+        <label>Outbound Fax Handle</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Page_Count__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To hold total number of pages of parent document. Added in v3.0.1.</description>
+        <externalId>false</externalId>
+        <label>Page Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ParentPgRange__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Range of pages selected from the parent document in this document. Added in v3.0.1.</description>
+        <externalId>false</externalId>
+        <label>Parent Document Page Range</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Parent_Document__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to the parent document.</description>
+        <label>Parent Document</label>
+        <referenceTo>PC_Document__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>Documents</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Request_Form__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>The document request form.</description>
+        <label>Request Form</label>
+        <referenceTo>PC_Request_Form__c</referenceTo>
+        <relationshipLabel>Documents</relationshipLabel>
+        <relationshipName>PC_Document_Request_Form</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_SMS_Body__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Body of the message.</description>
+        <label>SMS Body</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_SMS_Phone_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Phone number to which the message is sent to.</description>
+        <externalId>false</externalId>
+        <label>SMS Phone Number</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_SMS_Timestamp__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time when the SMS is sent.</description>
+        <externalId>false</externalId>
+        <label>SMS Timestamp</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Sorted_Parent_Pg_Num__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Number array to store sorted pages in the form of a range instead of as comma separated pages.</description>
+        <externalId>false</externalId>
+        <label>Sorted Parent Page Numbers</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_To_Email_Address_Inbound__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address of the receiver. This will be populated only for an inbound email.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email address of the receiver. This will be populated only for an inbound email.</inlineHelpText>
+        <label>To Email Address (Inbound)</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_To_Email_Address__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Email address of the receiver. This will be populated only for an outbound emails.</description>
+        <externalId>false</externalId>
+        <label>To Email Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_To_Fax_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The fax receiver’s name.</description>
+        <externalId>false</externalId>
+        <label>To Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_To_Fax_Number__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The fax number of the receiver.</description>
+        <externalId>false</externalId>
+        <label>To Fax Number</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_isPIIIdentified__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selected when a document has been identified to hold any PII information.</description>
+        <label>Any Information Identified</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Document</label>
+    <listViews>
+        <fullName>ACLS_Inbound_Fax_Completed</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_From_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Inbound</value>
+        </filters>
+        <label>Inbound Fax – Completed</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Inbound_Fax_Failed</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_From_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>Failed</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Inbound</value>
+        </filters>
+        <label>Inbound Fax - Failed</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Inbound_Fax_In_Review</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_From_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>In Review</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Inbound</value>
+        </filters>
+        <label>Inbound Fax – In Review</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Inbound_Fax_New</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_From_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Inbound</value>
+        </filters>
+        <label>Inbound Fax - New</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Outbound_Fax_Completed</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_To_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Outbound</value>
+        </filters>
+        <label>Outbound Fax – Completed</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Outbound_Fax_Failed</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_To_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>Failed</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Outbound</value>
+        </filters>
+        <label>Outbound Fax - Failed​</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Outbound_Fax_In_Review</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_To_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>In Review</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Outbound</value>
+        </filters>
+        <label>Outbound Fax – In Review</label>
+    </listViews>
+    <listViews>
+        <fullName>ACLS_Outbound_Fax_New</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_To_Fax_Number__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Fax_Outbound</value>
+        </filters>
+        <label>Outbound Fax - New</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>PC_Parent_Document__c</columns>
+        <columns>PC_From_Fax_Number__c</columns>
+        <columns>PC_From_Name__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>PC_Attachment_Id__c</columns>
+        <columns>PC_Engagement_Program__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Inbound_Archived</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>Spam,Archived,Illegible</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Email_Inbound,PC_Document__c.PC_Fax_Inbound,PC_Document__c.PC_SMS_Inbound,PC_Document__c.PC_Online_Form</value>
+        </filters>
+        <label>All Inbound Archived</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Inbound_Documents</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>PC_Engagement_Program__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Inbound Documents</label>
+    </listViews>
+    <listViews>
+        <fullName>All_Inbound_New</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Email_Inbound,PC_Document__c.PC_Fax_Inbound,PC_Document__c.PC_SMS_Inbound,PC_Document__c.PC_Online_Form</value>
+        </filters>
+        <label>All Inbound New</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>All_Inbound_Reimbursement</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>PC_Document_Status__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Category__c</field>
+            <operation>includes</operation>
+            <value>PA Documentation,Insurance Information,Appeals Documentation,Copay Information</value>
+        </filters>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Email_Inbound,PC_Document__c.PC_Fax_Inbound,PC_Document__c.PC_SMS_Inbound,PC_Document__c.PC_Online_Form</value>
+        </filters>
+        <label>All Inbound Reimbursement</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Assigned_to_Me</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OWNER.ALIAS</field>
+            <operation>contains</operation>
+            <value>heidt</value>
+        </filters>
+        <label>Assigned to Me</label>
+    </listViews>
+    <listViews>
+        <fullName>Education_Materials</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Knowledge_Article</value>
+        </filters>
+        <label>Education Materials</label>
+    </listViews>
+    <listViews>
+        <fullName>Enrollments_to_Process</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Document_Category__c</field>
+            <operation>includes</operation>
+            <value>Enrollment Form</value>
+        </filters>
+        <label>Enrollments to Process</label>
+    </listViews>
+    <listViews>
+        <fullName>Inbound_Emails</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Document_Category__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>PC_Document__c.PC_Email_Inbound</value>
+        </filters>
+        <label>Inbound Emails</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>RareAssistRx_PC_Document</fullName>
+        <filterScope>Queue</filterScope>
+        <label>RareAssistRx</label>
+        <queue>RareAssistRx</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <nameField>
+        <displayFormat>DOC-{00000000}</displayFormat>
+        <label>Document Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Documents</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>ACLS_SMS_Outbound</fullName>
+        <active>true</active>
+        <label>SMS Outbound</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>ASHF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Document</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>General Document or Attachment</description>
+        <label>Document</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Email_Attachment</fullName>
+        <active>true</active>
+        <description>Record type for documents that are attachments of an inbound / outbound email</description>
+        <label>Email Attachment</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Email_Inbound</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Inbound Emails</description>
+        <label>Email - Inbound</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Email_Outbound</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <label>Email - Outbound</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Fax_Inbound</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Inbound fax document</description>
+        <label>Fax - Inbound</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Fax_Outbound</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Outbound fax document</description>
+        <label>Fax - Outbound</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Preview Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Knowledge_Article</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <label>Knowledge Article</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Manual_Upload</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>This record is for the manual upload of file from document log on program related list.</description>
+        <label>Manual Upload</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Online_Form</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>This recordtype is to store the incoming Smartform Registrations as a Document.</description>
+        <label>Online Form</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_Portal_Sharing</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Record type to capture the documents that have been created as a part of sharing to the portal</description>
+        <label>Portal Sharing</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>PC_SMS_Inbound</fullName>
+        <active>true</active>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Stores inbound SMS Communication History</description>
+        <label>SMS Inbound</label>
+        <picklistValues>
+            <picklist>PC_Document_Category__c</picklist>
+            <values>
+                <fullName>Appeals Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Copay Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Enrollment Form</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Illegible Document</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PA Documentation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Consent</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Patient Information Update</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Infusion Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Post Training Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Test Results</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_Document_Status__c</picklist>
+            <values>
+                <fullName>Archived</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PC_EngagementProgramCode__c</picklist>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PC_Document_Category__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PC_Document_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <searchResultsAdditionalFields>RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATEDBY_USER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>PC_Address__c</fullName>
+        <label>PC Address</label>
+    </sharingReasons>
+    <visibility>Public</visibility>
+</CustomObject>

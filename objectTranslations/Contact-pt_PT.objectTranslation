@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- New Individual Contact Fields --></label>
+        <name>HealthCloudGA__NewIndividualContactFields</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Age --></label>
+        <name>HealthCloudGA__Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Birth Date --></label>
+        <name>HealthCloudGA__BirthDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Condition Status --></label>
+        <name>HealthCloudGA__ConditionStatus__c</name>
+        <picklistValues>
+            <masterLabel>Asymptomatic</masterLabel>
+            <translation>Assintomático</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asymptomatic - Declined to Participate</masterLabel>
+            <translation>Assintomático - Recusou-se a participar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cured</masterLabel>
+            <translation>Curado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Evaluated - No Risk</masterLabel>
+            <translation>Avaliado - Sem risco</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symptomatic</masterLabel>
+            <translation>Sintomático</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Symptomatic - Declined to Participate</masterLabel>
+            <translation>Sintomático - Recusou-se a participar</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Contagem das referenciações submetidas nos últimos 6 meses por este profissional de saúde referenciador que apresentem o estado “Fechada-Convertida”.</help>
+        <label><!-- Converted Referrals --></label>
+        <name>HealthCloudGA__ConvertedReferrals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Of Birth --></label>
+        <name>HealthCloudGA__CountryOfBirth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created from Lead --></label>
+        <name>HealthCloudGA__CreatedFromLead__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deceased Date --></label>
+        <name>HealthCloudGA__DeceasedDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Decline to Specify</masterLabel>
+            <translation><!-- Decline to Specify --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Individual ID --></label>
+        <name>HealthCloudGA__IndividualId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Individual Type --></label>
+        <name>HealthCloudGA__IndividualType__c</name>
+        <picklistValues>
+            <masterLabel>Individual</masterLabel>
+            <translation><!-- Individual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Medical Record Number --></label>
+        <name>HealthCloudGA__MedicalRecordNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Monitored at Home --></label>
+        <name>HealthCloudGA__Monitored_at_Home__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>Não</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>Sim</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Preferred Name --></label>
+        <name>HealthCloudGA__PreferredName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Language --></label>
+        <name>HealthCloudGA__PrimaryLanguage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Referrer Score --></label>
+        <name>HealthCloudGA__ReferrerScore__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary Language --></label>
+        <name>HealthCloudGA__SecondaryLanguage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source System ID --></label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <help>Identifica o sistema que criou o registo e detém direitos de atualização sobre o mesmo. É predefinido para Health1 no caso de registos criados manualmente.</help>
+        <label><!-- Source System --></label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Group --></label>
+        <name>HealthCloudGA__StatusGroup__c</name>
+        <picklistValues>
+            <masterLabel>Monitored</masterLabel>
+            <translation>Monitorizado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Monitored</masterLabel>
+            <translation>Não monitorizado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Test</masterLabel>
+            <translation>Teste positivo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Intake</masterLabel>
+            <translation>Pronto para admissão</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Testing Status --></label>
+        <name>HealthCloudGA__Testing_Status__c</name>
+        <picklistValues>
+            <masterLabel>Negative Test</masterLabel>
+            <translation>Teste negativo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Positive Test</masterLabel>
+            <translation>Teste positivo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Results Awaited</masterLabel>
+            <translation>A aguardar resultados de teste</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test Scheduled</masterLabel>
+            <translation>Teste agendado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing Recommended</masterLabel>
+            <translation>Teste recomendado</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation>Desconhecido</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Contagem do número total de referenciações submetidas nos últimos 6 meses por este profissional de saúde referenciador.</help>
+        <label><!-- Total Referrals --></label>
+        <name>HealthCloudGA__TotalReferrals__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Represents a Business --></description>
+        <label><!-- Business --></label>
+        <name>HealthCloudGA__IndustriesBusiness</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Represents an Individual --></description>
+        <label><!-- Individual --></label>
+        <name>HealthCloudGA__IndustriesIndividual</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Individual --></label>
+        <name>IndustriesIndividual</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Patient --></label>
+        <name>PC_Patient</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Physician --></label>
+        <name>PC_Physician</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The Individual record type can&apos;t be changed --></errorMessage>
+        <name>HealthCloudGA__NotAllowingConversionFromIndividual</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The record type can&apos;t be changed to Individual. --></errorMessage>
+        <name>HealthCloudGA__NotAllowingConversionToIndividual</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Send_eFax_Classic --></label>
+        <name>EFX__Send_eFax_Classic</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_eFax_Lightning --></label>
+        <name>EFX__Send_eFax_Lightning</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- AddRelation --></label>
+        <name>HealthCloudGA__AddRelation</name>
+    </webLinks>
+</CustomObjectTranslation>

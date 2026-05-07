@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- EnrollPatient_PhysicianInfo --></label>
+        <name>EnrollPatient_PhysicianInfo</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- HcCareGapList --></label>
+        <name>HealthCloudGA__HcCareGapList</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- Case Survey Workflow Fieldset --></label>
+        <name>PC_CaseSurveyWorkflowFieldset</name>
+    </fieldSets>
+    <fieldSets>
+        <label><!-- PC Document Link Case --></label>
+        <name>PC_Doc_Link_Case</name>
+    </fieldSets>
+    <fields>
+        <label><!-- Appeal Outcome --></label>
+        <name>ACLS_Appeal_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- APPEAL --></label>
+        <name>ACLS_Appeal_Status__c</name>
+        <picklistValues>
+            <masterLabel>Action Required</masterLabel>
+            <translation><!-- Action Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not applicable</masterLabel>
+            <translation><!-- Not applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Number --></label>
+        <name>ACLS_Approval_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- BENEFITS VERIFICATION --></label>
+        <name>ACLS_Benefits_Verification_Status__c</name>
+        <picklistValues>
+            <masterLabel>Action Required</masterLabel>
+            <translation><!-- Action Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not applicable</masterLabel>
+            <translation><!-- Not applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Manager --></label>
+        <name>ACLS_Case_Manager__c</name>
+        <relationshipLabel><!-- Cases (Case Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Commercially Insured (Non-Governmental)? --></label>
+        <name>ACLS_Commercially_Insured__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Copay Card ID --></label>
+        <name>ACLS_Copay_Card_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copay Card Status --></label>
+        <name>ACLS_Copay_Card_Status__c</name>
+        <picklistValues>
+            <masterLabel>Activated</masterLabel>
+            <translation><!-- Activated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivated</masterLabel>
+            <translation><!-- Deactivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted to HCP --></label>
+        <name>ACLS_Date_Submitted_to_HCP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>ACLS_Effective_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>ACLS_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- On label Diagnosis? --></label>
+        <name>ACLS_On_label_Diagnosis__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PA Required --></label>
+        <name>ACLS_PA_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Adverse Event Reported --></label>
+        <name>ACLS_Potential_Adverse_Event_Reported__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pre-Requisite Testing --></label>
+        <name>ACLS_Pre_Requisite_Testing__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRIOR AUTHORIZATION --></label>
+        <name>ACLS_Prior_Authorization_Status__c</name>
+        <picklistValues>
+            <masterLabel>Action Required</masterLabel>
+            <translation><!-- Action Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not applicable</masterLabel>
+            <translation><!-- Not applicable --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>ACLS_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-status --></label>
+        <name>ACLS_Sub_status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered</masterLabel>
+            <translation><!-- Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered with Restrictions</masterLabel>
+            <translation><!-- Covered with Restrictions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Level</masterLabel>
+            <translation><!-- First Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Covered</masterLabel>
+            <translation><!-- Not Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Second Level</masterLabel>
+            <translation><!-- Second Level --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Päivämäärä, jolloin tämän hoitovajeen tulisi olla suljettu.</help>
+        <label><!-- Due Date --></label>
+        <name>HealthCloudGA__DueDate__c</name>
+    </fields>
+    <fields>
+        <help>Tämän hoitovajeen sulkemisesta saadut potentiaaliset säästöt.</help>
+        <label><!-- Financial Value --></label>
+        <name>HealthCloudGA__FinancialValue__c</name>
+    </fields>
+    <fields>
+        <help>Kuinka korkealle tämä hoitovaje on lajiteltu.</help>
+        <label><!-- Sort Order --></label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <help>Lähdeagentuurin mitan tunnus tälle hoitovajeelle.</help>
+        <label><!-- Source Agency Measure ID --></label>
+        <name>HealthCloudGA__SourceAgencyMeasureID__c</name>
+    </fields>
+    <fields>
+        <help>Lähdeagentuurin tunnusmitan versio tälle hoitovajeelle.</help>
+        <label><!-- Source Agency Measure Version --></label>
+        <name>HealthCloudGA__SourceAgencyMeasureVersion__c</name>
+    </fields>
+    <fields>
+        <help>Agentuuri, joka tunnisti hoitovajeen.</help>
+        <label><!-- Source Agency --></label>
+        <name>HealthCloudGA__SourceAgency__c</name>
+    </fields>
+    <fields>
+        <help>Tietueen tunnus lähdejärjestelmässä.</help>
+        <label><!-- Source System ID --></label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <help>Milloin muokattu viimeksi.</help>
+        <label><!-- Source System Modified --></label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help>Sen järjestelmän nimi, jossa tämä hoitovaje tunnistettiin.</help>
+        <label><!-- Source System --></label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label><!-- AccountId --></label>
+        <name>PC_AccountId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ActiveApplicant --></label>
+        <name>PC_ActiveApplicant__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Address 1 --></label>
+        <name>PC_Address_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 2 --></label>
+        <name>PC_Address_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address 3 --></label>
+        <name>PC_Address_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appeal Attempt --></label>
+        <name>PC_Appeal_Attempt__c</name>
+        <picklistValues>
+            <masterLabel>1st</masterLabel>
+            <translation><!-- 1st --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st,2nd,3rd</masterLabel>
+            <translation><!-- 1st,2nd,3rd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd</masterLabel>
+            <translation><!-- 2nd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3rd</masterLabel>
+            <translation><!-- 3rd --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Appeal Available --></label>
+        <name>PC_Appeal_Available__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Appeal No. --></label>
+        <name>PC_Appeal_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval / Denial Date --></label>
+        <name>PC_Approval_Denial_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Outcome --></label>
+        <name>PC_Call_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Left Message</masterLabel>
+            <translation><!-- Left Message --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Voicemail</masterLabel>
+            <translation><!-- No Voicemail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reached</masterLabel>
+            <translation><!-- Reached --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Successful</masterLabel>
+            <translation><!-- Successful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unsuccessful</masterLabel>
+            <translation><!-- Unsuccessful --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Care Coordinator --></label>
+        <name>PC_Care_Coordinator__c</name>
+        <relationshipLabel><!-- Cases (Care Coordinator) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Caregiver Details --></label>
+        <name>PC_Caregiver_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caregiver First Name --></label>
+        <name>PC_Caregiver_First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caregiver Last Name --></label>
+        <name>PC_Caregiver_Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caregiver Relationship to Patient --></label>
+        <name>PC_Caregiver_Relationship_to_Patient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Caregiver Salutation --></label>
+        <name>PC_Caregiver_Salutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Outcome --></label>
+        <name>PC_Case_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Appeal Required</masterLabel>
+            <translation><!-- Appeal Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered</masterLabel>
+            <translation><!-- Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Covered with Restrictions</masterLabel>
+            <translation><!-- Covered with Restrictions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created in Error</masterLabel>
+            <translation><!-- Created in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discontinued</masterLabel>
+            <translation><!-- Discontinued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCP Withdrew</masterLabel>
+            <translation><!-- HCP Withdrew --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Not Received</masterLabel>
+            <translation><!-- Information Not Received --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing HCP Authorization</masterLabel>
+            <translation><!-- Missing HCP Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Insurance Details</masterLabel>
+            <translation><!-- Missing Insurance Details --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Other Information</masterLabel>
+            <translation><!-- Missing Other Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Patient Consent</masterLabel>
+            <translation><!-- Missing Patient Consent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missing Valid Prescription</masterLabel>
+            <translation><!-- Missing Valid Prescription --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Response from HCP</masterLabel>
+            <translation><!-- No Response from HCP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Covered</masterLabel>
+            <translation><!-- Not Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Off Label</masterLabel>
+            <translation><!-- Off Label --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA Required</masterLabel>
+            <translation><!-- PA Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Unreachable</masterLabel>
+            <translation><!-- Patient Unreachable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Withdrew</masterLabel>
+            <translation><!-- Patient Withdrew --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>PC_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication Language --></label>
+        <name>PC_Communication_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted to Physician --></label>
+        <name>PC_Date_PC_Submitted_to_Physician__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted to Patient --></label>
+        <name>PC_Date_Submitted_to_Patient__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Submitted to Payer --></label>
+        <name>PC_Date_Submitted_to_Payer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Denial Reason --></label>
+        <name>PC_Denial_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Benefits terminated</masterLabel>
+            <translation><!-- Benefits terminated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurer guidelines not met</masterLabel>
+            <translation><!-- Insurer guidelines not met --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Off label use</masterLabel>
+            <translation><!-- Off label use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient reached maximum benefits</masterLabel>
+            <translation><!-- Patient reached maximum benefits --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>PC_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program Name --></label>
+        <name>PC_EngagementProgramName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_Engagement_Program__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Enrollment Wizard State --></label>
+        <name>PC_EnrollmentWizardState__c</name>
+    </fields>
+    <fields>
+        <label><!-- Enrollment Date --></label>
+        <name>PC_Enrollment_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Gender --></label>
+        <name>PC_Gender__c</name>
+    </fields>
+    <fields>
+        <help><!-- Health plan using which the PA case was created --></help>
+        <label><!-- Health Plan --></label>
+        <name>PC_Health_Plan__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>PC_PA_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expires On --></label>
+        <name>PC_PA_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- PA Number --></label>
+        <name>PC_PA_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- PA Outcome --></label>
+        <name>PC_PA_Outcome__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Prescription --></label>
+        <name>PC_PA_Prescription__c</name>
+        <relationshipLabel><!-- Prescriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PA Status --></label>
+        <name>PC_PA_Status__c</name>
+        <picklistValues>
+            <masterLabel>Appeal Request</masterLabel>
+            <translation><!-- Appeal Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denied</masterLabel>
+            <translation><!-- Denied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Initiated</masterLabel>
+            <translation><!-- Initiated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PA shared with Provider</masterLabel>
+            <translation><!-- PA shared with Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Payer</masterLabel>
+            <translation><!-- Submitted to Payer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted to Provider</masterLabel>
+            <translation><!-- Submitted to Provider --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Submitted On --></label>
+        <name>PC_PA_Submitted_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient eligible for Assistance Program? --></label>
+        <name>PC_PatientEligibleforAssistanceProgram__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Date of Birth --></label>
+        <name>PC_Patient_Date_of_Birth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>PC_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Physician --></label>
+        <name>PC_Physician__c</name>
+        <relationshipLabel><!-- Physician --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Preferred Communication Channel --></label>
+        <name>PC_Preferred_Communication_Channel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Status --></label>
+        <name>PC_Previous_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Coverage --></label>
+        <name>PC_Program_Coverage__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>PC_Program_Product__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason for Withdrawal --></label>
+        <name>PC_Reason_for_Withdrawal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reimbursement Specialist --></label>
+        <name>PC_Reimbursment_Specialist__c</name>
+        <relationshipLabel><!-- Cases (Reimbursement Specialist) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Date --></label>
+        <name>PC_Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires Letter of Medical Necessity --></label>
+        <name>PC_Requires_Letter_of_Medical_Necessity__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requires Specific Form --></label>
+        <name>PC_Requires_Specific_Form__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requires Step Therapy --></label>
+        <name>PC_Requires_Step_Therapy__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Salutation --></label>
+        <name>PC_Salutation__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>PC_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- CONSENT --></label>
+        <name>PC_Status_Indicator_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- COVERAGE --></label>
+        <name>PC_Status_Indicator_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- ENGAGEMENT --></label>
+        <name>PC_Status_Indicator_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- ADHERENCE --></label>
+        <name>PC_Status_Indicator_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- LABS --></label>
+        <name>PC_Status_Indicator_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Model --></label>
+        <name>PC_Support_Model__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Treatment Start Date --></label>
+        <name>PC_Treatment_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Withdrawal Date --></label>
+        <name>PC_Withdrawal_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>PC_Zip_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- ePA Ext Id --></label>
+        <name>PC_ePA_Ext_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- ePA URL --></label>
+        <name>PC_ePA_URL__c</name>
+    </fields>
+    <recordTypes>
+        <description><!-- Defines a care gap for an individual --></description>
+        <label><!-- CareGap --></label>
+        <name>HealthCloudGA__CareGap</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Defines a care plan for an individual and their care team --></description>
+        <label><!-- CarePlan --></label>
+        <name>HealthCloudGA__CarePlan</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases where patient requires compassionate funding --></description>
+        <label><!-- Alternate Funding --></label>
+        <name>PC_Alternate_Funding</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases to manage appeals or appeals consultation --></description>
+        <label><!-- Appeal --></label>
+        <name>PC_Appeal</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases involving research to determine or verify a patient&apos;s benefits --></description>
+        <label><!-- BI / BV --></label>
+        <name>PC_Benefits_Investigation_Benefits_Verification</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases to manage requests for copay cards or funds --></description>
+        <label><!-- Copay --></label>
+        <name>PC_Copay</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases that track and manage the patient enrollment process --></description>
+        <label><!-- Enrollment --></label>
+        <name>PC_Enrollment</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases that track and manage the patient assistance program (PAP) --></description>
+        <label><!-- PAP --></label>
+        <name>PC_PAP</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for cases where a prior or special authorization is required --></description>
+        <label><!-- Prior Authorization --></label>
+        <name>PC_Prior_Authorization</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used to manage and summarize a Patient&apos;s patient support program (PSP) --></description>
+        <label><!-- Program --></label>
+        <name>PC_Program</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please enter Appeal Outcome in the Appeal Section --></errorMessage>
+        <name>ACLS_Validate_Appeal_Outcome_Status</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select appropriate Denial reason --></errorMessage>
+        <name>ACLS_Validate_DenialReason_Denied_Outcme</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Withdrawal Date is required  on Withdrawn --></errorMessage>
+        <name>PC_Validate_Withdrawn_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason for Withdrawal is required on Withdrawn --></errorMessage>
+        <name>PC_Validate_Withdrawn_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Account selected must be of the Record Type Physician --></errorMessage>
+        <name>Physician_Account_Record_Type_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Program Case on Prescription selected must match the Program Case of this Case and there should be no Active PA for the selected Prescription --></errorMessage>
+        <name>Prescription_Program_and_Active_PA_Val</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Product selected must have Engagement Program same as this Program case --></errorMessage>
+        <name>Product_Engagement_Program_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Case selected must be of the type Program --></errorMessage>
+        <name>Program_Case_Type_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Program Case on Program Coverage selected must match the Program Case of this Case and there should be no Active PA with the selected Program Coverage --></errorMessage>
+        <name>Program_Coverage_Program_ActivePA_Val</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Apply_Care_Plan_Templates --></label>
+        <name>HealthCloudGA__Apply_Care_Plan_Templates</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- UpsellCrosssellOpportunity --></label>
+        <name>UpsellCrosssellOpportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

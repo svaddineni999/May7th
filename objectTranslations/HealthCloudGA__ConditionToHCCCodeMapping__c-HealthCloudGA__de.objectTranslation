@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Zuordnung der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Zuordnungen der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Zuordnung der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Zuordnungen der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Zuordnung der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Zuordnungen der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Zuordnung der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Zuordnungen der Erkrankung zum HCC-Code</value>
+    </caseValues>
+    <fields>
+        <label>Aktiv</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Erkrankungscode</label>
+        <name>HealthCloudGA__ConditionCode__c</name>
+    </fields>
+    <fields>
+        <label>HCC-Code</label>
+        <name>HealthCloudGA__HCCCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Year in which the HCC code becomes valid. --></help>
+        <label>Gültig ab</label>
+        <name>HealthCloudGA__ValidFrom__c</name>
+    </fields>
+    <fields>
+        <help><!-- Year after which the code is no longer valid. --></help>
+        <label>Gültig bis</label>
+        <name>HealthCloudGA__ValidThrough__c</name>
+    </fields>
+    <fields>
+        <label>Jahr + Erkrankungscode + HCC-Code</label>
+        <name>HealthCloudGA__YearConditionCodeHCCCode__c</name>
+    </fields>
+    <fields>
+        <label>Jahr</label>
+        <name>HealthCloudGA__Year__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Zuordnungs-ID</nameFieldLabel>
+</CustomObjectTranslation>

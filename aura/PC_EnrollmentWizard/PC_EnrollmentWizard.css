@@ -1,0 +1,81 @@
+.THIS.wizardContainer{
+    /*margin: auto 10%;*/
+}
+.THIS .closeButton {
+    display:none;
+}
+.THIS .WHeader{
+    overflow: hidden;
+    /*position: fixed;
+    top: 3%;
+    left: 0%;
+    width:100%;
+    padding-left:10%;
+    padding-right:10%;*/
+}
+.THIS .WBody{
+   overflow: auto;
+   /*position: fixed;
+    top: 13%;
+    left: 0%;
+    height: 80%;
+    width:100%;
+    padding-left:10%;
+    padding-right:10%;
+    padding-bottom:20px;*/
+}
+.THIS .WFooter{
+    overflow: hidden;
+    /*position: fixed;
+    bottom: 0%;
+    left: 0%;
+    width:100%;
+    padding-left:10%;
+    padding-right:10%;
+    display:flex;
+    z-index:-1;
+    padding-top:0px;
+    padding-bottom:0px;*/
+}
+.THIS .WFooter .WFooterButtonsPanel_Obselete {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.THIS .blockSection {
+    padding:10px 5px;
+}
+.THIS .transition-timing {
+    transition-duration: 1.5s;
+}
+
+.THIS .WFooter .backfalse {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.THIS .WFooter .nextfalse {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.THIS .WFooter .enrollfalse {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.THIS .WFooter .savefalse {
+  opacity: 0.2;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.THIS .disableFooter {
+    pointer-events: none;
+    opacity:0.2;
+}
+.THIS .notifyContainer{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    text-align: center;
+}

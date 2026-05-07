@@ -1,0 +1,74 @@
+<!--
+ - Created by peharitha on 4/2/2019.
+ -->
+
+<aura:component description="PC_MedicalBenefitsList" implements="force:hasRecordId" controller = "PC_MedicalBenefitsListController" access="global">
+    <aura:handler name = "init" action = "{!c.doInit}" value = "{!this}"/>
+    <aura:handler event="c:PC_RefreshMedeBVListView" action="{!c.doInit}"/>
+    <aura:attribute name="caseId" type="string" default="{!v.recordId}" access="global"/>
+    <aura:attribute name="programCoverageList" type="Object[]" access="private"/>
+    <aura:attribute name="fieldLabels" type="Object" default="false" access="private"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="errors" type="List" />
+    <div>
+        <lightning:workspaceAPI aura:id="workspace" />
+        <aura:if isTrue="{!v.isLoading}">
+            <div class="pc_spinner slds-align-middle">
+                <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+            </div>
+            <aura:set attribute="else">
+                <div class="slds-modal__content slds-p-around_medium" style="{!v.programCoverageList.length == 0 ? '' : 'display:none;'}" >
+                {!$Label.c.PC_No_Records_Found}
+                    <br></br>
+                </div>
+                <div class="dataTable" id="modal-content-id-1" style="{!v.programCoverageList.length != 0 ? '' : 'display:none;'}">
+                    <table class="slds-table slds-table--fixed-layout slds-table_bordered slds-table_cell-buffer">
+                        <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">
+                                <div class="slds-truncate" title="{!v.fieldLabels.coverageNumber}">{!v.fieldLabels.coverageNumber}</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="{!v.fieldLabels.primaryCoverageStatus}">{!v.fieldLabels.primaryCoverageStatus}</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="{!v.fieldLabels.primaryProductStatus}">{!v.fieldLabels.primaryProductStatus}</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="{!v.fieldLabels.expirationDate}">{!v.fieldLabels.expirationDate}</div>
+                            </th>
+                            <th scope="col">
+                                <div class="slds-truncate" title="{!v.fieldLabels.PARequired}">{!v.fieldLabels.PARequired}</div>
+                            </th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <aura:iteration items ="{!v.programCoverageList}" var="programCoverage" indexVar="i">
+                            <tr>
+                                <td  class="slds-truncate" title="{!programCoverage.programCoverageNumber}">
+                                    <a id ="{!programCoverage.programCoverageId}" role="link" onclick="{!c.navigateToRecord}" target="_self">
+                                            {!programCoverage.programCoverageNumber}
+                                    </a>
+                                </td>
+                                <td class="slds-truncate"  title="{!programCoverage.primaryCoverageStatus}">
+                                        {!programCoverage.primaryCoverageStatus}
+                                </td>
+                                <td class="slds-truncate"  title="{!programCoverage.primaryProductStatus}">
+                                        {!programCoverage.primaryProductStatus}
+                                </td>
+                                <td class="slds-truncate"  title="{!programCoverage.expirationDate}">
+                                        {!programCoverage.expirationDate}
+                                </td>
+                                <td class="slds-truncate"  title="{!programCoverage.PARequired}">
+                                        {!programCoverage.PARequired}
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+</aura:component>

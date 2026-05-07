@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>TriggerHandlerRegister</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TriggerHandlerRegisters</value>
+    </caseValues>
+    <fields>
+        <help><!-- Check to activate --></help>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of the trigger handler class that needs to be executed when this object trigger runs. --></help>
+        <label><!-- Trigger Handler Class --></label>
+        <name>PC_ApexClass__c</name>
+    </fields>
+    <fields>
+        <help><!-- Brief description of trigger handler --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Order in which trigger handlers should be executed. For example: 1 will be executed first, 2 will be executed next. --></help>
+        <label><!-- OrderOfExecution --></label>
+        <name>PC_OrderOfExecution__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name for the object if object is not shown in sObject picklist. Ensure that sObject picklist has &apos;Other&apos; value chosen if you enter a value in this field. --></help>
+        <label><!-- Other Object --></label>
+        <name>PC_OtherObject__c</name>
+    </fields>
+    <fields>
+        <help><!-- Object for which trigger handler needs to be registered. If you don&apos;t see the object in this list, choose &apos;Other&apos; and mention API name of the object under &apos;Other Object&apos; field. --></help>
+        <label><!-- Object --></label>
+        <name>PC_sObject__c</name>
+        <picklistValues>
+            <masterLabel>Account</masterLabel>
+            <translation><!-- Account --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case</masterLabel>
+            <translation><!-- Case --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Custom Object</masterLabel>
+            <translation><!-- Custom Object --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Address__c</masterLabel>
+            <translation><!-- PC_Address__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_AdverseEvent2__c</masterLabel>
+            <translation><!-- PC_AdverseEvent2__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_AdverseEvent__c</masterLabel>
+            <translation><!-- PC_AdverseEvent__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Alert__c</masterLabel>
+            <translation><!-- PC_Alert__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Applicant__c</masterLabel>
+            <translation><!-- PC_Applicant__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Association__c</masterLabel>
+            <translation><!-- PC_Association__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Automation_Task__e</masterLabel>
+            <translation><!-- PC_Automation_Task__e --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Dispense__c</masterLabel>
+            <translation><!-- PC_Dispense__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Distributor__c</masterLabel>
+            <translation><!-- PC_Distributor__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Document_Log__c</masterLabel>
+            <translation><!-- PC_Document_Log__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Document__c</masterLabel>
+            <translation><!-- PC_Document__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Engagement_Program_Eletter__c</masterLabel>
+            <translation><!-- PC_Engagement_Program_Eletter__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Engagement_Program_Product__c</masterLabel>
+            <translation><!-- PC_Engagement_Program_Product__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Engagement_Program_Service__c</masterLabel>
+            <translation><!-- PC_Engagement_Program_Service__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Engagement_Program__c</masterLabel>
+            <translation><!-- PC_Engagement_Program__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Error_Log_Info__e</masterLabel>
+            <translation><!-- PC_Error_Log_Info__e --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Error_Log__c</masterLabel>
+            <translation><!-- PC_Error_Log__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Health_Plan__c</masterLabel>
+            <translation><!-- PC_Health_Plan__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Interaction__c</masterLabel>
+            <translation><!-- PC_Interaction__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Measurement__c</masterLabel>
+            <translation><!-- PC_Measurement__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Message__c</masterLabel>
+            <translation><!-- PC_Message__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_OcrQueue__c</masterLabel>
+            <translation><!-- PC_OcrQueue__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_OcrResponse__c</masterLabel>
+            <translation><!-- PC_OcrResponse__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_OcrResult__c</masterLabel>
+            <translation><!-- PC_OcrResult__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_OcrTemplateMapping__c</masterLabel>
+            <translation><!-- PC_OcrTemplateMapping__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Order__c</masterLabel>
+            <translation><!-- PC_Order__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Pharmacy_Referral__c</masterLabel>
+            <translation><!-- PC_Pharmacy_Referral__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Prescription__c</masterLabel>
+            <translation><!-- PC_Prescription__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Program_Coverage__c</masterLabel>
+            <translation><!-- PC_Program_Coverage__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Program_Service_Permission__c</masterLabel>
+            <translation><!-- PC_Program_Service_Permission__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_ReminderLog__c</masterLabel>
+            <translation><!-- PC_ReminderLog__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Remote_Service_Log_info__e</masterLabel>
+            <translation><!-- PC_Remote_Service_Log_info__e --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Request_Form_Service__c</masterLabel>
+            <translation><!-- PC_Request_Form_Service__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Request_Form__c</masterLabel>
+            <translation><!-- PC_Request_Form__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Service__c</masterLabel>
+            <translation><!-- PC_Service__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_SupportPlanActivityLog__c</masterLabel>
+            <translation><!-- PC_SupportPlanActivityLog__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_SupportPlanActivity__c</masterLabel>
+            <translation><!-- PC_SupportPlanActivity__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_SupportPlanInfo__e</masterLabel>
+            <translation><!-- PC_SupportPlanInfo__e --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_SupportPlanRuntime__c</masterLabel>
+            <translation><!-- PC_SupportPlanRuntime__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Support_Model__c</masterLabel>
+            <translation><!-- PC_Support_Model__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_eLetter__c</masterLabel>
+            <translation><!-- PC_eLetter__c --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Task</masterLabel>
+            <translation><!-- Task --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>User</masterLabel>
+            <translation><!-- User --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

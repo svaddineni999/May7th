@@ -1,0 +1,24 @@
+<!--
+- Created by tejapatel on 6/18/2018.
+
+Modifiction Log:
+Tejas Patel     	Jun 18 2018     Initial Version
+Kanteti Kishore     Mar  19,2020    added attributes(showTypeColumn,showOperators,includeLookUps) and done changes for controlling the functionalities.
+Tushar Arora        Apr 21,2020     added isSupportPlanRuleInformation attribute for showing is null and is not null in Rule Information conditional builder.
+Tushar Arora        Apr 22,2020     [PC-6210]added namespaceprefix along with PC_Operators__c field of PC_SupportPlanActivity__c in helper class for fetching operators.
+Kanteti Kishore     Apr 24,2020     CSS changes for the conditional builder component
+Tushar Arora        Apr 24,2020     [PC-6222] Added greater than and less than operators for numeric fields such as currency, percent and number.
+Tushar Arora        May 08,2020     [PC-6252] stopped refreshing of page when we click on 'X' icon of Field selection popup in Conditional Builder.
+Tushar Arora        Jun 08,2020     [PC-6333] Added is null and is not null operators for support plan activity conditional builder.
+Kanteti Kishore     Jun 16,2020     [PC-6143] Added label11 -Mandatory Fields Indicator.
+Tushar Arora        Jun 16,2020     [PC-6340] Fixed issue for Support Plan UI misaligned for date fields.
+Kanteti Kishore     Jun 26,2020     [PC-6450] Added Null value to Lookup field picklist values.
+Kanteti Kishore     July 6 2020     [PC-6516] Modified logics to have a bounded value for picklist fields.
+Kanteti Kishore     July 20,2020    [PC-6452] Modified UI to hide bounded value for picklist fields in updateTriggerRecord Context and
+                                                to show object label in field picker appropriately.
+Kanteti Kishore     Aug 24 2020     [PC-6691] Point 5 -Modified logic to remove ability to update same value in trigger record updation.
+-->
+<aura:component description="PC_Conditional_Builder" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="PC_Conditional_Bldr_Controller">
+    <!-- Component is deprecated. Currently we are using PC_PropertiesAndConditionsBuilder as it is enhanced
+    according to new requirements.-->
+</aura:component>

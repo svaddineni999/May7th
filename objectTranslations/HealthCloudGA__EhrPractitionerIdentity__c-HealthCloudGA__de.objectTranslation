@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Arztidentität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Arztidentitäten laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Arztidentität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Arztidentitäten laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Arztidentität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Arztidentitäten laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Arztidentität laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Arztidentitäten laut EGA</value>
+    </caseValues>
+    <fields>
+        <label>Beschreibung</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>EGA Arzt</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>Arztidentitäten</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ist eingeschränkt</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Wird auf Patientenkarte angezeigt</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Organisation</label>
+        <name>HealthCloudGA__Organization__c</name>
+    </fields>
+    <fields>
+        <label>Zeitraum Enddatum</label>
+        <name>HealthCloudGA__PeriodEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Zeitraum Startdatum</label>
+        <name>HealthCloudGA__PeriodStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>System</label>
+        <name>HealthCloudGA__System__c</name>
+    </fields>
+    <fields>
+        <label>Typ Code</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Typ Bezeichnung</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Typ System</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Verwendung</label>
+        <name>HealthCloudGA__Use__c</name>
+    </fields>
+    <fields>
+        <label>Wert</label>
+        <name>HealthCloudGA__Value__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>EGA Arztidentität Name</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,267 @@
+<!--
+*************************************************************************************
+Component Name     : PC_PropertiesAndConditionsBuilder
+Description         : This component is used for support plan object conditions and properties.
+CreatedBy           : Deloitte
+Created Date        : 30 Sept 2020
+Modification Log    :
+*****************************************************************************************************
+Developer                   Date                   Description
+********************************************************************************************
+Kanteti Kishore            30 Sept 2020           Initial version[PC-6144]
+Kanteti Kishore            15 Oct 2020            PC-6813 Added Custom Logic feature for conditional builder in Support plan.
+Kanteti Kishore            1 Nov  2020            PC-6825 Done changes for Date and Datetime formula in properties builder.
+Kanteti Kishore            13 Apr 2021           [PC-7009] Added isDeleteAllowed, done changes to support property builder for User Task Activities
+Kanteti Kishore            29 Jul 2021           [PC-8006] Modified Custom Logic Helptext.
+*****************************************************************************************
+-->
+
+<aura:component description="PC_PropertiesAndConditionsBuilder" controller="PC_PropertiesAndConditionsBuilder"
+                implements="flexipage:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="namespace" type="String" default="" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" default="" access="private"/>
+    <aura:attribute name="objectName" type="String" access="public"/>
+    <aura:attribute name="operatorConstants" type="Object" access="public"/>
+    <aura:attribute name="allConditionsOrProperties" type="List" default="[]" access="public"/>
+    <aura:attribute name="fetchedConditionsOrProperties" type="List" default="[]" access="public"/>
+    <aura:attribute name="defaultOperators" type="List" access="public"/>
+    <aura:attribute name="fieldTypeOperatorsMap" type="Map" access="public"/>
+    <aura:attribute name="objectFields" type="Object" access="public"/>
+    <aura:attribute name="allFieldsList" type="List" access="public"/>
+    <aura:attribute name="showTypeColumn" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="showValueColumn" type="Boolean" default="true" access="public"/>
+    <aura:attribute name="showValueChangeToColumn" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="isSupportPlanTriggerEventConditions" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="objectLabel" type="String" default="" access="public"/>
+    <aura:attribute name="triggerObjectName" type="String" default="" access="public"/>
+    <aura:attribute name="triggerObjectLabel" type="String" default="" access="public"/>
+    <aura:attribute name="booleanValues" type="List" access="public"/>
+    <aura:attribute name="updateContext" type="String" default="" access="public"/>
+    <aura:attribute name="builderContext" type="String" access="public"/>
+    <aura:attribute name="objectType" type="String" default="Data Object" access="public"/>
+    <aura:attribute name="boxBorderRequired" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="isDisabled" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="showOperator" type="Boolean" default="true" access="public"/>
+    <aura:attribute name="conditionOptions" type="List" access="private"/>
+    <aura:attribute name="conditionsRequired" type="Boolean" default="true" access="public"/>
+    <aura:attribute name="isUpdateConditionalBuilder" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="conditionValue" type="String" default="AND" access="private"/>
+    <aura:attribute name="conditionsCustomLogic" type="String" default="" access="private"/>
+    <aura:attribute name="isCustomLogicValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="serverSideCustomLogicValid" type="Boolean" default="true" access="private"/>
+    <aura:attribute name="showDeleteOptionInFirstRow" type="Boolean" default="false" access="public"/>
+    <aura:attribute name="selectedTriggerEventType" type="String" default=""  access="public"/>
+    <aura:attribute name="recordValue" type="String" access="public"/>
+
+    <aura:attribute name="fieldInputColumnLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Field}"
+                    access="private"/>
+    <aura:attribute name="operatorColumnLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Operator}"
+                    access="private"/>
+    <aura:attribute name="valueColumnLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Value}"
+                    access="private"/>
+    <aura:attribute name="toValueColumnLabel" type="String"
+                    default="{!$Label.c.PC_Cond_Conditional_Builder_ChangeToValue}" access="private"/>
+    <aura:attribute name="fromValueColumnLabel" type="String"
+                    default="{!$Label.c.PC_Cond_Conditional_Builder_ChangeFromValue}" access="private"/>
+    <aura:attribute name="conditionsLabel" type="String" access="private"
+                    default="{!$Label.c.PC_Cond_Conditional_Builder_Conditions}"/>
+    <aura:attribute name="addRow" type="String" default="{!$Label.c.PC_Add_Row}" access="private"/>
+    <aura:attribute name="customLogicHelptext" type="String" default="{!$Label.c.PC_Condition_CustomLogicHelptext}"
+                    access="private"/>
+    <aura:attribute name="ensureSpacesHelptext" type="String" default="{!$Label.c.PC_CustomLogicHelptext}"
+                    access="private"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="deleteLabel" type="String" default="{!$Label.c.PC_Delete}" access="private"/>
+    <aura:attribute name="loadingLabel" type="String" default="{!$Label.c.PC_Loading}" access="private"/>
+    <aura:attribute name="errorLabel" type="String" default="{!$Label.c.PC_Error}" access="private"/>
+    <aura:attribute name="successLabel" type="String" default="{!$Label.c.PC_Success}" access="private"/>
+    <aura:attribute name="validateLabel" type="String" default="{!$Label.c.PC_Validate}" access="private"/>
+    <aura:attribute name="validateMessage" type="String" default="{!$Label.c.PC_ValidateMessage}" access="private"/>
+    <aura:attribute name="mandatoryRowInfo" type="String" default="{!$Label.c.PC_UserTask_Prop_Info}" access="private"/>
+    <aura:attribute name="allConditionsNotCovered" type="String"
+                    default="{!$Label.c.PC_CustomLogic_AllConditionsNotCovered}" access="private"/>
+    <aura:attribute name="conditionNotFound" type="String" default="{!$Label.c.PC_CustomLogic_ConditionNotFound}"
+                    access="private"/>
+    <aura:attribute name="unexpectedIdentifier" type="String" default="{!$Label.c.PC_CustomLogic_UnexpectedIdentifiers}"
+                    access="private"/>
+    <aura:attribute name="conditionBetweenOrAnd" type="String"
+                    default="{!$Label.c.PC_CustomLogic_ConditionBetweenOrAnd}" access="private"/>
+    <aura:attribute name="conditionBetweenAndOr" type="String"
+                    default="{!$Label.c.PC_CustomLogic_ConditionBetweenAndOr}" access="private"/>
+    <aura:attribute name="noteLabel" type="String"
+                    default="{!$Label.c.PC_Note}" access="private"/>
+    <aura:attribute name="fromValueIgnoredMessage" type="String"
+                    default="{!$Label.c.PC_SupportPlan_FromValueIgnored2}" access="private"/>
+    <aura:attribute name="hasNotChangedTrueMessage" type="String"
+                    default="{!$Label.c.PC_SupportPlan_HasNotChangedIsTrue2}" access="private"/>
+    <aura:attribute name="useOrAndCondition" type="String" default="{!$Label.c.PC_CustomLogic_UseOrAndCondition}"
+                    access="private"/>
+    <aura:attribute name="customLogicErrorMessage" type="String"
+                    default="{!$Label.c.PC_SupportPlan_CustomLogicErrorMessage}" access="private"/>
+    <aura:attribute name="addNewConditionsLabel" type="String"
+                    default="{!$Label.c.PC_SupportPlan_AddNewConditions}" access="private"/>
+    <aura:attribute name="setFieldsLabel" type="String"
+                    default="{!$Label.c.PC_SupportPlan_SetFields}" access="private"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:method name="getBuilderJSONToSave" action="{!c.getBuilderJSONToSave}"
+                 description="Builder Final JSON" access="public"></aura:method>
+    <aura:method name="initializeComponent" action="{!c.doInit}" description="Initialize Component"></aura:method>
+    <aura:handler name="propertyOrConditionRow" event="c:PC_PropertiesOrConditionsRow"
+                  action="{!c.handleComponentEvent}"/>
+    <lightning:spinner aura:id="builderSpinner" class="slds-hide" variant="brand" alternativeText="{!v.loadingLabel}"/>
+    <div class="{!v.boxBorderRequired ? 'builderBox':''}">
+        <aura:if isTrue="{!v.allConditionsOrProperties.length > 0}">
+            <div class="slds-grid slds-m-top_small">
+                <div class="{!v.isSupportPlanTriggerEventConditions ? 'slds-size_3-of-12 slds-p-left_x-large' : 'slds-size_4-of-12 slds-p-left_xx-large' }">
+                    <aura:if isTrue="{!v.conditionsRequired}">
+                        <span class="redColor">*</span>
+                    </aura:if>
+                    <label>{!v.fieldInputColumnLabel}</label>
+                </div>
+                <aura:if isTrue="{!v.showOperator}">
+                    <div class="{!v.isSupportPlanTriggerEventConditions ?  'slds-size_3-of-12 slds-p-left_large' : 'slds-size_3-of-12 slds-p-left_xx-large'}">
+                        <label>{!v.operatorColumnLabel}</label>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showValueColumn}">
+                    <div class="{!v.isSupportPlanTriggerEventConditions ? 'slds-size_3-of-12 slds-p-left_large' : 'slds-size_3-of-12 slds-p-left_xx-large' }">
+                        <aura:if isTrue="{!v.conditionsRequired}">
+                            <span class="redColor">*</span>
+                        </aura:if>
+                        <aura:if isTrue="{!not(v.showValueChangeToColumn)}">
+                            <label>{!v.valueColumnLabel}</label>
+                            <aura:set attribute="else">
+                                <label>{!v.fromValueColumnLabel}</label>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+                <aura:if isTrue="{!v.showValueChangeToColumn}">
+                    <div class="slds-size_3-of-12 slds-p-left_medium">
+                        <aura:if isTrue="{!v.conditionsRequired}">
+                            <span class="redColor">*</span>
+                        </aura:if>
+                        <label>{!v.toValueColumnLabel}</label>
+                    </div>
+                </aura:if>
+            </div>
+        </aura:if>
+        <aura:iteration var="row" items="{!v.allConditionsOrProperties}" indexVar="eachRowIndex">
+            <div class="{!v.isSupportPlanTriggerEventConditions ? 'slds-grid eachRowStyle' : 'slds-grid slds-m-left_xx-small eachRowStyle'}">
+                <c:PC_PropertyOrConditionRow aura:id="eachRowComponent" row="{!row}"
+                                             allFieldsList="{!v.allFieldsList}"
+                                             rowIndex="{!eachRowIndex}"
+                                             objectFields="{!v.objectFields}"
+                                             builderContext="{!v.builderContext}"
+                                             isSupportPlanTriggerEventConditions="{!v.isSupportPlanTriggerEventConditions}"
+                                             showOperator="{!v.showOperator}"
+                                             updateContext="{!v.updateContext}"
+                                             triggerObjectLabel="{!v.triggerObjectLabel}"
+                                             triggerObjectName = "{!v.triggerObjectName}"
+                                             booleanValues="{!v.booleanValues}"
+                                             defaultOperators="{!v.defaultOperators}"
+                                             fieldTypeOperatorsMap="{!v.fieldTypeOperatorsMap}"
+                                             objectName="{!v.objectName}"
+                                             objectLabel="{!v.objectLabel}"
+                                             conditionsRequired="{!v.conditionsRequired}"
+                                             isDisabled="{!v.isDisabled}"
+                                             objectType="{!v.objectType}"/>
+                <aura:if isTrue="{!and(not(v.isDisabled),or(v.showDeleteOptionInFirstRow,v.allConditionsOrProperties.length > 1))}">
+                    <div class="slds-p-left_x-small deleteMargin">
+                        <aura:if isTrue="{!row.isDeleteAllowed}">
+                        <lightning:buttonIcon iconName="utility:close" variant="bare" onclick="{!c.removeRow}"
+                                              alternativeText="{!v.deleteLabel}"
+                                              value="{!eachRowIndex}"/>
+                            <aura:set attribute="else">
+                                <lightning:icon iconName="utility:info" size="xx-small" alternativeText="{!v.mandatoryRowInfo}" title="{!v.mandatoryRowInfo}"/>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+                </aura:if>
+            </div>
+        </aura:iteration>
+        <aura:if isTrue="{!(!v.isDisabled)}">
+            <div class="{!v.allConditionsOrProperties.length ==0 ? 'addRow slds-size_1-of-5' : 'slds-m-left_small slds-m-bottom_small addRow slds-size_1-of-5'}"
+                 onclick="{!c.createNewRow}">
+                <lightning:icon iconName="utility:add" size="x-small"/>
+                <aura:if isTrue="{!v.allConditionsOrProperties.length ==0}">
+                    <aura:if isTrue="{!v.builderContext == 'ConditionalBuilder'}">
+                        <span>{!v.addNewConditionsLabel}</span>
+                    <aura:set attribute="else">
+                        <span>{!v.setFieldsLabel}</span>
+                    </aura:set>
+                    </aura:if>
+                    <aura:set attribute="else">
+                        <span>{!v.addRow}</span>
+                    </aura:set>
+                </aura:if>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.allConditionsOrProperties.length > 1,v.showOperator)}">
+            <div class="slds-p-bottom_small slds-m-left_small">
+                <lightning:radioGroup aura:id="conditionsGroup"
+                                      label="{!v.conditionsLabel + ':'}"
+                                      options="{!v.conditionOptions}"
+                                      onchange="{!c.onChangeConditionOption}"
+                                      value="{!v.conditionValue}"
+                                      disabled="{!v.isDisabled}"
+                                      type="radio"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.allConditionsOrProperties.length > 1,v.conditionValue == 'PC_CustomLogic')}">
+            <div class="slds-grid">
+                <div class="slds-m-bottom_small slds-size_5-of-12 slds-m-left_small customLogicTopMargin">
+                    <lightning:input disabled="{!v.isDisabled}" required="true" aura:id="customLogic" label=""
+                                     type="text"
+                                     value="{!v.conditionsCustomLogic}" onchange="{!c.validateConditionLogic}"/>
+                </div>
+                <div class="slds-size_1-of-12 slds-p-left_xx-small">
+                    <lightning:helptext content="{!join(' ',v.customLogicHelptext,v.ensureSpacesHelptext)}"/>
+                </div>
+                <div class="slds-size_6-of-12 slds-p-left_small validateTopMargin">
+                <aura:if isTrue="{!and(not(empty(v.conditionsCustomLogic)),not(v.serverSideCustomLogicValid))}">
+                    <lightning:button onclick="{!c.validateServerSideLogic}"
+                                          disabled="{!(v.isDisabled || v.serverSideCustomLogicValid)}"
+                                          label="{!v.validateLabel}" variant="brand"/>
+                    <aura:set attribute="else">
+                        <aura:if isTrue="{!not(empty(v.conditionsCustomLogic))}">
+                            <span class="successTopMargin">
+                                <lightning:icon iconName="utility:success"
+                                        alternativeText="{!v.successLabel}"
+                                        variant="Success"
+                                        size="small"
+                                        title="{!v.successLabel}"/>
+                            </span>
+                        </aura:if>
+                    </aura:set>
+                </aura:if>
+                <aura:if isTrue="{!and(not(v.serverSideCustomLogicValid),not(empty(v.conditionsCustomLogic)))}">
+                    <div class="slds-m-top_xxx-small">
+                        <lightning:icon iconName="utility:error"
+                                        alternativeText="{!v.errorLabel}"
+                                        variant="error"
+                                        title="{!v.errorLabel}"
+                                        size="xx-small"/>
+                        <span class="smallFont slds-m-left_xx-small">
+                                {!v.validateMessage}
+                        </span>
+                    </div>
+                </aura:if>
+                </div>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.isSupportPlanTriggerEventConditions,and(v.selectedTriggerEventType != 'Update',v.allConditionsOrProperties.length > 0))}">
+            <div>
+                <lightning:icon class="slds-m-left_xx-small" size="xx-small" title="warning" variant="warning" iconName="utility:warning"/>
+                <span class="slds-p-left_x-small warningStyle">{!v.noteLabel}</span>
+                <ul>
+                    <li class="slds-list_dotted slds-p-left_xx-small warningStyle">{!v.fromValueIgnoredMessage}</li>
+                    <li class="slds-list_dotted slds-p-left_xx-small warningStyle">{!v.hasNotChangedTrueMessage}</li>
+                </ul>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

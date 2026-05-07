@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global">
+	<aura:attribute name="label" type="String" default=""/> 
+    <aura:attribute name="value" type="String" default=""/> 
+    <div>
+    <div class="label">
+            <span class="itemLabel truncate">{!v.label}</span>
+    </div>
+    <div class="value">
+                <span class="uiOutputText" data-aura-class="uiOutputText">{!v.value}</span>
+    </div>
+   	</div>
+</aura:component>

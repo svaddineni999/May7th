@@ -1,0 +1,161 @@
+<!--
+Lightning component  : PC_ActionCenter 
+Description          : Component for Action Center 
+
+Modification Log:
+Mayuresh Patil 	      2-Aug-2017   	Initial version
+Tejas Patel           14-Sept-2017 	[PC-2168] [PC-2230] UI change and Removing Bread Crumbs for Modal pop-up
+Prachi Nandgaonkar    14-Sept-2017 	[PC-2186] Log a Call communication workflow
+Tejas Patel			  21-Sept-2017 	[PC-2202] Fetching the Record Type for task dynamically
+Shabda Bhujad		  02-Oct-17	   	[PC-2336] Added a flag to indicate if metadata settings exist for the selected case recordtype
+Tejas Patel			  10-Oct-2017 	[PC-2325] Translation
+Vijay Kashikar        27-May-18     [PC-3183] Provisioned for reading component attributes
+Tejas Patel           20-Jul-18     Fixed the issue for Namespace by making it mandatory and displaying a warning
+Satheesh Kumar        29-Jul-20     [PC-6618] Added error handling to action component attribute parsing
+Satheesh Kumar        09-Sep-20     [PC-6746] Added logic to fix the case action center label translation issue
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" controller="PC_ActionCenterLightningController">
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:handler name="actionPanel" event="c:PC_ActionPanel" action="{!c.handelActionPanel}" />
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="communicationsMetadata" type="Object[]"/>
+    <aura:attribute name="workflowMetadata" type="Object[]"/>
+    <aura:attribute name="toolsMetadata" type="Object[]"/>
+    <aura:attribute name="caseDetails" type="Object[]"/>
+    <aura:attribute name="taskRecordTypes" type="Object[]"/>
+    <aura:attribute name="actionComponentLabel" type="String" default="NULL"/>
+    <aura:attribute name="actionCenterConfigExists" type="Boolean" default="FALSE"/>
+    <aura:attribute name="patientCoverageId" type="String" default="a0Hf4000000mTTLEA2"/>
+    <aura:attribute name="recTypeId" type="Id" default='012f4000000laYWAAY'/>
+    <aura:attribute name="num1" type="Integer" default='0'/>
+    <aura:attribute name="num2" type="Integer" default='1'/>
+    <aura:attribute name="warning" type="String" default="{!$Label.c.PC_Warning}"/>
+    <aura:attribute name="warningMsg" type="String" default="{!$Label.c.PC_Namespace_Warning}"/>
+    <aura:attribute name="actionComponentAttributesError" type="String" default="{!$Label.c.PC_ActionComponentAttributesError}" access="private"/>
+    
+    <aura:attribute name="metadataDiv_C_1" type="Aura.Component[]"/>
+    <aura:attribute name="metadataDiv_C_2" type="Aura.Component[]"/>
+    <aura:attribute name="metadataDiv_C_3" type="Aura.Component[]"/>
+
+    <aura:attribute name="metadataDiv_W_1" type="Aura.Component[]"/>
+    <aura:attribute name="metadataDiv_W_2" type="Aura.Component[]"/>
+    <aura:attribute name="metadataDiv_W_3" type="Aura.Component[]"/>
+
+    <aura:attribute name="metadataDiv_T_1" type="Aura.Component[]"/>
+    <aura:attribute name="metadataDiv_T_2" type="Aura.Component[]"/>
+    <aura:attribute name="metadataDiv_T_3" type="Aura.Component[]"/>
+    
+    <!--    <aura:attribute name="noOfItemsInARow" type="Integer" access="PUBLIC" default="3" />
+    <aura:attribute name="lightningForm_noOfRows" type="Integer" access="PRIVATE"/>
+-->
+    
+    <aura:attribute name="actionType1_Label" type="String" access="PRIVATE" default="{!$Label.c.PC_Communication}"/>
+    <aura:attribute name="actionType2_Label" type="String" access="PRIVATE" default="{!$Label.c.PC_Workflow}"/>
+    <aura:attribute name="actionType3_Label" type="String" access="PRIVATE" default="{!$Label.c.PC_Tools}"/>
+    
+    <!--
+    <aura:attribute name="actionType1_Rows" type="Integer[]" access="PRIVATE" description="Starts with 0" default="[0,1]"/>
+    <aura:attribute name="actionType2_Rows" type="Integer[]" access="PRIVATE" description="Starts with 0" default="[0,1]"/>
+    <aura:attribute name="actionType3_Rows" type="Integer[]" access="PRIVATE" description="Starts with 0" default="[0,1]"/>
+
+    <aura:attribute name="actionType1_Columns" type="Integer[]" access="PRIVATE" description="Starts with 0" default="[0,1]"/>
+    <aura:attribute name="actionType2_Columns" type="Integer[]" access="PRIVATE" description="Starts with 0" default="[0,1]"/>
+    <aura:attribute name="actionType3_Columns" type="Integer[]" access="PRIVATE" description="Starts with 0" default="[0,1]"/>
+    <aura:attribute name="iconLabel" type="string" default="Patient Coverage"/>
+-->
+    <aura:attribute name="actionPanel" type="Boolean" default="false"/>
+    <aura:attribute name="actionTypeMap" type="Map" default="{ 1: 'communicationsMetadata', 2: 'workflowMetadata', 3: 'toolsMetadata'}" access="private"/>
+
+    <div>
+        <aura:if isTrue="{!v.actionCenterConfigExists}">
+            <div>
+                <nav role="navigation" aria-label="Breadcrumbs">
+                    <ol class="slds-breadcrumb slds-list_horizontal slds-wrap margin">
+                        <li class="slds-breadcrumb__item slds-text-title_caps"><a href="javascript:void(0);" onclick="{!c.actionPanel}">{!$Label.c.PC_Action_Center}</a></li>
+                        <aura:if isTrue="{!v.actionPanel}">
+                            <li class="slds-breadcrumb__item slds-text-title_caps"><a href="javascript:void(0);">{!v.actionComponentLabel}</a></li>
+                        </aura:if>
+                    </ol>
+                </nav>
+                <aura:if isTrue="{!v.actionPanel}">
+                    <div>
+                        {!v.body}
+                    </div>
+                    <aura:set attribute="else">
+                        <div class="slds-card slds-p-around_x-small">
+                            <div class="slds-card__body slds-grid slds-wrap slds-grid_pull-padded-medium">
+                                <div class="slds-col slds-container slds-size_1-of-3 slds-p-horizontal_medium slds-small-size_1-of-1 slds-medium-size_1-of-3">
+                                    <!--Communications-->
+                                    <div class="slds-text-heading_medium slds-text-align_center slds-border_bottom actionTitle">{!v.actionType1_Label}</div>
+                                    <div class="slds-grid slds-wrap slds-p-top_x-small" id="parentDivId">
+                                        <!--Column 1-->
+                                        <div class="slds-col slds-size--1-of-3" aura:id="commMetadataDiv1x">
+											{!v.metadataDiv_C_1}
+                                        </div>
+
+                                        <!--Column 2-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="commMetadataDiv2x">
+											{!v.metadataDiv_C_2}
+                                        </div>
+
+                                        <!--Column 3-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="commMetadataDiv3x">
+											{!v.metadataDiv_C_3}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Workflows-->
+                                <div class="slds-col slds-container slds-size_1-of-3 slds-p-horizontal_medium slds-small-size_1-of-1 slds-medium-size_1-of-3">
+                                    <div class="slds-text-heading_medium slds-text-align_center slds-border_bottom actionTitle">{!v.actionType2_Label}</div>
+                                    <div class="slds-grid slds-wrap slds-p-top_x-small">
+                                        <!--Column 1-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="workflowMetadataDiv1x">
+                                            {!v.metadataDiv_W_1}
+                                        </div>
+
+                                        <!--Column 2-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="workflowMetadataDiv2x">
+                                            {!v.metadataDiv_W_2}
+                                        </div>
+
+                                        <!--Column 3-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="workflowMetadataDiv3x">
+                                             {!v.metadataDiv_W_3}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--Tools-->
+                                <div class="slds-col slds-container slds-size_1-of-3 slds-p-horizontal_medium slds-small-size_1-of-1 slds-medium-size_1-of-3">
+                                    <div class="slds-text-heading_medium slds-text-align_center slds-border_bottom actionTitle">{!v.actionType3_Label}</div>
+                                    <div class="slds-grid slds-wrap slds-p-top_x-small">
+                                        <!--Column 1-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="toolsMetadataDiv1x">
+                                           {!v.metadataDiv_T_1}
+                                        </div>
+
+                                        <!--Column 2-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="toolsMetadataDiv2x">
+                                             {!v.metadataDiv_T_2}
+                                        </div>
+
+                                        <!--Column 3-->
+                                        <div class="slds-col  slds-size--1-of-3" aura:id="toolsMetadataDiv3x">
+                                            {!v.metadataDiv_T_3}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:set>
+                </aura:if>
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

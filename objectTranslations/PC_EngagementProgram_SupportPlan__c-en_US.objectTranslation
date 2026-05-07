@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Engagement Program Support Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Engagement Program Support Plans</value>
+    </caseValues>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_EngagementProgram__c</name>
+        <relationshipLabel><!-- Engagement Program Support Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Support Plan --></label>
+        <name>PC_SupportPlan__c</name>
+        <relationshipLabel><!-- Engagement Program Support Plans --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

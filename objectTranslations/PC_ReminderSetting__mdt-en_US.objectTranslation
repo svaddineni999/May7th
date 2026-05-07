@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Reminder Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Reminder Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- Keep it selected to ensure that this setting is considered while processing the reminder queue records. --></help>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- User field API Name. The user will be assigned with the Notification/Task. If left blank, Notification/Task will be assigned to the user who runs the Reminder Service Batch Job. --></help>
+        <label><!-- Assign Notification Field API Name --></label>
+        <name>PC_AssignNotificationFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, tasks will be created when reminder queue processing fails. --></help>
+        <label><!-- Create Tasks on Failure --></label>
+        <name>PC_CreateTasksOnFailure__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description of Reminder Setting. --></help>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date / Date-Time field API name on the configured object which holds the due date. Along with the offset, this field decides when a reminder is sent. --></help>
+        <label><!-- Due Date Field API Name --></label>
+        <name>PC_DueDate_FieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference of Days/Hours for stop processing reminder queues. --></help>
+        <label><!-- End Date Offset Reference --></label>
+        <name>PC_EndDateOffsetReference__c</name>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Offset type is for calculating whether reminder needs to be stop processed before the due date or after the due date. --></help>
+        <label><!-- End Date Offset Type --></label>
+        <name>PC_EndDateOffsetType__c</name>
+        <picklistValues>
+            <masterLabel>After</masterLabel>
+            <translation><!-- After --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Before</masterLabel>
+            <translation><!-- Before --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Number of Days/Hours to be considered to stop processing reminders from Due Date. --></help>
+        <label><!-- End Date Offset --></label>
+        <name>PC_EndDateOffset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the maximum number of reminders that are to be sent to recipient. --></help>
+        <label><!-- Maximum Number of Reminders to be Sent --></label>
+        <name>PC_MaximumRemindersToBeSent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Minimum Interval Between Successive Reminders in Hours. --></help>
+        <label><!-- Min Interval b/w Successive Reminders(H) --></label>
+        <name>PC_MinimumIntervalReminders__c</name>
+    </fields>
+    <fields>
+        <help><!-- The namespace of the object. --></help>
+        <label><!-- Object Namespace --></label>
+        <name>PC_ObjectNamespace__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of the object on which you are configuring the reminder settings. The records of this object will be considered for sending reminders. --></help>
+        <label><!-- Object API Name --></label>
+        <name>PC_Object_ReminderService__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fill this value only if channel is other. --></help>
+        <label><!-- Other Channel Name --></label>
+        <name>PC_OtherChannelName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Fill this value only if template type is other. --></help>
+        <label><!-- Other Template Type --></label>
+        <name>PC_OtherTemplateType__c</name>
+    </fields>
+    <fields>
+        <help><!-- API name of the lookup field on which record the outcome(mostly failed) task/notification will be created after the reminder is sent. If left blank, the outcome task will be created on the given object record. Prerequisite - Enable Allow Activities checkbox on Object. --></help>
+        <label><!-- Parent Look-up Field API Name --></label>
+        <name>PC_ParentFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Field API Name of the recipient who receives the reminder. Ex:- Email field API name on Case/Account Object or Phone field API Name on Account/Contact Object. --></help>
+        <label><!-- Recipient Field API Name --></label>
+        <name>PC_RecipientFieldName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Retrieves Recipients using the specified class. Class must implement the interface PatientConnect.PC_ReminderQueue.RecipientFinder. Use this when a recipient cannot be obtained directly using Recipient Field API Name or more than one recipient needs to be retrieved. --></help>
+        <label><!-- Recipient(s) Source Class --></label>
+        <name>PC_RecipientSourceClass__c</name>
+    </fields>
+    <fields>
+        <help><!-- Recipients will be retrieved while creating reminder queue based on the selection of this field. If Recipient Field API Name is chosen then the Recipient will be retrieved using Field API Name. Otherwise, Recipient
+(s) Source Class will be executed to get recipients. --></help>
+        <label><!-- Recipient(s) Source --></label>
+        <name>PC_RecipientSource__c</name>
+        <picklistValues>
+            <masterLabel>Recipient Field API Name</masterLabel>
+            <translation><!-- Recipient Field API Name --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recipient(s) Source Class</masterLabel>
+            <translation><!-- Recipient(s) Source Class --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Channel through which the reminders will be sent. --></help>
+        <label><!-- Channel --></label>
+        <name>PC_ReminderChannel__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SMS</masterLabel>
+            <translation><!-- SMS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If checked, Notifications/Tasks will be created on Activity Timeline. --></help>
+        <label><!-- Show Successful Reminders Notification --></label>
+        <name>PC_ShowSuccessfulRemindersNotifications__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference of Days/Hours for Due Date Calculation to start processing reminder queues --></help>
+        <label><!-- Start Date Offset Reference --></label>
+        <name>PC_StartDateOffsetReference__c</name>
+        <picklistValues>
+            <masterLabel>Days</masterLabel>
+            <translation><!-- Days --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hours</masterLabel>
+            <translation><!-- Hours --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Offset type is for calculating whether reminder needs to be processed before the due date or after the due date. --></help>
+        <label><!-- Start Date Offset Type --></label>
+        <name>PC_StartDateOffsetType__c</name>
+        <picklistValues>
+            <masterLabel>After</masterLabel>
+            <translation><!-- After --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Before</masterLabel>
+            <translation><!-- Before --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Number of Days/Hours to be considered to start processing reminders from Due Date. --></help>
+        <label><!-- Start Date Offset --></label>
+        <name>PC_StartDateOffset__c</name>
+    </fields>
+    <fields>
+        <help><!-- Template to be used while sending reminder to recipients. --></help>
+        <label><!-- Template Name --></label>
+        <name>PC_TemplateName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Set the template type based on the type of template being used for sending reminders. --></help>
+        <label><!-- Template Type --></label>
+        <name>PC_TemplateType__c</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salesforce Templates</masterLabel>
+            <translation><!-- Salesforce Templates --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

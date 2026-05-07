@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>PC_OrderPageContainer</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <content>PC_OrderPageContainer</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>PC_OrderManagement</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fieldSets>
+        <fullName>PC_OrderDetails</fullName>
+        <description>Used to display fields</description>
+        <displayedFields>
+            <field>PC_ProgramCase__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_Prescription__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_OrderStatus__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_OrderType__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_OrderInstructions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_SubmittedDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_ShipmentTrackingNumber__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Order Details</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>PC_OrderShipment</fullName>
+        <description>Used to display Shipment Details</description>
+        <displayedFields>
+            <field>PC_ShipTo__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_ShipTo2__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_ShippingDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_PreferredDeliveryDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_PreferredDeliveryWindow__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_DeliveryDayRun__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_EstimatedDeliveryDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_ActualDeliveryDate__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>PC_ReceivedBy__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Order Shipment</label>
+    </fieldSets>
+    <fields>
+        <fullName>ACLS_Engagement_Program_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Engagement Program Code</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ActualDeliveryDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order was delivered.</description>
+        <inlineHelpText>Date when the order was delivered.</inlineHelpText>
+        <label>Actual Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_DeliveryDayRun__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time period when the order delivery would be done.</description>
+        <inlineHelpText>Time period when the order delivery would be done.</inlineHelpText>
+        <label>Delivery Day Run</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Same Day Delivery</fullName>
+                    <default>false</default>
+                    <label>Same Day Delivery</label>
+                </value>
+                <value>
+                    <fullName>2 Day Delivery</fullName>
+                    <default>false</default>
+                    <label>2 Day Delivery</label>
+                </value>
+                <value>
+                    <fullName>Weekend Delivery</fullName>
+                    <default>false</default>
+                    <label>Weekend Delivery</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EstimatedDeliveryDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order is expected to deliver.</description>
+        <inlineHelpText>Date when the order is expected to deliver.</inlineHelpText>
+        <label>Estimated Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_OrderAddress1__c</fullName>
+        <deprecated>false</deprecated>
+        <description>First line of the primary address of ‘Ship To’ Account.</description>
+        <inlineHelpText>First line of the primary address of ‘Ship To’ Account.</inlineHelpText>
+        <label>Address 1</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_OrderAddress2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Second line of the primary address of ‘Ship To’ Account.</description>
+        <inlineHelpText>Second line of the primary address of ‘Ship To’ Account.</inlineHelpText>
+        <label>Address 2</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_OrderAddress3__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Third line of the primary address of ‘Ship To’ Account.</description>
+        <inlineHelpText>Third line of the primary address of ‘Ship To’ Account.</inlineHelpText>
+        <label>Address 3</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_OrderAddressCity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>City of the primary address of ‘Ship To’ Account.</description>
+        <inlineHelpText>City of the primary address of ‘Ship To’ Account.</inlineHelpText>
+        <label>City</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_OrderAddressState__c</fullName>
+        <deprecated>false</deprecated>
+        <description>State of the primary address of ‘Ship To’ Account.</description>
+        <inlineHelpText>State of the primary address of ‘Ship To’ Account.</inlineHelpText>
+        <label>State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_OrderAddressZipCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Zip code of the primary address of ‘Ship To’ Account.</description>
+        <label>Zip Code</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_OrderInstructions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Instructions for the order or delivery.</description>
+        <inlineHelpText>Instructions for the order or delivery.</inlineHelpText>
+        <label>Order Instructions</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_OrderStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of the order.</description>
+        <inlineHelpText>Status of the order.</inlineHelpText>
+        <label>Order Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>true</default>
+                    <label>Draft</label>
+                </value>
+                <value>
+                    <fullName>Pending</fullName>
+                    <default>false</default>
+                    <label>Pending</label>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                    <label>Submitted</label>
+                </value>
+                <value>
+                    <fullName>Shipped</fullName>
+                    <default>false</default>
+                    <label>Shipped</label>
+                </value>
+                <value>
+                    <fullName>Delivered</fullName>
+                    <default>false</default>
+                    <label>Delivered</label>
+                </value>
+                <value>
+                    <fullName>Entered-in-error</fullName>
+                    <default>false</default>
+                    <label>Entered-in-error</label>
+                </value>
+                <value>
+                    <fullName>Stopped</fullName>
+                    <default>false</default>
+                    <label>Stopped</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_OrderType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of order.</description>
+        <inlineHelpText>Type of order.</inlineHelpText>
+        <label>Order Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Bridge Program</fullName>
+                    <default>false</default>
+                    <label>Bridge Program</label>
+                </value>
+                <value>
+                    <fullName>PAP</fullName>
+                    <default>false</default>
+                    <label>PAP</label>
+                </value>
+                <value>
+                    <fullName>Sample Products</fullName>
+                    <default>false</default>
+                    <label>Sample Products</label>
+                </value>
+                <value>
+                    <fullName>Enrollment Package</fullName>
+                    <default>false</default>
+                    <label>Enrollment Package</label>
+                </value>
+                <value>
+                    <fullName>Home Infusion Training set</fullName>
+                    <default>false</default>
+                    <label>Home Infusion Training set</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_PreferredDeliveryDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order recipient prefers to receive the shipment.</description>
+        <inlineHelpText>Date when the order recipient prefers to receive the shipment.</inlineHelpText>
+        <label>Preferred Delivery Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_PreferredDeliveryWindow__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Time when the order recipient prefers to receive the shipment.</description>
+        <inlineHelpText>Time when the order recipient prefers to receive the shipment.</inlineHelpText>
+        <label>Preferred Delivery Window</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Anytime</fullName>
+                    <default>false</default>
+                    <label>Anytime</label>
+                </value>
+                <value>
+                    <fullName>8:00AM - Noon</fullName>
+                    <default>false</default>
+                    <label>8:00AM - Noon</label>
+                </value>
+                <value>
+                    <fullName>Noon - 4:00PM</fullName>
+                    <default>false</default>
+                    <label>Noon - 4:00PM</label>
+                </value>
+                <value>
+                    <fullName>4:00PM - 8:00PM</fullName>
+                    <default>false</default>
+                    <label>4:00PM - 8:00PM</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Prescription__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Prescription the order is submitted for.</description>
+        <inlineHelpText>Prescription the order is submitted for.</inlineHelpText>
+        <label>Prescription</label>
+        <referenceTo>PC_Prescription__c</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_ProgramCase__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Program case the order is related to.</description>
+        <inlineHelpText>Program case the order is related to.</inlineHelpText>
+        <label>Program Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_ReceivedBy__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Entity who received the order.</description>
+        <inlineHelpText>Entity who received the order.</inlineHelpText>
+        <label>Received By</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_ShipTo2__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Ship To</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Patient</fullName>
+                    <default>false</default>
+                    <label>Patient</label>
+                </value>
+                <value>
+                    <fullName>Physician</fullName>
+                    <default>false</default>
+                    <label>Physician</label>
+                </value>
+                <value>
+                    <fullName>Treating Physician</fullName>
+                    <default>false</default>
+                    <label>Treating Physician</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_ShipTo__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Entity whom the order is being shipped to.</description>
+        <inlineHelpText>Entity whom the order is being shipped to.</inlineHelpText>
+        <label>Ship To</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Orders</relationshipLabel>
+        <relationshipName>Orders</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_ShipmentTrackingNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique tracking number of the order shipment.</description>
+        <inlineHelpText>Unique tracking number of the order shipment.</inlineHelpText>
+        <label>Shipment Tracking Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_ShippingDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the order is shipped.</description>
+        <inlineHelpText>Date when the order is shipped.</inlineHelpText>
+        <label>Shipping Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_SubmittedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the request of order was submitted.</description>
+        <inlineHelpText>Date when the request of order was submitted.</inlineHelpText>
+        <label>Submitted Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <label>Order</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Ord-{0000}</displayFormat>
+        <label>Order Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Orders</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <fullName>PC_Program_Case_Validation</fullName>
+        <active>true</active>
+        <description>The Program Case lookup should only allow Program type of Cases</description>
+        <errorConditionFormula>IF(OR(ISBLANK( PC_ProgramCase__c ), ISNULL(PC_ProgramCase__c )) , false, NOT(ISPICKVAL(PC_ProgramCase__r.Type, &apos;Program&apos;)))</errorConditionFormula>
+        <errorDisplayField>PC_ProgramCase__c</errorDisplayField>
+        <errorMessage>Only Program Cases allowed</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

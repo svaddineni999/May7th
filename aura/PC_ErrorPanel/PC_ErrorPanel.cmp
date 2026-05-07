@@ -1,0 +1,16 @@
+<aura:component description="PC_ErrorPanel" access="public">
+    <aura:attribute name="errorHeader" type="String" default="Review the errors on this page."/>
+    <aura:attribute name="errors" type="List"/>
+    <div class="pageLevelErrors">
+        <div class="pageError" aria-live="assertive">
+            <div class="genericNotification">
+                <ui:outputText class="genericError" value="{!v.errorHeader}"/>
+            </div>
+            <ul class="errorsList">
+                <aura:iteration items="{!v.errors}" var="error">
+                <li>{!error}</li>
+                </aura:iteration>
+            </ul>
+        </div>
+    </div> 
+</aura:component>

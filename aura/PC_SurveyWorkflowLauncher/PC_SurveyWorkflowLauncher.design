@@ -1,0 +1,15 @@
+<!--
+ - Created by havalakki on 6/29/2021.
+ -->
+
+<design:component>
+    <design:attribute name="accountFieldSetAPIName" label="Account Fieldset API Name"
+                      description="API Name of Field set that contains Fields to show Account record details.
+                      If the fieldset API Name is blank, then the default Account Patient Connect fieldset value 'PatientConnect__PC_AccountSurveyWorkflowFieldset' would be used to fetch account record data." />
+    <design:attribute name="caseFieldsetAPIName" label="Case Fieldset API Name"
+                      description="API Name of Field set that contains Fields to show Case record details. If the fieldset API Name is blank, then the default Case Patient Connect fieldset value 'PatientConnect__PC_CaseSurveyWorkflowFieldset' would be used to fetch case record data." />
+    <design:attribute name="workflowSurveyContext" label="Assistance Survey Context"
+                      description="This field value should contain the survey context for which the survey is to be triggered. Valid values are 'PC_PAP' and 'PC_Copay'. If it is left blank the default context would be PC_PAP."/>
+    <design:attribute name="workflowButtonLabel" label="Workflow Button Label"
+                      description="This field value will be used to define the label of the survey launcher button. It will depict the configured workflow.Default value would be the custom label value: $Label.PatientConnect.PC_PAPTitle."/>
+</design:component>

@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>EPJ – Mødet</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>EPJ – Møde</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>EPJ – Møde</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>EPJ – Møderne</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>EPJ – Møder</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>EPJ – Møder</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EPJ – Møder</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Klasse</label>
+        <name>HealthCloudGA__Class__c</name>
+    </fields>
+    <fields>
+        <label>Møde</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Møder</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Kildebetegnelse</label>
+        <name>HealthCloudGA__HospitalAdmitSourceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Oprindelse</label>
+        <name>HealthCloudGA__HospitalizationOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Før-indlæggelses-id</label>
+        <name>HealthCloudGA__HospitalizationPreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Kildekode</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceCode__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Kildesystem</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Destination</label>
+        <name>HealthCloudGA__HospitalizeDestination__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Diætkode</label>
+        <name>HealthCloudGA__HospitalizeDietCode__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Diætbetegnelse</label>
+        <name>HealthCloudGA__HospitalizeDietLabel__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Diætsystem</label>
+        <name>HealthCloudGA__HospitalizeDietSystem__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Udskrivningsdiagnose</label>
+        <name>HealthCloudGA__HospitalizeDischargeDiagnosis__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Udskrivningsdisp.kode</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionCode__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Udskrivningsdisp.system</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionSystem__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Udskrivningsdisp.betegn.</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispostionLabel__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Oprindelse</label>
+        <name>HealthCloudGA__HospitalizeOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Periodeslutdato</label>
+        <name>HealthCloudGA__HospitalizePeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Periodestartdato</label>
+        <name>HealthCloudGA__HospitalizePeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Før-indlæggelses-id</label>
+        <name>HealthCloudGA__HospitalizePreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>Hospitalsindlæggelse – Genindlæggelse</label>
+        <name>HealthCloudGA__HospitalizeReadmission__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Kode for specialarr.</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementCode__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Betegnelse for specialarr.</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementLabel__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – System for specialarr.</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementSystem__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Særbehandlingskode</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyCode__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Særbehandlingsbetegnelse</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Indlæggelse – Særbehandlingssystem</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesySystem__c</name>
+    </fields>
+    <fields>
+        <label>Indikation</label>
+        <name>HealthCloudGA__Indication__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>LastEncounter</label>
+        <name>HealthCloudGA__LastEncounter__c</name>
+    </fields>
+    <fields>
+        <label>Længdeenhed</label>
+        <name>HealthCloudGA__LengthUnit__c</name>
+    </fields>
+    <fields>
+        <label>Længdeværdi</label>
+        <name>HealthCloudGA__LengthValue__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – By</label>
+        <name>HealthCloudGA__Location1City__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Land</label>
+        <name>HealthCloudGA__Location1Country__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Beskrivelse</label>
+        <name>HealthCloudGA__Location1Description__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Slutdato</label>
+        <name>HealthCloudGA__Location1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Identifikator</label>
+        <name>HealthCloudGA__Location1Id__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Linje 1</label>
+        <name>HealthCloudGA__Location1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Linje 2</label>
+        <name>HealthCloudGA__Location1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Navn</label>
+        <name>HealthCloudGA__Location1Name__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 –  Postnummer</label>
+        <name>HealthCloudGA__Location1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Startdato</label>
+        <name>HealthCloudGA__Location1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Stat</label>
+        <name>HealthCloudGA__Location1State__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Telekomm. periodeslutdato</label>
+        <name>HealthCloudGA__Location1TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Telekomm. periodestartdato</label>
+        <name>HealthCloudGA__Location1TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Telekomm. system</label>
+        <name>HealthCloudGA__Location1TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Telekomm. anvendelse</label>
+        <name>HealthCloudGA__Location1TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Telekomm. værdi</label>
+        <name>HealthCloudGA__Location1TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Tekst</label>
+        <name>HealthCloudGA__Location1Text__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Typekode</label>
+        <name>HealthCloudGA__Location1TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Typebetegnelse</label>
+        <name>HealthCloudGA__Location1TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Typesystem</label>
+        <name>HealthCloudGA__Location1TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Type</label>
+        <name>HealthCloudGA__Location1Type__c</name>
+    </fields>
+    <fields>
+        <label>Placering1 – Anvendelse</label>
+        <name>HealthCloudGA__Location1Use__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – By</label>
+        <name>HealthCloudGA__Location2City__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Land</label>
+        <name>HealthCloudGA__Location2Country__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Beskrivelse</label>
+        <name>HealthCloudGA__Location2Description__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Slutdato</label>
+        <name>HealthCloudGA__Location2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Identifikator</label>
+        <name>HealthCloudGA__Location2Id__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Linje 1</label>
+        <name>HealthCloudGA__Location2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Linje 2</label>
+        <name>HealthCloudGA__Location2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Navn</label>
+        <name>HealthCloudGA__Location2Name__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Postnummer</label>
+        <name>HealthCloudGA__Location2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Startdato</label>
+        <name>HealthCloudGA__Location2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Stat</label>
+        <name>HealthCloudGA__Location2State__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Telekomm. periodeslutdato</label>
+        <name>HealthCloudGA__Location2TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Telekomm. periodestartdato</label>
+        <name>HealthCloudGA__Location2TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Telekomm. system</label>
+        <name>HealthCloudGA__Location2TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Telekomm. anvendelse</label>
+        <name>HealthCloudGA__Location2TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Telekomm. værdi</label>
+        <name>HealthCloudGA__Location2TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Tekst</label>
+        <name>HealthCloudGA__Location2Text__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Typekode</label>
+        <name>HealthCloudGA__Location2TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Typebetegnelse</label>
+        <name>HealthCloudGA__Location2TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Typesystem</label>
+        <name>HealthCloudGA__Location2TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Type</label>
+        <name>HealthCloudGA__Location2Type__c</name>
+    </fields>
+    <fields>
+        <label>Placering2 – Anvendelse</label>
+        <name>HealthCloudGA__Location2Use__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – By</label>
+        <name>HealthCloudGA__Location3City__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Land</label>
+        <name>HealthCloudGA__Location3Country__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Beskrivelse</label>
+        <name>HealthCloudGA__Location3Description__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Slutdato</label>
+        <name>HealthCloudGA__Location3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Identifikator</label>
+        <name>HealthCloudGA__Location3Id__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Linje 1</label>
+        <name>HealthCloudGA__Location3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Linje 2</label>
+        <name>HealthCloudGA__Location3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Navn</label>
+        <name>HealthCloudGA__Location3Name__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Postnummer</label>
+        <name>HealthCloudGA__Location3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Startdato</label>
+        <name>HealthCloudGA__Location3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Stat</label>
+        <name>HealthCloudGA__Location3State__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Telekomm. periodeslutdato</label>
+        <name>HealthCloudGA__Location3TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Telekomm. periodestartdato</label>
+        <name>HealthCloudGA__Location3TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Telekomm. system</label>
+        <name>HealthCloudGA__Location3TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Telekomm. anvendelse</label>
+        <name>HealthCloudGA__Location3TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Telekomm. værdi</label>
+        <name>HealthCloudGA__Location3TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Tekst</label>
+        <name>HealthCloudGA__Location3Text__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Typekode</label>
+        <name>HealthCloudGA__Location3TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Typebetegnelse</label>
+        <name>HealthCloudGA__Location3TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Typesystem</label>
+        <name>HealthCloudGA__Location3TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Type</label>
+        <name>HealthCloudGA__Location3Type__c</name>
+    </fields>
+    <fields>
+        <label>Placering3 – Anvendelse</label>
+        <name>HealthCloudGA__Location3Use__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – By</label>
+        <name>HealthCloudGA__Location4City__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Land</label>
+        <name>HealthCloudGA__Location4Country__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Beskrivelse</label>
+        <name>HealthCloudGA__Location4Description__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Slutdato</label>
+        <name>HealthCloudGA__Location4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Identifikator</label>
+        <name>HealthCloudGA__Location4Id__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Linje 1</label>
+        <name>HealthCloudGA__Location4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Linje 2</label>
+        <name>HealthCloudGA__Location4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Navn</label>
+        <name>HealthCloudGA__Location4Name__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Postnummer</label>
+        <name>HealthCloudGA__Location4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Startdato</label>
+        <name>HealthCloudGA__Location4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Stat</label>
+        <name>HealthCloudGA__Location4State__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Telecom-periodeslutdato</label>
+        <name>HealthCloudGA__Location4TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Telecom-periodestartdato</label>
+        <name>HealthCloudGA__Location4TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Telecom-system</label>
+        <name>HealthCloudGA__Location4TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Telecom-anvendelse</label>
+        <name>HealthCloudGA__Location4TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Telecom-værdi</label>
+        <name>HealthCloudGA__Location4TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Tekst</label>
+        <name>HealthCloudGA__Location4Text__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Typekode</label>
+        <name>HealthCloudGA__Location4TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Typebetegnelse</label>
+        <name>HealthCloudGA__Location4TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Typesystem</label>
+        <name>HealthCloudGA__Location4TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering4 – Type</label>
+        <name>HealthCloudGA__Location4Type__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Anvendelse</label>
+        <name>HealthCloudGA__Location4Use__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – By</label>
+        <name>HealthCloudGA__Location5City__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Land</label>
+        <name>HealthCloudGA__Location5Country__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Beskrivelse</label>
+        <name>HealthCloudGA__Location5Description__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Slutdato</label>
+        <name>HealthCloudGA__Location5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Identifikator</label>
+        <name>HealthCloudGA__Location5Id__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Linje 1</label>
+        <name>HealthCloudGA__Location5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Linje 2</label>
+        <name>HealthCloudGA__Location5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Navn</label>
+        <name>HealthCloudGA__Location5Name__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Postnummer</label>
+        <name>HealthCloudGA__Location5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Startdato</label>
+        <name>HealthCloudGA__Location5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Stat</label>
+        <name>HealthCloudGA__Location5State__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Telecom-periodeslutdato</label>
+        <name>HealthCloudGA__Location5TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Telecom-periodestartdato</label>
+        <name>HealthCloudGA__Location5TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Telecom-system</label>
+        <name>HealthCloudGA__Location5TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Telecom-anvendelse</label>
+        <name>HealthCloudGA__Location5TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Telecom-værdi</label>
+        <name>HealthCloudGA__Location5TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Tekst</label>
+        <name>HealthCloudGA__Location5Text__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Typekode</label>
+        <name>HealthCloudGA__Location5TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Typebetegnelse</label>
+        <name>HealthCloudGA__Location5TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Typesystem</label>
+        <name>HealthCloudGA__Location5TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Type</label>
+        <name>HealthCloudGA__Location5Type__c</name>
+    </fields>
+    <fields>
+        <label>Placering5 – Anvendelse</label>
+        <name>HealthCloudGA__Location5Use__c</name>
+    </fields>
+    <fields>
+        <label>Patient</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Møder</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Periodeafslutning</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Periodestart</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Prioritetskode</label>
+        <name>HealthCloudGA__PriorityCode__c</name>
+    </fields>
+    <fields>
+        <label>Prioritetsbetegnelse</label>
+        <name>HealthCloudGA__PriorityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Prioritetssystem</label>
+        <name>HealthCloudGA__PrioritySystem__c</name>
+    </fields>
+    <fields>
+        <label>Prioritet</label>
+        <name>HealthCloudGA__Priority__c</name>
+    </fields>
+    <fields>
+        <label>Årsagskode</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Årsagsbetegnelse</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Årsagssystem</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Serviceudbyder</label>
+        <name>HealthCloudGA__ServiceProvider__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem-id</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Typekode</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Typebetegnelse</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Typesystem</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Id for møde i EPJ</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,61 @@
+<!--
+ - Created by vkashikar on 7/7/2021.
+ -->
+
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" access="global"
+        description="Shows the list of cases created on successful submission of Survey Invitation. Must be used on the Survey Invitation app page." controller="PC_ShowSurveyInvitationResult">
+
+    <aura:attribute name="namespace" type="String" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" access="private"/>
+
+    <aura:attribute name="records" type="List" access="private"/>
+    <aura:attribute name="rows" type="List" access="private" />
+    <aura:attribute name="columns" type="List" access="private"/>
+
+    <aura:attribute name="caseId" type="Id" access="private"/>
+    <aura:attribute name="engagementProgramId" type="String" access="private"/>
+    <aura:attribute name="accountId" type="Id" access="private"/>
+    <aura:attribute name="workflowContext" type="String" access="private"/>
+    <aura:attribute name="engagementProgramUrlFieldName" type="String" default="EngagementProgramId" access="private"/>
+
+    <aura:attribute name="inProgress" type="Boolean" default="false" access="private"/>
+
+    <aura:attribute name="standardLoggedErrorMessage" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="errors" type="List" default="[]" access="private" />
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:handler event="force:refreshView" action="{! c.doInit}" />.
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+    <div>
+        <aura:if isTrue="{! v.errors.length > 0 }">
+            <c:PC_ErrorPanel errorHeader="{!$Label.c.PC_Toast_Title_Error}" errors="{!v.errors}"/>
+        </aura:if>
+
+        <lightning:card variant="Narrow" title="{! $Label.c.PC_ShowSurveyInvitationResultHeader}" iconName="standard:case">
+            <aura:set attribute="actions">
+                <lightning:buttonIcon iconName="utility:refresh" variant="border-filled" onclick="{!c.refresh}"/>
+            </aura:set>
+            <aura:if isTrue="{! v.inProgress }">
+                <lightning:spinner class="slds-text-align--center spinner" variant="brand"/>
+
+                    <aura:set attribute="else">
+                            <div class="slds-m-right_medium slds-m-left_medium">
+                            <p>
+                                <lightning:formattedText value="{! $Label.c.PC_ShowSurveyInvitationResultRefreshMsg}" />
+                            </p>
+                            <br/>
+                            <lightning:datatable data="{! v.rows }"
+                                                 columns="{! v.columns }"
+                                                 keyField="id"
+                                                 hideCheckboxColumn="true"/>
+                        </div>
+                    </aura:set>
+
+            </aura:if>
+        </lightning:card>
+
+
+    </div>
+</aura:component>

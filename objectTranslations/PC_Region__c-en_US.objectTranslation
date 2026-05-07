@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Region</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Regions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>PC_EffectiveFromTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective To --></label>
+        <name>PC_EffectiveToTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <name>PC_Manufacturer__c</name>
+        <relationshipLabel><!-- Regions --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

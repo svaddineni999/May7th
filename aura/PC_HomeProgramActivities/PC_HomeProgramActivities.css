@@ -1,0 +1,16 @@
+.THIS .PC_tile {
+	background:white;
+    width: 22%;
+}
+.THIS .slds-card__header {
+    padding: .25rem .75rem 0rem;
+    margin-bottom: 0rem;
+}
+
+.THIS .slds-card__body {
+    margin-bottom: 0rem;    
+}
+
+.THIS .margin {
+    margin:5px;
+}

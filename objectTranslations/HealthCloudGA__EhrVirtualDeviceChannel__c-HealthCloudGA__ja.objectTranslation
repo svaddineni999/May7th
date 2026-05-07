@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 仮想デバイスチャネル</value>
+    </caseValues>
+    <fields>
+        <label>コードの表示ラベル</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>コードシステム</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>コード</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>EHR 仮想デバイス</label>
+        <name>HealthCloudGA__EhrVirtualDevice__c</name>
+        <relationshipLabel>仮想デバイスチャネル</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>総計値</label>
+        <name>HealthCloudGA__Metric__c</name>
+    </fields>
+    <fields>
+        <label>観察</label>
+        <name>HealthCloudGA__Observation__c</name>
+        <relationshipLabel>仮想デバイスチャネル</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR 仮想デバイスチャネル名</nameFieldLabel>
+</CustomObjectTranslation>

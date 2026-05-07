@@ -1,0 +1,6 @@
+<design:component >
+	<design:attribute name="fsName" required="false" default=""/>
+    <design:attribute name="typeName" required="false" default=""/>
+    <design:attribute name="isValid" required="false" default="true"/>
+    <design:attribute name="noOfItemsInARow" required="false" default="2"/>
+</design:component>

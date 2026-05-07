@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>PC Task Channel Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PC Task Channel Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- FROM --></label>
+        <name>FROM__c</name>
+    </fields>
+    <fields>
+        <label><!-- SUB --></label>
+        <name>SUB__c</name>
+    </fields>
+    <fields>
+        <label><!-- TO --></label>
+        <name>TO__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

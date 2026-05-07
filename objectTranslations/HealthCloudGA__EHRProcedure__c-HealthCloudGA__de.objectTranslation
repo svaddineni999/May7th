@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Verfahrens laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Verfahren laut EGA</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EGA-Verfahren</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Körperstelle</label>
+        <name>HealthCloudGA__BodySite__c</name>
+    </fields>
+    <fields>
+        <label>Kategorie</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Code Bezeichnung</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Code</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Komplikation</label>
+        <name>HealthCloudGA__Complication__c</name>
+    </fields>
+    <fields>
+        <label>Begegnung</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>EGA-Verfahren</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nachsorgeanweisungen</label>
+        <name>HealthCloudGA__FollowUpInstructions__c</name>
+    </fields>
+    <fields>
+        <label>Verwendete Elemente</label>
+        <name>HealthCloudGA__ItemsUsed__c</name>
+    </fields>
+    <fields>
+        <label>Standort</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>Nicht durchgeführt</label>
+        <name>HealthCloudGA__NotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Notizen</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Ergebnis</label>
+        <name>HealthCloudGA__Outcome__c</name>
+    </fields>
+    <fields>
+        <label>Datum und Uhrzeit der Durchführung</label>
+        <name>HealthCloudGA__PerformedDateTime__c</name>
+    </fields>
+    <fields>
+        <label>Grund 1</label>
+        <name>HealthCloudGA__Reason1__c</name>
+    </fields>
+    <fields>
+        <label>Grund 2</label>
+        <name>HealthCloudGA__Reason2__c</name>
+    </fields>
+    <fields>
+        <label>Grund 3</label>
+        <name>HealthCloudGA__Reason3__c</name>
+    </fields>
+    <fields>
+        <label>Grund 4</label>
+        <name>HealthCloudGA__Reason4__c</name>
+    </fields>
+    <fields>
+        <label>Grund für Nichtdurchführung</label>
+        <name>HealthCloudGA__ReasonNotPerformed__c</name>
+    </fields>
+    <fields>
+        <label>Bericht</label>
+        <name>HealthCloudGA__Report__c</name>
+    </fields>
+    <fields>
+        <label>Anfordern</label>
+        <name>HealthCloudGA__Request__c</name>
+        <relationshipLabel>EGA-Verfahren</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Quellsystem-ID</label>
+        <name>HealthCloudGA__SourceSystemID__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem geändert</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <label>Quellsystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>HealthCloudGA__Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entered in Error</masterLabel>
+            <translation><!-- Entered in Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Completed</masterLabel>
+            <translation><!-- Not Completed --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>EGA-Verfahrens-ID</nameFieldLabel>
+</CustomObjectTranslation>

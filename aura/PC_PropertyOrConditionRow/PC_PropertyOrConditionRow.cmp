@@ -1,0 +1,451 @@
+<!--
+*************************************************************************************
+Component Name     : PC_PropertyOrConditionRow
+Description         : This component is used for support plan object conditions and properties.
+CreatedBy           : Deloitte
+Created Date        : 30 Sept 2020
+Modification Log    :
+*****************************************************************************************************
+Developer                   Date                   Description
+********************************************************************************************
+Kanteti Kishore            30 Sept 2020           Initial version[PC-6144]
+Kanteti Kishore            1 Nov  2020            PC-6825 Done changes for Date and Datetime formula in properties builder.
+Kanteti Kishore            13 Apr 2021           [PC-7009] Added isDeleteAllowed, Made changes to support property builder for User Task Activities
+Kanteti Kishore            6 Aug 2021           [PC-8060] Fixed AssignId issue when type is Publish Platform Event
+*****************************************************************************************
+-->
+
+<aura:component description="PC_PropertyOrConditionRow" controller="PC_PropertiesAndConditionsBuilder"
+                implements="flexipage:availableForAllPageTypes" access="global">
+
+    <aura:attribute name="row" type="Object" access="public"/>
+    <aura:attribute name="rowIndex" type="String" access="public"/>
+    <aura:attribute name="selectedFieldInPopup" type="Object"/>
+    <aura:attribute name="objectName" type="String" access="public" description="The main object name for which fields list are shown in field selector pop-up"/>
+    <aura:attribute name="objectLabel" type="String" access="public" default="" description="The main object label for which fields list are shown in field selector pop-up"/>
+    <aura:attribute name="objectFields" type="Object" access="public" description="Contains object name and its fields list"/>
+    <aura:attribute name="isDisabled" type="Boolean" access="public" default="false" description="Helps in disabling fields in case of activated support plan"/>
+    <aura:attribute name="allFieldsList" type="List" access="public" description="Fields list in field selector"/>
+    <aura:attribute name="defaultOperators" type="List" access="public" description="operators list that doesn't include greater than,less than"/>
+    <aura:attribute name="fieldTypeOperatorsMap" type="Map" access="public" description="operators and fieldtype map that we suppport in support plan"/>
+    <aura:attribute name="booleanValues" type="List" access="public" description="For boolean type of fields static boolean values are included in this list"/>
+    <aura:attribute name="showOperator" type="Boolean" access="public" default="true" description="we need this to show or hide operator column"/>
+    <aura:attribute name="showTypeColumn" type="Boolean" access="public" default="false" description="Required for hiding or showing type column"/>
+    <aura:attribute name="showValueChangeToColumn" type="Boolean" access="public" default="false" description="To hide or show 'To value' column in case of has changed"/>
+    <aura:attribute name="showValueColumn" type="Boolean" default="true" access="public" description="To hide or show 'value' column"/>
+    <aura:attribute name="isSupportPlanTriggerEventConditions" type="Boolean" default="false" access="public"
+                    description="For trigger event conditions while creating SP few scenarios are different from traditional builder"/>
+    <aura:attribute name="conditionsRequired" type="Boolean" default="true" access="public" description="To make fields required/not-required"/>
+    <aura:attribute name="updateContext" type="String" default="" access="public" description="For the UI behaviour based on update record activity type"/>
+    <aura:attribute name="triggerObjectLabel" type="String" default="" access="public" description="Support plan trigger event object"/>
+    <aura:attribute name="triggerObjectName" type="String" default="" access="public" description="Support plan trigger event object"/>
+    <aura:attribute name="objectType" type="String" default="Data Object" access="public" description="Two types of objects are currently supported Data Object and Platform Event Object"/>
+    <aura:attribute name="builderContext" type="String" default="" access="public" description="PropertyBuilder,ConditionalBuilder,PropertyBuilderInUpdate and this value is enum on server side"/>
+
+    <aura:attribute name="mandatoryFieldsMessage" type="String" default="{!$Label.c.PC_MadatoryFieldIndicator}" access="private"/>
+    <aura:attribute name="requiredFieldError" type="String" default="{!$Label.c.PC_FieldError_Required_Fields}" access="private"/>
+    <aura:attribute name="incorrectValuesError" type="String" default="{!$Label.c.PC_Cond_IncorrectValuesError}" access="public"/>
+    <aura:attribute name="multiSelectErrorMessage" type="String" default="" access="public"/>
+    <aura:attribute name="multiSelectToErrorMessage" type="String" default="" access="public"/>
+    <aura:attribute name="fieldSelectorMessage" type="String" default="{!$Label.c.PC_Cond_Selected_Field_Message}" access="private"/>
+    <aura:attribute name="fieldSelectorHeader" type="String" default="{!$Label.c.PC_Cond_Modal_Header}" access="private"/>
+    <aura:attribute name="apiNameLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_API_Name}" access="private"/>
+    <aura:attribute name="typeColumnLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Type}" access="private"/>
+    <aura:attribute name="lookUpHelpText" type="String" default="{!$Label.c.PC_Cond_LookUpOptionsMessage}" access="private"/>
+    <aura:attribute name="platformEventFieldsHelpText" type="String" default="{!$Label.c.PC_Cond_PlatformEventOptionsMessage}" access="private"/>
+    <aura:attribute name="noOptionsError" type="String" default="{!$Label.c.PC_Cond_NoOptions}" access="private"/>
+    <aura:attribute name="boundValueLabel" type="String" default="{!$Label.c.PC_Cond_BoundCheckboxLabel}" access="private"/>
+    <aura:attribute name="cancelLabel" type="String" default="{!$Label.c.PC_Button_Label_Cancel}" access="private"/>
+    <aura:attribute name="selectLabel" type="String" default="{!$Label.c.PC_Select}" access="private"/>
+    <aura:attribute name="recordTypeLabel" type="String" default="{!$Label.c.PC_Record_Type}" access="private"/>
+    <aura:attribute name="anyLabel" type="String" default="{!$Label.c.PC_Any}" access="private"/>
+    <aura:attribute name="assignIdLabel" type="String" default="{!$Label.c.PC_PropertyBuilder_AssignField}" access="private"/>
+    <aura:attribute name="errorStatus" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="todayLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Today}" access="private"/>
+    <aura:attribute name="nowLabel" type="String" default="{!$Label.c.PC_Cond_Conditional_Builder_Now}" access="private"/>
+    <aura:attribute name="formulaCheckboxHelptext" type="String" default="{!$Label.c.PC_SupportPlan_DateFormulaHelptext}" access="private"/>
+
+    <aura:registerEvent name="propertyOrConditionRow" type="c:PC_PropertiesOrConditionsRow"/>
+    <aura:method name="validateRowData" action="{!c.validateRowData}" description="Validates Row"></aura:method>
+    <aura:method name="initiateMultiSelectCombobox" action="{!c.initiateMultiSelectCombobox}" description="Initiates Combobox"></aura:method>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}"/>
+
+    <lightning:spinner aura:id="rowSpinner" class="slds-hide" variant="brand" alternativeText=""/>
+    <div class="numberSquare"><span style="line-height:30px;">{!v.rowIndex+1}</span></div>
+    <!--Field Selection Input Column-->
+    <div title="{!v.row.selectedField.apiName}"
+         class="{!v.isSupportPlanTriggerEventConditions ? 'quarterWidth slds-p-left_xx-small' :  'slds-size_4-of-12 slds-p-left_small'}">
+        <lightning:input
+                aura:id="searchInputField"
+                label=""
+                type="search"
+                onclick="{!c.onField}"
+                onchange="{!c.onField}"
+                disabled="{!(v.isDisabled || not(v.row.isDeleteAllowed))}"
+                name=""
+                value="{!v.row.selectedField.label}"/>
+        <aura:if isTrue="{!v.row.selectedField.apiName != 'RecordType'}"><span class="slds-p-left_x-small"
+                                                                               style="font-size:11px;">{!v.row.selectedField.type}</span>
+            <aura:set attribute="else">
+                <span style="font-size:11px">{!v.recordTypeLabel}</span>
+            </aura:set>
+        </aura:if>
+    </div>
+    <!--Operator Column-->
+    <aura:if isTrue="{!v.showOperator}">
+        <div title="{!v.row.selectedField.operator}"
+             class="{!v.isSupportPlanTriggerEventConditions ?'slds-size_3-of-12 slds-p-left_xx-small':'slds-size_3-of-12 slds-p-left_small'}">
+            <lightning:select
+                    aura:id="operator"
+                    label=""
+                    disabled="{!(v.isDisabled || v.row.selectedField.apiName =='')}"
+                    onchange="{!c.onOperatorChange}"
+                    name=""
+                    value="{!v.row.selectedField.operator}">
+                <aura:iteration items="{!v.row.operatorOptions}" var="operator">
+                    <option value="{!operator.value}"
+                            selected="{!operator.value == v.row.selectedField.operator}">{!operator.label}</option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+    </aura:if>
+    <!--Value Input Fields -->
+    <aura:if isTrue="{!v.showValueColumn}">
+        <aura:if
+                isTrue="{!or(and(and(and(and(and(and(v.row.selectedField.type != 'Picklist',v.row.selectedField.type != 'Multipicklist'), v.row.selectedField.type != 'Date'),v.row.selectedField.type != 'Datetime'),v.row.selectedField.type != 'Boolean'),v.row.selectedField.type != 'Reference'),!v.row.assignIdInPlatformEvent),!v.row.valueNeeded)}">
+            <div class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth slds-p-left_xx-small' : 'halfWidth slds-p-left_xx-small') : and(and(not(v.showTypeColumn),not(v.showOperator)),v.objectType == 'Platform Event Object') ? (or(v.row.selectedField.type == 'Textarea',v.row.selectedField.type == 'String') ? 'slds-size_5-of-12 slds-p-left_small' : 'slds-size_7-of-12 slds-p-left_small') : v.showOperator ? 'slds-size_4-of-12 slds-p-left_small':'slds-size_7-of-12 slds-p-left_small'}">
+                <div title="{!v.row.selectedField.value}">
+                    <lightning:input
+                            aura:id="stringFromField"
+                            label=""
+                            type="Text"
+                            value="{!v.row.selectedField.value}"
+                            disabled="{!(v.isDisabled||v.row.fromAnyCheckboxValue || v.row.selectedField.apiName =='' || not(v.row.valueNeeded))}"
+                            onchange="{!c.valueChange}"
+                            required="{!v.conditionsRequired}"/>
+                </div>
+                <aura:if isTrue="{!v.row.showToValueColumn}">
+                    <lightning:input label="{!v.anyLabel}" checked="{!v.row.fromAnyCheckboxValue}" type="checkbox"/>
+                </aura:if>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!v.row.formulaValue.isFormula}">
+            <div class="slds-p-left_small" style="width:9%">
+                <lightning:input disabled="{!v.isDisabled}" aura:id="formulaOffsetValue" required="{!v.conditionsRequired}"
+                                 type="number" label="" value="{!v.row.formulaValue.offsetValue}"/>
+            </div>
+            <div class="slds-p-left_xx-small" style="width:10%">
+                <lightning:select disabled="{!v.isDisabled}" label="" value="{!v.row.formulaValue.offsetType}">
+                    <aura:iteration items="{!v.row.formulaValue.offsetTypeOptions}" var="dropdownValue">
+                        <option value="{!dropdownValue.value}"
+                                selected="{!dropdownValue.value == v.row.formulaValue.offsetType}">{!dropdownValue.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+            <div class="slds-p-left_xx-small" style="width:10%">
+                <lightning:select disabled="{!v.isDisabled}" label="" value="{!v.row.formulaValue.operation}">
+                    <aura:iteration items="{!v.row.formulaValue.operationOptions}" var="dropdownValue">
+                        <option value="{!dropdownValue.value}"
+                                selected="{!dropdownValue.value == v.row.formulaValue.operation}">{!dropdownValue.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(or(or(or(v.row.selectedField.type == 'Picklist',v.row.selectedField.type == 'Reference'),v.row.assignIdInPlatformEvent),v.row.formulaValue.isFormula),v.row.valueNeeded)}">
+            <div title="{!v.row.selectedField.value}" class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth slds-p-left_xx-small' : 'halfWidth slds-p-left_xx-small') : and(and(not(v.showTypeColumn),not(v.showOperator)),v.objectType == 'Platform Event Object') ? (v.row.selectedField.type != 'Reference' ? v.row.formulaValue.isFormula ? 'slds-size_3-of-12 slds-p-left_xx-small' :'slds-size_5-of-12 slds-p-left_small': 'slds-size_7-of-12 slds-p-left_small'):v.showOperator ? 'slds-size_4-of-12 slds-p-left_small': v.row.formulaValue.isFormula ? 'slds-size_3-of-12 slds-p-left_xx-small slds-p-right_xx-small' :'slds-size_7-of-12 slds-p-left_small'}">
+                <lightning:select
+                        aura:id="value2"
+                        value="{!v.row.selectedField.value}"
+                        label=""
+                        disabled="{!(v.isDisabled||v.row.fromAnyCheckboxValue||v.row.showNoOptionsError||v.row.picklistBoundCheckboxValue)}"
+                        onchange="{!c.valueChange}"
+                        required="{!v.conditionsRequired}">
+                    <aura:iteration items="{!v.row.selectedFieldDropdownValues}" var="dropdownValue">
+                        <option value="{!dropdownValue.value}"
+                                selected="{!dropdownValue.value == v.row.selectedField.value}">{!dropdownValue.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+                <aura:if isTrue="{!v.row.showLookUpHelpText}">
+                    <aura:if isTrue="{!v.objectType == 'Platform Event Object'}">
+                        <span style="font-size:11px">
+                            {!format(v.platformEventFieldsHelpText, v.triggerObjectLabel)}
+                        </span>
+                        <aura:set attribute="else">
+                            <span style="font-size:11px">
+                                {!format(v.lookUpHelpText, v.triggerObjectLabel)}
+                            </span>
+                        </aura:set>
+                    </aura:if>
+                </aura:if>
+                <aura:if isTrue="{!v.row.showNoOptionsError}"><span
+                        style="font-size:11px;color:red">{!v.noOptionsError}</span></aura:if>
+                <aura:if isTrue="{!v.row.showToValueColumn}">
+                    <lightning:input label="{!v.anyLabel}" checked="{!v.row.fromAnyCheckboxValue}" type="checkbox"/>
+                </aura:if>
+                <aura:if isTrue="{!and(and(and(and(and(v.objectName == v.triggerObjectName,not(v.showOperator)),v.row.selectedField.type != 'Reference'),v.row.selectedField.apiName != 'RecordType'),v.updateContext != 'updateTriggerRecord'),not(v.row.formulaValue.isFormula))}">
+                    <lightning:input id="boundCheckbox"
+                                     label="{!format(v.boundValueLabel,v.triggerObjectLabel,v.row.selectedField.label)}"
+                                     disabled="{!v.isDisabled}"
+                                     onchange="{!c.onChangeToBoundPicklist}"
+                                     checked="{!v.row.picklistBoundCheckboxValue}"
+                                     type="checkbox"
+                                     name="{!v.rowIndex}"/>
+                </aura:if>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(and(v.objectType == 'Platform Event Object',v.row.selectedField.type != 'Reference'),or(v.row.selectedField.type == 'Textarea',v.row.selectedField.type == 'String'))}">
+            <div class="slds-text-align_left slds-size_2-of-12 slds-p-left_large slds-m-top_large">
+                <lightning:input label="{!v.assignIdLabel}" disabled="{!v.isDisabled}"
+                                 onchange="{!c.onChangeToAssignId}" checked="{!v.row.assignIdInPlatformEvent}"
+                                 type="checkbox" name=""/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.row.selectedField.type == 'Boolean',v.row.valueNeeded)}">
+            <div title="{!v.row.selectedField.value}"
+                 class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth slds-p-left_xx-small' : 'halfWidth slds-p-left_xx-small') : and(not(v.showTypeColumn),not(v.showOperator)) ? 'slds-size_7-of-12 slds-p-left_small': 'slds-size_4-of-12 slds-p-left_small'}">
+                <lightning:select
+                        aura:id="value3"
+                        label=""
+                        value="{!v.row.selectedField.value}"
+                        disabled="{!(v.isDisabled||v.row.fromAnyCheckboxValue)}"
+                        onchange="{!c.valueChange}"
+                        required="{!v.conditionsRequired}">
+                    <aura:iteration items="{!v.booleanValues}" var="eachBoolean">
+                        <option value="{!eachBoolean.value}"
+                                selected="{!eachBoolean.value}">{!eachBoolean.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+                <aura:if isTrue="{!v.row.showToValueColumn}">
+                    <lightning:input label="{!v.anyLabel}" checked="{!v.row.fromAnyCheckboxValue}" type="checkbox"/>
+                </aura:if>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(and(v.row.selectedField.type == 'Date',v.row.valueNeeded),not(v.row.formulaValue.isFormula))}">
+            <div title="{!v.row.selectedField.value}"
+                 class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth slds-p-left_xx-small' : 'halfWidth slds-p-left_xx-small') : and(not(v.showTypeColumn),not(v.showOperator)) ? 'slds-size_4-of-12 slds-p-left_small': 'slds-size_4-of-12 slds-p-left_small'}">
+                <lightning:input
+                        aura:id="dateFromField"
+                        label=""
+                        value="{!v.row.selectedField.value}"
+                        disabled="{!(v.isDisabled||v.row.fromAnyCheckboxValue||v.row.todayCheckboxValue)}"
+                        type="date"
+                        onchange="{!c.valueChange}"
+                        required="{!v.conditionsRequired}"
+                        name=""/>
+                <aura:if isTrue="{!v.row.showToValueColumn}">
+                    <lightning:input label="{!v.anyLabel}" checked="{!v.row.fromAnyCheckboxValue}" type="checkbox"/>
+                </aura:if>
+            </div>
+            <aura:if isTrue="{!!v.showOperator}">
+                <div class="slds-text-align_left slds-size_2-of-12 slds-align_absolute-center slds-m-around_none">
+                    <lightning:input name="" disabled="{!v.isDisabled}" label="{!v.todayLabel}" onchange="{!c.onTodayChange}"
+                                     checked="{!v.row.todayCheckboxValue}" type="checkbox"/>
+                </div>
+            </aura:if>
+        </aura:if>
+        <aura:if isTrue="{!and(and(v.row.selectedField.type == 'Datetime',v.row.valueNeeded),not(v.row.formulaValue.isFormula))}">
+            <div title="{!v.row.selectedField.value}" class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth adjustDateTime slds-p-left_xx-small' : 'halfWidth adjustDateTime slds-p-left_xx-small') : and(not(v.showTypeColumn),not(v.showOperator)) ? 'slds-size_4-of-12 slds-p-left_small adjustDateTime': 'slds-size_4-of-12 slds-p-left_small adjustDateTime'}">
+                <lightning:input
+                        aura:id="dateTimeFromField"
+                        label=""
+                        type="datetime-local"
+                        value="{!v.row.selectedField.value}"
+                        disabled="{!(v.isDisabled||v.row.fromAnyCheckboxValue||v.row.nowCheckboxValue)}"
+                        onchange="{!c.valueChange}"
+                        required="{!v.conditionsRequired}"/>
+                <aura:if isTrue="{!v.row.showToValueColumn}">
+                    <lightning:input class="showLabel" label="{!v.anyLabel}" checked="{!v.row.fromAnyCheckboxValue}" type="checkbox"/>
+                </aura:if>
+            </div>
+            <aura:if isTrue="{!!v.showOperator}">
+                <div class="slds-text-align_left slds-size_2-of-12 slds-align_absolute-center slds-m-around_none">
+                    <lightning:input name="" disabled="{!v.isDisabled}" label="{!v.nowLabel}" onchange="{!c.onNowChange}"
+                                     checked="{!v.row.nowCheckboxValue}" type="checkbox"/>
+                </div>
+            </aura:if>
+        </aura:if>
+        <aura:if isTrue="{!and(and(or(v.row.selectedField.type == 'Date',v.row.selectedField.type == 'Datetime'),v.row.valueNeeded),not(v.showOperator))}">
+            <div title="{!format(v.formulaCheckboxHelptext,v.triggerObjectLabel)}"
+                 class="{!v.row.formulaValue.isFormula ? 'slds-m-top_large slds-p-left_xx-small helpPointer' : 'slds-align_absolute-center slds-m-around_none slds-size_1-of-12 helpPointer'}">
+                <span class="formulaCheckboxStyle">
+                    <lightning:input name="" checked="{!v.row.formulaValue.isFormula}"
+                                     onchange="{!c.onDateReferenceChange}"
+                                     disabled="{!v.isDisabled}" label=""
+                                     type="checkbox"/>
+                </span>
+                <lightning:icon iconName="utility:formula" size="x-small" class="helpPointer dottedUnderline"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(and(v.row.selectedField.type == 'Multipicklist',v.row.valueNeeded),not(v.row.formulaValue.isFormula))}">
+            <div title="{!v.row.multiSelectFromValues}" class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth slds-p-left_xx-small slds-m-top_medium' : 'halfWidth slds-p-left_xx-small slds-m-top_medium') : and(not(v.showTypeColumn),not(v.showOperator)) ? 'slds-size_7-of-12 slds-p-left_small slds-m-top_medium': 'slds-size_4-of-12 slds-p-left_small slds-m-top_medium'}">
+                <c:PC_SingleAndMultiSelectCombobox disabled="{!(v.isDisabled||v.row.fromAnyCheckboxValue)}" aura:id = "multiSelectFromCombobox" values="{!v.row.multiSelectFromValues}" options="{!v.row.selectedFieldDropdownValues}" multiSelect = "true" showPills = "false" errorMessage="{!v.multiSelectErrorMessage}"/>
+                <aura:if isTrue="{!v.row.showToValueColumn}">
+                    <lightning:input label="{!v.anyLabel}" checked="{!v.row.fromAnyCheckboxValue}" type="checkbox"/>
+                </aura:if>
+            </div>
+        </aura:if>
+    </aura:if>
+    <aura:if isTrue="{!v.row.showToValueColumn}">
+        <aura:if isTrue="{!or(and(and(and(and(and(v.row.selectedField.type != 'Picklist', v.row.selectedField.type != 'Multipicklist'),v.row.selectedField.type != 'Date'),v.row.selectedField.type != 'Datetime'),v.row.selectedField.type != 'Boolean'),v.row.selectedField.type != 'Reference'),not(v.row.valueNeeded))}">
+            <div title="{!v.row.selectedField.toValue}" class="quarterWidth slds-p-left_xx-small">
+                <lightning:input
+                        aura:id="stringToField"
+                        label=""
+                        type="Text"
+                        value="{!v.row.selectedField.toValue}"
+                        disabled="{!(v.isDisabled||v.row.toAnyCheckboxValue || not(v.row.valueNeeded))}"
+                        onchange="{!c.toValueChange}"
+                        required="{!v.conditionsRequired}"/>
+                <lightning:input label="{!v.anyLabel}" checked="{!v.row.toAnyCheckboxValue}" type="checkbox"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.row.selectedField.type == 'Picklist',v.row.valueNeeded)}">
+            <div title="{!v.row.selectedField.toValue}" class="quarterWidth slds-p-left_xx-small">
+                <lightning:select
+                        aura:id="value7"
+                        label=""
+                        value="{!v.row.selectedField.toValue}"
+                        disabled="{!(v.isDisabled||v.row.toAnyCheckboxValue)}"
+                        onchange="{!c.toValueChange}"
+                        required="{!v.conditionsRequired}">
+                    <aura:iteration items="{!v.row.selectedFieldDropdownValues}" var="dropdown">
+                        <option value="{!dropdown.value}"
+                                selected="{!dropdown.value == v.row.selectedField.toValue}">{!dropdown.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+                <aura:if isTrue="{!v.row.showLookUpHelpText}"><span
+                        style="font-size:11px">{!format(v.lookUpHelpText, v.triggerObjectLabel)}</span></aura:if>
+                <aura:if isTrue="{!v.row.showNoOptionsError}"><span
+                        style="font-size:11px;color:red">{!v.noOptionsError}</span></aura:if>
+                <lightning:input label="{!v.anyLabel}" checked="{!v.row.toAnyCheckboxValue}" type="checkbox"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.row.selectedField.type == 'Boolean',v.row.valueNeeded)}">
+            <div title="{!v.row.selectedField.toValue}" class="quarterWidth slds-p-left_xx-small">
+                <lightning:select
+                        aura:id="value8"
+                        label=""
+                        value="{!v.row.selectedField.toValue}"
+                        disabled="{!(v.isDisabled||v.row.toAnyCheckboxValue)}"
+                        onchange="{!c.toValueChange}"
+                        required="{!v.conditionsRequired}">
+                    <aura:iteration items="{!v.booleanValues}" var="eachBooleanValue">
+                        <option value="{!eachBooleanValue.value}"
+                                selected="{!eachBooleanValue.value}">{!eachBooleanValue.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+                <lightning:input label="{!v.anyLabel}" checked="{!v.row.toAnyCheckboxValue}" type="checkbox"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.row.selectedField.type == 'Date',v.row.valueNeeded)}">
+            <div title="{!v.row.selectedField.toValue}" class="quarterWidth slds-p-left_xx-small">
+                <lightning:input
+                        aura:id="dateToField"
+                        label=""
+                        type="date"
+                        value="{!v.row.selectedField.toValue}"
+                        disabled="{!(v.isDisabled||v.row.toAnyCheckboxValue)}"
+                        onchange="{!c.toValueChange}"
+                        required="{!v.conditionsRequired}"/>
+                <lightning:input label="{!v.anyLabel}" checked="{!v.row.toAnyCheckboxValue}" type="checkbox"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(v.row.selectedField.type == 'Datetime',v.row.valueNeeded)}">
+            <div title="{!v.row.selectedField.toValue}" class="quarterWidth slds-p-left_xx-small adjustDateTime">
+                <lightning:input
+                        aura:id="dateTimeToField"
+                        label=""
+                        value="{!v.row.selectedField.toValue}"
+                        disabled="{!(v.isDisabled||v.row.toAnyCheckboxValue)}"
+                        type="datetime-local"
+                        onchange="{!c.valueChange}"
+                        required="{!v.conditionsRequired}"/>
+                <lightning:input class="showLabel" label="{!v.anyLabel}" checked="{!v.row.toAnyCheckboxValue}" type="checkbox"/>
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(and(v.row.selectedField.type == 'Multipicklist',v.row.valueNeeded),not(v.row.formulaValue.isFormula))}">
+            <div title="{!v.row.multiSelectToValues}" class="{!v.isSupportPlanTriggerEventConditions ? (v.row.showToValueColumn ? 'quarterWidth slds-p-left_xx-small slds-m-top_medium' : 'halfWidth slds-p-left_xx-small slds-m-top_medium') : and(not(v.showTypeColumn),not(v.showOperator)) ? 'slds-size_7-of-12 slds-p-left_small slds-m-top_medium': 'slds-size_4-of-12 slds-p-left_small slds-m-top_medium'}">
+                <c:PC_SingleAndMultiSelectCombobox aura:id = "multiSelectToCombobox" values="{!v.row.multiSelectToValues}" options="{!v.row.multiSelectToDropdownValues}" multiSelect = "true" showPills = "false" disabled="{!(v.isDisabled||v.row.toAnyCheckboxValue)}" errorMessage="{!v.multiSelectToErrorMessage}"/>
+                <lightning:input label="{!v.anyLabel}" checked="{!v.row.toAnyCheckboxValue}" type="checkbox"/>
+            </div>
+        </aura:if>
+    </aura:if>
+
+
+    <!--Field selector modal -->
+    <section aria-hidden="false" aura:id="aura_linkSectionId" id="linkSectionId" role="dialog" tabindex="-1"
+             aria-labelledby="modal-heading-01" aria-modal="true"
+             class="slds-modal slds-hide slds-modal--small slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <lightning:buttonIcon iconName="utility:close" alternativeText="{!$Label.c.PC_Close}"
+                                      title="{!$Label.c.PC_Close}"
+                                      variant="bare-inverse"
+                                      class="slds-modal__close"
+                                      onclick="{!c.onCancelInFieldSelector}"/>
+                <h2 class="slds-text-heading--medium">{!v.fieldSelectorHeader}</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around--medium">
+                <div class="slds-text-align--left">
+                    <aura:if isTrue="{!v.objectLabel != ''}">
+                        <div class="slds-m-bottom_x-small"><label class="topPadding objectLabelAdjust">{!v.objectLabel}</label></div>
+                        <aura:set attribute="else">
+                            <div class="slds-m-bottom_x-small"><label class="topPadding objectLabelAdjust">{!v.objectName}</label></div>
+                        </aura:set>
+                    </aura:if>
+                    <lightning:select class="fieldSelector" aura:id="fieldValues" label=""
+                                      onchange="{!c.onFieldChangeInFieldSelector}"
+                                      value="{!v.selectedFieldInPopup.fieldApiName}">
+                        <aura:iteration items="{!v.allFieldsList}" var="eachField">
+                            <option title="{!eachField.apiName}" text="{!eachField.labelWithMandatoryIndicator}"
+                                    value="{!eachField.apiName}"
+                                    selected="{!eachField.apiName == v.selectedFieldInPopup.fieldApiName}"/>
+                        </aura:iteration>
+                    </lightning:select>
+                </div>
+                <div class="field-container">
+                    <span>{!v.fieldSelectorMessage}:</span>
+                    <lightning:tile label="">
+                        <aura:set attribute="media">
+                            <lightning:icon iconName="standard:groups"/>
+                        </aura:set>
+                        <div>
+                            <label class="slds-truncate"
+                                   title="{!v.selectedFieldInPopup.fieldLabel}">{!v.selectedFieldInPopup.fieldLabel}</label>
+                        </div>
+                        <div>
+                            <label class="slds-truncate" title="Type">{!v.typeColumnLabel}:</label>
+                            <aura:if isTrue="{!v.selectedFieldInPopup.fieldApiName != 'RecordType'}">
+                                <p class="slds-truncate"
+                                   title="{!v.selectedFieldInPopup.fieldType}">{!v.selectedFieldInPopup.fieldType}</p>
+                                <aura:set attribute="else">
+                                    <p class="slds-truncate"
+                                       title="{!v.recordTypeLabel}">{!v.recordTypeLabel}</p>
+                                </aura:set>
+                            </aura:if>
+                        </div>
+                        <div>
+                            <label class="slds-truncate" title="API Name">{!v.apiNameLabel}:</label>
+                            <p class="slds-truncate"
+                               title="{!v.selectedFieldInPopup.fieldApiName}">{!v.selectedFieldInPopup.fieldApiName}</p>
+                        </div>
+                    </lightning:tile>
+                </div>
+                <aura:if isTrue="{!!v.showOperator}">
+                    <div class="slds-p-top_small">* {!v.mandatoryFieldsMessage}</div>
+                </aura:if>
+            </div>
+            <div class="slds-modal__footer slds-modal__footer--center">
+                <div class="slds-x-small-buttons--horizontal" align="right">
+                    <lightning:button class="slds-button slds-button--neutral"
+                                      onclick="{!c.onCancelInFieldSelector}">{!v.cancelLabel}</lightning:button>
+                    <lightning:button class="slds-button slds-button--brand"
+                                      onclick="{!c.onSelectInFieldSelector}">{!v.selectLabel}</lightning:button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="slds-backdrop slds-hide slds-backdrop--open" aura:id="aura_backGroundSectionId"
+         id="backGroundSectionId"></div>
+</aura:component>

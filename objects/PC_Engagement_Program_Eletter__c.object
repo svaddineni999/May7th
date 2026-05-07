@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Junction table to associate an eLetter template to multiple programs.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Description of the Engagement Program eLetter Template</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Engagement_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lookup to the engagement program associated with the eLetter.</description>
+        <label>Engagement Program</label>
+        <referenceTo>PC_Engagement_Program__c</referenceTo>
+        <relationshipLabel>Engagement Program eLetter</relationshipLabel>
+        <relationshipName>Engagement_Program_eLetter</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_PreConfiguredEmailRecipients__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Pre configured email recipients for sending Adverse Event report via email and to show non-case role users as recipients for e-letter. Please add mail ids as comma separated values and with no spaces. Ex-abc@xyz.com,xyz@abc.com.
+
+JSON format as shown below can also be provided when used for non-case role users as recipients for e-letter.
+Ex. [{&quot;name&quot; : &quot;Linda&quot;, &quot;email&quot; : &quot;user1@test.com&quot;, &quot;fax&quot; : &quot;9878787678&quot;,&quot;role&quot;:&quot;Nurse&quot;},
+{&quot;name&quot; : &quot;David&quot;, &quot;email&quot; : &quot;user2@test.com&quot;, &quot;fax&quot; : &quot;9897898789&quot;,&quot;role&quot;:&quot;Dentist&quot;}]</description>
+        <inlineHelpText>Recipients for sending Adverse Event report via email and to show non-case role users as recipients for e-letter. Please add mail ids as comma separated values and with no spaces. Ex-abc@xyz.com,xyz@abc.com. See description for more details.</inlineHelpText>
+        <label>Pre Configured Email Recipients</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_PreConfiguredSMSRecipients__c</fullName>
+        <deprecated>false</deprecated>
+        <description>External recipients for sending SMS. Please add phone numbers in JSON format as shown in the example,
+
+            Ex. [{&quot;name&quot; : &quot;Linda&quot;,&quot;Phone&quot; : &quot;+15671112230&quot;,&quot;role&quot;:&quot;Nurse&quot;},
+            {&quot;name&quot; : &quot;David&quot;,&quot;Phone&quot; : &quot;+919897898789&quot;,&quot;role&quot;:&quot;Specialist&quot;}]</description>
+        <inlineHelpText>External recipients for sending SMS .Please add phone numbers in JSON format as shown in the example,
+
+            Ex. [{&quot;name&quot; : &quot;Linda&quot;,&quot;Phone&quot; : &quot;+15671112230&quot;,&quot;role&quot;:&quot;Nurse&quot;},
+            {&quot;name&quot; : &quot;David&quot;,&quot;Phone&quot; : &quot;+919897898789&quot;,&quot;role&quot;:&quot;Specialist&quot;}]</inlineHelpText>
+        <label>Pre Configured SMS Recipients</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_eLetter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lookup to the eLetter template associated with the engagement program.</description>
+        <label>eLetter</label>
+        <referenceTo>PC_eLetter__c</referenceTo>
+        <relationshipLabel>Engagement Program eLetter</relationshipLabel>
+        <relationshipName>Engagement_Program_eLetter</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <label>Engagement Program eLetter</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PL-{0000000000}</displayFormat>
+        <label>Engagement Program Eletter Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Engagement Program eLetter</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

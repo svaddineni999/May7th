@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pharmacy Referral</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pharmacy Referrals</value>
+    </caseValues>
+    <fields>
+        <label><!-- Engagement Program Code --></label>
+        <name>ACLS_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Refill Date --></label>
+        <name>ACLS_Last_Refill_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Refill Date --></label>
+        <name>ACLS_Next_Refill_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient --></label>
+        <name>PC_Patient__c</name>
+        <relationshipLabel><!-- Pharmacy Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prescription --></label>
+        <lookupFilter>
+            <errorMessage><!-- Prescription does not exist or is not active. --></errorMessage>
+            <informationalMessage><!-- You can only associate active prescriptions to a referral. Search results only display active prescription. --></informationalMessage>
+        </lookupFilter>
+        <name>PC_Prescription__c</name>
+        <relationshipLabel><!-- Pharmacy Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Prior Authorization --></label>
+        <name>PC_Prior_Authorization__c</name>
+        <relationshipLabel><!-- Pharmacy Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Coverage --></label>
+        <lookupFilter>
+            <errorMessage><!-- Coverage does not exist or is not active. --></errorMessage>
+            <informationalMessage><!-- You can only associate active program coverage to a referral. Search results only display active program coverage. --></informationalMessage>
+        </lookupFilter>
+        <name>PC_Program_Coverage__c</name>
+        <relationshipLabel><!-- Pharmacy Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program --></label>
+        <lookupFilter>
+            <errorMessage><!-- Program does not exist or is not a program case. --></errorMessage>
+            <informationalMessage><!-- You can only associate program case to a referral. Search results only display program cases. --></informationalMessage>
+        </lookupFilter>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Pharmacy Referrals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>PC_Reason_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>PC_Referral_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canceled</masterLabel>
+            <translation><!-- Canceled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discontinued</masterLabel>
+            <translation><!-- Discontinued --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready to Send</masterLabel>
+            <translation><!-- Ready to Send --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sent</masterLabel>
+            <translation><!-- Sent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Started</masterLabel>
+            <translation><!-- Started --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>PC_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>PC_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Pharmacy --></label>
+        <name>PC_Target_Pharmacy__c</name>
+        <relationshipLabel><!-- Pharmacy Referrals --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- End Date has to be later than Start Date --></errorMessage>
+        <name>PC_EndDateLesserThanStartDate</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Selected account should be of type Pharmacy and should be active --></errorMessage>
+        <name>PC_ValidateTargetPharmacyTypeAndStatus</name>
+    </validationRules>
+</CustomObjectTranslation>

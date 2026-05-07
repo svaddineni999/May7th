@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Заявление на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Заявления на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Заявление на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Заявления на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Заявления на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Заявлений на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Заявлению на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Заявлениям на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Заявлением на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Заявлениями на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Заявлении на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Заявлениях на медикаментозное лечение в ЭМК</value>
+    </caseValues>
+    <fields>
+        <label>Организация</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Записи о выдаче лекарства по ЭМК</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Устройство</label>
+        <name>HealthCloudGA__Device__c</name>
+        <relationshipLabel>Записи о выдаче лекарства</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Ограничено</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Отображается на карте пациента</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for medication code --></help>
+        <label>Метка кода лекарства</label>
+        <name>HealthCloudGA__MedicationCodeLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- System for Code that identifies this medication --></help>
+        <label>Система кодирования лекарств</label>
+        <name>HealthCloudGA__MedicationCodeSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Code that identify this medication --></help>
+        <label>Система лекарства</label>
+        <name>HealthCloudGA__MedicationCode__c</name>
+    </fields>
+    <fields>
+        <label>Срок действия лекарства</label>
+        <name>HealthCloudGA__MedicationExpiration__c</name>
+    </fields>
+    <fields>
+        <help><!-- True if a brand --></help>
+        <label>Лекарство является патентованным брендом</label>
+        <name>HealthCloudGA__MedicationIsBrand__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code --></help>
+        <label>Код типа лекарства</label>
+        <name>HealthCloudGA__MedicationKindCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package friendly name --></help>
+        <label>Метка типа лекарства</label>
+        <name>HealthCloudGA__MedicationKindLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- product | package code system --></help>
+        <label>Система типа лекарства</label>
+        <name>HealthCloudGA__MedicationKindSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- Lot number for medication batch --></help>
+        <label>Номер лота лекарства</label>
+        <name>HealthCloudGA__MedicationLotNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Common / Commercial name --></help>
+        <label>Название лекарства</label>
+        <name>HealthCloudGA__MedicationName__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + code --></help>
+        <label>Код формы лекарства</label>
+        <name>HealthCloudGA__MedicationProductFormCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + friendly name --></help>
+        <label>Метка формы лекарства</label>
+        <name>HealthCloudGA__MedicationProductFormLabel__c</name>
+    </fields>
+    <fields>
+        <help><!-- powder | tablets | carton + system --></help>
+        <label>Система формы лекарства</label>
+        <name>HealthCloudGA__MedicationProductFormSystem__c</name>
+    </fields>
+    <fields>
+        <label>Пациент</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Записи о выдаче лекарства</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Код причины невыдачи</label>
+        <name>HealthCloudGA__ReasonNotGivenCode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Friendly name for Reason code or indication for writing the prescription --></help>
+        <label>Метка причины невыдачи</label>
+        <name>HealthCloudGA__ReasonNotGivenLabel__c</name>
+    </fields>
+    <fields>
+        <label>Система причины невыдачи</label>
+        <name>HealthCloudGA__ReasonNotGivenSystem__c</name>
+    </fields>
+    <fields>
+        <label>Код исходной системы</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Исходная система изменена</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Исходная система</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <help><!-- A code specifying the state of the statement. Generally, this will be in-progress or completed. --></help>
+        <label>Код статуса</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+        <picklistValues>
+            <masterLabel>completed</masterLabel>
+            <translation><!-- completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>entered-in-error</masterLabel>
+            <translation><!-- entered-in-error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in-progress</masterLabel>
+            <translation><!-- in-progress --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Не выдано</label>
+        <name>HealthCloudGA__WasNotGiven__c</name>
+    </fields>
+    <fields>
+        <label>Когда выдано</label>
+        <name>HealthCloudGA__WhenGiven__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Код записи о выдаче лекарства по ЭМК</nameFieldLabel>
+</CustomObjectTranslation>

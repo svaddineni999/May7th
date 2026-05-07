@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ジョブフローデータの対応付け</value>
+    </caseValues>
+    <fields>
+        <label>有効</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>対応付けグループ名</label>
+        <name>HealthCloudGA__MappingGroupName__c</name>
+    </fields>
+    <fields>
+        <label>ソース項目</label>
+        <name>HealthCloudGA__SourceField__c</name>
+    </fields>
+    <fields>
+        <label>ソースオブジェクト</label>
+        <name>HealthCloudGA__SourceObject__c</name>
+    </fields>
+    <fields>
+        <label>対象項目</label>
+        <name>HealthCloudGA__TargetField__c</name>
+    </fields>
+    <fields>
+        <label>対象オブジェクト</label>
+        <name>HealthCloudGA__TargetObject__c</name>
+    </fields>
+</CustomObjectTranslation>

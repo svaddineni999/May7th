@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>필터 열</value>
+    </caseValues>
+    <fields>
+        <label>필드 API</label>
+        <name>HealthCloudGA__FieldApi__c</name>
+    </fields>
+    <fields>
+        <label>필드 레이블</label>
+        <name>HealthCloudGA__FieldLabel__c</name>
+    </fields>
+    <fields>
+        <label>필터 기준</label>
+        <name>HealthCloudGA__FilterCriterion__c</name>
+        <relationshipLabel>필터 열</relationshipLabel>
+    </fields>
+    <fields>
+        <label>개체 이름</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label>순서</label>
+        <name>HealthCloudGA__Order__c</name>
+    </fields>
+    <nameFieldLabel>필터 열 이름</nameFieldLabel>
+</CustomObjectTranslation>

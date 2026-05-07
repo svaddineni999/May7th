@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectBinding xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__ConversationEntryId__c</implementationField>
+        <interfaceField>EngagementTopicDmo.ConversationEntryId</interfaceField>
+    </fields>
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__CreatedDate__c</implementationField>
+        <interfaceField>EngagementTopicDmo.CreatedDate</interfaceField>
+    </fields>
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__DataSourceId__c</implementationField>
+        <interfaceField>EngagementTopicDmo.DataSourceId</interfaceField>
+    </fields>
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__DataSourceObjectId__c</implementationField>
+        <interfaceField>EngagementTopicDmo.DataSourceObjectId</interfaceField>
+    </fields>
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__Id__c</implementationField>
+        <interfaceField>EngagementTopicDmo.Id</interfaceField>
+    </fields>
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__InternalOrganizationId__c</implementationField>
+        <interfaceField>EngagementTopicDmo.InternalOrganizationId</interfaceField>
+    </fields>
+    <fields>
+        <implementationField>ssot__EngagementTopic__dlm.ssot__RelatedToId__c</implementationField>
+        <interfaceField>EngagementTopicDmo.RelatedToId</interfaceField>
+    </fields>
+    <implementationObject>ssot__EngagementTopic__dlm</implementationObject>
+    <interfaceObject>EngagementTopicDmo</interfaceObject>
+    <masterLabel>ssot__EngagementTopic</masterLabel>
+</CustomObjectBinding>

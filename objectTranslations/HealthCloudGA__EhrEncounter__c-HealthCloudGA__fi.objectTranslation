@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamiset</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamiseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamiseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamiseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisteni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamistesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisessa</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisissa</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisessani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisissani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisessasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Inessive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisissasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisesta</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisista</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisestani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisistani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisestasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Elative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisistasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamiseen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisiin</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamiseeni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisiini</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamiseesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Illative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisiisi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisella</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisilla</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisellani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisillani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisellasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Adessive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisillasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamiselta</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisilta</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamiseltani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisiltani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamiseltasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisiltasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamiselle</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisille</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamiselleni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisilleni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisellesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Allative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisillesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisena</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisena</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisenani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisenani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisenasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Essive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisenasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamiseksi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisiksi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisekseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisikseni</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamiseksesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Translative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisiksesi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>false</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamista</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>EHR Kohtaamisia</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>false</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamistani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>EHR Kohtaamisiani</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>false</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamistasi</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Partitive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>EHR Kohtaamisiasi</value>
+    </caseValues>
+    <fields>
+        <label>Tili</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>EHR Kohtaamiset</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Luokka</label>
+        <name>HealthCloudGA__Class__c</name>
+    </fields>
+    <fields>
+        <label>Kohtaaminen</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>Kohtaamiset</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Sairaalaanoton lähteen otsikko</label>
+        <name>HealthCloudGA__HospitalAdmitSourceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalaanotto Alkuperä</label>
+        <name>HealthCloudGA__HospitalizationOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalaanotto Sair.ottoa edeltävä tunn.</label>
+        <name>HealthCloudGA__HospitalizationPreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Lähteen koodi</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceCode__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Lähteiden järjestelmä</label>
+        <name>HealthCloudGA__HospitalizeAdmitSourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Päämäärä</label>
+        <name>HealthCloudGA__HospitalizeDestination__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Ruokavalion koodi</label>
+        <name>HealthCloudGA__HospitalizeDietCode__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Ruokavalion otsikko</label>
+        <name>HealthCloudGA__HospitalizeDietLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Ruokavaliojärjestelmä</label>
+        <name>HealthCloudGA__HospitalizeDietSystem__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Kotiutumisen diagnoosi</label>
+        <name>HealthCloudGA__HospitalizeDischargeDiagnosis__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Kotiutumisen koodi</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionCode__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Kotiutumisjärjestelmä</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispositionSystem__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Kotiutumisen otsikko</label>
+        <name>HealthCloudGA__HospitalizeDischargeDispostionLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Alkuperä</label>
+        <name>HealthCloudGA__HospitalizeOrigin__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Jakson alku</label>
+        <name>HealthCloudGA__HospitalizePeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Jakson loppu</label>
+        <name>HealthCloudGA__HospitalizePeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Sair.ottoa edeltävä tunnus</label>
+        <name>HealthCloudGA__HospitalizePreAdmissionId__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Sairaalahoidon uusinta</label>
+        <name>HealthCloudGA__HospitalizeReadmission__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Erityisjärjestelyn koodi</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementCode__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Erityisjärjestelyn otsikko</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Erityisjärjestelyiden järj</label>
+        <name>HealthCloudGA__HospitalizeSpecialArrangementSystem__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Erikoistarjouksen koodi</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyCode__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Erikoistarjouksen otsikko</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sairaalahoito Erikoistarjousten järj.</label>
+        <name>HealthCloudGA__HospitalizeSpecialCourtesySystem__c</name>
+    </fields>
+    <fields>
+        <label>Osoitus</label>
+        <name>HealthCloudGA__Indication__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>LastEncounter</label>
+        <name>HealthCloudGA__LastEncounter__c</name>
+    </fields>
+    <fields>
+        <label>Pituuden yksikkö</label>
+        <name>HealthCloudGA__LengthUnit__c</name>
+    </fields>
+    <fields>
+        <label>Pituuden arvo</label>
+        <name>HealthCloudGA__LengthValue__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Kaupunki</label>
+        <name>HealthCloudGA__Location1City__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Maa</label>
+        <name>HealthCloudGA__Location1Country__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Kuvaus</label>
+        <name>HealthCloudGA__Location1Description__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Päättymispäivä</label>
+        <name>HealthCloudGA__Location1EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Tunnistin</label>
+        <name>HealthCloudGA__Location1Id__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Rivi1</label>
+        <name>HealthCloudGA__Location1Line1__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Rivi2</label>
+        <name>HealthCloudGA__Location1Line2__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Nimi</label>
+        <name>HealthCloudGA__Location1Name__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Postinumero</label>
+        <name>HealthCloudGA__Location1PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Alkamispäivä</label>
+        <name>HealthCloudGA__Location1StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Osavaltio</label>
+        <name>HealthCloudGA__Location1State__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Telecom-jakson loppu</label>
+        <name>HealthCloudGA__Location1TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Telecom-jakson alku</label>
+        <name>HealthCloudGA__Location1TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Telecom-järjestelmä</label>
+        <name>HealthCloudGA__Location1TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Telecomin käyttö</label>
+        <name>HealthCloudGA__Location1TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Telecom-arvo</label>
+        <name>HealthCloudGA__Location1TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Teksti</label>
+        <name>HealthCloudGA__Location1Text__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Tyypin koodi</label>
+        <name>HealthCloudGA__Location1TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Tyypin otsikko</label>
+        <name>HealthCloudGA__Location1TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Tyyppijärjestelmä</label>
+        <name>HealthCloudGA__Location1TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Tyyppi</label>
+        <name>HealthCloudGA__Location1Type__c</name>
+    </fields>
+    <fields>
+        <label>Location1 Käyttö</label>
+        <name>HealthCloudGA__Location1Use__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Kaupunki</label>
+        <name>HealthCloudGA__Location2City__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Maa</label>
+        <name>HealthCloudGA__Location2Country__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Kuvaus</label>
+        <name>HealthCloudGA__Location2Description__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Päättymispäivä</label>
+        <name>HealthCloudGA__Location2EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Tunnistin</label>
+        <name>HealthCloudGA__Location2Id__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Rivi1</label>
+        <name>HealthCloudGA__Location2Line1__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Rivi2</label>
+        <name>HealthCloudGA__Location2Line2__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Nimi</label>
+        <name>HealthCloudGA__Location2Name__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Postinumero</label>
+        <name>HealthCloudGA__Location2PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Alkamispäivä</label>
+        <name>HealthCloudGA__Location2StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Osavaltio</label>
+        <name>HealthCloudGA__Location2State__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Telecom-jakson loppu</label>
+        <name>HealthCloudGA__Location2TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Telecom-jakson alku</label>
+        <name>HealthCloudGA__Location2TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Telecom-järjestelmä</label>
+        <name>HealthCloudGA__Location2TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Telecomin käyttö</label>
+        <name>HealthCloudGA__Location2TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Telecom-arvo</label>
+        <name>HealthCloudGA__Location2TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Teksti</label>
+        <name>HealthCloudGA__Location2Text__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Tyypin koodi</label>
+        <name>HealthCloudGA__Location2TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Tyypin otsikko</label>
+        <name>HealthCloudGA__Location2TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Tyyppijärjestelmä</label>
+        <name>HealthCloudGA__Location2TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Tyyppi</label>
+        <name>HealthCloudGA__Location2Type__c</name>
+    </fields>
+    <fields>
+        <label>Location2 Käyttö</label>
+        <name>HealthCloudGA__Location2Use__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Kaupunki</label>
+        <name>HealthCloudGA__Location3City__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Maa</label>
+        <name>HealthCloudGA__Location3Country__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Kuvaus</label>
+        <name>HealthCloudGA__Location3Description__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Päättymispäivä</label>
+        <name>HealthCloudGA__Location3EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Tunnistin</label>
+        <name>HealthCloudGA__Location3Id__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Rivi1</label>
+        <name>HealthCloudGA__Location3Line1__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Rivi2</label>
+        <name>HealthCloudGA__Location3Line2__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Nimi</label>
+        <name>HealthCloudGA__Location3Name__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Postinumero</label>
+        <name>HealthCloudGA__Location3PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Alkamispäivä</label>
+        <name>HealthCloudGA__Location3StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Osavaltio</label>
+        <name>HealthCloudGA__Location3State__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Telecom-jakson loppu</label>
+        <name>HealthCloudGA__Location3TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Telecom-jakson alku</label>
+        <name>HealthCloudGA__Location3TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Telecom-järjestelmä</label>
+        <name>HealthCloudGA__Location3TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Telecomin käyttö</label>
+        <name>HealthCloudGA__Location3TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Telecom-arvo</label>
+        <name>HealthCloudGA__Location3TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Teksti</label>
+        <name>HealthCloudGA__Location3Text__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Tyypin koodi</label>
+        <name>HealthCloudGA__Location3TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Tyypin otsikko</label>
+        <name>HealthCloudGA__Location3TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Tyyppijärjestelmä</label>
+        <name>HealthCloudGA__Location3TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Tyyppi</label>
+        <name>HealthCloudGA__Location3Type__c</name>
+    </fields>
+    <fields>
+        <label>Location3 Käyttö</label>
+        <name>HealthCloudGA__Location3Use__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Kaupunki</label>
+        <name>HealthCloudGA__Location4City__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Maa</label>
+        <name>HealthCloudGA__Location4Country__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Kuvaus</label>
+        <name>HealthCloudGA__Location4Description__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Päättymispäivä</label>
+        <name>HealthCloudGA__Location4EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Tunnistin</label>
+        <name>HealthCloudGA__Location4Id__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Rivi1</label>
+        <name>HealthCloudGA__Location4Line1__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Rivi2</label>
+        <name>HealthCloudGA__Location4Line2__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Nimi</label>
+        <name>HealthCloudGA__Location4Name__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Postinumero</label>
+        <name>HealthCloudGA__Location4PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Alkamispäivä</label>
+        <name>HealthCloudGA__Location4StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Osavaltio</label>
+        <name>HealthCloudGA__Location4State__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Telecom-jakson loppu</label>
+        <name>HealthCloudGA__Location4TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Telecom-jakson alku</label>
+        <name>HealthCloudGA__Location4TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Telecom-järjestelmä</label>
+        <name>HealthCloudGA__Location4TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Telecomin käyttö</label>
+        <name>HealthCloudGA__Location4TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Telecom-arvo</label>
+        <name>HealthCloudGA__Location4TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Teksti</label>
+        <name>HealthCloudGA__Location4Text__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Tyypin koodi</label>
+        <name>HealthCloudGA__Location4TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Tyypin otsikko</label>
+        <name>HealthCloudGA__Location4TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Tyyppijärjestelmä</label>
+        <name>HealthCloudGA__Location4TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Tyyppi</label>
+        <name>HealthCloudGA__Location4Type__c</name>
+    </fields>
+    <fields>
+        <label>Location4 Käyttö</label>
+        <name>HealthCloudGA__Location4Use__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Kaupunki</label>
+        <name>HealthCloudGA__Location5City__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Maa</label>
+        <name>HealthCloudGA__Location5Country__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Kuvaus</label>
+        <name>HealthCloudGA__Location5Description__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Päättymispäivä</label>
+        <name>HealthCloudGA__Location5EndDate__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Tunnistin</label>
+        <name>HealthCloudGA__Location5Id__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Rivi1</label>
+        <name>HealthCloudGA__Location5Line1__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Rivi2</label>
+        <name>HealthCloudGA__Location5Line2__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Nimi</label>
+        <name>HealthCloudGA__Location5Name__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Postinumero</label>
+        <name>HealthCloudGA__Location5PostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Alkamispäivä</label>
+        <name>HealthCloudGA__Location5StartDate__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Osavaltio</label>
+        <name>HealthCloudGA__Location5State__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Telecom-jakson loppu</label>
+        <name>HealthCloudGA__Location5TelecomPeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Telecom-jakson alku</label>
+        <name>HealthCloudGA__Location5TelecomPeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Telecom-järjestelmä</label>
+        <name>HealthCloudGA__Location5TelecomSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Telecomin käyttö</label>
+        <name>HealthCloudGA__Location5TelecomUse__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Telecom-arvo</label>
+        <name>HealthCloudGA__Location5TelecomValue__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Teksti</label>
+        <name>HealthCloudGA__Location5Text__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Tyypin koodi</label>
+        <name>HealthCloudGA__Location5TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Tyypin otsikko</label>
+        <name>HealthCloudGA__Location5TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Tyyppijärjestelmä</label>
+        <name>HealthCloudGA__Location5TypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Tyyppi</label>
+        <name>HealthCloudGA__Location5Type__c</name>
+    </fields>
+    <fields>
+        <label>Location5 Käyttö</label>
+        <name>HealthCloudGA__Location5Use__c</name>
+    </fields>
+    <fields>
+        <label>Potilas</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Kohtaamiset</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Jakson loppu</label>
+        <name>HealthCloudGA__PeriodEnd__c</name>
+    </fields>
+    <fields>
+        <label>Jakson alku</label>
+        <name>HealthCloudGA__PeriodStart__c</name>
+    </fields>
+    <fields>
+        <label>Prioriteetin koodi</label>
+        <name>HealthCloudGA__PriorityCode__c</name>
+    </fields>
+    <fields>
+        <label>Prioriteetin otsikko</label>
+        <name>HealthCloudGA__PriorityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Prioriteettijärjestelmä</label>
+        <name>HealthCloudGA__PrioritySystem__c</name>
+    </fields>
+    <fields>
+        <label>Prioriteetti</label>
+        <name>HealthCloudGA__Priority__c</name>
+    </fields>
+    <fields>
+        <label>Syyn koodi</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Syyn otsikko</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Syyjärjestelmä</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Palveluntarjoaja</label>
+        <name>HealthCloudGA__ServiceProvider__c</name>
+    </fields>
+    <fields>
+        <label>Lähdejärjestelmän tunnus</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Lähdejärjestelmää muokattu</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Lähdejärjestelmä</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tila</label>
+        <name>HealthCloudGA__Status__c</name>
+    </fields>
+    <fields>
+        <label>Tyypin koodi</label>
+        <name>HealthCloudGA__TypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Tyypin otsikko</label>
+        <name>HealthCloudGA__TypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Tyyppijärjestelmä</label>
+        <name>HealthCloudGA__TypeSystem__c</name>
+    </fields>
+    <nameFieldLabel>EHR Kohtaamisen tunnus</nameFieldLabel>
+</CustomObjectTranslation>

@@ -1,0 +1,70 @@
+<!--
+ - Lightning component  : PC_AE2_AdverseEventRenderer
+ - Description          : Form to capture adverse Event Information from Adverse Event Object
+ - Parameters           : aeWrapper Map
+ Modification Log:
+ - Shishir Bansal       3-Dec-2018  Initial Version
+ - Pavankumar           25-Aug-2021 [PC-8066] Replaced standard labels with custom label to get the ** symbol as superscript
+ -->
+
+<aura:component description="PC_AE2_AdverseEventRenderer" controller="PC_AE2_AdverseEventRendererController" access="global">
+    <aura:attribute name="aeWrapper" type="Map" default=""/>
+    <aura:attribute name="aeId" type="String"/>
+    <aura:attribute name="fieldLabels" type="String"/>
+    <aura:attribute name="caseId" type="String"/>
+    <aura:attribute name="outcomeOptions" type="List"/>
+    <aura:attribute name="submissionStatusOptions" type="List"/>
+    <aura:attribute name="DeathdatefieldDeativate" type="Boolean" default="true"/>
+    <aura:attribute name="hideCoding" type="Boolean" default="false"/>
+    <aura:attribute name="SubmissionStatusDefaultVal" type="string" default=""/>
+    <aura:attribute name="dateLabel" type="string" default="{!$Label.c.PC_AE2_DateFormatLegend}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <div class="slds slds-grid slds-wrap ">
+
+        <div class="slds-col slds-size_6-of-12  ">
+
+            <lightning:input type="date" name="{!v.fieldLabels.eventOnsetDateLabel}" label="{! (v.dateLabel + v.fieldLabels.eventOnsetDateLabel)}"  class="AE" value="{!v.aeWrapper.eventOnsetDate}"/>
+            <lightning:input type="date" name="{!v.fieldLabels.dateOfTheReportLabel}" label="{!(v.dateLabel + v.fieldLabels.dateOfTheReportLabel)}"  class="AE" value="{!v.aeWrapper.dateOfTheReport}"/>
+            <lightning:input  aura:id="endDateVal"  type="date" name="{!v.fieldLabels.endDateLabel}" label="{!(v.dateLabel + v.fieldLabels.endDateLabel)}"  class="AE" value="{!v.aeWrapper.endDate}" />
+            <lightning:input  aura:id="causeOfDeathVal"  type="date" name="{!v.fieldLabels.dateOfDeathLabel}" label="{!(v.dateLabel+v.fieldLabels.dateOfDeathLabel)}"  class="AE" value="{!v.aeWrapper.dateofDeath}" disabled="{!v.DeathdatefieldDeativate}"/>
+
+        </div>
+
+        <div class="slds-col slds-size_6-of-12  slds-p-left--medium ">
+
+            <!--
+            <lightning:select class="" name="currentSubmissionStatus" label="{!v.fieldLabels.submissionStatusLabel}" aura:id="currentSubmissionStatus" value="{!v.aeWrapper.submissionStatus}">
+                <aura:iteration items="{!v.submissionStatusOptions}" var="option">
+                    <option text="{!option.label}" value="{!option.value}" selected="{!option.value ==v.aeWrapper.submissionStatus }"/>
+                </aura:iteration>
+            </lightning:select>
+            -->
+
+            <lightning:checkboxGroup name="Outcome" label="{! v.fieldLabels.outcomeLabel}" options="{!v.outcomeOptions}" value="{! v.aeWrapper.outcome}" onchange="{!c.onOutcomeChange}"/>
+        </div>
+
+        <div class="slds-col slds-size_12-of-12 ">
+            <lightning:textarea name="{!v.fieldLabels.descriptionLabel}" label="{!v.fieldLabels.descriptionLabel}" style="" class="AE adverseEventTermsLabel"  value="{!v.aeWrapper.description}"/>
+            <lightning:textarea name="{!v.fieldLabels.laboratoryDataLabel}" label="{!v.fieldLabels.laboratoryDataLabel}" style="" class="AE adverseEventTermsLabel"  value="{!v.aeWrapper.laboratoryData}"/>
+            <lightning:textarea name="{!v.fieldLabels.otherReleventHistoryLabel}" label="{!v.fieldLabels.otherReleventHistoryLabel}" style="" class="AE adverseEventTermsLabel"  value="{!v.aeWrapper.otherReleventHistory}"/>
+            <aura:if isTrue="{!not(v.hideCoding)}">
+                <lightning:input label="{!v.fieldLabels.eventVerbatimLabel}" name="{!v.fieldLabels.eventVerbatimLabel}" style="" class="AE reportTypeOtherTextLabel"  value="{!v.aeWrapper.eventVerbatim}"/>
+            </aura:if>
+        </div>
+        <aura:if isTrue="{!not(v.hideCoding)}">
+            <div class="slds-col slds-size_12-of-12 slds-p-bottom--medium ">
+                <div class="labelStyling">{!$Label.c.PC_AE_EventCoding}</div>
+                <div class="slds-box ">
+                    <lightning:input label="{!v.fieldLabels.eventCoding_SOC_Label}" name="{!v.fieldLabels.eventCoding_SOC_Label}" style="" class="AE reportTypeOtherTextLabel"  value="{!v.aeWrapper.eventCoding_SOC}"/>
+                    <lightning:input label="{!v.fieldLabels.eventCoding_HLGT_Label}" name="{!v.fieldLabels.eventCoding_HLGT_Label}" style="" class="AE reportTypeOtherTextLabel"  value="{!v.aeWrapper.eventCoding_HLGT}"/>
+                    <lightning:input label="{!v.fieldLabels.eventCoding_HLT_Label}" name="{!v.fieldLabels.eventCoding_HLT_Label}" style="" class="AE reportTypeOtherTextLabel"  value="{!v.aeWrapper.eventCoding_HLT}"/>
+                    <lightning:input label="{!v.fieldLabels.eventCoding_PT_Label}" name="{!v.fieldLabels.eventCoding_PT_Label}" style="" class="AE reportTypeOtherTextLabel"  value="{!v.aeWrapper.eventCoding_PT}"/>
+                    <lightning:input label="{!v.fieldLabels.eventCoding_LLT_Label}" name="{!v.fieldLabels.eventCoding_LLT_Label}" style="" class="AE reportTypeOtherTextLabel"  value="{!v.aeWrapper.eventCoding_LLT}"/>
+                </div>
+            </div>
+        </aura:if>
+
+
+    </div>
+</aura:component>

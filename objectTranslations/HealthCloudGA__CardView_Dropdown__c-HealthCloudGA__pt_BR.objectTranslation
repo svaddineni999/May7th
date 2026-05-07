@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vista do cartão dropdown</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vistas do cartão dropdown</value>
+    </caseValues>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Rótulo da categoria</label>
+        <name>HealthCloudGA__CategoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Nome da categoria</label>
+        <name>HealthCloudGA__Category__c</name>
+    </fields>
+    <fields>
+        <label>Subguia padrão</label>
+        <name>HealthCloudGA__DefaultSubtab__c</name>
+    </fields>
+    <fields>
+        <label>Parâmetro do URL</label>
+        <name>HealthCloudGA__Param_String__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de guia</label>
+        <name>HealthCloudGA__Rec_Open_Type__c</name>
+    </fields>
+    <fields>
+        <label>Nome da subcategoria</label>
+        <name>HealthCloudGA__Sub_Category__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Rótulo da subcategoria</label>
+        <name>HealthCloudGA__SubcategoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Ordem de classificação da subguia</label>
+        <name>HealthCloudGA__SubtabSortOrder__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de página</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>URL</label>
+        <name>HealthCloudGA__Url__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

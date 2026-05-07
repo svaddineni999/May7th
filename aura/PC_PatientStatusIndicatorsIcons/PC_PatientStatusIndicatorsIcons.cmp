@@ -1,0 +1,33 @@
+<aura:component controller="PC_CaseStatusIndicatorIconController" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <aura:attribute name="statusIndicators" type="PC_CaseStatusIndicatorIconController.Object[]" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="showIcons" type="Boolean" default="false"/>
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:dependency resource="markup://force:editRecord" type="EVENT" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <form action="">
+        <!-- header -->
+        <aura:If isTrue="{!v.showIcons}">
+            <div class="header">
+                <div class="slds-grid">
+                    <aura:iteration items="{!v.statusIndicators}" var="iw">
+                        <div class="slds-col slds-size--1-of-5">
+                            <div class="statusSection">
+                                <div class="pictureSection">
+                                    <span><img src="{!$Resource.PC_Resources + iw.path}" /></span>
+                                </div>
+                                <div class="nameSection">
+                                    <span>{!iw.title}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:iteration>
+                </div>
+            </div>
+        </aura:If>
+    </form>
+
+</aura:component>

@@ -1,0 +1,22 @@
+<!--
+ - Created by havalakki on 10/18/2019.
+ -->
+
+<aura:component description="PC_SearchActionGoToRecord" implements="force:appHostable,flexipage:availableForAllPageTypes" controller="PC_SearchActionGoToRecordController" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:handler event="c:PC_SelectedRecord" action="{!c.populateSelectedRecDetails}"/>
+    <aura:handler event="c:PC_SearchParams" action="{!c.handleSearchParams}"/>
+    <aura:attribute name="identifier" type="String"/>
+    <aura:attribute name="searchParams" type="List"/>
+    <aura:attribute name="selectedRecordId" type="String"/>
+    <aura:attribute name="actionNameList" type="List"/>
+    <aura:attribute name="goToRecordButtonLabel" type="String" default="{!$Label.c.PC_GoToRecord}" access="global"/>
+    <aura:attribute name="goToRecordButtonName" type="String" default=""/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="orgNamespace" type="String" access="private"/>
+
+    <div>
+        <lightning:button variant="brand" disabled="{!or(v.selectedRecordId == null,v.selectedRecordId == 'undefined')}" aura:id="goToRecordButtonId" label="{!v.goToRecordButtonName}" onclick="{!c.navigateToRecord}" />
+    </div>
+</aura:component>

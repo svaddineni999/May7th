@@ -1,0 +1,8 @@
+<!--
+ - Created by havalakki on 10/18/2019.
+ -->
+
+<design:component>
+    <design:attribute name="goToRecordButtonLabel" label="Record Button Label"
+                      description="Custom Label Name along with namespace or Button name for searching a record. Ex:$Label.namespace.PC_GoToRecord, $Label.{orgNamespace}.PC_GoToRecord. Here, {orgNamespace} will be replaced with current Org Namespace in runtime." />
+</design:component>

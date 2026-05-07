@@ -1,0 +1,201 @@
+<!--
+Lightning component  : ACLS_PC_PreviewEletter2
+Description          : Preview Screen of the eletter2
+
+Modification Log:
+Ronak Bansal 		 20-Mar-2023    Initial Version
+-->
+
+<aura:component description="ACLS_PC_PreviewEletter2" controller="ACLS_PC_PreviewEletter2">
+
+    <!-- attributes -->
+    <aura:attribute name="selectedFromAddress" type="Object"/>
+    <aura:attribute name="targetRecipientList" type="list" default="[]"/>
+    <aura:attribute name="eLetterTemplateSubject" type="String"/>
+    <aura:attribute name="eLetterTemplateType" type="String"/>
+    <aura:attribute name="eLetterTemplateTextBody" type="String"/>
+    <aura:attribute name="eLetterTemplateHTMLBody" type="String"/>
+    <aura:attribute name="allAttachments" type="list" />
+    <aura:attribute name="isSendToMeEnabled" type="Boolean" />
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="selectedELetterVal" type="String"/>
+    <aura:attribute name="selectedRecipientList" type="list" default="[]" access="private"/>
+    <aura:attribute name="currentUserEmail" type="String" access="private"/>
+    <aura:attribute name="eLetterTemplateObj" type="Object" access="private"/>
+    <aura:attribute name="selectedRecipientId" type="String" access="private"/>
+    <aura:attribute name="selectedRecipientObj" type="Object" default="{}" access="private"/>
+    <aura:attribute name="showPreviewAsLabel" type="Boolean" access="private"/>
+    <aura:attribute name="isPreviewLoading" type="Boolean" access="private"/>
+    <aura:attribute name="errors" type="List" default="" access="private"/>
+    <aura:attribute name="errorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="previewAsLabel" type="String" default="{!$Label.c.PC_Eletter2_PreviewAsPerLabel}" access="private"/>
+    <aura:attribute name="generatedDocumentJobId" type="String" />
+    <aura:attribute name="generatedFileId" type="String" />
+    <aura:attribute name="isFaxWorkflowEnabled" type="Boolean" />
+    
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+
+    <div>
+        <aura:if isTrue="{! v.errors.length > 0 }">
+            <c:PC_ErrorPanel errorHeader="{!v.errorTitle}" errors="{!v.errors}"/>
+        </aura:if>
+        <div class="slds-m-top_large eletter-box">
+            <div class="slds-grid slds-wrap slds-p-vertical_large slds-p-horizontal_x-large slds-border_bottom">
+                <div class="slds-size_1-of-2 slds-small-size_1-of-1 slds-large-size_1-of-2">
+                    <div class="slds-form-element">
+                        <span class="slds-form-element__label">{!$Label.c.PC_Eletter2_From}</span>
+                        <div class="slds-form-element__control">
+                            <span class="slds-pill slds-pill_link">
+                                <a class="slds-pill__action pc-pill-action">
+                                    <span class="slds-pill__label">{!v.selectedFromAddress.displayName+' &lt;'+v.selectedFromAddress.emailAddress+'&gt;'}</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-size_1-of-2 slds-small-size_1-of-1 slds-large-size_1-of-2">
+                    <div class="slds-form-element">
+                        <span class="slds-form-element__label">{!$Label.c.PC_Eletter2_Subject}</span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-form-element__static">{!v.eLetterTemplateSubject}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slds-size_1-of-1 slds-small-size_1-of-1 slds-large-size_1-of-1 slds-p-top_x-small">
+                    <div class="slds-form-element">
+                        <span class="slds-form-element__label">{!$Label.c.PC_Eletter2_To}</span>
+                        <div class="slds-form-element__control">
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-size_1-of-2 slds-small-size_1-of-1">
+                                    <aura:if isTrue="{!v.isSendToMeEnabled}">
+                                        <span class="slds-pill slds-pill_link pc-pill">
+                                            <span class="slds-pill__icon_container pc-pill-icon-container">
+                                                <lightning:icon iconName="utility:email" size="xx-small"/>
+                                            </span>
+                                            <a href="javascript:void(0);" class="slds-pill__action pc-pill-action">
+                                                <span class="slds-pill__label">{!v.currentUserEmail}</span>
+                                            </a>
+                                        </span>
+                                        <aura:set attribute="else">
+                                            <aura:iteration items="{!v.selectedRecipientList}" var="recipient">
+                                                <aura:if isTrue="{!recipient.sendEmail}">
+                                                    <span class="{!'slds-pill slds-pill_link pc-pill '+(recipient.isHighlighted? 'pc-highlighted-pill' : '')}">
+                                                        <span class="slds-pill__icon_container pc-pill-icon-container">
+                                                            <lightning:icon iconName="utility:email" size="xx-small"/>
+                                                        </span>
+                                                        <a href="javascript:void(0);" id="{!recipient.recipient.Id}" onclick="{!c.getRecipientPreview}" class="slds-pill__action pc-pill-action">
+                                                            <span class="slds-pill__label">
+                                                                {!recipient.recipientName}&nbsp;&lt;{!recipient.recipientEmail}&gt;
+                                                            </span>
+                                                        </a>
+                                                    </span>
+                                                </aura:if>
+                                            </aura:iteration>
+                                        </aura:set>
+                                    </aura:if>
+                                </div>
+                                <div class="slds-size_1-of-2 slds-small-size_1-of-1">
+                                    <aura:if isTrue="{!not(v.isSendToMeEnabled)}">
+                                        <aura:iteration items="{!v.selectedRecipientList}" var="recipient">
+                                            <aura:if isTrue="{!recipient.sendFax}">
+                                                <span class="{!'slds-pill slds-pill_link pc-pill '+(recipient.isHighlighted? 'pc-highlighted-pill' : '')}">
+                                                     <span class="slds-pill__icon_container pc-pill-icon-container">
+                                                        <lightning:icon iconName="utility:print" size="xx-small"/>
+                                                    </span>
+                                                    <a href="javascript:void(0);" id="{!recipient.recipient.Id}" onclick="{!c.getRecipientPreview}" class="slds-pill__action pc-pill-action">
+                                                        <span class="slds-pill__label">
+                                                            {!recipient.recipientName}&nbsp;({!recipient.recipientFax})
+                                                        </span>
+                                                    </a>
+                                                </span>
+                                            </aura:if>
+                                        </aura:iteration>
+                                    </aura:if>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-p-vertical_large slds-p-horizontal_x-large slds-is-relative">
+                <aura:if isTrue="{!v.showPreviewAsLabel}">
+                    <div class="pc-preview-badge">
+                        <div class="slds-form-element__label">
+                            <span class="pc-preview-label">
+                                {!format(v.previewAsLabel, empty(v.selectedRecipientObj.recipient.name)?v.selectedRecipientObj.recipient.email:v.selectedRecipientObj.recipient.name)}
+                            </span>
+                        </div>
+                        <lightning:helptext content="{!$Label.c.PC_Eletter2_PreviewShown_HelpText}"/>
+                    </div>
+                </aura:if>
+                <div>
+                    <aura:if isTrue="{!v.isPreviewLoading}">
+                        <div class="pc_spinner">
+                            <lightning:spinner size="small"/>
+                        </div>
+                        <aura:set attribute="else">
+                            <!-- FAX Start -->
+                            <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                                <div class="slds-p-around_xx-small pc-file-card" style="width:100%">
+                                    <lightning:fileCard fileId="{!v.generatedFileId}"/>
+                                </div>
+                                <!-- FAX End -->
+                                 <!-- EMAIL Start-->
+                                <aura:set attribute="else">
+                                    <aura:if isTrue="{!v.eLetterTemplateType == 'text'}">
+                                        <lightning:formattedText value="{!v.eLetterTemplateTextBody}" />
+                                    </aura:if>
+                                    <aura:if isTrue="{!v.eLetterTemplateType == 'html' || v.eLetterTemplateType == 'visualforce'}">
+                                        <aura:if isTrue="{!!empty(v.eLetterTemplateHTMLBody)}">
+                                            <lightning:formattedRichText value="{!v.eLetterTemplateHTMLBody}" />
+                                            <aura:set attribute="else">
+                                                <lightning:formattedText value="{!v.eLetterTemplateTextBody}" />
+                                            </aura:set>
+                                        </aura:if>
+                                    </aura:if>
+                                </aura:set>
+                                <!-- EMAIL End -->
+                            </aura:if>
+                        </aura:set>
+                    </aura:if>
+                </div>
+                <ul class="slds-grid slds-wrap slds-grid_pull-padded-xx-small slds-m-top_large">
+                    <aura:iteration items="{!v.allAttachments}" var="attachment">
+                        <aura:if isTrue="{!attachment.isChecked}">
+                            <li class="slds-p-around_xx-small pc-file-card">
+                                <aura:if isTrue="{!!empty(attachment.contentDocumentId)}">
+                                    <lightning:fileCard fileId="{!attachment.contentDocumentId}"/>
+                                    <aura:set attribute="else">
+                                        <div class="slds-file slds-file_card slds-has-title">
+                                            <figure>
+                                                <a onclick="{!c.openAttachment}" data-attid="{!attachment.id}" href="javascript:void(0);" class="pc-file-crop"> 
+                                                    <span class="slds-file__icon slds-icon_container" title="pdf">
+                                                        <lightning:icon iconName="doctype:attachment" size="large" alternativeText="{!attachment.type}" title="{!attachment.docName}"/>
+                                                    </span>
+                                                </a>
+                                                <figcaption class="slds-file__title slds-file__title_card">
+                                                    <div class="slds-media slds-media_small slds-media_center">
+                                                        <div class="slds-media__figure slds-line-height_reset">
+                                                    <span class="slds-icon_container" title="pdf">
+                                                        <lightning:icon iconName="doctype:attachment" size="x-small" alternativeText="{!attachment.type}" title="{!attachment.docName}"/>
+                                                    </span>
+                                                        </div>
+                                                        <div class="slds-media__body">
+                                                            <span class="slds-file__text slds-truncate" title="{!attachment.docName}">{!attachment.docName}</span>
+                                                        </div>
+                                                    </div>
+                                                </figcaption>
+                                            </figure>
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </li>
+                        </aura:if>
+                    </aura:iteration>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aura:component>

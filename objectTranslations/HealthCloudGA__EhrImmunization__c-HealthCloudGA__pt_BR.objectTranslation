@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Imunização do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Imunizações do RES</value>
+    </caseValues>
+    <fields>
+        <label>Conta</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Imunizações</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Data de administração</label>
+        <name>HealthCloudGA__DateAdministered__c</name>
+    </fields>
+    <fields>
+        <label>Unidades de quantidade de doses</label>
+        <name>HealthCloudGA__DoseQuantityUnits__c</name>
+    </fields>
+    <fields>
+        <label>Valor da quantidade da dose</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <label>Quantidade de doses</label>
+        <name>HealthCloudGA__DoseQuantity__c</name>
+    </fields>
+    <fields>
+        <label>Data de expiração</label>
+        <name>HealthCloudGA__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if Refused Indicator = False AND Expiration Date &gt; Now()  else returns false --></help>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Cidade do local</label>
+        <name>HealthCloudGA__LocationCity__c</name>
+    </fields>
+    <fields>
+        <label>País do local</label>
+        <name>HealthCloudGA__LocationCountry__c</name>
+    </fields>
+    <fields>
+        <label>Identificador do local</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Linha 1 do local</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Linha 2 do local</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Nome do local</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Código postal do local</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Data de início do local</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Estado do local</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Telecomunicações do local</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Texto do local</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de local</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Uso do local</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Número de lote</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>Paciente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Imunizações</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nome do executor 255</label>
+        <name>HealthCloudGA__PerformerName255__c</name>
+    </fields>
+    <fields>
+        <label>Nome do executor</label>
+        <name>HealthCloudGA__PerformerName__c</name>
+    </fields>
+    <fields>
+        <label>Executor</label>
+        <name>HealthCloudGA__Performer__c</name>
+        <relationshipLabel>Imunizações realizadas</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Código de motivo</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do motivo</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de motivo</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código do motivo da recusa</label>
+        <name>HealthCloudGA__RefusalReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do motivo da recusa</label>
+        <name>HealthCloudGA__RefusalReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema do motivo da recusa</label>
+        <name>HealthCloudGA__RefusalReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Indicador recusado</label>
+        <name>HealthCloudGA__RefusedIndicator__c</name>
+    </fields>
+    <fields>
+        <label>Nome do solicitante 255</label>
+        <name>HealthCloudGA__RequesterName255__c</name>
+    </fields>
+    <fields>
+        <label>Nome do solicitante</label>
+        <name>HealthCloudGA__RequesterName__c</name>
+    </fields>
+    <fields>
+        <label>Solicitante</label>
+        <name>HealthCloudGA__Requester__c</name>
+        <relationshipLabel>Imunizações solicitadas</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Encaminhar código</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>Encaminhar rótulo</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Encaminhar sistema</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Reportado automaticamente</label>
+        <name>HealthCloudGA__SelfReported__c</name>
+    </fields>
+    <fields>
+        <label>Código da região</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo da região</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de regiões</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>ID do sistema de origem</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código do tipo de vacina</label>
+        <name>HealthCloudGA__VaccineTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Rótulo do tipo de vacina</label>
+        <name>HealthCloudGA__VaccineTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de tipos de vacina</label>
+        <name>HealthCloudGA__VaccineTypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID da imunização do RES</nameFieldLabel>
+</CustomObjectTranslation>

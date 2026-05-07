@@ -1,0 +1,53 @@
+<!--
+ - Created by vkashikar on 12/5/2018.
+ -->
+
+<aura:component access="public" controller ='PC_AE2_AdditionalInfoRendererController'>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:attribute name="aeId" type="String"/>
+    <aura:attribute name="aeWrapper" type="Map"/>
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute type="String" default="" name="additionalInfoTabFieldSet" required="true"/>
+
+    <aura:attribute name="fieldSetName" type="String"/>
+    <aura:method name="validate" action="{!c.validate}"/>
+
+    <aura:attribute name="typeName" type="String" default="PC_AdverseEvent2__c"/>
+    <aura:attribute name="fieldSetFields" type="Object[]"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"></aura:attribute>
+
+    <aura:attribute name="fieldSetFieldsLabels" type="Object[]"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="errorHeaderVal" type="String"/>
+    <aura:attribute name="fieldsetError" type="String" default="{!$Label.c.PC_Fieldset_Error}"/>
+    <aura:attribute name="adverseEventErrorHeader" type="String" default="{!$Label.c.PC_AdverseEvent_Error_Header}"/>
+
+    <aura:if isTrue="{!v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.errorHeaderVal}" errors="{!v.errors}"/>
+        <aura:set attribute="else">
+            <aura:if isTrue="{!v.fieldSetFields.length > 0}">
+                <div class="slds-tabs--scoped">
+                    <fieldset class="slds-form--compound">
+                        <div class="slds-tabs--scoped__nav" role="tablist">
+                            <legend class="slds-form-element__label slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_AE_Additional_Information}</legend>
+                        </div>
+                        <div class="slds-form-element__group slds-tabs--scoped__content">
+                            <div class="slds-form-element__row">
+                                <div class="slds-form-element slds-size--1-of-1">
+                                        {!v.fieldSetFormBody}
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <aura:set attribute="else">
+                        {!$Label.c.PC_AE_NoField_In_FieldSet}
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

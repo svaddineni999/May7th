@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Settings to configure Action center on program case page.</description>
+    <fields>
+        <fullName>PC_Action_Component_Attributes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Attributes that will be passed onto the component at the time of dynamic creation.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>This must be in JSON format. 
+Example {&quot;componentAttributeName1&quot;:&quot;componentAttributeValue1&quot;,&quot;componentAttributeName2&quot;:&quot;componentAttributeValue2&quot;}</inlineHelpText>
+        <label>Action Component Attributes</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Action_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Component Name that should be triggered when clicked on the action</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Input the API name of the component that should be triggered when action icon is clicked.</inlineHelpText>
+        <label>Action Component</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Action_Icon__c</fullName>
+        <defaultValue>&quot;standard:account&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Lightning Icon path</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Name of the Lightning Icon. Refer Icons section on Salesforce Lightning Design System. 
+Sample Input -  standard-account</inlineHelpText>
+        <label>Action Icon</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Action_Label__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label of the action icon that will be visible on the action center. You may also specify the fully qualified custom label path ($Label.namespace.labelName).</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Label of the action icon that will be visible on the action center. You may also specify the fully qualified custom label path ($Label.namespace.labelName).</inlineHelpText>
+        <label>Action Label</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Action_Ordinal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order in which the Action should be displayed</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Action Ordinal</label>
+        <precision>2</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Action_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Type of Action Selected</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Action Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Communications</fullName>
+                    <default>true</default>
+                    <label>Communications</label>
+                </value>
+                <value>
+                    <fullName>Workflows</fullName>
+                    <default>false</default>
+                    <label>Workflows</label>
+                </value>
+                <value>
+                    <fullName>Tools</fullName>
+                    <default>false</default>
+                    <label>Tools</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Should be checked if the Action needs to be displayed</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Should be checked if the Action needs to be displayed</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Case_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Record type associated with the case type where the action should be displayed</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Select the record type of the case to which the action should be associated with. If record type is not present add it to the picklist of the metadata before adding the record.</inlineHelpText>
+        <label>Case Record Type</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>All</fullName>
+                    <default>false</default>
+                    <label>All</label>
+                </value>
+                <value>
+                    <fullName>PC_Program</fullName>
+                    <default>true</default>
+                    <label>PC_Program</label>
+                </value>
+                <value>
+                    <fullName>PC_PAP</fullName>
+                    <default>false</default>
+                    <label>PC_PAP</label>
+                </value>
+                <value>
+                    <fullName>PC_BIBV</fullName>
+                    <default>false</default>
+                    <label>PC_BIBV</label>
+                </value>
+                <value>
+                    <fullName>PC_Benefits_Investigation_Benefits_Verification</fullName>
+                    <default>false</default>
+                    <label>PC_Benefits_Investigation_Benefits_Verification</label>
+                </value>
+                <value>
+                    <fullName>PC_Copay</fullName>
+                    <default>false</default>
+                    <label>PC_Copay</label>
+                </value>
+                <value>
+                    <fullName>PC_Prior_Authorization</fullName>
+                    <default>false</default>
+                    <label>PC_Prior_Authorization</label>
+                </value>
+                <value>
+                    <fullName>PC_Alternate_Funding</fullName>
+                    <default>false</default>
+                    <label>PC_Alternate_Funding</label>
+                </value>
+                <value>
+                    <fullName>PC_Appeal</fullName>
+                    <default>false</default>
+                    <label>PC_Appeal</label>
+                </value>
+                <value>
+                    <fullName>PC_Enrollment</fullName>
+                    <default>false</default>
+                    <label>PC_Enrollment</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Case_Recordtype_Namespaceprefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field describes the namespace prefix for case record type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Namespace of record type</inlineHelpText>
+        <label>Case Record Type Namespace Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Engagement_Program_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Engagement program code that maps to the Engagement program the action is associated to.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Enter the program code for the Engagement Program</inlineHelpText>
+        <label>Engagement Program Code</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Other_Case_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Enter Case record type when Other is selected as Case Record Type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Enter Case record type when Other is selected as Case Record Type.</inlineHelpText>
+        <label>Other Case Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Action Center Setting</label>
+    <pluralLabel>Action Center Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

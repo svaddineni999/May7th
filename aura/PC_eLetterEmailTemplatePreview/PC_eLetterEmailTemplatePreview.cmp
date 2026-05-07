@@ -1,0 +1,13 @@
+<!--
+ - Created by havalakki on 4/9/2019.
+ -->
+
+<aura:component description="PC_eLetterEmailTemplatePreview" implements="c:PC_eLetterPreview" access="global" controller="PC_eLetterPreviewController">
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="eLetterPreviewData" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <div>
+        <pre>{!v.eLetterPreviewData}</pre>
+    </div>
+</aura:component>

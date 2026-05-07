@@ -1,0 +1,6 @@
+<!--
+This Event is used to close the Pre Enrollment Lookup Application
+-->
+<aura:event type="APPLICATION">
+ <aura:attribute name="message" type="String"/>
+</aura:event>

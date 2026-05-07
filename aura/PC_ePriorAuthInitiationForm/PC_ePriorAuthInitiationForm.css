@@ -1,0 +1,22 @@
+/**
+ * Created by vkashikar on 6/20/2018.
+ */
+.THIS .accordionHeaderDisabled {
+    pointer-events: none;
+}
+.THIS .accordionHeaderEnabled {
+    pointer-events : all;
+    cursor : pointer;
+}
+.THIS .ePAFormBody {
+    margin: 10 auto;
+    max-width: 90% !important;
+    min-width: 90% !important;
+}
+.THIS .searchFormResults table td {
+    white-space: pre-wrap;
+}
+.THIS .searchFormResults table .directionsData {
+    max-width: 35%;
+    width: 30%;
+}

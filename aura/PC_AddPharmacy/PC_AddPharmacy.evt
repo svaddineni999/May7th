@@ -1,0 +1,7 @@
+<!--
+ - Created by vkashikar on 6/18/2018.
+ -->
+
+<aura:event type="COMPONENT" description="PC_AddPharmacy" access="global">
+    <aura:attribute name="selectedPharmacies" type="Object[]" access="global"/>
+</aura:event>

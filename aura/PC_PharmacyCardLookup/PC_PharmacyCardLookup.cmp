@@ -1,0 +1,376 @@
+<!--
+ - Created by Vijay Kashikar on Jan 12 2018.
+ -->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" controller="PC_PharmacyCardLookupController" access="global">
+    <ltng:require scripts="{! $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute type="string" name="caseId"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="isModalMapActive" type="Boolean" default="false"/>
+    <aura:attribute name="isModalMapActiveInner" type="Boolean" default="false"/>
+    <aura:attribute name="pharmacyCardFetchInfo" type="Object"/>
+    <aura:attribute name="serviceResponse" type="Object"/> <!--PC_UBCServiceResponse-->
+    <aura:attribute name="cssStyle" type="String" />
+    <aura:attribute name="errorMessage" type="String"/>
+    <aura:attribute name="displayError" type="boolean" default="false"/>
+    <aura:attribute name="pbmsMap" type="Map"/>
+    <aura:attribute name="refInfo" type="sObject[]" default="false"/>
+    <aura:attribute name="refInfoLabels" type="Object"/>
+    <aura:attribute name="isDataAvailable" type="boolean" default="true"/>
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    <aura:attribute name="displaySpinner" type="boolean" default="false"/>
+
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Toast_Success_Title}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Toast_Error_Title}" />
+    <aura:attribute name="insertHealthPlanError" type="String" default="{!$Label.c.PC_PharmaCardLookup_Health_Plan_Insert_Error_Message}" />
+    <aura:attribute name="getHealthPlansError" type="String" default="{!$Label.c.PC_PharmaCardLookup_Get_Health_Plans_Error_Message}" />
+    <aura:attribute name="insertHealthPlanSuccess" type="String" default="{!$Label.c.PC_PharmaCardLookup_Health_Plan_Insert_Success_Message}" />
+    <aura:attribute name="getCardInfoError" type="String" default="{!$Label.c.PC_PharmaCardLookup_Get_CardInfo_Error_Message}" />
+
+    <aura:attribute name="lookupButtonLabel" type="String" default="{!$Label.c.PC_PharmaCardLookup_Lookup_Button_Label}" />
+    <aura:attribute name="existingHealthPlansSubTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Existing_Health_Plans_Subtitle}" />
+    <aura:attribute name="modalTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Modal_Title}" />
+    <aura:attribute name="patientInformationSubTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Patient_Information_Section_Title}" />
+    <aura:attribute name="physicianInformationSubTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Physician_Information_Section_Title}" />
+    <aura:attribute name="cardHolderInformationSubTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_CardHolder_Information_Section_Title}" />
+    <aura:attribute name="pharmacyCardSectionTitle" type="String" default="{!$Label.c.PC_PharmaCardLookup_Pharmacy_Card_Section_Title}"/>
+    <aura:attribute name="saveButtonLabel" type="String" default="{!$Label.c.PC_Save}" />
+    <aura:attribute name="cancelButtonLabel" type="String" default="{!$Label.c.PC_Cancel_Button}" />
+    <aura:attribute name="loadingMessage" type="String" default="{!$Label.c.PC_PharmaCardLookup_Pharmacy_Loading}" />
+    <aura:attribute name="noHealthPlansFound" type="String" default="{!$Label.c.PC_PharmaCardLookup_No_Health_Plans_Found}" />
+    <aura:attribute name="healthPlansErrorMsg" type="String" />
+    <aura:attribute name="allowPharmaCardLookup" type="Boolean" />
+    <aura:attribute name="denyPharmaCardLookupMessage" type="String" />
+
+
+    <div class="slds-tabs--scoped__nav ">
+        <div class="slds-col"></div>
+        <div class="slds-col slds-no-flex">
+            <ui:button aura:id="cardLookupButton" class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton" label="{!v.lookupButtonLabel}" press="{!c.invokeLookupPharmacyCard}"/>
+        </div>
+    </div>
+    <div class="pcData">
+        <aura:if isTrue="{!v.isDataAvailable}">
+            <!-- Start of List View -->
+            <div class="slds-card">
+                <span class="slds-text-heading--small slds-truncate slds-m-right--xx-small" title="Health Plans" style="padding-left: 20px;">{!v.existingHealthPlansSubTitle}</span>
+                <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table--fixed-layout">
+                    <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.refInfoLabels.idLabel}">{!v.refInfoLabels.idLabel}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.refInfoLabels.groupNameLabel}">{!v.refInfoLabels.groupNameLabel}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.refInfoLabels.policyNumberLabel}">{!v.refInfoLabels.policyNumberLabel}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.refInfoLabels.planStatusLabel}">{!v.refInfoLabels.planStatusLabel}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.refInfoLabels.planTypeLabel}">{!v.refInfoLabels.planTypeLabel}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.refInfoLabels.rxBinLabel}">{!v.refInfoLabels.rxBinLabel}</div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <aura:iteration aura:id="refData" items="{!v.refInfo}" var="th" indexVar="i">
+                        <tr>
+                            <td scope="row" data-label="{!th.Id}">
+                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.Id}">
+                                    <a data-index="{!i}" href="{! '/' + th.Id}" target="_blank">{!th.Name}</a>
+                                </div>
+                            </td>
+                            <td scope="row" data-label="{!th.groupName}">
+                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.groupName}">
+                                        {!th.groupName}
+                                </div>
+                            </td>
+                            <td scope="row" data-label="{!th.policyNumber}">
+                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.policyNumber}">
+                                        {!th.policyNumber}
+                                </div>
+                            </td>
+                            <td scope="row" data-label="{!th.planStatus}">
+                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.planStatus}">
+                                        {!th.planStatus}
+                                </div>
+                            </td>
+                            <td scope="row" data-label="{!th.planType}">
+                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.planType}">
+                                        {!th.planType}
+                                </div>
+                            </td>
+                            <td scope="row" data-label="{!th.rxBin}">
+                                <div class="slds-truncate" data-id="{!'ext'+i}" title="{!th.rxBin}">
+                                        {!th.rxBin}
+                                </div>
+                            </td>
+                        </tr>
+                    </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+            <aura:set attribute="else">
+                <div class="slds-card">
+                    <div class="slds-p-around_medium">
+                        <p class="slds-text-align_center">{!v.healthPlansErrorMsg}</p>
+                    </div>
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+
+    <aura:if isTrue="{!v.isModalMapActive}">
+        <div class="pcResponse">
+            <div class="slds-backdrop slds-backdrop_open"></div>
+            <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="panel slds-modal slds-fade-in-open slds-modal_large">
+                <div class="slds-modal__container" >
+                    <div class="slds-modal__header">
+                        <button class="slds-button slds-modal__close" title="{!$Label.c.PC_Close}" onclick="{!c.closeWindow}">
+                            <lightning:icon iconName="utility:close"  size="x-small" variant="inverse" alternativeText="{!$Label.c.PC_Close}"/>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.modalTitle}</h2>
+                    </div>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+
+                        <div class="slds-size_1-of-2 slds-float_left">
+                        <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                            <h2 class="slds-text-heading_medium slds-hyphenate customH2" title="{!v.patientInformationSubTitle}">
+                                <lightning:icon iconName="utility:user"  size="x-small"/>
+                                    {!$Label.c.PC_PharmaCardLookup_Patient_Information_Section_Title}
+                            </h2>
+                        </div>
+                        <article class="slds-card">
+                            <div class="slds-card__body">
+                                <ul class="slds-card__body_inner slds-grid slds-wrap slds-grid_pull-padded">
+                                    <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                        <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                            <div class="slds-media__body">
+                                                <div class="slds-tile__detail">
+                                                    <dl class="slds-list_horizontal slds-wrap">
+                                                        <dt class="slds-item_label" title="{! v.pharmacyCardFetchInfo.patient.nameLabel}">{! v.pharmacyCardFetchInfo.patient.nameLabel}</dt>
+                                                        <dd class="slds-item_detail ">{! v.pharmacyCardFetchInfo.patient.lastName + ' ' + v.pharmacyCardFetchInfo.patient.firstName}</dd>
+                                                        <dt class="slds-item_label" title="{! v.pharmacyCardFetchInfo.patient.genderLabel}">{! v.pharmacyCardFetchInfo.patient.genderLabel}</dt>
+                                                        <dd class="slds-item_detail ">{! v.pharmacyCardFetchInfo.patient.gender}</dd>
+                                                        <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.birthdateLabel}">{!v.pharmacyCardFetchInfo.patient.birthdateLabel}</dt>
+                                                        <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.patient.dob}</dd>
+                                                        <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.address.cityLabel}">{!v.pharmacyCardFetchInfo.patient.address.cityLabel}</dt>
+                                                        <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.patient.address.city}</dd>
+                                                        <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.address.stateLabel}">{!v.pharmacyCardFetchInfo.patient.address.stateLabel}</dt>
+                                                        <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.patient.address.state}</dd>
+                                                        <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.patient.address.postalCodeLabel}">{!v.pharmacyCardFetchInfo.patient.address.postalCodeLabel}</dt>
+                                                        <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.patient.address.postalCode}</dd>
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </article>
+                        </div>
+
+                        <div class="slds-size_1-of-2 slds-float_left">
+                            <div class="slds-grid slds-grid_align-spread slds-has-flexi-truncate">
+                                <h2 class="slds-text-heading_medium slds-hyphenate customH2" title="{!v.physicianInformationSubTitle}">
+                                    <lightning:icon iconName="utility:user"  size="x-small"/>
+                                        {!$Label.c.PC_PharmaCardLookup_Physician_Information_Section_Title}
+                                </h2>
+                            </div>
+                            <article class="slds-card">
+                                <div class="slds-card__body">
+                                    <ul class="slds-card__body_inner slds-grid slds-wrap slds-grid_pull-padded">
+                                        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                            <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                                <div class="slds-media__body">
+                                                    <div class="slds-tile__detail">
+                                                        <dl class="slds-list_horizontal slds-wrap">
+                                                            <dt class="slds-item_label" title="{! v.pharmacyCardFetchInfo.physician.nameLabel}">{! v.pharmacyCardFetchInfo.physician.nameLabel}</dt>
+                                                            <dd class="slds-item_detail ">{! v.pharmacyCardFetchInfo.physician.lastName + ' ' + v.pharmacyCardFetchInfo.physician.firstName}</dd>
+                                                            <dt class="slds-item_label" title="{! v.pharmacyCardFetchInfo.physician.npiLabel}">{! v.pharmacyCardFetchInfo.physician.npiLabel}</dt>
+                                                            <dd class="slds-item_detail ">{! v.pharmacyCardFetchInfo.physician.npi}</dd>
+                                                            <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.physician.address.cityLabel}">{!v.pharmacyCardFetchInfo.physician.address.cityLabel}</dt>
+                                                            <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.physician.address.city}</dd>
+                                                            <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.physician.address.stateLabel}">{!v.pharmacyCardFetchInfo.physician.address.stateLabel}</dt>
+                                                            <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.physician.address.state}</dd>
+                                                            <dt class="slds-item_label" title="{!v.pharmacyCardFetchInfo.physician.address.postalCodeLabel}">{!v.pharmacyCardFetchInfo.physician.address.postalCodeLabel}</dt>
+                                                            <dd class="slds-item_detail ">{!v.pharmacyCardFetchInfo.physician.address.postalCode}</dd>
+
+
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="clearBoth">
+                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                <aura:if isTrue="{!(!v.isModalMapActiveInner)}">
+                                    <div class="demo-only">
+                                        <div class="slds-container">
+                                            <div class="slds-container--fluid slds-m-top--large">
+                                                <aura:if isTrue="{!v.displaySpinner}">
+                                                    <div class="slds-grid slds-grid--align-center slds-text-heading--small">
+                                                        <div role="status" class="slds-spinner slds-spinner_medium">
+                                                            <span class="slds-assistive-text">Loading</span>
+                                                            <div class="slds-spinner__dot-a"></div>
+                                                            <div class="slds-spinner__dot-b"></div>
+                                                        </div>
+                                                            {!$Label.c.PC_PharmaCardLookup_Pharmacy_Loading}
+                                                    </div>
+                                                </aura:if>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:if>
+                                <aura:if isTrue="{!v.isModalMapActiveInner}">
+                                    <aura:if isTrue="{!v.displayError}">
+                                        <div class="slds-text-color_error slds-text-heading_medium">
+                                            <lightning:icon iconName="utility:error"  size="x-small"/>
+                                            {!v.errorMessages}
+                                        </div>
+                                    </aura:if>
+                                    <aura:if isTrue="{!(!v.displayError)}">
+                                        <div class="resultsHeading slds-text-align--center slds-border--top slds-border--bottom slds-size_1-of-1">
+                                                <span class="slds-text-heading_medium resultsHeadingText">
+                                                        {!$Label.c.PC_PharmaCardLookup_Results}
+                                                </span>
+                                        </div>
+                                        <div class="slds-form-element__row slds-grid">
+                                            <div class="slds-size_1-of-2">
+                                                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate customH2">
+                                                    <lightning:icon iconName="utility:database"  size="x-small"/>
+                                                        {!v.pharmacyCardSectionTitle + ' - ' +  v.serviceResponse.planName}
+                                                </h2>
+                                                <article class="slds-card">
+                                                <div class="slds-card__body">
+                                                    <ul class="slds-card__body_inner slds-grid slds-wrap slds-grid_pull-padded">
+                                                        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                                            <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                                                <div class="slds-media__body">
+                                                                    <div class="slds-tile__detail">
+                                                                        <dl class="slds-list_horizontal slds-wrap">
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.pcnLabel}">{! v.serviceResponse.pcnLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.pcn}</dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.insuranceGroupNameLabel}">{! v.serviceResponse.insuranceGroupNameLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.insuranceGroupName}</dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.insuranceGroupIdLabel}">{! v.serviceResponse.insuranceGroupIdLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.insuranceGroupId}</dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.binLabel}">{! v.serviceResponse.binLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.bin}</dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.policyIDLabel}">{! v.serviceResponse.policyIDLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.policyID}</dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.mailCoverageLabel}">{! v.serviceResponse.mailCoverageLabel}</dt>
+                                                                            <dd class="slds-item_detail ">
+                                                                                <aura:if isTrue="{!(v.serviceResponse.mailCoverage)}">
+                                                                                    <lightning:icon iconName="utility:check"  size="x-small"/>
+                                                                                </aura:if>
+                                                                                <aura:if isTrue="{!(!v.serviceResponse.mailCoverage)}">
+                                                                                    <lightning:icon iconName="utility:close"  size="x-small"/>
+                                                                                </aura:if>
+                                                                            </dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.retailCoverageLabel}">{! v.serviceResponse.retailCoverageLabel}</dt>
+                                                                            <dd class="slds-item_detail ">
+                                                                                <aura:if isTrue="{!(v.serviceResponse.retailCoverage)}">
+                                                                                    <lightning:icon iconName="utility:check"  size="x-small"/>
+                                                                                </aura:if>
+                                                                                <aura:if isTrue="{!(!v.serviceResponse.retailCoverage)}">
+                                                                                    <lightning:icon iconName="utility:close"  size="x-small"/>
+                                                                                </aura:if>
+                                                                            </dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.longTermCareCoverageLabel}">{! v.serviceResponse.longTermCareCoverageLabel}</dt>
+                                                                            <dd class="slds-item_detail ">
+                                                                                <aura:if isTrue="{!(v.serviceResponse.longTermCareCoverage)}">
+                                                                                    <lightning:icon iconName="utility:check"  size="x-small"/>
+                                                                                </aura:if>
+                                                                                <aura:if isTrue="{!(!v.serviceResponse.longTermCareCoverage)}">
+                                                                                    <lightning:icon iconName="utility:close"  size="x-small"/>
+                                                                                </aura:if>
+                                                                            </dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.specialtyCoverageLabel}">{! v.serviceResponse.specialtyCoverageLabel}</dt>
+                                                                            <dd class="slds-item_detail ">
+                                                                                <aura:if isTrue="{!(v.serviceResponse.specialtyCoverage)}">
+                                                                                    <lightning:icon iconName="utility:check"  size="x-small"/>
+                                                                                </aura:if>
+                                                                                <aura:if isTrue="{!(!v.serviceResponse.specialtyCoverage)}">
+                                                                                    <lightning:icon iconName="utility:close"  size="x-small"/>
+                                                                                </aura:if>
+                                                                            </dd>
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </article>
+                                            </div>
+                                            <div class="slds-size_1-of-2">
+                                                <h2 class="slds-text-heading_medium slds-hyphenate customH2" title="{!v.cardHolderInformationSubTitle}">
+                                                <!--<lightning:icon iconName="utility:user"  size="x-small"/>-->
+                                                <lightning:icon iconName="utility:user"  size="x-small"/>
+                                                    {!$Label.c.PC_PharmaCardLookup_CardHolder_Information_Section_Title}
+                                            </h2>
+                                                <article class="slds-card">
+                                                <div class="slds-card__body">
+                                                    <ul class="slds-card__body_inner slds-grid slds-wrap slds-grid_pull-padded">
+                                                        <li class="slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                                                            <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+                                                                <div class="slds-media__body">
+                                                                    <div class="slds-tile__detail">
+
+                                                                        <dl class="slds-list_horizontal slds-wrap">
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.subscriber.nameLabel}">{! v.serviceResponse.subscriber.nameLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.subscriber.lastName + ' ' + v.serviceResponse.subscriber.firstName}</dd>
+                                                                            <dt class="slds-item_label" title="{! v.serviceResponse.subscriber.genderLabel}">{! v.serviceResponse.subscriber.genderLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{! v.serviceResponse.subscriber.gender}</dd>
+                                                                            <dt class="slds-item_label" title="{!v.serviceResponse.subscriber.birthdateLabel}">{!v.serviceResponse.subscriber.birthdateLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{!v.serviceResponse.subscriber.dob}</dd>
+                                                                            <dt class="slds-item_label" title="{!v.serviceResponse.subscriber.address.cityLabel}">{!v.serviceResponse.subscriber.address.cityLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{!v.serviceResponse.subscriber.address.city}</dd>
+                                                                            <dt class="slds-item_label" title="{!v.serviceResponse.subscriber.address.stateLabel}">{!v.serviceResponse.subscriber.address.stateLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{!v.serviceResponse.subscriber.address.state}</dd>
+                                                                            <dt class="slds-item_label" title="{!v.serviceResponse.subscriber.address.postalCodeLabel}">{!v.serviceResponse.subscriber.address.postalCodeLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{!v.serviceResponse.subscriber.address.postalCode}</dd>
+                                                                            <dt class="slds-item_label" title="{!v.serviceResponse.subscriber.cardHolderRelationshipLabel}">{!v.serviceResponse.subscriber.cardHolderRelationshipLabel}</dt>
+                                                                            <dd class="slds-item_detail ">{!v.serviceResponse.subscriber.cardHolderRelationship}</dd>
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                            </article>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </article>
+                                            </div>
+                                        </div>
+
+                                        <div class="slds-size_1-of-1 disclaimerBlock">
+                                                {!$Label.c.PC_PharmacyBenefits_CoverageDisclaimer}
+                                        </div>
+                                    </aura:if>
+                                </aura:if>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-modal__footer">
+                        <ui:button class="slds-button slds-button_neutral" press="{!c.closeWindow}">{!v.cancelButtonLabel}</ui:button>
+                        <ui:button aura:id="saveHealthPlanButton" class="slds-button slds-button--neutral uiButton--default uiButton--brand uiButton" press="{!c.saveHealthPlan}" disabled="true">{!v.saveButtonLabel}</ui:button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    <style>{!v.cssStyle}</style>
+</aura:component>

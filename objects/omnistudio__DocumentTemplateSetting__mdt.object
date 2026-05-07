@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Use custom metadata to define document template settings for your organization.</description>
+    <fields>
+        <fullName>omnistudio__DoesAddSpaceAfterContent__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates whether to add a space after the content output in a generated document.</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Add Space After Content</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Document Template Setting</label>
+    <pluralLabel>Document Template Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

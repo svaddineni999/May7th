@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>문제</value>
+    </caseValues>
+    <fieldSets>
+        <label>HcProblemCreateEdit</label>
+        <name>HealthCloudGA__HcProblemCreateEdit</name>
+    </fieldSets>
+    <fields>
+        <label>계정</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>문제</relationshipLabel>
+    </fields>
+    <fields>
+        <label>케어 계획 템플릿</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>문제</relationshipLabel>
+    </fields>
+    <fields>
+        <label>케어 계획</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>문제</relationshipLabel>
+    </fields>
+    <fields>
+        <label>범주</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition</masterLabel>
+            <translation><!-- Cognition --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pain Monitoring or Management</masterLabel>
+            <translation><!-- Pain Monitoring or Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Respiratory Impairment</masterLabel>
+            <translation><!-- Respiratory Impairment --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>설명</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>우선 순위</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>정렬 순서</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <nameFieldLabel>이름</nameFieldLabel>
+    <validationRules>
+        <errorMessage>계정에 대한 조회는 사례의 계정에 대한 조회와 매치되어야 합니다.</errorMessage>
+        <name>HealthCloudGA__AccountProblem_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

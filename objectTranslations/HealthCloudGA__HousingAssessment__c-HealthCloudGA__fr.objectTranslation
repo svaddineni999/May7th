@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Évaluation du foyer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Évaluations du foyer</value>
+    </caseValues>
+    <fields>
+        <label>Compte</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Évaluations du foyer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Date d&apos;évaluation</label>
+        <name>HealthCloudGA__AssessmentDate__c</name>
+    </fields>
+    <fields>
+        <label>Peut préparer des repas en sécurité</label>
+        <name>HealthCloudGA__CanPrepareFoodSafely__c</name>
+    </fields>
+    <fields>
+        <label>Peut rester en quarantaine</label>
+        <name>HealthCloudGA__CanQuarantine__c</name>
+    </fields>
+    <fields>
+        <label>Habitation</label>
+        <name>HealthCloudGA__Dwelling__c</name>
+        <picklistValues>
+            <masterLabel>Apartment</masterLabel>
+            <translation><!-- Apartment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Board and Care or Assisted Living Facility</masterLabel>
+            <translation><!-- Board and Care or Assisted Living Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel or Motel</masterLabel>
+            <translation><!-- Hotel or Motel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>House</masterLabel>
+            <translation><!-- House --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long-Term Care Facility</masterLabel>
+            <translation><!-- Long-Term Care Facility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Multi-Family Dwelling</masterLabel>
+            <translation><!-- Multi-Family Dwelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nursing Home</masterLabel>
+            <translation><!-- Nursing Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreational Vehicle or Mobile Home</masterLabel>
+            <translation><!-- Recreational Vehicle or Mobile Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skilled Nursing Facility</masterLabel>
+            <translation><!-- Skilled Nursing Facility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Possède une salle de bains privée</label>
+        <name>HealthCloudGA__HasPrivateBathroom__c</name>
+    </fields>
+    <fields>
+        <label>Sans domicile fixe</label>
+        <name>HealthCloudGA__IsHomeless__c</name>
+    </fields>
+    <fields>
+        <label>Date de fin de la quarantaine</label>
+        <name>HealthCloudGA__QuarantineEndDate__c</name>
+    </fields>
+    <fields>
+        <label>Emplacement de la quarantaine</label>
+        <name>HealthCloudGA__QuarantineLocation__c</name>
+        <relationshipLabel>Évaluations du foyer</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Date de début de la quarantaine</label>
+        <name>HealthCloudGA__QuarantineStartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nom de l&apos;évaluation du foyer</nameFieldLabel>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

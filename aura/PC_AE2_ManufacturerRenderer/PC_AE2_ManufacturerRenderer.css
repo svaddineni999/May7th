@@ -1,0 +1,36 @@
+/**
+ * Created by shisbansal on 11/26/2018.
+ */
+
+.THIS .adverseEventTermsLabel{
+    padding-left: 25px;
+    padding-top: 10px;
+    width: 405px;
+}
+
+
+.THIS .reportTypeOtherTextLabel{
+    width: 399px;
+    padding-left: 25px;
+    padding-top: 10px;
+
+}
+
+.THIS .ifIndProtocolLabel{
+    width: 399px;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.THIS .reportSourceOtherTextLabel{
+    width: 399px;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+
+.THIS .labelStyling {
+        color: rgb(62, 62, 60);
+        font-size: .75rem;
+        font-weight: normal;
+}

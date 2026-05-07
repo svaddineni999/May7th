@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Order Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Order Items</value>
+    </caseValues>
+    <fieldSets>
+        <label><!-- PC Orderitems --></label>
+        <name>PC_OrderItems</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Date when the order was delivered. --></help>
+        <label><!-- Actual Delivery Date --></label>
+        <name>PC_ActualDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of days the prescribed medication will last if taken as per the recommended dosage. --></help>
+        <label><!-- Days Supply --></label>
+        <name>PC_DaysSupply__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when the order is expected to deliver. --></help>
+        <label><!-- Estimated Delivery Date --></label>
+        <name>PC_EstimatedDeliveryDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- National Drug Code associated with the product being order. --></help>
+        <label><!-- NDC --></label>
+        <name>PC_NDC__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of the order item. --></help>
+        <label><!-- Order Item Status --></label>
+        <name>PC_OrderItemStatus__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entered-in-error</masterLabel>
+            <translation><!-- Entered-in-error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipped</masterLabel>
+            <translation><!-- Shipped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stopped</masterLabel>
+            <translation><!-- Stopped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Type of the order item. --></help>
+        <label><!-- Order Item Type --></label>
+        <name>PC_OrderItemType__c</name>
+        <picklistValues>
+            <masterLabel>Combination Product</masterLabel>
+            <translation><!-- Combination Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Drugs</masterLabel>
+            <translation><!-- Drugs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Informational Kits</masterLabel>
+            <translation><!-- Informational Kits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Related Supplies</masterLabel>
+            <translation><!-- Related Supplies --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Order associated with the order item. --></help>
+        <label><!-- Order --></label>
+        <name>PC_Order__c</name>
+        <relationshipLabel><!-- Order Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Type of packaging of the order item. --></help>
+        <label><!-- Packaging --></label>
+        <name>PC_Packaging__c</name>
+        <picklistValues>
+            <masterLabel>Bottles</masterLabel>
+            <translation><!-- Bottles --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cardboard Boxes</masterLabel>
+            <translation><!-- Cardboard Boxes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pills</masterLabel>
+            <translation><!-- Pills --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic Containers</masterLabel>
+            <translation><!-- Plastic Containers --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Description of the Product being ordered. --></help>
+        <label><!-- Product Description --></label>
+        <name>PC_ProductDescription__c</name>
+    </fields>
+    <fields>
+        <help><!-- Product being ordered. --></help>
+        <label><!-- Product Name --></label>
+        <name>PC_Product__c</name>
+        <relationshipLabel><!-- Order Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Quantity of the product being ordered. --></help>
+        <label><!-- Quantity --></label>
+        <name>PC_Quantity__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entity who received the order. --></help>
+        <label><!-- Received By --></label>
+        <name>PC_ReceivedBy__c</name>
+    </fields>
+    <fields>
+        <help><!-- Unique tracking number of the order shipment. --></help>
+        <label><!-- Shipment Tracking Number --></label>
+        <name>PC_ShipmentTrackingNumber__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date when the order is shipped. --></help>
+        <label><!-- Shipping Date --></label>
+        <name>PC_ShippingDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Strength of the Drug / Product. --></help>
+        <label><!-- Strength --></label>
+        <name>PC_Strength__c</name>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

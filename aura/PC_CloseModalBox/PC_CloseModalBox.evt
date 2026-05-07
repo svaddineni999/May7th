@@ -1,0 +1,9 @@
+<!--
+ - Created by havalakki on 2/23/2018.
+ -->
+
+<aura:event type="COMPONENT" description="PC_CloseModalBox">
+    <!--<aura:attribute name="closeBox" type="Boolean"/>-->
+    <aura:attribute name="resultString" type="String"/>
+    <aura:attribute name="errors" type="Object[]"/>
+</aura:event>

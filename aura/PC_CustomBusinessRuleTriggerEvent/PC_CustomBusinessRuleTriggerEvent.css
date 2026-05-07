@@ -1,0 +1,10 @@
+/**
+ * Created by tusarora on 3/31/2020.
+ */
+.THIS #conditionalBuilderTriggerEventContainer .conditionalBuilderBox {
+    border: 1px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}

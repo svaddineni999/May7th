@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_ComponentName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Component Name</label>
+        <length>100</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Config2__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Configuration settings that are specific to the Enrollment Wizard Page. The format and specification of the attributes is implementation specific, but a JSON structure is recommended for consistency and conciseness. Recommended to use this field in place of Config if this field is blank value from Config will be used.</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Configuration settings that are specific to the Enrollment Wizard Page. The format and specification of the attributes is implementation specific, but a JSON structure is recommended for consistency and conciseness. Recommended to use this field in place of Config if this field is blank, value from Config will be used.</inlineHelpText>
+        <label>Config2</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Config__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Configuration settings that are specific to the Enrollment Wizard Page. The format and specification of the configuration is implementation specific, but a JSON structure is recommended for consistency and conciseness. Recommended to use Config2 field which is of higher character length.</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <inlineHelpText>Configuration settings that are specific to the Enrollment Wizard Page. The format and specification of the attributes is implementation specific, but a JSON structure is recommended for consistency and conciseness. Recommended to use Config2 field which is of higher character length.</inlineHelpText>
+        <label>Config</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_EnrollmentWizardPageLabel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label for Enrollment Wizard Page that will be displayed on the Enrollment Wizard Progress Indicator.
+You may also specify the fully qualified custom label path ($Label.namespace.labelName).
+If this field is blank, then the value in the masterLabel field will be considered for Page name.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Label for Enrollment Wizard Page (Progress Indicator).
+You may also specify the fully qualified custom label path ($Label.namespace.labelName).
+If this field is blank, then the value in the masterLabel field will be considered for Page name.</inlineHelpText>
+        <label>Enrollment Wizard Page Label</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Ordinal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Ordinal</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Processor__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the Apex class that implements the PC_EnrollmentWizardPageProcessor interface and will be called to perform enrollment processing for the page. The default name of the processor is &lt;PC_ComponantName__c&gt; + &quot;Processor&quot;, which will be used if this field is left blank.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The default name of the processor is &lt;PC_ComponantName__c&gt; + &quot;Processor&quot;, which will be used if this field is left blank.</inlineHelpText>
+        <label>Processor</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ProgramCode__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Program code of the engagement program associated with the enrollment wizard page.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Program code of the engagement program associated with the enrollment wizard page.</inlineHelpText>
+        <label>Program Code</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Enrollment Wizard Page</label>
+    <pluralLabel>Enrollment Wizard Pages</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

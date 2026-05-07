@@ -1,0 +1,22 @@
+<!--
+ - Created by vkashikar on 10/31/2019.
+ -->
+
+<design:component label="Three Region Custom App Page Template">
+    <flexipage:template >
+        <!-- The default width for the "left" region is "MEDIUM". In tablets,
+        the width is "SMALL" -->
+        <flexipage:region name="top" label="Top Region" defaultWidth="MEDIUM">
+            <flexipage:formfactor type="MEDIUM" width="SMALL" />
+        </flexipage:region>
+        <flexipage:region name="middle" label="Middle Region" defaultWidth="MEDIUM" >
+            <flexipage:formfactor type="MEDIUM" width="SMALL" />
+        </flexipage:region>
+        <flexipage:region name="bottom" label="Bottom Region" defaultWidth="MEDIUM" >
+            <flexipage:formfactor type="MEDIUM" width="SMALL" />
+        </flexipage:region>
+        <flexipage:region name="bottomWithFloatLeft" label="Bottom Region with side-by-side view" defaultWidth="MEDIUM" >
+            <flexipage:formfactor type="MEDIUM" width="SMALL" />
+        </flexipage:region>
+    </flexipage:template>
+</design:component>

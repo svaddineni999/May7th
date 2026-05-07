@@ -1,0 +1,265 @@
+<!--
+Lightning component  : PC_DocumentSplit 
+Description          : Component for document splitting 
+
+Shabda Bhujad 	    28-Jun-2017 	        [PC-1677] Error in child doc when trying Patient Enrollment
+								            Removed the css from the component
+Tejas Patel         July 25 2017           [PC-1927],[PC-1928],[PC-1918] Translation Issues
+Kanteti Kishore     29-July-2020           [PC-6592] Changes in helper at line-313,314
+-->
+
+<aura:component controller="PC_DocumentSplitLightningController" implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    
+    <!--Attribute declaration -->
+    <aura:attribute name="noSplitDocs" type="PC_DocumentSplitLightningController.Object[]" />
+    <aura:attribute name="newChildDocPgRange" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="namespace" type="String" default="" />  
+    <aura:attribute name="namespacePrefix" type="String" default="" /> 
+    <aura:attribute name="isSplitbuttonActive" type="boolean" default="true" />
+    <aura:attribute name="isResubmit" type="boolean" default="true" />
+    <aura:attribute name="errorMsg" type="String" default="{!$Label.c.PC_Correct_Your_Input}" />
+    <aura:attribute name="confirmDelIndex" type="Integer" />
+    <aura:attribute name="selDocIndex" type="Integer" />
+    <aura:attribute name="pageRange" type="Integer[]" />
+    <aura:attribute name="pageCount" type="Integer" default="0" />
+    
+    <!--Init function to get all child documents -->
+    <aura:handler name="init" value="{!this}" action="{!c.getChildDocList}"/>
+    <!-- Refreshes list of child documents as soon as a new child document is added or any status gets updated -->
+    <aura:handler event="force:refreshView" action="{!c.getChildDocList}"/>
+    
+    <!--Component event on child component to refresh the parent component when fired-->
+    <aura:registerEvent name="cmpEvent" type="c:PC_RefreshCmp"/>
+         
+    <!--Start of main component: header and banner-->
+    <div class="slds-m-bottom--large"  />
+    <div style="border: 1px solid #d8dde6;">
+        <!--Start of Header Component-->  
+        <div class="slds-tabs--scoped__nav blockSectionSplit" >
+            <div class="slds-col">
+                <ul class="slds-tabs--scoped__item slds-text-heading--label slds-active blockSectionSplit" title="Child Documents" role="presentation">
+                    {!$Label.c.PC_Doc_Split_Section_Header}
+                </ul> 
+            </div>
+            <div class="slds-col slds-no-flex">
+                <div class="slds-form-element">
+                    <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Refresh}" press="{!c.refreshDocSplitCmp}"/>
+                    <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_AddChild}" press="{!c.showModal}"/>
+                </div> 
+            </div>
+        </div>
+        
+        <!--Start of List Component-->
+        <div class="slds-grid slds-wrap ">
+            <div class="childDocListView slds-scrollable">
+                <div class="slds-col  slds-size--1-of-1"  >
+                    <table class="slds-table slds-table--bordered " style="width: 100%;border-right: 1px solid #d8dde6;border-left: 1px solid #d8dde6;">
+                        <thead>
+                            <tr class="slds-text-heading--label">
+                                <th class="slds-cell-shrink" scope="col"></th>
+                                <th class="slds-cell-shrink" scope="col"></th>
+                                <th class="slds-truncate" scope="col">
+                                    <span class="slds-truncate">{!$Label.c.PC_ChildDocListView_Col_1}</span></th>
+                                <th scope="col">
+                                    <span class="slds-truncate">{!$Label.c.PC_ChildDocListView_Col_2}</span></th>
+                                <th scope="col">
+                                    <span class="slds-truncate">{!$Label.c.PC_ChildDocListView_Col_3}</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.noSplitDocs}" var="noSplitDoc" indexVar="i">
+                                <tr class="slds-hint-parent">
+                                    <td class="cell ">                    
+                                        <a data-index="{!i}" onclick="{!c.showEditModal}">
+                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#edit'}"
+                                                   ariaHidden="true"
+                                            />
+                                        </a>
+                                    </td>
+                                    <td class="cell ">                    
+                                        <a data-index="{!i}" onclick="{!c.showDeleteWarning}">
+                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#delete'}"
+                                                   ariaHidden="true"
+                                            />
+                                        </a>
+                                    </td>
+                                    <td data-label="docNumber" class="slds-truncate" role="row">
+                                        <a data-index="{!i}" href="{!noSplitDoc.DocUrl}" target="_blank">{!noSplitDoc.DocumentName}</a>
+                                    </td>
+                                    <td data-label="pgRange" class="slds-truncate">{!noSplitDoc.DocumentPageRange}</td>
+                                    <td data-label="docStatus" class="slds-truncate">{!noSplitDoc.DocumentStatusLabel}</td>
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!--Footer section-->
+        <section class="slds-clearfix blockSectionSplit">
+            <aura:if isTrue="{!v.isSplitbuttonActive}">
+                <ui:button class="slds-button slds-button--neutral slds-button--brand" label="{!$Label.c.PC_Split}" press="{!c.sendSplitReq}"/>
+                <aura:set attribute="else">
+                    <button class="slds-button slds-button--brand" disabled = "true"  >
+                        {!$Label.c.PC_Split}
+                    </button>
+                </aura:set>
+            </aura:if>
+        </section>
+    </div>
+
+    <!--Start of Page Range modal window-->
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="modaldialog" >
+      <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading--medium">{!$Label.c.PC_DocPgRangeModalHeader} </h2>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"/>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+            <div class="slds-modal__content inputBoxPadding " >
+                <div class="slds-form--inline" >
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label form-label">{!$Label.c.PC_ChildDocListView_Col_2}</label>                         
+                        <div class="slds-form-element__control">
+                            <ui:inputText aura:id="pageRangeErrorSave" 
+                                          class="slds-input"
+                                          value="{!v.newChildDocPgRange}"
+                                          required="true" size="50" placeholder="e.g. 1-3, 4, 5, 9"/>
+                        </div>
+                    </div >
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <div class="slds-x-small-buttons--horizontal">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.hideModalBox}" >{!$Label.c.PC_Cancel_Button}</button>
+                    <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.savePageRange}">{!$Label.c.PC_Add_Button}</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Edit Split modal window -->
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="editModal" >
+	    <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <h2 class="slds-text-heading--medium">{!$Label.c.PC_EditPgRangeModalHeader}</h2>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideEditModal}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"/>
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+            <div class="slds-modal__content inputBoxPadding " >
+               <div class="slds-form--inline" >
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label form-label">{!$Label.c.PC_ChildDocListView_Col_2}</label>                         
+                        <div class="slds-form-element__control">
+                            <ui:inputText aura:id="pageRangeErrorEdit" 
+                                          class="slds-input"
+                                          value="{!v.newChildDocPgRange}"
+                                          required="true" size="50"/>
+                        </div>
+                    </div>
+                   <div>
+                       <i class="slds-form-element__label">{!$Label.c.PC_EditPgRangeWarning}</i>
+                   </div>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <div class="slds-x-small-buttons--horizontal">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.hideEditModal}" >{!$Label.c.PC_Cancel_Button}</button>
+                    <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.editPageRange}">{!$Label.c.PC_Save}</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Start of split request sent acknowlegement modal window -->
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="splitInitmodal" >
+      <div class="slds-modal__container">
+            <div class="slds-modal__header modalAlert" >
+                <h2 class="slds-text-heading--medium">{!$Label.c.PC_Confirmation}</h2>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideAckModal}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"
+                           />
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+            
+            <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                <p>{!$Label.c.PC_DocSplitConfirmationMsg}</p>
+            </div>
+            
+            <div class="slds-modal__footer slds-modal__footer--center">
+                <div class="slds-x-small-buttons--horizontal" align="center">
+                    <button class="slds-button slds-button--neutral" onclick="{!c.hideAckModal}" >{!$Label.c.PC_Okay_Button}</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Start of ReSubmit modal window-->
+    <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="resubmitmodal" >
+       <div class="slds-modal__container">
+            <div class="slds-modal__header modalAlert" >
+                <h2 class="slds-text-heading--medium">{!$Label.c.PC_Warning}</h2>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideReSubmit}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"
+                           />
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                    <p>{!$Label.c.PC_DocSplitResubmitMsg}</p>
+            </div>
+            <div class="slds-modal__footer slds-modal__footer--center">
+                <div class="slds-x-small-buttons--horizontal" align="center">
+                        <button class="slds-button slds-button--neutral" onclick="{!c.hideReSubmit}" >{!$Label.c.PC_Cancel_Button}</button>
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.resubmitSplitReq}">{!$Label.c.PC_Yes}</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!--Start of Delete warning popup window-->
+     
+	<div aria-hidden="true" role="dialog" class="slds-modal slds-modal--small slds-fade-in-hide" aura:id="delwarningmodal" >
+	    <div class="slds-modal__container">
+            <div class="slds-modal__header modalAlert" >
+                <h2 class="slds-text-heading--medium">{!$Label.c.PC_Warning}</h2>
+                <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideDelete}">
+                    <c:svg class="slds-button__icon slds-button__icon--large"
+                           xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                           ariaHidden="true"
+                           />
+                    <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                </button>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium slds-text-align--center">
+                    <p>{!$Label.c.PC_Del_Warning}</p>
+            </div>
+            <div class="slds-modal__footer slds-modal__footer--center">
+                <div class="slds-x-small-buttons--horizontal" align="center">
+                        <button class="slds-button slds-button--neutral" onclick="{!c.hideDelete}" >{!$Label.c.PC_Cancel_Button}</button>
+                        <button class="slds-button slds-button--neutral slds-button--brand" onclick="{!c.deleteSplit}">{!$Label.c.PC_Yes}</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+  <div class="slds-backdrop slds-backdrop--hide" aura:id="backdrop"></div>
+</aura:component>

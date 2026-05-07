@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>אי-הסבילות לאלרגיה ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>אי-סבילות לאלרגיה ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>אי-הסבילויות לאלרגיה ב-EHR</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>אי-סבילויות לאלרגיה ב-EHR</value>
+    </caseValues>
+    <fields>
+        <label>חשבון</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>רגישויות אלרגיות ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>קוד רמה קריטית</label>
+        <name>HealthCloudGA__CriticalityCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית רמה קריטית</label>
+        <name>HealthCloudGA__CriticalityLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת רמה קריטית</label>
+        <name>HealthCloudGA__CriticalitySystem__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if value of Status Label field is NOT equal to &apos; Resolved &apos;, else returns false. --></help>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>מטופל</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>רגישויות אלרגיות ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>תגובה 255</label>
+        <name>HealthCloudGA__Reaction255__c</name>
+    </fields>
+    <fields>
+        <label>תגובה</label>
+        <name>HealthCloudGA__Reaction__c</name>
+    </fields>
+    <fields>
+        <label>תאריך רישום</label>
+        <name>HealthCloudGA__RecordedDate__c</name>
+    </fields>
+    <fields>
+        <label>שם מתעד 255</label>
+        <name>HealthCloudGA__RecorderName255__c</name>
+    </fields>
+    <fields>
+        <label>שם מתעד</label>
+        <name>HealthCloudGA__RecorderName__c</name>
+    </fields>
+    <fields>
+        <label>מתעד</label>
+        <name>HealthCloudGA__Recorder__c</name>
+        <relationshipLabel>רגישויות אלרגיות</relationshipLabel>
+    </fields>
+    <fields>
+        <label>בדיקת רגישות1</label>
+        <name>HealthCloudGA__SensitivityTest1__c</name>
+        <relationshipLabel>רגישויות אלרגיות ב-EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>בדיקת רגישות2</label>
+        <name>HealthCloudGA__SensitivityTest2__c</name>
+        <relationshipLabel>רגישויות אלרגיות ב-EHR (בדיקת רגישות2)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>בדיקת רגישות3</label>
+        <name>HealthCloudGA__SensitivityTest3__c</name>
+        <relationshipLabel>רגישויות אלרגיות ב-EHR (בדיקת רגישות3)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>קוד סוג רגישות</label>
+        <name>HealthCloudGA__SensitivityTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית סוג רגישות</label>
+        <name>HealthCloudGA__SensitivityTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת סוג רגישות</label>
+        <name>HealthCloudGA__SensitivityTypeSystem__c</name>
+    </fields>
+    <fields>
+        <label>מזהה מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>שינוי במערכת מקור</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>מערכת מקור</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד מצב</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>תווית מצב</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>מערכת מצב</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>חומר 255</label>
+        <name>HealthCloudGA__Substance255__c</name>
+    </fields>
+    <fields>
+        <label>מערכת קוד חומר</label>
+        <name>HealthCloudGA__SubstanceCodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>קוד חומר</label>
+        <name>HealthCloudGA__SubstanceCode__c</name>
+    </fields>
+    <fields>
+        <label>חומר</label>
+        <name>HealthCloudGA__SubstanceLong__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>מזהה רגישויות אלרגיות ב-EHR</nameFieldLabel>
+</CustomObjectTranslation>

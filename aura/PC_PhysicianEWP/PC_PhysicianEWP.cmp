@@ -1,0 +1,421 @@
+<aura:component extends="c:PC_EnrollmentWizardPage" controller="PC_PhysicianEWPController">
+    
+    <aura:set attribute="persistentAttributes" value="['selectedResult']" />
+    
+    <aura:attribute name="physicianTableHeaders" type="Object" />
+    <aura:attribute name="searchString" type="String" default=""/> 
+    <aura:attribute name="searchResults" type="Object[]"></aura:attribute>
+    <aura:attribute name="selectedResult" type="Object"></aura:attribute>
+    <aura:attribute name="onlineApplicantPhysician" type="Object"/>
+    <aura:attribute name="showRefTable" type="Boolean" default="false"/>
+    
+    <aura:attribute name="_physicianReferenceTableHeader" type="String" default="{!$Label.c.PC_EWP_PhysicianRefTable}" />
+    <aura:attribute name="_searchHeader" type="String" default="{!$Label.c.PC_EWP_SearchHeader}" />
+    <aura:attribute name="_PhysicianHeader" type="String" default="{!$Label.c.PC_PhysicianEWP_Header}" />
+    <aura:attribute name="_selectedPhysicianHeader" type="String" default="{!$Label.c.PC_PhysicianEWP_SelectedPhysicianHeader}" />
+    
+    <aura:attribute name="refTableCol1" type="String" default="{!$Label.c.PC_PhysicianEWP_refTableCol1}" />
+    <aura:attribute name="refTableCol2" type="String" default="{!$Label.c.PC_PhysicianEWP_refTableCol2}" />
+    <aura:attribute name="refTableCol3" type="String" default="{!$Label.c.PC_PhysicianEWP_refTableCol3}" />
+    <aura:attribute name="refTableCol4" type="String" default="{!$Label.c.PC_PhysicianEWP_refTableCol4}" />
+    <aura:attribute name="refTableCol5" type="String" default="{!$Label.c.PC_PhysicianEWP_refTableCol5}" />
+    <aura:attribute name="refTableCol6" type="String" default="{!$Label.c.PC_PhysicianEWP_refTableCol6}" />
+    
+    <aura:attribute name="searchStringErrorMessage" type="String" default="{!$Label.c.PC_FieldError_SearchString}" />
+    <aura:attribute name="physicianReferenceTableMsg" type="String" default="{!$Label.c.PC_EWP_PhysicianRefTable_Desc}" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="showSpinner" type="Boolean"/>
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+    </aura:if>
+    <div class="EWPContent">
+        <div class="ExistingPhysicianBlock">
+            <ul>
+                <!--****************************************Reference table of Physician populated from Online Form********************************************-->
+                <aura:if isTrue="{!v.showRefTable}">
+                    <li class="slds-item slds-m-bottom--small">
+                        <div class="refTable slds-tabs--scoped">
+                            <fieldset class="slds-form--compound">
+                                <div class="searchForm">
+                                    <div class="slds-tabs--scoped__nav tableheader" role="tablist">
+                                        <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection " style = "color:#ffffff">{! v._physicianReferenceTableHeader}
+                                        </legend>
+                                    </div>
+
+                                    <div class="slds-form-element__group slds-tabs--scoped__content">
+
+                                        <div class="slds-text-body--small message"  >
+                                            <lightning:icon iconName="utility:info"  size="x-small" alternativeText="Information"/> &nbsp;
+                                            <ui:outputText value="{! v.physicianReferenceTableMsg}"  />
+                                        </div>
+
+                                        <div class="searchResultBlock">
+
+                                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size--1-of-1">
+                                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                                            <thead>
+                                                            <tr class="slds-text-title--caps">
+
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.name}">{!v.physicianTableHeaders.name}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.phone}">{!v.physicianTableHeaders.phone}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.fax}">{!v.physicianTableHeaders.fax}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.primaryAddress1}">{!v.physicianTableHeaders.primaryAddress1}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.city}">{!v.physicianTableHeaders.city}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.state}">{!v.physicianTableHeaders.state}</div>
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+
+                                                            <tbody>
+                                                            <tr>
+                                                                <td scope="row" data-label="{!v.onlineApplicantPhysician.name}">
+                                                                    <div class="slds-truncate" title="{!v.onlineApplicantPhysician.name}">{!v.onlineApplicantPhysician.name}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!v.onlineApplicantPhysician.phone}">
+                                                                    <div class="slds-truncate" title="{!v.onlineApplicantPhysician.phone}">{!v.onlineApplicantPhysician.phone}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!v.onlineApplicantPhysician.fax}">
+                                                                    <div class="slds-truncate" title="{!v.onlineApplicantPhysician.fax}">{!v.onlineApplicantPhysician.fax}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!v.onlineApplicantPhysician.primaryAddress1}">
+                                                                    <div class="slds-truncate" title="{!v.onlineApplicantPhysician.primaryAddress1}">{!v.onlineApplicantPhysician.primaryAddress1}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!v.onlineApplicantPhysician.city}">
+                                                                    <div class="slds-truncate" title="{!v.onlineApplicantPhysician.city}">{!v.onlineApplicantPhysician.city}</div>
+                                                                </td>
+                                                                <td scope="row" data-label="{!v.onlineApplicantPhysician.state}">
+                                                                    <div class="slds-truncate" title="{!v.onlineApplicantPhysician.state}">{!v.onlineApplicantPhysician.state}</div>
+                                                                </td>
+
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </li>
+                </aura:if>
+
+                <!--***********************************************Search block with search results table********************************************************-->
+                <li class="slds-item slds-m-bottom--small">
+                    <div class="slds-tabs--scoped">
+                        <fieldset class="slds-form--compound">
+                            <div class="searchForm">
+                                <div class="slds-tabs--scoped__nav" role="tablist">
+                                    <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection">{! v._searchHeader}</legend>
+                                </div>
+                                <div class="slds-form-element__group slds-tabs--scoped__content">
+                                    <form onsubmit="{!c.preventSubmitAction}">
+                                        <div class="searchBlock">
+                                            <div class="slds-form-element searchFieldBlock">
+                                                <ui:inputText aura:id="searchInputText" value="{!v.searchString}" class="slds-input searchPatient" placeholder="{!$Label.c.PC_Default_SearchKeyword}"/>
+
+                                                <button class="slds-button slds-button--neutral slds-button--brand searchButton"
+                                                        type="button" onclick="{!c.searchRecord}">{!$Label.c.PC_Search_Button_Label}</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div class="searchResultMsgBlock searchResultMsgBlockHidden" aura:id="searchResultMsg">
+                                            {!$Label.c.PC_EWP_No_Results_Found_Msg}
+                                    </div>
+                                    <div class="searchResultBlock">
+                                        <aura:if isTrue="{! v.searchResults.length > 0}">
+                                            <div class="slds-form-element__group slds-tabs--scoped__content1">
+                                                <div class="slds-form-element__row">
+                                                    <div class="slds-form-element slds-size--1-of-1">
+                                                        <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                                            <thead>
+                                                            <tr class="slds-text-title--caps">
+                                                                <th scope="col">
+                                                                    <span>{!$Label.c.PC_EWP_Select_Col_Header}</span>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.firstName}">{!v.physicianTableHeaders.firstName}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.lastName}">{!v.physicianTableHeaders.lastName}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.npi}">{!v.physicianTableHeaders.npi}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.status}">{!v.physicianTableHeaders.status}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.type}">{!v.physicianTableHeaders.type}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.specialistType}">{!v.physicianTableHeaders.specialistType}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.phone}">{!v.physicianTableHeaders.phone}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.city}">{!v.physicianTableHeaders.city}</div>
+                                                                </th>
+                                                                <th scope="col">
+                                                                    <div class="slds-truncate" title="{!v.physicianTableHeaders.state}">{!v.physicianTableHeaders.state}</div>
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+
+
+                                                            <aura:iteration items="{!v.searchResults}" var="item" indexVar="i">
+                                                                <tr>
+                                                                    <td scope="row" data-label="{! 'rtd' + item.Id}">
+                                                                        <ui:inputRadio aura:id="{! 'r' + item.Id}" text="{! i}" name="Physicians" change="{!c.onSelect}" value="{!item.isSelected}" />
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.firstName}">
+                                                                        <div class="slds-truncate" title="{!item.firstName}">{!item.firstName}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.lastName}">
+                                                                        <div class="slds-truncate" title="{!item.lastName}">{!item.lastName}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.npi}">
+                                                                        <div class="slds-truncate" title="{!item.npi}">{!item.npi}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.status}">
+                                                                        <div class="slds-truncate" title="{!item.status}">{!item.status}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.type}">
+                                                                        <div class="slds-truncate" title="{!item.type}">{!item.type}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.specialistType}">
+                                                                        <div class="slds-truncate" title="{!item.specialistType}">{!item.specialistType}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.phone}">
+                                                                        <div class="slds-truncate" title="{!item.phone}">{!item.phone}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.city}">
+                                                                        <div class="slds-truncate" title="{!item.city}">{!item.city}</div>
+                                                                    </td>
+                                                                    <td scope="row" data-label="{!item.state}">
+                                                                        <div class="slds-truncate" title="{!item.state}">{!item.state}</div>
+                                                                    </td>
+                                                                </tr>
+                                                            </aura:iteration>
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </aura:if>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </li>
+                <aura:if isTrue="{!v.selectedResult != null}">
+                    <li class="slds-item slds-m-bottom--small">
+                        <div class="slds-tabs--scoped">
+                            <fieldset class="slds-form--compound">
+                                <div>
+                                    <li class="slds-item">
+                                        <div class="slds-tabs--scoped__nav" role="tablist">
+                                            <div>
+                                                <legend class="slds-form-element__label slds-text-heading--medium slds-tabs--scoped__item blockSection">{! v._selectedPhysicianHeader}</legend>
+                                            </div>
+
+                                            <div class="" style="margin-left:auto">
+                                                <button type="button" class="slds-button slds-button--neutral slds-button--brand clearButton"
+                                                        onclick="{!c.clearSelection}">{!$Label.c.PC_EWP_Button_Clear_Sel}</button>
+                                            </div>
+                                        </div>
+                                        <div class="slds-form-element__group slds-tabs--scoped__content SelectedPhysicianInfo">
+                                            <ul>
+                                                <li class="slds-item slds-m-bottom--small">
+                                                    <div class="slds-tabs--scoped">
+                                                        <fieldset class="slds-form--compound">
+                                                            <div class="slds-tabs--scoped__nav" role="tablist">
+                                                                <legend class="slds-form-element__label
+                                                                                       slds-text-heading--small slds-tabs--scoped__item blockSection">
+                                                                        {!$Label.c.PC_EWP_Name_Sec_Header}
+                                                                </legend>
+                                                            </div>
+                                                            <div class="slds-form-element__group slds-box">
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.salutation}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.salutation}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.npi}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.npi}</label>&nbsp;
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.firstName}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.firstName}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.lastName}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.lastName}</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </li>
+
+                                                <li class="slds-item slds-m-bottom--small">
+                                                    <div class="slds-tabs--scoped">
+                                                        <fieldset class="slds-form--compound">
+                                                            <div class="slds-tabs--scoped__nav" role="tablist">
+                                                                <legend class="slds-form-element__label
+                                                                                       slds-text-heading--small slds-tabs--scoped__item blockSection">
+                                                                        {!$Label.c.PC_EWP_Address_Sec_Header}
+                                                                </legend>
+                                                            </div>
+                                                            <div class="slds-form-element__group slds-box">
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.primaryAddress1}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.primaryAddress1}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.primaryAddress2}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.primaryAddress2}</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.primaryAddress3}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.primaryAddress3}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.primaryZipCode}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.primaryZipCode}</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.primaryCity}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.primaryCity}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.primaryState}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.primaryState}</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </li>
+
+                                                <li class="slds-item slds-m-bottom--small">
+                                                    <div class="slds-tabs--scoped">
+                                                        <fieldset class="slds-form--compound">
+                                                            <div class="slds-tabs--scoped__nav" role="tablist">
+                                                                <legend class="slds-form-element__label
+                                                                                       slds-text-heading--small slds-tabs--scoped__item blockSection">
+                                                                        {!$Label.c.PC_EWP_Communication_Sec_Header}
+                                                                </legend>
+                                                            </div>
+                                                            <div class="slds-form-element__group slds-box">
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.communicationLanguage}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.communicationLanguage}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.preferredCommunicationChannel}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.preferredCommunicationChannel}</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.email}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.email}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.fax}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.fax}</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="slds-form-element__row">
+                                                                    <div class="slds-form-element slds-size--1-of-4 fontWeight">
+                                                                        <label class="slds-form-element__label">{!v.physicianTableHeaders.phone}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        <label class="slds-form-element__label">{!v.selectedResult.phone}</label>
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        &nbsp;
+                                                                    </div>
+                                                                    <div class="slds-form-element slds-size--1-of-4">
+                                                                        &nbsp;
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </fieldset>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </li>
+                </aura:if>
+            </ul>
+        </div>
+    </div>
+</aura:component>

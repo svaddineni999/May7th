@@ -1,0 +1,523 @@
+<!--
+Lightning component  : PC_ePriorAuthInitiationForm
+Description          : Component to retrieve initiate ePA request.
+Modification Log:
+Vijay Kashikar 		 20-June-2018    Initial Version
+Shishir Bansal       6-July-2018     [PC-3250] In PA initiation form, replace product lookup with program coverage/prescription
+                                     (this will be configurable) dropdown for PA flow
+Haritha Reddy       28-Jan-2019     [PC-4217] Changed formId variable to string type in helper
+Kanteti Kishore     13-Dec-2019     [PC-5795] Reduced parameters for submitPA method
+Kanteti Kishore     29-July-2020    [PC-6592] Changes in helper at line-36
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" description="PC_ePriorAuthInitiationForm" controller="PC_ePriorAuthInitiationFormController" access="global">
+    <ltng:require scripts="{! $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="formData" type="Object" />
+    <aura:attribute name="searchForms" type="Object" />
+
+    <aura:attribute name="defaultDropDownValue" type="String" default="{! $Label.c.PC_Select}" />
+
+    <aura:attribute name="healthPlanRequired" type="boolean" default="false"/>
+
+
+    <aura:attribute name="prescriptionRequired" type="boolean" default="false"/>
+    <aura:attribute name="programCoverageRequired" type="boolean" default="false"/>
+
+
+
+    <aura:attribute name="selectedHealthPlan" type="Object"/>
+
+    <aura:attribute name="selectedPrescription" type="Object"/>
+
+    <aura:attribute name="selectedProgamCoverage" type="Object" />
+
+    <aura:attribute name="selectedForm" type="Object" default="NULL"/>
+
+
+    <aura:attribute name="prescriptionDetailsMissingMessage" type="String" default="{!$Label.c.PC_ePA_Prescription_Details_Missing}"/>
+    <aura:attribute name="programCoverageDetailsMissingMessage" type="String" default="{!$Label.c.PC_ePA_ProgramCoverage_Details_Missing}"/>
+
+
+    <aura:attribute name="healthPlanDetailsMissingMessage" type="String" default="{!$Label.c.PC_ePA_HealthPlan_Details_Missing}"/>
+    <aura:attribute name="patientDetailsMissingMessage" type="String" default="{!$Label.c.PC_ePA_Patient_Details_Missing}"/>
+    <aura:attribute name="formDetailsMissingMessage" type="String" default="{!$Label.c.PC_ePA_Form_Details_Missing}"/>
+
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="successMessage" type="String" default="{!$Label.c.PC_ePA_Toast_Success}" />
+    <aura:attribute name="successMessagePlaceholder1" type="String" default="{!$Label.c.PC_ePA_Toast_Success_ePA_Placeholder}" />
+    <aura:attribute name="clickHereMessage" type="String" default="{!$Label.c.PC_ePA_Navigate_to_Vendor}"/>
+
+    <aura:attribute name="searchFormsAvailable" type="boolean" default="false" />
+    <aura:attribute name="showSearchMessage" type="boolean" default="false" />
+    <aura:attribute name="searchInProgress" type="boolean" default="false" />
+    <aura:attribute name="submitInProgress" type="boolean" default="false" />
+    <aura:attribute name="cancelAutoRedirect" type="boolean" default="false" />
+
+    <aura:attribute name="pa_response" type="Map" default="{'htmlURL':'#'}"/>
+    <aura:attribute name="errors" type="List"/>
+
+    <aura:attribute name="overridePrescriptionWithCoverage" type="Boolean" default="false" access="global"/>
+
+    <!--overridePrescriptionWithCoverage (to be deleted) = {!v.overridePrescriptionWithCoverage} -->
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+
+    <lightning:overlayLibrary aura:id="ePAOverlay"/> <!-- This is needed for closing the pop up -->
+
+    <aura:if isTrue="{!v.pa_response.isSuccess}">
+        <div aura:id="ePASuccessOverlayContent" class="slds-hide slds-text-align--center">
+            <div>
+                <ui:outputText value="{!v.successMessage}"></ui:outputText>&nbsp;
+                <lightning:button label="{!v.clickHereMessage}" onclick="{!c.openVendorPortal}" variant="base" />
+            </div>
+            <div class="slds-float--right">
+                <lightning:button label="{! $Label.c.PC_Cancel_Redirect}" onclick="{! c.cancelRedirection}" variant="neutral"></lightning:button>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-clearfix"/>
+            <div class="ePAFormBody">
+                <div class="customDiv slds-grid">
+                    <div class="slds-form-element slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <div class="slds-form-element__control">
+                            <div>
+                                <label class="slds-item_label" for="select-01">
+                                    <abbr class="slds-required" title="required">*</abbr>
+                                        {!$Label.c.PC_ePA_HealthPlan}
+                                </label>
+                                <aura:if isTrue="{!v.healthPlanRequired}">
+                                    <label class="slds-required">{!$Label.c.PC_FieldError_Required_Fields}</label>
+
+                                </aura:if>
+                                <ui:inputSelect class="slds-select" change="{!c.setSelectedHealthPlan}"
+                                                aura:id="inputHealthPlan"/>
+                            </div>
+                            <div class="slds-box--border slds-m-top--xx-small">
+                                <div class="slds-page-header accordionHeader accordionHeaderEnabled"
+                                     aura:id="healthPlanDetailsHeader"
+                                     onclick="{!c.toggleAccordion}" data-toggleContentAuraId="healthPlanDetails">
+                                    <section class="slds-clearfix">
+                                        <div class="slds-float--left ">
+                                            <lightning:icon class="slds-hide" aura:id="healthPlanDetails"
+                                                            iconName="utility:chevronright" size="x-small"
+                                                            alternativeText="Indicates open"/>
+                                            <lightning:icon class="slds-show" aura:id="healthPlanDetails"
+                                                            iconName="utility:chevrondown" size="x-small"
+                                                            alternativeText="Indicates close"/>
+                                        </div>
+                                        <div class="slds-m-left--large"><abbr class="slds-required" title="required">*</abbr>&nbsp;{!$Label.c.PC_ePA_HealthPlanDetails}</div>
+                                    </section>
+                                </div>
+                                <div class="slds-show" aura:id="healthPlanDetails">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+
+                                        <div class="slds-media__body">
+                                            <div class="slds-tile__detail">
+
+                                                <dl class="slds-list_horizontal slds-wrap">
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class="slds-truncate" title="{!v.formData.healthPlanLabels.groupNameLabel}">{!v.formData.healthPlanLabels.groupNameLabel}:</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate" title="{!v.selectedHealthPlan.groupName}">{!v.selectedHealthPlan.groupName}</p>
+                                                    </dd>
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class="slds-truncate" title="{!v.formData.healthPlanLabels.pcnLabel}">{!v.formData.healthPlanLabels.pcnLabel}:</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate" title="{!v.selectedHealthPlan.pcn}">{!v.selectedHealthPlan.pcn}</p>
+                                                    </dd>
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class="slds-truncate" title="{!v.formData.healthPlanLabels.binLabel}">{!v.formData.healthPlanLabels.binLabel}:</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate" title="{!v.selectedHealthPlan.bin}">{!v.selectedHealthPlan.bin}</p>
+                                                    </dd>
+                                                    <dt class="slds-dl_horizontal__label">
+                                                        <p class="slds-truncate" title="{!v.formData.healthPlanLabels.nameLabel}">{!v.formData.healthPlanLabels.stateLabel}:</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate" title="{!v.selectedHealthPlan.name}">{!v.selectedHealthPlan.state}</p>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <div class="slds-form-element__control">
+
+
+
+                            <aura:if isTrue="{!v.overridePrescriptionWithCoverage}">
+
+
+                                    <label class="slds-item_label" for="select-03"><abbr class="slds-required" title="required">*</abbr>{!$Label.c.PC_ePA_ProgramCoverage}</label>
+                                        <button class="slds-button slds-button_icon slds-button slds-button_icon slds-m-left--xxx-small" title="{!$Label.c.PC_ePA_ProgramCoverageinfo}">
+                                            <c:svg class="slds-button__icon slds-button__icon--medium"
+                                                xlinkHref="{!$Resource.SLDS + '/assets/icons/utility-sprite/svg/symbols.svg#info'}"
+                                                ariaHidden="true"/>
+
+                                        </button>
+
+                                    <aura:if isTrue="{!v.programCoverageRequired}">
+                                        <label class="slds-required">{!$Label.c.PC_FieldError_Required_Fields}</label>
+
+                                    </aura:if>
+                                     <ui:inputSelect class="slds-select" change="{!c.setSelectedProgramCoverage}" aura:id="inputProgramCoverage">
+
+                                     </ui:inputSelect>
+                                <div class="slds-box--border slds-m-top--xx-small">
+                                    <div class="slds-page-header accordionHeader accordionHeaderEnabled" aura:id="programCoverageDetailsHeader"  onclick="{!c.toggleAccordion}" data-toggleContentAuraId="programCoverageDetails">
+                                        <section class="slds-clearfix">
+                                            <div class="slds-float--left ">
+                                                <lightning:icon class="slds-hide" aura:id="programCoverageDetails" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                                <lightning:icon class="slds-show" aura:id="programCoverageDetails" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                            </div>
+                                            <div class="slds-m-left--large"><abbr class="slds-required" title="required">*</abbr>&nbsp;{!$Label.c.PC_ePA_ProgramCoverageDetails}</div>
+                                        </section>
+                                    </div>
+                                    <div class="slds-show" aura:id="programCoverageDetails">
+                                        <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+
+                                            <div class="slds-media__body">
+                                                <div class="slds-tile__detail">
+
+                                                    <dl class="slds-list_horizontal slds-wrap">
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoveragesLabel.nameLabel}">{!v.formData.programCoveragesLabel.nameLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.name}">{!v.selectedProgamCoverage.name}</p>
+                                                        </dd>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoveragesLabel.coverageStatusLabel}">{!v.formData.programCoveragesLabel.coverageStatusLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.coverageStatus}">{!v.selectedProgamCoverage.coverageStatus}</p>
+                                                        </dd>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoveragesLabel.coverageTypeLabel}">{!v.formData.programCoveragesLabel.coverageTypeLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.coverageType}">{!v.selectedProgamCoverage.coverageType}</p>
+                                                        </dd>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoveragesLabel.prescription.nameLabel}">{!v.formData.programCoveragesLabel.prescription.nameLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.prescription.name}">{!v.selectedProgamCoverage.prescription.name}</p>
+                                                        </dd>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoveragesLabel.prescription.product.nameLabel}">{!v.formData.programCoveragesLabel.prescription.product.nameLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.prescription.product.name}">{!v.selectedProgamCoverage.prescription.product.name}</p>
+                                                        </dd>
+                                                        <dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoveragesLabel.prescription.product.ndcLabel}">{!v.formData.programCoveragesLabel.prescription.product.ndcLabel}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.prescription.product.ndc}">{!v.selectedProgamCoverage.prescription.product.ndc}</p>
+                                                        </dd>
+                                                        <!--<dt class="slds-dl_horizontal__label">
+                                                            <p class="slds-truncate" title="{!v.formData.programCoverages.recordType}">{!v.formData.programCoverages.recordType}:</p>
+                                                        </dt>
+                                                        <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                            <p class="slds-truncate" title="{!v.selectedProgamCoverage.recordType}">{!v.selectedProgamCoverage.recordType}</p>
+                                                        </dd>-->
+                                                    </dl>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+
+
+
+                                <aura:set attribute="else">
+                                    <label class="slds-item_label" for="select-03"><abbr class="slds-required" title="required">*</abbr>{!$Label.c.PC_ePA_Prescription}</label>
+                                    <aura:if isTrue="{!v.prescriptionRequired}">
+                                        <label class="slds-required">{!$Label.c.PC_FieldError_Required_Fields}</label>
+
+                                    </aura:if>
+                                    <ui:inputSelect class="slds-select" change="{!c.setSelectedPrescription}" aura:id="inputPrescription">
+
+                                    </ui:inputSelect>
+                                    <div class="slds-box--border slds-m-top--xx-small">
+                                        <div class="slds-page-header accordionHeader accordionHeaderEnabled" aura:id="prescriptionDetailsHeader"  onclick="{!c.toggleAccordion}" data-toggleContentAuraId="prescriptionDetails">
+                                            <section class="slds-clearfix">
+                                                <div class="slds-float--left ">
+                                                    <lightning:icon class="slds-hide" aura:id="prescriptionDetails" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                                    <lightning:icon class="slds-show" aura:id="prescriptionDetails" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                                </div>
+                                                <div class="slds-m-left--large"><abbr class="slds-required" title="required">*</abbr>&nbsp;{!$Label.c.PC_ePA_PrescriptionDetails}</div>
+                                            </section>
+                                        </div>
+                                        <div class="slds-show" aura:id="prescriptionDetails">
+                                            <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+
+                                                <div class="slds-media__body">
+                                                    <div class="slds-tile__detail">
+
+                                                        <dl class="slds-list_horizontal slds-wrap">
+
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate" title="{!v.formData.prescriptionLabels.nameLabel}">{!v.formData.prescriptionLabels.nameLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                <p class="slds-truncate" title="{!v.selectedPrescription.name}">{!v.selectedPrescription.name}</p>
+                                                            </dd>
+
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate" title="{!v.formData.prescriptionLabels.frequencyLabel}">{!v.formData.prescriptionLabels.frequencyLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                <p class="slds-truncate" title="{!v.selectedPrescription.frequency}">{!v.selectedPrescription.frequency}</p>
+                                                            </dd>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate" title="{!v.formData.prescriptionLabels.daysSupplyLabel}">{!v.formData.prescriptionLabels.daysSupplyLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                <p class="slds-truncate" title="{!v.selectedPrescription.daysSupply}">{!v.selectedPrescription.daysSupply}</p>
+                                                            </dd>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate" title="{!v.formData.prescriptionLabels.reqQuantityLabel}">{!v.formData.prescriptionLabels.reqQuantityLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                <p class="slds-truncate" title="{!v.selectedPrescription.requestedQuantity}">{!v.selectedPrescription.requestedQuantity}</p>
+                                                            </dd>
+
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate" title="{!v.formData.prescriptionLabels.product.nameLabel}">{!v.formData.prescriptionLabels.product.nameLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                <p class="slds-truncate" title="{!v.selectedPrescription.product.name}">{!v.selectedPrescription.product.name}</p>
+                                                            </dd>
+                                                            <dt class="slds-dl_horizontal__label">
+                                                                <p class="slds-truncate" title="{!v.formData.prescriptionLabels.product.ndcLabel}">{!v.formData.prescriptionLabels.product.ndcLabel}:</p>
+                                                            </dt>
+                                                            <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                                <p class="slds-truncate" title="{!v.selectedPrescription.product.ndc}">{!v.selectedPrescription.product.ndc}</p>
+                                                            </dd>
+                                                        </dl>
+                                                    </div>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+
+                                </aura:set>
+
+                            </aura:if>
+
+
+
+                        </div>
+                    </div>
+                    <div class="slds-form-element slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <div class="slds-form-element__control">
+                            <label class="slds-item_label" for="select-03">&nbsp;</label>
+                            <div>
+                                <lightning:button variant="brand" label="{!$Label.c.PC_ePA_Search_Forms_Button_Label}" onclick="{!c.searchForms}" />
+                            </div>
+                            <div class="slds-box--border slds-m-top--xx-small">
+                                <div class="slds-page-header accordionHeader accordionHeaderEnabled" aura:id="patientDetailsHeader" onclick="{!c.toggleAccordion}" data-toggleContentAuraId="patientDetails">
+                                    <section class="slds-clearfix">
+                                        <div class="slds-float--left ">
+                                            <lightning:icon class="slds-hide" aura:id="patientDetails" iconName="utility:chevronright" size="x-small" alternativeText="Indicates open"/>
+                                            <lightning:icon class="slds-show" aura:id="patientDetails" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates close"/>
+                                        </div>
+                                        <div class="slds-m-left--large"><abbr class="slds-required" title="required">*</abbr>&nbsp;{!$Label.c.PC_ePA_PatientDetails}</div>
+                                    </section>
+                                </div>
+                                <div class="slds-show" aura:id="patientDetails">
+                                    <article class="slds-tile slds-media slds-card__tile slds-hint-parent">
+
+                                        <div class="slds-media__body">
+                                            <div class="slds-tile__detail">
+
+                                                <dl class="slds-list_horizontal slds-wrap">
+
+                                                    <dt class="slds-dl_horizontal__label slds-text-color_weak">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patientLabels.nameLabel}">{!v.formData.patientLabels.nameLabel}
+                                                            :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patient.name}">{!v.formData.patient.name}</p>
+                                                    </dd>
+
+                                                    <dt class="slds-dl_horizontal__label slds-text-color_weak">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patientLabels.nameLabel}">{!v.formData.patientLabels.genderLabel}
+                                                            :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patient.name}">{!v.formData.patient.gender}</p>
+                                                    </dd>
+
+
+                                                    <dt class="slds-dl_horizontal__label slds-text-color_weak">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patientLabels.nameLabel}">{!v.formData.patientLabels.birthDateLabel}
+                                                            :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patient.name}">{!v.formData.patient.birthDate}</p>
+                                                    </dd>
+
+                                                    <dt class="slds-dl_horizontal__label slds-text-color_weak">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patientLabels.nameLabel}">{!v.formData.patientLabels.zipCodeLabel}
+                                                            :</p>
+                                                    </dt>
+                                                    <dd class="slds-dl_horizontal__detail slds-tile__meta">
+                                                        <p class="slds-truncate"
+                                                           title="{!v.formData.patient.name}">{!v.formData.patient.zipCode}</p>
+                                                    </dd>
+
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="slds-grid searchFormResults slds-m-top--xx-small">
+
+
+                    <div class="slds-form-element slds-border--top slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                        <aura:if isTrue="{!v.searchFormsAvailable}">
+                            <div class="slds-form-element__control formSearchResultBlock">
+                                <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+                                    <thead>
+                                    <tr class="slds-text-title--caps">
+
+                                        <th scope="col">
+                                            <div class="slds-truncate" title=""></div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate"
+                                                 title="{!$Label.c.PC_ePA_Form_Name}">{!$Label.c.PC_ePA_Form_Name}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate"
+                                                 title="{!$Label.c.PC_ePA_Form_Thumbnail}">{!$Label.c.PC_ePA_Form_Thumbnail}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate"
+                                                 title="{!$Label.c.PC_ePA_Form_Description}">{!$Label.c.PC_ePA_Form_Description}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate"
+                                                 title="{!$Label.c.PC_ePA_Form_Directions}">{!$Label.c.PC_ePA_Form_Directions}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate"
+                                                 title="{!$Label.c.PC_ePA_Form_is_ePA}">{!$Label.c.PC_ePA_Form_is_ePA}</div>
+                                        </th>
+                                        <th scope="col">
+                                            <div class="slds-truncate"
+                                                 title="{!$Label.c.PC_ePA_Form_PayerContact}">{!$Label.c.PC_ePA_Form_PayerContact}</div>
+                                        </th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <aura:iteration items="{!v.searchForms.forms}" var="item" indexVar="i">
+                                        <tr>
+                                            <td scope="row" data-label="{!item.name}">
+                                                <ui:inputRadio text="{!item.id}" name="formRadioOptions"
+                                                               disabled="false"
+                                                               class="slds-radio" change="{!c.onFormSelectionChanged}"/>
+                                            </td>
+                                            <td scope="row" data-label="{!item.name}">
+                                                <div class="slds-wrap" title="{!item.name}">{!item.name}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!item.name}">
+                                                <figure class="slds-image slds-image--card">
+                                                    <img src="{!item.thumbnailUrl}" alt="Description of the image"/>
+                                                </figure>
+                                            </td>
+                                            <td scope="row" data-label="{!item.name}">
+                                                <div class="slds-wrap"
+                                                     title="{!item.description}">{!item.description}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!item.name}" class="directionsData">
+                                                <div class="slds-wrap"
+                                                     title="{!item.directions}">{!item.directions}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!item.name}">
+                                                <div class="slds-wrap" title="{!item.is_epa}">{!item.is_epa}</div>
+                                            </td>
+                                            <td scope="row" data-label="{!item.payer.name}">
+                                                <div class="slds-wrap" title="{!item.payer.name}">
+                                                    <div>{!item.payer.name} </div>
+                                                    <div>{!$Label.c.PC_Phone} : {!item.payer.phone} </div>
+                                                    <div>{!$Label.c.PC_Fax} : {!item.payer.fax} </div>
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+                                    </aura:iteration>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                            <aura:set attribute="else">
+                                <aura:if isTrue="{! v.searchInProgress}">
+                                    <div class="slds-text slds-text-align--center slds-align-middle">
+                                    {!$Label.c.PC_ePA_Search_In_Progress}
+                                        <lightning:spinner aura:id="searchResultSpinner" size="medium" variant="brand" />
+
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <aura:if isTrue="{!v.showSearchMessage}">
+                                            <div class="slds-text slds-text-align--center slds-align-middle">
+                                                    {!$Label.c.PC_ePA_Search_Results_Unavailable}</div>
+                                        </aura:if>
+                                    </aura:set>
+                                </aura:if>
+                            </aura:set>
+                        </aura:if>
+                    </div>
+
+
+                </div>
+
+                <div class="slds-clearfix"/>
+                <div class="slds-grid searchFormResults slds-m-top--xx-small slds-float_right">
+                    <div class="slds-form-element slds-p-horizontal_small slds-size_1-of-1 slds-medium-size_1-of-1">
+                        <aura:if isTrue="{! v.submitInProgress == 'true'}">
+                            <lightning:spinner size="medium" variant="brand" />
+                        </aura:if>
+                        <lightning:button variant="brand" label="{!$Label.c.PC_ePA_Initiate_ePA_Button_Label}" disabled="{!v.submitInProgress == 'true'}" onclick="{!c.initiatePriorAuth}" />
+                    </div>
+                </div>
+            </div>
+        </aura:set>
+    </aura:if>
+
+
+</aura:component>

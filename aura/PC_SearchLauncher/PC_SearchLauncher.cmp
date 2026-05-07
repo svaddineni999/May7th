@@ -1,0 +1,30 @@
+<!--
+Lightning component  : PC_SearchLauncher
+Description          : New Adverse Event Popup Launcher for Non-Existing Patient
+Parameters           : NA
+Modification Log:
+Haritha Reddy 		 30-Sep-2019    Initial Version
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes" description="PC_SearchLauncher" controller="PC_SearchLauncherController" access="global">
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="orgNamespace" type="String" access="private"/>
+    <aura:attribute name="identifier" type="String" default="PC_PatientSearch" required="true" access="global"/>
+    <!--Developer Note: SearchPageName and SearchPage attributes refer to Search Tab name in this component.
+    As this component is packaged and attributes are global, not able to update the attribute names.-->
+    <aura:attribute name="searchPageName" type="String" default="PatientConnect__PC_Search" required="true" access="global"/>
+    <aura:attribute name="searchPage" type="String" access="private"/>
+    <aura:attribute name="searchLauncherButtonLabel" type="String" default="{!$Label.c.PC_SearchButtonLabel}" required="true" access="global"/>
+    <aura:attribute name="searchLauncherButtonName" type="String" default="" access="private"/>
+
+    <div>
+        <lightning:workspaceAPI aura:id="workspaceId" />
+        <lightning:navigation aura:id="navService"/>
+        <lightning:button variant="brand" label="{!v.searchLauncherButtonName}" onclick="{!c.openSearchPage}" />
+    </div>
+
+</aura:component>

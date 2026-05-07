@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Poor</fullName>
+        <default>false</default>
+        <label>Poor</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Guarded</fullName>
+        <default>false</default>
+        <label>Guarded</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fair</fullName>
+        <default>false</default>
+        <label>Fair</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Good</fullName>
+        <default>false</default>
+        <label>Good</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Very Good</fullName>
+        <default>false</default>
+        <label>Very Good</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Excellent</fullName>
+        <default>false</default>
+        <label>Excellent</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Less than 6 Months to Live</fullName>
+        <default>false</default>
+        <label>Less than 6 Months to Live</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Terminal</fullName>
+        <default>false</default>
+        <label>Terminal</label>
+    </standardValue>
+</StandardValueSet>

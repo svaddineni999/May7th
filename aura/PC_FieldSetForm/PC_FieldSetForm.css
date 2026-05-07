@@ -1,0 +1,40 @@
+.THIS .PC_FieldSetLightningForm .slds-form-element{
+    /*padding-left: 0px !important;*/
+}
+.THIS .PC_FieldSetLightningForm .uiInputSelectLabel>span {
+    /*empty block*/
+}
+.THIS .PC_FieldSetLightningForm select.multiple {
+    
+    min-height:100px !important;
+    max-height: 100px;
+}
+.THIS .PC_FieldSetLightningForm select.single {
+    /*empty block*/
+}
+.THIS .PC_FieldSetLightningForm>div {
+    padding-bottom: 10px;    
+}
+.THIS .PC_FieldSetLightningForm div.uiInputDate .datePicker-openIcon {
+    position: absolute;
+    left: 93%;
+    top: 55%;
+}
+.THIS .PC_FieldSetLightningForm fieldset.uiInputDateTime{
+    padding-bottom: 10px;    
+}
+.THIS .PC_FieldSetLightningForm fieldset.uiInputDateTime input{
+    width: 85%;
+}
+.THIS .PC_FieldSetLightningForm fieldset.uiInputDateTime1 .datePicker-openIcon {
+    /*This block of style is not being used*/
+    position: absolute;
+    left: 39%;
+    top: 35%;
+}
+.THIS .PC_FieldSetLightningForm fieldset.uiInputDateTime1 .timePicker-openIcon  {
+    /*This block of style is not being used*/
+    position: absolute;
+    left: 90%;
+    top: 35%;
+}

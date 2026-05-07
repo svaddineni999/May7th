@@ -1,0 +1,9 @@
+/**
+ * Created by shisbansal on 10/17/2019.
+ */
+ .THIS .inquiryDescriptionStyle label{
+     font-weight:bold;
+ }
+ .THIS .inquiryDescriptionStyle .slds-textarea{
+     min-height:100px;
+ }

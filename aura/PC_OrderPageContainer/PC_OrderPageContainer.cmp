@@ -1,0 +1,31 @@
+<aura:component description="PC_OrderPage_Container"
+                implements="lightning:isUrlAddressable,lightning:actionOverride,force:lightningQuickActionWithoutHeader,force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId"
+                access="global">
+
+ <aura:attribute name="openInNewTab" type="Boolean" default="false" access="global"/>
+ <aura:attribute name="navigate" type="Boolean" default="false" access="global"/>
+ <aura:attribute name="orderPageName" type="String" default="PC_OrderPage_Container" access="private"/>
+ <aura:attribute name="orderTabIcon" type="String" default="standard:order" access="private"/>
+ <aura:attribute name="orderComponentName" type="String" default="PC_OrderPageContainer" access="private"/>
+ <aura:attribute name="orderTabLabel" type="String" default="{!$Label.c.PC_OrderTitle}" access="private"/>
+ <aura:attribute name="orderAPIName" type="String" default="PC_Order__c" access="private"/>
+ <aura:attribute name="fsOrderDetails" type="String" default="" access="global"/>
+ <aura:attribute name="fsProduct" type="String" default="" access="global"/>
+ <aura:attribute name="fsOrderItem" type="String" default="" access="global"/>
+ <aura:attribute name="fsOrderShipment" type="String" default="" access="global"/>
+ <aura:attribute name="namespace" type="String" default="" access="private"/>
+ <aura:attribute name="namespacePrefix" type="String" default="" access="private"/>
+ <aura:attribute name="mode" type="String" default="" access="private"/>
+ <aura:attribute name="programId" type="String" default="" access="global"/>
+ <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+ <lightning:workspaceAPI aura:id="orderWorkspace" />
+ <lightning:navigation aura:id="orderNavigationService"/>
+ <aura:handler name="change" value="{!v.pageReference}"
+               action="{!c.onPageReferenceChanged}" />
+
+ <!--<aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+ <aura:if isTrue="{! !v.openInNewTab}">
+  <c:pc_OrderManagementContainer recordId="{!v.recordId}" programId="{!v.programId}" fsOrderDetails="{!v.fsOrderDetails}"  fsProduct="{!v.fsProduct}" fsOrderItem="{!v.fsOrderItem}" fsOrderShipment="{!v.fsOrderShipment}" oncloseclicked="{!c.handleCloseTab}" ></c:pc_OrderManagementContainer>
+ </aura:if>
+
+</aura:component>

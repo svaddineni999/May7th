@@ -1,0 +1,71 @@
+<!--
+Lightning component  : PC_PatientLocationMapViewer
+Description          : Component for displaying map
+
+Modification Log:
+Tejas Patel 	     5-Sept-2017 	[PC-2014] Added a flag for where is the map compoment being launched from
+Prachi Nandgaonkar   				[PC-2014] Show different popup button titles based on where map is being launched from
+Vijay Kashikar 	     4-Jan-2018 	[PC-2625] made changes so as to call doInit method after the scripts are loaded
+Vijay Kashikar 	     8-Jan-2018 	[PC-2645] made changes so as to call doInit/afterscriptsloaded depending on the scenarios.
+Tejas Patel          16-Apr-2018    Adding the errorMapNotFound attribute back
+Tejas Patel          17-Apr-2018    Adding the errorPatientNotFound attribute for No patient error msg
+Vijay Kashikar       09-May-2019    [PC-4766] Added new attributes to handle translation for showing distance unit in km and miles
+Kanteti Kishore      29-July-2020   [PC-6592] Changes in helper at lines-11,162,163,173,174,changed variable marker to markerInPopup in drawMap helper method
+-->
+<aura:component controller="PC_PatientLocationMapController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global">
+    <ltng:require styles="{! $Resource.PC_Leaflet +  '/PC_Leaflet/leaflet.css'}"
+                  scripts="{!join(',', $Resource.PC_Leaflet + '/PC_Leaflet/leaflet.js', $Resource.PC_Resources + '/PC_Resources/js/PC_Util.js')}"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+
+    <aura:attribute name="popupFields" type="sObject" default="" />
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="genericMap" type="Boolean" default="true" />
+    <aura:attribute name="patientHasAddress" type="Boolean" default="true" />
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="patient" type="Object"/>
+    <aura:attribute name="clinicImages" type="List"/>
+    <aura:attribute name="isMapInitialized" type="Boolean" default="false"/>
+    <aura:attribute name="map" type="Object"/>
+    <aura:attribute name="radius" type="Integer" Default="0"/>
+    <aura:attribute name="zoom" type="Integer" Default="14"/>
+    <aura:attribute name="distanceInKm" type="Boolean"/>
+    <aura:handler name="change" value="{!v.patient}" action="{!c.loadMap}"/>
+    <aura:handler name="change" value="{!v.zoom}" action="{!c.reloadMap}"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="labelBookAppt" type="String" default="{!$Label.c.PC_Map_BookAppt}" />
+    <aura:attribute name="labelSelect" type="String" default="{!$Label.c.PC_Map_Select}" />
+    <aura:attribute name="labelHomeAppt" type="String" default="{!$Label.c.PC_Map_HomeAppt}" />
+    <aura:attribute name="errorMapNotFound" type="String" default="{!$Label.c.PC_MapViewer_Addr_Error}" />
+    <aura:attribute name="errorPatientNotFound" type="String" default="{!$Label.c.PC_MapViewer_Patient_Error}" />
+    <aura:attribute name="includeProductAccounts" type="boolean" />
+    <aura:attribute name="isAfterScriptsLoadedCalled" type="Boolean" default="false"/>
+    <aura:attribute name="interactionParticipantCmpName" type="String" default="PC_InteractionParticipantForm"/>
+    <aura:attribute name="bookAppointmentTabLabel" type="String" default="{!$Label.c.PC_BookAppt_Title}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:attribute name="distanceUnitInKm" type="String" access="private" default="{! $Label.c.PC_Distance_In_Kilometer}"/>
+    <aura:attribute name="distanceUnitInMiles" type="String" access="private" default="{! $Label.c.PC_Distance_In_Miles}"/>
+
+    <form action="">
+        <div class="slds-form--stacked">
+            <lightning:overlayLibrary aura:id="mapOverlayLib"/>
+            <lightning:workspaceAPI aura:id="mapWorkspace"/>
+            <div class="toggleDisplay" aura:id="msgResult">
+                <ui:message title="" severity="info" closable="false">{!v.message}</ui:message>
+            </div>
+            <div class="slds-form-element">
+                <ui:inputselect label="" class="dynamic" aura:id="inputSelectClinics" change="{!c.reloadMap}" />
+                <!-- <ui:inputCheckbox label="Include Product related pharmacies" aura:id="proCheck" click="{!c.reloadMaponCheckBoxChange}"/> -->
+            </div>
+            <div class="P1C1 slds-form-element" aura:id="mapArea" id="{!v.recordId}">
+            </div>
+            <div class="slds-form-element"  id="helpwindow">
+                <aura:iteration items="{!v.clinicImages}" var="clinic">
+                    <img src="{!clinic.value}" /> {!clinic.name}
+                </aura:iteration>
+            </div>
+        </div>
+    </form>
+</aura:component>

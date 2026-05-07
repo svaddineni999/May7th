@@ -1,0 +1,7 @@
+<!--
+ - Created by vivekkmishra on 8/12/2018.
+ -->
+<design:component>
+    <design:attribute name="fieldSet" label="Fieldset Name For Case Object" default=""/>
+    <design:attribute name="fieldSetForNonCaseObjects" label="Fieldset Name For Non Case Objects" default=""/>
+</design:component>

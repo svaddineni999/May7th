@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Preferred Specialty Pharmacy by Payer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Preferred Specialty Pharmacy by Payer</value>
+    </caseValues>
+    <fields>
+        <label><!-- Payer --></label>
+        <name>PC_PayerNameIfNoAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payer --></label>
+        <name>PC_Payer__c</name>
+        <relationshipLabel><!-- Preferred SP by Payer (Payer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Specialty Pharmacy --></label>
+        <name>PC_SpecialtyPharmacyNameIfNoAccount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialty Pharmacy --></label>
+        <name>PC_Specialty_Pharmacy__c</name>
+        <relationshipLabel><!-- Preferred SP by Payer (Specialty Pharmacy) --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

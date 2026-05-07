@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 症状関連項目</value>
+    </caseValues>
+    <fields>
+        <label>コードの表示ラベル</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>コードシステム</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>コード</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>症状</label>
+        <name>HealthCloudGA__Condition__c</name>
+        <relationshipLabel>EHR 症状関連項目</relationshipLabel>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>投薬明細</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>EHR 症状関連項目</relationshipLabel>
+    </fields>
+    <fields>
+        <label>メモ</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>ソースシステム変更</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>ソースシステム</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>対象症状</label>
+        <name>HealthCloudGA__TargetCondition__c</name>
+        <relationshipLabel>EHR 症状関連項目 (対象症状)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>対象の詳細</label>
+        <name>HealthCloudGA__TargetDetail__c</name>
+    </fields>
+    <fields>
+        <label>対象の免疫付与</label>
+        <name>HealthCloudGA__TargetImmunization__c</name>
+        <relationshipLabel>EHR 症状関連項目</relationshipLabel>
+    </fields>
+    <nameFieldLabel>EHR 症状関連項目名</nameFieldLabel>
+</CustomObjectTranslation>

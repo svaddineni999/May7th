@@ -1,0 +1,194 @@
+/* Chrome 29+ */
+@media screen and (-webkit-min-device-pixel-ratio:0)and (min-resolution:.001dpcm) {
+    .THIS h3{height:55px;}
+}
+.THIS .container {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.THIS .slds-page-header {
+    padding:5px;
+}
+
+.THIS .noPadding {
+    padding: 0;
+}
+
+.THIS .slds-icon-utility-chevrondown,
+.THIS .slds-icon-utility-chevronright {
+    margin-top: 3px;
+}
+
+.THIS .content {
+    display:flex;
+}
+.THIS .first {
+    width: 50%;
+    padding-right: 5px;
+}
+.THIS .second {
+    width: 49%;
+}
+.THIS .blockSection {
+    display: flex;
+    flex-direction: row-reverse;
+    padding:10px 5px;
+}
+.THIS .spinner {
+    left: 50%;
+    top: 50%;
+    opacity: 0.8;
+    z-index: 999;
+}
+.THIS .spinner .loading {
+    border: none;
+}
+.THIS a, .THIS a:focus, .THIS a:hover {
+	outline: 0 none !important;
+    text-decoration:none !important;
+    color: #0070d2;
+}
+.THIS .uiButton--default .label {
+    color: #fff;
+    font-size: 0.75rem;
+}
+.THIS .uiButton--default {
+    box-shadow: none;
+    font-weight: normal;
+    margin: 0;
+    text-shadow: none;
+}
+.THIS .uiButton--default:hover, .THIS .uiButton--default:focus {
+    box-shadow: none;
+    font-weight: normal;
+    text-shadow: none;
+    background: #005fb2 none no-repeat right top;
+}
+.THIS #docaccordion {
+    margin-top: 20px;
+}
+.THIS .ui-accordion .ui-accordion-header .ui-icon {
+    left: 0.5em;
+    margin-top: -8px;
+    top: 50%;
+}
+.THIS .ui-accordion-icons .ui-accordion-header a {
+    padding-left: 2.2em;
+}
+.THIS .banner {
+    padding: 0 !important;
+    border-bottom: none;
+}
+.THIS .banner h1{
+    font-size: 1.25rem;
+}
+.THIS .gridBanner {
+    padding: 10px 10px 0;
+}
+.THIS .slds-page-header__detail-block {
+    padding-right: 0rem;
+    padding-left: 0rem;
+}
+.THIS ul.fieldsGroup {
+    background-color:#ffffff;
+    margin: 5px 0 0;
+    padding: 10px 5px;
+    text-align: left;
+    color: #54698d;
+    font-size: 0.75rem;
+    line-height: 1.50;
+}
+.THIS ul.fieldsGroup li {
+    min-width: 33%;
+}
+.THIS div.fieldsGroup {
+    background-color:#ffffff;
+    margin: 5px 0 0;
+    padding: 10px 5px;
+    text-align: left;
+    color: #54698d;
+    font-size: 0.75rem;
+    line-height: 1.50;
+}
+/*caterogries tags*/
+.THIS .rtc-div {
+   padding:10px;
+   overflow:hidden;
+   background-color:#fff;
+   clear:both;
+   display: flex;
+   flex-wrap: wrap;
+}
+.THIS .rtc-div span {
+   border-radius:8px 8px 8px 8px !important;
+   -moz-border-radius:8px 8px 8px 8px !important;
+   -webkit-border-radius:8px 8px 8px 8px !important;
+   background:none repeat scroll 0 0 #E6E6E6;
+   display:block !important;
+   height:auto !important;
+   line-height:14px !important;
+   margin:3px !important;
+   padding:3px 5px 3px 5px !important;
+   text-decoration:none !important;
+   text-transform: none !important;
+   outline: 0;
+   cursor:pointer;
+}
+.THIS .rtc-link {
+   	font-size:10px;
+}
+.THIS .rtc-div span.selectedCategory {
+    color: #ffffff;
+    background:none repeat scroll 0 0 #0070d2 !important;
+    font-weight:bold !important;
+}
+/*end caterogries tags*/
+.THIS .reassignBtn {
+   font-size:0.75rem;
+}
+.THIS table.slds-table {
+    border: none;
+}
+.THIS .patientsTable {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    height:100%; max-height:200px;
+    width:100%;
+}
+.THIS .searchPatient {
+    font-size: 0.875rem;
+}
+.THIS .searchBlock {
+    width: 43%;
+}
+.THIS .reassign{
+    min-height: 200px;
+}
+.THIS .modificationLogs {
+    /*overflow-y: auto;*/
+    max-height:400px;
+}
+.THIS .modificationLogs table tbody {
+    font-size:12px;
+}
+.THIS li.searchItem {
+    margin: 0;
+}
+.THIS .slds-tabs--scoped__nav  {
+    border-radius: .25rem .25rem .25rem .25rem;
+}
+.THIS .hideComponent  {
+    display:none;
+}
+.THIS .showComponent  {
+    display:block;
+}
+.THIS .tableWidth  {
+    width:100%;
+}
+.THIS .slds-m-left_large, .THIS .slds-m-left--large{
+    font-size:1rem;
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Suspect Prescription</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Suspect Prescriptions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Abated After Use Stopped or Reduced? --></label>
+        <name>PC_Abated_After_Use_Stopped_or_Reduced__c</name>
+        <picklistValues>
+            <masterLabel>Doesn&apos;t apply</masterLabel>
+            <translation><!-- Doesn&apos;t apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Adverse Event 2 --></label>
+        <name>PC_Adverse_Event2__c</name>
+        <relationshipLabel><!-- Suspect Prescriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Adverse Event --></label>
+        <name>PC_Adverse_Event__c</name>
+        <relationshipLabel><!-- Suspect Prescriptions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Combination Product Report --></label>
+        <name>PC_Combination_Product_Report__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Concomitant Medical Prod &amp; Therapy Dates --></label>
+        <name>PC_Concomitant_Medical_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dosage --></label>
+        <name>PC_Dose__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDC # --></label>
+        <name>PC_Drug_NDC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Event Reappeared After Reintroduction? --></label>
+        <name>PC_Event_Reappeared_After_Reintroduction__c</name>
+        <picklistValues>
+            <masterLabel>Doesn&apos;t apply</masterLabel>
+            <translation><!-- Doesn&apos;t apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>PC_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>PC_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Diagnosis of Use (Indication) --></label>
+        <name>PC_Indication_for_Product_Use__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prescription --></label>
+        <name>PC_Prescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is the Product Compounded? --></label>
+        <name>PC_Product_Compounded__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Lot # --></label>
+        <name>PC_Product_Lot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturer --></label>
+        <name>PC_Product_Manufacturer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>PC_Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is the Product Over-the-Counter? --></label>
+        <name>PC_Product_OTC__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Strength --></label>
+        <name>PC_Product_Strength__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>PC_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route of Administration --></label>
+        <name>PC_Route_of_Administration__c</name>
+    </fields>
+    <fields>
+        <label><!-- Therapy End Date --></label>
+        <name>PC_Therapy_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Therapy Start Date --></label>
+        <name>PC_Therapy_Start_Date__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

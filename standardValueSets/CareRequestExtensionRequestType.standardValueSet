@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Admission Review</fullName>
+        <default>false</default>
+        <label>Admission Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Health Services Review</fullName>
+        <default>false</default>
+        <label>Health Services Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Individual</fullName>
+        <default>false</default>
+        <label>Individual</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Specialty Care Review</fullName>
+        <default>false</default>
+        <label>Specialty Care Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inpatient - Physical Health Review</fullName>
+        <default>false</default>
+        <label>Inpatient - Physical Health Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outpatient - Physical Health Review</fullName>
+        <default>false</default>
+        <label>Outpatient - Physical Health Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Inpatient - Behavioral Health Review</fullName>
+        <default>false</default>
+        <label>Inpatient - Behavioral Health Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Outpatient - Behavioral Health Review</fullName>
+        <default>false</default>
+        <label>Outpatient - Behavioral Health Review</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Concurrent Review</fullName>
+        <default>false</default>
+        <label>Concurrent Review</label>
+    </standardValue>
+</StandardValueSet>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>PC_Child_Object_Field_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Relationship field API name present on the child object</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Child Object Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Child_REST_Object_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Rest object name for the child object</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Child REST Object Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Child_sObject_API_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Child sObject API Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Child sObject API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Parent_REST_Object_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>To have the rest object name for respective salesforce objects in this org</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Parent REST Object Name</label>
+        <length>25</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Rest_Object_Field_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Child sObject&apos;s Rest Object Plural Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>REST Object Field Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>REST Object Relationship Mapping</label>
+    <pluralLabel>REST Object Relationship Mappings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

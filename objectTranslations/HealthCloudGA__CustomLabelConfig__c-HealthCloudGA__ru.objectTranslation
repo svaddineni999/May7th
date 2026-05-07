@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Конфигурация настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Конфигурация настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Конфигурацию настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Конфигурацию настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Конфигурации настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Конфигурации настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Конфигурации настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Конфигурации настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Конфигурацией настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Конфигурацией настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>false</plural>
+        <value>Конфигурации настраиваемой метки</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Конфигурации настраиваемой метки</value>
+    </caseValues>
+    <fields>
+        <label>Создать метку</label>
+        <name>HealthCloudGA__NewLabel__c</name>
+    </fields>
+    <fields>
+        <label>Имя поля объекта</label>
+        <name>HealthCloudGA__ObjectFieldName__c</name>
+    </fields>
+    <fields>
+        <label>Тип объекта</label>
+        <name>HealthCloudGA__ObjectName__c</name>
+    </fields>
+    <fields>
+        <label>Тип записи объекта</label>
+        <name>HealthCloudGA__ObjectRecordType__c</name>
+    </fields>
+    <fields>
+        <label>Поле поиска</label>
+        <name>HealthCloudGA__RelationshipName__c</name>
+    </fields>
+    <fields>
+        <label>Имя представления</label>
+        <name>HealthCloudGA__ViewName__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

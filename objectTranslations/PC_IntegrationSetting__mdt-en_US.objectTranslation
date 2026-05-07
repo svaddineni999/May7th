@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Integration Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Integration Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>PC_Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select this checkbox if this setting is allowed to be overridden per engagement program --></help>
+        <label><!-- Is Overridable Per Eng Program? --></label>
+        <name>PC_IsOverridable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Setting Name --></label>
+        <name>PC_SettingName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Setting Value --></label>
+        <name>PC_SettingValue__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

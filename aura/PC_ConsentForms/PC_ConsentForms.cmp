@@ -1,0 +1,127 @@
+<!--
+Modification Log:
+Developer                 Date                   Description
+Sheela Sathyanarayana     08/12/2018             PC-3477: Action Center Program Permissions flow
+Sheela Sathyanarayana	  08/31/2018			 PC-3524: Added error handling array; Changed fieldLabels/consentPatientList to object
+      
+-->
+<aura:component access="global" controller = "PC_ConsentFormsList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" >
+    
+    <aura:handler name = "init" action = "{!c.getPatientConsentList}" value = "{!this}"/>
+    <aura:attribute name ="consentPatientList" type="Object[]" default="false"/>
+    <aura:attribute name="fieldLabels" type="Object" default="false"/> 
+    <aura:attribute name="newConsent" type="String" default="{!$Label.c.PC_New}"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="showCreateConsentOption" type="Boolean" default="true"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+    
+    <div>
+    <aura:if isTrue="{!v.isLoading}">
+        <div class="pc_spinner slds-align-middle">
+            <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+        </div>
+        <aura:set attribute="else">
+            <div class="consentWrapper">
+                <lightning:overlayLibrary aura:id="consentOverlay"/>
+            </div>
+             <lightning:workspaceAPI aura:id="workspace" />
+            <div>
+                <div style="border: 1px solid #d8dde6;">
+                    <!--Start of Header Component-->
+                    <aura:if isTrue="{!v.showCreateConsentOption}">
+                        <div class="slds-tabs--scoped__nav slds-page-header_object-home" >
+                            <div class="slds-col"></div>
+                            <div class="slds-col slds-no-flex">
+                                <div class="slds-m-bottom--x-small"/>
+                                <div class="slds-form-element">
+                                    <div class="slds-float--right">
+                                        <lightning:button onclick="{!c.createConsent}" variant="brand">{!v.newConsent}</lightning:button>
+                                    </div>
+                                </div>
+                                <div class="slds-m-bottom--x-small"  />
+                            </div>
+                        </div>
+                    </aura:if>
+                    <!--Consent Form Table-->
+                    <div class="slds-modal__content slds-p-around_medium" style="{!v.consentPatientList.length == 0 ? '' : 'display:none;'}" >
+                         {!$Label.c.PC_No_Records_Found}
+                         <br></br>
+                    </div>
+                    <div class="dataTable" id="modal-content-id-1" style="{!v.consentPatientList.length != 0 ? '' : 'display:none;'}">
+                        <div class="slds-scrollable">
+                            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                                <thead>
+                                    <tr class="slds-text-title_caps">
+                                    <th class="slds-cell-shrink" scope="col"></th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.service}">{!v.fieldLabels.service}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.patientResponse}">{!v.fieldLabels.patientResponse}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.patientResponseDate}">{!v.fieldLabels.patientResponseDate}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.hcpResponse}">{!v.fieldLabels.hcpResponse}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.hcpResponseDate}">{!v.fieldLabels.hcpResponseDate}</div>
+                                    </th>
+                                    <th scope="col" class="">
+                                        <div class="slds-truncate" title="{!v.fieldLabels.document}">{!v.fieldLabels.document}</div>
+                                    </th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <aura:iteration items ="{!v.consentPatientList}" var="PatientConsentList" indexVar="i">
+                                        <tr>
+                                           <td class="slds-truncate" >
+                                                <div class="slds-truncate slds-text-align--center" data-id="" title="">
+                                                     <lightning:button value="{!PatientConsentList.pspId}" type="button" variant="base" iconName="utility:edit" onclick="{!c.editConsent}"/>
+                                                </div>
+                                           </td>
+                                            <td  class="slds-truncate" title="{!PatientConsentList.service}">
+                                                <a id ="{!PatientConsentList.serviceId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                                    {!PatientConsentList.service}
+                                                </a>
+                                            </td>
+                                            <td class="slds-truncate"  title="{!PatientConsentList.patientResponse}">
+                                                {!PatientConsentList.patientResponse}
+                                            </td>
+                                            <td class="slds-truncate"  title="{!PatientConsentList.patientResponseDate}">
+                                                {!PatientConsentList.patientResponseDate}
+                                            </td>
+                                            <td class="slds-truncate"  title="{!PatientConsentList.hcpResponse}">
+                                                {!PatientConsentList.hcpResponse}
+                                            </td>
+                                            <td class="slds-truncate"  title="{!PatientConsentList.hcpResponseDate}">
+                                                {!PatientConsentList.hcpResponseDate}
+                                            </td>
+                                            <td class="slds-truncate"  title="{!PatientConsentList.document}">
+                                               <a id ="{!PatientConsentList.documentId}" role="link" onclick="{!c.goToSelectedLink}" target="_self">
+                                                    {!PatientConsentList.document}
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+
+                             </table>
+                         </div>
+                       </div>
+                    </div>
+                 </div>
+        </aura:set>
+    </aura:if>
+    </div>
+</aura:component>

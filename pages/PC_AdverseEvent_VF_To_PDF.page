@@ -1,0 +1,582 @@
+<!--
+ - Created by havalakki on 12/7/2018.
+ -->
+
+<apex:page id="PC_AdverseEvent_VF_To_PDF" title="Adverse Event PDF" standardController="PC_AdverseEvent__c" extensions="PC_AdverseEvent_PDF_Controller" action="{!fetchPDFData}" renderAs="advanced_pdf">
+    <head>
+        <style>
+            body { font-family: 'Arial Unicode MS'; }
+            .companyName { font: bold 30px; color: red; }
+
+            .class1{
+                border-radius: 10px;
+                border: 2px solid #D3D3D3;
+
+            }
+        </style>
+    </head>
+    <body>
+    <apex:outputPanel rendered="{!IF(isError,true,false)}">
+        <div align="left">
+            <apex:outputText >{!$Label.PC_Lighting_Error_Message}</apex:outputText><br/><br/>
+            <table width="100%" border="0">
+                <tr><td width="20%">{!$Label.PC_AE_PDF_Error_Message}</td><td width="80%"><apex:outputText >{!errorMessage}</apex:outputText><br/></td></tr>
+                <tr><td width="20%">{!$Label.PC_AE_PDF_Error_Log_Rec}</td><td width="80%"><apex:outputText >{!errorLogRecordName}</apex:outputText></td></tr>
+            </table>
+        </div>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!!IF(isError,true,false)}">
+            <h1 style = "text-align:center;">{!$Label.PC_Adverse_Event_Report}</h1>
+            <div align="right" style="white-space: pre;">
+                <table align="right" border="0" width="100%" >
+                    <tr><td width="70%" align="right">{!$Label.PC_Adverse_Event_PDF_Date}:</td><td align="left">{!gmtDateTimeVal}</td></tr>
+                    <tr><td width="70%" align="right">{!$Label.PC_AE_PDF_Generated_By}:</td><td align="left">{!$User.FirstName}&nbsp;{!$User.LastName}</td></tr>
+                    <tr><td width="70%" align="right">{!fieldLabelsMap['eventType']}:</td><td align="left">{!eventType}</td></tr>
+                </table>
+            </div>
+            <br/><br/><br/>
+            <div align="left" style="background-color: #D3D3D3;height:25px;font-size:20px">{!$Label.PC_AE_Patient_Information}</div>
+            <div class="" align="left">
+                <table border="0" width="100%">
+                    <tr>
+                        <td width="40%">
+                            <table>
+                                <tr><td><strong>{!fieldLabelsMap['patId']}</strong></td></tr>
+                                <tr><td>{!adverseEventPatInfoMap['patId']}</td></tr>
+                            </table>
+                        </td>
+                        <td width="10%">&nbsp;</td>
+                        <td width="40%">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <table>
+                                            <tr><td><strong>{!fieldLabelsMap['age']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPatInfoMap['age']} {!adverseEventPatInfoMap['ageType']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="10%" align="center">
+                            <table align="center">
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td>&nbsp;</td></tr>
+                            </table>
+                        </td>
+                        <td width="40%">
+                            <table>
+                                <tr><td><strong>{!fieldLabelsMap['dob']}</strong></td></tr>
+                                <tr><td>{!adverseEventPatInfoMap['dob']}</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr><td><strong>{!fieldLabelsMap['gender']}</strong></td></tr>
+                                <tr><td>{!adverseEventPatInfoMap['gender']}</td></tr>
+                            </table>
+                        </td>
+                        <td width="10%" align="center">
+                            <table align="center">
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td>&nbsp;</td></tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table>
+                                <tr><td><strong>{!fieldLabelsMap['weight']}</strong></td></tr>
+                                <tr>
+                                    <td>{!adverseEventPatInfoMap['weight']} {!adverseEventPatInfoMap['weightType']}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            <table>
+                                <tr><td><strong>{!fieldLabelsMap['ethnicity']}</strong></td></tr>
+                                <tr><td>{!adverseEventPatInfoMap['ethnicity']}</td></tr>
+                            </table>
+                        </td>
+                        <td valign="top" width="10%" align="center">
+                            <table align="center">
+                                <tr><td>&nbsp;</td></tr>
+                                <tr><td>&nbsp;</td></tr>
+                            </table>
+                        </td>
+                        <td valign="top">
+                            <table>
+                                <tr><td><strong>{!fieldLabelsMap['race']}</strong></td></tr>
+                                <apex:repeat value="{!aePatRaceValList}" var="raceVal">
+                                    <tr>
+                                        <td>
+                                            <img src="/img/checkbox_checked.gif" alt="checkbox_checked" width="auto" height="auto" />{!raceVal}
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div align="left" style="background-color: #D3D3D3;height:25px;font-size:20px">{!$Label.PC_Adverse_Event}</div>
+            <div>
+                <table border="0" width="100%">
+                    <tr>
+                        <td>
+                            <table width="100%" border="">
+                                <tr>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr><td><strong>{!adverseEventPDFLabels['eventOnsetDate']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['eventOnsetDate']}</td></tr>
+                                            <tr><td><strong>{!adverseEventPDFLabels['dateOfTheReport']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['dateOfTheReport']}</td></tr>
+                                            <tr><td><strong>{!adverseEventPDFLabels['dateofDeath']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['dateofDeath']}</td></tr>
+                                        </table>
+                                    </td>
+                                    <td valign="top">
+                                        <table align="left" border="0" width="100%">
+                                            <tr><td align="left"><strong>{!adverseEventPDFLabels['outcome']}</strong></td></tr>
+                                            <apex:repeat value="{!aeAEEventOutValList}" var="eventOutcome">
+                                                <tr><td align="left"><img src="/img/checkbox_checked.gif" alt="checkbox_checked"  width="auto" height="auto" />{!eventOutcome}</td></tr>
+                                            </apex:repeat>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <table border="0" width="100%">
+                                <tr><td><strong>{!adverseEventPDFLabels['description']}</strong></td></tr>
+                                <tr><td>{!adverseEventPDFInfo['description']}</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <table border="0" width="100%">
+                                <tr><td><strong>{!adverseEventPDFLabels['laboratoryData']}</strong></td></tr>
+                                <tr><td>{!adverseEventPDFInfo['laboratoryData']}</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <table border="0" width="100%">
+                                <tr><td><strong>{!adverseEventPDFLabels['otherReleventHistory']}</strong></td></tr>
+                                <tr><td>{!adverseEventPDFInfo['otherReleventHistory']}</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <table border="0" width="100%">
+                                <tr><td><strong>{!adverseEventPDFLabels['eventVerbatim']}</strong></td></tr>
+                                <tr><td>{!adverseEventPDFInfo['eventVerbatim']}</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div align="left">{!$Label.PC_AE_EventCoding}</div>
+                            <table>
+                                <tr>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr><td><strong>{!adverseEventPDFLabels['eventCoding_SOC']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['eventCoding_SOC']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr><td><strong>{!adverseEventPDFLabels['eventCoding_HLGT']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['eventCoding_HLGT']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr><td><strong>{!adverseEventPDFLabels['eventCoding_HLT']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['eventCoding_HLT']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr><td><strong>{!adverseEventPDFLabels['eventCoding_PT']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['eventCoding_PT']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">
+                                        <table border="0" width="100%">
+                                            <tr><td><strong>{!adverseEventPDFLabels['eventCoding_LLT']}</strong></td></tr>
+                                            <tr><td>{!adverseEventPDFInfo['eventCoding_LLT']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div align="left" style="background-color: #D3D3D3;height:25px;font-size:20px">{!$Label.PC_AE_Suspect_Products}</div>
+            <div>
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <apex:repeat value="{!adverseEventSuspectProdInfoWrapList}" var="suspendProd">
+                                <hr/>
+                                <div id="SuspectProdDiv1">
+                                    <div align="left">{!$Label.PC_AE_Name_Manufacturer_Compounder_Strength}</div>
+                                    <div>
+                                        <table border="0" width="100%">
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['suspectPresName']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['prodStrength']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.name}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">{!suspendProd.productStrength}</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['ndc']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['manufacturer']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.ndc}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">{!suspendProd.manufacturer}</td>
+                                            </tr>
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['lot']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.lot}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">&nbsp;</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table width="100%" border="0">
+                                            <tr><td align="left"><strong>{!aeSuspectProdFieldLabelsMap['concomitant']}</strong></td></tr>
+                                            <tr><td align="left">{!suspendProd.concomitant}</td></tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table width="100%">
+                                            <tr>
+                                                <td align="left" width="30%"><strong>{!aeSuspectProdFieldLabelsMap['dose']}</strong></td>
+                                                <td align="left" width="5%">&nbsp;</td>
+                                                <td align="left" width="30%"><strong>{!aeSuspectProdFieldLabelsMap['frequency']}</strong></td>
+                                                <td align="left" width="5%">&nbsp;</td>
+                                                <td align="left" width="30%"><strong>{!aeSuspectProdFieldLabelsMap['route']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left" width="30%">{!suspendProd.dose}</td>
+                                                <td align="left" width="5%">&nbsp;</td>
+                                                <td align="left" width="30%">{!suspendProd.frequency}</td>
+                                                <td align="left" width="5%">&nbsp;</td>
+                                                <td align="left" width="30%">{!suspendProd.route}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['therapyStartDate']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['therapyEndDate']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.formatedTherapyStartDate}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">{!suspendProd.formatedTherapyEndDate}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['diagnosis']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['prodOTC']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.diagnosis}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">{!suspendProd.prodOTC}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['prodCompounded']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['expirationDate']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.prodCompounded}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">{!suspendProd.formatedExpirationDate}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <table width="100%" border="0">
+                                            <tr>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['eventAbated']}</strong></td>
+                                                <td width="10%" align="left">&nbsp;</td>
+                                                <td width="45%" align="left"><strong>{!aeSuspectProdFieldLabelsMap['eventReappeared']}</strong></td>
+                                            </tr>
+                                            <tr>
+                                                <td align="left">{!suspendProd.eventAbated}</td>
+                                                <td align="left">&nbsp;</td>
+                                                <td align="left">{!suspendProd.eventReappeared}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <apex:outputPanel rendered="{!IF(and(spAdditionalfsName != null,spAdditionalfsName != ''), true, false)}" style="white-space: pre;">
+                                        <div align="left">{!$Label.PC_AE_Additional_Information}</div>
+                                        <div>
+                                            <table width="100%">
+                                                <apex:repeat value="{!suspendProd.additionalFields}" var="fieldSetKey">
+                                                    <tr><td align="left" width="45%"><strong>{!spAddInfoPDFLabels[fieldSetKey]}</strong></td></tr>
+                                                    <tr><td align="left" width="45%">{!suspendProd.additionalFields[fieldSetKey]}</td></tr>
+                                                </apex:repeat>
+                                            </table>
+                                        </div>
+                                    </apex:outputPanel>
+                                </div>
+                            </apex:repeat>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div align="left" style="background-color: #D3D3D3;height:25px;font-size:20px">{!$Label.PC_AE_Initial_Reporter}</div>
+            <div>
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <div align="left">{!$Label.PC_AE_NameAndAddress}</div>
+                            <div id="initialReportDiv1" class="class1">
+                                <table border="0" width="100%">
+                                    <tr>
+                                        <td align="left" width="45%"><strong>{!aeInitialReportPDFLabels['firstName']}</strong></td>
+                                        <td align="left" width="10%">&nbsp;</td>
+                                        <td align="left" width="45%"><strong>{!aeInitialReportPDFLabels['lastName']}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">{!aeInitialReportPDFInfo['firstName']}</td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left">{!aeInitialReportPDFInfo['lastName']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" colspan="3"><strong>{!aeInitialReportPDFLabels['address']}</strong></td>
+                                    </tr>
+                                    <tr><td align="left" colspan="3">{!aeInitialReportPDFInfo['address']}</td></tr>
+                                    <tr>
+                                        <td align="left"><strong>{!aeInitialReportPDFLabels['state']}</strong></td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left"><strong>{!aeInitialReportPDFLabels['city']}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">{!aeInitialReportPDFInfo['state']}</td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left">{!aeInitialReportPDFInfo['city']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><strong>{!aeInitialReportPDFLabels['zip']}</strong></td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left"><strong>{!aeInitialReportPDFLabels['country']}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">{!aeInitialReportPDFInfo['zip']}</td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left">{!aeInitialReportPDFInfo['country']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left"><strong>{!aeInitialReportPDFLabels['phone']}</strong></td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left"><strong>{!aeInitialReportPDFLabels['email']}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">{!aeInitialReportPDFInfo['phone']}</td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left">{!aeInitialReportPDFInfo['email']}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <table width="100%" border="0">
+                                    <tr>
+                                        <td align="left" width="45%"><strong>{!aeInitialReportPDFLabels['healthCareProfessional']}</strong></td>
+                                        <td width="10%" align="left">&nbsp;</td>
+                                        <td align="left" width="45%"><strong>{!aeInitialReportPDFLabels['IRalsoSentReportToFDA']}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">{!aeInitialReportPDFInfo['healthCareProfessional']}</td>
+                                        <td align="left">&nbsp;</td>
+                                        <td align="left">{!aeInitialReportPDFInfo['IRalsoSentReportToFDA']}</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left" width="45%"><strong>{!aeInitialReportPDFLabels['occupation']}</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="left">{!aeInitialReportPDFInfo['occupation']}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <div align="left" style="background-color: #D3D3D3;height:25px;font-size:20px">{!$Label.PC_AE_Manufacturers}</div>
+            <div>
+                <table width="100%">
+                    <tr>
+                        <td colspan="2">
+                            <div align="left">{!$Label.PC_AE_Adverse_Event_Contact_Office}</div>
+                            <div>
+                                <table width="100%">
+                                    <tr><td align="left" colspan="2"><strong>{!aeManuPDFLabels['manufacturerName']}</strong></td></tr>
+                                    <tr><td align="left" colspan="2">{!aeManuPDFInfo['manufacturerName']}</td></tr>
+                                    <tr><td align="left" colspan="2"><strong>{!aeManuPDFLabels['manufacturerAddress']}</strong></td></tr>
+                                    <tr><td align="left" colspan="2">{!aeManuPDFInfo['manufacturerAddress']}</td></tr>
+                                    <tr><td align="left" colspan="2"><strong>{!aeManuPDFLabels['manufacturerEmail']}</strong></td></tr>
+                                    <tr><td align="left" colspan="2">{!aeManuPDFInfo['manufacturerEmail']}</td></tr>
+                                    <tr>
+                                        <td align="left">
+                                            <apex:outputPanel rendered="{!aeManuPDFInfo['manufacturerCompOutsourcingFac']}"><img src="/img/checkbox_checked.gif" alt="checkbox_checked" width="auto" height="auto" /></apex:outputPanel>
+                                            <apex:outputPanel rendered="{!!aeManuPDFInfo['manufacturerCompOutsourcingFac']}"><img src="/img/checkbox_unchecked.gif" alt="checkbox_checked" width="auto" height="auto" /></apex:outputPanel>
+                                            {!aeManuPDFLabels['manufacturerCompOutsourcingFac']}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td width="48%">
+                                        <table width="100%" border="0">
+                                            <tr><td align="left"><strong>{!aeManuPDFLabels['manufacturerPhone']}</strong></td></tr>
+                                            <tr><td align="left">{!aeManuPDFInfo['manufacturerPhone']}</td></tr>
+                                            <tr><td align="left"><strong>{!aeManuPDFLabels['aeReceivedByManufacturerDate']}</strong></td></tr>
+                                            <tr><td align="left">{!aeManuPDFInfo['aeReceivedByManufacturerDate']}</td></tr>
+                                            <tr>
+                                                <td align="left">
+                                                    <table width="100%" border="0">
+                                                        <tr><td colspan="2"><strong>{!aeManuPDFLabels['nda']}</strong></td></tr>
+                                                        <tr><td colspan="2">{!aeManuPDFInfo['nda']}</td></tr>
+                                                        <tr><td colspan="2"><strong>{!aeManuPDFLabels['anda']}</strong></td></tr>
+                                                        <tr><td colspan="2">{!aeManuPDFInfo['anda']}</td></tr>
+                                                        <tr><td colspan="2"><strong>{!aeManuPDFLabels['ind']}</strong></td></tr>
+                                                        <tr><td colspan="2">{!aeManuPDFInfo['ind']}</td></tr>
+                                                        <tr><td colspan="2"><strong>{!aeManuPDFLabels['bla']}</strong></td></tr>
+                                                        <tr><td colspan="2">{!aeManuPDFInfo['bla']}</td></tr>
+                                                        <tr><td colspan="2"><strong>{!aeManuPDFLabels['pma510']}</strong></td></tr>
+                                                        <tr><td colspan="2">{!aeManuPDFInfo['pma510']}</td></tr>
+                                                        <tr><td colspan="2"><strong>{!aeManuPDFLabels['combinationProductCurrentVal']}</strong></td></tr>
+                                                        <tr><td colspan="2">{!aeManuPDFInfo['combinationProductCurrentVal']}</td></tr>
+                                                        <tr>
+                                                            <td width="50%" align="left"><strong>{!aeManuPDFLabels['productOTCcurrentVal']}</strong></td>
+                                                            <td width="50%" align="left"><strong>{!aeManuPDFLabels['pdfPre1938Flag']}</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td align="left">{!aeManuPDFInfo['productOTCcurrentVal']}</td>
+                                                            <td align="left">{!aeManuPDFInfo['pdfPre1938Flag']}</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr><td>
+                                                <table>
+                                                    <tr><td align="left"><strong>{!aeManuPDFLabels['manufacturerReportNumber']}</strong></td></tr>
+                                                    <tr><td align="left">{!aeManuPDFInfo['manufacturerReportNumber']}</td></tr>
+                                                </table>
+                                            </td></tr>
+                                        </table>
+                                    </td>
+                                    <td width="4%">&nbsp;</td>
+                                    <td align="left" valign="top" width="48%">
+                                        <table>
+                                            <tr><!-- Report Source-->
+                                                <td><strong>{!aeManuPDFLabels['reportSource']}</strong></td>
+                                            </tr>
+                                            <apex:repeat value="{!aeManuReportSourceValList}" var="reportSourceVal">
+                                                <tr><!-- Report Source-->
+                                                    <td align="left">
+                                                        <img src="/img/checkbox_checked.gif" alt="checkbox_checked" width="auto" height="auto" />{!reportSourceVal}
+                                                    </td>
+                                                </tr>
+                                            </apex:repeat>
+                                            <tr><td><strong>{!aeManuPDFLabels['reportSourceOtherText']}</strong></td></tr>
+                                            <tr><td>{!aeManuPDFInfo['reportSourceOtherText']}</td></tr>
+                                            <tr><td><strong>{!aeManuPDFLabels['ifIndProtocolLabel']}</strong></td></tr>
+                                            <tr><td>{!aeManuPDFInfo['ifIndProtocolLabel']}</td></tr>
+                                            <tr><td><strong>{!aeManuPDFLabels['typeOfReports']}</strong></td></tr>
+                                            <apex:repeat value="{!aeManuReportTypeValList}" var="reportTypeVal">
+                                                <tr><!-- Report Source-->
+                                                    <td align="left">
+                                                        <img src="/img/checkbox_checked.gif" alt="checkbox_checked" width="auto" height="auto" />{!reportTypeVal}
+                                                    </td>
+                                                </tr>
+                                            </apex:repeat>
+                                            <tr><td><strong>{!aeManuPDFLabels['reportTypeOtherText']}</strong></td></tr>
+                                            <tr><td>{!aeManuPDFInfo['reportTypeOtherText']}</td></tr>
+                                            <tr><td><strong>{!aeManuPDFLabels['adverseEventTerms']}</strong></td></tr>
+                                            <tr><td>{!aeManuPDFInfo['adverseEventTerms']}</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            <br/>
+            <apex:outputPanel rendered="{!IF(and(fieldsetName != null,fieldsetName != '',!hideAdditionalInfoTab), true, false)}" style="white-space: pre;">
+                <div align="left" style="background-color: #D3D3D3;height:25px;font-size:20px ;" >
+                    <apex:outputText >{!$Label.PC_AE_Additional_Information}</apex:outputText>
+                </div>
+                <div >
+                    <table width="100%">
+                        <apex:repeat value="{!aeAddInfoPDFFieldApiNames}" var="fieldSetKey">
+                            <tr><td align="left" width="45%"><strong>{!aeAddInfoPDFLabels[fieldSetKey]}</strong></td></tr>
+                            <tr><td align="left" width="45%">{!aeAddInfoPDFInfo[fieldSetKey]}</td></tr>
+                        </apex:repeat>
+                    </table>
+                </div>
+            </apex:outputPanel>
+    </apex:outputPanel>
+    </body>
+</apex:page>

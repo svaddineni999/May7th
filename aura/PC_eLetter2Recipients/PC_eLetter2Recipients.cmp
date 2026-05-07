@@ -1,0 +1,179 @@
+<!--
+Lightning component  : PC_eLetter2Recipients
+Description          : Display all recipients of the eletter
+Parameters           : eLetterRecipients (List of eletter recipients)
+
+Modification Log:
+Satheesh Kumar 		 29-Jun-2020    Initial Version
+Satheesh Kumar       14-Oct-2020    Added 2 new column for fax workflow. Created new attribute called isFaxWorkflowEnabled which helps to show and hide those 2 columns.
+Satheesh Kumar       01-Dec-2020    Added logic to auto-select the header Checkbox when all recipients are selected.
+-->
+
+<aura:component description="PC_eLetter2Recipients">
+    <!-- Attributes -->
+    <aura:attribute name="eLetterRecipients" type="List" />
+    <aura:attribute name="isSendToMeEnabled" type="Boolean" default="false"/>
+    <aura:attribute name="disableHeaderCheckbox" type="Boolean" default="false"/>
+    <aura:attribute name="sendToMeEnabledText" type="String" default="{! $Label.c.PC_Eletter2_SendToMeEnabled}"/>
+    <aura:attribute name="sendToMeHelpText" type="String" default="{!$Label.c.PC_Eletter2_SendToMe_HelpText}" />
+    <aura:attribute name="isFaxWorkflowEnabled" type="Boolean" />
+    <aura:attribute name="isEmailWorkflowEnabled" type="Boolean" />
+
+    <aura:attribute name="noRecipientSelected" type="String" default="{!$Label.c.PC_Eletter2_NoRecipientSelected}" access="private"/>
+    <aura:attribute name="messageWhenRecipientNotSelected" type="String" default="" access="private"/>
+    <aura:attribute name="isRecipientsSelected" type="Boolean" default="false" access="private"/>
+
+    <aura:attribute name="selectedEmailCount" type="integer" default="0" access="private"/>
+    <aura:attribute name="selectedFaxCount" type="integer" default="0" access="private"/>
+    <aura:attribute name="totalValidEmailRecipientCount" type="integer" default="0" access="private"/>
+    <aura:attribute name="totalValidFaxRecipientCount" type="integer" default="0" access="private"/>
+    <aura:attribute name="selectAllEmail" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="selectAllFax" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="hideConsent" type="Boolean" description="Hides or displays the consent model. The default is false." access="public"/>
+
+    <aura:method name="getSelectedRecipients" action="{!c.getSelectedRecipients}" access="PUBLIC"> </aura:method>
+    <aura:method name="checkRecipientsValidity" action="{!c.checkRecipientsValidity}" access="PUBLIC"> </aura:method>
+    <aura:method name="reportValidity" action="{!c.reportValidity}" access="PUBLIC"> </aura:method>
+
+    <!-- Handler -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <!-- data table start-->
+    <table class="slds-table slds-no-row-hover slds-table_bordered slds-table_fixed-layout">
+        <thead>
+            <tr class="slds-line-height_reset">
+                <!--header checkbox for select all-->
+                <aura:if isTrue="{!v.isEmailWorkflowEnabled}">
+                    <th style="width:3.5rem;" class="slds-text-align_left">
+                        <aura:if isTrue="{!and(v.isEmailWorkflowEnabled,v.isFaxWorkflowEnabled)}">
+                            <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_Email}">{!$Label.c.PC_Eletter2_Recipient_Header_Email}</div>
+                            <aura:set attribute="else">
+                                <lightning:input type="checkbox" checked="{!v.selectAllEmail}" disabled="{!v.disableHeaderCheckbox}" aura:id="selectAllId" name="Email" onchange="{!c.selectAllRecipients}"/>
+                            </aura:set>
+                        </aura:if>
+                    </th>
+                </aura:if>
+                <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                    <th style="width:3.5rem;" class="slds-text-align_left">
+                        <aura:if isTrue="{!and(v.isEmailWorkflowEnabled,v.isFaxWorkflowEnabled)}">
+                            <div class="slds-truncate" title="{!$Label.c.PC_Fax}">{!$Label.c.PC_Fax}</div>
+                            <aura:set attribute="else">
+                                <lightning:input type="checkbox" checked="{!v.selectAllFax}" disabled="{!v.disableHeaderCheckbox}" aura:id="selectAllId" name="Fax" onchange="{!c.selectAllRecipients}"/>
+                            </aura:set>
+                        </aura:if>
+                    </th>
+                </aura:if>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_Name}">{!$Label.c.PC_Eletter2_Recipient_Header_Name}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_Role}">{!$Label.c.PC_Eletter2_Recipient_Header_Role}</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_RecipientCommPreference}">{!$Label.c.PC_Eletter2_RecipientCommPreference}</div>
+                </th>
+                <aura:if isTrue="{!v.isEmailWorkflowEnabled}">
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_EmailAddress}">{!$Label.c.PC_Eletter2_Recipient_Header_EmailAddress}</div>
+                </th>
+                </aura:if>
+                <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_FaxNumber}">{!$Label.c.PC_Eletter2_Recipient_Header_FaxNumber}</div>
+                </th>
+                </aura:if>
+                <aura:if isTrue="{!!v.hideConsent}">
+                <th scope="col">
+                    <div class="slds-truncate" title="{!$Label.c.PC_ProgramServicePermission}">{!$Label.c.PC_ProgramServicePermission}</div>
+                </th>
+                </aura:if>
+            </tr>
+        </thead>
+        <tbody>
+        <aura:iteration items="{!v.eLetterRecipients}" var="recipient">
+            <tr class="slds-hint-parent">
+
+                <aura:if isTrue="{!v.isEmailWorkflowEnabled}">
+                <th scope="row" class="slds-text-align_left">
+                    <lightning:input type="checkbox" value="{!recipient.id}" checked="{!recipient.sendEmail}" disabled="{!recipient.bDisableEmail}" onchange="{!c.onSelectRecipient}" title="{!(recipient.bDisableEmail? $Label.c.PC_Eletter2_InvalidEmail :'')}"/>
+                </th>
+                </aura:if>
+                <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                <th scope="row" class="slds-text-align_left">
+                    <lightning:input type="checkbox" value="{!recipient.id}" checked="{!recipient.sendFax}" disabled="{!recipient.bDisableFax}" onchange="{!c.onSelectRecipient}" title="{!(recipient.bDisableFax? $Label.c.PC_Eletter2_InvalidFax :'')}"/>
+                </th>
+                </aura:if>
+
+                <th scope="row" >
+                    <div class="slds-truncate" title="{!recipient.recipientName}">
+                        {!recipient.recipientName}
+                    </div>
+                </th>
+                <th scope="row">
+                    <div class="slds-truncate" title="{!recipient.recipientRoleLabel}">
+                        {!recipient.recipientRoleLabel}
+                    </div>
+                </th>
+                <th scope="row">
+                    <div class="slds-truncate" title="{!recipient.communicationPreference}">
+                        {!recipient.communicationPreference}
+                    </div>
+                </th>
+                <aura:if isTrue="{!v.isEmailWorkflowEnabled}">
+                <th scope="row">
+                    <aura:if isTrue="{!recipient.isValidEmail}">
+                    <div class="slds-truncate" title="{!recipient.recipientEmail}">
+                        <lightning:formattedEmail value="{!recipient.recipientEmail}" hideIcon="true"/>
+                    </div>
+                        <aura:set attribute="else">
+                            <div class="slds-truncate">
+                                <lightning:formattedText value="{!recipient.recipientEmail}"/>
+                            </div>
+                        </aura:set>
+                    </aura:if>
+                </th>
+                </aura:if>
+                <aura:if isTrue="{!v.isFaxWorkflowEnabled}">
+                <th scope="row">
+                    <div class="slds-truncate" title="{!recipient.recipientFax}">
+                        <lightning:formattedPhone value="{!recipient.recipientFax}" />
+                    </div>
+                </th>
+                </aura:if>
+                <aura:if isTrue="{!!v.hideConsent}">
+                <th scope="row">
+                    <div class="slds-grid slds-truncate slds-wrap slds-grid_vertical" title="">
+                        <aura:iteration items="{!recipient.programServicePermissionRecordsList}" var="programServicePermission">
+                            <div class="slds-col slds-grid slds-truncate" title="">
+                                <aura:if isTrue="{!and(!(programServicePermission.consentDoesNotExist==null),programServicePermission.consentDoesNotExist,!programServicePermission.isConsentAvailable)}">
+                                    <div class="slds-col slds-size_1-of-9 slds-wrap"><lightning:helptext iconName="utility:ban" size="xx-small" iconVariant="warning" content="{!programServicePermission.informationIconLabel}"/></div>
+                                    <div class="slds-col slds-size_8-of-9 slds-wrap" style="padding-top:4px">{!programServicePermission.serviceName}</div>
+                                </aura:if>
+                                <aura:if isTrue="{!and((programServicePermission.consentDoesNotExist==null),programServicePermission.isConsentAvailable)}">
+                                    <div class="slds-col slds-size_1-of-9 slds-wrap"><lightning:helptext iconName="utility:success" size="xx-small" content="{!programServicePermission.informationIconLabel}"/></div>
+                                    <div class="slds-col slds-size_8-of-9 slds-wrap" style="padding-top:4px"><a id="{!programServicePermission.programServicePermissionId}" onclick="{!c.navigateToConsentRecord}">{!programServicePermission.serviceName}</a></div>
+                                </aura:if>
+                                <aura:if isTrue="{!and((programServicePermission.consentDoesNotExist==null),!programServicePermission.isConsentAvailable)}">
+                                    <div class="slds-col slds-size_1-of-9 slds-wrap"><lightning:helptext iconName="utility:clear" size="xx-small" iconVariant="warning" content="{!programServicePermission.informationIconLabel}"/></div>
+                                    <div class="slds-col slds-size_8-of-9 slds-wrap" style="padding-top:4px"><a id="{!programServicePermission.programServicePermissionId}" onclick="{!c.navigateToConsentRecord}">{!programServicePermission.serviceName}</a></div>
+                                </aura:if>
+                            </div>
+                        </aura:iteration>
+                    </div>
+                </th>
+                </aura:if>
+            </tr>
+        </aura:iteration>
+        </tbody>
+    </table>
+    <aura:if isTrue="{!v.isSendToMeEnabled}">
+    <div>
+        <span class="slds-form-element__label">{!v.sendToMeEnabledText}</span>
+        <lightning:helptext content="{!v.sendToMeHelpText}"/>
+    </div>
+    </aura:if>
+    <div class="slds-form-element slds-has-error">
+        <div class="slds-form-element__help">{!v.messageWhenRecipientNotSelected}</div>
+    </div>
+    <!-- DataTable End -->
+</aura:component>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Afiliado nuevo de tramo de edad de evaluación de riesgo</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Afiliados nuevos de tramo de edad de evaluación de riesgo</value>
+    </caseValues>
+    <fields>
+        <label>Tramo de edad desde</label>
+        <name>HealthCloudGA__AgeBandFrom__c</name>
+    </fields>
+    <fields>
+        <label>Tramo de edad hasta</label>
+        <name>HealthCloudGA__AgeBandTo__c</name>
+    </fields>
+    <fields>
+        <label>CSNP</label>
+        <name>HealthCloudGA__CSNP__c</name>
+    </fields>
+    <fields>
+        <label>Sexo</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>Está activo</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>Medicaid no incapacitado originalmente</label>
+        <name>HealthCloudGA__MedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Medicaid incapacitado originalmente</label>
+        <name>HealthCloudGA__MedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>No Medicaid no incapacitado originalmnte</label>
+        <name>HealthCloudGA__NonMedicaidNonOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>No Medicaid incapacitado originalmente</label>
+        <name>HealthCloudGA__NonMedicaidOriginallyDisabled__c</name>
+    </fields>
+    <fields>
+        <label>Periodo de años</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+    <gender>Masculine</gender>
+</CustomObjectTranslation>

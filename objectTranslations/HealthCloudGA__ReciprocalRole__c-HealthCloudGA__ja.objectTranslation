@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>相互ロール</value>
+    </caseValues>
+    <fields>
+        <help><!-- If checked, a corresponding inverse role is automatically created. --></help>
+        <label>逆ロールの作成</label>
+        <name>HealthCloudGA__CreateInverseRole__c</name>
+    </fields>
+    <fields>
+        <label>InverseRelationship</label>
+        <name>HealthCloudGA__InverseRelationship__c</name>
+        <relationshipLabel>逆リレーション</relationshipLabel>
+    </fields>
+    <fields>
+        <label>逆ロール</label>
+        <name>HealthCloudGA__InverseRole__c</name>
+    </fields>
+    <fields>
+        <label>リレーション種別</label>
+        <name>HealthCloudGA__RelationshipType__c</name>
+        <picklistValues>
+            <masterLabel>Account Account Relation</masterLabel>
+            <translation><!-- Account Account Relation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Contact Contact Relation</masterLabel>
+            <translation><!-- Contact Contact Relation --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>ソースシステム ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <nameFieldLabel>ロール</nameFieldLabel>
+    <recordTypes>
+        <description>取引先間リレーションに関連付けられたロール</description>
+        <label>取引先ロール</label>
+        <name>HealthCloudGA__AccountRole</name>
+    </recordTypes>
+    <recordTypes>
+        <description>取引先責任者間リレーションに関連付けられたロール</description>
+        <label>取引先責任者ロール</label>
+        <name>HealthCloudGA__ContactRole</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>相互ロールは変更できません</errorMessage>
+        <name>HealthCloudGA__ProhibitUpdates</name>
+    </validationRules>
+</CustomObjectTranslation>

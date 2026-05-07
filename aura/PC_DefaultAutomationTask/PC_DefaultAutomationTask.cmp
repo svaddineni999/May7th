@@ -1,0 +1,28 @@
+<!--
+ Lightning component   : PC_DefaultAutomationTask
+ Description           : Default Component for Support Plan Automation Type
+
+Created By:
+Tejas Patel            Feb 28 2019           Initial version
+ -->
+
+<aura:component description="PC_DefaultAutomationTask" implements="c:PC_SupportPlan_Automation_Interface">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <aura:attribute name="userMsg"  type="String" default="{!$Label.c.PC_Default_AutomationMessage}"/>
+
+    <table>
+        <tr>
+            <td width="20%"><div style="width:20%">&nbsp;</div></td>
+            <td width="80%">
+                <div style="border: 1px solid #006eb3; border-radius: .25rem;background-color: rgb(249, 249, 250);
+     margin-top: 0.5rem;
+     margin-bottom: 0.5rem;
+     padding: 0.5rem 0.5rem 0 0.5rem;">
+                        {!v.userMsg}
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</aura:component>

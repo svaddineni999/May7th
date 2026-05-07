@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Self Service Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Self Service Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Channel --></label>
+        <name>PC_Channel__c</name>
+        <picklistValues>
+            <masterLabel>CTI</masterLabel>
+            <translation><!-- CTI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Downstream Flow Identifier --></label>
+        <name>PC_DownstreamFlowIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engagement Program --></label>
+        <name>PC_EngagementProgram__c</name>
+        <relationshipLabel><!-- Self Service Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order --></label>
+        <name>PC_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Channel --></label>
+        <name>PC_OtherChannel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Flow Identifier --></label>
+        <name>PC_ServiceFlowIdentifier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>PC_ServiceName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Name --></label>
+        <name>PC_VendorName__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

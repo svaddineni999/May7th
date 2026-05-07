@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>EHR 의사 역할</value>
+    </caseValues>
+    <fields>
+        <label>EHR 의사</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>EHR 의사 역할</relationshipLabel>
+    </fields>
+    <fields>
+        <label>종료일</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>역할 코드</label>
+        <name>HealthCloudGA__RoleCode__c</name>
+    </fields>
+    <fields>
+        <label>역할 레이블</label>
+        <name>HealthCloudGA__RoleLabel__c</name>
+    </fields>
+    <fields>
+        <label>역할 시스템</label>
+        <name>HealthCloudGA__RoleSystem__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>소스 시스템 수정일</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>소스 시스템</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 1 코드</label>
+        <name>HealthCloudGA__Specialty1Code__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 1 레이블</label>
+        <name>HealthCloudGA__Specialty1Label__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 1 시스템</label>
+        <name>HealthCloudGA__Specialty1System__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 2 코드</label>
+        <name>HealthCloudGA__Specialty2Code__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 2 레이블</label>
+        <name>HealthCloudGA__Specialty2Label__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 2 시스템</label>
+        <name>HealthCloudGA__Specialty2System__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 3 코드</label>
+        <name>HealthCloudGA__Specialty3Code__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 3 레이블</label>
+        <name>HealthCloudGA__Specialty3Label__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 3 시스템</label>
+        <name>HealthCloudGA__Specialty3System__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 4 코드</label>
+        <name>HealthCloudGA__Specialty4Code__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 4 레이블</label>
+        <name>HealthCloudGA__Specialty4Label__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 4 시스템</label>
+        <name>HealthCloudGA__Specialty4System__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 5 코드</label>
+        <name>HealthCloudGA__Specialty5Code__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 5 레이블</label>
+        <name>HealthCloudGA__Specialty5Label__c</name>
+    </fields>
+    <fields>
+        <label>전문 분야 5 시스템</label>
+        <name>HealthCloudGA__Specialty5System__c</name>
+    </fields>
+    <fields>
+        <label>시작일</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <nameFieldLabel>EHR 의사 역할 이름</nameFieldLabel>
+</CustomObjectTranslation>

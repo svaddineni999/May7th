@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Immunisatie volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Immunisaties volgens EPD (elektronisch patiëntendossier)</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Immunisaties</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Datum van toediening</label>
+        <name>HealthCloudGA__DateAdministered__c</name>
+    </fields>
+    <fields>
+        <label>Eenheden doseringshoeveelheid</label>
+        <name>HealthCloudGA__DoseQuantityUnits__c</name>
+    </fields>
+    <fields>
+        <label>Waarde voor doseringshoeveelheid</label>
+        <name>HealthCloudGA__DoseQuantityValue__c</name>
+    </fields>
+    <fields>
+        <label>Hoeveelheid voor dosis</label>
+        <name>HealthCloudGA__DoseQuantity__c</name>
+    </fields>
+    <fields>
+        <label>Vervaldatum</label>
+        <name>HealthCloudGA__ExpirationDate__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <help><!-- Returns true if Refused Indicator = False AND Expiration Date &gt; Now()  else returns false --></help>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Plaats voor locatie</label>
+        <name>HealthCloudGA__LocationCity__c</name>
+    </fields>
+    <fields>
+        <label>Land voor locatie</label>
+        <name>HealthCloudGA__LocationCountry__c</name>
+    </fields>
+    <fields>
+        <label>Identifier voor locatie</label>
+        <name>HealthCloudGA__LocationId__c</name>
+    </fields>
+    <fields>
+        <label>Regel 1 van locatie</label>
+        <name>HealthCloudGA__LocationLine1__c</name>
+    </fields>
+    <fields>
+        <label>Regel 2 van locatie</label>
+        <name>HealthCloudGA__LocationLine2__c</name>
+    </fields>
+    <fields>
+        <label>Naam van locatie</label>
+        <name>HealthCloudGA__LocationName__c</name>
+    </fields>
+    <fields>
+        <label>Postcode van locatie</label>
+        <name>HealthCloudGA__LocationPostalCode__c</name>
+    </fields>
+    <fields>
+        <label>Begindatum van locatie</label>
+        <name>HealthCloudGA__LocationStartDate__c</name>
+    </fields>
+    <fields>
+        <label>Staat/provincie van locatie</label>
+        <name>HealthCloudGA__LocationState__c</name>
+    </fields>
+    <fields>
+        <label>Telecommunicatie voor locatie</label>
+        <name>HealthCloudGA__LocationTelecom__c</name>
+    </fields>
+    <fields>
+        <label>Tekst van locatie</label>
+        <name>HealthCloudGA__LocationText__c</name>
+    </fields>
+    <fields>
+        <label>Type van locatie</label>
+        <name>HealthCloudGA__LocationType__c</name>
+    </fields>
+    <fields>
+        <label>Gebruik van locatie</label>
+        <name>HealthCloudGA__LocationUse__c</name>
+    </fields>
+    <fields>
+        <label>Partijnummer</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>Patiënt</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Immunisaties</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Naam van uitvoerende persoon (255)</label>
+        <name>HealthCloudGA__PerformerName255__c</name>
+    </fields>
+    <fields>
+        <label>Naam van uitvoerende persoon</label>
+        <name>HealthCloudGA__PerformerName__c</name>
+    </fields>
+    <fields>
+        <label>Uitvoerende persoon</label>
+        <name>HealthCloudGA__Performer__c</name>
+        <relationshipLabel>Immunisaties uitgevoerd</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Code voor reden</label>
+        <name>HealthCloudGA__ReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Label van reden</label>
+        <name>HealthCloudGA__ReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor reden</label>
+        <name>HealthCloudGA__ReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code voor reden voor weigering</label>
+        <name>HealthCloudGA__RefusalReasonCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor reden voor weigering</label>
+        <name>HealthCloudGA__RefusalReasonLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor reden voor weigering</label>
+        <name>HealthCloudGA__RefusalReasonSystem__c</name>
+    </fields>
+    <fields>
+        <label>Indicator voor geweigerd</label>
+        <name>HealthCloudGA__RefusedIndicator__c</name>
+    </fields>
+    <fields>
+        <label>Naam van aanvrager (255)</label>
+        <name>HealthCloudGA__RequesterName255__c</name>
+    </fields>
+    <fields>
+        <label>Naam van aanvrager</label>
+        <name>HealthCloudGA__RequesterName__c</name>
+    </fields>
+    <fields>
+        <label>Aanvrager</label>
+        <name>HealthCloudGA__Requester__c</name>
+        <relationshipLabel>Immunisaties aangevraagd</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Code voor route</label>
+        <name>HealthCloudGA__RouteCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor route</label>
+        <name>HealthCloudGA__RouteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor route</label>
+        <name>HealthCloudGA__RouteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Zelfmelding</label>
+        <name>HealthCloudGA__SelfReported__c</name>
+    </fields>
+    <fields>
+        <label>Code voor plaats</label>
+        <name>HealthCloudGA__SiteCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor plaats</label>
+        <name>HealthCloudGA__SiteLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor plaats</label>
+        <name>HealthCloudGA__SiteSystem__c</name>
+    </fields>
+    <fields>
+        <label>Bronsysteem-ID</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Wijziging van bronsysteem</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Bronsysteem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Code voor type vaccin</label>
+        <name>HealthCloudGA__VaccineTypeCode__c</name>
+    </fields>
+    <fields>
+        <label>Label voor type vaccin</label>
+        <name>HealthCloudGA__VaccineTypeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Systeem voor type vaccin</label>
+        <name>HealthCloudGA__VaccineTypeSystem__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID van immunisatie volgens EPD (elektron</nameFieldLabel>
+</CustomObjectTranslation>

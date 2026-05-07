@@ -1,0 +1,75 @@
+<!--
+ - Created by havalakki on 5/28/2021.
+ -->
+
+<aura:component description="PC_SurveyWorkflow" access="global"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" controller="PC_SurveyWorkflowController">
+    <aura:attribute name="namespace" type="String" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" access="private"/>
+
+    <aura:attribute name="recordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="accountRecordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="accountData" type="Object" access="private"/>
+    <aura:attribute name="accountColumns" type="List" access="private"/>
+    <aura:attribute name="caseData" type="Object" access="private"/>
+    <aura:attribute name="caseColumns" type="List" access="private"/>
+    <aura:attribute name="accountFieldSetAPIName" type="String" default="" required="false" access="global"/>
+    <aura:attribute name="caseFieldsetAPIName" type="String" default="" required="false" access="global"/>
+    <aura:attribute name="accountSurveyActionName" type="String" default="accountSurvey" access="private"/>
+    <aura:attribute name="caseSurveyActionName" type="String" default="caseSurvey" access="private"/>
+    <aura:attribute name="surveyEligibilityCheckLabel" type="String" default="" access="private"/>
+    <aura:attribute name="noCaseRecordFoundLabel" type="String" default="{!$Label.c.PC_NoCaseRecordFound}" access="private"/>
+    <aura:attribute name="buttonTitle" type="String" default="{!$Label.c.PC_PAPTitle}" access="private"/>
+    <aura:attribute name="surveyEligibilityCheckScreenCompName" type="String" default="PC_ParentSurveyWorkflow" access="private"/>
+    <aura:attribute name="tabIcon" type="String" default="utility:edit_form" access="private"/>
+    <aura:attribute name="showCaseRecords" type="Boolean" access="private" default="true"/>
+    <aura:attribute name="showSpinner" type="Boolean"  default="false" access="private"/>
+    <aura:attribute name="engagementProgramId" type="Id" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="errors" type="List" access="private" default="[]"/>
+    <aura:attribute name="standardLoggedErrorMessage" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" access="private"/>
+    <aura:attribute name="accountCaseDetailsErrorMessage" type="String" default="{!$Label.c.PC_AccountCaseDetailsError}" access="private"/>
+    <aura:attribute name="engagementProgramUrlFieldName" type="String" access="private" default="EngagementProgramId"/>
+    <aura:attribute name="surveyInvitationPageName" type="String" access="private" default="PC_SurveyInvitationAppPage"/>
+    <aura:attribute name="surveyTabIcon" type="String" default="utility:form" access="private"/>
+    <aura:attribute name="surveyLabel" type="String" default="" access="private"/>
+    <aura:attribute name="surveyWorkflowDivTitle" type="String" default="" access="private"/>
+    <aura:attribute name="engagementProgramFieldAPIName" type="String" default="PC_Engagement_Program__c" access="private"/>
+    <aura:attribute name="workflowSurveyContext" type="String" default="PC_PAP" access="private"/>
+    <aura:attribute name="actionLabel" type="String" default="{!$Label.c.PC_SurveyWorkflowActionLabel}" access="private"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+    <aura:attribute name="pageReference" type="Object"/>
+
+    <lightning:spinner aura:id="papSpinner" class="slds-hide" alternativeText="Loading" />
+    <div class="slds-box slds-theme_default slds-theme_backgroundColor-white slds-text-heading_small">
+        <lightning:icon class="" aura:id="papSurveyIconId" iconName="utility:form" size="medium" alternativeText="{!v.papSurveyLabel}"/>{!v.surveyWorkflowDivTitle}</div>
+    <br/>
+    <div class="outerDiv">
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+    <lightning:datatable data="{!v.accountData}"
+                         columns="{!v.accountColumns}"
+                         keyField="id"
+                         onrowselection=""
+                         hideCheckboxColumn="true" onrowaction="{!c.openPAPEligibilityCheckScreen}"/>
+    </div>
+    <aura:if isTrue="{!v.showCaseRecords}">
+        <div class="outerDiv">
+            <lightning:datatable data="{!v.caseData}"
+                                 columns="{!v.caseColumns}"
+                                 keyField="id"
+                                 hideCheckboxColumn="true" onrowselection="" onrowaction="{!c.openPAPEligibilityCheckScreen}"/>
+        </div>
+        <aura:set attribute="else">
+            <div class="slds-box slds-theme_default slds-theme_backgroundColor-white slds-text-heading_small">
+                {!v.noCaseRecordFoundLabel}
+            </div>
+        </aura:set>
+    </aura:if>
+
+</aura:component>

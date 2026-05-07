@@ -1,0 +1,248 @@
+.THIS {
+    background-color: #ffffff;
+    height: calc(97vh - 214px);
+}
+.THIS .slds-button:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.THIS.slds-popover {
+    height: auto;
+    max-width: 16rem;
+}
+.THIS .processBuilder{
+    height: 50px;
+    line-height: 50px;
+    background-color: rgb(22, 50, 92);
+    color: rgb(255, 255, 255);
+    font-size: .875rem;
+    font-weight: 400;
+}
+.THIS .header{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 1rem;
+    padding-top: 0.5rem;
+    border-bottom: 1px solid rgb(217, 219, 221);
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+}
+.THIS .wrapper{
+    width:100%;
+    background-color: rgb(233, 234, 236);
+    height: calc(100% - (40px));
+}
+.THIS .navBar button {
+    font-size: 14px;
+}
+.THIS .leftPanel{
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+.THIS .leftPanel.contracted{
+    width: 40%;
+}
+.THIS .leftPanelContent {
+    padding: 10px;
+    position: relative;
+}
+.THIS .rightPanel{
+    display: none;
+    height: 100%;
+    float: right;
+    width: 0;
+    background-color: rgb(255, 255, 255);
+}
+.THIS .rightPanel.contracted{
+    display: none;
+}
+.THIS .rightPanel.expanded {
+    display: block;
+    width: 60%;
+    border-left: 1px solid rgb(217, 219, 221);
+}
+.THIS .startSign .processStart,
+.THIS .stopSign .processStart{
+    border-radius: 16px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 30px;
+    height: 32px;
+    width: 64px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(22, 50, 92);
+    border: 2px solid rgb(196, 198, 202);
+    font-size: .75rem;
+}
+.THIS .iconDiv {
+    margin: auto;
+    pointer-events: none;
+}
+.THIS .iconDiv .arrowIcon svg {
+    cursor: pointer;
+    position: relative;
+    height: 40px;
+    pointer-events: all;
+}
+.THIS .iconDivInt {
+    width: 200px;
+    margin: auto;
+    pointer-events: none;
+}
+.THIS .iconDivInt .arrowIcon svg {
+    cursor: pointer;
+    position: relative;
+    height: 40px;
+    pointer-events: all;
+}
+.THIS .iconDiv .slds-icon-text-default {
+    fill: rgb(196, 198, 202);
+}
+.THIS .arrowIcon .slds-icon-text-default {
+    fill: rgb(196, 198, 202);
+    height: 40px;
+}
+.THIS .activity{
+    width: 250px;
+    min-height: 3rem;
+ 	position: relative;
+    margin: 0 auto;
+    display: block;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(196, 198, 202);
+    color: rgb(0, 112, 210);
+    border-radius: 0.25rem;
+    word-break: break-word;
+}
+.THIS .activity:hover {
+    box-shadow: 0 0 0 0.25rem rgb(94, 180, 255);
+}
+.THIS .activity:focus {
+    outline: none;
+}
+.THIS .activitysel{
+    width: 250px;
+    min-height: 3rem;
+ 	position: relative;
+    margin: 0px auto;
+    display:block;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 112, 210);
+    box-shadow: 0 0 0 0.25rem rgb(0, 95, 178);
+    border-radius: 0.25rem;
+    border: none;
+    word-break: break-word;
+}
+.THIS .activitysel:focus {
+    outline: none;
+}
+.THIS .activity.activityInt,
+.THIS .activityInt.activitysel{
+    width: 200px;
+}
+.THIS .activity .iconDivInt:last-child .arrowIcon .slds-icon-text-default,
+.THIS .activity .iconDivInt:first-child .arrowIcon .slds-icon-text-default,
+.THIS .activitysel .iconDivInt:last-child .arrowIcon .slds-icon-text-default,
+.THIS .activitysel .iconDivInt:first-child .arrowIcon .slds-icon-text-default
+{
+    opacity: 0;
+    height: 30px;
+}
+.THIS .slds-box{
+    padding: 0.5rem 1rem 0 1rem;
+    border-radius: 0;
+    border: none;
+}
+.THIS .leftPanelContentInAct {
+    padding: 10px;
+}
+.THIS .highlightDragRegion .activeIcon {
+    background: linear-gradient(to bottom, transparent,transparent 46%, rgb(0, 112, 210) 8%, transparent 50%, transparent);
+}
+.THIS .leftPanelContent .arrowIcon {
+    position: relative;
+    width: auto;
+    margin: 0 auto;
+}
+.THIS .leftPanelContent .arrowIcon:after {
+    background: #ffffff;
+    border-radius: 50%;
+    height: 14px;
+ 	width: 14px;
+    margin-left: -7px;
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    cursor: pointer;
+    z-index: 2;
+}
+.THIS .slds-popover.popover-width {
+    width: 240px;
+}
+.THIS .slds-popover.popover-width.slds-popover-small {
+    width: 100px;
+}
+
+
+.THIS .listTask{
+    float: right;
+    width:48px;
+    height:48px;
+}
+.THIS .processStart p{
+    margin-top: -10px;
+}
+.THIS .sequence-arrow{
+    text-align:center;
+}
+.THIS header li{
+    list-style: none;
+    float: left;
+    margin-left: 20px;
+    cursor:pointer;
+    margin-top: 15px;
+}
+.THIS .swimlane{
+    padding-top:15px;
+    padding-bottom: 15px;
+    width: 290px;
+    position: relative;
+    margin: 0px auto;
+    display:block;
+    cursor:pointer;
+    background-color: grey;
+    color: rgb(255, 255, 255);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    text-align:center;
+}
+.THIS .swimlane + .swimlane{
+    height:70px;
+    border-radius:0px;
+    border-bottom-left-radius : 5px;
+    border-bottom-right-radius: 5px;
+}
+.THIS .iconWrapper{
+    float: right;
+    margin-right: 10px;
+}
+.THIS .deleteEnabled{
+    display:none;
+}
+.THIS .deleteDisabled{
+    margin-top:7px;
+}
+.THIS .buttonIconCustom{
+    width: 45px;
+    height: 45px;
+    float: right;
+    margin-right: 15px;
+}
+.THIS .lightningInput{
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 200px;
+}

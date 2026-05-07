@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Zorgplansjabloon</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Zorgplansjablonen</value>
+    </caseValues>
+    <fields>
+        <label>Actief</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Categorie</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Disease Management</masterLabel>
+            <translation><!-- Disease Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Endocrinology and Metabolism</masterLabel>
+            <translation><!-- Endocrinology and Metabolism --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation><!-- Home Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness</masterLabel>
+            <translation><!-- Wellness --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Gekloond van</label>
+        <name>HealthCloudGA__ClonedFrom__c</name>
+        <relationshipLabel>Zorgplansjabloon</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Beschrijving</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam zorgplansjabloon</nameFieldLabel>
+</CustomObjectTranslation>

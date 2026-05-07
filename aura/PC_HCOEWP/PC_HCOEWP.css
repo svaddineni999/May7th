@@ -1,0 +1,64 @@
+.THIS .searchBlock{
+    display: flex;
+    padding-bottom: 10px;
+}
+.THIS.EWPTitle{
+    justify-content: center;
+}
+.THIS .searchResultBlock {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.THIS .selectedResultBlock {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.THIS .searchResultMsgBlockHidden {
+    display:none;
+}
+.THIS .cbBlockHidden {
+    /*display:none;*/
+}
+.THIS .tickBlockHidden {
+    /*display:none;*/
+}
+.THIS .action .true.cbBlock {
+    display:none;
+}
+.THIS .action .true.tickBlock {
+    display:block;
+}
+.THIS .action .false.cbBlock {
+    display:block;
+}
+.THIS .action .false.tickBlock {
+    display:none;
+}
+.THIS .blockSection {
+    padding:10px 5px;
+}
+
+.THIS .rightMargin {
+    margin-right:5px;
+    align-self:center; 
+    margin-left: auto
+}
+
+.THIS .tableheader{
+    background-color:#596D8E;
+    
+}
+
+.THIS .message{
+    color:#596D8E;
+}
+
+.THIS .refTable{
+    border: 0.25px solid #596D8E;
+    border-radius: .25rem .25rem .25rem .25rem;
+}
+
+.THIS .slds-form-element {
+    padding-left:4px !important;
+    padding-right:4px !important;
+}

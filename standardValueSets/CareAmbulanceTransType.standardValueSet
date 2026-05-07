@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Initial Trip</fullName>
+        <default>false</default>
+        <label>Initial Trip</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Return Trip</fullName>
+        <default>false</default>
+        <label>Return Trip</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer Trip</fullName>
+        <default>false</default>
+        <label>Transfer Trip</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Round Trip</fullName>
+        <default>false</default>
+        <label>Round Trip</label>
+    </standardValue>
+</StandardValueSet>

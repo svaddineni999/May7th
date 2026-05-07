@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Schede Piano sanitario flessibile</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Schede Piano sanitario flessibile</value>
+    </caseValues>
+    <fields>
+        <label>Attivo</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>Nome componente</label>
+        <name>HealthCloudGA__Component_Name__c</name>
+    </fields>
+    <fields>
+        <label>Spazio dei nomi</label>
+        <name>HealthCloudGA__Namespace__c</name>
+    </fields>
+    <fields>
+        <label>Ordinamento</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <fields>
+        <help><!-- If your label has a namespace prefix, use Label_Namespace.Label_Name. Otherwise, use c.Label_Name. --></help>
+        <label>Etichetta scheda</label>
+        <name>HealthCloudGA__TabLabel__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

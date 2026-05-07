@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>true</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>PatientConnect custom object used to alert user to exceptional scenarios</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
+    <fields>
+        <fullName>PC_Alert_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status of the alert.</description>
+        <label>Alert Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>New</fullName>
+                    <default>true</default>
+                    <label>New</label>
+                </value>
+                <value>
+                    <fullName>Accepted</fullName>
+                    <default>false</default>
+                    <label>Accepted</label>
+                </value>
+                <value>
+                    <fullName>Overridden</fullName>
+                    <default>false</default>
+                    <label>Overridden</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Date_of_Alert__c</fullName>
+        <defaultValue>NOW()</defaultValue>
+        <deprecated>false</deprecated>
+        <description>The date and time of the alert.</description>
+        <label>Date of Alert</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>PC_Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Description about the alert.</description>
+        <label>Notes</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Patient_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>ID of the Patient associated with the Program attached to the Alert</description>
+        <externalId>false</externalId>
+        <formula>PC_Program__r.Account.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Patient__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the patient who is associated with the program attached to the alert.</description>
+        <externalId>false</externalId>
+        <formula>PC_Program__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Patient</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The Program Case to which the alert is associated with.</description>
+        <label>Program</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Alerts</relationshipLabel>
+        <relationshipName>Alerts</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>PC_Reason_for_Alert__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason for which the alert was generated.</description>
+        <label>Reason for Alert</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_Reason_for_Override__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The reason why the alert was disregarded.</description>
+        <label>Reason for Dismissal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>PC_Alert_Status__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Adherence data received</fullName>
+                    <default>false</default>
+                    <label>Adherence data received</label>
+                </value>
+                <value>
+                    <fullName>Recommend Retest</fullName>
+                    <default>false</default>
+                    <label>Recommend Retest</label>
+                </value>
+                <value>
+                    <fullName>Test result error</fullName>
+                    <default>false</default>
+                    <isActive>false</isActive>
+                    <label>Test result error</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Overridden</controllingFieldValue>
+                <valueName>Adherence data received</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Overridden</controllingFieldValue>
+                <valueName>Recommend Retest</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of the alert.</description>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Pulsewave</fullName>
+                    <default>false</default>
+                    <label>Pulsewave</label>
+                </value>
+                <value>
+                    <fullName>Oximetry</fullName>
+                    <default>false</default>
+                    <label>Oximetry</label>
+                </value>
+                <value>
+                    <fullName>Body Weight</fullName>
+                    <default>false</default>
+                    <label>Body Weight</label>
+                </value>
+                <value>
+                    <fullName>Result Outside Limits</fullName>
+                    <default>false</default>
+                    <label>Result Outside Limits</label>
+                </value>
+                <value>
+                    <fullName>Test Result Risk</fullName>
+                    <default>false</default>
+                    <label>Test Result Risk</label>
+                </value>
+                <value>
+                    <fullName>Adherence Risk</fullName>
+                    <default>false</default>
+                    <label>Adherence Risk</label>
+                </value>
+                <value>
+                    <fullName>Discontinuation Risk</fullName>
+                    <default>false</default>
+                    <label>Discontinuation Risk</label>
+                </value>
+                <value>
+                    <fullName>Late Prescription Renewal</fullName>
+                    <default>false</default>
+                    <label>Late Prescription Renewal</label>
+                </value>
+                <value>
+                    <fullName>Unanswered SMS</fullName>
+                    <default>false</default>
+                    <label>Unanswered SMS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Alert</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Program__c</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Alert_Status__c</columns>
+        <columns>PC_Type__c</columns>
+        <columns>PC_Reason_for_Alert__c</columns>
+        <columns>PC_Date_of_Alert__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Madeline_s_Alerts</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Type__c</columns>
+        <columns>PC_Reason_for_Alert__c</columns>
+        <columns>PC_Alert_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Patient__c</field>
+            <operation>contains</operation>
+            <value>Madeline</value>
+        </filters>
+        <label>Madeline&apos;s Alerts</label>
+    </listViews>
+    <listViews>
+        <fullName>My_New_Alerts</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Program__c</columns>
+        <columns>PC_Alert_Status__c</columns>
+        <columns>PC_Reason_for_Alert__c</columns>
+        <columns>PC_Date_of_Alert__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Alert_Status__c</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </filters>
+        <label>New Alerts</label>
+    </listViews>
+    <listViews>
+        <fullName>New_and_In_Progress_Alerts</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Date_of_Alert__c</columns>
+        <columns>PC_Alert_Status__c</columns>
+        <columns>PC_Patient__c</columns>
+        <columns>PC_Type__c</columns>
+        <columns>PC_Reason_for_Alert__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PC_Alert_Status__c</field>
+            <operation>equals</operation>
+            <value>New,Accepted</value>
+        </filters>
+        <label>New and Accepted Alerts</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AL-{0000000}</displayFormat>
+        <label>Alert Number</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Alerts</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <startsWith>Vowel</startsWith>
+    <visibility>Public</visibility>
+</CustomObject>

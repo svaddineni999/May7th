@@ -1,0 +1,48 @@
+<!--
+Lightning component  : PC_SearchForm
+Description          : Form for patient search and search results display
+Parameters           : NA
+Modification Log:
+Haritha Reddy 		 30-Sep-2019    Initial Version
+-->
+
+<aura:component description="PC_SearchForm" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes" controller="PC_SearchFormController" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="orgNamespace" type="String" default="" />
+    <aura:attribute name="errors" type="List" default="[]" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+
+    <aura:attribute name="identifier" type="String" default="PC_PatientSearch" required="true" access="global"/>
+    <aura:attribute name="searchObjectAPIName" type="String" default="Account" required="true" access="global"/>
+    <aura:attribute name="searchFormFieldsetAPIName" type="String" default="PatientConnect__PC_SearchForm" required="true" access="global"/>
+    <aura:attribute name="searchResultsFieldsetAPIName" type="String" default="PatientConnect__PC_SearchResults" required="true" access="global"/>
+    <aura:attribute name="searchButtonLabel" type="String" default="{!$Label.c.PC_SearchButtonLabel}" required="true" access="global"/>
+    <aura:attribute name="fieldsPerRow" type="Integer" default="3" description="Number of Fields per Row" access="global"/>
+    <aura:attribute name="searchButtonName" type="String" access="private"/>
+    <aura:attribute name="searchObjectName" type="String" access="private"/>
+    <aura:attribute name="searchFormFieldsetName" type="String" access="private"/>
+    <aura:attribute name="searchResultsFieldsetName" type="String" access="private"/>
+
+    <aura:attribute name="noFieldsFoundErrorDescription" type="String" default="{!$Label.c.PC_NoFieldsFoundErrorDescription}" access="private"/>
+    <aura:attribute name="fieldSetFormBody" type="Aura.Component[]" access="private"/>
+    <aura:attribute name="fsFields" type="Object" access="private"/>
+    <aura:attribute name="isFieldSetFormValid" type="Boolean"/>
+
+    <aura:registerEvent name="searchParamsEvent" type="c:PC_SearchParams"/>
+    <div class="slds">
+        <aura:if isTrue="{! v.errors.length > 0 }">
+            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+            <aura:set attribute="else">
+                <div class="formContainerStyle">
+                    <lightning:overlayLibrary aura:id="overlayLib"/>
+                        {!v.fieldSetFormBody}
+                    <lightning:button variant="brand" label="{!v.searchButtonName}" onclick="{!c.searchRecords}" />
+                </div>
+            </aura:set>
+        </aura:if>
+    </div>
+
+</aura:component>

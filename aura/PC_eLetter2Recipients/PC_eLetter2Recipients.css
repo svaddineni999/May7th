@@ -1,0 +1,10 @@
+/**
+ * Created by sathekumar on 7/1/2020.
+ */
+.THIS .table-column-width{
+    width : 40%;
+}
+
+.THIS.slds-table thead th{
+    height: 2rem;
+}

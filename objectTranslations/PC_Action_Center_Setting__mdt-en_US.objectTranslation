@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Action Center Setting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Action Center Settings</value>
+    </caseValues>
+    <fields>
+        <help><!-- This must be in JSON format. 
+Example {&quot;componentAttributeName1&quot;:&quot;componentAttributeValue1&quot;,&quot;componentAttributeName2&quot;:&quot;componentAttributeValue2&quot;} --></help>
+        <label><!-- Action Component Attributes --></label>
+        <name>PC_Action_Component_Attributes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Input the API name of the component that should be triggered when action icon is clicked. --></help>
+        <label><!-- Action Component --></label>
+        <name>PC_Action_Component__c</name>
+    </fields>
+    <fields>
+        <help><!-- Name of the Lightning Icon. Refer Icons section on Salesforce Lightning Design System. 
+Sample Input -  standard-account --></help>
+        <label><!-- Action Icon --></label>
+        <name>PC_Action_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Label of the action icon that will be visible on the action center. You may also specify the fully qualified custom label path ($Label.namespace.labelName). --></help>
+        <label><!-- Action Label --></label>
+        <name>PC_Action_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Ordinal --></label>
+        <name>PC_Action_Ordinal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Action Type --></label>
+        <name>PC_Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tools</masterLabel>
+            <translation><!-- Tools --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Workflows</masterLabel>
+            <translation><!-- Workflows --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Should be checked if the Action needs to be displayed --></help>
+        <label><!-- Active --></label>
+        <name>PC_Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the record type of the case to which the action should be associated with. If record type is not present add it to the picklist of the metadata before adding the record. --></help>
+        <label><!-- Case Record Type --></label>
+        <name>PC_Case_Record_Type__c</name>
+        <picklistValues>
+            <masterLabel>All</masterLabel>
+            <translation><!-- All --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Alternate_Funding</masterLabel>
+            <translation><!-- PC_Alternate_Funding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Appeal</masterLabel>
+            <translation><!-- PC_Appeal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_BIBV</masterLabel>
+            <translation><!-- PC_BIBV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Benefits_Investigation_Benefits_Verification</masterLabel>
+            <translation><!-- PC_Benefits_Investigation_Benefits_Verification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Copay</masterLabel>
+            <translation><!-- PC_Copay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Enrollment</masterLabel>
+            <translation><!-- PC_Enrollment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_PAP</masterLabel>
+            <translation><!-- PC_PAP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Prior_Authorization</masterLabel>
+            <translation><!-- PC_Prior_Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC_Program</masterLabel>
+            <translation><!-- PC_Program --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Namespace of record type --></help>
+        <label><!-- Case Record Type Namespace Prefix --></label>
+        <name>PC_Case_Recordtype_Namespaceprefix__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the program code for the Engagement Program --></help>
+        <label><!-- Engagement Program Code --></label>
+        <name>PC_Engagement_Program_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter Case record type when Other is selected as Case Record Type. --></help>
+        <label><!-- Other Case Record Type --></label>
+        <name>PC_Other_Case_Record_Type__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

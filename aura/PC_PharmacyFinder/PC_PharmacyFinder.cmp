@@ -1,0 +1,18 @@
+<!--
+    PC_PharmacyFinder is the base component for all pharmacy finders.
+Modification Log:
+**********************************************************************************
+Developer                   Date                   Description
+**********************************************************************************
+Vijay Kashikar              18-Jun-18              Initial version
+-->
+<aura:component description="PC_PharmacyFinder" extensible="true" access="global" abstract="true">
+    <!-- Declares the validate method that is called by the enrollment wizard -->
+    <aura:method name="validate" action="{!c.validate}"  access="global"/>
+
+    <!-- Set by the validate method to indicate if the page contents are valid -->
+    <aura:attribute name="isValid" type="Boolean" default="true"  access="global"/>
+
+    <!-- Selected pharmacies. Ojbect type must be an array of PC_eBenefits.BaseObject-->
+    <aura:attribute name="selectedPharmacies" type="Object[]" default="[]" access="global"/>
+</aura:component>

@@ -1,0 +1,15 @@
+<!--
+Lightning Event      : PC_SearchParams
+Description          : Application Event to pass search details from Search Form to Results Form
+Parameters           : NA
+Modification Log:
+Haritha Reddy 		 10-Oct-2019    Initial Version
+-->
+
+<aura:event type="APPLICATION" description="PC_SearchParams" access="global">
+    <aura:attribute name="identifier" type="String" access="global"/>
+    <aura:attribute name="searchObjectAPIName" type="String" access="global"/>
+    <aura:attribute name="searchFormFieldsetAPIName" type="String" access="global"/>
+    <aura:attribute name="searchParams" type="Map" access="global"/>
+    <aura:attribute name="searchResultFieldsetAPIName" type="String" access="global"/>
+</aura:event>

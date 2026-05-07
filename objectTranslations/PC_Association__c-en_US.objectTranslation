@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Association</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Associations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>PC_Account__c</name>
+        <relationshipLabel><!-- Association --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>PC_Associated_User_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>PC_Associated_User__c</name>
+        <relationshipLabel><!-- Associations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Association Status --></label>
+        <name>PC_AssociationStatus__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>PC_EndDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- This helps to identify whether the association record is created by WCD or not. --></help>
+        <label><!-- Is Created via WCD --></label>
+        <name>PC_IsCreatedViaWCD__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Program --></label>
+        <name>PC_Program__c</name>
+        <relationshipLabel><!-- Care Team --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Contains the Name of the User Queue or Group of the Association. Leave it blank, if the PC_RoleType is blank. --></help>
+        <label><!-- User Queue/Group Name --></label>
+        <name>PC_QueueOrGroupName__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if the role type is User Queue or Group.
+Blank value signifies anything other than Queue or Group. --></help>
+        <label><!-- Role Type --></label>
+        <name>PC_RoleType__c</name>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queue</masterLabel>
+            <translation><!-- Queue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>PC_Role__c</name>
+        <picklistValues>
+            <masterLabel>Caregiver</masterLabel>
+            <translation><!-- Caregiver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Manager</masterLabel>
+            <translation><!-- Case Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clinical Educator</masterLabel>
+            <translation><!-- Clinical Educator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Reimbursement Manager</masterLabel>
+            <translation><!-- Field Reimbursement Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HCO</masterLabel>
+            <translation><!-- HCO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation><!-- Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treating Physician</masterLabel>
+            <translation><!-- Treating Physician --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please select Caregiver associated with the Patient on the Program for the selected Caregiver role --></errorMessage>
+        <name>ACLS_Caregiver_Role_And_Acc_Combination</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Change of User, Account or Role is not allowed. 
+For any change, deactivate the association and create new one. --></errorMessage>
+        <name>PC_Change_In_Lookup_Or_Role</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select HCO for the selected HCO role --></errorMessage>
+        <name>PC_HCO_Role_and_Account_Combination</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please select a physician account for the selected physician role --></errorMessage>
+        <name>PC_HCP_Role_and_Account_Combination</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- An Association cannot have both an Account and a User.  Please fill in just one of the Account or User fields. --></errorMessage>
+        <name>PC_User_Account_Both_Filled_In</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please ensure that either an Account or a User has been associated with the program. --></errorMessage>
+        <name>PC_User_Account_Neither_Filled_In</name>
+    </validationRules>
+</CustomObjectTranslation>

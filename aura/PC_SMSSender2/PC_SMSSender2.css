@@ -1,0 +1,56 @@
+/**
+ * Created by cmohapatra on 10/16/2020.
+ */
+
+ /*Background color*/
+.THIS .pc-whitebg{
+    background:#FFF;
+}
+
+/*Title*/
+.THIS .slds-text-heading_medium {
+     font-weight: bold;
+ }
+
+ /* Info Message CSS*/
+.THIS .pc_message.info {
+    border-color: #bee6ff;
+    background-color: #f5fcff;
+}
+
+.THIS .pc_message{
+    color: #464646;
+    padding: 5px;
+    margin: 5px 0;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 18px;
+    border-color: #ccc;
+    background-color: #eee;
+    opacity: 1;
+    transition: opacity .2s ease-out;
+}
+
+.THIS .pc_message_body {
+    overflow: hidden;
+    vertical-align: top;
+}
+/*Warning Message*/
+.THIS .pc_warning{
+  color: darkgoldenrod;
+  font-family: "Times New Roman", Times, serif;
+
+}
+/*Spinners*/
+.THIS.smsSpinner{
+    position:relative;
+    display:inline-block;
+    height: 70px;
+}
+.THIS.recipientSpinner{
+    position: relative;
+    display:inline-block;
+    height: 70px;
+}

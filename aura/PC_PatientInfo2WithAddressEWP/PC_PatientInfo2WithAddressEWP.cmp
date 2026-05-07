@@ -1,0 +1,38 @@
+<!--
+******************************************************************************************
+Class Name      : PC_PatientInfo2WithAddressEWP
+Description     : Revamped Patient Information with Address Enrollment Wizard Page
+Created By      : Kishore Kanteti
+Created Date    : 1-Dec-2021
+Modification Log:
+******************************************************************************************
+Developer                   Date                   Description
+******************************************************************************************
+Kishore Kanteti	        1-Dec-21              Initial Version
+Satheesh Kumar	        14-Dec-21             [PC-8414] Added null check before parsing the JSON String
+*******************************************************************************************
+-->
+
+<aura:component description="PC_PatientInfo2WithAddressEWP" extensible="true" access="global" extends="c:PC_EnrollmentWizardPage">
+
+    <aura:set attribute="isValid" value="true"/>
+    <aura:set attribute="persistentAttributes" value="['patientInfo','addressInfo']"/>
+    <aura:attribute name="patientInfo" type="sObject"/>
+    <aura:attribute name="addressInfo" type="sObject[]"/>
+    <aura:attribute name="patientInfoConfig" type="String"/>
+    <aura:attribute name="addressInfoConfig" type="String"/>
+    <aura:attribute name="showPatientAddress" type="Boolean" default="false"/>
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <!-- Handler -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInitialize}"/>
+    <aura:if isTrue="{!v.showPatientAddress}">
+        <div class="slds-m-around_small">
+            <c:PC_PatientInfoEWP2 config="{!v.patientInfoConfig}" aura:id="patientInformation" persistentAccount="{!v.patientInfo}" enrollmentCase="{!v.enrollmentCase}"/>
+        </div>
+        <div class="slds-m-around_small">
+            <c:PC_AddressInfoEWP config="{!v.addressInfoConfig}" aura:id="addressInformation" persistentAddress="{!v.addressInfo}" enrollmentCase="{!v.enrollmentCase}"/>
+        </div>
+        {!v.body}
+    </aura:if>
+</aura:component>

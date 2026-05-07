@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Patologia EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Patologie EHR</value>
+    </caseValues>
+    <fields>
+        <label>Dettaglio remissione 255</label>
+        <name>HealthCloudGA__AbatementDetail255__c</name>
+    </fields>
+    <fields>
+        <label>Dettaglio remissione</label>
+        <name>HealthCloudGA__AbatementDetail__c</name>
+    </fields>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Patologie EHR</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Paziente dichiarante</label>
+        <name>HealthCloudGA__AsserterPatient__c</name>
+    </fields>
+    <fields>
+        <label>Medico dichiarante</label>
+        <name>HealthCloudGA__AsserterPractitioner__c</name>
+    </fields>
+    <fields>
+        <label>Codice categoria</label>
+        <name>HealthCloudGA__CategoryCode__c</name>
+    </fields>
+    <fields>
+        <label>Sistema categoria</label>
+        <name>HealthCloudGA__CategorySystem__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta categoria</label>
+        <name>HealthCloudGA__CatergoryLabel__c</name>
+    </fields>
+    <fields>
+        <label>Codice certezza</label>
+        <name>HealthCloudGA__CertaintyCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta certezza</label>
+        <name>HealthCloudGA__CertaintyLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema certezza</label>
+        <name>HealthCloudGA__CertaintySystem__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta codice</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema codice</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Codice</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Data dichiarazione</label>
+        <name>HealthCloudGA__DateAsserted__c</name>
+    </fields>
+    <fields>
+        <label>Data di documentazione</label>
+        <name>HealthCloudGA__DateDocumented__c</name>
+    </fields>
+    <fields>
+        <label>Interazione</label>
+        <name>HealthCloudGA__Encounter__c</name>
+        <relationshipLabel>EhrConditions</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Codice evidenza</label>
+        <name>HealthCloudGA__EvidenceCode__c</name>
+    </fields>
+    <fields>
+        <label>Dettaglio evidenza</label>
+        <name>HealthCloudGA__EvidenceDetail__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta evidenza</label>
+        <name>HealthCloudGA__EvidenceLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema evidenza</label>
+        <name>HealthCloudGA__EvidenceSystem__c</name>
+    </fields>
+    <fields>
+        <label>È in remissione</label>
+        <name>HealthCloudGA__IsAbated__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Codice sede</label>
+        <name>HealthCloudGA__LocationCode__c</name>
+    </fields>
+    <fields>
+        <label>Dettaglio sede</label>
+        <name>HealthCloudGA__LocationDetail__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta sede</label>
+        <name>HealthCloudGA__LocationLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema sede</label>
+        <name>HealthCloudGA__LocationSystem__c</name>
+    </fields>
+    <fields>
+        <label>Note</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Insorgenza</label>
+        <name>HealthCloudGA__Onset__c</name>
+    </fields>
+    <fields>
+        <label>Paziente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Patologie</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Codice gravità</label>
+        <name>HealthCloudGA__SeverityCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta gravità</label>
+        <name>HealthCloudGA__SeverityLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema gravità</label>
+        <name>HealthCloudGA__SeveritySystem__c</name>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema di origine</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Fase</label>
+        <name>HealthCloudGA__Stage__c</name>
+    </fields>
+    <fields>
+        <label>Codice stato</label>
+        <name>HealthCloudGA__StatusCode__c</name>
+    </fields>
+    <fields>
+        <label>Etichetta stato</label>
+        <name>HealthCloudGA__StatusLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema stato</label>
+        <name>HealthCloudGA__StatusSystem__c</name>
+    </fields>
+    <fields>
+        <label>Anno di documentazione</label>
+        <name>HealthCloudGA__YearDocumented__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>ID patologia EHR</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

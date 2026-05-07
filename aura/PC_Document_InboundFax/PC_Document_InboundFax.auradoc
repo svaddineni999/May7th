@@ -1,0 +1,7 @@
+<!--
+ - Created by peharitha on 7/9/2019.
+ -->
+
+<aura:documentation>
+    <aura:description><h4>Deprecated. It is recommended to use PC_PreviewFileOrAttachment instead.</h4>Previews the most recent Attachment related to the Document.</aura:description>
+</aura:documentation>

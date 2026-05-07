@@ -1,0 +1,13 @@
+.THIS {
+    background-color : white;
+}
+.THIS .fontStyle{
+        font-size: 18px;
+    font-family: initial;
+}
+.THIS .helpText .slds-form-element__icon{
+    padding-top: .15em;
+}
+.THIS .protectedApi .slds-form-element__label {
+    display: none !important;
+}

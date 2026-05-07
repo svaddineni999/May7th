@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Patient was transported to nearest facility for care of symptoms, complaints, or both</fullName>
+        <default>false</default>
+        <label>Patient was transported to nearest facility for care of symptoms, complaints, or both</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient was transported for the benefit of a preferred physician</fullName>
+        <default>false</default>
+        <label>Patient was transported for the benefit of a preferred physician</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient was transported for the nearness of family members</fullName>
+        <default>false</default>
+        <label>Patient was transported for the nearness of family members</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient was transported for the care of a specialist or for availability of specialized equipment</fullName>
+        <default>false</default>
+        <label>Patient was transported for the care of a specialist or for availability of specialized equipment</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Transferred to Rehabilitation Facility</fullName>
+        <default>false</default>
+        <label>Patient Transferred to Rehabilitation Facility</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Transferred to Residential Facility</fullName>
+        <default>false</default>
+        <label>Patient Transferred to Residential Facility</label>
+    </standardValue>
+</StandardValueSet>

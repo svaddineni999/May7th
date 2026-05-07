@@ -1,0 +1,258 @@
+<!--
+Lightning component  : PC_SMSSender2
+Description          : Helps to send an outbound message to a patient/care team member.
+
+Modification Log:
+Chetna Mohapatra     13-Oct-20      Initial Version
+Chetna Mohapatra     24-Mar-21      Added Spinner on load of the component.
+Chetna Mohapatra     26-May-21      [PC-7716]Added attributes related to Toast message display
+Chetna Mohapatra     08-Jun-21      [PC-7769] Column width adjustments and changes for Recipient table.
+Chetna Mohapatra     23-Jun-21      [PC-7689] Changes related to SMS Templates addition.
+Chetna Mohapatra     06-Jul-21      [PC-7872] Added attribute for Single Recipient Toast Link.
+-->
+
+<aura:component controller="PC_SMSSender2Controller" description="This component helps to compose and send outbound messages to one or more recipients"
+                implements="force:hasRecordId,force:appHostable,force:lightningQuickActionWithoutHeader,lightning:isUrlAddressable,flexipage:availableForAllPageTypes"
+                access="global">
+
+    <!--Attributes-->
+    <aura:attribute name="recordId" type="String" access="global"/>
+    <aura:attribute name="namespace" type="String" default="" access="private"/>
+    <aura:attribute name="namespacePrefix" type="String" default="" access="private"/>
+    <aura:attribute name="selectedSenderNumber" type="String" default=""/>
+    <aura:attribute name="senderPhoneNumberOptions" type="List"/>
+    <aura:attribute name="smsRecipientsData" type="List"/>
+    <aura:attribute name="selectedRecipientObj" type="Object" default="{}" access="private"/>
+    <aura:attribute name="disableHeaderCheckbox" type="Boolean" default="false"/>
+    <aura:attribute name="disableSender" type="Boolean" default="false"/>
+    <aura:attribute name="disableMessageBody" type="Boolean" default="false"/>
+    <aura:attribute name="selectAllRecipients" type="Boolean" default="false"/>
+    <aura:attribute name="message" type="String" default="" />
+    <aura:attribute name="noRecipientSelected" type="String" default="{!$Label.c.PC_Eletter2_NoRecipientSelected}" access="private"/>
+    <aura:attribute name="msgNoPhoneAvailable" type="String" default="{!$Label.c.PC_NoPhoneNumberAvailable}" access="private"/>
+    <aura:attribute name="isRecipientsSelected" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="messageWhenRecipientNotSelected" type="String" default="" access="private"/>
+    <aura:attribute name="smsBody" type="String" default=""/>
+    <aura:attribute name="messageLength" type="Integer" default="160" access="global"/>
+    <aura:attribute name="showSendButton" type="Boolean" default="true"/>
+    <aura:attribute name="disableSendButton" type="Boolean" default="false"/>
+    <aura:attribute name="validationError" type="Boolean" default="false"/>
+    <aura:attribute name="noneOptionName" type="String" default="{!$Label.c.PC_Picklist_None}" />
+    <aura:attribute name="senderLabel" type="String" access="public"
+                    default="{!$Label.c.PC_Sender}"/>
+    <aura:attribute name="recipientLabel" type="String" access="public"
+                    default="{!$Label.c.PC_Recipients}"/>
+    <aura:attribute name="smsBodyLabel" type="String" access="public" default="{!$Label.c.PC_SMS_Body}"/>
+    <aura:attribute name="messageLengthLimit" type="Boolean" default="false" />
+    <aura:attribute name="messageLengthLimitWarning" type="String" default="{!$Label.c.PC_MessageLengthLimitWarning}"/>
+    <aura:attribute name="toastSendSuccessMessage" type="String" access="public" default="{!$Label.c.PC_SMSSender2_SendSuccessMessage}" />
+    <aura:attribute name="smsError" type="String" default="{!$Label.c.PC_SMS_Error}" />
+    <aura:attribute name="errors" type="List" default=""/>
+    <aura:attribute name="incorrectMessageLength" type="String" default="{!$Label.c.PC_Incorrect_MessageLength_Error}"/>
+    <aura:attribute name="incorrectPhoneNumber" type="String" default="{!$Label.c.PC_IncorrectPhoneNumber}"/>
+    <aura:attribute name="toastSuccessTitle" type="String" default="{!$Label.c.PC_Toast_Title_Success}" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute  name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}"/>
+    <aura:attribute  name="caseFieldApiName" type="String" default="PC_Case__c"/>
+    <aura:attribute  name="toastLabelForMultipleRecipients" type="String" default="{!$Label.c.PC_ToastLabelForMultipleRecipients}"/>
+    <aura:attribute  name="toastLabelForSingleRecipient" type="String" default="{!$Label.c.PC_ToastLabelForSingleRecipient}"/>
+    <aura:attribute  name="messageRelatedListLabel" type="String" default="{!$Label.c.PC_MessageRelatedListLabel}"/>
+    <aura:attribute  name="toastLinkForSingleRecipient" type="String" default="{!$Label.c.PC_Click_Here}"/>
+
+    <!--Attributes For Template-->
+    <aura:attribute name="templateOptions" type="List" default="[]" />
+    <aura:attribute name="disablePickTemplate" type="Boolean" default="false" access="private"/>
+    <aura:attribute name="eletterTemplateList" type="List" default="[]" />
+    <aura:attribute name="templateDescription" type="String" default="" access="private"/>
+    <aura:attribute name="selectedELetterVal" type="String"/>
+    <aura:attribute name="eLetterTemplateSubject" type="String"/>
+    <aura:attribute name="eLetterTemplateType" type="String"/>
+    <aura:attribute name="eLetterTemplateTextBody" type="String" default=""/>
+    <aura:attribute name="smsCategoryList" type="List" default="['SMS']" access="private"/>
+    <aura:attribute name="msgNoEngagementProgram" type="String" default="{!$Label.c.PC_eLetterError}" access="private"/>
+    <aura:attribute name="isRecipientLoading" type="Boolean" default="false"/>
+    <aura:attribute name="onTemplateSelection" type="Boolean" default="false"/>
+    <aura:attribute name="multipleRecipientsSelected" type="Boolean" default="false"/>
+    <aura:attribute name="noRecipientAvailableError" type="String" default="{!$Label.c.PC_RecipientNotAvailableError}"/>
+    <aura:attribute name="messageBodyPrePopulationInfo" type="String" default="{!$Label.c.PC_MessageBodyPrePopulationInfo}"/>
+
+
+    <!--Added to register a component event that will be fired-->
+    <aura:registerEvent name="actionPanel" type="c:PC_ActionPanel"/>
+
+     <!--For modal boxes and pop-outs-->
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+
+    <!--To control workspace tabs and subtabs in a Lightning console app-->
+    <lightning:workspaceAPI aura:id="smsSenderWorkspace" />
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <!--style to increase quick action modal width-->
+    <aura:html tag="style">
+        .slds-modal__container{
+        max-width: 60rem !important;
+        width:60% !important;
+        }
+    </aura:html>
+
+    <div>
+        <div class="slds-p-around_medium pc-whitebg">
+            <div class="slds-align_absolute-center slds-m-bottom_small">
+                <div class="slds-text-heading_medium slds-text-align_left">{!$Label.c.PC_SmsSender2_Title}</div>
+            </div>
+
+            <div class="slds-box_border">
+                <!--Spinner-->
+                <aura:if isTrue="{!v.isRecipientLoading}">
+                    <!--Spinner For Recipient Table-->
+                    <lightning:spinner aura:id="recipientSpinner" class="slds-show" size="medium" variant="brand" alternativeText="Loading" />
+                </aura:if>
+
+                <!--Error Panel-->
+                <aura:if isTrue="{! v.errors.length > 0 }">
+                    <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                </aura:if>
+
+                <!-- Info Message Block -->
+                <div class="slds-hide slds-m-around_medium" aura:id="msgResult">
+                    <div class="slds-m-bottom_small">
+                       <div class="info pc_message" aura:id="pc_message">
+                            <div class="pc_message_body">
+                                <lightning:icon iconName="utility:warning" class="slds-m-right_x-small" alternativeText="Warning!" variant="warning" title="Warning" size="x-small" /> {!v.message}
+                            </div>
+                       </div>
+                    </div>
+                </div>
+
+                <!--Template Selection-->
+                <div class="slds-m-around_small">
+                    <lightning:combobox aura:id="smsTemplateField" name="smsTemplate" label="{!$Label.c.PC_Eletter2_PickTemplate}"  value="{!v.selectedELetterVal}" disabled="{!v.disablePickTemplate}" placeholder="{!$Label.c.PC_Eletter2_SelectTemplate_PlaceHolder}" options="{!v.templateOptions}" onchange="{!c.handleTemplateChange}"  messageWhenValueMissing="{!$Label.c.PC_noeLetterSelectedError}"/>
+                </div>
+
+                <!--Sender-->
+                <div class="slds-m-around_small">
+                    <lightning:combobox aura:id="smsSenderField"
+                                        label="{!v.senderLabel}"
+                                        options="{!v.senderPhoneNumberOptions}"
+                                        value="{!v.selectedSenderNumber}"
+                                        disabled="{!v.disableSender}"
+                                        required="true"
+                                        onchange="{!c.onSenderNumberChange}"
+                    />
+                </div>
+                <!--Recipient-->
+
+                <div class="slds-m-top_large slds-m-around_small">
+                        <label class="slds-form-element__label"><abbr class="slds-required" title="required">*</abbr>{!$Label.c.PC_Eletter2_SelectRecipients}</label>
+
+                      <!--data table-->
+
+                   <table class="slds-table slds-no-row-hover slds-table_bordered slds-table_fixed-layout">
+                      <thead>
+                          <tr class="slds-line-height_reset">
+                              <!--header checkbox for select all-->
+                              <th style="width:50%;" class="slds-text-align_left">
+                                  <lightning:input type="checkbox" disabled="{!v.disableHeaderCheckbox}" name="SmsRecipients" checked="{!v.selectAllRecipients}" onchange="{!c.selectRecipients}"/>
+                              </th>
+                              <!--headers for recipient data columns-->
+                              <th style="width:300%;" scope="col">
+                                  <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_Name}">{!$Label.c.PC_Eletter2_Recipient_Header_Name}</div>
+                              </th>
+                              <th style="width:300%;"  scope="col">
+                                  <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_Recipient_Header_Role}">{!$Label.c.PC_Eletter2_Recipient_Header_Role}</div>
+                              </th>
+                              <th style="width:300%;" scope="col">
+                                  <div class="slds-truncate" title="{!$Label.c.PC_Eletter2_RecipientCommPreference}">{!$Label.c.PC_Eletter2_RecipientCommPreference}</div>
+                              </th>
+                              <th style="width:300%;" scope="col">
+                                  <div class="slds-truncate" title="{!$Label.c.PC_SMSSender2_Recipient_Header_PhnNo}">{!$Label.c.PC_SMSSender2_Recipient_Header_PhnNo}</div>
+                              </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <!--Body of the data table-->
+                          <aura:iteration items="{!v.smsRecipientsData}" var="recipient">
+                              <tr class="slds-hint-parent">
+                                  <th style="width:0.2rem" class="slds-text-align_left">
+                                      <lightning:input type="checkbox" value="{!recipient.Id}" checked="{!recipient.sendSms}" disabled="{!recipient.disableSms}" onchange="{!c.onRecipientChange}"/>
+                                  </th>
+                                  <th style="width:3rem;" scope="row" >
+                                      <div class="slds-truncate" title="{!recipient.name}">
+                                     {!recipient.name}</div>
+                                  </th>
+                                  <th style="width:3rem;" scope="row">
+                                      <div class="slds-truncate" title="{!recipient.role}">
+                                      {!recipient.role}</div>
+                                  </th>
+                                  <th style="width:3rem;" scope="row" >
+                                      <div class="slds-truncate" title="{!recipient.communicationPreference}">
+                                     {!recipient.communicationPreference}</div>
+                                  </th>
+                                  <th style="width:3rem;" scope="row">
+                                      <div class="slds-truncate" title="{!recipient.phone}">
+                                      {!recipient.phone}</div>
+                                  </th>
+                              </tr>
+                          </aura:iteration>
+                      </tbody>
+                  </table>
+                  <!--Data-table end-->
+                  <div class="slds-form-element slds-has-error">
+                    <div class="slds-form-element__help">{!v.messageWhenRecipientNotSelected}</div>
+                  </div>
+                  <div>
+                    <aura:if isTrue="{!v.onTemplateSelection}">
+                        <span class="slds-m-vertical_small">
+                            <lightning:icon iconName="utility:warning" variant="warning" size="x-small"/>
+                            <em class="slds-m-left--x-small">{!$Label.c.PC_RecipientSelectionWarning}</em>
+                        </span>
+                    </aura:if>
+                  </div>
+                  <!--Loading Spinner-->
+                  <lightning:spinner aura:id="smsSpinner" class="slds-hide" variant="brand" alternativeText="Loading" />
+                </div>
+
+                <!--Message Body-->
+                <div class="slds-m-around_small">
+                    <lightning:textarea aura:id = "smsSenderField"
+                                        value="{!v.smsBody}"
+                                        placeholder="{!$Label.c.PC_SMSBody_Placeholder}"
+                                        label="{!v.smsBodyLabel}"
+                                        maxlength="{!v.messageLength}"
+                                        onchange="{!c.onSmsBodyChange}"
+                                        required="true"
+                                        disabled="{!v.disableMessageBody}"
+                    />
+                    <div class="slds-col slds-size_12-of-12 slds-m-bottom_medium">
+                        <aura:if isTrue="{!v.messageLengthLimit}">
+                          <span class="slds-m-vertical_small ">
+                            <lightning:icon iconName="utility:warning" variant="warning" size="x-small"/>
+                            {!format(v.messageLengthLimitWarning, v.messageLength)}
+                          </span>
+                        </aura:if>
+                        <aura:if isTrue="{!v.multipleRecipientsSelected}">
+                          <span class="slds-m-vertical_small ">
+                            <lightning:icon iconName="utility:info" variant="success" size="x-small"/>
+                              <em class="slds-m-left--x-small">
+                                  {!format(v.messageBodyPrePopulationInfo, v.selectedRecipientObj.name)}
+                              </em>
+                          </span>
+                        </aura:if>
+                    </div>
+                </div>
+            </div>
+            <!--Buttons-->
+            <div class="slds-align_absolute-center slds-m-top_medium">
+                <!--Cancel button has been removed until it's requirement arises-->
+               <!-- <lightning:button label="{!$Label.c.PC_Cancel_Button}" title="Neutral action"
+                                  onclick="{!c.onCancel }"/>-->
+
+                <aura:if isTrue="{!v.showSendButton}">
+                <lightning:button variant="brand" label="{!$Label.c.PC_Send}" onclick="{!c.onSend}"
+                                  disabled="{!v.disableSendButton}"/>
+                </aura:if>
+            </div>
+        </div>
+    </div>
+</aura:component>

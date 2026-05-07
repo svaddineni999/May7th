@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Order__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Order</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Case_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field should contain the Case status picklist value to be mapped</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Case Status Picklist Value</inlineHelpText>
+        <label>PC Case Status</label>
+        <length>30</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Indicator_Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Label of the Program Journey Indicator Status that will be visible on the Program Journey Indicator. You may also specify the fully qualified custom label path ($Label.namespace.labelName).</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Label of the Program Journey Indicator Status that will be visible on the Program Journey Indicator. You may also specify the fully qualified custom label path ($Label.namespace.labelName).</inlineHelpText>
+        <label>Indicator Status Label</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_OtherRecordType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field holds the other record type. Must be filled if you have chosen &apos;Other&apos; in the Record Type</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>The field holds the &apos;Other&apos; record type. Must be filled if you have chosen &apos;Other&apos; in the Record Type field.</inlineHelpText>
+        <label>Other Record Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Program_Code__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Program Code</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RecordType_Namespaceprefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field describes the namespace prefix for record type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Namespace of record type</inlineHelpText>
+        <label>Record Type Namespace Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_RecordType__c</fullName>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>RecordType</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>PC_Program</fullName>
+                    <default>true</default>
+                    <label>PC_Program</label>
+                </value>
+                <value>
+                    <fullName>PC_Copay</fullName>
+                    <default>false</default>
+                    <label>PC_Copay</label>
+                </value>
+                <value>
+                    <fullName>PC_Enrollment</fullName>
+                    <default>false</default>
+                    <label>PC_Enrollment</label>
+                </value>
+                <value>
+                    <fullName>PC_Alternate_Funding</fullName>
+                    <default>false</default>
+                    <label>PC_Alternate_Funding</label>
+                </value>
+                <value>
+                    <fullName>PC_Appeal</fullName>
+                    <default>false</default>
+                    <label>PC_Appeal</label>
+                </value>
+                <value>
+                    <fullName>PC_Benefits_Investigation_Benefits_Verification</fullName>
+                    <default>false</default>
+                    <label>PC_Benefits_Investigation_Benefits_Verification</label>
+                </value>
+                <value>
+                    <fullName>PC_PAP</fullName>
+                    <default>false</default>
+                    <label>PC_PAP</label>
+                </value>
+                <value>
+                    <fullName>PC_Prior_Authorization</fullName>
+                    <default>false</default>
+                    <label>PC_Prior_Authorization</label>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                    <label>Other</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Program Journey</label>
+    <pluralLabel>Program Journeys</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

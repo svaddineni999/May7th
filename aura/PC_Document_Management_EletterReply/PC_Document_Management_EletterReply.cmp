@@ -1,0 +1,27 @@
+<!--
+Lightning component  : PC_Document_Management_EletterReply
+Description          : This component helps to launch eletter reply in new tab
+
+Modification Log:
+Satheesh Kumar 		 19-Nov-2020    Initial Version
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <!-- Attributes -->
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="showAttachments" type="Boolean" default="true" description="Hides or displays the attachments section. To hide the attachments section, set showAttachments to false. The default is true."/>
+    <aura:attribute name="showPreviewScreen" type="Boolean" default="true" description="Hides or displays the preview screen. To hide the preview screen, set showPreviewScreen to false. The default is true."/>
+    <aura:attribute name="showSendSecureOption" type="Boolean" default="true" description="Hides or displays the Send Secure Button. To hide the Send Secure Button, set showSendSecureOption to false. The default is true."/>
+    <aura:attribute name="eletterContext" type="String" access="public" default="REPLY"/>
+    <aura:attribute name="moreEmailRecipients" type="Boolean" default="false" access="public" description="If Selected, the additional recipients field will be visible on the eLetter UI. The default value is false."/>
+    <aura:attribute name="eletterTabLabel" type="String" default="E-Letter Reply"/>
+    <aura:attribute name="eletterPageName" type="String" default="PC_eLetter2"/>
+    <aura:attribute name="eletterTabIcon" type="String" default="standard:email"/>
+    <aura:attribute name="eletterComponentName" type="String" default="PC_eLetter2"/>
+    <aura:attribute name="replyToEmailLabel" type="String" default="{!$Label.c.PC_ReplyToEmail}" access="private"/>
+    <aura:attribute name="actionAttribute" type="String" access="global" default='{"eLetterAttributes":{"eletterContext":"REPLY"}}'/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:workspaceAPI aura:id="documentEletterReplyWorkspace" />
+</aura:component>

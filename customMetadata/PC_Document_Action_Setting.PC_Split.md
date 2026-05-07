@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>PC Split</label>
+    <protected>false</protected>
+    <values>
+        <field>PC_Action__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PC_Active__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+    <values>
+        <field>PC_ComponentAttributes__c</field>
+        <value xsi:type="xsd:string">{&quot;adminAccessAttributes&quot;:{&quot;adminAccess&quot;:false}}</value>
+    </values>
+    <values>
+        <field>PC_Component__c</field>
+        <value xsi:type="xsd:string">PC_Document_Management_Split</value>
+    </values>
+    <values>
+        <field>PC_Document_Record_Type__c</field>
+        <value xsi:type="xsd:string">PC_Fax_Inbound</value>
+    </values>
+    <values>
+        <field>PC_Document_Recordtype_Namespaceprefix__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PC_Group_of_RecordTypes__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PC_Icon__c</field>
+        <value xsi:type="xsd:string">action:share_poll</value>
+    </values>
+    <values>
+        <field>PC_Label__c</field>
+        <value xsi:type="xsd:string">PC_Document_Split</value>
+    </values>
+    <values>
+        <field>PC_Ordinal__c</field>
+        <value xsi:type="xsd:double">3.0</value>
+    </values>
+    <values>
+        <field>PC_ValidatorClass__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>

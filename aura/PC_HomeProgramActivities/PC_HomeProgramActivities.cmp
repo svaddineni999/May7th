@@ -1,0 +1,95 @@
+<aura:component controller="PC_HomeProgramActivitiesController" implements="flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes" access="global">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="lstStarredActivity" type="PC_HomeProgramActivitiesController.Object[]" /> 
+    <aura:attribute name="lstOverDueActivity" type="PC_HomeProgramActivitiesController.Object[]" />    
+	<aura:attribute name="lstTodayDueActivity" type="PC_HomeProgramActivitiesController.Object[]" />
+    <aura:attribute name="lstTomorrowDueActivity" type="PC_HomeProgramActivitiesController.Object[]" />
+    <aura:attribute name="userContext" type="String" />
+    <aura:attribute name="filter" type="String" access="global"/>
+    <aura:attribute name="errorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    
+    <!-- START STARRED 1 -->  
+    <div class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__body slds-truncate">
+            <a href="javascript:void(0);" class="slds-text-link--reset">
+              <span class="slds-text-heading--small">{!$Label.c.PC_Starred} ({!v.lstStarredActivity.length})</span>
+            </a>
+          </div>
+        </div>        
+      </div>
+      <div class="slds-card__body">
+        <div class="slds-card__body--inner slds-grid slds-wrap slds-grid--pull-padded margin">
+          <aura:iteration items="{!v.lstStarredActivity}" var="task">
+              <c:PC_HomeActivityCard objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+            </aura:iteration>
+          </div>
+      </div>
+    </div>   
+    <!-- END STARRED --> 
+    
+    <!-- START OVERDUE -->  
+    <div class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__body slds-truncate">
+            <a href="javascript:void(0);" class="slds-text-link--reset">
+              <span class="slds-text-heading--small">{!$Label.c.PC_Overdue} ({!v.lstOverDueActivity.length})</span>
+            </a>
+          </div>
+        </div>        
+      </div>
+      <div class="slds-card__body">
+        <div class="slds-card__body--inner slds-grid slds-wrap slds-grid--pull-padded margin">
+          <aura:iteration items="{!v.lstOverDueActivity}" var="task">
+              <c:PC_HomeActivityCard objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+            </aura:iteration>
+          </div>
+      </div>
+    </div>   
+    <!-- END OVERDUE --> 
+    
+    <!-- START TODAY -->
+    <div class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__body slds-truncate">
+            <a href="javascript:void(0);" class="slds-text-link--reset">
+              <span class="slds-text-heading--small">{!$Label.c.PC_Today} ({!v.lstTodayDueActivity.length})</span>
+            </a>
+          </div>
+        </div>        
+      </div>
+      <div class="slds-card__body">
+        <div class="slds-card__body--inner slds-grid slds-wrap slds-grid--pull-padded margin">            
+          <aura:iteration items="{!v.lstTodayDueActivity}" var="task">
+              <c:PC_HomeActivityCard objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+            </aura:iteration>
+          </div>
+      </div>       
+    </div>   
+	<!-- END TODAY -->     
+    
+    <!-- START TOMORROW -->
+    <div class="slds-card">
+      <div class="slds-card__header slds-grid">
+        <div class="slds-media slds-media--center slds-has-flexi-truncate">
+          <div class="slds-media__body slds-truncate">
+            <a href="javascript:void(0);" class="slds-text-link--reset">
+              <span class="slds-text-heading--small">{!$Label.c.PC_Tomorrow} ({!v.lstTomorrowDueActivity.length})</span>
+            </a>
+          </div>
+        </div>        
+      </div>
+      <div class="slds-card__body">
+        <div class="slds-card__body--inner slds-grid slds-wrap slds-grid--pull-padded margin">            
+          <aura:iteration items="{!v.lstTomorrowDueActivity}" var="task">
+              <c:PC_HomeActivityCard objTask="{!task}" taskUpdated="{!c.handleTaskUpdated}" usersContext="{!v.userContext}"/>
+            </aura:iteration>
+          </div>
+      </div>   
+    </div>   
+	<!-- END TOMORROW -->   
+</aura:component>

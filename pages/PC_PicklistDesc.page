@@ -1,0 +1,9 @@
+<apex:page controller="PC_PickListDescController"
+           contentType="application/xml" showHeader="false" sidebar="false"
+           standardStylesheets="false" readOnly="true">
+    <apex:form >
+        <apex:inputField value="{!sobj[dependentFieldName]}" />
+        <apex:inputField value="{!sobj[controllingFieldName]}"
+                         rendered="{!If((ISNULL(controllingFieldName)),false,true)}"/>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,42 @@
+<apex:page title="eFax" controller="EFX.EfaxTabController"> 
+    <apex:includeLightning /> 
+    <style>
+        .lightningContainer {
+            height: 100vh;
+            width: 99vw;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+        }
+    </style>
+    <div class="OverAllEfaxContainer">
+        <div id="vfpageid" /> 
+    </div>
+    <script> 
+
+    let efaxContainer = document.querySelector('.OverAllEfaxContainer');
+        
+    var parentPageUrl = document.referrer;
+    let isLightning = parentPageUrl.indexOf(".lightning.force.com") > 0;
+    
+    if(isLightning) {
+        efaxContainer.classList.add('lightningContainer');
+    } 
+
+
+
+    var namespace = '{!namespace}';
+    console.log('namespace$%$# '+namespace);
+     $Lightning.use(namespace+":EfaxApp", function() {   
+        $Lightning.createComponent(       
+            namespace+":EfaxTab",
+            {'v.recordId' :'{!JSENCODE($CurrentPage.parameters.recId)}'},
+            "vfpageid",               
+            function(component) {
+                console.log("Component Created");
+                console.log(component);
+            }); 
+    }); 
+    </script>
+</apex:page>

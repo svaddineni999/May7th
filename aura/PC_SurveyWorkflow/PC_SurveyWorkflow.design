@@ -1,0 +1,11 @@
+<!--
+ - Created by havalakki on 6/2/2021.
+ -->
+
+<design:component>
+    <design:attribute name="accountFieldSetAPIName" label="Account Fieldset API Name"
+                      description="API Name of Field set that contains Fields to show Account record details.
+                      If the fieldset API Name is blank, then the default Account Patient Connect fieldset value 'PatientConnect__PC_AccountSurveyWorkflowFieldset' would be used to fetch account record data." />
+    <design:attribute name="caseFieldsetAPIName" label="Case Fieldset API Name"
+                      description="API Name of Field set that contains Fields to show Case record details. If the fieldset API Name is blank, then the default Case Patient Connect fieldset value 'PatientConnect__PC_CaseSurveyWorkflowFieldset' would be used to fetch case record data." />
+</design:component>

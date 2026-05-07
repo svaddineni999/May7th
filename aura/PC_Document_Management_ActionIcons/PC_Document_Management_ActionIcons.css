@@ -1,0 +1,27 @@
+.THIS {
+    position: static;
+    width: 100%;
+    left: 0;
+    z-index: 3;
+    border-radius: 0;
+}
+
+
+.THIS.header .slds-button:focus {
+    box-shadow: none;
+}
+
+.THIS.header .slds-button span {
+    margin-left: 3px;
+}
+
+.THIS .iconLabel {
+    white-space: pre;
+}
+
+.THIS .pc_spinner {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 80px;
+}

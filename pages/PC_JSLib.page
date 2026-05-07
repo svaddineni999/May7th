@@ -1,0 +1,37 @@
+<apex:page >
+    <!-- Author - Vijay Kashikar -->
+    <!-- This page contains only the reusable javascript methods that need to be embedded in the VF pages. 
+            Usually these are such methods that cannot be added in external js files owing to salesforce 
+            global variable constraints.
+    -->
+    <!-- DO NOT DELETE OR COMMENT OUT anything in this file -->
+    <!-- Usage instructions -->
+    <!-- Add the below lines in the destination file 
+        <apex:include pageName="PC_JSLib_Test"/> //Preferably, this should be in the head section 
+        var ns = getOrgNamespace(); // Use it wherever required.
+    -->
+    <script>
+    function getOrgNamespace() {
+        // Code to dynamically fetch the namespace - Start //
+        var className = "{!$ObjectType.PC_AdverseEvent2__c.Name}";
+        // expected classname patters ns__cobj__c or cobj__c
+        var ns;
+        var p = className.indexOf('__');
+        var q = className.lastIndexOf('__c');
+        //console.log("!$ObjectType.PC_AdverseEvent2__c.Name -- ClassName = " + className);
+        //console.log("Location of __ after the namespace, p = " + p);
+        //console.log("Location of __ after the classname, q = " + q);
+        if(p !== q) {
+            // namespace exists
+            ns = className.substring(0,p);
+        }
+        else {
+            ns = "c";    
+        }
+        //console.log("Namespace = " + ns);
+        return ns;
+        // Code to dynamically fetch the namespace - End //    
+    }
+
+    </script>
+</apex:page>

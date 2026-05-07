@@ -1,0 +1,97 @@
+<messaging:emailTemplate subject="A benefit verification has been completed." recipientType="User" relatedToType="Case">
+<messaging:htmlEmailBody >
+<!--<apex:image id="Logo" value="https://ashfield4--dev.sandbox.my.salesforce.com/servlet/servlet.ImageServer?id=015DO000000LIN6&oid=00DDO0000008fwB" />-->
+ <c:ACLS_LogoURL />
+
+
+<html>
+            <body>
+            <br></br>
+A benefit verification has been completed for {!relatedto.Account.Name} by the EngageAssistRx program on {!relatedto.CreatedDate}. Please contact the program if you have any questions at 800-999-9999, Monday-Friday, 8 AM to 5 PM EST. 
+
+<center>
+                                    <p>Primary Medical Insurance Coverage</p>
+</center>
+                                    
+<table border="2" align="center">
+                <tr>
+                    <td>Provider Name</td>
+                    <td>{!relatedto.PC_Physician__r.PC_First_Name__c},{!relatedto.PC_Physician__r.PC_Last_Name__c}</td>
+                </tr>
+                <tr>
+                    <td>Provider NPI</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.PC_Coinsurance_Percent__c}</td>
+                </tr>
+                <tr>
+                    <td>Payer Name</td>
+                    <td>{!relatedto.PC_Health_Plan__r.PC_Payer_Name__c}</td>
+                </tr>
+                <tr>
+                    <td>Payer Phone</td>
+                    <td>{!relatedto.PC_Health_Plan__r.PC_Payer__r.Phone}</td>
+                </tr>
+                <tr>
+                    <td>Payer Type</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.PC_Coverage_Type__c}</td>
+                </tr>
+                <tr>
+                    <td>Payer Rep Name and Reference Number</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.ACLS_Representative_Name__r.Name},{!relatedto.PC_Program_Coverage__r.ACLS_Reference_Number__c}</td>
+                </tr>
+                <tr>
+                    <td>Product Covered?</td>
+                    <td>{!relatedto.PC_Case_Outcome__c}</td>
+                </tr>
+                <tr>
+                    <td>Deductible / Amount Met </td>
+                    <td>{!relatedto.PC_Program_Coverage__r.PC_Deductible__c}/{!relatedto.PC_Program_Coverage__r.PC_Copay_Amount__c}</td>
+                </tr>
+                <tr>
+                    <td>Coinsurance</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.PC_Coinsurance_Percent__c}</td>
+                </tr>
+                <tr>
+                    <td>Out of Pocket / Amount Met </td>
+                    <td>{!relatedto.PC_Program_Coverage__r.PC_Rx_Applied_Out_Of_Pocket__c}/{!relatedto.PC_Program_Coverage__r.PC_Rx_Applied_Deductible__c}</td>
+                </tr>
+                <tr>
+                    <td>Office Visit Copay</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.ACLS_Office_Visit_Copay_Amount__c}</td>
+                </tr>
+                <tr>
+                    <td>Administration Copay</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.ACLS_Administration_Copay_Amount__c}</td>
+                </tr>
+                <tr>
+                    <td>Product Copay</td>
+                    <td>{!relatedto.PC_Program_Coverage__r.ACLS_Product_Copay_Amount__c}</td>
+                </tr>
+                <tr>
+                    <td>Prior Authorization Required?</td>
+                    <td>{!relatedto.ACLS_PA_Required__c}</td>
+                </tr>
+                <tr>
+                <td>Prior Authorization Details:</td>
+                <td>{!relatedto.PC_Program_Coverage__r.ACLS_Prior_Authorization_Details__c}</td>
+                </tr>
+                <tr>
+                <td>Billing and Coding: </td>
+                <td>{!relatedto.PC_Program_Coverage__r.ACLS_Billing_and_Coding__c}</td>
+                </tr>
+                <tr>
+                <td>Additional Information: </td>
+                <td>{!relatedto.PC_Program_Coverage__r.ACLS_Additional_Information__c}</td>
+                </tr>
+
+
+            </table>                                    
+</body>
+        </html>
+  
+
+
+
+
+
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

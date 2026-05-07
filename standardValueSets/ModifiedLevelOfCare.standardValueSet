@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Hospital - Observation</fullName>
+        <default>false</default>
+        <label>Hospital - Observation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospital - Inpatient</fullName>
+        <default>false</default>
+        <label>Hospital - Inpatient</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospital - Intensive Care</fullName>
+        <default>false</default>
+        <label>Hospital - Intensive Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Hospital - Rehabilitation</fullName>
+        <default>false</default>
+        <label>Hospital - Rehabilitation</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNF - Inpatient</fullName>
+        <default>false</default>
+        <label>SNF - Inpatient</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNF - Specialized Care</fullName>
+        <default>false</default>
+        <label>SNF - Specialized Care</label>
+    </standardValue>
+    <standardValue>
+        <fullName>SNF - Rehabilitation</fullName>
+        <default>false</default>
+        <label>SNF - Rehabilitation</label>
+    </standardValue>
+</StandardValueSet>

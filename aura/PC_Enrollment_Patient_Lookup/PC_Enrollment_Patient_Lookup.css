@@ -1,0 +1,43 @@
+.THIS .rightMargin {
+    margin-right:5px;
+}
+
+.THIS .leftMargin {
+    margin-top:10px;
+    margin-left:10px;
+    margin-right:10px;
+    border-color:white;
+}
+
+.THIS .tableMargin {
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.THIS .validateButton {
+    width: 25%;
+}
+
+.THIS .uiInputDate .datePicker-openIcon {
+   position: absolute;
+    left: 97%;
+    top: 25%;
+}
+
+.THIS .blockSection {
+    padding:10px 5px;
+}
+
+.THIS .patientsTable {
+    margin-top: 10px;
+    font-size: 0.875rem;
+    height:100%; max-height:200px;
+    width:100%;    
+}
+.THIS .manageFlicker {
+    padding-bottom:210px;
+}
+
+.THIS .alignRadioButton {
+    vertical-align: inherit;
+}

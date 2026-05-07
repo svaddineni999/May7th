@@ -1,0 +1,208 @@
+<!--
+Lightning component  : PC_AE_SuspectProductsRenderer2
+Description          : Form to capture/display Suspect Products for Adverse Event
+Parameters           : aeWrapper Map
+Modification Log:
+Haritha Reddy 		 26-Nov-2018    Initial Version
+Haritha Reddy 		 06-Jan-2020    [PC-5600]Added logic for conditional display of Prescription dropdown/Product Lookup
+Haritha Reddy 		 09-Jan-2020    [PC-5600]Added logic to display & save Additional SuspectPrescription Fields while creating/editing Adverse Event
+Haritha Reddy        17-Feb-2020    [PC-5955]Code changes to make Error handling consistent in Suspect product and additional info tabs of Adverse Event
+-->
+
+<aura:component description="PC_AE_SuspectProductsRenderer2" controller="PC_AE2_SuspectProductsRendererController">
+    <aura:attribute name="prescriptions" type="List"/>
+    <aura:attribute name="selectedPrescription" type="String"/>
+    <aura:attribute name="relSuspectPrescriptions" type="List"/>
+    <aura:attribute name="productAvailable" type="Boolean"/>
+    <aura:attribute name="prescriptionAvailable" type="Boolean"/>
+    <aura:attribute name="caseId" type="string"/>
+    <aura:attribute name="aeWrapper" type="Map"/>
+    <aura:attribute name="aeId" type="string"/>
+    <aura:attribute name="isEdit" type="Boolean"/>
+    <aura:attribute name="isMedicalInquiry" type="Boolean" default="false"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="errorDescription" type="String" default="Unknown error"/>
+    <aura:attribute name="fieldLabels" type="Object"/>
+    <aura:attribute name="prodCompoundedOptions" type="List"/>
+    <aura:attribute name="prodOTCOptions" type="List"/>
+    <aura:attribute name="prescriptionFormComp" type="String" default="PC_AE2_SuspectPrescriptionForm"/>
+    <aura:attribute name="prescriptionFormPopupLabel" type="String" default="{!$Label.c.PC_AE_Suspect_Prescription}"/>
+    <aura:attribute name="medicalInquiryProductLabel" type="String" default="{!$Label.c.PC_AE_MedicalInquiryProduct}"/>
+    <aura:attribute name="inquiryDescriptionPlaceholder" type="String" default="{!$Label.c.PC_AE_InquiryDescriptionPlaceholder}"/>
+    <aura:attribute name="noMedicalInquiryProductsHaveBeenAdded" type="String" default="{!$Label.c.PC_AE_NoMedicalInquiryProducts}"/>
+    <aura:attribute name="nonePicklistLabel" type="String" default="{!$Label.c.PC_Picklist_None}"/>
+    <aura:attribute name="medicalInquiryDescription" type="String" default="" access="public" description="Medical Inquiry Description Field"/>
+    <aura:attribute name="eventAbatedOptions" type="List"/>
+    <aura:attribute name="eventReappearedOptions" type="List"/>
+    <aura:attribute name="newSuspectPrescriptionList" type="List"/>
+    <aura:attribute name="updatedSuspectPrescriptionList" type="List"/>
+    <aura:attribute name="deletedSuspectPrescriptionList" type="List"/>
+    <aura:attribute name="suspectPrescriptionRec" type="Object"/>
+    <aura:attribute name="dateFormatErrorMessage" type="String" default=""/>
+    <aura:attribute name="submissionStatus" type="string" default=""/>
+    <aura:attribute name="dateFormat" type="String" default="{!$Label.c.PC_Adverse_Event_DefaultDateFormat}"/>
+    <aura:attribute name="usePrescription" type="Boolean" default="true"/>
+    <aura:attribute name="productLookupName" type="String" default="{!$Label.c.PC_AE_ProductLookupName}"/>
+    <aura:attribute Name="selectedProduct" type="object"/>
+    <aura:attribute name="additionalFieldsConfig" type="object"/>
+    <aura:attribute name="errors" type="List"/>
+    <aura:attribute name="errorHeaderVal" type="String" default="{!$Label.c.PC_Toast_Title_Error}"/>
+    <aura:handler name="change" value="{!v.selectedProduct}" action="{!c.openSuspectProductPopup}"/>
+    <aura:method name="validate" action="{!c.validateSuspectProduct}"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:if isTrue="{!v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.errorHeaderVal}" errors="{!v.errors}"/>
+        <aura:set attribute="else">
+        <div class="slds AE">
+            <lightning:overlayLibrary aura:id="overlayLib"/>
+            <div class="slds slds-grid slds-wrap">
+                <div class="slds-col slds-size_4-of-12 fieldStyle">
+                    <aura:if isTrue="{!v.usePrescription}">
+                        <lightning:select name="prescription" label="{!$Label.c.PC_AE_SelectAnExistingPrescription}" aura:id="prescription" value="{!v.aeWrapper.prescription}" onchange="{!c.openPrescriptionPopup}">
+                            <aura:iteration items="{!v.prescriptions}" var="option">
+                                <option text="{!option.label}" value="{!option.value}" selected="{!option.selected}"/>
+                            </aura:iteration>
+                        </lightning:select>
+                        <aura:set attribute="else">
+                            <label class="slds-form-element__label">{!v.productLookupName}</label>
+                            <c:PC_Lookup objectName="Product2" field_API_text="Name" field_API_val="Id" limit="100" field_API_search="Name"
+                                         lookupIcon="standard:product" selectedRecord="{!v.selectedProduct}" placeholder=""/>
+                        </aura:set>
+                    </aura:if>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-m-top_large">
+                    <lightning:button variant="brand" class="slds-float--right" name="newPrescription" label="{!$Label.c.PC_AE_Add_Product}" onclick="{!c.openPrescriptionPopup}" />
+                </div>
+                <div class="slds-col slds-size_6-of-12"></div>
+            </div>
+
+            <div class="slds-modal__content slds-p-around_medium" style="{!and(v.relSuspectPrescriptions.length == 0, v.newSuspectPrescriptionList.length == 0) ? '' : 'display:none;'}" >
+                <aura:if isTrue="{!v.isMedicalInquiry}">
+                        {!v.noMedicalInquiryProductsHaveBeenAdded}
+                    <aura:set attribute="else">
+                            {!$Label.c.PC_AE_NoSuspectProductsHaveBeenAdded}
+                    </aura:set>
+                </aura:if>
+                <br></br>
+            </div>
+            <div class="dataTable" id="modal-content-id-1" style="{!or(v.relSuspectPrescriptions.length != 0, v.newSuspectPrescriptionList.length != 0) ? '' : 'display:none;'}">
+                <table class="slds-table slds-table--fixed-layout slds-table_bordered slds-table_cell-buffer">
+                    <thead>
+                    <tr class="slds-text-title_caps">
+
+                        <th class="slds-cell-shrink" scope="col"></th>
+                        <th class="slds-cell-shrink" scope="col"></th>
+                        <th scope="col" class="">
+                            <aura:if isTrue="{!v.isMedicalInquiry}">
+                                <div class="slds-truncate" title="{!v.medicalInquiryProductLabel}">{!v.medicalInquiryProductLabel}</div>
+                                <aura:set attribute="else">
+                                    <div class="slds-truncate" title="{!v.fieldLabels.suspectPresName}">{!v.fieldLabels.suspectPresName}</div>
+                                </aura:set>
+                            </aura:if>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.fieldLabels.pt}">{!v.fieldLabels.prescription}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.fieldLabels.llt}">{!v.fieldLabels.productName}</div>
+                        </th>
+                        <th scope="col" class="">
+                            <div class="slds-truncate" title="{!v.fieldLabels.manufacturer}">{!v.fieldLabels.manufacturer}</div>
+                        </th>
+                        <aura:if isTrue="{!not(v.isMedicalInquiry)}">
+                            <th scope="col" class="">
+                                <div class="slds-truncate" title="{!v.fieldLabels.ndc}">{!v.fieldLabels.ndc}</div>
+                            </th>
+                            <th scope="col" class="">
+                                <div class="slds-truncate" title="{!$Label.c.PC_AE_Draft}">{!$Label.c.PC_AE_Draft}</div>
+                            </th>
+                        </aura:if>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <aura:iteration items ="{!v.relSuspectPrescriptions}" var="susPres" indexVar="i">
+                        <tr>
+                            <td class="slds-truncate" >
+                                <div class="slds-truncate slds-text-align--center">
+                                    <lightning:button title="{!$Label.c.PC_Edit_Button}" value="{!susPres}" name="editSPButton" type="button" variant="base" iconName="utility:edit" onclick="{!c.openPrescriptionPopup}"/>
+                                </div>
+                            </td>
+                            <td class="slds-truncate" >
+                                <div class="slds-truncate slds-text-align--center">
+                                    <lightning:button title="{!$Label.c.PC_Delete}" value="{!susPres}" type="button" variant="base" iconName="utility:delete" onclick="{!c.removePrescription}"/>
+                                </div>
+                            </td>
+                            <td  class="slds-truncate" title="{!susPres.name}">
+                                    {!susPres.name}
+                            </td>
+                            <td class="slds-truncate"  title="{!susPres.prescription}">
+                                <a id ="{!susPres.prescriptionId}" role="link" onclick="{!c.navigateToRecord}" target="_self">
+                                        {!susPres.prescription}
+                                </a>
+                            </td>
+                            <td class="slds-truncate"  title="{!susPres.productName}">
+                                    {!susPres.productName}
+                            </td>
+                            <td class="slds-truncate"  title="{!susPres.manufacturer}">
+                                    {!susPres.manufacturer}
+                            </td>
+                            <aura:if isTrue="{!not(v.isMedicalInquiry)}">
+                                <td class="slds-truncate"  title="{!susPres.ndc}">
+                                        {!susPres.ndc}
+                                </td>
+                                <td class="slds-truncate">
+                                    <lightning:input title="{!$Label.c.PC_AE_Draft}" type="checkbox" label="" name="{!$Label.c.PC_AE_Draft}" checked="false" disabled="true"/>
+                                </td>
+                            </aura:if>
+                        </tr>
+                    </aura:iteration>
+
+                    <aura:iteration items ="{!v.newSuspectPrescriptionList}" var="susPres" indexVar="i">
+                        <tr>
+                            <td class="slds-truncate" >
+                                <div class="slds-truncate slds-text-align--center">
+                                    <lightning:button title="{!$Label.c.PC_Edit_Button}" value="{!susPres}" name="editDraftSPButton" type="button" variant="base" iconName="utility:edit" onclick="{!c.openPrescriptionPopup}"/>
+                                </div>
+                            </td>
+                            <td class="slds-truncate" >
+                                <div class="slds-truncate slds-text-align--center">
+                                    <lightning:button title="{!$Label.c.PC_Delete}" value="{!susPres}" type="button" variant="base" iconName="utility:delete" onclick="{!c.removeNewlyAddedPrescription}"/>
+                                </div>
+                            </td>
+                            <td class="slds-truncate"  title="">
+                            </td>
+                            <td class="slds-truncate"  title="{!susPres.prescription}">
+                                    {!susPres.prescription}
+                            </td>
+                            <td class="slds-truncate"  title="{!susPres.productName}">
+                                    {!susPres.productName}
+                            </td>
+                            <td class="slds-truncate"  title="{!susPres.manufacturer}">
+                                    {!susPres.manufacturer}
+                            </td>
+                            <aura:if isTrue="{!not(v.isMedicalInquiry)}">
+                                <td class="slds-truncate"  title="{!susPres.ndc}">
+                                        {!susPres.ndc}
+                                </td>
+                                <td class="slds-truncate">
+                                    <lightning:input title="{!$Label.c.PC_AE_Draft}" type="checkbox" label="" name="{!$Label.c.PC_AE_Draft}" checked="true" disabled="true"/>
+                                </td>
+                            </aura:if>
+                        </tr>
+                    </aura:iteration>
+                    </tbody>
+                </table>
+            </div>
+            <aura:if isTrue="{!v.isMedicalInquiry}">
+                <div class="slds-m-top_small inquiryDescriptionStyle">
+                    <lightning:textarea label="{!v.fieldLabels.inquiryDescription}" placeholder="{!v.inquiryDescriptionPlaceholder}" value="{!v.medicalInquiryDescription}"/>
+                </div>
+            </aura:if>
+        </div>
+        <br/>
+        </aura:set>
+    </aura:if>
+</aura:component>

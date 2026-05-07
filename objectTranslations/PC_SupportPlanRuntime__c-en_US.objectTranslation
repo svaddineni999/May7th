@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Support Plan Runtime</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Support Plan Runtime</value>
+    </caseValues>
+    <fields>
+        <label><!-- Completed Activity Date --></label>
+        <name>PC_Completed_Activity_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completed Activity --></label>
+        <name>PC_Completed_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Activity Status --></label>
+        <name>PC_CurrentActivityStatus__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Condition</masterLabel>
+            <translation><!-- Pending Condition --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Activity --></label>
+        <name>PC_CurrentActivity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Group All Activities --></label>
+        <name>PC_CurrentGroupAllActivities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Group Next Activity --></label>
+        <name>PC_Current_Group_Next_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Group Status --></label>
+        <name>PC_Current_Group_Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Condition</masterLabel>
+            <translation><!-- Pending Condition --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Group --></label>
+        <name>PC_Current_Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Time --></label>
+        <name>PC_EndTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Id --></label>
+        <name>PC_RecordId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Time --></label>
+        <name>PC_StartTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Support Plan Case --></label>
+        <name>PC_SupportPlanCase__c</name>
+        <relationshipLabel><!-- Support Plan Runtime --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Support Plan --></label>
+        <name>PC_SupportPlan__c</name>
+        <relationshipLabel><!-- Support Plan Runtime --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

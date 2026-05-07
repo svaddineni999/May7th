@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>ACLS_Document_Template__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores a reference to the Document Template available as part of the Docgen package</description>
+        <label>Document Template</label>
+        <referenceTo>DocumentTemplate</referenceTo>
+        <relationshipLabel>eLetters (Document Template)</relationshipLabel>
+        <relationshipName>eLetter_Document_Template</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Fax_Cover_Page_Template__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Stores a reference to the Fax Cover Page Document Template available as part of the Docgen package</description>
+        <label>Fax Cover Page Template</label>
+        <referenceTo>DocumentTemplate</referenceTo>
+        <relationshipLabel>eLetters (Fax Cover Page Template)</relationshipLabel>
+        <relationshipName>eLetter_CoverPage_Template</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ACLS_Number_of_Pages__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Pages</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Subject__c</fullName>
+        <description>Subject for the eLetter Communication being sent out</description>
+        <externalId>false</externalId>
+        <label>Subject</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_AllowExternalRecipients__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Allow sending of email to any recipient irrespective of whether they are configured in Target Recipients or Pre-Configured Recipients(in the related Engagement Program Eletter record).</description>
+        <inlineHelpText>Allow sending of email to any recipient irrespective of whether they are configured in Target Recipients or Pre-Configured Recipients(in the related Engagement Program Eletter record).</inlineHelpText>
+        <label>Allow Additional Recipients</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Allow_Send_to_Patient__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selecting this field allows the eLetter to be sent to the patients.</description>
+        <label>Allow Send to Patient</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Category__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the category of the eLetter. i.e whether the eLetter is used for Email, Fax or Automated Email.</description>
+        <label>Category</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Email</fullName>
+                    <default>false</default>
+                    <label>Email</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+                <value>
+                    <fullName>SMS</fullName>
+                    <default>false</default>
+                    <label>SMS</label>
+                </value>
+                <value>
+                    <fullName>Automated Email</fullName>
+                    <default>false</default>
+                    <label>Automated Email</label>
+                </value>
+                <value>
+                    <fullName>Automated Fax</fullName>
+                    <default>false</default>
+                    <label>Automated Fax</label>
+                </value>
+                <value>
+                    <fullName>Automated SMS</fullName>
+                    <default>false</default>
+                    <label>Automated SMS</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Communication_Language__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The eLetter can be produced in these languages.</description>
+        <inlineHelpText>Select supported languages for this eLetter</inlineHelpText>
+        <label>Communication Language</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>English</fullName>
+                    <default>true</default>
+                    <label>English</label>
+                </value>
+                <value>
+                    <fullName>French</fullName>
+                    <default>false</default>
+                    <label>French</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <inlineHelpText>Description of the eLetter Template</inlineHelpText>
+        <label>Description</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Hide_From_eLetter_Page__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Selecting this will hide this eLetter on eLetter management page.</description>
+        <inlineHelpText>Selecting this will hide this eLetter on eLetter management page.</inlineHelpText>
+        <label>Hide From eLetter Page</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Object_Record_Types__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Case types with which the eLetter is associated.</description>
+        <label>Object Record Types</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <controllingField>PC_Source_Object__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BI / BV</fullName>
+                    <default>false</default>
+                    <label>BI / BV</label>
+                </value>
+                <value>
+                    <fullName>Program</fullName>
+                    <default>false</default>
+                    <label>Program</label>
+                </value>
+                <value>
+                    <fullName>Private Coverage</fullName>
+                    <default>false</default>
+                    <label>Private Coverage</label>
+                </value>
+                <value>
+                    <fullName>Appeal</fullName>
+                    <default>false</default>
+                    <label>Appeal</label>
+                </value>
+                <value>
+                    <fullName>Prior Authorization</fullName>
+                    <default>false</default>
+                    <label>Prior Authorization</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Case</controllingFieldValue>
+                <valueName>BI / BV</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Case</controllingFieldValue>
+                <valueName>Program</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Case</controllingFieldValue>
+                <valueName>Appeal</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Case</controllingFieldValue>
+                <valueName>Prior Authorization</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Program Coverage</controllingFieldValue>
+                <valueName>Private Coverage</valueName>
+            </valueSettings>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Send_to_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>When this flag is checked, all other flags (Send Fax,Send email) are automatically unchecked and the eLetter is sent to the current User (for editing before sending to the Patients/Recipients)</description>
+        <inlineHelpText>If Selected, the eLetter will be sent to current logged in User.</inlineHelpText>
+        <label>Send to User</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Source_Object__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The objects with which the eLetter is associated.</description>
+        <label>Source Object</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Account</fullName>
+                    <default>false</default>
+                    <label>Account</label>
+                </value>
+                <value>
+                    <fullName>Case</fullName>
+                    <default>false</default>
+                    <label>Case</label>
+                </value>
+                <value>
+                    <fullName>Program Coverage</fullName>
+                    <default>false</default>
+                    <label>Program Coverage</label>
+                </value>
+                <value>
+                    <fullName>Interaction</fullName>
+                    <default>false</default>
+                    <label>Interaction</label>
+                </value>
+                <value>
+                    <fullName>Adverse Event</fullName>
+                    <default>false</default>
+                    <label>Adverse Event</label>
+                </value>
+                <value>
+                    <fullName>Adverse Event 2</fullName>
+                    <default>false</default>
+                    <label>Adverse Event 2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Target_Recipients__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Selects the target recipients for the eLetter.</description>
+        <label>Target Recipients</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetName>PC_Association_Role</valueSetName>
+        </valueSet>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Template_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name for email template.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email Template Developer Name</inlineHelpText>
+        <label>PC Template Name</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>eLetter</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>eLetter Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>eLetters</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Read</sharingModel>
+    <visibility>Public</visibility>
+</CustomObject>

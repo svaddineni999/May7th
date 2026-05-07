@@ -1,0 +1,141 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId"  controller="PC_LookupSObjectLightningController" access="global">
+
+
+    <!-- Attributes -->
+    <aura:attribute name="searchString" type="String" description="The search string to find." />
+
+    <aura:attribute name="docName" type="String"/>
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="userId" type="String" />
+    <aura:attribute name="userName" type="String" />
+    <aura:attribute name="errors" type="String"/>
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="oldOwner" type="Id"  access="PUBLIC"/>
+    <aura:attribute name="isValidUserNotFound" type="Boolean" default="true"/>
+    <aura:attribute name="successMsg" type="String" default="{!$Label.c.PC_DocOwner_Success_Message}" />
+    <!-- Events -->
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}" />
+    <aura:registerEvent name="updateLookupIdEvent" type="c:updateLookupIdEvent"/>
+    <aura:registerEvent name="clearLookupIdEvent" type="c:clearLookupIdEvent"/>
+    <aura:attribute name="errorDocStatus" type="String" default="{!$Label.c.PC_ErrorDocMgmt}" />
+
+    <aura:method name="clearSearch" action="{!c.clear}" access="PUBLIC" />
+
+    <aura:attribute name="userGroupToSearch" type="String" default="User" />
+    <aura:attribute name="userLabel" type="String" default="{!$Label.c.PC_User}"  />
+    <aura:attribute name="queueLabel" type="String" default="{!$Label.c.PC_Queue}" />
+    <aura:attribute name="currentOwnerLabel" type="String" default="{!$Label.c.PC_Current_Owner}" />
+    <aura:attribute name="searchPeopleLabel" type="String" default="{!$Label.c.PC_Search_People_Label}" />
+    <aura:attribute name="actionAttribute" type="String" access="global" default='{"changeOwnerAttribute":{"showQueue":false}}'/>
+    <aura:attribute name="showQueue" type="Boolean" default="false"/>
+
+    <div id="PC_Document_Management_ChangeOwner"  class="slds">
+        <form id="form">
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--medium slds-fade-in-open" aura:id="modaldialog" >
+                <div class="slds-modal__container">
+                    <div class="slds-modal__header">
+                        <h2 class="slds-tabs--scoped__item slds-text-heading--medium slds-active blockSection">{!$Label.c.PC_Change_Owner}</h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true" />
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                    </div>
+                    <div class="slds-modal__content hideBorder hideScroll modalContentHeight">
+                        <fieldset class="slds-form--compound leftMargin">
+                            <div class="slds-box hideBorder slds-theme_default">
+                                <lightning:layout pullToBoundary="small">
+                                    <lightning:layoutItem flexibility="auto" padding="horizontal-small" size="12" class = "slds-form-element">
+                                        <lightning:layout pullToBoundary="small">
+                                            <lightning:layoutItem padding="horizontal-small" size="3">
+                                                <label  class="slds-form-element__label">
+                                                            {!v.currentOwnerLabel} :
+                                                </label >
+                                            </lightning:layoutItem>
+                                            <lightning:layoutItem padding="horizontal-small" size="9">
+                                                <div class="slds-form-element__control">
+                                                    <legend class="slds-form-element__label">{!v.oldOwner}</legend>
+                                                </div>
+                                            </lightning:layoutItem>
+                                        </lightning:layout>
+                                    </lightning:layoutItem>
+                                </lightning:layout>
+
+                                <br/>
+                                <div>
+                                    <label class="slds-form-element__label">{!v.searchPeopleLabel}:</label>
+                                </div>
+
+
+                                <div aura:id="lookup-div" class="slds-lookup cdo" data-select="single" data-scope="single" data-typeahead="true">
+                                    <!-- This is the Input form markup -->
+                                    <div class="slds-form-element">
+                                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon--right" style="width:600px">
+
+                                            <!-- This markup is for when an item is currently selected -->
+
+                                                <lightning:layout pullToBoundary="small">
+                                                    <lightning:layoutItem flexibility="auto" padding="horizontal-small" size="12">
+                                                        <lightning:layout pullToBoundary="small">
+                                                            <lightning:layoutItem padding="horizontal-small" size="3">
+                                                                    <lightning:buttonGroup>
+                                                                        <lightning:button class="slds-p-bottom_xxx-small slds-p-top_xxx-small" label="{!v.userLabel}" onclick="{!c.handleClick}"
+                                                                                          variant="brand" aura:id="userBtn" name="userBtn"/>
+                                                                       <aura:if isTrue="{!v.showQueue}">
+                                                                           <lightning:button class="slds-p-bottom_xxx-small slds-p-top_xxx-small" label="{!v.queueLabel}" onclick="{!c.handleClick}"
+                                                                                             variant="neutral" aura:id="queueBtn" name="queueBtn"/>
+                                                                       </aura:if>
+                                                                    </lightning:buttonGroup>
+                                                            </lightning:layoutItem>
+                                                            <lightning:layoutItem padding="horizontal-small" size="9">
+                                                                <div>
+                                                                    <!-- This markup is for when searching for a string -->
+                                                                    <ui:inputText aura:id="lookup" value="{!v.searchString}" class="slds-input" updateOn="keyup" keyup="{!c.search}" />
+                                                                    <c:svg class="slds-input__icon" xlinkHref="{! $Resource.PC_SLDS202 + '/PC_SLDS202/assets/icons/utility-sprite/svg/symbols.svg#search'}" />
+                                                                    <div aura:id="lookup-pill" class="slds-pill-container slds-hide">
+                                                                    <span class="slds-pill slds-pill--bare">
+                                                                        <span class="slds-pill__label">{!v.searchString}</span>
+                                                                        <button class="slds-button slds-button--icon-bare" onclick="{!c.clear}" type="button" aura:id="removeButton">
+                                                                            <c:svg class="slds-button__icon" xlinkHref="{! $Resource.PC_SLDS202+ '/PC_SLDS202/assets/icons/action-sprite/svg/symbols.svg#close'}"/>
+                                                                            <span class="slds-assistive-text">{!$Label.c.PC_Remove}</span>
+                                                                        </button>
+                                                                    </span>
+                                                                    </div>
+                                                                    <div aura:id="lookuplist" class="slds-lookup__menu hideBorder slds-hide listBoxWidth" role="listbox">
+                                                                        <ul aura:id="lookuplist-items" class="slds-lookup__list" role="presentation">
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </lightning:layoutItem>
+                                                        </lightning:layout>
+                                                    </lightning:layoutItem>
+                                                </lightning:layout>
+
+                                        </div>
+                                    </div>
+                                    <!-- This is the lookup list markup. Initially it's hidden -->
+
+                                </div>  <br></br>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="slds-modal__footer">
+                        <div class="slds-x-small-buttons--horizontal">
+                            <div class="slds-form-element">
+
+                                <ui:button class="slds-button slds-button--brand" disabled="{!v.isValidUserNotFound}" label="{!$Label.c.PC_Submit_Button_Label}" press="{!c.reassignDoc}"/>
+
+                                <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Button_Label_Cancel}" press="{!c.hideModalBox}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+</aura:component>

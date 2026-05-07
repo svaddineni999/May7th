@@ -1,0 +1,20 @@
+<!--
+ - Created by ronbansal on 1/07/2023.
+ -->
+
+<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global" description="ACLS_newAppeal" controller="ACLS_Utility">
+
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="relatedToId" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="relatedToObject" type="String" /> <!-- This attribute gets set by the PC_LaunchTaskActionComponent -->
+    <aura:attribute name="logACaseAppealRecordTypeId" type="String" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="logACaseErrors" type="List"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:if isTrue="{! v.logACaseErrors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.logACaseErrors}"/>
+    </aura:if>
+
+</aura:component>

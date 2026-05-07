@@ -1,0 +1,16 @@
+.THIS .PC_tile_alert {
+	background:white;
+    width: 100%;
+}
+.THIS .PC_Alert_Card_Header {
+    margin-bottom: 5px;
+    
+}
+.THIS .slds-card__header {
+    padding: .25rem .75rem 0rem;
+    margin-bottom: 0rem;
+}
+
+.THIS .slds-card__body {
+    padding: 0;
+}

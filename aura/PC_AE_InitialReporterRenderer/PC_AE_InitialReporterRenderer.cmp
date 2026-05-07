@@ -1,0 +1,147 @@
+<!--
+Lightning component  : PC_AE_InitialReporterRenderer
+Description          : Form to capture Initial Reporter Information for Adverse Event
+Parameters           : aeWrapper Map
+Modification Log:
+Xiukai		        28-Nov-2018         Initial Version
+Haritha Reddy       18-Dec-2019         [PC-5723] Added new Field 'Health Care Professional'
+Chetna Mohapatra    23-Apr-2020         [PC-6118] Rearranged the 'HealthCare Professional' field and added a warning message 'wrongHealthCareProfessionalOptionSelected'.
+-->
+
+<aura:component description="PC_AE_InitialReporterRenderer" controller="PC_AE_InitialReporterRendererController" access="global">
+    <aura:attribute name="aeWrapper" type="Map"/>
+    <aura:attribute name="aeId" type="String"/>
+    <aura:attribute name="caseId" type="String"/>
+    <aura:attribute name="patientId" type="String"/>
+    <aura:attribute name="fieldLabels" type="Object"/>
+    <aura:attribute name="reporterTypeOptions" type="List"/>
+    <aura:attribute name="healthCareProfessionalReporterTypeOptions" type="List"/>
+    <aura:attribute name="nonHealthCareProfessionalReporterTypeOptions" type="List"/>
+	<aura:attribute name="reporterTypeOptionsSelected" type="Boolean"/>
+    <aura:attribute name="reporterSentToFdaOptions" type="List"/>
+    <aura:attribute name="healthCareProfessionalOptions" type="List"/>
+    <aura:attribute name="existingReporterMap" type="Map" default="{}"/>
+    <aura:attribute name="existingReporterType" type="String" default=""/>
+    <aura:attribute name="loaded" type="Boolean" default="false" />
+    <aura:attribute name="showReporterWarning" type="Boolean" default="false" />
+    <aura:attribute name="notFoundReporter" type="Boolean" default="false" />
+    <aura:attribute name="showRefreshIcon" type="Boolean" default="false" />
+    <aura:attribute name="morethanOneReporter" type="Boolean" default="false" />
+    <aura:attribute name="wrongHealthCareProfessionalOption" type="Boolean" default="false" />
+    <aura:attribute name="reporterNotFoundMessage" type="String" default="{!$Label.c.PC_ReporterWarningMessage}"/>
+    <aura:attribute name="tooltipRefreshMessage" type="String" default="{!$Label.c.PC_ToolTipOnRefreshIcon}"/>
+    <aura:attribute name="moreThanOneReporterFound" type="String" default="{!$Label.c.PC_MoreThanOneReporterErrMessage}"/>
+    <aura:attribute name="wrongHealthCareProfessionalSelectedMessage" type="String" default="{!$Label.c.PC_WrongHealthCareProfessionalSelectedMessage}"/>
+    <aura:attribute name="spinnerMessage" type="String" default="{!$Label.c.PC_SpinnerMessage}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+
+    <aura:if isTrue="{!v.loaded }">
+
+
+        <div class="demo-only" >
+            <div class="slds-spinner_container ">
+                <div role="status" class="slds-spinner slds-spinner_medium slds-spinner_brand">
+                    <!--<span class="slds-assistive-text">Loading</span> -->
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                    <div class="custom-loading-text">
+
+
+                            {!format(v.spinnerMessage, v.aeWrapper.occupation)}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <aura:set attribute="else">
+
+    <div class="slds slds-grid slds-wrap">
+
+        <div class="slds-col slds-size_5-of-12 slds-p-left--small slds-p-top_medium  slds-m-left_x-small  slds-m-bottom_medium ">
+            <lightning:radioGroup name="healthCareProfessional"  onchange="{!c.onHealthCareProfessionalChange}" label="{!v.fieldLabels.healthCareProfessional}" options="{!v.healthCareProfessionalOptions}" value="{!v.aeWrapper.healthCareProfessional}"/>
+        </div>
+
+        <div class="slds-col slds-size_5-of-12 slds-m-left_xx-large slds-p-top_medium slds-p-left_x-large slds-m-bottom_medium">
+         <!--<aura:if isTrue="{!v.aeWrapper.healthCareProfessional != null}">-->
+                <lightning:select name="reporterType" label="{!v.fieldLabels.occupation}" aura:id="reporterType" value="{!v.aeWrapper.occupation}" class ="AE" onchange="{!c.onReporterTypeChange}">
+                    <aura:iteration var="opt" items="{!v.reporterTypeOptions}">
+                        <option text="{!opt.label}" value="{!opt.value}" selected="{!opt.value==v.aeWrapper.occupation}"/>
+                    </aura:iteration>
+                </lightning:select>
+           <!-- </aura:if>-->
+            <aura:if isTrue="{!v.showReporterWarning}">
+                         <span class="slds-m-right--small">  <lightning:icon iconName="utility:warning" variant="warning" size="x-small"  alternativeText="{!$Label.c.PC_NoteWarningReporterAE2}"/>
+                               <aura:if isTrue="{!v.notFoundReporter}">
+                                       {!format(v.reporterNotFoundMessage, v.aeWrapper.occupation)}
+                               </aura:if>
+
+                             <aura:if isTrue="{!v.morethanOneReporter}">
+                                     {!format(v.moreThanOneReporterFound, v.aeWrapper.occupation)}
+                             </aura:if>
+                         </span>
+            </aura:if>
+        </div>
+
+        <div class="slds-col slds-size_12-of-12 slds-m-bottom_medium">
+            <aura:if isTrue="{!v.wrongHealthCareProfessionalOption}">
+                <span class="slds-m-vertical_small">
+                    <lightning:icon iconName="utility:warning" variant="warning" size="x-small"/>
+                        {!format(v.wrongHealthCareProfessionalSelectedMessage, v.aeWrapper.healthCareProfessional)}
+                </span>
+            </aura:if>
+        </div>
+
+    </div>
+        <div class=" slds-size_12-of-12  slds-grid ">
+            <div class="labelStyling">{!$Label.c.PC_AE_NameAndAddress}</div>
+            <aura:if isTrue="{!v.showRefreshIcon}">
+                <div class="slds-p-left--xxx-small cursorHover" style="" onclick="{!c.onRefreshClick}" >
+                    <lightning:icon iconName="utility:refresh" size="x-small"  alternativeText="{!$Label.c.PC_RefreshReporterTypeChange}" title="{!format(v.tooltipRefreshMessage ,v.aeWrapper.occupation)}"/>
+
+                </div>
+            </aura:if>
+        </div>
+        <div class="slds-box ">
+            <div class="slds-gutters slds-grid">
+            	<div class="slds-col">
+                      <lightning:input name="reporterFirstName" label="{!v.fieldLabels.reporterFirstName}" value="{!v.aeWrapper.firstName}"/>
+                </div>
+                <div class="slds-col">
+                        <lightning:input name="reporterLastName" label="{!v.fieldLabels.reporterLastName}" value="{!v.aeWrapper.lastName}"/>
+                </div>
+            </div>
+            <div class="slds-gutters slds-grid">
+                <div class="slds-col">
+                	<lightning:input name="reporterAddress" label="{!v.fieldLabels.reporterAddress}" value="{!v.aeWrapper.address}"/>
+                </div>
+            </div>
+            <div class="slds-gutters slds-grid">
+            	<div class="slds-col">
+                        <lightning:input name="reporterState" label="{!v.fieldLabels.reporterState}" value="{!v.aeWrapper.state}"/>
+                        <lightning:input name="reporterZip" label="{!v.fieldLabels.reporterZip}" value="{!v.aeWrapper.zip}"/>
+                        <lightning:input type="tel" label="{!v.fieldLabels.reporterPhone}" name="{!v.fieldLabels.reporterPhone}" value="{!v.aeWrapper.phone}"/>
+                </div>
+                <div class="slds-col">
+                        <lightning:input name="reporterCity" label="{!v.fieldLabels.reporterCity}" value="{!v.aeWrapper.city}"/>
+                        <lightning:input name="reporterCountry" label="{!v.fieldLabels.reporterCountry}" value="{!v.aeWrapper.country}"/>
+                        <lightning:input type="email" name="reporterEmail"  label="{!v.fieldLabels.reporterEmail}" value="{!v.aeWrapper.email}"/>
+                </div>
+            </div>
+        </div>
+
+    <div class="slds slds-grid slds-wrap slds-p-top_small slds-p-left--small slds-p-bottom_small">
+
+        <div class="slds-col slds-size_5-of-12 ">
+                   <lightning:radioGroup name="reporterSentToFdaOptions" label="{!v.fieldLabels.reporterSentToFda}" options="{!v.reporterSentToFdaOptions}" value="{!v.aeWrapper.IRalsoSentReportToFDA}"/>
+        </div>
+    </div>
+
+        </aura:set>
+    </aura:if>
+
+
+
+</aura:component>

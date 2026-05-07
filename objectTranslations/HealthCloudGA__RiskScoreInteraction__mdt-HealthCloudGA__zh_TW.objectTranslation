@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>風險分數疾病互動</value>
+    </caseValues>
+    <fields>
+        <help><!-- True when this additive score is applied if the patient is disabled and has additional conditions. --></help>
+        <label>若殘疾則套用</label>
+        <name>HealthCloudGA__ApplyIfDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 FBDual</label>
+        <name>HealthCloudGA__CommunityFBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 FBDual</label>
+        <name>HealthCloudGA__CommunityFBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 NonDual</label>
+        <name>HealthCloudGA__CommunityNonDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 NonDual</label>
+        <name>HealthCloudGA__CommunityNonDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>高齡社群 PBDual</label>
+        <name>HealthCloudGA__CommunityPBDualAged__c</name>
+    </fields>
+    <fields>
+        <label>殘疾社群 PBDual</label>
+        <name>HealthCloudGA__CommunityPBDualDisabled__c</name>
+    </fields>
+    <fields>
+        <label>社群</label>
+        <name>HealthCloudGA__Community__c</name>
+    </fields>
+    <fields>
+        <label>具有條件</label>
+        <name>HealthCloudGA__HasConditions__c</name>
+    </fields>
+    <fields>
+        <label>機構</label>
+        <name>HealthCloudGA__Institutional__c</name>
+    </fields>
+    <fields>
+        <label>具有互動條件</label>
+        <name>HealthCloudGA__InteractingConditions__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether this record should be used. --></help>
+        <label>啟用</label>
+        <name>HealthCloudGA__IsActive__c</name>
+    </fields>
+    <fields>
+        <label>年份範圍</label>
+        <name>HealthCloudGA__YearSpan__c</name>
+    </fields>
+</CustomObjectTranslation>

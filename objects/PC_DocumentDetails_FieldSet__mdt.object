@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This metadata type is used to map fields sets to be displayed on the document management component by record types.</description>
+    <fields>
+        <fullName>PC_Document_RecordType_Namespaceprefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The field describes the namespace prefix for document record type.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Namespace of record type</inlineHelpText>
+        <label>Document Record Type Namespace Prefix</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Document_RecordType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is for Document Record Type developer name</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Please provide Document Record Type DeveloperName</inlineHelpText>
+        <label>Document Record Type</label>
+        <length>45</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_FieldSetName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This field is for Document Field Set Name. Please provide the api name.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Document Field Set Api</inlineHelpText>
+        <label>Field Set Name</label>
+        <length>50</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DocumentDetails FieldSet</label>
+    <pluralLabel>DocumentDetails FieldSets</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

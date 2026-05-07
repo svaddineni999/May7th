@@ -1,0 +1,6 @@
+<!--
+ - Created by kkanteti on 1/4/2021.
+ -->
+
+<aura:event type="APPLICATION" description="PC_AE2_RefreshEvent">
+</aura:event>

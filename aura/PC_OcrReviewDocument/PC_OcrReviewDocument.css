@@ -1,0 +1,69 @@
+/**
+ * Created by sathekumar on 9/6/2021.
+ */
+
+.THIS.ocrReviewDocument{
+    height: 100%;
+}
+
+.THIS .bold-font{
+    font-weight: 700;
+}
+
+.THIS.ocrReviewDocument .slds-docked-form-footer {
+    display: table;
+    position: inherit;
+}
+
+.THIS.ocrReviewDocument .right-panel{
+    display: flex;
+    flex-flow: column;
+}
+
+.THIS .dp-header-container{
+    position: sticky;
+    top: 0;
+    min-height: 3rem;
+    width: 100%;
+    background: #FFF;
+    z-index: 10;
+}
+
+.THIS .dp-body-height {
+    height: 100%;
+}
+
+.THIS .detailPanel .slds-section:first-child {
+    margin-top: 0;
+}
+
+.THIS .dp-body-height iframe {
+    min-height: calc(100vh - 345px) !important;
+}
+
+.THIS .collapsedLeftHeader{
+    display:none;
+}
+
+.THIS .collapsed .collapsedLeftHeader{
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    transform-origin: 0 0;
+    transform: rotate(90deg) translate(1rem,-2rem);
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+}
+
+.THIS .collapsed .left-toggle-button {
+    transform: rotate(180deg);
+    right: 0.5rem !important;
+}
+
+.THIS .collapsed.left-panel {
+    width: 3rem;
+    transition: width 0.2s ease-out;
+    border-right: 1px solid #d3d3d3;
+}

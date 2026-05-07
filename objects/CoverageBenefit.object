@@ -1,0 +1,888 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>BenefitNotes</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BenefitPeriodEndDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>BenefitPeriodStartDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CareBenefitVerifyRequestId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CoinsuranceNotes</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CopayNotes</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CoverageType</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DeductibleNotes</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Disclaimer</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>EmergencyDepartmentCopay</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyInNetworkDeductibleApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyInNetworkDeductibleLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyInNetworkDeductibleRemaining</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyInNetworkOutofPocketApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyInNetworkOutofPocketLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyInNetworkOutofPocketRemaining</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyOutofNetworkDeductibleApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyOutofNetworkDeductibleLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyOutofNetworkDeductibleRemaining</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyOutofNetworkOutofPocketApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyOutofNetworkOutofPocketLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FamilyOutofNetworkOutofPocketRemaining</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>FinalCoverageStatusCodeId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>InNetworkCoinsuranceAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>InNetworkCoinsurancePercentage</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>InNetworkLifetimeMaximum</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualInNetworkDeductibleApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualInNetworkDeductibleLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualInNetworkDeductibleRemaining</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualInNetworkOutofPocketApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualInNetworkOutofPocketLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualInNetworkOutofPocketRemaining</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualOutofNetworkDeductibleApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualOutofNetworkDeductibleLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualOutofNetworkDeductibleRemain</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualOutofNetworkOutofPocketApplied</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualOutofNetworkOutofPocketLimit</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IndividualOutofNetworkOutofPocketRemain</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>LifetimeMaximumNotes</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>MemberId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>MemberPlanId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OutcomeStatusCodeId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OutofNetworkCoinsuranceAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OutofNetworkCoinsurancePercentage</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OutofNetworkLifetimeMaximum</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>OutofPocketNotes</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PC_BillingMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message received after the billing process is completely executed.</description>
+        <externalId>false</externalId>
+        <label>Billing Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_BuyAndBill__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if buying and billing is permitted or not.  The status types are:
+• Yes: If buying and billing is permitted.
+•  No: If buying and billing is not permitted.
+•  Undetermined: If you cannot determine whether buying and billing is permitted or not.
+•  N/A: If buying and billing is not applicable.</description>
+        <label>Buy And Bill</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Undetermined</fullName>
+                    <default>false</default>
+                    <label>Undetermined</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_CoverageLevel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the type of the health plan associated with the patient. The types of health plan are:
+        • Primary: If it is a primary health plan.
+            • Secondary: If it is a secondary health plan.</description>
+        <label>Coverage Level</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Primary</fullName>
+                    <default>false</default>
+                    <label>Primary</label>
+                </value>
+                <value>
+                    <fullName>Secondary</fullName>
+                    <default>false</default>
+                    <label>Secondary</label>
+                </value>
+                <value>
+                    <fullName>Tertiary</fullName>
+                    <default>false</default>
+                    <label>Tertiary</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_CoverageStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the patient&apos;s insurance policy status. The status types are:
+• Active: If the patient&apos;s insurance policy status is active.
+• Inactive: If the patient&apos;s insurance policy status is inactive.
+• Incomplete: If the patient&apos;s insurance policy status is incomplete.
+• Ineligible: If the patient&apos;s insurance policy status is not eligible.
+• Undetermined: If the patient&apos;s insurance policy status cannot be determined.</description>
+        <label>Coverage Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Active</fullName>
+                    <default>false</default>
+                    <label>Active</label>
+                </value>
+                <value>
+                    <fullName>Inactive</fullName>
+                    <default>false</default>
+                    <label>Inactive</label>
+                </value>
+                <value>
+                    <fullName>Incomplete</fullName>
+                    <default>false</default>
+                    <label>Incomplete</label>
+                </value>
+                <value>
+                    <fullName>Ineligible</fullName>
+                    <default>false</default>
+                    <label>Ineligible</label>
+                </value>
+                <value>
+                    <fullName>Undetermined</fullName>
+                    <default>false</default>
+                    <label>Undetermined</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_EndDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date (as reported by Payer) when the policy was effective.</description>
+        <label>End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_GovernmentPlanType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Types of the government policies from Government Plan table are:
+• Government Policy Type from Government Plan Table FEP
+• Managed Medicaid
+• Medicaid, Medicare
+• Medicare Advantage
+• Medicare Supplemental
+• Tricare V/A</description>
+        <label>Government Plan Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>FEP</fullName>
+                    <default>false</default>
+                    <label>FEP</label>
+                </value>
+                <value>
+                    <fullName>Managed Medicaid</fullName>
+                    <default>false</default>
+                    <label>Managed Medicaid</label>
+                </value>
+                <value>
+                    <fullName>Medicaid</fullName>
+                    <default>false</default>
+                    <label>Medicaid</label>
+                </value>
+                <value>
+                    <fullName>Medicare Advantage</fullName>
+                    <default>false</default>
+                    <label>Medicare Advantage</label>
+                </value>
+                <value>
+                    <fullName>Medicare Supplemental</fullName>
+                    <default>false</default>
+                    <label>Medicare Supplemental</label>
+                </value>
+                <value>
+                    <fullName>Tricare V/A</fullName>
+                    <default>false</default>
+                    <label>Tricare V/A</label>
+                </value>
+                <value>
+                    <fullName>Medicare</fullName>
+                    <default>false</default>
+                    <label>Medicare</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_GroupName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The group name of the policy plan, as reported in the Payer eligibility response.</description>
+        <externalId>false</externalId>
+        <label>Group Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_GroupNo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The group number of the policy plan, as reported in the Payer eligibility response.</description>
+        <externalId>false</externalId>
+        <label>Group No</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_HealthPlan__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Indicates the health plan associated with the patient.</description>
+        <label>Health Plan</label>
+        <referenceTo>PC_Health_Plan__c</referenceTo>
+        <relationshipLabel>Coverage Benefits</relationshipLabel>
+        <relationshipName>PC_Coverage_Benefits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_IsGovernmentPlan__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if government plan is detected or not.  The status types are:
+• Yes: If the government plan is required.
+•  No: If the government plan is not required.
+•  Undetermined: If you cannot determine whether the government plan is required or not.
+•  N/A: If the government plan is not applicable.</description>
+        <label>Is Government Plan</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Undetermined</fullName>
+                    <default>false</default>
+                    <label>Undetermined</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_McSuppPlanLetter__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the patient’s Medicare Supplemental Policy Plan Letter. This letter will be provided if known.</description>
+        <externalId>false</externalId>
+        <label>MC Support Plan Letter</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_PA_Required__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if prior authorization is required or not.  The status types are:
+• Yes: If the prior authorization is required.
+•  No: If the prior authorization is not required.
+•  Undetermined: If you cannot determine whether the prior authorization is required or not.
+•  N/A: If the prior authorization is not applicable.</description>
+        <label>PA Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Undetermined</fullName>
+                    <default>false</default>
+                    <label>Undetermined</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_PayerMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The messages received from the payer.</description>
+        <externalId>false</externalId>
+        <label>Payer Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_PayerName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the health plan payer.</description>
+        <externalId>false</externalId>
+        <label>Payer Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_PlanName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the policy plan, as reported in the Payer eligibility response.</description>
+        <externalId>false</externalId>
+        <label>Plan Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_PlanType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The type of the policy plan, as reported in the Payer eligibility response.</description>
+        <externalId>false</externalId>
+        <label>Plan Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_PriorAuthMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message received when prior authorization is executed. This field is populated only when a Prior Authorization is required.</description>
+        <externalId>false</externalId>
+        <label>Prior Auth Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ProductAdminMessag__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message received from the administrator for a specific transaction.</description>
+        <externalId>false</externalId>
+        <label>Product Admin Message</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_ProgramCoverage__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Indicates the program coverage associated with the patient.</description>
+        <label>Program Coverage</label>
+        <referenceTo>PC_Program_Coverage__c</referenceTo>
+        <relationshipLabel>Coverage Benefits</relationshipLabel>
+        <relationshipName>PC_Coverage_Benefits</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_SpecialtyPharmacyInfo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if the specialty pharmacy is required or not .  The status types are:
+            • Yes: If the specialty pharmacy is required.
+            •  No: If the specialty pharmacy is not required.
+            •  Undetermined: If you cannot determine whether the specialty pharmacy is required or not.
+            •  N/A: If the specialty pharmacy is not applicable.</description>
+        <externalId>false</externalId>
+        <label>Specialty Pharmacy Info</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_SpecialtyPharmacyRequired__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Information about the associated specialty pharmacy.</description>
+        <label>Specialty Parmacy Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Yes</fullName>
+                    <default>false</default>
+                    <label>Yes</label>
+                </value>
+                <value>
+                    <fullName>No</fullName>
+                    <default>false</default>
+                    <label>No</label>
+                </value>
+                <value>
+                    <fullName>Undetermined</fullName>
+                    <default>false</default>
+                    <label>Undetermined</label>
+                </value>
+                <value>
+                    <fullName>N/A</fullName>
+                    <default>false</default>
+                    <label>N/A</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_StartDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date when the coverage benefit was initiated.</description>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_TransactionDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the date of transaction</description>
+        <label>Transaction Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PC_TransactionID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Unique ID assigned to the policy transaction.</description>
+        <externalId>true</externalId>
+        <label>Transaction ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_TransactionMessageID__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Id of the transaction message ( if applicable).</description>
+        <externalId>false</externalId>
+        <label>Transaction Message ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PharmaCopayAmount</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>PrimaryCareCopay</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystem</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystemIdentifier</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SourceSystemModified</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>SpecialistCopay</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>StatusCodeId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>UrgentCareCopay</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>VerificationDate</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <listViews>
+        <fullName>All_CoverageBenefits</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Coverage Benefits</label>
+    </listViews>
+    <searchLayouts>
+        <customTabListAdditionalFields>LastModifiedDate</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LastModifiedBy</customTabListAdditionalFields>
+        <customTabListAdditionalFields>MemberPlan</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Member</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>LastModifiedDate</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LastModifiedBy</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>MemberPlan</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Member</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LastModifiedDate</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LastModifiedBy</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>MemberPlan</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Member</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>LastModifiedDate</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LastModifiedBy</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>MemberPlan</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Member</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+</CustomObject>

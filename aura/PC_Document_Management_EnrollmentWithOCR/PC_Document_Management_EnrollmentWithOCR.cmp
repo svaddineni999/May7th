@@ -1,0 +1,85 @@
+<!--
+ - Created by sathekumar on 6/24/2021.
+ -->
+<aura:component description="PC_Document_Management_EnrollmentWithOCR" controller="PC_DocumentEnrollmentWithOCR"
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="Id"/>
+    <aura:attribute name="namespace" type="String" default=""/>
+    <aura:attribute name="namespacePrefix" type="String" default=""/>
+    <aura:attribute name="isOpen" type="boolean" default="false" access="private"/>
+    <aura:attribute name="showSpinner" type="boolean" default="false" access="private"/>
+    <aura:attribute name="ocrServiceEnabled" type="boolean" default="false" access="private"/>
+    <aura:attribute name="previousOcrQueueStatus" type="String" default="" access="private"/>
+    <aura:attribute name="applicantExistOnDocument" type="boolean" default="false" access="private"/>
+    <aura:attribute name="enrollmentCaseExistOnDocument" type="boolean" default="false" access="private"/>
+    <aura:attribute name="skipAndContinue" type="boolean" default="false" access="private"/>
+    <aura:attribute name="cancelAndContinue" type="boolean" default="false" access="private"/>
+    <aura:attribute name="warningMessage" type="String" default="" access="private"/>
+    <aura:attribute name="infoMessage" type="String" default="" access="private"/>
+    <aura:attribute name="errors" type="List" default="" access="private"/>
+    <aura:attribute name="continueEnrollment" type="String" default="" access="private"/>
+    <aura:attribute name="ocrInprogressWarning" type="String" default="{!$Label.c.PC_OcrInprogressWarning}" access="private"/>
+    <aura:attribute name="runOcrBeforeEnrollmentWarning" type="String" default="{!$Label.c.PC_RunOcrBeforeEnrollmentWarning}" access="private"/>
+    <aura:attribute name="previousOcrFailedMessage" type="String" default="{!$Label.c.PC_PreviousOcrFailedMessage}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="lightingErrorMessage" type="String" default="{! $Label.c.PC_Lighting_Error_Message}"
+                    access="private"/>
+    <aura:attribute name="actionAttribute" type="String" access="global" default='{"openEnrollmentInNewTab":false}'/>
+
+    <div id="PC_Document_Management_EnrollmentWithOCR">
+        <aura:if isTrue="{!v.isOpen}">
+            <section class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close"
+                                              onclick="{! c.closeModal }"
+                                              alternativeText="close"
+                                              variant="bare-inverse"
+                                              class="slds-modal__close"/>
+                        <h2 class="slds-modal__title slds-hyphenate" style="text-align:left">{!$Label.c.PC_OcrAlert}</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_large">
+                        <aura:if isTrue="{!v.showSpinner}">
+                            <lightning:spinner aura:id="OcrSpinner" alternativeText="Loading"/>
+                        </aura:if>
+                        <aura:if isTrue="{! v.errors.length > 0 }">
+                            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+                        </aura:if>
+                        <p class="slds-text-heading_small">
+                            {!v.infoMessage}
+                        </p>
+                        <aura:if isTrue="{! !empty(v.warningMessage)}">
+                            <div class="slds-box slds-box_x-small slds-m-vertical_medium">
+                                <div class="slds-grid">
+                                    <lightning:icon iconName="utility:error" alternativeText="Error!" title="Error" variant="error" size="small" class="slds-col slds-m-right--small slds-no-flex"/>
+                                    <div class="slds-col slds-align-middle">
+                                        <p class="slds-text-color_error">{!v.warningMessage}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </aura:if>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <lightning:button label="{!$Label.c.PC_Cancel_Button}" title="{!$Label.c.PC_Cancel_Button}" onclick="{! c.closeModal }"/>
+                        <aura:if isTrue="{!v.skipAndContinue}">
+                            <lightning:button variant="brand" label="{!$Label.c.PC_RunOcrButton}" onclick="{!c.openOCR}"/>
+                            <lightning:button variant="brand" label="{!$Label.c.PC_ContinueEnrollmentButton}" onclick="{!c.onSkipAndContinue}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.cancelAndContinue}">
+                            <lightning:button variant="brand" label="{!$Label.c.PC_CancelOcrAndContinueEnrollmentButton}" onclick="{!c.onCancelAndContinue}"/>
+                        </aura:if>
+                        <aura:if isTrue="{!v.continueEnrollment}">
+                            <lightning:button variant="brand" label="{!$Label.c.PC_ContinueEnrollmentLabel}" onclick="{!c.onContinueEnrollment}"/>
+                        </aura:if>
+                    </footer>
+                </div>  
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+
+    <div aura:id="enrollmentOCRComponent">
+        {!v.body}
+    </div>
+</aura:component>

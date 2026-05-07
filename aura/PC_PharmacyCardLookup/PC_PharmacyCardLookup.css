@@ -1,0 +1,17 @@
+/**
+ * Created by sahgarg on 5/4/2018.
+ */
+.THIS .clearBoth {
+    clear : both;
+}
+.THIS .pcResponse dt {
+    padding-bottom: 2px;
+}
+.THIS .pcResponse dd {
+    padding-bottom: 2px;
+}
+.THIS .resultsHeadingText {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: block;
+}

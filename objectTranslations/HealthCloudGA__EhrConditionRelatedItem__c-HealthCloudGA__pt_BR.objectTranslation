@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Item relacionado à condição do RES</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Itens relacionados à condição do RES</value>
+    </caseValues>
+    <fields>
+        <label>Rótulo do código</label>
+        <name>HealthCloudGA__CodeLabel__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de códigos</label>
+        <name>HealthCloudGA__CodeSystem__c</name>
+    </fields>
+    <fields>
+        <label>Código</label>
+        <name>HealthCloudGA__Code__c</name>
+    </fields>
+    <fields>
+        <label>Condição</label>
+        <name>HealthCloudGA__Condition__c</name>
+        <relationshipLabel>Itens relacionados à condição do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Está restrito</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>Está visível no cartão do paciente</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Declaração de medicação</label>
+        <name>HealthCloudGA__MedicationStatement__c</name>
+        <relationshipLabel>Itens relacionados à condição do RES</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Observações</label>
+        <name>HealthCloudGA__Notes__c</name>
+    </fields>
+    <fields>
+        <label>Sistema de origem modificado</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema de origem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Condição de destino</label>
+        <name>HealthCloudGA__TargetCondition__c</name>
+        <relationshipLabel>Itens relacionados à condição do RES (condição de destino)</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Detalhe do destino</label>
+        <name>HealthCloudGA__TargetDetail__c</name>
+    </fields>
+    <fields>
+        <label>Imunização do alvo</label>
+        <name>HealthCloudGA__TargetImmunization__c</name>
+        <relationshipLabel>Itens relacionados à condição do RES</relationshipLabel>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Nome da condição do RES</nameFieldLabel>
+</CustomObjectTranslation>

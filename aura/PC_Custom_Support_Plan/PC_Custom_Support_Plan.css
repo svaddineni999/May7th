@@ -1,0 +1,29 @@
+/**
+ * Created by havalakki on 10/11/2018.
+ */
+.THIS .restrictDivSize  {
+    width: 70%;
+    max-width: 1000px;
+    min-width: 500px;
+}
+
+.THIS .modelContentStyle  {
+    padding: 2rem;
+    padding-bottom: 1.25rem;
+}
+
+.THIS .slds-section {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.THIS #userTaskPropertiesContainer .conditionalBuilderBox {
+    border: 1px solid #006eb3;
+    border-radius: .25rem;
+    background-color: rgb(249, 249, 250);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+}
+.THIS .slds-form_stacked .slds-form-element:not(.slds-form-element_readonly){
+    margin-bottom : var(--lwc-spacingXxSmall,0.5rem);
+}

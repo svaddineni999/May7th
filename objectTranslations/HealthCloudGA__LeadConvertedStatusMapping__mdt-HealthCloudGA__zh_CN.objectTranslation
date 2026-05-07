@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>潜在客户转换状态映射</value>
+    </caseValues>
+    <fields>
+        <label>活动</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>潜在客户转换状态</label>
+        <name>HealthCloudGA__LeadConvertedStatus__c</name>
+    </fields>
+    <fields>
+        <label>潜在客户记录类型名称</label>
+        <name>HealthCloudGA__LeadRecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label>记录类型命名空间</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+</CustomObjectTranslation>

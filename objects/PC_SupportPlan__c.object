@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>PC_Custom_Support_Plan</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <content>PC_Custom_Support_Plan</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <comment>New Layout for Support Plan</comment>
+        <content>PC_Custom_Support_Plan</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <comment>New Layout for Support Plan</comment>
+        <content>PC_Custom_Support_Plan</content>
+        <formFactor>Small</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>LightningComponent</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>PC_SupportPlanBuilder_FlexiPage</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Custom object in Patient Connect that helps to create a predefined template of activities (tasks and events) according to the type of case and the brands that are supported.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
+    <fields>
+        <fullName>PC_ConditionBehavior__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates how the Start Condition should be treated: 
+ -Wait Until True: The Support Plan will stay on the current activity unless a Start Condition is met.
+ -No Condition: There is no condition on the Support Plan activity and hence can be created/executed.</description>
+        <label>Condition Behavior</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Condition</fullName>
+                    <default>true</default>
+                    <label>No Condition</label>
+                </value>
+                <value>
+                    <fullName>Wait until True</fullName>
+                    <default>false</default>
+                    <label>Wait until True</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Condition_Option__c</fullName>
+        <deprecated>false</deprecated>
+        <label>Condition Option</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Apex Class</fullName>
+                    <default>false</default>
+                    <label>Apex Class</label>
+                </value>
+                <value>
+                    <fullName>Conditional Builder</fullName>
+                    <default>false</default>
+                    <label>Condition Builder</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Conditional_Logic__c</fullName>
+        <deprecated>false</deprecated>
+        <description>JSON string containing the conditional rows</description>
+        <label>Conditional Logic</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Provides a brief description about Support Plan.</description>
+        <inlineHelpText>Description of Support Plan</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_InitialActivity__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates if an activity is the first activity of a Support Plan. References &apos;Internal Activity Number&apos;.</description>
+        <externalId>false</externalId>
+        <label>Initial Activity</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_IsActive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Indicates if the Support Plan is active.</description>
+        <label>Is Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_StartCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the condition that must be evaluated before a Support Plan is initiated.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Condition that needs to be met to initiate Support Plan</inlineHelpText>
+        <label>Start Condition</label>
+        <length>250</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_SupportPlan_Behavior__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This describes the behavior of the Support Plan. Note - If the value is blank, then the behavior is assumed to be &apos;RunEveryTimeRuleMatches&apos; by default.</description>
+        <inlineHelpText>Would you like to run this Support Plan every time the conditions are met for a record?</inlineHelpText>
+        <label>Support Plan Runtime Behavior</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>RunEveryTimeRuleMatches</fullName>
+                    <default>true</default>
+                    <label>Yes, run this Support Plan every time the conditions are met.</label>
+                </value>
+                <value>
+                    <fullName>RunOncePerRecord</fullName>
+                    <default>false</default>
+                    <label>No, run this Support Plan only once per record.</label>
+                </value>
+                <value>
+                    <fullName>RunEveryTimeIfNoPendingRuntime</fullName>
+                    <default>false</default>
+                    <label>No, run this Support Plan only when there are no pending activities from previous Support Plan Runtime(s).</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_TriggerEventConditionOption__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the type of option to evaluate trigger condition</description>
+        <label>Condition Option</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Conditional Builder</fullName>
+                    <default>false</default>
+                    <label>Conditional Builder</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_TriggerEventCondition__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Stores the Trigger condition logic in JSON Format</description>
+        <label>Condition</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_TriggerEventConditionalBehavior__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates how the Trigger Event Condition should be treated:
+-Wait Until True: The Support plan will stay on the current activity till Trigger Event Condition is met.
+-No Condition: There is no condition and hence Support plan can be created/executed.</description>
+        <label>Conditional Behavior</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>No Condition</fullName>
+                    <default>false</default>
+                    <label>No Condition</label>
+                </value>
+                <value>
+                    <fullName>Wait until True</fullName>
+                    <default>false</default>
+                    <label>Wait until True</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_TriggerEventObject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API Name of Object on which  Support plan is Run</description>
+        <externalId>false</externalId>
+        <label>Object</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_TriggerEventType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Event Type of Trigger Object on which  Support plan should start processing</description>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Insert</fullName>
+                    <default>false</default>
+                    <label>Insert</label>
+                </value>
+                <value>
+                    <fullName>Update</fullName>
+                    <default>false</default>
+                    <label>Update</label>
+                </value>
+                <value>
+                    <fullName>Insert/Update</fullName>
+                    <default>false</default>
+                    <label>Insert/Update</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PC_Version__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Indicates the version of the Support Plan.</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Support Plan</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>PC_Version__c</columns>
+        <columns>PC_IsActive__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>PC_StartCondition__c</columns>
+        <columns>PC_ConditionBehavior__c</columns>
+        <columns>PC_Condition_Option__c</columns>
+        <columns>PC_Conditional_Logic__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Support Plan Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Support Plans</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>PC_Avoid_DuplicateName</fullName>
+        <active>true</active>
+        <errorConditionFormula>and(
+    Name = VLOOKUP
+       ($ObjectType.PC_SupportPlan__c.Fields.Name , $ObjectType.PC_SupportPlan__c.Fields.Name, Name ),
+
+    not(
+     Id=VLOOKUP
+         ($ObjectType.PC_SupportPlan__c.Fields.Id , $ObjectType.PC_SupportPlan__c.Fields.Name, Name )))</errorConditionFormula>
+        <errorDisplayField>Name</errorDisplayField>
+        <errorMessage>Support Plan name already exists, please choose a different name.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>

@@ -1,0 +1,156 @@
+<!--
+Lightning component  : PC_AdverseEvents
+Description          : Display related list of Adverse Events related to Program Case and New Adverse Event Popup Launcher
+Parameters           : Record Id from the Action Center
+Modification Log:
+Haritha Reddy 		 25-Oct-2018    Initial Version
+Shishir Bansal       15-Sep-2019    [PC-5572] added two new columns Submission Status and Event Type on lise view
+                                    and updated the UI removing extra space
+Haritha Reddy        06-Jan-2020    [PC-5600] added new property usePrescriptionForSuspectProducts with default value
+                                    in adverseEventMenuCmpAttributes attribute
+-->
+
+<aura:component controller = "PC_AdverseEventsController" implements="force:hasRecordId" description="PC_AdverseEvents" access="global">
+    <ltng:require styles="{!$Resource.PC_Resources + '/PC_Resources/Css/PCApp.css'}"/>
+    <aura:handler name = "init" action = "{!c.doInit}" value = "{!this}"/>
+    <aura:attribute name="AEList" type="Object[]" />
+    <aura:attribute name="fieldLabels" type="Object" default="false"/>
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="errorDescription" type="String" default="Unknown error"/>
+    <aura:attribute name="AEpoupLabel" type="String" default="{!$Label.c.PC_AE_AdverseEventReport}"/>
+    <aura:attribute name="newAdverseEvent" type="String" default="{!$Label.c.PC_New}"/>
+    <aura:attribute name="isLoading" type="Boolean" default="false"/>
+    <aura:attribute name="adverseEventMenuCmpAttributes" type="Map"
+                    default='{"hideAdditionalInfoTab":true,"additionalInfoTabFieldSet":"","usePrescriptionForSuspectProducts": true}' access="global"/>
+    <aura:attribute name="errors" type="List" />
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" />
+    <aura:attribute name="vfPageName" type="String"/>
+    <aura:attribute name="dateFormatErrorMessage" type="String" default=""/>
+    <div class="pcLightningFormOverride pcNormalFontWeight">
+        <lightning:overlayLibrary aura:id="overlayLib"/>
+
+        <aura:if isTrue="{! v.errors.length > 0 }">
+            <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+            <aura:set attribute="else">
+                <aura:if isTrue="{!v.isLoading}">
+                    <div class="pc_spinner slds-align-middle">
+                        <lightning:spinner class="slds-text-align--center" size="small" variant="brand"/>
+                    </div>
+                    <aura:set attribute="else">
+                        <div>
+                            <div style="border: 1px solid #d8dde6;">
+                                <!--Start of Header Component-->
+                                <div class="slds-tabs--scoped__nav slds-page-header_object-home" >
+                                    <div class="slds-col"></div>
+                                    <div class="slds-col slds-no-flex">
+                                        <div class="slds-m-bottom--x-small"/>
+                                        <div class="slds-form-element">
+                                            <div class="slds-float--right">
+                                                <lightning:button onclick="{!c.openAEPopup}" variant="brand">{!v.newAdverseEvent}</lightning:button>
+                                            </div>
+                                        </div>
+                                        <div class="slds-m-bottom--x-small"  />
+                                    </div>
+                                </div>
+                                <!--Adverse Event Table-->
+                                <div class="slds-modal__content slds-p-around_medium" style="{!v.AEList.length == 0 ? '' : 'display:none;'}" >
+                                {!$Label.c.PC_No_Records_Found}
+                                    <br></br>
+                                </div>
+                                <div class="dataTable" id="modal-content-id-1" style="{!v.AEList.length != 0 ? '' : 'display:none;'}">
+                                    <table class="slds-table slds-table--fixed-layout slds-table_bordered">
+                                        <thead>
+                                        <tr class="slds-text-title_caps">
+                                            <th class="slds-cell-shrink" scope="col"></th>
+                                            <th class="slds-cell-shrink" scope="col"></th>
+                                            <!--<th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.name}">{!v.fieldLabels.name}</div>
+                                            </th>-->
+                                            <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.pt}">{!v.fieldLabels.pt}</div>
+                                            </th>
+                                            <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.llt}">{!v.fieldLabels.llt}</div>
+                                            </th>
+                                            <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.products}">{!v.fieldLabels.products}</div>
+                                            </th>
+                                            <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.reporter}">{!v.fieldLabels.reporter}</div>
+                                            </th>
+
+                                           <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.submissionStatus}">{!v.fieldLabels.submissionStatus}</div>
+                                            </th>
+                                           <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.eventType}">{!v.fieldLabels.eventType}</div>
+                                            </th>
+                                            <th scope="col" class="">
+                                                <div class="slds-truncate" title="{!v.fieldLabels.version}">{!v.fieldLabels.version}</div>
+                                            </th>
+                                            <th class="slds-cell-shrink" scope="col"></th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <aura:iteration items ="{!v.AEList}" var="ae" indexVar="i">
+                                            <tr>
+                                                <td  class="slds-cell-shrink" title="{!ae.name}">
+                                                    <!--<a id ="{!ae.aeId}" role="link" onclick="{!c.navigateToRecord}" target="_self">
+                                                            {!ae.name}
+                                                    </a>-->
+                                                    <lightning:button value="{!ae.aeId}" type="button"  variant="base" iconName="utility:preview" onclick="{!c.navigateToRecord}"/>
+                                                </td>
+                                                <td class="slds-cell-shrink">
+
+                                                        <lightning:button value="{!ae.aeId}" type="button" variant="base" iconName="utility:edit" onclick="{!c.openAEPopup}"/>
+
+                                                </td>
+
+                                                <td class="slds-truncate"  title="{!ae.patient}">
+                                                        {!ae.pt}
+                                                </td>
+                                                <td class="slds-truncate"  title="{!ae.llt}">
+                                                        {!ae.llt}
+                                                </td>
+                                                <td  class="slds-truncate">
+                                                    <aura:iteration items="{!ae.prodList}" var="obj">
+                                                            <a id ="{!obj.Id}" role="link" onclick="{!c.navigateToRecordDetail}" target="_self">
+                                                                    {!obj.Name}
+                                                            </a>
+                                                        <br/>
+                                                    </aura:iteration>
+                                                </td>
+                                                <td  class="slds-truncate" title="{!ae.reporter}">
+                                                        {!ae.reporter}
+                                                </td>
+
+                                                 <td  class="slds-truncate" title="{!ae.submissionStatus}">
+                                                        {!ae.submissionStatus}
+                                                </td>
+                                                 <td  class="slds-truncate" title="{!ae.eventType}">
+                                                        {!ae.eventType}
+                                                </td>
+                                                <td  class="slds-truncate" title="{!ae.versionNumber}">
+                                                        {!ae.versionNumber}
+                                                </td>
+                                                <td class="slds-truncate" >
+                                                    <div class="slds-truncate slds-text-align--center" data-id="" title="">
+                                                        <lightning:button value="{!ae.aeId}" type="button" variant="base" iconName="utility:download"  onclick="{!c.downloadPDF}"/>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </aura:iteration>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </aura:set>
+                </aura:if>
+            </aura:set>
+        </aura:if>
+
+    </div>
+</aura:component>

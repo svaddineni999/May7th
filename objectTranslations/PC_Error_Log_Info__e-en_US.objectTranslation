@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Error Log Info</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Error Logs Info</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>PC_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Class Name --></label>
+        <name>PC_Class_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Date/Time --></label>
+        <name>PC_Error_DateTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Error Message --></label>
+        <name>PC_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Number --></label>
+        <name>PC_Line_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Log Level --></label>
+        <name>PC_Log_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Method Name --></label>
+        <name>PC_Method_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerId --></label>
+        <name>PC_OwnerId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record ID --></label>
+        <name>PC_Record_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running User --></label>
+        <name>PC_Running_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack Trace --></label>
+        <name>PC_Stack_Trace__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

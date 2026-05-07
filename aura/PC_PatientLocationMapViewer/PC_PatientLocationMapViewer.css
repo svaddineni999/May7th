@@ -1,0 +1,12 @@
+.THIS .map {
+    /*empty block*/
+}
+.THIS .toggleDisplay {
+    display: none;
+}
+.THIS .P1C1 {
+    height: 300px;
+    width:100%;
+    margin-top: 10px;
+    margin-bottom:10px
+}

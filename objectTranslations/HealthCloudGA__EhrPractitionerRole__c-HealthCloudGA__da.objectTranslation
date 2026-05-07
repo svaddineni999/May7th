@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value>Rollen for praktiserende læger i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>false</plural>
+        <value>Rolle for praktiserende læger i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value>Rolle for praktiserende læger i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value>Rollerne for praktiserende læger i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>Indefinite</article>
+        <plural>true</plural>
+        <value>Roller for praktiserende læger i EPJ</value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value>Roller for praktiserende læger i EPJ</value>
+    </caseValues>
+    <fields>
+        <label>Praktiserende læge i EPJ</label>
+        <name>HealthCloudGA__EhrPractitioner__c</name>
+        <relationshipLabel>Roller for praktiserende læger i EPJ</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Slutdato</label>
+        <name>HealthCloudGA__EndDate__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Rollekode</label>
+        <name>HealthCloudGA__RoleCode__c</name>
+    </fields>
+    <fields>
+        <label>Rollebetegnelse</label>
+        <name>HealthCloudGA__RoleLabel__c</name>
+    </fields>
+    <fields>
+        <label>Rollesystem</label>
+        <name>HealthCloudGA__RoleSystem__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem-id</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Kildesystem ændret</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Kildesystem</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Speciale1 – Kode</label>
+        <name>HealthCloudGA__Specialty1Code__c</name>
+    </fields>
+    <fields>
+        <label>Speciale1 – Betegnelse</label>
+        <name>HealthCloudGA__Specialty1Label__c</name>
+    </fields>
+    <fields>
+        <label>Speciale1 – System</label>
+        <name>HealthCloudGA__Specialty1System__c</name>
+    </fields>
+    <fields>
+        <label>Speciale2 – Kode</label>
+        <name>HealthCloudGA__Specialty2Code__c</name>
+    </fields>
+    <fields>
+        <label>Speciale2 – Betegnelse</label>
+        <name>HealthCloudGA__Specialty2Label__c</name>
+    </fields>
+    <fields>
+        <label>Speciale2 – System</label>
+        <name>HealthCloudGA__Specialty2System__c</name>
+    </fields>
+    <fields>
+        <label>Speciale3 – Kode</label>
+        <name>HealthCloudGA__Specialty3Code__c</name>
+    </fields>
+    <fields>
+        <label>Speciale3 – Betegnelse</label>
+        <name>HealthCloudGA__Specialty3Label__c</name>
+    </fields>
+    <fields>
+        <label>Speciale3 – System</label>
+        <name>HealthCloudGA__Specialty3System__c</name>
+    </fields>
+    <fields>
+        <label>Speciale4 – Kode</label>
+        <name>HealthCloudGA__Specialty4Code__c</name>
+    </fields>
+    <fields>
+        <label>Speciale4 – Betegnelse</label>
+        <name>HealthCloudGA__Specialty4Label__c</name>
+    </fields>
+    <fields>
+        <label>Speciale4 – System</label>
+        <name>HealthCloudGA__Specialty4System__c</name>
+    </fields>
+    <fields>
+        <label>Speciale5 – Kode</label>
+        <name>HealthCloudGA__Specialty5Code__c</name>
+    </fields>
+    <fields>
+        <label>Speciale5 – Betegnelse</label>
+        <name>HealthCloudGA__Specialty5Label__c</name>
+    </fields>
+    <fields>
+        <label>Speciale5 – System</label>
+        <name>HealthCloudGA__Specialty5System__c</name>
+    </fields>
+    <fields>
+        <label>Startdato</label>
+        <name>HealthCloudGA__StartDate__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Rollenavn for praktiserende læge i EPJ</nameFieldLabel>
+</CustomObjectTranslation>

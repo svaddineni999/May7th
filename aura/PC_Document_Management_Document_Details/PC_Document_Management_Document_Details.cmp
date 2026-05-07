@@ -1,0 +1,106 @@
+<!--
+ - Created by sahgarg on 1/12/2018.
+Modification Log:
+Prachi Nandgaonkar      Jan 24, 2018         [PC-2565] Updated helper.PC_Graph to show document's record type instead of
+											 generic word 'Document'
+Shabda Bhujad           Jan 26, 2018         [PC-2682] Updated slds styles so that the field set display matches the specs
+Vijay Kashikar          Feb 09, 2018         [PC-2771] Made changes so as to listen to force:refreshView
+Sahil Garg              Feb 12, 2018         [PC-2776] Added accordion style to expand and collapse
+Prachi Nandgaonkar      Feb 13, 2018         [PC-2794] Removed padding to align with Document Action Ribbon
+Satheesh Kumar          Jul 23, 2020         [PC-6483] Added PC_Document_Name__c field in header section
+Haritha Reddy           Jan 15, 2021         [PC-7204] Updated SLDS of Document name and Status from Truncate to Wrap
+Haritha Reddy           Feb 11, 2021         [PC-7409] Updated logic to clear document details field set values before reloading the data
+Haritha Reddy           Feb 17, 2021         [PC-7425] Added CSS to wrap words in Document name and Status
+ -->
+
+<aura:component description="PC_Document_Management_Document_Details" controller="PC_DocumentManagement_DocumentDetails" implements="force:appHostable,flexipage:availableForAllPageTypes,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require scripts="{! $Resource.PC_JQuery + '/PC_JQuery/js/jquery-3.1.1.min.js'}" afterScriptsLoaded="{!c.doneRendering}" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler event="force:refreshView" action="{!c.doInit}"/>
+    <aura:attribute name="userId" type="String"/>
+    <aura:attribute name="documentType" type="String"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="doc" type="docWrapper.object"/>
+    <aura:attribute name="Document" type="String" default="{!$Label.c.PC_Document}" />
+    <aura:attribute name="InboundEmail" type="String" default="{!$Label.c.PC_Inbound_Email}" />
+    <aura:attribute name="details" type="PC_DocumentManagementLightningController.Object[]"/>
+    <aura:attribute name="parentHasAttachments"  type="Boolean" default="true"/>
+    <aura:attribute name="isParentDoc" type="Boolean" default="true" /><!--(By default all new documents could be parent)-->
+    <aura:attribute name="ErrorText" type="String" default="{!$Label.c.PC_Lighting_Error_Message}" />
+    <aura:attribute name="fsName" type="String" default=""/>
+    <aura:attribute name="typeName" type="String" default="PC_Document__c"/>
+    <aura:attribute name="fields" type="Object[]"/>
+    <aura:attribute name="fieldset" type="Object[]" access="PUBLIC"/>
+    <aura:attribute name="fieldsetMap" type="Map" access="PUBLIC"/>
+    <aura:attribute name="form" type="Aura.Component[]" access="PUBLIC"/>
+    <aura:attribute name="inputToField" type="Map"/>
+    <aura:attribute name="noOfRows" type="Integer[]" />
+    <aura:attribute name="noOfColumns" type="Integer[]" />
+    <aura:attribute name="noOfItemsInARow" type="Integer" access="PUBLIC" default="3"/>
+    <aura:attribute name="showForm" type="Boolean"  access="PRIVATE" default="FALSE"/>
+    <aura:attribute name="InboundFax" type="String" default="{!$Label.c.PC_Inbound_Fax}" />
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="documentName" type="String"/>
+
+    <lightning:flexipageRegionInfo />
+    <div class="slds" aura:id="documentDetailsId">
+        <div>
+            <div class="slds-page-header" style="cursor: pointer;" onclick="{!c.showAccordion}">
+                <section class="slds-clearfix">
+                    <div class="slds-float--left ">
+                        <lightning:icon class="slds-show" aura:id="articleOne" iconName="utility:chevrondown" size="x-small" alternativeText="Indicates open"/>
+                        <lightning:icon class="slds-hide" aura:id="articleOne" iconName="utility:chevronright" size="x-small" alternativeText="Indicates close"/>
+                    </div>
+                    <div class="slds-m-left_large">{!$Label.c.PC_DocumentDetails}
+                        <div class="slds-grid slds-gutters_small wordWrap">
+                            <div class="slds-col slds-size_2-of-3">
+                                <p class="slds-text-heading_label">{!v.documentType}</p>
+                                <h1 class="slds-page-header__title slds-wrap slds-align-middle" title="{!if(empty(v.documentName),v.doc.Name,v.doc.Name+' - '+v.documentName)}">
+                                    <b>{!v.doc.Name}</b>
+                                    <aura:if isTrue="{! !empty(v.documentName)}">
+                                        - <b>{!v.documentName}</b>
+                                    </aura:if>
+                                </h1>
+                            </div>
+                            <div class="slds-size_1-of-3 slds-p-left--xx-small ">
+                                <p class="slds-text-heading_label">{!$Label.c.PC_Status}</p>
+                                <h1 class="slds-page-header__title slds-wrap">
+                                    <b>{!v.details[0].docStatusLabel}</b>
+                                </h1>
+                            </div>
+                        </div>
+                   </div>
+                </section>
+            </div>
+
+            <div class="slds-show" aura:id="articleOne">
+                <div class="slds-tabs--scoped">
+                    <div id="tab-scoped-1" class="slds-tabs--scoped__content slds-show" role="tabpanel" aria-labelledby="tab-scoped-1__item">
+
+                        <aura:if isTrue="{! v.showForm}">
+                            <fieldset class="slds-form slds-form_stacked">
+
+                                    <aura:iteration items="{!v.noOfRows}" var="rows" indexVar="i">
+                                        <div class="slds-grid slds-gutters_small">
+                                            <aura:iteration items="{!v.noOfColumns}" var="col" indexVar="j">
+                                                <div class="slds-col slds-grid slds-has-flexi-truncate">
+                                                    <div class="slds-form-element slds-form-element_readonly">
+                                                        <aura:if isTrue="{! !empty(v.fieldsetMap)}">
+                                                            <c:PC_Document_Details_FieldSet fieldset="{!v.fieldsetMap}" index="{!i+''+j}"/>
+                                                        </aura:if>
+                                                    </div>
+                                                </div>
+                                            </aura:iteration>
+                                        </div>
+                                    </aura:iteration>
+
+                            </fieldset>
+                        </aura:if>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>OCR Template Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>OCR Template Mappings</value>
+    </caseValues>
+    <fields>
+        <help><!-- JSON String that holds the mapping of form fields to the sObject fields.
+Format. [{&apos;Key1&apos;:&apos;Value1&apos;}, {&apos;Key2&apos;:&apos;Value2&apos;}] --></help>
+        <label><!-- Field Mapping --></label>
+        <name>PC_FieldMapping__c</name>
+    </fields>
+    <fields>
+        <help><!-- Auto-generated unique ID for OCR Template mapping. It can also be used for migrating across organizations. --></help>
+        <label><!-- Internal Mapping Number --></label>
+        <name>PC_InternalMappingNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Active --></label>
+        <name>PC_IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- OCR Template Type --></label>
+        <name>PC_OcrTemplateType__c</name>
+        <relationshipLabel><!-- OCR Template Mappings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Target Object Record Type --></label>
+        <name>PC_TargetObjectRecordType__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Object --></label>
+        <name>PC_TargetObject__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

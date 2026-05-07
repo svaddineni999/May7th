@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Stores all the integration configuration, endpoint, custom headers and details.</description>
+    <fields>
+        <fullName>ACLS_APIKey__c</fullName>
+        <description>Stores the API key for applicable integrations</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>API Key</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_BaseURL__c</fullName>
+        <description>Base Url / domain for the integration</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>BaseURL</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Endpoint__c</fullName>
+        <description>Endpoint for the individual integration</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Endpoint</label>
+        <length>2000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_Environment__c</fullName>
+        <description>Specifies the Ashfield CLS environment for the applicable integration endpoint</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Environment</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>DEV</fullName>
+                    <default>true</default>
+                    <label>DEV</label>
+                </value>
+                <value>
+                    <fullName>QA</fullName>
+                    <default>false</default>
+                    <label>QA</label>
+                </value>
+                <value>
+                    <fullName>SIT</fullName>
+                    <default>false</default>
+                    <label>SIT</label>
+                </value>
+                <value>
+                    <fullName>UAT</fullName>
+                    <default>false</default>
+                    <label>UAT</label>
+                </value>
+                <value>
+                    <fullName>TRAIN</fullName>
+                    <default>false</default>
+                    <label>TRAIN</label>
+                </value>
+                <value>
+                    <fullName>PROD</fullName>
+                    <default>false</default>
+                    <label>PROD</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Headers__c</fullName>
+        <description>Specifies the custom headers to be included with request in a JSON form</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Headers</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ACLS_IntegrationName__c</fullName>
+        <description>Specifies the integration name for which the domain , header details and other configurations are required</description>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Integration Name</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Five9 SMS Token</fullName>
+                    <default>true</default>
+                    <label>Five9 SMS Token</label>
+                </value>
+                <value>
+                    <fullName>Five9 SMS OptIn</fullName>
+                    <default>false</default>
+                    <label>Five9 SMS OptIn</label>
+                </value>
+                <value>
+                    <fullName>Five9 SMS SendSMS</fullName>
+                    <default>false</default>
+                    <label>Five9 SMS SendSMS</label>
+                </value>
+                <value>
+                    <fullName>Five9 SMS GetStatus</fullName>
+                    <default>false</default>
+                    <label>Five9 SMS GetStatus</label>
+                </value>
+                <value>
+                    <fullName>RisRx Pharmacy</fullName>
+                    <default>false</default>
+                    <label>RisRx Pharmacy</label>
+                </value>
+                <value>
+                    <fullName>Melissa Address</fullName>
+                    <default>false</default>
+                    <label>Melissa Address</label>
+                </value>
+                <value>
+                    <fullName>HC Split</fullName>
+                    <default>false</default>
+                    <label>HC Split</label>
+                </value>
+                <value>
+                    <fullName>Fax</fullName>
+                    <default>false</default>
+                    <label>Fax</label>
+                </value>
+                <value>
+                    <fullName>eFax Fax Token</fullName>
+                    <default>false</default>
+                    <label>eFax Fax Token</label>
+                </value>
+                <value>
+                    <fullName>eFax Fax SendFax</fullName>
+                    <default>false</default>
+                    <label>eFax Fax SendFax</label>
+                </value>
+                <value>
+                    <fullName>eFax Fax GetStatus</fullName>
+                    <default>false</default>
+                    <label>eFax Fax GetStatus</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ACLS_Integration_Procedure_Name__c</fullName>
+        <description>Stores the Integration Procedure Name</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Integration Procedure Name</label>
+        <length>100</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ACLS_Timeout__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Timeout</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Integration Configuration</label>
+    <listViews>
+        <fullName>Custom</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>ACLS_IntegrationName__c</columns>
+        <columns>ACLS_APIKey__c</columns>
+        <columns>ACLS_BaseURL__c</columns>
+        <columns>ACLS_Endpoint__c</columns>
+        <columns>ACLS_Timeout__c</columns>
+        <columns>ACLS_Environment__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Custom</label>
+    </listViews>
+    <pluralLabel>Integration Configurations</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

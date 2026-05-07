@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Custom metadata configuration to indicate which objects related to selected account should be shown on document link functionality, in which order and which fields should be shown for each of those objects.</description>
+    <fields>
+        <fullName>PC_Account_Lookup_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of  sObject look-up field related to Account. This field is used to query which records to display on linking screen by filtering it on this account lookup.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of  sObject look-up field related to Account. This field is used to query which records to display on linking screen by filtering it on this account lookup. If sObject is &apos;Case&apos; , &apos;Account&apos; or does not have a acc look up, leave this field blank.</inlineHelpText>
+        <label>Account Lookup Field</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Account_Record_Type_Namespace_Prefix__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Namespace prefix for account record type</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Namespace of record type</inlineHelpText>
+        <label>Account Record Type Namespace Prefix</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Account_Record_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Record Type Label for Account object record type, not Record Type Developer Name.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Unique Record Type Label for Account object record type, not Record Type Developer Name</inlineHelpText>
+        <label>Account Record Type</label>
+        <length>250</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Checkbox to indicate if current config entry is active or not</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Check to activate config entry. Uncheck if you want Document Link functionality to ignore config entry</inlineHelpText>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Case_Lookup_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of  sObject look-up field related to Case. This field is used to determine which records to display on linking screen if sObject has a case look up.</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of  sObject look-up field related to Case. This field is used to query which records to display on linking screen by filtering it on this case lookup. 
+If sObject is &apos;Case&apos; , &apos;Account&apos; or does not have a case look up , leave this field blank.</inlineHelpText>
+        <label>Case Lookup Field</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom metadata field to describe entry</description>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Brief Description</inlineHelpText>
+        <label>Description</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>PC_FieldSetName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of fieldset for specified object to display fields on Document linking screen</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of object fieldset to control fields to be displayed on specified object on Document linking screen.-	First two fields on this custom field set must always be &apos;Name&apos; of the field and &apos;Record Type&apos; in that order.</inlineHelpText>
+        <label>Field Set Name</label>
+        <length>250</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Linked_Obj_Lookup_Field__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of look up field on specified object to help create document log entry on document linking</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of PC_Document_Log__c look up field for linked object to create a Document Log entry. Ensure this field is created on &apos;PC_Document_Log__c&apos; before using linking feature. Lookup field name should match exactly with Sobject name.</inlineHelpText>
+        <label>Linked Object Lookup Field on Doc Log</label>
+        <length>250</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Ordinal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Order in which objects related to account should be displayed on Document Link screen</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Order in which objects related to account should be displayed on Document Link screen.  Objects will be arranged in ascending order. For example: 1 means on top of screen.</inlineHelpText>
+        <label>Ordinal</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_sObject__c</fullName>
+        <deprecated>false</deprecated>
+        <description>API name of Salesforce standard or custom object to allow a document to be linked to using Document Link featiure</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>API name of Salesforce standard or custom object that you would allow document to be linked to</inlineHelpText>
+        <label>Object</label>
+        <length>80</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Document Link Related Objects Setting</label>
+    <pluralLabel>Document Link Related Objects Settings</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

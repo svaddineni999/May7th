@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Настройка на клинична оценка</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Настройки на клинична оценка</value>
+    </caseValues>
+    <fields>
+        <label>Опашка за задача за оценка</label>
+        <name>HealthCloudGA__Assessment_Task_Queue__c</name>
+    </fields>
+    <fields>
+        <label>Програма за здравни грижи</label>
+        <name>HealthCloudGA__Care_Program__c</name>
+    </fields>
+    <fields>
+        <label>Съгл. за употр. на форм. за упълн. данни</label>
+        <name>HealthCloudGA__Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Съгласие за цел за използване на данни</label>
+        <name>HealthCloudGA__Consent_Data_Use_Purpose__c</name>
+    </fields>
+    <fields>
+        <label>Изп. фор. за данни за удос. съг. на дом.</label>
+        <name>HealthCloudGA__Household_Consent_Auth_Data_Form_Use__c</name>
+    </fields>
+    <fields>
+        <label>Ограничение за възрастта на непълнолетни</label>
+        <name>HealthCloudGA__MinorChildAgeLimit__c</name>
+    </fields>
+    <fields>
+        <label>Име на RecordType на пациент</label>
+        <name>HealthCloudGA__Patient_RecordType_Name__c</name>
+    </fields>
+    <fields>
+        <label>Предписани дни на карантина</label>
+        <name>HealthCloudGA__PrescribedQuarantineDays__c</name>
+    </fields>
+    <gender>Feminine</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,135 @@
+<apex:page standardController="PC_Applicant__c" renderAs="pdf" showHeader="false" standardStylesheets="false"
+    applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+    <head>
+        <style> 
+            .heading {font-family:rebuchet MS, Arial, Melvetica, sans-serif; font-size:large; padding-bottom:10px; padding-top:10px; font-weight: bold; display:block;}
+            table {border-collapse:collapse;width:100%; font-family:rebuchet MS, Arial, Melvetica, sans-serif;}
+            tbody {display:table-row-group; vertical-align:middle;}
+            .cellStyle { font-size:1 em;border:1px solid #99ccff;padding:3px 7px 2px 7px; width: 50%; }  
+        </style>
+    </head>
+    <body>
+        <span class="heading">{!$Label.PC_Patient_And_Consent}</span>
+        <table>
+            <tbody>
+                <apex:repeat value="{!$ObjectType.PC_Applicant__c.FieldSets.PC_Patient_and_Consent}" var="f">
+                    <tr>
+                        <td class="cellStyle">{!f.label}</td>
+                        <td class="cellStyle">
+                            <apex:outputpanel rendered="{!f.type = 'date'}">
+                                <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                    <apex:param value="{!PC_Applicant__c[f]}" />
+                                </apex:outputtext>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!f.type != 'date'}">
+                                {!PC_Applicant__c[f]}
+                            </apex:outputpanel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+        <span class="heading">{!$Label.PC_Caregiver}</span>
+        <table>
+            <tbody>
+                <apex:repeat value="{!$ObjectType.PC_Applicant__c.FieldSets.PC_Caregiver}" var="f1">
+                    <tr>
+                        <td class="cellStyle">{!f1.label}</td>
+                        <td class="cellStyle">
+                            <apex:outputpanel rendered="{!f1.type = 'date'}">
+                                <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                    <apex:param value="{!PC_Applicant__c[f1]}" />
+                                </apex:outputtext>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!f1.type != 'date'}">
+                                {!PC_Applicant__c[f1]}
+                            </apex:outputpanel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+        <span class="heading">{!$Label.PC_Patient_Communication_Info}</span>
+        <table>
+            <tbody>
+                <apex:repeat value="{!$ObjectType.PC_Applicant__c.FieldSets.PC_Patient_Communication_Information}" var="f2">
+                    <tr>
+                        <td class="cellStyle">{!f2.label}</td>
+                        <td class="cellStyle">
+                            <apex:outputpanel rendered="{!f2.type = 'date'}">
+                                <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                    <apex:param value="{!PC_Applicant__c[f2]}" />
+                                </apex:outputtext>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!f2.type != 'date'}">
+                                {!PC_Applicant__c[f2]}
+                            </apex:outputpanel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+        <span class="heading">{!$Label.PC_Healthcare}</span>
+        <table>
+            <tbody>
+                <apex:repeat value="{!$ObjectType.PC_Applicant__c.FieldSets.PC_Healthcare_Professional_and_Facility}" var="f3">
+                    <tr>
+                        <td class="cellStyle">{!f3.label}</td>
+                        <td class="cellStyle">
+                            <apex:outputpanel rendered="{!f3.type = 'date'}">
+                                <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                    <apex:param value="{!PC_Applicant__c[f3]}" />
+                                </apex:outputtext>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!f3.type != 'date'}">
+                                {!PC_Applicant__c[f3]}
+                            </apex:outputpanel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+        <br />
+        <br />
+        <span class="heading">{!$Label.PC_Insurance}</span>
+        <table>
+            <tbody>
+                <apex:repeat value="{!$ObjectType.PC_Applicant__c.FieldSets.PC_Primary_Insurance}" var="f4">
+                    <tr>
+                        <td class="cellStyle">{!f4.label}</td>
+                        <td class="cellStyle">
+                            <apex:outputpanel rendered="{!f4.type = 'date'}">
+                                <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                    <apex:param value="{!PC_Applicant__c[f4]}" />
+                                </apex:outputtext>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!f4.type != 'date'}">
+                                {!PC_Applicant__c[f4]}
+                            </apex:outputpanel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+        <span class="heading">{!$Label.PC_Prescription}</span>
+        <table>
+            <tbody>
+                <apex:repeat value="{!$ObjectType.PC_Applicant__c.FieldSets.PC_Prescription}" var="f5">
+                    <tr>
+                        <td class="cellStyle">{!f5.label}</td>
+                        <td class="cellStyle">
+                            <apex:outputpanel rendered="{!f5.type = 'date'}">
+                                <apex:outputtext value="{0, date, MMMM d','  yyyy}">
+                                    <apex:param value="{!PC_Applicant__c[f5]}" />
+                                </apex:outputtext>
+                            </apex:outputpanel>
+                            <apex:outputpanel rendered="{!f5.type != 'date'}">
+                                {!PC_Applicant__c[f5]}
+                            </apex:outputpanel>
+                        </td>
+                    </tr>
+                </apex:repeat>
+            </tbody>
+        </table>
+    </body>
+</apex:page>

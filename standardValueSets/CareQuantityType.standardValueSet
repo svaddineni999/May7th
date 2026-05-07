@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Days</fullName>
+        <default>false</default>
+        <label>Days</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Units</fullName>
+        <default>false</default>
+        <label>Units</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Visits</fullName>
+        <default>false</default>
+        <label>Visits</label>
+    </standardValue>
+</StandardValueSet>

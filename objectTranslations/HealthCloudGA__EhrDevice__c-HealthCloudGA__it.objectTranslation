@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Dispositivo EHR</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Dispositivi EHR</value>
+    </caseValues>
+    <fields>
+        <label>Referente</label>
+        <name>HealthCloudGA__Contact__c</name>
+    </fields>
+    <fields>
+        <label>URL dispositivo</label>
+        <name>HealthCloudGA__DeviceUrl__c</name>
+    </fields>
+    <fields>
+        <label>Scadenza</label>
+        <name>HealthCloudGA__Expiry__c</name>
+    </fields>
+    <fields>
+        <label>IsRestricted</label>
+        <name>HealthCloudGA__IsRestricted__c</name>
+    </fields>
+    <fields>
+        <label>IsVisibleOnPatientCard</label>
+        <name>HealthCloudGA__IsVisibleOnPatientCard__c</name>
+    </fields>
+    <fields>
+        <label>Sede 255</label>
+        <name>HealthCloudGA__Location255__c</name>
+    </fields>
+    <fields>
+        <label>Sede</label>
+        <name>HealthCloudGA__Location__c</name>
+    </fields>
+    <fields>
+        <label>Numero di lotto</label>
+        <name>HealthCloudGA__LotNumber__c</name>
+    </fields>
+    <fields>
+        <label>Produttore</label>
+        <name>HealthCloudGA__Manufacturer__c</name>
+    </fields>
+    <fields>
+        <label>Modello</label>
+        <name>HealthCloudGA__Model__c</name>
+    </fields>
+    <fields>
+        <label>Titolare 255</label>
+        <name>HealthCloudGA__Owner255__c</name>
+    </fields>
+    <fields>
+        <label>Titolare</label>
+        <name>HealthCloudGA__Owner__c</name>
+    </fields>
+    <fields>
+        <label>Paziente</label>
+        <name>HealthCloudGA__Patient__c</name>
+        <relationshipLabel>Dispositivi</relationshipLabel>
+    </fields>
+    <fields>
+        <label>ID sistema di origine</label>
+        <name>HealthCloudGA__SourceSystemId__c</name>
+    </fields>
+    <fields>
+        <label>Sistema di origine modificato</label>
+        <name>HealthCloudGA__SourceSystemModified__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the system that created the record and owns update rights to it. Defaults to Health1 for manually created records. --></help>
+        <label>Sistema di origine</label>
+        <name>HealthCloudGA__SourceSystem__c</name>
+    </fields>
+    <fields>
+        <label>Tipo</label>
+        <name>HealthCloudGA__Type__c</name>
+    </fields>
+    <fields>
+        <label>UDI</label>
+        <name>HealthCloudGA__Udi__c</name>
+    </fields>
+    <fields>
+        <label>Versione</label>
+        <name>HealthCloudGA__Version__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <nameFieldLabel>ID dispositivo EHR</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

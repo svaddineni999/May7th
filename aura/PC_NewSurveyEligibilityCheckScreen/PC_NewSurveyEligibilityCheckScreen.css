@@ -1,0 +1,15 @@
+/**
+ * Created by havalakki on 6/3/2021.
+ */
+.THIS .formContainerStyle {
+    background-color: white;
+    padding: 1rem;
+}
+.THIS .newPAPEligibilityIconDiv {
+    padding: 4px 15px 4px 4px;
+    margin: 1px 1px 1px 1px;
+}
+.THIS .newPAPEligibilityTitleDiv {
+    padding: 13px 5px 5px 5px;
+    margin: 2px 2px 2px 2px;
+}

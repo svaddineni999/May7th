@@ -1,0 +1,12 @@
+<!--
+ - Created by vkashikar on 10/9/2017.
+ -->
+
+<design:component >
+    <design:attribute name="reportTitleLabelName" label="Report Title Label Full Name" description="Exmple $Label.your_namespace.labelName" />
+    <design:attribute name="developerName" label="Report Developer Name" description="Report Developer Name" />
+    <design:attribute name="iframeHeight" label="Report Height in px" description="Report Height" />
+    <design:attribute name="iframeInlineCSSStyle" label="Report iframe inline style" description="Report iframe inline style" />
+    <design:attribute name="reportSize" label="Report Chart Size" datasource="tiny,small,medium,large,huge" default="medium"/>
+
+</design:component>

@@ -1,0 +1,22 @@
+.pc-pill {
+    display: inline-block;
+    padding: 0 var(--lwc-varSpacingXSmall);
+    margin: 0.15rem;
+    border: 1px solid var(--lwc-brandDisabled);
+    border-radius: var(--lwc-borderRadiusLarge);
+    cursor: pointer;
+}
+
+.selected {
+    border: 1px solid var(--lwc-brandAccessible);
+    background-color: #f5fbff;
+
+}
+
+.label-color {
+    color: var(--lwc-colorTextLabel);
+}
+
+.selected .label-color {
+    color: var(--lwc-brandAccessible);
+}

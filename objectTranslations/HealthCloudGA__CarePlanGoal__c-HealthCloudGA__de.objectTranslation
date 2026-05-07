@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Ziel</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Ziele</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Ziel</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Ziele</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Ziels</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Ziele</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Ziel</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Zielen</value>
+    </caseValues>
+    <fieldSets>
+        <label>HcGoalCreateEdit</label>
+        <name>HealthCloudGA__HcGoalCreateEdit</name>
+    </fieldSets>
+    <fieldSets>
+        <label>HcGoalList</label>
+        <name>HealthCloudGA__HcGoalList</name>
+    </fieldSets>
+    <fields>
+        <help><!-- Goal&apos;s Due Date --></help>
+        <label>Fälligkeitsdatum</label>
+        <name>HealthCloudGA__ActivityDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Problem this goal is meant to address --></help>
+        <label>Problem</label>
+        <name>HealthCloudGA__CarePlanProblem__c</name>
+        <relationshipLabel>Ziele</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Versorgungsplanvorlage</label>
+        <name>HealthCloudGA__CarePlanTemplate__c</name>
+        <relationshipLabel>Ziele</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Versorgungsplan</label>
+        <name>HealthCloudGA__CarePlan__c</name>
+        <relationshipLabel>Ziele</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Kategorie</label>
+        <name>HealthCloudGA__Category__c</name>
+        <picklistValues>
+            <masterLabel>Cognition Improvement</masterLabel>
+            <translation><!-- Cognition Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Muscle Strength Improvement</masterLabel>
+            <translation><!-- Muscle Strength Improvement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weight Management</masterLabel>
+            <translation><!-- Weight Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>HealthCloudGA__Description__c</name>
+    </fields>
+    <fields>
+        <label>Priorität</label>
+        <name>HealthCloudGA__Priority__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Progress toward achieving goal --></help>
+        <label>% Fortschritt</label>
+        <name>HealthCloudGA__Progress__c</name>
+    </fields>
+    <fields>
+        <label>Sortierreihenfolge</label>
+        <name>HealthCloudGA__SortOrder__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <nameFieldLabel>Name</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Der Wert für &quot;Fortschritt&quot; darf nicht größer als 100 % sein.</errorMessage>
+        <name>HealthCloudGA__goalPercentCompletion</name>
+    </validationRules>
+</CustomObjectTranslation>

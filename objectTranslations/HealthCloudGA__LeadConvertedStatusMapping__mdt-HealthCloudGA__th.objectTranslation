@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>การแมปสถานะลูกค้าเป้าหมายที่แปลงแล้ว</value>
+    </caseValues>
+    <fields>
+        <label>ทำงาน</label>
+        <name>HealthCloudGA__Active__c</name>
+    </fields>
+    <fields>
+        <label>สถานะลูกค้าเป้าหมายที่แปลงแล้ว</label>
+        <name>HealthCloudGA__LeadConvertedStatus__c</name>
+    </fields>
+    <fields>
+        <label>ชื่อประเภทเรกคอร์ดลูกค้าเป้าหมาย</label>
+        <name>HealthCloudGA__LeadRecordTypeName__c</name>
+    </fields>
+    <fields>
+        <label>เนมสเปซประเภทเรกคอร์ด</label>
+        <name>HealthCloudGA__LeadRecordTypeNamespace__c</name>
+    </fields>
+</CustomObjectTranslation>

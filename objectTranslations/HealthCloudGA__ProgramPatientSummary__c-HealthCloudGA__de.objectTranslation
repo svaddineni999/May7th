@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Programmzusammenfassung des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Programmzusammenfassungen des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Programmzusammenfassung des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Programmzusammenfassungen des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Programmzusammenfassung des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Programmzusammenfassungen des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Programmzusammenfassung des Patienten</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Programmzusammenfassungen des Patienten</value>
+    </caseValues>
+    <fields>
+        <label>Account</label>
+        <name>HealthCloudGA__Account__c</name>
+        <relationshipLabel>Programmzusammenfassung für Patienten</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Patient’s age calculated into age bands: 0 - 34,35-44,45-54,55-59,60-64,65-69,70-74,75-79,80-84,85-89,90-94, 95 and older. --></help>
+        <label>Altersgruppe</label>
+        <name>HealthCloudGA__AgeBand__c</name>
+    </fields>
+    <fields>
+        <help><!-- Patient Age. --></help>
+        <label>Alter</label>
+        <name>HealthCloudGA__Age__c</name>
+    </fields>
+    <fields>
+        <help><!-- List of HCC condition categories applied to the patient. --></help>
+        <label>Erkrankungen</label>
+        <name>HealthCloudGA__Conditions__c</name>
+    </fields>
+    <fields>
+        <help><!-- CMS disability status. --></help>
+        <label>Behinderungsgrad</label>
+        <name>HealthCloudGA__DisabilityStatus__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date the risk score was calculated. --></help>
+        <label>Datum des Inkrafttretens</label>
+        <name>HealthCloudGA__EffectiveDate__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the Medicare enrollment type for the patient. --></help>
+        <label>Art der Registrierung</label>
+        <name>HealthCloudGA__EnrollmentType__c</name>
+        <picklistValues>
+            <masterLabel>Dual</masterLabel>
+            <translation><!-- Dual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESRD</masterLabel>
+            <translation><!-- ESRD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FBDual</masterLabel>
+            <translation><!-- FBDual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NonDual</masterLabel>
+            <translation><!-- NonDual --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PBDual</masterLabel>
+            <translation><!-- PBDual --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Male/ Female --></help>
+        <label>Geschlecht</label>
+        <name>HealthCloudGA__Gender__c</name>
+        <picklistValues>
+            <masterLabel>Decline to Specify</masterLabel>
+            <translation><!-- Decline to Specify --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The final HCC Codes that are applicable to the patient after applying the overriding logic. --></help>
+        <label>HCC-Codes</label>
+        <name>HealthCloudGA__HCCCodes__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the patient is in an institution. --></help>
+        <label>Institution</label>
+        <name>HealthCloudGA__Institution__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the patient falls within low income guidelines. --></help>
+        <label>Geringes Einkommen</label>
+        <name>HealthCloudGA__LowIncome__c</name>
+    </fields>
+    <fields>
+        <help><!-- The month that the time calculation is applicable for. --></help>
+        <label>Monat</label>
+        <name>HealthCloudGA__Month__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether this record contains the most recent calculation for the measurement period. --></help>
+        <label>Aktuell</label>
+        <name>HealthCloudGA__MostRecent__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether the patient is a new Medicare patient or a continued enrollee. --></help>
+        <label>Neuer Patient</label>
+        <name>HealthCloudGA__NewPatient__c</name>
+    </fields>
+    <fields>
+        <help><!-- Number of HCC condition categories that apply to the patient. --></help>
+        <label>Anzahl der Erkrankungen</label>
+        <name>HealthCloudGA__NumberOfConditions__c</name>
+    </fields>
+    <fields>
+        <label>Patienten-Programmteilnahme</label>
+        <name>HealthCloudGA__ProgramPatientAffiliation__c</name>
+        <relationshipLabel>Programmzusammenfassung für Patienten</relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- HCC risk score calculated for the patient. --></help>
+        <label>Risikobewertung</label>
+        <name>HealthCloudGA__RiskScore__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the stage the patient is in for the Medicare CCM program. --></help>
+        <label>Phase</label>
+        <name>HealthCloudGA__Stage__c</name>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Program</masterLabel>
+            <translation><!-- In Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potential</masterLabel>
+            <translation><!-- Potential --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Total time spent with the patient in the measurement period for qualifying activities. --></help>
+        <label>Aufgewendete Zeit</label>
+        <name>HealthCloudGA__TimeSpent__c</name>
+    </fields>
+    <fields>
+        <label>Einzeln</label>
+        <name>HealthCloudGA__Unique__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the year the risk score is applicable to. --></help>
+        <label>Jahr</label>
+        <name>HealthCloudGA__Year__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Name</nameFieldLabel>
+    <recordTypes>
+        <label>Management für die Versorgung chronisch Kranker</label>
+        <name>HealthCloudGA__ChronicCareManagement</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Risikobewertung</label>
+        <name>HealthCloudGA__RiskScoring</name>
+    </recordTypes>
+</CustomObjectTranslation>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Remote Service Log Info</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Remote Service Log Info</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>PC_Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Callback Request --></label>
+        <name>PC_Callback_Request__c</name>
+    </fields>
+    <fields>
+        <label><!-- Callback Response --></label>
+        <name>PC_Callback_Response__c</name>
+    </fields>
+    <fields>
+        <label><!-- Callback URL2 --></label>
+        <name>PC_Callback_URL2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Callback URL --></label>
+        <name>PC_Callback_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Running User --></label>
+        <name>PC_Running_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Name --></label>
+        <name>PC_Service_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

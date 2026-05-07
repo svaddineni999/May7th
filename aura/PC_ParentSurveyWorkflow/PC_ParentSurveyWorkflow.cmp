@@ -1,0 +1,38 @@
+<!--
+ - Created by havalakki on 6/4/2021.
+ -->
+
+<aura:component description="PC_ParentSurveyWorkflow" implements="flexipage:availableForAllPageTypes,force:hasRecordId,lightning:isUrlAddressable" access="global" controller="PC_SurveyEligibilityCheckController">
+    <aura:attribute name="namespace" type="String"/>
+    <aura:attribute name="namespacePrefix" type="String"/>
+    <aura:attribute name="recordId" type="Id" access="PUBLIC"/>
+    <aura:attribute name="isAccountRecordId" type="Boolean" default="true"/>
+    <aura:attribute name="engagementProgId" type="String" default=""/>
+    <aura:attribute name="caseRecordId" type="String" default="="/>
+    <aura:attribute name="accountRecordId" type="String" default=""/>
+    <aura:attribute name="surveyLink" type="String" access="private"/>
+    <aura:attribute name="caseDetailsErrorMessage" type="String" default="{!$Label.c.PC_CaseDetailsError}" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="errors" type="List" access="private" default="[]"/>
+    <aura:attribute name="engagementProgramUrlFieldName" type="String" access="private" default="EngagementProgramId"/>
+    <aura:attribute name="surveyInvitationPageName" type="String" access="private" default="PC_SurveyInvitationAppPage"/>
+    <aura:attribute name="surveyTabIcon" type="String" default="utility:form" access="private"/>
+    <aura:attribute name="surveyLabel" type="String" default="" access="private"/>
+    <aura:attribute name="workflowSurveyContext" type="String" default="PC_PAP" access="private"/>
+
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <lightning:workspaceAPI aura:id="workspaceAPI" />
+    <aura:attribute name="pageReference" type="Object"/>
+    <lightning:spinner aura:id="papSpinner" class="slds-hide" alternativeText="Loading" />
+    <aura:if isTrue="{! v.errors.length > 0 }">
+        <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+    </aura:if>
+    <aura:if isTrue="{!or(empty(v.recordId),empty(v.engagementProgId))}">
+        <div>
+            <c:PC_NewSurveyEligibilityCheckScreen recordId="{!v.recordId}" pageReference="{!v.pageReference}"></c:PC_NewSurveyEligibilityCheckScreen>
+        </div>
+    </aura:if>
+
+</aura:component>

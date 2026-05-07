@@ -1,0 +1,47 @@
+<!--
+Lightning component  : PC_InteractionParticipantForm
+Description          : Component for creating appointment and selecting participants
+Modification Log:
+Haritha Reddy, Chetna Mohapatra 	     10-Nov-2021 	[PC-8278] Initial Version
+-->
+
+<aura:component implements="flexipage:availableForAllPageTypes,lightning:isUrlAddressable" description="PC_InteractionParticipantForm" access="global">
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="caseId" type="String" access="private"/>
+    <aura:attribute name="selectedLocation" type="String"/>
+    <aura:attribute name="showSpinner" type="boolean" default="false" access="private"/>
+    <aura:attribute name="cancelBtnLabel" type="String" default="{!$Label.c.PC_Cancel_Button}" access="private"/>
+    <aura:attribute name="saveBtnLabel" type="String" default="{!$Label.c.PC_Save}" access="private"/>
+    <aura:attribute name="interactionObjectAPIName" type="String" access="private"/>
+    <aura:attribute name="interactionRecordId" type="String" default=""/>
+    <aura:attribute name="defaultFieldValues" type="Map" default="{}" />
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <lightning:overlayLibrary aura:id="mapOverlayLib"/>
+    <lightning:navigation aura:id="bookAppointmentNavService"/>
+    <lightning:workspaceAPI aura:id="bookAppointmentWorkspace" />
+
+    <div class="slds-p-around_medium pc-whitebg">
+        <div class="slds-card slds-grid slds-grid_vertical participantSelectionPage" >
+            <div class="header slds-border_bottom">
+                <div class="slds-text-heading_medium slds-p-vertical_small slds-align_absolute-center">{!$Label.c.PC_BookAppt_Title}</div>
+            </div>
+            <aura:if isTrue="{!v.showSpinner}">
+                <lightning:spinner aura:id="AppointmentSpinner" alternativeText="Loading" />
+            </aura:if>
+            <div class="slds-m-around_small" aura:id="top-panel">
+                <c:PC_FacilityPractitioners aura:id="participantSelectionCmp" selectedLocation="{!v.selectedLocation}" interactionRecordId="{!v.interactionRecordId}" />
+             </div>
+            <div class=" slds-m-around_small" aura:id="bottom-panel">
+                <c:pcRecordForm aura:id="interactionCreateRecordForm" layoutType="Full" mode = "edit" objectApiName = "{!v.interactionObjectAPIName}" defaultFieldValues = "{!v.defaultFieldValues}" onsuccess = "{!c.handleSuccess}"/>
+            </div>
+        </div>
+
+        <div class="slds-align_absolute-center slds-m-top_medium">
+            <lightning:button aura:id="saveBtn" class="slds-float_right" variant="brand" label="{!v.saveBtnLabel}" title="{!v.saveBtnLabel}" onclick="{!c.onSave}"></lightning:button>
+            <lightning:button aura:id="cancelBtn" class="slds-float_right" variant="brand" label="{!v.cancelBtnLabel}" title="{!v.cancelBtnLabel}" onclick="{!c.handleCancel}"></lightning:button>
+        </div>
+    </div>
+</aura:component>

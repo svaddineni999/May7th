@@ -1,0 +1,38 @@
+<!--
+Lightning component  :  PC_EnrollPatientWizardLauncher
+Description          :
+Parameters           :
+Author               :
+Date                 :
+Modification Log     :
+Haritha Reddy 		 22-Feb-2019    [PC-4340]updated the enrollment wizard launch logic to work for both lightning and lightning console apps
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes"
+                controller="PC_EnrollPatientWZLightningController" access="global">
+
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+
+	<aura:attribute name="namespace" type="String" default="" />  
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="newEnrollment" type="Boolean" default="false"/>
+    <aura:attribute name="processedEnrollment" type="Boolean" default="false"/>
+    <aura:attribute name="enrollmentWizardTabLabel" type="String" default="{!$Label.c.PC_EnrollmentWizardHeader}"/>
+    <aura:attribute name="enrollmentWizardComponentName" type="String" default="PC_EnrollmentWizard"/>
+    <aura:attribute name="enrollmentWizardTabIcon" type="String" default="action:flow"/>
+    <aura:attribute name="enrollmentWizardPageName" type="String" default="Enrollment_Wizard"/>
+    <aura:attribute name="caseRecord" type="Object"/>
+    <force:recordData layoutType="FULL" recordId="{!v.recordId}" targetFields="{!v.caseRecord }"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+	
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+
+    <lightning:workspaceAPI aura:id="enrollmentCaseWorkspace" />
+    <aura:renderIf isTrue="{!v.newEnrollment}">
+        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Enroll_Patient_Button}" press="{!c.launchWizard}"/>
+    </aura:renderIf>
+    <aura:renderIf isTrue="{!v.processedEnrollment}">
+        <ui:button class="slds-button slds-button--brand" label="{!$Label.c.PC_Enroll_Patient_Button}" disabled="true" press="{!c.launchWizard}"/>
+    </aura:renderIf>
+    
+</aura:component>

@@ -1,0 +1,71 @@
+<!--
+ - Created by vkashikar on 10/14/2019.
+ Modification Log:
+ **************************************************************************************************
+Kanteti Kishore     29-July-2020    [PC-6592] Changes in helper at lines-151,152,153
+ ***************************************************************************************************
+ -->
+
+<aura:component description="PC_SearchResults" implements="flexipage:availableForAllPageTypes" controller="PC_SearchResultsController" access="global">
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}" afterScriptsLoaded="{!c.doInit}"/>
+
+    <aura:attribute name="namespace" type="String" default="" />
+    <aura:attribute name="namespacePrefix" type="String" default="" />
+    <aura:attribute name="orgNamespace" type="String" access="private"/>
+
+    <aura:attribute name="errors" type="List" default="[]" access="private"/>
+    <aura:attribute name="toastErrorTitle" type="String" default="{!$Label.c.PC_Toast_Title_Error}" access="private"/>
+    <aura:attribute name="noneOfThese" type="String" default="{!$Label.c.PC_NoneOfThese}" access="private"/>
+
+    <aura:attribute name="resultClasses" type="List" access="private"/>
+    <aura:attribute name="selectedRecordId" type="String" access="private" />
+    <aura:attribute name="selectedRecordSource" type="String"/>
+    <aura:attribute name="actionType" type="String" access="private"/>
+    <aura:attribute name="actionName" type="String" access="private"/>
+
+    <aura:attribute name="identifier" type="String" access="private"/>
+    <aura:attribute name="searchObjectAPIName" type="String" access="private"/>
+    <aura:attribute name="searchFormFieldsetAPIName" type="String" access="private"/>
+    <aura:attribute name="searchResultFieldsetAPIName" type="String" access="private"/>
+    <aura:attribute name="searchParams" type="Map" access="private"/>
+
+
+    <aura:attribute name="resultClassesString" type="String" default="PatientConnect.PC_GetSearchResults"
+                    description="Comma Separated list of search classes. Each search class must implement PatientConnect.PC_SearchResults interface" access="global"/>
+    <aura:attribute name="searchTitle" type="String" default="{!$Label.c.PC_SearchResultsTitle}"
+                    description="Provide Custom Label name along with namespace or name to show on Search Results Block. Ex:$Label.namespace.PC_SearchResultTitle" access="global"/>
+    <aura:attribute name="searchTableHeight" type="String"
+                    description="Height of results table in px. Eg 250px. Leave it blank if no fixed height is desired." access="global"/>
+    <aura:attribute name="defaultRowActions" type="String"
+                    description="Comma separated list of row actions. Ex. PC_SHOW_DETAILS,ANY_CUSTOM_ACTION. Use this to dynamically add actions on the server side. PC_SHOW_DETAILS opens the record details page with the help of PC_SearchDefaultDataRowActionHandler." access="global"/>
+    <aura:attribute name="resultClassesList" type="String" access="private"/>
+    <aura:attribute name="searchTitleValue" type="String" access="private"/>
+
+
+    <aura:handler event="c:PC_SearchParams" action="{!c.handleSearchParams}"/>
+    <aura:handler name="selectedDataTableRow" event="c:PC_SelectedDataTableRow"
+                  action="{!c.handleSelectedDataTableRow}"/>
+
+    <aura:registerEvent name="appEventSelectedRecord" type="c:PC_SelectedRecord"/>
+    <aura:registerEvent name="unselectEvent" type="c:PC_UnselectDataTableRow"/>
+
+    <div class="slds">
+        <div class="formContainerStyle">
+            <div class="slds-section-title">{!v.searchTitleValue}</div>
+            <aura:if isTrue="{! v.errors.length > 0 }">
+                <c:PC_ErrorPanel errorHeader="{!v.toastErrorTitle}" errors="{!v.errors}"/>
+            </aura:if>
+            <aura:if isTrue="{!v.body.length>0}">
+                <div class="searchResults">
+                        {!v.body}
+                </div>
+            </aura:if>
+            <div class="slds slds-box slds-theme_shade slds-m-bottom--medium pccorePC_SearchResultsDataTable">
+                <ui:inputRadio change="{!c.fireSelectedRecordForNone}" class="slds-radio" aura:id="noneOfThese"
+                               text="{!v.noneOfThese}" name="noneOfThese" />
+                <span class="slds-text-title">{!v.noneOfThese}</span>
+            </div>
+        </div>
+
+    </div>
+</aura:component>

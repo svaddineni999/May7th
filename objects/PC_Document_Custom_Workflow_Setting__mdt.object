@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>PC_Action__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom Label for the Button</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Custom Label for the Button</inlineHelpText>
+        <label>Button Label</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>PC_Component__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Lightning component to be displayed when button is clicked</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Lightning component to be displayed when button is clicked. Include namespace if component has a namespace. &lt;namespaceprefix&gt;:&lt;componentApiName&gt;</inlineHelpText>
+        <label>Component</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Engagement_Program__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Engagement Program Code for the engagement program the button should be visible</description>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <inlineHelpText>Engagement Program Code for the engagement program the button should be visible</inlineHelpText>
+        <label>Engagement Program</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Object_type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <fieldManageability>SubscriberControlled</fieldManageability>
+        <label>Object type</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Document Custom Workflow Setting</label>
+    <pluralLabel>Documents Custom Workflow Setting</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

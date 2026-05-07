@@ -1,0 +1,70 @@
+<!--
+Lightning component  : PC_OtherExistingEnrollment 
+Description          : Component for displaying the message and case details if an enrollment case for some other program exist for patient.
+Parameters           : Enrollment Case Id, Case Owner (Both are required) 
+Author               : Shabda Bhujad
+Date                 : 15 Feb 2017
+Modification Log     :
+Haritha Reddy        11-Nov-2020    [PC-6795] Added a new attribute isCustomApp to help determine from where pre enrollment wizard is launched
+-->
+<aura:component implements="force:hasRecordId" >
+    
+    <aura:handler name="closeEvent" event="c:PC_CloseCmp" action="{!c.hideModalBox}"/>
+
+    <lightning:navigation aura:id="navService"/>
+    <aura:attribute name="pageReference" type="Object"/>
+    
+    <aura:attribute name="enrollCaseId" type="String" default=""/>
+    <aura:attribute name="caseOwnerName" type="String" default=""/>
+    <aura:attribute name="isCustomApp" type="Boolean" default="false" description="Indicates if this component is launched from custom App"/>
+    <ltng:require scripts="{!$Resource.PC_Resources + '/PC_Resources/js/PC_Util.js'}"/>
+    
+    <!--Body-->
+    <div class="slds">
+        <lightning:workspaceAPI aura:id="workspace" />
+        <form id="form">
+            <div aria-hidden="true" role="dialog" class="slds-modal slds-modal--medium slds-fade-in-open" aura:id="modaldialog" >
+                <div class="slds-modal__container">                    
+                    <div class="slds-modal__header">
+                        <h2 class="slds-text-heading--medium">
+                            {!$Label.c.PC_Notification_Header}
+                        </h2>
+                        <button class="slds-button slds-button--icon-inverse slds-modal__close" onclick="{!c.hideModalBox}">
+                            <c:svg class="slds-button__icon slds-button__icon--large"
+                                   xlinkHref="{!$Resource.SLDS + '/assets/icons/action-sprite/svg/symbols.svg#close'}"
+                                   ariaHidden="true" />
+                            <span class="slds-assistive-text">{!$Label.c.PC_Close}</span>
+                        </button>
+                    </div>
+                    
+                    <div class="slds-modal__content">                    
+                        <div class="slds-form--compound slds-m-around--small">
+                            <!--Summary Page Summary section--> 
+                            <div class="slds-text-heading--small slds-text-align--center slds-p-top--large slds-p-bottom--large">
+                                {!$Label.c.PC_OtherEnrollment_Summary} 
+                            </div>
+                            <!--Existing case details section--> 
+                            <div class="slds-form-element__row ">
+                                <div class="slds-form-element slds-size--1-of-2">
+                                    <label class="slds-form-element__label">{!$Label.c.PC_OtherEnrollmentExist_Field1}</label>
+                                    <div class="slds-form-element__control">
+                                        <p>{!v.caseOwnerName}</p>                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slds-p-top--large"/>
+                        <!--Action section--> 
+                        <div class="slds-modal__footer">
+                            <div class="slds-x-small-buttons--horizontal">            
+                                <lightning:button variant="neutral" label="{!$Label.c.PC_Back_to_Search}" onclick="{!c.hideModalBox}" /> 
+                                <lightning:button variant="brand" label="{!$Label.c.PC_View_Case}" onclick="{!c.viewCase}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-backdrop slds-backdrop--open" aura:id="backdrop"></div>
+        </form>
+    </div>     
+</aura:component>

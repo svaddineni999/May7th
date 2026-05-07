@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Data Mapper Bulk Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Data Mapper Bulk Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Async Apex Job Id --></label>
+        <name>omnistudio__AsyncApexJobId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulk Chunk Id --></label>
+        <name>omnistudio__BulkChunkId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bulk Chunk Status --></label>
+        <name>omnistudio__BulkChunkStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Custom Setting --></label>
+        <name>omnistudio__DRBundleName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Error --></label>
+        <name>omnistudio__DRError__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Progress --></label>
+        <name>omnistudio__DRProgressData__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Mapper Status --></label>
+        <name>omnistudio__DRStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data --></label>
+        <name>omnistudio__Data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Global Key --></label>
+        <name>omnistudio__GlobalKey__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
